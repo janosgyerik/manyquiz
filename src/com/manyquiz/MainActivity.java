@@ -112,13 +112,14 @@ public class MainActivity extends Activity {
 		IQuestion question = questions.get(currentQuestionIndex);
 
 		questionView.setText(question.getText());
+		explanationView.setText(question.getExplanation());
 
 		String selectedAnswer = question.getSelectedAnswer();
 		choicesView.removeAllViews();
 		for (String choice : question.getChoices()) {
 			Button button = new Button(this);
 			button.setText(choice);
-			button.setPadding(0, 15, 0, 15);
+			button.setPadding(10, 15, 10, 15);
 			if (selectedAnswer == null) {
 				button.setOnClickListener(new ChoiceClickListener(choice));
 			}
@@ -126,9 +127,9 @@ public class MainActivity extends Activity {
 		}
 		if (selectedAnswer != null) {
 			setSelectedAnswer(selectedAnswer);
+			explanationView.setVisibility(View.VISIBLE);
 		}
 		else {
-			explanationView.setText(question.getExplanation());
 			explanationView.setVisibility(View.GONE);
 		}
 	}
@@ -145,7 +146,7 @@ public class MainActivity extends Activity {
 				else {
 					button.setBackgroundResource(R.drawable.btn_incorrect);
 				}
-				button.setPadding(0, 15, 0, 15);
+				button.setPadding(10, 15, 10, 15);
 			}
 			button.setEnabled(false);
 		}
