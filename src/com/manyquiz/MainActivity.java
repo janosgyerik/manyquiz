@@ -4,6 +4,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -28,6 +29,7 @@ public class MainActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Log.d(TAG, "++onCreate");
 		setContentView(R.layout.activity_main);
 
 		IQuiz quiz = new ComputerQuiz();
@@ -87,18 +89,18 @@ public class MainActivity extends Activity {
 
 	private void updatePrevNext() {
 		if (currentQuestionIndex == 0) {
-			// prevButton.setVisibility(View.GONE);
-			// nextButton.setVisibility(View.VISIBLE);
+			prevButton.setVisibility(View.GONE);
+			nextButton.setVisibility(View.VISIBLE);
 			prevButton.setEnabled(false);
 			nextButton.setEnabled(true);
 		} else if (currentQuestionIndex == questions.size() - 1) {
-			// prevButton.setVisibility(View.VISIBLE);
-			// nextButton.setVisibility(View.GONE);
+			prevButton.setVisibility(View.VISIBLE);
+			nextButton.setVisibility(View.GONE);
 			prevButton.setEnabled(true);
 			nextButton.setEnabled(false);
 		} else {
-			// prevButton.setVisibility(View.VISIBLE);
-			// nextButton.setVisibility(View.VISIBLE);
+			prevButton.setVisibility(View.VISIBLE);
+			nextButton.setVisibility(View.VISIBLE);
 			prevButton.setEnabled(true);
 			nextButton.setEnabled(true);
 		}
@@ -114,6 +116,7 @@ public class MainActivity extends Activity {
 		for (String choice : question.getChoices()) {
 			Button button = new Button(this);
 			button.setText(choice);
+			button.setPadding(0, 15, 0, 15);
 			if (selectedAnswer == null) {
 				button.setOnClickListener(new ChoiceClickListener(choice));
 			}
@@ -135,6 +138,7 @@ public class MainActivity extends Activity {
 				else {
 					button.setBackgroundResource(R.drawable.btn_incorrect);
 				}
+				button.setPadding(0, 15, 0, 15);
 			}
 			button.setEnabled(false);
 		}
