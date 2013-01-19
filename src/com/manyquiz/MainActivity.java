@@ -14,37 +14,40 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 	
+    private static final String TAG = MainActivity.class.getSimpleName();
+
 	private List<IQuestion> questions;
+	private IQuestion currentQuestion;
 	private int currentQuestionIndex = 0;
 
 	private TextView questionView;
 	private LinearLayout choicesView;
 	private ImageButton prevButton;
 	private ImageButton nextButton;
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+
 		IQuiz quiz = new ComputerQuiz();
 		questions = quiz.pickRandomQuestions(15);
-		
+
 		questionView = (TextView) findViewById(R.id.question);
 		choicesView = (LinearLayout) findViewById(R.id.choices);
-		
+
 		prevButton = (ImageButton) findViewById(R.id.btn_prev);
 		prevButton.setOnClickListener(new PrevNextClickListener(-1));
 		nextButton = (ImageButton) findViewById(R.id.btn_next);
 		nextButton.setOnClickListener(new PrevNextClickListener(1));
-		
+
 		// TODO handle next and previous
-		
+
 		navigateToQuestion(0);
 	}
-	
+
 	class PrevNextClickListener implements OnClickListener {
-		
+
 		private int offset;
 
 		PrevNextClickListener(int offset) {
@@ -56,55 +59,78 @@ public class MainActivity extends Activity {
 			navigateToQuestion(currentQuestionIndex + offset);
 		}
 	}
-	
-	private void updateCurrentQuestionIndex(int index) {
+
+	class ChoiceClickListener implements OnClickListener {
+
+		private String answer;
+
+		ChoiceClickListener(String answer) {
+			this.answer = answer;
+		}
+
+		@Override
+		public void onClick(View arg0) {
+			if (currentQuestion.getSelectedAnswer() == null) {
+				currentQuestion.setSelectedAnswer(answer);
+				arg0.setBackgroundResource(R.drawable.btn_selected);
+			}
+		}
+	}
+
+	private void updateCurrentQuestion(int index) {
 		if (index < 0) {
 			currentQuestionIndex = 0;
-		}
-		else if (index >= questions.size()) {
+		} else if (index >= questions.size()) {
 			currentQuestionIndex = questions.size() - 1;
-		}
-		else {
+		} else {
 			currentQuestionIndex = index;
 		}
+		currentQuestion = questions.get(currentQuestionIndex);
 	}
-	
+
 	private void updatePrevNext() {
 		if (currentQuestionIndex == 0) {
-//			prevButton.setVisibility(View.GONE);
-//			nextButton.setVisibility(View.VISIBLE);
+			// prevButton.setVisibility(View.GONE);
+			// nextButton.setVisibility(View.VISIBLE);
 			prevButton.setEnabled(false);
 			nextButton.setEnabled(true);
-		}
-		else if (currentQuestionIndex == questions.size() - 1) {
-//			prevButton.setVisibility(View.VISIBLE);
-//			nextButton.setVisibility(View.GONE);
+		} else if (currentQuestionIndex == questions.size() - 1) {
+			// prevButton.setVisibility(View.VISIBLE);
+			// nextButton.setVisibility(View.GONE);
 			prevButton.setEnabled(true);
 			nextButton.setEnabled(false);
-		}
-		else {
-//			prevButton.setVisibility(View.VISIBLE);
-//			nextButton.setVisibility(View.VISIBLE);
+		} else {
+			// prevButton.setVisibility(View.VISIBLE);
+			// nextButton.setVisibility(View.VISIBLE);
 			prevButton.setEnabled(true);
 			nextButton.setEnabled(true);
 		}
 	}
-	
+
 	private void updateQuestion() {
 		IQuestion question = questions.get(currentQuestionIndex);
-		
+
 		questionView.setText(question.getText());
-		
+
+		String selectedAnswer = question.getSelectedAnswer();
 		choicesView.removeAllViews();
 		for (String choice : question.getChoices()) {
 			Button button = new Button(this);
 			button.setText(choice);
+			if (selectedAnswer != null) {
+				if (selectedAnswer.equals(choice)) {
+					button.setBackgroundResource(R.drawable.btn_selected);
+				}
+			}
+			else {
+				button.setOnClickListener(new ChoiceClickListener(choice));
+			}
 			choicesView.addView(button);
 		}
 	}
-	
+
 	private void navigateToQuestion(int index) {
-		updateCurrentQuestionIndex(index);
+		updateCurrentQuestion(index);
 		updatePrevNext();
 		updateQuestion();
 	}

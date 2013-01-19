@@ -44,4 +44,9 @@ public class Question implements IQuestion {
 		return selectedAnswer;
 	}
 
+	@Override
+	public void setSelectedAnswer(String answer) {
+		this.selectedAnswer = answer;
+	}
+
 }
