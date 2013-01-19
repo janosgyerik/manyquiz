@@ -24,24 +24,32 @@
             android:orientation="vertical" >
 
             <TextView
+                android:id="@+id/question"
                 style="@style/question"
                 android:text="Q: One kilobyte is equal to:" />
 
-            <Button
-                style="@style/answerButton"
-                android:text="1000 bytes" />
+            <LinearLayout
+                android:id="@+id/choices"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
 
-            <Button
-                style="@style/answerButton"
-                android:text="100 bytes" />
+                <Button
+                    style="@style/answerButton"
+                    android:text="1000 bytes" />
 
-            <Button
-                style="@style/answerButton"
-                android:text="1024 bytes" />
+                <Button
+                    style="@style/answerButton"
+                    android:text="100 bytes" />
 
-            <Button
-                style="@style/answerButton"
-                android:text="1023 bytes" />
+                <Button
+                    style="@style/answerButton"
+                    android:text="1024 bytes" />
+
+                <Button
+                    style="@style/answerButton"
+                    android:text="1023 bytes" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
@@ -51,11 +59,13 @@
         android:orientation="horizontal" >
 
         <ImageButton
+            android:id="@+id/btn_prev"
             style="@style/weightedButton"
             android:contentDescription="Previous"
             android:src="@drawable/btn_prev" />
 
         <ImageButton
+            android:id="@+id/btn_next"
             style="@style/weightedButton"
             android:contentDescription="Next"
             android:src="@drawable/btn_next" />
