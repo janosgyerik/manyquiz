@@ -49,4 +49,9 @@ public class Question implements IQuestion {
 		this.selectedAnswer = answer;
 	}
 
+	@Override
+	public boolean isCorrect() {
+		return selectedAnswer != null && selectedAnswer.equals(correctAnswer);
+	}
+
 }

@@ -10,6 +10,7 @@ public interface IQuestion {
 	String getCorrectAnswer();
 	
 	String getSelectedAnswer();
-	void setSelectedAnswer(String choice);
+	void setSelectedAnswer(String answer);
+	boolean isCorrect();
 
 }

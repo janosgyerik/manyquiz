@@ -70,10 +70,7 @@ public class MainActivity extends Activity {
 
 		@Override
 		public void onClick(View arg0) {
-			if (currentQuestion.getSelectedAnswer() == null) {
-				currentQuestion.setSelectedAnswer(answer);
-				arg0.setBackgroundResource(R.drawable.btn_selected);
-			}
+			setSelectedAnswer(answer);
 		}
 	}
 
@@ -117,15 +114,29 @@ public class MainActivity extends Activity {
 		for (String choice : question.getChoices()) {
 			Button button = new Button(this);
 			button.setText(choice);
-			if (selectedAnswer != null) {
-				if (selectedAnswer.equals(choice)) {
-					button.setBackgroundResource(R.drawable.btn_selected);
-				}
-			}
-			else {
+			if (selectedAnswer == null) {
 				button.setOnClickListener(new ChoiceClickListener(choice));
 			}
 			choicesView.addView(button);
+		}
+		if (selectedAnswer != null) {
+			setSelectedAnswer(selectedAnswer);
+		}
+	}
+	
+	private void setSelectedAnswer(String answer) {
+		currentQuestion.setSelectedAnswer(answer);
+		for (int i = 0; i < choicesView.getChildCount(); ++i) {
+			Button button = (Button) choicesView.getChildAt(i);
+			if (button.getText().equals(answer)) {
+				if (currentQuestion.isCorrect()) {
+					button.setBackgroundResource(R.drawable.btn_correct);
+				}
+				else {
+					button.setBackgroundResource(R.drawable.btn_incorrect);
+				}
+			}
+			button.setEnabled(false);
 		}
 	}
 
