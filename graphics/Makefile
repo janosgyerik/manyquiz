@@ -60,7 +60,7 @@ $(ldpi_dir)/btn_%.png: $(src_dir)/btn_%.png
 	identify $@
 
 $(mdpi_dir)/btn_%.png: $(src_dir)/btn_%.png
-	convert -geometry 36x $< $@
+	convert -geometry 24x $< $@
 	identify $@
 
 $(hdpi_dir)/headerbtn_%.png: $(src_dir)/headerbtn_%.png
