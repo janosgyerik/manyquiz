@@ -22,6 +22,7 @@ public class MainActivity extends Activity {
 	private int currentQuestionIndex = 0;
 
 	private TextView questionView;
+	private TextView explanationView;
 	private LinearLayout choicesView;
 	private ImageButton prevButton;
 	private ImageButton nextButton;
@@ -36,6 +37,7 @@ public class MainActivity extends Activity {
 		questions = quiz.pickRandomQuestions(15);
 
 		questionView = (TextView) findViewById(R.id.question);
+		explanationView = (TextView) findViewById(R.id.explanation);
 		choicesView = (LinearLayout) findViewById(R.id.choices);
 
 		prevButton = (ImageButton) findViewById(R.id.btn_prev);
@@ -125,10 +127,15 @@ public class MainActivity extends Activity {
 		if (selectedAnswer != null) {
 			setSelectedAnswer(selectedAnswer);
 		}
+		else {
+			explanationView.setText(question.getExplanation());
+			explanationView.setVisibility(View.GONE);
+		}
 	}
 	
 	private void setSelectedAnswer(String answer) {
 		currentQuestion.setSelectedAnswer(answer);
+		explanationView.setVisibility(View.VISIBLE);
 		for (int i = 0; i < choicesView.getChildCount(); ++i) {
 			Button button = (Button) choicesView.getChildAt(i);
 			if (button.getText().equals(answer)) {

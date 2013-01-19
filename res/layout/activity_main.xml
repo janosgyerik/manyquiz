@@ -50,6 +50,12 @@
                     style="@style/answerButton"
                     android:text="1023 bytes" />
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/explanation"
+                style="@style/explanation"
+                android:text="Although kilobyte is formally equal to 1000 bytes, a second definition and usage has historically been in practice in the field of computer science and IT, as 1024 bytes."
+                android:visibility="gone" />
         </LinearLayout>
     </ScrollView>
 

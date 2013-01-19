@@ -6,6 +6,8 @@ public interface IQuestion {
 	
 	String getCategory();
 	String getText();
+	String getExplanation();
+	
 	List<String> getChoices();
 	String getCorrectAnswer();
 	
