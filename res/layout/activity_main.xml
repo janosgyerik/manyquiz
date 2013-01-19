@@ -50,13 +50,15 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
-        <Button
+        <ImageButton
             style="@style/weightedButton"
-            android:text="prev" />
+            android:contentDescription="Previous"
+            android:src="@drawable/btn_prev" />
 
-        <Button
+        <ImageButton
             style="@style/weightedButton"
-            android:text="next" />
+            android:contentDescription="Next"
+            android:src="@drawable/btn_next" />
     </LinearLayout>
 
 </LinearLayout>
