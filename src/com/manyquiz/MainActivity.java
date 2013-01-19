@@ -91,13 +91,13 @@ public class MainActivity extends Activity {
 
 	private void updatePrevNext() {
 		if (currentQuestionIndex == 0) {
-			prevButton.setVisibility(View.GONE);
+			prevButton.setVisibility(View.INVISIBLE);
 			nextButton.setVisibility(View.VISIBLE);
 			prevButton.setEnabled(false);
 			nextButton.setEnabled(true);
 		} else if (currentQuestionIndex == questions.size() - 1) {
 			prevButton.setVisibility(View.VISIBLE);
-			nextButton.setVisibility(View.GONE);
+			nextButton.setVisibility(View.INVISIBLE);
 			prevButton.setEnabled(true);
 			nextButton.setEnabled(false);
 		} else {
