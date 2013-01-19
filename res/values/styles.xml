@@ -1,6 +1,8 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <style name="Theme.Light.NoTitleBar" parent="@android:style/Theme.Light.NoTitleBar"></style>
+    <style name="Theme.Light.NoTitleBar" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:buttonStyle">@style/customButton</item>
+    </style>
 
     <color name="headerBackgroundColor">#003366</color>
 
