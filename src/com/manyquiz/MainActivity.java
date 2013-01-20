@@ -139,15 +139,13 @@ public class MainActivity extends Activity {
 		explanationView.setVisibility(View.VISIBLE);
 		for (int i = 0; i < choicesView.getChildCount(); ++i) {
 			Button button = (Button) choicesView.getChildAt(i);
-			if (button.getText().equals(answer)) {
-				if (currentQuestion.isCorrect()) {
-					button.setBackgroundResource(R.drawable.btn_correct);
-				}
-				else {
-					button.setBackgroundResource(R.drawable.btn_incorrect);
-				}
-				button.setPadding(10, 15, 10, 15);
+			if (button.getText().equals(currentQuestion.getCorrectAnswer())) {
+				button.setBackgroundResource(R.drawable.btn_correct);
 			}
+			else if (button.getText().equals(answer)) {
+				button.setBackgroundResource(R.drawable.btn_incorrect);
+			}
+			button.setPadding(10, 15, 10, 15);
 			button.setEnabled(false);
 		}
 	}
