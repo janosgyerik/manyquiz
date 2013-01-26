@@ -13,7 +13,7 @@
 
         <TextView
             style="@style/mainHeader"
-            android:text="Quiz!" />
+            android:text="@string/app_name" />
     </RelativeLayout>
 
     <ScrollView style="@style/mainContent" >
