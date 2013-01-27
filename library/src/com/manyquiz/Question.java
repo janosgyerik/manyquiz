@@ -1,5 +1,7 @@
 package com.manyquiz;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Question implements IQuestion {
@@ -14,12 +16,14 @@ public class Question implements IQuestion {
 	private String selectedAnswer;
 
 	public Question(String category, String text, String explanation,
-			List<String> choices, int answer) {
+			String answer, List<String> decoyChoices) {
 		this.category = category;
 		this.text = text;
 		this.explanation = explanation;
-		this.choices = choices;
-		this.correctAnswer = choices.get(answer);
+		this.choices = new ArrayList<String>(decoyChoices);
+		this.choices.add(answer);
+		Collections.shuffle(choices);
+		this.correctAnswer = answer;
 	}
 
 	@Override

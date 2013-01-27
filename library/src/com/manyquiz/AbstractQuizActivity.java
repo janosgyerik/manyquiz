@@ -13,9 +13,11 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
-	
-    private static final String TAG = MainActivity.class.getSimpleName();
+public abstract class AbstractQuizActivity extends Activity {
+
+	private static final String TAG = AbstractQuizActivity.class.getSimpleName();
+
+	private QuizSQLiteOpenHelper helper;
 
 	private List<IQuestion> questions;
 	private IQuestion currentQuestion;
@@ -33,7 +35,9 @@ public class MainActivity extends Activity {
 		Log.d(TAG, "++onCreate");
 		setContentView(R.layout.activity_main);
 
-		IQuiz quiz = new ComputerQuiz();
+		helper = new QuizSQLiteOpenHelper(this);
+
+		IQuiz quiz = new DatabaseBackedQuiz(getHelper());
 		questions = quiz.pickRandomQuestions(15);
 
 		questionView = (TextView) findViewById(R.id.question);
@@ -44,8 +48,6 @@ public class MainActivity extends Activity {
 		prevButton.setOnClickListener(new PrevNextClickListener(-1));
 		nextButton = (ImageButton) findViewById(R.id.btn_next);
 		nextButton.setOnClickListener(new PrevNextClickListener(1));
-
-		// TODO handle next and previous
 
 		navigateToQuestion(0);
 	}
@@ -133,7 +135,7 @@ public class MainActivity extends Activity {
 			explanationView.setVisibility(View.GONE);
 		}
 	}
-	
+
 	private void setSelectedAnswer(String answer) {
 		currentQuestion.setSelectedAnswer(answer);
 		explanationView.setVisibility(View.VISIBLE);
@@ -161,4 +163,16 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
 	}
+
+	protected QuizSQLiteOpenHelper getHelper() {
+		return helper;
+	}
+
+	@Override  
+	protected void onDestroy() {
+		Log.d(TAG, "++onDestroy");
+		super.onDestroy();
+		helper.close();
+	}
+
 }
