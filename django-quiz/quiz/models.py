@@ -5,7 +5,7 @@ from django.db import models
 
 class Level(models.Model):
     name = models.CharField(max_length=80, unique=True)
-    level = models.IntegerField()
+    level = models.IntegerField(unique=True)
     created_dt = models.DateTimeField(default=datetime.now)
     updated_dt = models.DateTimeField(default=datetime.now)
 
