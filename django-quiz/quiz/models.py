@@ -3,28 +3,25 @@ from datetime import datetime
 from django.db import models
 
 
-class Quiz(models.Model):
+class Level(models.Model):
     name = models.CharField(max_length=80, unique=True)
+    level = models.IntegerField()
     created_dt = models.DateTimeField(default=datetime.now)
     updated_dt = models.DateTimeField(default=datetime.now)
 
     def __unicode__(self):
-        return self.name
+        return '%s (%d)' % (self.name, self.level)
 
 
 class Question(models.Model):
-    quiz = models.ForeignKey(Quiz)
     text = models.CharField(max_length=200, unique=True)
     category = models.CharField(max_length=80, blank=True)
-    difficulty = models.IntegerField(blank=True)
+    level = models.ForeignKey(Level)
     hint = models.TextField(blank=True)
     explanation = models.TextField(blank=True)
     is_active = models.BooleanField(default=True)
     created_dt = models.DateTimeField(default=datetime.now)
     updated_dt = models.DateTimeField(default=datetime.now)
-
-    class Meta:
-        unique_together = (('quiz', 'text',))
 
     def __unicode__(self):
         return self.text
