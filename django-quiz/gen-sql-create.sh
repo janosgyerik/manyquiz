@@ -2,7 +2,8 @@
 
 cd $(dirname "$0")
 
-./manage.py sql main | sed \
+# note: the schema is the same for all quiz
+./manage-computers.sh sql quiz | sed \
     -e 's/PRIMARY KEY/& AUTOINCREMENT/' \
     -e 's/NOT NULL/NULL/' \
     -e '/^BEGIN/d' \

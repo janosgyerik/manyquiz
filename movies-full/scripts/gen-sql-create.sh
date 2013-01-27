@@ -2,21 +2,14 @@
 
 cd $(dirname "$0")
 
-quiz_id=2
-db=../../django-quiz/sqlite3.db
+db=../../django-quiz/databases/movies.db
 sql=../assets/sql_create.sql
 
 ../../django-quiz/gen-sql-create.sh > $sql
 
-sqlite3 $db '.dump main_quiz' | grep INSERT >> $sql
-sqlite3 $db <<EOF | sed s/table/main_question/ >> $sql
-.mode insert
-select * from main_question where quiz_id = $quiz_id;
-EOF
-sqlite3 $db <<EOF | sed s/table/main_answer/ >> $sql
-.mode insert
-select a.* from main_answer a join main_question q on a.question_id = q.id where quiz_id = $quiz_id;
-EOF
+sqlite3 $db '.dump quiz_level' | grep INSERT >> $sql
+sqlite3 $db '.dump quiz_question' | grep INSERT >> $sql
+sqlite3 $db '.dump quiz_answer' | grep INSERT >> $sql
 
 cat <<EOF
 # How to connect to a sqlite database on Android
