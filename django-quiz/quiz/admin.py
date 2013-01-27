@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from main.models import Quiz
-from main.models import Question
-from main.models import Answer
+from quiz.models import Quiz
+from quiz.models import Question
+from quiz.models import Answer
 
 
 class QuizAdmin(admin.ModelAdmin):
