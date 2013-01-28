@@ -13,7 +13,14 @@
 
         <TextView
             style="@style/mainHeader"
+            android:layout_toLeftOf="@+id/lite_watermark"
             android:text="@string/app_name" />
+
+        <TextView
+            android:id="@id/lite_watermark"
+            style="@style/liteWatermark"
+            android:layout_alignParentRight="true"
+            android:visibility="gone" />
     </RelativeLayout>
 
     <ScrollView style="@style/mainContent" >

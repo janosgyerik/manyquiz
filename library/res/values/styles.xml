@@ -22,7 +22,13 @@
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
     </style>
-
+    
+    <style name="liteWatermark" parent="mainHeader">
+        <item name="android:text">(LITE)</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">#aaaaaa</item>
+    </style>
+    
     <style name="mainContent">
         <item name="android:layout_marginTop">4dp</item>
         <item name="android:layout_width">fill_parent</item>

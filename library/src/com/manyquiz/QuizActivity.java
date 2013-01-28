@@ -34,6 +34,13 @@ public class QuizActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		Log.d(TAG, "++onCreate");
 		setContentView(R.layout.activity_main);
+		
+		if (((QuizApplication)this.getApplication()).isLiteVersion()) {
+			findViewById(R.id.lite_watermark).setVisibility(View.VISIBLE);
+			
+			// TODO
+			// ... impose limitations of the lite version ...
+		}
 
 		helper = new QuizSQLiteOpenHelper(this);
 
