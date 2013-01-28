@@ -9,7 +9,7 @@
         android:targetSdkVersion="4" />
 
     <application
-        android:name="com.manyquiz.QuizApplication"
+        android:name="com.manyquiz.FullQuizApplication"
         android:icon="@drawable/launcher_main"
         android:label="@string/app_name"
         android:theme="@style/Theme.Light.NoTitleBar" >
