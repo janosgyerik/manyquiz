@@ -13,9 +13,9 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public abstract class AbstractQuizActivity extends Activity {
+public class QuizActivity extends Activity {
 
-	private static final String TAG = AbstractQuizActivity.class.getSimpleName();
+	private static final String TAG = QuizActivity.class.getSimpleName();
 
 	private QuizSQLiteOpenHelper helper;
 
