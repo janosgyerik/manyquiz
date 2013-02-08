@@ -9,18 +9,37 @@
         style="@style/mainHeaderWrapper"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="horizontal" >
 
         <TextView
+            android:id="@+id/title"
             style="@style/mainHeader"
-            android:layout_toLeftOf="@+id/lite_watermark"
+            android:layout_alignParentLeft="true"
             android:text="@string/app_name" />
 
         <TextView
-            android:id="@id/lite_watermark"
+            android:id="@+id/lite_watermark"
             style="@style/liteWatermark"
-            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/title"
             android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/questions_i"
+            style="@style/mainHeaderElement"
+            android:layout_toLeftOf="@+id/separator"
+            android:text="10" />
+
+        <TextView
+            android:id="@id/separator"
+            style="@style/mainHeaderElement"
+            android:layout_toLeftOf="@+id/questions_n"
+            android:text="/" />
+
+        <TextView
+            android:id="@id/questions_n"
+            style="@style/mainHeaderLastElement"
+            android:layout_alignParentRight="true"
+            android:text="15" />
     </RelativeLayout>
 
     <ScrollView style="@style/mainContent" >

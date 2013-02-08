@@ -13,22 +13,33 @@
     </style>
 
     <style name="mainHeader">
-        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@color/headerBackgroundColor</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:padding">10dp</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
     </style>
-    
-    <style name="liteWatermark" parent="mainHeader">
+
+    <style name="mainHeaderElement" parent="mainHeader">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+    </style>
+
+    <style name="mainHeaderLastElement" parent="mainHeaderElement">
+        <item name="android:paddingRight">10dp</item>
+    </style>
+
+    <style name="liteWatermark" parent="mainHeaderElement">
         <item name="android:text">(LITE)</item>
-        <item name="android:layout_width">wrap_content</item>
         <item name="android:textColor">#aaaaaa</item>
     </style>
-    
+
     <style name="mainContent">
         <item name="android:layout_marginTop">4dp</item>
         <item name="android:layout_width">fill_parent</item>
