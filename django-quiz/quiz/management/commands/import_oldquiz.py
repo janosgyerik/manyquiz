@@ -7,7 +7,11 @@ from quiz.models import Question, Answer, Level
 
 
 def get_level(difficulty):
-    level = Level.objects.get(level=difficulty)
+    try:
+        level = Level.objects.get(level=difficulty)
+    except Level.DoesNotExist:
+        level = Level(level=difficulty)
+        level.save()
     return level
 
 
