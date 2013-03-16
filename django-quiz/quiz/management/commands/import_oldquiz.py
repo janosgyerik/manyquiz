@@ -6,6 +6,10 @@ from django.core.management.base import BaseCommand
 from quiz.models import Question, Answer, Level
 
 
+def msg(text):
+    print '*', text
+
+
 def get_level(difficulty):
     try:
         level = Level.objects.get(level=difficulty)
@@ -59,6 +63,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         if options['reset']:
+            msg('reset: deleting all questions (and answers)')
             Question.objects.all().delete()
         for path in args:
             if os.path.isfile(path):
