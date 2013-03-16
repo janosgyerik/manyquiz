@@ -3,4 +3,4 @@ gen
 .DS_Store
 tmp
 *.pyc
-/django-quiz/databases/*.db
+/django-quiz/databases/*.db*
