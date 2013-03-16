@@ -33,8 +33,8 @@ def import_file(path):
                     #hint=None,
                     explanation=explanation,
                     )
-            question.save()
             print 'Question:', question
+            question.save()
             for ax in a1, a2, a3, a4:
                 answer = Answer(
                         question=question,
