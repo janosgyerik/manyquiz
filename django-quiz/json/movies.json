@@ -1,0 +1,198 @@
+[
+    {
+        "pk": 1, 
+        "model": "quiz.level", 
+        "fields": {
+            "created_dt": "2013-01-27T00:39:06", 
+            "updated_dt": "2013-01-27T00:39:06", 
+            "name": "Easy", 
+            "level": 1
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "quiz.question", 
+        "fields": {
+            "category": "stats", 
+            "updated_dt": "2013-01-26T15:05:22", 
+            "hint": "", 
+            "text": "Which movie was NOT directed by Christopher Nolan?", 
+            "explanation": "", 
+            "level": 1, 
+            "is_active": true, 
+            "created_dt": "2013-01-26T15:05:22"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "quiz.question", 
+        "fields": {
+            "category": "trivia", 
+            "updated_dt": "2013-01-26T15:14:19", 
+            "hint": "", 
+            "text": "What color was the Mazda MX5 Joe was driving in the movie Looper?", 
+            "explanation": "", 
+            "level": 1, 
+            "is_active": true, 
+            "created_dt": "2013-01-26T15:14:19"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "quiz.question", 
+        "fields": {
+            "category": "quotes", 
+            "updated_dt": "2013-01-26T15:15:30", 
+            "hint": "", 
+            "text": "From which movie is the quote: \"Time travel has not yet been invented, but thirty years from now it will have been.\"", 
+            "explanation": "", 
+            "level": 1, 
+            "is_active": true, 
+            "created_dt": "2013-01-26T15:15:30"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:08:18", 
+            "question": 1, 
+            "text": "Inception", 
+            "is_active": true, 
+            "is_correct": false, 
+            "created_dt": "2013-01-26T15:08:18"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:09:01", 
+            "question": 1, 
+            "text": "The Dark Knight", 
+            "is_active": true, 
+            "is_correct": false, 
+            "created_dt": "2013-01-26T15:09:01"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:09:43", 
+            "question": 1, 
+            "text": "Looper", 
+            "is_active": true, 
+            "is_correct": true, 
+            "created_dt": "2013-01-26T15:09:43"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:09:52", 
+            "question": 1, 
+            "text": "Batman Begins", 
+            "is_active": true, 
+            "is_correct": false, 
+            "created_dt": "2013-01-26T15:09:52"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:17:03", 
+            "question": 2, 
+            "text": "Red", 
+            "is_active": true, 
+            "is_correct": true, 
+            "created_dt": "2013-01-26T15:17:03"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:17:18", 
+            "question": 2, 
+            "text": "Blue", 
+            "is_active": true, 
+            "is_correct": false, 
+            "created_dt": "2013-01-26T15:17:18"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:17:30", 
+            "question": 2, 
+            "text": "Black", 
+            "is_active": true, 
+            "is_correct": false, 
+            "created_dt": "2013-01-26T15:17:30"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:17:39", 
+            "question": 2, 
+            "text": "Silver", 
+            "is_active": true, 
+            "is_correct": false, 
+            "created_dt": "2013-01-26T15:17:39"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:17:50", 
+            "question": 3, 
+            "text": "Back to the future", 
+            "is_active": true, 
+            "is_correct": false, 
+            "created_dt": "2013-01-26T15:17:50"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:18:09", 
+            "question": 3, 
+            "text": "Back to the future 2", 
+            "is_active": true, 
+            "is_correct": false, 
+            "created_dt": "2013-01-26T15:18:09"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:18:24", 
+            "question": 3, 
+            "text": "Looper", 
+            "is_active": true, 
+            "is_correct": true, 
+            "created_dt": "2013-01-26T15:18:24"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:18:37", 
+            "question": 3, 
+            "text": "The time traveler's wife", 
+            "is_active": true, 
+            "is_correct": false, 
+            "created_dt": "2013-01-26T15:18:37"
+        }
+    }
+]

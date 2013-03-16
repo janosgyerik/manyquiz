@@ -1,0 +1,218 @@
+[
+    {
+        "pk": 1, 
+        "model": "quiz.level", 
+        "fields": {
+            "created_dt": "2013-01-27T00:42:27", 
+            "updated_dt": "2013-01-27T00:42:27", 
+            "name": "Hobbyist/Professional", 
+            "level": 1
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "quiz.level", 
+        "fields": {
+            "created_dt": "2013-01-27T00:42:43", 
+            "updated_dt": "2013-01-27T00:42:43", 
+            "name": "Expert", 
+            "level": 2
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "quiz.level", 
+        "fields": {
+            "created_dt": "2013-01-27T00:42:51", 
+            "updated_dt": "2013-01-27T00:42:51", 
+            "name": "Nightmare!", 
+            "level": 5
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "quiz.question", 
+        "fields": {
+            "category": "software", 
+            "updated_dt": "2013-01-26T15:19:21", 
+            "hint": "", 
+            "text": "Which is not an Operating System?", 
+            "explanation": "Microsoft Office XP is a suite of desktop applications, including text editor, spreadsheet editor, etc, NOT an operating system.", 
+            "level": 1, 
+            "is_active": true, 
+            "created_dt": "2013-01-26T15:19:21"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "quiz.question", 
+        "fields": {
+            "category": "programming", 
+            "updated_dt": "2013-01-26T15:19:59", 
+            "hint": "", 
+            "text": "How many bytes is one kilobyte?", 
+            "explanation": "Although kilobyte is formally equal to 1000 bytes, a second definition and usage of 1024 bytes has historically been in practice in the field of computer science and IT.", 
+            "level": 1, 
+            "is_active": true, 
+            "created_dt": "2013-01-26T15:19:59"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "quiz.question", 
+        "fields": {
+            "category": "programming", 
+            "updated_dt": "2013-01-26T15:24:20", 
+            "hint": "", 
+            "text": "What type of data structure is a queue?", 
+            "explanation": "First In First Out. Picture a queue of people -- the first person (data item) in the queue is the first to leave the queue at the front. Additional people (data items) join at the back of the queue.", 
+            "level": 1, 
+            "is_active": true, 
+            "created_dt": "2013-01-26T15:24:20"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:26:59", 
+            "question": 6, 
+            "text": "FIFO", 
+            "is_active": true, 
+            "is_correct": true, 
+            "created_dt": "2013-01-26T15:26:59"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:27:26", 
+            "question": 6, 
+            "text": "LIFO", 
+            "is_active": true, 
+            "is_correct": false, 
+            "created_dt": "2013-01-26T15:27:26"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:27:38", 
+            "question": 6, 
+            "text": "FILO", 
+            "is_active": true, 
+            "is_correct": false, 
+            "created_dt": "2013-01-26T15:27:38"
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:28:07", 
+            "question": 6, 
+            "text": "LILO", 
+            "is_active": true, 
+            "is_correct": false, 
+            "created_dt": "2013-01-26T15:28:07"
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:28:21", 
+            "question": 5, 
+            "text": "1000 bytes", 
+            "is_active": true, 
+            "is_correct": false, 
+            "created_dt": "2013-01-26T15:28:21"
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:29:10", 
+            "question": 5, 
+            "text": "100 bytes", 
+            "is_active": true, 
+            "is_correct": false, 
+            "created_dt": "2013-01-26T15:29:10"
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:29:21", 
+            "question": 5, 
+            "text": "1024 bytes", 
+            "is_active": true, 
+            "is_correct": true, 
+            "created_dt": "2013-01-26T15:29:21"
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:29:32", 
+            "question": 5, 
+            "text": "1023 bytes", 
+            "is_active": true, 
+            "is_correct": false, 
+            "created_dt": "2013-01-26T15:29:32"
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:29:40", 
+            "question": 4, 
+            "text": "HP-UX", 
+            "is_active": true, 
+            "is_correct": false, 
+            "created_dt": "2013-01-26T15:29:40"
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:29:55", 
+            "question": 4, 
+            "text": "Windows 98", 
+            "is_active": true, 
+            "is_correct": false, 
+            "created_dt": "2013-01-26T15:29:55"
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:30:03", 
+            "question": 4, 
+            "text": "Microsoft Office XP", 
+            "is_active": true, 
+            "is_correct": true, 
+            "created_dt": "2013-01-26T15:30:03"
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "quiz.answer", 
+        "fields": {
+            "updated_dt": "2013-01-26T15:30:17", 
+            "question": 4, 
+            "text": "RedHat Linux", 
+            "is_active": true, 
+            "is_correct": false, 
+            "created_dt": "2013-01-26T15:30:17"
+        }
+    }
+]
