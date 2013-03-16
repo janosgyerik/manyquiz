@@ -52,16 +52,14 @@ def import_file(path):
 class Command(BaseCommand):
     help = 'Import old quiz data'
 
-    ''' sample
     option_list = BaseCommand.option_list + (
-            make_option('--parent', '-p', default=default_parent,
-                help='Specify the parent Meta'),
-            make_option('--create-parent', '-c', action='store_true',
-                help='Create the parent Meta if does not exist'),
+            make_option('--reset', action='store_true',
+                help='Reset the database before import'),
             )
-    '''
 
     def handle(self, *args, **options):
+        if options['reset']:
+            Question.objects.all().delete()
         for path in args:
             if os.path.isfile(path):
                 import_file(path)
