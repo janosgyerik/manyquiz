@@ -6,7 +6,7 @@
             "created_dt": "2013-01-27T00:42:27", 
             "updated_dt": "2013-01-27T00:42:27", 
             "name": "Hobbyist/Professional", 
-            "level": 1
+            "level": 2
         }
     }, 
     {
@@ -16,7 +16,7 @@
             "created_dt": "2013-01-27T00:42:43", 
             "updated_dt": "2013-01-27T00:42:43", 
             "name": "Expert", 
-            "level": 2
+            "level": 3
         }
     }, 
     {
@@ -26,7 +26,7 @@
             "created_dt": "2013-01-27T00:42:51", 
             "updated_dt": "2013-01-27T00:42:51", 
             "name": "Nightmare!", 
-            "level": 5
+            "level": 4
         }
     }, 
     {
