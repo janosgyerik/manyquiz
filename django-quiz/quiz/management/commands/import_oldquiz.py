@@ -14,7 +14,7 @@ def get_level(difficulty):
     try:
         level = Level.objects.get(level=difficulty)
     except Level.DoesNotExist:
-        level = Level(level=difficulty)
+        level = Level(level=difficulty, name='Level %s' % difficulty)
         level.save()
     return level
 
