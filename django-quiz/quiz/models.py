@@ -14,7 +14,7 @@ class Level(models.Model):
 
 
 class Question(models.Model):
-    text = models.CharField(max_length=200, unique=True)
+    text = models.CharField(max_length=200)
     category = models.CharField(max_length=80, blank=True)
     level = models.ForeignKey(Level)
     hint = models.TextField(blank=True)
@@ -22,6 +22,9 @@ class Question(models.Model):
     is_active = models.BooleanField(default=True)
     created_dt = models.DateTimeField(default=datetime.now)
     updated_dt = models.DateTimeField(default=datetime.now)
+
+    class Meta:
+        unique_together = (('text', 'level',))
 
     def __unicode__(self):
         return self.text
