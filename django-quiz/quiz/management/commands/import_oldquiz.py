@@ -34,7 +34,7 @@ def import_file(path):
             try:
                 question = Question.objects.get(
                         text=text,
-                        #category=
+                        category=image,
                         level=level,
                         #hint=None,
                         explanation=explanation,
@@ -45,7 +45,7 @@ def import_file(path):
                 pass
             question = Question(
                     text=text,
-                    #category=
+                    category=image,
                     level=get_level(difficulty),
                     #hint=None,
                     explanation=explanation,
