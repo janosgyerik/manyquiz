@@ -6,8 +6,8 @@ from django.core.management.base import BaseCommand
 from quiz.models import Question, Answer, Level
 
 
-def msg(text):
-    print '*', text
+def msg(*args):
+    print '*', ' '.join([str(x) for x in args])
 
 
 def get_level(difficulty):
@@ -30,6 +30,19 @@ def import_file(path):
             (text, a1, a2, a3, a4, a0,
              explanation, difficulty, image, tmp) = data
             data = []
+            level = get_level(difficulty)
+            try:
+                question = Question.objects.get(
+                        text=text,
+                        #category=
+                        level=level,
+                        #hint=None,
+                        explanation=explanation,
+                        )
+                msg('skipping already imported:', question)
+                continue
+            except Question.DoesNotExist:
+                pass
             question = Question(
                     text=text,
                     #category=
