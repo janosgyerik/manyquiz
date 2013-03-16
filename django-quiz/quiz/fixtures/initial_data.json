@@ -9,12 +9,20 @@
             "is_active": true, 
             "is_superuser": true, 
             "is_staff": true, 
-            "last_login": "2013-01-27 00:25:29", 
+            "last_login": "2013-01-27T00:25:29", 
             "groups": [], 
             "user_permissions": [], 
             "password": "sha1$40c19$7f8b2bb9be6df68fe27a26fe7e4ba0e2f99e8a2e", 
             "email": "janos.gyerik@gmail.com", 
-            "date_joined": "2013-01-27 00:25:17"
+            "date_joined": "2013-01-27T00:25:17"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "sites.site", 
+        "fields": {
+            "domain": "example.com", 
+            "name": "example.com"
         }
     }
 ]
