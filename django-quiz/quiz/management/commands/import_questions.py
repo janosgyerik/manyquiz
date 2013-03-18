@@ -5,9 +5,15 @@ from django.core.management.base import BaseCommand
 
 from quiz.models import Question, Answer, Level
 
+END_MARKER = 'END'
+
 
 def msg(*args):
-    print '*', ' '.join([str(x) for x in args])
+    print '[*]', ' '.join([str(x) for x in args])
+
+
+def warn(*args):
+    print '[W]', ' '.join([str(x) for x in args])
 
 
 def get_level(difficulty):
@@ -28,7 +34,13 @@ def import_file(path, dry_run=False):
         i += 1
         if i % 10 == 0:
             (text, a1, a2, a3, a4, a0,
-             explanation, difficulty, image, tmp) = data
+             explanation, difficulty, image, marker) = data
+            if marker != END_MARKER:
+                warn('end marker expected but found: "%s"' % marker)
+                warn('current segment:')
+                print '\n'.join(data)
+                warn('aborting')
+                return
             data = []
             level = get_level(difficulty)
             try:
