@@ -32,8 +32,8 @@ def import_file(path, dry_run=False):
     for line in instream:
         data.append(line.strip())
         i += 1
-        if i % 10 == 0:
-            (text, a1, a2, a3, a4, a0,
+        if i % 9 == 0:
+            (text, a1, a2, a3, a4,
              explanation, difficulty, image, marker) = data
             if marker != END_MARKER:
                 warn('end marker expected but found: "%s"' % marker)
@@ -65,18 +65,15 @@ def import_file(path, dry_run=False):
             print 'Question:', question
             if not dry_run:
                 question.save()
-            for ax in a1, a2, a3, a4:
-                answer = Answer(
-                        question=question,
-                        text=ax,
-                        is_correct=ax == a0,
-                        )
+            answer = Answer(question=question, text=a1, is_correct=True)
+            print '   *', answer
+            if not dry_run:
+                answer.save()
+            for ax in a2, a3, a4:
+                answer = Answer(question=question, text=ax)
+                print '    ', answer
                 if not dry_run:
                     answer.save()
-                if answer.is_correct:
-                    print '   *', answer
-                else:
-                    print '    ', answer
             print
 
 
