@@ -13,7 +13,7 @@ def msg(*args):
 
 
 def warn(*args):
-    print '[W]', ' '.join([str(x) for x in args])
+    print '[WARNING]', ' '.join([str(x) for x in args])
 
 
 def get_level(difficulty):
