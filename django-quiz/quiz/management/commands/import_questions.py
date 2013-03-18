@@ -19,7 +19,7 @@ def get_level(difficulty):
     return level
 
 
-def import_file(path):
+def import_file(path, dry_run=False):
     i = 0
     data = []
     instream = open(path)
@@ -51,14 +51,16 @@ def import_file(path):
                     explanation=explanation,
                     )
             print 'Question:', question
-            question.save()
+            if not dry_run:
+                question.save()
             for ax in a1, a2, a3, a4:
                 answer = Answer(
                         question=question,
                         text=ax,
                         is_correct=ax == a0,
                         )
-                answer.save()
+                if not dry_run:
+                    answer.save()
                 if answer.is_correct:
                     print '   *', answer
                 else:
@@ -72,6 +74,8 @@ class Command(BaseCommand):
     option_list = BaseCommand.option_list + (
             make_option('--reset', action='store_true',
                 help='Reset the database before import'),
+            make_option('--dry-run', '-n', action='store_true',
+                help='Do not really import, just print what would happen'),
             )
 
     def handle(self, *args, **options):
@@ -80,7 +84,7 @@ class Command(BaseCommand):
             Question.objects.all().delete()
         for path in args:
             if os.path.isfile(path):
-                import_file(path)
+                import_file(path, options['dry_run'])
 
 
 # eof
