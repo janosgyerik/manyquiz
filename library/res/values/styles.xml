@@ -47,6 +47,13 @@
         <item name="android:layout_weight">1</item>
     </style>
 
+    <style name="radioButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#222222</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+        
     <style name="button" parent="@android:style/Widget.Button">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -56,6 +63,7 @@
         <item name="android:paddingRight">10dp</item>
         <item name="android:background">@drawable/btn_default</item>
         <item name="android:textColor">#222222</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="wideButton" parent="button">
@@ -82,6 +90,14 @@
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
     </style>
+    
+    <style name="introduction">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>    
 
     <style name="explanation">
         <item name="android:layout_width">wrap_content</item>
@@ -91,5 +107,5 @@
     </style>
 
     <style name="answerButton" parent="wideButton"></style>
-
+	<style name="difficultyButton" parent="wideButton"></style>
 </resources>

@@ -27,7 +27,7 @@
             android:id="@+id/questions_i"
             style="@style/mainHeaderElement"
             android:layout_toLeftOf="@+id/separator"
-            android:text="10" />
+            android:text="0" />
 
         <TextView
             android:id="@id/separator"
@@ -39,7 +39,7 @@
             android:id="@id/questions_n"
             style="@style/mainHeaderLastElement"
             android:layout_alignParentRight="true"
-            android:text="15" />
+            android:text="0" />
     </RelativeLayout>
 
     <ScrollView style="@style/mainContent" >
