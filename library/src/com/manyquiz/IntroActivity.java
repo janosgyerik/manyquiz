@@ -1,6 +1,8 @@
 package com.manyquiz; 
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -103,9 +105,6 @@ public class IntroActivity extends Activity {
 			return true;
 		}
 		if (itemId == R.id.menu_quit) {
-			Toast.makeText(getBaseContext(), "Coming soon...", Toast.LENGTH_LONG).show();
-			return true;
-			/*
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setMessage(R.string.msg_quit)
 			.setCancelable(true)
@@ -120,7 +119,6 @@ public class IntroActivity extends Activity {
 				}
 			}).show();
 			return true;
-			*/
 		}
 		return false;
 	}
