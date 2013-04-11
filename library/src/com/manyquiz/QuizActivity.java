@@ -1,4 +1,4 @@
-package com.manyquiz;
+package com.manyquiz; 
 
 import java.util.List;
 
@@ -27,6 +27,8 @@ public class QuizActivity extends Activity {
 	private static final int GAME_MODE_EXPERT = 3;
 	private static final int GAME_MODE_NIGHTMARE = 4;
 	private static final int GAME_MODE_SUDDEN_DEATH = 5;
+	
+	public static final String GAME_MODE = "gameMode";
 	
 	private static final String TAG = QuizActivity.class.getSimpleName();
 
@@ -62,7 +64,7 @@ public class QuizActivity extends Activity {
 		}
 
 		Bundle bundle = getIntent().getExtras();
-		gameMode = bundle.getInt("gameMode");
+		gameMode = bundle.getInt(GAME_MODE);
 		numberOfQuestionsToAsk = getNumberOfQuestionsToAsk();
 		
 		helper = new QuizSQLiteOpenHelper(this);
@@ -192,11 +194,11 @@ public class QuizActivity extends Activity {
 		}
 	}
 	
-	private int getNumberOfQuestionsToAsk(){
-		if (gameMode == GAME_MODE_SUDDEN_DEATH){
+	private int getNumberOfQuestionsToAsk() {
+		if (gameMode == GAME_MODE_SUDDEN_DEATH) {
 			return NUMBER_OF_QUESTIONS_SUDDEN_DEATH;
 		}
-		else{
+		else {
 			return NUMBER_OF_QUESTIONS_STANDARD;
 		}
 	}
@@ -205,8 +207,6 @@ public class QuizActivity extends Activity {
 		updateCurrentQuestion(index);
 		updatePrevNext();
 		updateQuestion();
-		
-		//Show score after this answer is given
 		updateScoreDisplay(index);
 		
 	}

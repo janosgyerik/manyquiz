@@ -13,7 +13,7 @@ import android.widget.RadioButton;
 public class IntroActivity extends Activity {
 
 	private static final String TAG = IntroActivity.class.getSimpleName();
-
+	
 	private int gameMode = 0; //difficulty/mode
 
 	private Button btnStartQuiz;
@@ -50,13 +50,13 @@ public class IntroActivity extends Activity {
 		@Override
 		public void onClick(View arg0) {
 			gameMode = getSelectedDifficulty();
-			
-			Bundle bundle = new Bundle();
-			bundle.putInt("gameMode", gameMode);
 
-			Intent intent = new Intent(IntroActivity.this, QuizActivity.class); //intent for quiz activity
+			Bundle bundle = new Bundle();
+			bundle.putInt(QuizActivity.GAME_MODE, gameMode);
+
+			Intent intent = new Intent(IntroActivity.this, QuizActivity.class);
 			intent.putExtras(bundle);
-			startActivity(intent); //start quiz activity
+			startActivity(intent);
 		}
 	}
 
@@ -67,16 +67,16 @@ public class IntroActivity extends Activity {
 		RadioButton option5 = (RadioButton) findViewById(R.id.radio_difficulty5);
 
 		//Check which difficulty radio button was selected
-		if(option2.isChecked()==true){
+		if (option2.isChecked() == true) {
 			gameMode = 2;
 		}
-		if(option3.isChecked()==true){
+		else if (option3.isChecked() == true) {
 			gameMode = 3;
 		}
-		if(option4.isChecked()==true){
+		else if (option4.isChecked() == true) {
 			gameMode = 4;
 		}
-		if(option5.isChecked()==true){
+		else if (option5.isChecked() == true) {
 			gameMode = 5;
 		}
 		return gameMode;
