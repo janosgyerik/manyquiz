@@ -38,16 +38,6 @@ public class IntroActivity extends Activity {
 
 		btnStartQuiz = (Button) findViewById(R.id.btn_startQuiz);
 		btnStartQuiz.setOnClickListener(new NextClickListener());
-		btnExit = (Button) findViewById(R.id.btn_exit);
-		btnExit.setOnClickListener(new ExitClickListener());
-	}
-
-	class ExitClickListener implements OnClickListener{
-
-		@Override
-		public void onClick(View v) {
-			finish();	
-		}
 	}
 
 	class NextClickListener implements OnClickListener {
