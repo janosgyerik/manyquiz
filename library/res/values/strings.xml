@@ -2,7 +2,11 @@
 <resources>
 
     <string name="app_name">Computer Quiz</string>
+    
+    <string name="menu_about">Info</string>
     <string name="menu_settings">Settings</string>
+	<string name="menu_quit">Quit</string>
+    
     <string name="title_activity_main">Computer Quiz</string>
     <string name="introduction">Welcome to the Computer Quiz - please select your difficulty below:</string>
     <string name="difficulty2">Hobbyist/Professional</string>

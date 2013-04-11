@@ -208,7 +208,6 @@ public class QuizActivity extends Activity {
 		updatePrevNext();
 		updateQuestion();
 		updateScoreDisplay(index);
-		
 	}
 
 	@Override
