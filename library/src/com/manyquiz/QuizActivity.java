@@ -1,4 +1,4 @@
-package com.manyquiz;
+package com.manyquiz; 
 
 import java.util.List;
 
@@ -15,6 +15,21 @@ import android.widget.TextView;
 
 public class QuizActivity extends Activity {
 
+	private static final int NUMBER_OF_QUESTIONS_STANDARD = 15;
+	private static final int NUMBER_OF_QUESTIONS_SUDDEN_DEATH = 100;
+	private static final int BTN_PADDING_LEFT = 10;
+	private static final int BTN_PADDING_TOP = 15;
+	private static final int BTN_PADDING_RIGHT = 10;
+	private static final int BTN_PADDING_BOTTOM= 15;
+	
+	private static final int GAME_MODE_BEGINNER = 1;
+	private static final int GAME_MODE_PROFESSIONAL = 2;
+	private static final int GAME_MODE_EXPERT = 3;
+	private static final int GAME_MODE_NIGHTMARE = 4;
+	private static final int GAME_MODE_SUDDEN_DEATH = 5;
+	
+	public static final String GAME_MODE = "gameMode";
+	
 	private static final String TAG = QuizActivity.class.getSimpleName();
 
 	private QuizSQLiteOpenHelper helper;
@@ -22,12 +37,18 @@ public class QuizActivity extends Activity {
 	private List<IQuestion> questions;
 	private IQuestion currentQuestion;
 	private int currentQuestionIndex = 0;
-
+	private int score = 0;
+	private int gameMode = 0;
+	private int numberOfQuestionsToAsk = 0;
+	private int index = 0;
+	
 	private TextView questionView;
 	private TextView explanationView;
 	private LinearLayout choicesView;
 	private ImageButton prevButton;
 	private ImageButton nextButton;
+	private TextView questions_i;
+	private TextView questions_n;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -42,11 +63,15 @@ public class QuizActivity extends Activity {
 			// ... impose limitations of the lite version ...
 		}
 
+		Bundle bundle = getIntent().getExtras();
+		gameMode = bundle.getInt(GAME_MODE);
+		numberOfQuestionsToAsk = getNumberOfQuestionsToAsk();
+		
 		helper = new QuizSQLiteOpenHelper(this);
 
 		IQuiz quiz = new DatabaseBackedQuiz(getHelper());
-		questions = quiz.pickRandomQuestions(15);
-
+		questions = quiz.pickRandomQuestions(numberOfQuestionsToAsk);
+		
 		questionView = (TextView) findViewById(R.id.question);
 		explanationView = (TextView) findViewById(R.id.explanation);
 		choicesView = (LinearLayout) findViewById(R.id.choices);
@@ -55,8 +80,11 @@ public class QuizActivity extends Activity {
 		prevButton.setOnClickListener(new PrevNextClickListener(-1));
 		nextButton = (ImageButton) findViewById(R.id.btn_next);
 		nextButton.setOnClickListener(new PrevNextClickListener(1));
+		
+		questions_i = (TextView) findViewById(R.id.questions_i);
+		questions_n = (TextView) findViewById(R.id.questions_n);
 
-		navigateToQuestion(0);
+		navigateToQuestion(index);
 	}
 
 	class PrevNextClickListener implements OnClickListener {
@@ -97,6 +125,11 @@ public class QuizActivity extends Activity {
 		}
 		currentQuestion = questions.get(currentQuestionIndex);
 	}
+	
+	private void updateScoreDisplay(int index) {
+		questions_i.setText(Integer.toString(index+1));
+		questions_n.setText(Integer.toString(numberOfQuestionsToAsk));
+	}	
 
 	private void updatePrevNext() {
 		if (currentQuestionIndex == 0) {
@@ -128,7 +161,7 @@ public class QuizActivity extends Activity {
 		for (String choice : question.getChoices()) {
 			Button button = new Button(this);
 			button.setText(choice);
-			button.setPadding(10, 15, 10, 15);
+			button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP, BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
 			if (selectedAnswer == null) {
 				button.setOnClickListener(new ChoiceClickListener(choice));
 			}
@@ -150,12 +183,23 @@ public class QuizActivity extends Activity {
 			Button button = (Button) choicesView.getChildAt(i);
 			if (button.getText().equals(currentQuestion.getCorrectAnswer())) {
 				button.setBackgroundResource(R.drawable.btn_correct);
+				score++;
 			}
 			else if (button.getText().equals(answer)) {
 				button.setBackgroundResource(R.drawable.btn_incorrect);
 			}
-			button.setPadding(10, 15, 10, 15);
+			
+			button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP, BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
 			button.setEnabled(false);
+		}
+	}
+	
+	private int getNumberOfQuestionsToAsk() {
+		if (gameMode == GAME_MODE_SUDDEN_DEATH) {
+			return NUMBER_OF_QUESTIONS_SUDDEN_DEATH;
+		}
+		else {
+			return NUMBER_OF_QUESTIONS_STANDARD;
 		}
 	}
 
@@ -163,6 +207,8 @@ public class QuizActivity extends Activity {
 		updateCurrentQuestion(index);
 		updatePrevNext();
 		updateQuestion();
+		updateScoreDisplay(index);
+		
 	}
 
 	@Override
@@ -182,4 +228,4 @@ public class QuizActivity extends Activity {
 		helper.close();
 	}
 
-}
+} //end of activity class
