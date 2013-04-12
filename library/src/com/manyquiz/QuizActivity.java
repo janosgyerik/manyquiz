@@ -2,7 +2,9 @@ package com.manyquiz;
 
 import java.util.List;
 
+import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -12,6 +14,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.google.ads.AdRequest;
+import com.google.ads.AdSize;
+import com.google.ads.AdView;
 
 public class QuizActivity extends Activity {
 
@@ -28,12 +34,13 @@ public class QuizActivity extends Activity {
 	private static final int GAME_MODE_NIGHTMARE = 4;
 	private static final int GAME_MODE_SUDDEN_DEATH = 5;
 	
+	public static final String ADMOB_UNIT_ID = "a14b9eac992329e";
+	
 	public static final String GAME_MODE = "gameMode";
 	
 	private static final String TAG = QuizActivity.class.getSimpleName();
 
 	private QuizSQLiteOpenHelper helper;
-
 	private List<IQuestion> questions;
 	private IQuestion currentQuestion;
 	private int currentQuestionIndex = 0;
@@ -42,6 +49,7 @@ public class QuizActivity extends Activity {
 	private int numberOfQuestionsToAsk = 0;
 	private int index = 0;
 	
+	private AdView adView;
 	private TextView questionView;
 	private TextView explanationView;
 	private LinearLayout choicesView;
@@ -61,6 +69,8 @@ public class QuizActivity extends Activity {
 			
 			// TODO
 			// ... impose limitations of the lite version ...
+			
+			displayQuizAds();
 		}
 
 		Bundle bundle = getIntent().getExtras();
@@ -207,8 +217,16 @@ public class QuizActivity extends Activity {
 		updateCurrentQuestion(index);
 		updatePrevNext();
 		updateQuestion();
-		updateScoreDisplay(index);
-		
+		updateScoreDisplay(index);	
+	}
+	
+	public void displayQuizAds() {
+	    adView = new AdView(this, AdSize.BANNER, ADMOB_UNIT_ID);
+	    adView.setBackgroundColor(Color.BLACK);
+	    
+	    LinearLayout layout = (LinearLayout)findViewById(R.id.lowerQuizScreen);
+	    layout.addView(adView);
+	    adView.loadAd(new AdRequest());
 	}
 
 	@Override

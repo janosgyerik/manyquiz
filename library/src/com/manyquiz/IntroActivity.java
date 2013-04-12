@@ -2,13 +2,19 @@ package com.manyquiz;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
+
+import com.google.ads.AdRequest;
+import com.google.ads.AdSize;
+import com.google.ads.AdView;
 
 public class IntroActivity extends Activity {
 
@@ -18,7 +24,8 @@ public class IntroActivity extends Activity {
 
 	private Button btnStartQuiz;
 	private Button btnExit;
-
+	private AdView adView;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -30,6 +37,8 @@ public class IntroActivity extends Activity {
 
 			// TODO
 			// ... impose limitations of the lite version ...
+			
+			displayIntroAds();
 		}
 
 		btnStartQuiz = (Button) findViewById(R.id.btn_startQuiz);
@@ -81,7 +90,15 @@ public class IntroActivity extends Activity {
 		}
 		return gameMode;
 	}
-
+	
+	public void displayIntroAds() {
+	    adView = new AdView(this, AdSize.BANNER, QuizActivity.ADMOB_UNIT_ID);
+	    adView.setBackgroundColor(Color.BLACK);
+	    
+	    LinearLayout layout = (LinearLayout)findViewById(R.id.lowerIntroScreen);
+	    layout.addView(adView);
+	    adView.loadAd(new AdRequest());
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

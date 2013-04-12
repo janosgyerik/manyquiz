@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    			xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -72,12 +73,12 @@
                         android:checked="false"
                         android:text="@string/difficulty5" />
                 </RadioGroup>
-
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
     <LinearLayout
+        android:id = "@+id/lowerIntroScreen"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
@@ -85,11 +86,12 @@
         <Button
             android:id="@+id/btn_startQuiz"
             style="@style/wideButton"
-            android:text="@string/startQuiz"/>
+            android:text="@string/startQuiz" />
+
         <Button
             android:id="@+id/btn_exit"
             style="@style/wideButton"
-            android:text="@string/exit"/>
+            android:text="@string/exit" />
     </LinearLayout>
 
 </LinearLayout>
