@@ -38,10 +38,15 @@ public class IntroActivity extends Activity {
 		helper = new QuizSQLiteOpenHelper(this);
 
 		levelChoices = (RadioGroup) findViewById(R.id.level_choices);
+		boolean isFirst = true;
 		for (Level level : helper.getLevels()) {
 			RadioButton levelOption = new RadioButton(this);
 			levelOption.setText(level.getName());
 			levelOption.setTag(level);
+			if (isFirst) {
+				levelOption.setChecked(true);
+				isFirst = false;
+			}
 			levelChoices.addView(levelOption);
 		}
 		
