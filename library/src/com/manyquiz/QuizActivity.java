@@ -22,7 +22,7 @@ public class QuizActivity extends Activity {
 	private static final int BTN_PADDING_RIGHT = 10;
 	private static final int BTN_PADDING_BOTTOM = 15;
 	
-	private static final int GAME_MODE_SUDDEN_DEATH = 5;
+	private static final int GAME_MODE_SUDDEN_DEATH = 0;
 	
 	public static final String GAME_MODE = "gameMode";
 	

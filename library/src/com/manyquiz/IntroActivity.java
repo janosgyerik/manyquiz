@@ -49,6 +49,10 @@ public class IntroActivity extends Activity {
 			}
 			levelChoices.addView(levelOption);
 		}
+		RadioButton suddenDeathOption = new RadioButton(this);
+		suddenDeathOption.setText(getString(R.string.option_sudden_death));
+		suddenDeathOption.setTag(new SuddenDeathLevel());
+		levelChoices.addView(suddenDeathOption);
 		
 		btnStartQuiz = (Button) findViewById(R.id.btn_startQuiz);
 		btnStartQuiz.setOnClickListener(new NextClickListener());
