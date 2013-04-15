@@ -12,41 +12,35 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+        <TextView
+            android:id="@+id/title"
+            style="@style/mainHeader"
+            android:layout_alignParentLeft="true"
+            android:text="@string/app_name" />
 
-            <TextView
-                android:id="@+id/title"
-                style="@style/mainHeader"
-                android:layout_alignParentLeft="true"
-                android:text="@string/app_name" />
+        <TextView
+            android:id="@+id/lite_watermark"
+            style="@style/liteWatermark"
+            android:layout_toRightOf="@id/title"
+            android:visibility="gone" />
 
-            <TextView
-                android:id="@+id/lite_watermark"
-                style="@style/liteWatermark"
-                android:layout_toRightOf="@id/title"
-                android:visibility="gone" />
+        <TextView
+            android:id="@+id/questions_i"
+            style="@style/mainHeaderElement"
+            android:layout_toLeftOf="@+id/separator"
+            android:text="0" />
 
-            <TextView
-                android:id="@+id/questions_i"
-                style="@style/mainHeaderElement"
-                android:layout_toLeftOf="@+id/separator"
-                android:text="0" />
+        <TextView
+            android:id="@id/separator"
+            style="@style/mainHeaderElement"
+            android:layout_toLeftOf="@+id/questions_n"
+            android:text="/" />
 
-            <TextView
-                android:id="@id/separator"
-                style="@style/mainHeaderElement"
-                android:layout_toLeftOf="@+id/questions_n"
-                android:text="/" />
-
-            <TextView
-                android:id="@id/questions_n"
-                style="@style/mainHeaderLastElement"
-                android:layout_alignParentRight="true"
-                android:text="0" />
-        </RelativeLayout>
+        <TextView
+            android:id="@id/questions_n"
+            style="@style/mainHeaderLastElement"
+            android:layout_alignParentRight="true"
+            android:text="0" />
     </RelativeLayout>
 
     <ScrollView style="@style/mainContent" >
@@ -95,32 +89,26 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/btn_prev"
+            style="@style/weightedButton"
+            android:contentDescription="Previous"
+            android:src="@drawable/btn_prev" />
+
+        <ImageButton
+            android:id="@+id/btn_next"
+            style="@style/weightedButton"
+            android:contentDescription="Next"
+            android:src="@drawable/btn_next" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/googleAdMobAds"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical" >
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-
-            <ImageButton
-                android:id="@+id/btn_prev"
-                style="@style/weightedButton"
-                android:contentDescription="Previous"
-                android:src="@drawable/btn_prev" />
-
-            <ImageButton
-                android:id="@+id/btn_next"
-                style="@style/weightedButton"
-                android:contentDescription="Next"
-                android:src="@drawable/btn_next" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lowerQuizScreen"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
-        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

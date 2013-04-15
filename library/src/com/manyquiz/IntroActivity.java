@@ -1,6 +1,5 @@
 package com.manyquiz; 
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -16,7 +15,7 @@ import com.google.ads.AdRequest;
 import com.google.ads.AdSize;
 import com.google.ads.AdView;
 
-public class IntroActivity extends Activity {
+public class IntroActivity extends AdMobActivity {
 
 	private static final String TAG = IntroActivity.class.getSimpleName();
 	
@@ -24,7 +23,7 @@ public class IntroActivity extends Activity {
 
 	private Button btnStartQuiz;
 	private Button btnExit;
-	private AdView adView;
+	private AdView googleAdMobAds;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -32,13 +31,12 @@ public class IntroActivity extends Activity {
 		Log.d(TAG, "++onCreate");
 		setContentView(R.layout.activity_intro);
 
+		setupAds();
+		
 		if (((QuizApplication)this.getApplication()).isLiteVersion()) {
 			findViewById(R.id.lite_watermark).setVisibility(View.VISIBLE);
-
-			// TODO
-			// ... impose limitations of the lite version ...
 			
-			displayIntroAds();
+			showAds();
 		}
 
 		btnStartQuiz = (Button) findViewById(R.id.btn_startQuiz);
@@ -91,15 +89,6 @@ public class IntroActivity extends Activity {
 		return gameMode;
 	}
 	
-	public void displayIntroAds() {
-	    adView = new AdView(this, AdSize.BANNER, QuizActivity.ADMOB_UNIT_ID);
-	    adView.setBackgroundColor(Color.BLACK);
-	    
-	    LinearLayout layout = (LinearLayout)findViewById(R.id.lowerIntroScreen);
-	    layout.addView(adView);
-	    adView.loadAd(new AdRequest());
-	}
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.activity_main, menu);

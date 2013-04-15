@@ -19,7 +19,7 @@ import com.google.ads.AdRequest;
 import com.google.ads.AdSize;
 import com.google.ads.AdView;
 
-public class QuizActivity extends Activity {
+public class QuizActivity extends AdMobActivity {
 
 	private static final int NUMBER_OF_QUESTIONS_STANDARD = 15;
 	private static final int NUMBER_OF_QUESTIONS_SUDDEN_DEATH = 100;
@@ -34,8 +34,6 @@ public class QuizActivity extends Activity {
 	private static final int GAME_MODE_NIGHTMARE = 4;
 	private static final int GAME_MODE_SUDDEN_DEATH = 5;
 	
-	public static final String ADMOB_UNIT_ID = "a14b9eac992329e";
-	
 	public static final String GAME_MODE = "gameMode";
 	
 	private static final String TAG = QuizActivity.class.getSimpleName();
@@ -49,7 +47,6 @@ public class QuizActivity extends Activity {
 	private int numberOfQuestionsToAsk = 0;
 	private int index = 0;
 	
-	private AdView adView;
 	private TextView questionView;
 	private TextView explanationView;
 	private LinearLayout choicesView;
@@ -57,6 +54,7 @@ public class QuizActivity extends Activity {
 	private ImageButton nextButton;
 	private TextView questions_i;
 	private TextView questions_n;
+	public static AdView googleAdMobAds;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -64,13 +62,13 @@ public class QuizActivity extends Activity {
 		Log.d(TAG, "++onCreate");
 		setContentView(R.layout.activity_main);
 		
+		setupAds();
+		
 		if (((QuizApplication)this.getApplication()).isLiteVersion()) {
 			findViewById(R.id.lite_watermark).setVisibility(View.VISIBLE);
 			
-			// TODO
-			// ... impose limitations of the lite version ...
+			showAds();
 			
-			displayQuizAds();
 		}
 
 		Bundle bundle = getIntent().getExtras();
@@ -218,15 +216,6 @@ public class QuizActivity extends Activity {
 		updatePrevNext();
 		updateQuestion();
 		updateScoreDisplay(index);	
-	}
-	
-	public void displayQuizAds() {
-	    adView = new AdView(this, AdSize.BANNER, ADMOB_UNIT_ID);
-	    adView.setBackgroundColor(Color.BLACK);
-	    
-	    LinearLayout layout = (LinearLayout)findViewById(R.id.lowerQuizScreen);
-	    layout.addView(adView);
-	    adView.loadAd(new AdRequest());
 	}
 
 	@Override
