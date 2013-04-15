@@ -64,6 +64,7 @@ public class IntroActivity extends Activity {
 		public void onClick(View arg0) {
 			View selectedOption = findViewById(levelChoices.getCheckedRadioButtonId());
 			Level level = (Level)selectedOption.getTag();
+			Log.d(TAG, "selected level = " + level);
 
 			Bundle bundle = new Bundle();
 			bundle.putString(QuizActivity.GAME_MODE, level.getId());

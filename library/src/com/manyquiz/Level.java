@@ -24,4 +24,9 @@ public class Level {
 	public String getLevel() {
 		return level;
 	}
+	
+	@Override
+	public String toString() {
+		return String.format("%s (level %s)", name, level);
+	}
 }
