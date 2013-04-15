@@ -38,14 +38,13 @@ public class IntroActivity extends Activity {
 		helper = new QuizSQLiteOpenHelper(this);
 
 		levelChoices = (RadioGroup) findViewById(R.id.level_choices);
-		boolean isFirst = true;
+		RadioButton first = null;
 		for (Level level : helper.getLevels()) {
 			RadioButton levelOption = new RadioButton(this);
 			levelOption.setText(level.getName());
 			levelOption.setTag(level);
-			if (isFirst) {
-				levelOption.setChecked(true);
-				isFirst = false;
+			if (first == null) {
+				first = levelOption;
 			}
 			levelChoices.addView(levelOption);
 		}
@@ -53,6 +52,7 @@ public class IntroActivity extends Activity {
 		suddenDeathOption.setText(getString(R.string.option_sudden_death));
 		suddenDeathOption.setTag(new SuddenDeathLevel());
 		levelChoices.addView(suddenDeathOption);
+		levelChoices.check(first.getId());
 		
 		btnStartQuiz = (Button) findViewById(R.id.btn_startQuiz);
 		btnStartQuiz.setOnClickListener(new NextClickListener());
