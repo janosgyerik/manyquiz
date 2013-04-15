@@ -9,15 +9,18 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 public class IntroActivity extends Activity {
 
 	private static final String TAG = IntroActivity.class.getSimpleName();
 	
-	private int gameMode = 0; //difficulty/mode
-
+	private RadioGroup levelChoices;
 	private Button btnStartQuiz;
 	private Button btnExit;
+	
+	private QuizSQLiteOpenHelper helper;
+
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,16 @@ public class IntroActivity extends Activity {
 			// ... impose limitations of the lite version ...
 		}
 
+		helper = new QuizSQLiteOpenHelper(this);
+
+		levelChoices = (RadioGroup) findViewById(R.id.level_choices);
+		for (Level level : helper.getLevels()) {
+			RadioButton levelOption = new RadioButton(this);
+			levelOption.setText(level.getName());
+			levelOption.setTag(level);
+			levelChoices.addView(levelOption);
+		}
+		
 		btnStartQuiz = (Button) findViewById(R.id.btn_startQuiz);
 		btnStartQuiz.setOnClickListener(new NextClickListener());
 		btnExit = (Button) findViewById(R.id.btn_exit);
@@ -49,39 +62,17 @@ public class IntroActivity extends Activity {
 	class NextClickListener implements OnClickListener {
 		@Override
 		public void onClick(View arg0) {
-			gameMode = getSelectedDifficulty();
+			View selectedOption = findViewById(levelChoices.getCheckedRadioButtonId());
+			Level level = (Level)selectedOption.getTag();
 
 			Bundle bundle = new Bundle();
-			bundle.putInt(QuizActivity.GAME_MODE, gameMode);
+			bundle.putString(QuizActivity.GAME_MODE, level.getId());
 
 			Intent intent = new Intent(IntroActivity.this, QuizActivity.class);
 			intent.putExtras(bundle);
 			startActivity(intent);
 		}
 	}
-
-	private int getSelectedDifficulty() {
-		RadioButton option2 = (RadioButton) findViewById(R.id.radio_difficulty2);
-		RadioButton option3 = (RadioButton) findViewById(R.id.radio_difficulty3);
-		RadioButton option4 = (RadioButton) findViewById(R.id.radio_difficulty4);
-		RadioButton option5 = (RadioButton) findViewById(R.id.radio_difficulty5);
-
-		//Check which difficulty radio button was selected
-		if (option2.isChecked() == true) {
-			gameMode = 2;
-		}
-		else if (option3.isChecked() == true) {
-			gameMode = 3;
-		}
-		else if (option4.isChecked() == true) {
-			gameMode = 4;
-		}
-		else if (option5.isChecked() == true) {
-			gameMode = 5;
-		}
-		return gameMode;
-	}
-
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

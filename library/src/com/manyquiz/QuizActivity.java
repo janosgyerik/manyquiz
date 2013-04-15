@@ -20,12 +20,8 @@ public class QuizActivity extends Activity {
 	private static final int BTN_PADDING_LEFT = 10;
 	private static final int BTN_PADDING_TOP = 15;
 	private static final int BTN_PADDING_RIGHT = 10;
-	private static final int BTN_PADDING_BOTTOM= 15;
+	private static final int BTN_PADDING_BOTTOM = 15;
 	
-	private static final int GAME_MODE_BEGINNER = 1;
-	private static final int GAME_MODE_PROFESSIONAL = 2;
-	private static final int GAME_MODE_EXPERT = 3;
-	private static final int GAME_MODE_NIGHTMARE = 4;
 	private static final int GAME_MODE_SUDDEN_DEATH = 5;
 	
 	public static final String GAME_MODE = "gameMode";
@@ -38,7 +34,7 @@ public class QuizActivity extends Activity {
 	private IQuestion currentQuestion;
 	private int currentQuestionIndex = 0;
 	private int score = 0;
-	private int gameMode = 0;
+	private int gameMode;
 	private int numberOfQuestionsToAsk = 0;
 	private int index = 0;
 	
@@ -64,7 +60,7 @@ public class QuizActivity extends Activity {
 		}
 
 		Bundle bundle = getIntent().getExtras();
-		gameMode = bundle.getInt(GAME_MODE);
+		gameMode = Integer.parseInt(bundle.getString(GAME_MODE));
 		numberOfQuestionsToAsk = getNumberOfQuestionsToAsk();
 		
 		helper = new QuizSQLiteOpenHelper(this);

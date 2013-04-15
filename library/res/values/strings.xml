@@ -4,11 +4,8 @@
     <string name="app_name">Computer Quiz</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">Computer Quiz</string>
-    <string name="introduction">Welcome to the Computer Quiz - please select your difficulty below:</string>
-    <string name="difficulty2">Hobbyist/Professional</string>
-    <string name="difficulty3">Expert</string>
-    <string name="difficulty4">Nightmare!</string>
-    <string name="difficulty5">Sudden Death - 100 Questions</string>
+    <string name="introduction">Welcome to the Computer Quiz!\nSelect a difficulty level:</string>
+    <string name="option_sudden_death">Sudden Death - 100 Questions</string>
     <string name="startQuiz">Start Quiz!</string>
     <string name="exit">Exit</string>
 </resources>
