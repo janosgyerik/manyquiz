@@ -76,7 +76,7 @@ public class IntroActivity extends Activity {
 			Log.d(TAG, "selected level = " + level);
 
 			Bundle bundle = new Bundle();
-			bundle.putString(QuizActivity.GAME_MODE, level.getId());
+			bundle.putSerializable(QuizActivity.PARAM_LEVEL, level);
 
 			Intent intent = new Intent(IntroActivity.this, QuizActivity.class);
 			intent.putExtras(bundle);
