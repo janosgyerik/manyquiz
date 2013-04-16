@@ -36,44 +36,12 @@
                 style="@style/introduction"
                 android:text="@string/introduction" />
 
-            <LinearLayout
-                android:id="@+id/difficultyChoices"
+            <RadioGroup
+                android:id="@+id/level_choices"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
-
-                <RadioGroup
-                    android:id="@+id/group1"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" >
-
-                    <RadioButton
-                        android:id="@+id/radio_difficulty2"
-                        style="@style/radioButton"
-                        android:checked="true"
-                        android:text="@string/difficulty2" />
-
-                    <RadioButton
-                        android:id="@+id/radio_difficulty3"
-                        style="@style/radioButton"
-                        android:checked="false"
-                        android:text="@string/difficulty3" />
-
-                    <RadioButton
-                        android:id="@+id/radio_difficulty4"
-                        style="@style/radioButton"
-                        android:checked="false"
-                        android:text="@string/difficulty4" />
-
-                    <RadioButton
-                        android:id="@+id/radio_difficulty5"
-                        style="@style/radioButton"
-                        android:checked="false"
-                        android:text="@string/difficulty5" />
-                </RadioGroup>
-
-            </LinearLayout>
+            </RadioGroup>
         </LinearLayout>
     </ScrollView>
 
@@ -85,11 +53,12 @@
         <Button
             android:id="@+id/btn_startQuiz"
             style="@style/wideButton"
-            android:text="@string/startQuiz"/>
+            android:text="@string/startQuiz" />
+
         <Button
             android:id="@+id/btn_exit"
             style="@style/wideButton"
-            android:text="@string/exit"/>
+            android:text="@string/exit" />
     </LinearLayout>
 
 </LinearLayout>

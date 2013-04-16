@@ -99,7 +99,7 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
 		Log.d(TAG, "get all levels");
 		Cursor cursor = getReadableDatabase().query(LEVELS_TABLE_NAME,
 				new String[] { BaseColumns._ID, "name", "level", },
-				"is_active = 1", null, null, null, null);
+				null, null, null, null, "level");
 		return cursor;
 	}
 
@@ -109,7 +109,7 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
 				QUESTIONS_TABLE_NAME,
 				new String[] { BaseColumns._ID, "text", "category", "hint",
 						"explanation", }, "is_active = 1", null, null, null,
-				null);
+						null);
 		return cursor;
 	}
 
@@ -119,7 +119,7 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
 				ANSWERS_TABLE_NAME,
 				new String[] { BaseColumns._ID, "question_id", "text",
 						"is_correct", }, "is_active = 1", null, null, null,
-				null);
+						null);
 		return cursor;
 	}
 
@@ -168,5 +168,25 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
 		}
 
 		return questions;
+	}
+
+	public List<Level> getLevels() {
+		List<Level> levels = new ArrayList<Level>();
+
+		Cursor cursor = getLevelListCursor();
+		final int idIndex = cursor.getColumnIndex(BaseColumns._ID);
+		final int nameIndex = cursor.getColumnIndex("name");
+		final int levelIndex = cursor.getColumnIndex("level");
+		while (cursor.moveToNext()) {
+			LevelData data = new LevelData();
+			String id = cursor.getString(idIndex);
+			data.setId(id);
+			data.setName(cursor.getString(nameIndex));
+			data.setLevel(cursor.getString(levelIndex));
+			levels.add(new Level(data.id, data.name, data.level));
+		}
+		cursor.close();
+
+		return levels;
 	}
 }

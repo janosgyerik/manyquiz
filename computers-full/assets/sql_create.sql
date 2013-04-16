@@ -32,9 +32,9 @@ CREATE TABLE "quiz_answer" (
 ;
 
 INSERT INTO "quiz_level" VALUES(1,'Level 2',2,'2013-03-20 15:42:04.452223','2013-03-20 15:42:04.452240');
-INSERT INTO "quiz_level" VALUES(2,'Level 1',1,'2013-03-20 15:42:45.427847','2013-03-20 15:42:45.427863');
-INSERT INTO "quiz_level" VALUES(3,'Level 3',3,'2013-03-20 15:58:59.665493','2013-03-20 15:58:59.665507');
-INSERT INTO "quiz_level" VALUES(4,'Level 4',4,'2013-03-20 16:00:00.370130','2013-03-20 16:00:00.370148');
+INSERT INTO "quiz_level" VALUES(2,'Hobbyist/Professional',1,'2013-03-20 15:42:45.427847','2013-03-20 15:42:45.427863');
+INSERT INTO "quiz_level" VALUES(3,'Expert',3,'2013-03-20 15:58:59.665493','2013-03-20 15:58:59.665507');
+INSERT INTO "quiz_level" VALUES(4,'Nightmare!',4,'2013-03-20 16:00:00.370130','2013-03-20 16:00:00.370148');
 INSERT INTO "quiz_question" VALUES(1,'Which is not an Operating System?','software',1,'','Microsoft Office XP is a suite of desktop applications, including text editor, spreadsheet editor, etc, NOT an operating system.',1,'2013-03-20 16:04:47.499465','2013-03-20 16:04:47.499482');
 INSERT INTO "quiz_question" VALUES(2,'How many bytes is one kilobyte?','programming',1,'','Although kilobyte is formally equal to 1000 bytes, a second definition and usage of 1024 bytes has historically been in practice in the field of computer science and IT.',1,'2013-03-20 16:04:48.262181','2013-03-20 16:04:48.262195');
 INSERT INTO "quiz_question" VALUES(3,'What type of data structure is a queue?','programming',1,'','First In First Out. Picture a queue of people -- the first person (data item) in the queue is the first to leave the queue at the front. Additional people (data items) join at the back of the queue.',1,'2013-03-20 16:04:49.045471','2013-03-20 16:04:49.045485');

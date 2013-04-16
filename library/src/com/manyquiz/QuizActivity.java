@@ -15,30 +15,26 @@ import android.widget.TextView;
 
 public class QuizActivity extends Activity {
 
+	private static final String TAG = QuizActivity.class.getSimpleName();
+
+	public static final String PARAM_LEVEL = "level";
+	public static final String PARAM_MODE = "mode";
+	
 	private static final int NUMBER_OF_QUESTIONS_STANDARD = 15;
 	private static final int NUMBER_OF_QUESTIONS_SUDDEN_DEATH = 100;
+	
 	private static final int BTN_PADDING_LEFT = 10;
 	private static final int BTN_PADDING_TOP = 15;
 	private static final int BTN_PADDING_RIGHT = 10;
-	private static final int BTN_PADDING_BOTTOM= 15;
+	private static final int BTN_PADDING_BOTTOM = 15;
 	
-	private static final int GAME_MODE_BEGINNER = 1;
-	private static final int GAME_MODE_PROFESSIONAL = 2;
-	private static final int GAME_MODE_EXPERT = 3;
-	private static final int GAME_MODE_NIGHTMARE = 4;
-	private static final int GAME_MODE_SUDDEN_DEATH = 5;
-	
-	public static final String GAME_MODE = "gameMode";
-	
-	private static final String TAG = QuizActivity.class.getSimpleName();
-
 	private QuizSQLiteOpenHelper helper;
 
 	private List<IQuestion> questions;
 	private IQuestion currentQuestion;
 	private int currentQuestionIndex = 0;
 	private int score = 0;
-	private int gameMode = 0;
+	private Level level;
 	private int numberOfQuestionsToAsk = 0;
 	private int index = 0;
 	
@@ -64,7 +60,8 @@ public class QuizActivity extends Activity {
 		}
 
 		Bundle bundle = getIntent().getExtras();
-		gameMode = bundle.getInt(GAME_MODE);
+		level = (Level)bundle.getSerializable(PARAM_LEVEL);
+		Log.d(TAG, "use level = " + level);
 		numberOfQuestionsToAsk = getNumberOfQuestionsToAsk();
 		
 		helper = new QuizSQLiteOpenHelper(this);
@@ -195,7 +192,7 @@ public class QuizActivity extends Activity {
 	}
 	
 	private int getNumberOfQuestionsToAsk() {
-		if (gameMode == GAME_MODE_SUDDEN_DEATH) {
+		if (level instanceof SuddenDeathLevel) {
 			return NUMBER_OF_QUESTIONS_SUDDEN_DEATH;
 		}
 		else {
@@ -208,7 +205,6 @@ public class QuizActivity extends Activity {
 		updatePrevNext();
 		updateQuestion();
 		updateScoreDisplay(index);
-		
 	}
 
 	@Override
