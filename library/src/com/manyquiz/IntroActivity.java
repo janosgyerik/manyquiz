@@ -55,7 +55,7 @@ public class IntroActivity extends Activity {
 		levelChoices.check(first.getId());
 		
 		btnStartQuiz = (Button) findViewById(R.id.btn_startQuiz);
-		btnStartQuiz.setOnClickListener(new NextClickListener());
+		btnStartQuiz.setOnClickListener(new StartQuizClickListener());
 		btnExit = (Button) findViewById(R.id.btn_exit);
 		btnExit.setOnClickListener(new ExitClickListener());
 	}
@@ -68,7 +68,7 @@ public class IntroActivity extends Activity {
 		}
 	}
 
-	class NextClickListener implements OnClickListener {
+	class StartQuizClickListener implements OnClickListener {
 		@Override
 		public void onClick(View arg0) {
 			View selectedOption = findViewById(levelChoices.getCheckedRadioButtonId());
