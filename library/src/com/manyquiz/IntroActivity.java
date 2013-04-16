@@ -94,6 +94,7 @@ public class IntroActivity extends Activity {
 	protected void onDestroy() {
 		Log.d(TAG, "++onDestroy");
 		super.onDestroy();
+		helper.close();
 	}
 
 } //end of activity class
