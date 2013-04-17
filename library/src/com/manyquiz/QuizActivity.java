@@ -35,7 +35,6 @@ public class QuizActivity extends Activity {
 	private int currentQuestionIndex = 0;
 	private int score = 0;
 	private Level level;
-	private int numberOfQuestionsToAsk = 0;
 	private int index = 0;
 	
 	private TextView questionView;
@@ -44,7 +43,6 @@ public class QuizActivity extends Activity {
 	private ImageButton prevButton;
 	private ImageButton nextButton;
 	private TextView questions_i;
-	private TextView questions_n;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -62,12 +60,12 @@ public class QuizActivity extends Activity {
 		Bundle bundle = getIntent().getExtras();
 		level = (Level)bundle.getSerializable(PARAM_LEVEL);
 		Log.d(TAG, "use level = " + level);
-		numberOfQuestionsToAsk = getNumberOfQuestionsToAsk();
+		int numberOfQuestionsToAsk = getNumberOfQuestionsToAsk();
 		
 		helper = new QuizSQLiteOpenHelper(this);
 
 		IQuiz quiz = new DatabaseBackedQuiz(getHelper());
-		questions = quiz.pickRandomQuestions(numberOfQuestionsToAsk);
+		questions = quiz.pickRandomQuestions(numberOfQuestionsToAsk, level.getLevel());
 		
 		questionView = (TextView) findViewById(R.id.question);
 		explanationView = (TextView) findViewById(R.id.explanation);
@@ -79,7 +77,9 @@ public class QuizActivity extends Activity {
 		nextButton.setOnClickListener(new PrevNextClickListener(1));
 		
 		questions_i = (TextView) findViewById(R.id.questions_i);
-		questions_n = (TextView) findViewById(R.id.questions_n);
+		
+		TextView questions_n = (TextView) findViewById(R.id.questions_n);
+		questions_n.setText(Integer.toString(questions.size()));
 
 		navigateToQuestion(index);
 	}
@@ -125,7 +125,6 @@ public class QuizActivity extends Activity {
 	
 	private void updateScoreDisplay(int index) {
 		questions_i.setText(Integer.toString(index+1));
-		questions_n.setText(Integer.toString(numberOfQuestionsToAsk));
 	}	
 
 	private void updatePrevNext() {

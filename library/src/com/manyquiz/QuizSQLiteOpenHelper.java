@@ -107,33 +107,61 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
 		return cursor;
 	}
 
-	public Cursor getQuestionListCursor() {
-		Log.d(TAG, "get all questions");
-		Cursor cursor = getReadableDatabase().query(
-				QUESTIONS_TABLE_NAME,
-				new String[] { BaseColumns._ID, "text", "category", "hint",
-						"explanation", }, "is_active = 1", null, null, null,
-						null);
+	public Cursor getQuestionListCursor(int level) {
+		Log.d(TAG, "get all questions at level = " + level);
+		Cursor cursor;
+		if (level == SuddenDeathLevel.LEVEL) {
+			cursor = getReadableDatabase().query(
+					QUESTIONS_TABLE_NAME,
+					new String[] { BaseColumns._ID, "text", "category", "hint",
+							"explanation", }, "is_active = 1", null, null, null,
+							null);
+		}
+		else {
+			cursor = getReadableDatabase().rawQuery(
+					String.format(
+							"SELECT q.%s %s, q.text text, category, hint, explanation FROM %s q JOIN %s l ON q.level_id = l.%s WHERE l.level = ?",
+							BaseColumns._ID, BaseColumns._ID, QUESTIONS_TABLE_NAME, LEVELS_TABLE_NAME, BaseColumns._ID
+							),
+							new String[] { Integer.toString(level) }
+					);
+		}
 		return cursor;
 	}
 
-	public Cursor getAnswerListCursor() {
+	public Cursor getAnswerListCursor(int level) {
 		Log.d(TAG, "get all answers");
-		Cursor cursor = getReadableDatabase().query(
-				ANSWERS_TABLE_NAME,
-				new String[] { BaseColumns._ID, "question_id", "text",
-						"is_correct", }, "is_active = 1", null, null, null,
-						null);
+		Cursor cursor;
+		if (level == SuddenDeathLevel.LEVEL) {
+			cursor = getReadableDatabase().query(
+					ANSWERS_TABLE_NAME,
+					new String[] { BaseColumns._ID, "question_id", "text",
+							"is_correct", }, "is_active = 1", null, null, null,
+							null);
+		}
+		else {
+			cursor = getReadableDatabase().rawQuery(
+					String.format(
+							"SELECT a.%s %s, question_id, a.text text, is_correct " +
+							"FROM %s a JOIN %s q ON a.question_id = q.%s " +
+							"JOIN %s l ON q.level_id = l.%s WHERE l.level = ? AND q.is_active = 1",
+							BaseColumns._ID, BaseColumns._ID,
+							ANSWERS_TABLE_NAME, QUESTIONS_TABLE_NAME, BaseColumns._ID,
+							LEVELS_TABLE_NAME, BaseColumns._ID
+							),
+							new String[] { Integer.toString(level) }
+					);
+		}
 		return cursor;
 	}
 
-	public List<IQuestion> getQuestions() {
+	public List<IQuestion> getQuestions(int level) {
 		List<IQuestion> questions = new ArrayList<IQuestion>();
 
 		Map<String, QuestionData> questionDataMap = new HashMap<String, QuestionData>();
 
 		{
-			Cursor cursor = getQuestionListCursor();
+			Cursor cursor = getQuestionListCursor(level);
 			final int idIndex = cursor.getColumnIndex(BaseColumns._ID);
 			final int textIndex = cursor.getColumnIndex("text");
 			final int categoryIndex = cursor.getColumnIndex("category");
@@ -151,7 +179,7 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
 		}
 
 		{
-			Cursor cursor = getAnswerListCursor();
+			Cursor cursor = getAnswerListCursor(level);
 			final int questionIdIndex = cursor.getColumnIndex("question_id");
 			final int textIndex = cursor.getColumnIndex("text");
 			final int isCorrectIndex = cursor.getColumnIndex("is_correct");
@@ -174,6 +202,10 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
 		return questions;
 	}
 
+	public List<IQuestion> getQuestions() {
+		return getQuestions(SuddenDeathLevel.LEVEL);
+	}
+
 	public List<Level> getLevels() {
 		List<Level> levels = new ArrayList<Level>();
 
@@ -186,7 +218,7 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
 			String id = cursor.getString(idIndex);
 			data.setId(id);
 			data.setName(cursor.getString(nameIndex));
-			data.setLevel(cursor.getString(levelIndex));
+			data.setLevel(cursor.getInt(levelIndex));
 			levels.add(new Level(data.id, data.name, data.level));
 		}
 		cursor.close();

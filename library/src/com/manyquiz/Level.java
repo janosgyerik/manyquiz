@@ -8,9 +8,9 @@ public class Level implements Serializable {
 	
 	private final String id;
 	private final String name;
-	private final String level;
+	private final int level;
 
-	public Level(String id, String name, String level) {
+	public Level(String id, String name, int level) {
 		this.id = id;
 		this.name = name;
 		this.level = level;
@@ -24,13 +24,13 @@ public class Level implements Serializable {
 		return name;
 	}
 
-	public String getLevel() {
+	public int getLevel() {
 		return level;
 	}
 
 	@Override
 	public String toString() {
-		return String.format("%s (level %s)", name, level);
+		return String.format("%s (level %d)", name, level);
 	}
 
 }
