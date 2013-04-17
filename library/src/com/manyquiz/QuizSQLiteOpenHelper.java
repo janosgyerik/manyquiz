@@ -96,10 +96,14 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
 	}
 
 	public Cursor getLevelListCursor() {
-		Log.d(TAG, "get all levels");
-		Cursor cursor = getReadableDatabase().query(LEVELS_TABLE_NAME,
-				new String[] { BaseColumns._ID, "name", "level", },
-				null, null, null, null, "level");
+		Log.d(TAG, "get all levels (that have any questions)");
+		Cursor cursor = getReadableDatabase().rawQuery(
+				String.format(
+						"SELECT DISTINCT l.%s %s, l.name name, l.level level FROM %s l JOIN %s q ON l.%s = q.level_id ORDER BY l.level",
+						BaseColumns._ID, BaseColumns._ID, LEVELS_TABLE_NAME, QUESTIONS_TABLE_NAME, BaseColumns._ID
+						),
+						null
+				);
 		return cursor;
 	}
 
