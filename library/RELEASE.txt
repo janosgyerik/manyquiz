@@ -1,0 +1,15 @@
+Version x (y.z)
+---------------
+* This is a complete rewrite, eliminating several previous bugs
+
+* Now you can navigate questions left and right freely,
+  except in sudden death mode
+
+* Answer choices now appear in random order
+
+* Improved menu: added icons, confirmation on Quit
+
+* Minor layout improvements
+
+* More questions: 368 -> 370
+

@@ -5,7 +5,7 @@ public class LevelData {
 
 	String id;
 	String name;
-	String level;
+	int level;
 	
 	public void setId(String id) {
 		this.id = id;
@@ -15,7 +15,7 @@ public class LevelData {
 		this.name = name;
 	}
 
-	public void setLevel(String level) {
+	public void setLevel(int level) {
 		this.level = level;
 	}
 
