@@ -1,15 +1,19 @@
 package com.manyquiz; 
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class IntroActivity extends Activity {
 
@@ -17,7 +21,6 @@ public class IntroActivity extends Activity {
 	
 	private RadioGroup levelChoices;
 	private Button btnStartQuiz;
-	private Button btnExit;
 	
 	private QuizSQLiteOpenHelper helper;
 
@@ -56,8 +59,6 @@ public class IntroActivity extends Activity {
 		
 		btnStartQuiz = (Button) findViewById(R.id.btn_startQuiz);
 		btnStartQuiz.setOnClickListener(new StartQuizClickListener());
-		btnExit = (Button) findViewById(R.id.btn_exit);
-		btnExit.setOnClickListener(new ExitClickListener());
 	}
 
 	class ExitClickListener implements OnClickListener{
@@ -88,6 +89,36 @@ public class IntroActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		int itemId = item.getItemId();
+		if (itemId == R.id.menu_about) {
+			Toast.makeText(getBaseContext(), "Coming soon...", Toast.LENGTH_LONG).show();
+			return true;
+		}
+		if (itemId == R.id.menu_settings) {
+			Toast.makeText(getBaseContext(), "Coming soon...", Toast.LENGTH_LONG).show();
+			return true;
+		}
+		if (itemId == R.id.menu_quit) {
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setMessage(R.string.msg_quit)
+			.setCancelable(true)
+			.setPositiveButton(R.string.btn_yes, new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int id) {
+					finish();
+				}
+			})
+			.setNegativeButton(R.string.btn_cancel, new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int id) {
+					dialog.cancel();
+				}
+			}).show();
+			return true;
+		}
+		return false;
 	}
 
 	@Override  

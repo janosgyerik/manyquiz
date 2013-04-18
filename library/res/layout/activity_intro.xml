@@ -54,11 +54,6 @@
             android:id="@+id/btn_startQuiz"
             style="@style/wideButton"
             android:text="@string/startQuiz" />
-
-        <Button
-            android:id="@+id/btn_exit"
-            style="@style/wideButton"
-            android:text="@string/exit" />
     </LinearLayout>
 
 </LinearLayout>
