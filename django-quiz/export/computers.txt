@@ -25,141 +25,6 @@ First In First Out. Picture a queue of people -- the first person (data item) in
 2
 programming
 END
-What might you use to automate tasks in Microsoft Office?
-A macro
-A keyword
-A toolbar
-A docx
-Macro's can automate tasks in Microsoft Office, but can also be used maliciously to cause harm.
-1
-office
-END
-Which of the following would be capable of printing, scanning and copying?
-MFD
-USB
-SATA
-PDA
-An MFD or MultiFunction Device (sometimes known as MFP or MultiFunction Printer) allows printing, scanning and copying.
-1
-x
-END
-Which of the following Microsoft products is primarily used for databases?
-Access
-Outlook
-Project
-Excel
-Microsoft Access is used to create databases.
-1
-microsoft
-END
-How might a computer actively block outside connections from harmful sources?
-Firewall
-Antivirus scan
-Malware removal tool
-Registry defragment tool
-A firewall can block incoming and outgoing connections. Optionaly, certain connections can be allowed.
-1
-x
-END
-Who is the owner of Microsoft?
-Bill Gates
-Linus Torvalds
-Michael Rowsoft
-Alan Sugar
-Bill Gates is the founder and owner of the Microsoft Corporation.
-1
-microsoft
-END
-Which is the most common use for 'task manager' in Windows?
-To recover from a software crash
-To switch between applications
-To create/delete files
-To dial a number on a fax modem
-Task manager has many uses but is most commonly used for stopping unresponsive software. It can also be used to start and end tasks, and see what resources are being used by what tasks, and can do much more.
-1
-x
-END
-What does formatting a hard drive do?
-Wipes the drive
-Re-orders data on the disk
-Writes data to a CD
-Fixes damaged operating system files
-Formatting a hard drive wipes information from it. It will also mark any bad sectors of the disk.
-1
-harddisk
-END
-Where might you find the option to change the screen resolution on a Windows computer?
-Display settings
-Network neightborhood
-Screensaver
-Device Manager
-The display settings on a Windows computer will have the option to change the resolution. Some graphics adaptors will have their own software that will also do this (eg an NVIDIA graphics card).
-1
-x
-END
-What is QWERTY?
-A keyboard layout
-A network protocol
-A software development standard
-Antivirus software
-There are many other layouts of keys on keyboards designed for comfort and speed, but the qwerty layout is by far the most common.
-1
-x
-END
-What type of connection would NOT be used to connect a mouse/keyboard to a personal computer?
-Parallel
-USB
-Serial
-PS/2
-A parallel port is used to connnect scanners and printers and other such devices to computers, although parallel is an old standard and has been replaced for the most part by USB.
-1
-x
-END
-Which of the following devices has NOT TYPICALLY got a microprocessor in it?
-Analogue Clock
-VCR
-DVD Player
-Dishwasher
-A typical analogue clock is a mechanical device that does not use microprocessor technology. Most electrical appliances DO contain a microprocessor - microwaves, TV, DVD player, modern TV's etc.
-1
-x
-END
-Which of the following is LEAST likely to cause a computer to overheat?
-Hard disk drive capacity being reached
-CPU fan not working
-Dust build-up
-Insufficient computer ventilation
-A full hard drive is unlikely to produce much excess heat. All other answers are very plausible and common causes for overheating.
-1
-x
-END
-Which of these is a Microsoft operating system?
-Vista
-Android
-Linux
-Solaris
-Windows Vista was Microsoft's next major release after Windows XP.
-1
-microsoft
-END
-What does WiFi stand for?
-Wireless Fidelity
-Wireless Firewall
-Wireless Figure
-Windows Firewall
-Wifi - Wireless Fidelity - a technology used for wireless networking of computers and other network devices.
-1
-wifi
-END
-What extension has a typical Microsoft Office Word 2003 file?
-.doc
-.wrd
-.msw
-.off
-Office 2003 Word files use the .doc extension.
-1
-office
-END
 A Microsoft Exchange server is used for what?
 E-mail
 Word documents
@@ -3309,4 +3174,22 @@ Charles Babbage
 The large cuboids were called 'Pascalines', but weren't programmable. Borland named a 3rd generation language after him.
 4
 x
+END
+What is a "string" in a programming language?
+A line of characters
+A Comma
+A way to represent 0
+A command
+A string is simply a line of characters.
+3
+Programming
+END
+Where will you find the following line in a HTML document: 'www.W3.org'?
+At the start before the HTML section.
+In the head section.
+In the body section.
+In the meta section.
+The W3 statement will allways be placed at the start of a HTML document.
+3
+Programming (Web)
 END
