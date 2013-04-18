@@ -30,12 +30,11 @@ public class IntroActivity extends AdMobActivity {
 		super.onCreate(savedInstanceState);
 		Log.d(TAG, "++onCreate");
 		setContentView(R.layout.activity_intro);
-
-		setupAds();
 		
 		if (((QuizApplication)this.getApplication()).isLiteVersion()) {
 			findViewById(R.id.lite_watermark).setVisibility(View.VISIBLE);
 			
+			setupAds();
 			showAds();
 		}
 

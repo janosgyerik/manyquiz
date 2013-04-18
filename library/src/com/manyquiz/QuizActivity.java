@@ -62,11 +62,10 @@ public class QuizActivity extends AdMobActivity {
 		Log.d(TAG, "++onCreate");
 		setContentView(R.layout.activity_main);
 		
-		setupAds();
-		
 		if (((QuizApplication)this.getApplication()).isLiteVersion()) {
 			findViewById(R.id.lite_watermark).setVisibility(View.VISIBLE);
 			
+			setupAds();
 			showAds();
 			
 		}
