@@ -9,7 +9,7 @@ import com.google.ads.AdRequest;
 import com.google.ads.AdSize;
 import com.google.ads.AdView;
 
-public class AdMobActivity extends Activity{
+abstract class QuizBaseActivity extends Activity{
 	private static final String ADMOB_UNIT_ID = "a14b9eac992329e";
 	
 	protected void setupAds() {

@@ -19,7 +19,7 @@ import com.google.ads.AdRequest;
 import com.google.ads.AdSize;
 import com.google.ads.AdView;
 
-public class QuizActivity extends AdMobActivity {
+public class QuizActivity extends QuizBaseActivity {
 
 	private static final int NUMBER_OF_QUESTIONS_STANDARD = 15;
 	private static final int NUMBER_OF_QUESTIONS_SUDDEN_DEATH = 100;

@@ -15,7 +15,7 @@ import com.google.ads.AdRequest;
 import com.google.ads.AdSize;
 import com.google.ads.AdView;
 
-public class IntroActivity extends AdMobActivity {
+public class IntroActivity extends QuizBaseActivity {
 
 	private static final String TAG = IntroActivity.class.getSimpleName();
 	
