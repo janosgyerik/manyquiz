@@ -62,13 +62,7 @@ public class QuizActivity extends QuizBaseActivity {
 		Log.d(TAG, "++onCreate");
 		setContentView(R.layout.activity_main);
 		
-		if (((QuizApplication)this.getApplication()).isLiteVersion()) {
-			findViewById(R.id.lite_watermark).setVisibility(View.VISIBLE);
-			
-			setupAds();
-			showAds();
-			
-		}
+		checkAndSetupForLiteVersion();
 
 		Bundle bundle = getIntent().getExtras();
 		gameMode = bundle.getInt(GAME_MODE);

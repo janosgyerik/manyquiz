@@ -12,6 +12,14 @@ import com.google.ads.AdView;
 abstract class QuizBaseActivity extends Activity{
 	private static final String ADMOB_UNIT_ID = "a14b9eac992329e";
 	
+	protected void checkAndSetupForLiteVersion() {
+		if (((QuizApplication)this.getApplication()).isLiteVersion()) {
+			findViewById(R.id.lite_watermark).setVisibility(View.VISIBLE);
+			setupAds();
+			showAds();
+		}
+	}
+	
 	protected void setupAds() {
 		QuizActivity.googleAdMobAds = new AdView(this, AdSize.BANNER, ADMOB_UNIT_ID);
 	    QuizActivity.googleAdMobAds.setBackgroundColor(Color.BLACK);

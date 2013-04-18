@@ -31,12 +31,7 @@ public class IntroActivity extends QuizBaseActivity {
 		Log.d(TAG, "++onCreate");
 		setContentView(R.layout.activity_intro);
 		
-		if (((QuizApplication)this.getApplication()).isLiteVersion()) {
-			findViewById(R.id.lite_watermark).setVisibility(View.VISIBLE);
-			
-			setupAds();
-			showAds();
-		}
+		checkAndSetupForLiteVersion();
 
 		btnStartQuiz = (Button) findViewById(R.id.btn_startQuiz);
 		btnStartQuiz.setOnClickListener(new NextClickListener());
