@@ -1,5 +1,4 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -78,7 +77,6 @@
     </ScrollView>
 
     <LinearLayout
-        android:id="@+id/googleAdMobAds"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
@@ -93,5 +91,7 @@
             style="@style/wideButton"
             android:text="@string/exit" />
     </LinearLayout>
+
+    <include layout="@layout/ads" />
 
 </LinearLayout>
