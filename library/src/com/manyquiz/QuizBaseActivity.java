@@ -10,8 +10,11 @@ import com.google.ads.AdSize;
 import com.google.ads.AdView;
 
 abstract class QuizBaseActivity extends Activity{
+
 	private static final String ADMOB_UNIT_ID = "a14b9eac992329e";
-	
+
+	private AdView googleAdMobAds;
+
 	protected void checkAndSetupForLiteVersion() {
 		if (((QuizApplication)this.getApplication()).isLiteVersion()) {
 			findViewById(R.id.lite_watermark).setVisibility(View.VISIBLE);
@@ -19,18 +22,19 @@ abstract class QuizBaseActivity extends Activity{
 			showAds();
 		}
 	}
-	
-	protected void setupAds() {
-		QuizActivity.googleAdMobAds = new AdView(this, AdSize.BANNER, ADMOB_UNIT_ID);
-	    QuizActivity.googleAdMobAds.setBackgroundColor(Color.BLACK);
 
-	    LinearLayout layout = (LinearLayout)findViewById(R.id.googleAdMobAds);
-	    layout.addView(QuizActivity.googleAdMobAds);
-	    
-	    QuizActivity.googleAdMobAds.loadAd(new AdRequest());
-	    QuizActivity.googleAdMobAds.setVisibility(View.GONE);
+	protected void setupAds() {
+		googleAdMobAds = new AdView(this, AdSize.BANNER, ADMOB_UNIT_ID);
+		googleAdMobAds.setBackgroundColor(Color.BLACK);
+
+		LinearLayout layout = (LinearLayout)findViewById(R.id.googleAdMobAds);
+		layout.addView(googleAdMobAds);
+
+		googleAdMobAds.loadAd(new AdRequest());
+		googleAdMobAds.setVisibility(View.GONE);
 	}
+
 	protected void showAds() {
-		QuizActivity.googleAdMobAds.setVisibility(View.VISIBLE);
+		googleAdMobAds.setVisibility(View.VISIBLE);
 	}
 }

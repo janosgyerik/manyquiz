@@ -2,9 +2,6 @@ package com.manyquiz;
 
 import java.util.List;
 
-import android.app.ActionBar.LayoutParams;
-import android.app.Activity;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -14,10 +11,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.google.ads.AdRequest;
-import com.google.ads.AdSize;
-import com.google.ads.AdView;
 
 public class QuizActivity extends QuizBaseActivity {
 
@@ -39,6 +32,7 @@ public class QuizActivity extends QuizBaseActivity {
 	private static final String TAG = QuizActivity.class.getSimpleName();
 
 	private QuizSQLiteOpenHelper helper;
+	
 	private List<IQuestion> questions;
 	private IQuestion currentQuestion;
 	private int currentQuestionIndex = 0;
@@ -54,7 +48,6 @@ public class QuizActivity extends QuizBaseActivity {
 	private ImageButton nextButton;
 	private TextView questions_i;
 	private TextView questions_n;
-	public static AdView googleAdMobAds;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
