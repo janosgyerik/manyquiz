@@ -2,7 +2,6 @@ package com.manyquiz;
 
 import java.util.List;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -13,7 +12,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class QuizActivity extends Activity {
+public class QuizActivity extends QuizBaseActivity {
 
 	private static final String TAG = QuizActivity.class.getSimpleName();
 
@@ -29,7 +28,7 @@ public class QuizActivity extends Activity {
 	private static final int BTN_PADDING_BOTTOM = 15;
 	
 	private QuizSQLiteOpenHelper helper;
-
+	
 	private List<IQuestion> questions;
 	private IQuestion currentQuestion;
 	private int currentQuestionIndex = 0;
@@ -50,12 +49,7 @@ public class QuizActivity extends Activity {
 		Log.d(TAG, "++onCreate");
 		setContentView(R.layout.activity_main);
 		
-		if (((QuizApplication)this.getApplication()).isLiteVersion()) {
-			findViewById(R.id.lite_watermark).setVisibility(View.VISIBLE);
-			
-			// TODO
-			// ... impose limitations of the lite version ...
-		}
+		checkAndSetupForLiteVersion();
 
 		Bundle bundle = getIntent().getExtras();
 		level = (Level)bundle.getSerializable(PARAM_LEVEL);

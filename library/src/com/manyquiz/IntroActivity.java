@@ -1,6 +1,5 @@
 package com.manyquiz; 
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -15,7 +14,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class IntroActivity extends Activity {
+public class IntroActivity extends QuizBaseActivity {
 
 	private static final String TAG = IntroActivity.class.getSimpleName();
 	
@@ -24,19 +23,14 @@ public class IntroActivity extends Activity {
 	
 	private QuizSQLiteOpenHelper helper;
 
-
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Log.d(TAG, "++onCreate");
 		setContentView(R.layout.activity_intro);
-
-		if (((QuizApplication)this.getApplication()).isLiteVersion()) {
-			findViewById(R.id.lite_watermark).setVisibility(View.VISIBLE);
-
-			// TODO
-			// ... impose limitations of the lite version ...
-		}
+		
+		checkAndSetupForLiteVersion();
 
 		helper = new QuizSQLiteOpenHelper(this);
 
