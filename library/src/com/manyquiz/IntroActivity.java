@@ -1,19 +1,13 @@
 package com.manyquiz; 
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
-
-import com.google.ads.AdRequest;
-import com.google.ads.AdSize;
-import com.google.ads.AdView;
 
 public class IntroActivity extends QuizBaseActivity {
 
@@ -23,7 +17,6 @@ public class IntroActivity extends QuizBaseActivity {
 
 	private Button btnStartQuiz;
 	private Button btnExit;
-	private AdView googleAdMobAds;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

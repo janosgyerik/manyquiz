@@ -7,7 +7,7 @@ import android.view.View;
 import com.google.ads.AdRequest;
 import com.google.ads.AdView;
 
-abstract class QuizBaseActivity extends Activity{
+public abstract class QuizBaseActivity extends Activity {
 
 	protected void checkAndSetupForLiteVersion() {
 		if (((QuizApplication)this.getApplication()).isLiteVersion()) {
