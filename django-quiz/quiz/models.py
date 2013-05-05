@@ -12,6 +12,9 @@ class Level(models.Model):
     def __unicode__(self):
         return '%s (%d)' % (self.name, self.level)
 
+    class Meta:
+        ordering = ('level',)
+
 
 class Question(models.Model):
     text = models.CharField(max_length=200)
