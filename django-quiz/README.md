@@ -68,6 +68,17 @@ Import quiz data from the project
         ./manage-computers.sh import_questions export/computers.txt -n
 
 
+View stats of quiz data
+-----------------------
+View a breakdown of # of questions per level:
+
+    ./manage-computers.sh stats -l
+
+View a breakdown of # of questions per category:
+
+    ./manage-computers.sh stats -c
+
+
 Misc memo
 ---------
 * Initial fixtures file was created with:
