@@ -21,12 +21,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>        
+        </activity>
         <activity
             android:name="com.manyquiz.QuizActivity"
             android:label="@string/title_activity_main" >
-            <intent-filter>
-            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.manyquiz.InfoActivity"
+            android:label="@string/title_activity_main" >
         </activity>
     </application>
 

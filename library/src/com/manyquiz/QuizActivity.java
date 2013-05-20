@@ -18,24 +18,24 @@ public class QuizActivity extends QuizBaseActivity {
 
 	public static final String PARAM_LEVEL = "level";
 	public static final String PARAM_MODE = "mode";
-	
+
 	private static final int NUMBER_OF_QUESTIONS_STANDARD = 15;
 	private static final int NUMBER_OF_QUESTIONS_SUDDEN_DEATH = 100;
-	
+
 	private static final int BTN_PADDING_LEFT = 10;
 	private static final int BTN_PADDING_TOP = 15;
 	private static final int BTN_PADDING_RIGHT = 10;
 	private static final int BTN_PADDING_BOTTOM = 15;
-	
+
 	private QuizSQLiteOpenHelper helper;
-	
+
 	private List<IQuestion> questions;
 	private IQuestion currentQuestion;
 	private int currentQuestionIndex = 0;
 	private int score = 0;
 	private Level level;
 	private int index = 0;
-	
+
 	private TextView questionView;
 	private TextView explanationView;
 	private LinearLayout choicesView;
@@ -48,19 +48,19 @@ public class QuizActivity extends QuizBaseActivity {
 		super.onCreate(savedInstanceState);
 		Log.d(TAG, "++onCreate");
 		setContentView(R.layout.activity_main);
-		
+
 		checkAndSetupForLiteVersion();
 
 		Bundle bundle = getIntent().getExtras();
 		level = (Level)bundle.getSerializable(PARAM_LEVEL);
 		Log.d(TAG, "use level = " + level);
 		int numberOfQuestionsToAsk = getNumberOfQuestionsToAsk();
-		
+
 		helper = new QuizSQLiteOpenHelper(this);
 
 		IQuiz quiz = new DatabaseBackedQuiz(getHelper());
 		questions = quiz.pickRandomQuestions(numberOfQuestionsToAsk, level.getLevel());
-		
+
 		questionView = (TextView) findViewById(R.id.question);
 		explanationView = (TextView) findViewById(R.id.explanation);
 		choicesView = (LinearLayout) findViewById(R.id.choices);
@@ -69,9 +69,9 @@ public class QuizActivity extends QuizBaseActivity {
 		prevButton.setOnClickListener(new PrevNextClickListener(-1));
 		nextButton = (ImageButton) findViewById(R.id.btn_next);
 		nextButton.setOnClickListener(new PrevNextClickListener(1));
-		
+
 		questions_i = (TextView) findViewById(R.id.questions_i);
-		
+
 		TextView questions_n = (TextView) findViewById(R.id.questions_n);
 		questions_n.setText(Integer.toString(questions.size()));
 
@@ -116,27 +116,33 @@ public class QuizActivity extends QuizBaseActivity {
 		}
 		currentQuestion = questions.get(currentQuestionIndex);
 	}
-	
+
 	private void updateScoreDisplay(int index) {
 		questions_i.setText(Integer.toString(index+1));
 	}	
 
 	private void updatePrevNext() {
-		if (currentQuestionIndex == 0) {
-			prevButton.setVisibility(View.INVISIBLE);
-			nextButton.setVisibility(View.VISIBLE);
+		if (!(level instanceof SuddenDeathLevel)) {
+			if (currentQuestionIndex == 0) {
+				prevButton.setVisibility(View.INVISIBLE);
+				nextButton.setVisibility(View.VISIBLE);
+				prevButton.setEnabled(false);
+				nextButton.setEnabled(true);
+			} else if (currentQuestionIndex == questions.size() - 1) {
+				prevButton.setVisibility(View.VISIBLE);
+				nextButton.setVisibility(View.INVISIBLE);
+				prevButton.setEnabled(true);
+				nextButton.setEnabled(false);
+			} else {
+				prevButton.setVisibility(View.VISIBLE);
+				nextButton.setVisibility(View.VISIBLE);
+				prevButton.setEnabled(true);
+				nextButton.setEnabled(true);
+			}
+		}
+		else {
+			prevButton.setVisibility(View.GONE);
 			prevButton.setEnabled(false);
-			nextButton.setEnabled(true);
-		} else if (currentQuestionIndex == questions.size() - 1) {
-			prevButton.setVisibility(View.VISIBLE);
-			nextButton.setVisibility(View.INVISIBLE);
-			prevButton.setEnabled(true);
-			nextButton.setEnabled(false);
-		} else {
-			prevButton.setVisibility(View.VISIBLE);
-			nextButton.setVisibility(View.VISIBLE);
-			prevButton.setEnabled(true);
-			nextButton.setEnabled(true);
 		}
 	}
 
@@ -178,12 +184,12 @@ public class QuizActivity extends QuizBaseActivity {
 			else if (button.getText().equals(answer)) {
 				button.setBackgroundResource(R.drawable.btn_incorrect);
 			}
-			
+
 			button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP, BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
 			button.setEnabled(false);
 		}
 	}
-	
+
 	private int getNumberOfQuestionsToAsk() {
 		if (level instanceof SuddenDeathLevel) {
 			return NUMBER_OF_QUESTIONS_SUDDEN_DEATH;

@@ -89,7 +89,8 @@ public class IntroActivity extends QuizBaseActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int itemId = item.getItemId();
 		if (itemId == R.id.menu_about) {
-			Toast.makeText(getBaseContext(), "Coming soon...", Toast.LENGTH_LONG).show();
+			Intent intent = new Intent(IntroActivity.this, InfoActivity.class);
+			startActivity(intent);
 			return true;
 		}
 		if (itemId == R.id.menu_settings) {
