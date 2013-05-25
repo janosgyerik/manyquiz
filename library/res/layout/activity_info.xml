@@ -43,20 +43,24 @@
                 android:orientation="vertical" >
 
                 <Button
+                    android:id="@+id/btnBlouCalorieCounter"
                     style="@style/linkButton"
-                    android:text="xxxx" />
+                    android:text="@string/blou_calorie_counter" />
 
                 <Button
+                    android:id="@+id/btnWineNotes"
                     style="@style/linkButton"
-                    android:text="xxxx" />
+                    android:text="@string/wine_notes" />
 
                 <Button
+                    android:id="@+id/btnRecipeNotes"
                     style="@style/linkButton"
-                    android:text="xxxx" />
+                    android:text="@string/recipe_notes" />
 
                 <Button
+                    android:id="@+id/btnMikesBlog"
                     style="@style/linkButton"
-                    android:text="xxxx" />
+                    android:text="@string/mikes_blog" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
