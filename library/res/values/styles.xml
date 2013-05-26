@@ -108,4 +108,5 @@
 
     <style name="answerButton" parent="wideButton"></style>
 	<style name="difficultyButton" parent="wideButton"></style>
+	<style name="linkButton" parent="wideButton"></style>
 </resources>
