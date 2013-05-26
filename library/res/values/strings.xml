@@ -23,8 +23,6 @@
     <string name="recipe_notes">Recipe Notes (Lite)</string>
     <string name="mikes_blog">Visit Mike\'s Blog (AndroidMakeMoney.com)</string>
     
-    <string name="lnk_title_info">Computer and IT Quiz was developed by Mike Heyworth and
-         Janos Gyerik. Please see the links below for our other apps and websites/blogs.</string>      
     <string name="lnk_blou_calorie_counter">https://play.google.com/store/apps/details?id=com.spiderdog.simplecalorietrackeradfree</string>
     <string name="lnk_wine_notes">https://play.google.com/store/apps/details?id=com.winenotes.lite</string>
     <string name="lnk_recipe_notes">https://play.google.com/store/apps/details?id=com.recipenotes.lite</string>
