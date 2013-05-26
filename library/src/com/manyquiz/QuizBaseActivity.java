@@ -38,7 +38,8 @@ public abstract class QuizBaseActivity extends Activity {
 			return true;
 		}
 		if (itemId == R.id.menu_settings) {
-			Toast.makeText(getBaseContext(), "Coming soon...", Toast.LENGTH_LONG).show();
+			Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+			startActivity(intent);
 			return true;
 		}
 		if (itemId == R.id.menu_quit) {
