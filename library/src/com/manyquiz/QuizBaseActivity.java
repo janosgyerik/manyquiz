@@ -29,7 +29,7 @@ public abstract class QuizBaseActivity extends Activity {
 		findViewById(R.id.ads).setVisibility(View.VISIBLE);
 	}
 	
-	//@Override
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int itemId = item.getItemId();
 		if (itemId == R.id.menu_about) {
