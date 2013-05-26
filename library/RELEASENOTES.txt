@@ -5,6 +5,9 @@ Version x (y.z)
 * Now you can navigate questions left and right freely,
   except in sudden death mode of course!
 
+* Now you can customize the maximum number of questions in
+  normal mode and sudden death mode
+
 * Answer choices now appear in random order
 
 * Confirmation on Quit
