@@ -6,50 +6,38 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 
-public class InfoActivity extends Activity implements OnClickListener {
-
-	Button btnBlouCalorieCounter;
-	Button btnWineNotes;
-	Button btnRecipeNotes;
-	Button btnMikesBlog;
+public class InfoActivity extends Activity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_info);
 
-		btnBlouCalorieCounter = (Button) findViewById(R.id.btnBlouCalorieCounter);
-		btnWineNotes = (Button) findViewById(R.id.btnWineNotes);
-		btnRecipeNotes = (Button) findViewById(R.id.btnRecipeNotes);
-		btnMikesBlog = (Button) findViewById(R.id.btnMikesBlog);
-
-		btnBlouCalorieCounter.setOnClickListener(this);
-		btnWineNotes.setOnClickListener(this);
-		btnRecipeNotes.setOnClickListener(this);
-		btnMikesBlog.setOnClickListener(this);
-	}	
-
-	public void onClick(View v) {
-
-		String url = "";
-
-		if (v.getId() == R.id.btnBlouCalorieCounter) {
-			url = getResources().getString(R.string.lnk_blou_calorie_counter);
-		}
-		else if (v.getId() == R.id.btnWineNotes) {
-			url = getResources().getString(R.string.lnk_wine_notes);	
-		}
-		else if (v.getId() == R.id.btnRecipeNotes) {
-			url = getResources().getString(R.string.lnk_recipe_notes);
-		}
-		else if (v.getId() == R.id.btnMikesBlog) {
-			url = getResources().getString(R.string.lnk_mikes_blog);
-		}
-
-		Intent i = new Intent(Intent.ACTION_VIEW);
-		i.setData(Uri.parse(url));
-		startActivity(i);
+		findViewById(R.id.btnBlouCalorieCounter).setOnClickListener(
+				new LinkButtonOnClickListener(R.string.lnk_blou_calorie_counter));
+		findViewById(R.id.btnWineNotes).setOnClickListener(
+				new LinkButtonOnClickListener(R.string.lnk_wine_notes));
+		findViewById(R.id.btnRecipeNotes).setOnClickListener(
+				new LinkButtonOnClickListener(R.string.lnk_recipe_notes));
+		findViewById(R.id.btnMikesBlog).setOnClickListener(
+				new LinkButtonOnClickListener(R.string.lnk_mikes_blog));
 	}
+
+	class LinkButtonOnClickListener implements OnClickListener {
+		private final int urlStringId;
+
+		public LinkButtonOnClickListener(int urlResourceId) {
+			this.urlStringId = urlResourceId;
+		}
+
+		@Override
+		public void onClick(View arg0) {
+			String url = getResources().getString(urlStringId);
+			Intent intent = new Intent(Intent.ACTION_VIEW);
+			intent.setData(Uri.parse(url));
+			startActivity(intent);
+		}
+	}
+
 }
