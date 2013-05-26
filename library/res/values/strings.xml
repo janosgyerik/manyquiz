@@ -26,5 +26,18 @@
     <string name="lnk_blou_calorie_counter">https://play.google.com/store/apps/details?id=com.spiderdog.simplecalorietrackeradfree</string>
     <string name="lnk_wine_notes">https://play.google.com/store/apps/details?id=com.winenotes.lite</string>
     <string name="lnk_recipe_notes">https://play.google.com/store/apps/details?id=com.recipenotes.lite</string>
-    <string name="lnk_mikes_blog">http://www.androidmakemoney.com</string>  
+    <string name="lnk_mikes_blog">http://www.androidmakemoney.com</string>
+    
+    <string name="key_max_questions_normal">max_questions_normal</string>
+    <string name="title_max_questions_normal">Questions in normal mode</string>
+    <string name="dialog_title_max_questions_normal"># of questions</string>
+    <string name="summary_max_questions_normal">Number of questions in normal mode</string>
+    <string name="summary_max_questions_normal_format">Maximum # of questions = %s</string>
+    
+    <string name="key_max_questions_suddendeath">max_questions_suddendeath</string>
+    <string name="title_max_questions_suddendeath">Questions in Sudden Death mode</string>
+    <string name="dialog_title_max_questions_suddendeath"># of questions</string>
+    <string name="summary_max_questions_suddendeath">Number of questions in sudden death mode</string>
+    <string name="summary_max_questions_suddendeath_format">Maximum # of questions = %s</string>
+    
 </resources>
