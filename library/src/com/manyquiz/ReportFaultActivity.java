@@ -31,23 +31,16 @@ public class ReportFaultActivity extends Activity {
 
 	public void sendFaultReport() {
 		EditText etFaultDescription = (EditText) findViewById(R.id.etFaultDescription);
-		String emailBody = 	"Problem(s) or Suggestion(s): " + etFaultDescription.getText();
+		String emailBody = "Problem(s) or Suggestion(s): " + etFaultDescription.getText();
 
-		//Get app version
-		int appVersionCode = 0;
-		String appVersionName = "";
+		String pkg = getApplicationContext().getPackageName();
+		PackageManager manager = getApplicationContext().getPackageManager();
 		try {
-			String pkg = getApplicationContext().getPackageName();
-			PackageManager manager = getApplicationContext().getPackageManager();
 			PackageInfo info = manager.getPackageInfo(pkg, 0);
-
-			appVersionCode = info.versionCode;
-			appVersionName = info.versionName;
-		} catch (NameNotFoundException nnf) {
-			nnf.printStackTrace();
+			emailBody += String.format("  [Version: %d/%s]", info.versionCode, info.versionName);
+		} catch (NameNotFoundException e) {
+			e.printStackTrace();
 		}
-
-		emailBody = emailBody + "  [Version: " + appVersionName + "]";
 
 		Intent intent = new Intent(Intent.ACTION_SEND);
 		intent.setType("message/rfc822");
@@ -56,7 +49,6 @@ public class ReportFaultActivity extends Activity {
 		intent.putExtra(Intent.EXTRA_SUBJECT,
 				getResources().getString(R.string.fault_email_title));
 		intent.putExtra(Intent.EXTRA_TEXT, emailBody);
-
 
 		try {
 			startActivity(Intent.createChooser(intent, "Send mail..."));
