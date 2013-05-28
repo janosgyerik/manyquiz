@@ -25,10 +25,10 @@ public abstract class QuizBaseActivity extends Activity {
 		AdView googleAdMobView = (AdView)this.findViewById(R.id.google_admob);
 		googleAdMobView.setBackgroundColor(Color.BLACK);
 		googleAdMobView.loadAd(new AdRequest());
-		
+
 		findViewById(R.id.ads).setVisibility(View.VISIBLE);
 	}
-	
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int itemId = item.getItemId();
@@ -39,6 +39,16 @@ public abstract class QuizBaseActivity extends Activity {
 		}
 		if (itemId == R.id.menu_settings) {
 			Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+			startActivity(intent);
+			return true;
+		}
+		if (itemId == R.id.menu_report_fault) {
+			Intent intent = new Intent(getApplicationContext(), ReportFaultActivity.class);
+			startActivity(intent);
+			return true;
+		}
+		if (itemId == R.id.menu_suggest_question) {
+			Intent intent = new Intent(getApplicationContext(), QuestionSuggestionActivity.class);
 			startActivity(intent);
 			return true;
 		}
@@ -60,5 +70,5 @@ public abstract class QuizBaseActivity extends Activity {
 		}
 		return false;
 	}
-	
+
 }
