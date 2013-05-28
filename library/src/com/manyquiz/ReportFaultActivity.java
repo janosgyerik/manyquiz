@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -37,31 +36,30 @@ public class ReportFaultActivity extends Activity {
 		//Get app version
 		int appVersionCode = 0;
 		String appVersionName = "";
-		try
-		{
+		try {
 			String pkg = getApplicationContext().getPackageName();
 			PackageManager manager = getApplicationContext().getPackageManager();
 			PackageInfo info = manager.getPackageInfo(pkg, 0);
 
 			appVersionCode = info.versionCode;
 			appVersionName = info.versionName;
-		}
-		catch(NameNotFoundException nnf)
-		{
+		} catch (NameNotFoundException nnf) {
 			nnf.printStackTrace();
 		}
 
-		//Add version code to e-mail body
 		emailBody = emailBody + "  [Version: " + appVersionName + "]";
 
-		Intent i = new Intent(Intent.ACTION_SEND);
-		i.setType("message/rfc822");
-		i.putExtra(Intent.EXTRA_EMAIL  , new String[]{getResources().getString(R.string.fault_email_address)});
-		i.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.fault_email_title));
-		i.putExtra(Intent.EXTRA_TEXT   , emailBody);
+		Intent intent = new Intent(Intent.ACTION_SEND);
+		intent.setType("message/rfc822");
+		intent.putExtra(Intent.EXTRA_EMAIL, new String[] {
+				getResources().getString(R.string.fault_email_address) });
+		intent.putExtra(Intent.EXTRA_SUBJECT,
+				getResources().getString(R.string.fault_email_title));
+		intent.putExtra(Intent.EXTRA_TEXT, emailBody);
+
 
 		try {
-			startActivity(Intent.createChooser(i, "Send mail..."));
+			startActivity(Intent.createChooser(intent, "Send mail..."));
 		} catch (android.content.ActivityNotFoundException ex) {
 			Toast.makeText(ReportFaultActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
 		}
