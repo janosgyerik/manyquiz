@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <ListPreference
+        android:defaultValue="15"
+        android:dialogTitle="@string/dialog_title_max_questions_normal"
+        android:entries="@array/max_questions_normal_entries"
+        android:entryValues="@array/max_questions_normal_values"
+        android:key="@string/key_max_questions_normal"
+        android:summary="@string/summary_max_questions_normal"
+        android:title="@string/title_max_questions_normal" />
+    <ListPreference
+        android:defaultValue="100"
+        android:dialogTitle="@string/dialog_title_max_questions_suddendeath"
+        android:entries="@array/max_questions_suddendeath_entries"
+        android:entryValues="@array/max_questions_suddendeath_values"
+        android:key="@string/key_max_questions_suddendeath"
+        android:summary="@string/summary_max_questions_suddendeath"
+        android:title="@string/title_max_questions_suddendeath" />
+
+</PreferenceScreen>

@@ -2,7 +2,9 @@ package com.manyquiz;
 
 import java.util.List;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -18,9 +20,6 @@ public class QuizActivity extends QuizBaseActivity {
 
 	public static final String PARAM_LEVEL = "level";
 	public static final String PARAM_MODE = "mode";
-
-	private static final int NUMBER_OF_QUESTIONS_STANDARD = 15;
-	private static final int NUMBER_OF_QUESTIONS_SUDDEN_DEATH = 100;
 
 	private static final int BTN_PADDING_LEFT = 10;
 	private static final int BTN_PADDING_TOP = 15;
@@ -191,11 +190,15 @@ public class QuizActivity extends QuizBaseActivity {
 	}
 
 	private int getNumberOfQuestionsToAsk() {
+		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+		
 		if (level instanceof SuddenDeathLevel) {
-			return NUMBER_OF_QUESTIONS_SUDDEN_DEATH;
+			String key = getString(R.string.key_max_questions_suddendeath);
+			return Integer.parseInt(settings.getString(key, null));
 		}
 		else {
-			return NUMBER_OF_QUESTIONS_STANDARD;
+			String key = getString(R.string.key_max_questions_normal);
+			return Integer.parseInt(settings.getString(key, null));
 		}
 	}
 
