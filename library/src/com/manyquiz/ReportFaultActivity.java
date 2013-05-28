@@ -6,12 +6,15 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class ReportFaultActivity extends Activity {
+
+	private static final String TAG = ReportFaultActivity.class.getSimpleName();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -39,7 +42,7 @@ public class ReportFaultActivity extends Activity {
 			PackageInfo info = manager.getPackageInfo(pkg, 0);
 			emailBody += String.format("  [Version: %d/%s]", info.versionCode, info.versionName);
 		} catch (NameNotFoundException e) {
-			e.printStackTrace();
+			Log.e(TAG, "Could not get package info", e);
 		}
 
 		Intent intent = new Intent(Intent.ACTION_SEND);
