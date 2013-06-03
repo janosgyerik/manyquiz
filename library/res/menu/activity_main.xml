@@ -2,12 +2,23 @@
 
     <item
         android:id="@+id/menu_about"
+        android:icon="@drawable/ic_menu_info_details"
         android:title="@string/menu_about"/>
     <item
         android:id="@+id/menu_settings"
+        android:icon="@drawable/ic_menu_preferences"
         android:title="@string/menu_settings"/>
     <item
+        android:id="@+id/menu_report_fault"
+        android:icon="@drawable/ic_menu_end_conversation"
+        android:title="@string/menu_report_fault"/>
+    <item
+        android:id="@+id/menu_suggest_question"
+        android:icon="@drawable/ic_menu_start_conversation"
+        android:title="@string/menu_suggest_question"/>
+    <item
         android:id="@+id/menu_quit"
+        android:icon="@drawable/ic_menu_close_clear_cancel"
         android:title="@string/menu_quit"/>
 
 </menu>

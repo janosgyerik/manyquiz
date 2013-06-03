@@ -12,6 +12,8 @@ Version x (y.z)
 
 * Confirmation on Quit
 
+* Added menu icons
+
 * Various minor layout improvements
 
 * More questions: 368 -> 370
