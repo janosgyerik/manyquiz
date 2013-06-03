@@ -28,7 +28,7 @@ public class QuestionSuggestionActivity extends Activity {
 
 	public void sendQuestionSuggestion() {
 		EditText etSuggestedQuestion = (EditText) findViewById(R.id.etSuggestedQuestion);
-		String emailBody = "Question: " + etSuggestedQuestion.getText();
+		String emailBody = etSuggestedQuestion.getText().toString();
 
 		Intent intent = new Intent(Intent.ACTION_SEND);
 		intent.setType("message/rfc822");
@@ -42,7 +42,7 @@ public class QuestionSuggestionActivity extends Activity {
 			startActivity(Intent.createChooser(intent, "Send mail..."));
 		} catch (android.content.ActivityNotFoundException ex) {
 			Toast.makeText(QuestionSuggestionActivity.this,
-					"There are no email clients installed.", Toast.LENGTH_SHORT)
+					getResources().getString(R.string.no_email_client), Toast.LENGTH_SHORT)
 					.show();
 		}
 	}

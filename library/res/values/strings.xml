@@ -47,5 +47,6 @@
     <string name="menu_suggest_question">Suggest a Question</string>
     <string name="question_email_address">spiderdogsw@gmail.com</string>
     <string name="question_email_title">QUESTION_SUGGESTION</string>
+     <string name="no_email_client">There are no email clients installed.</string>
 
 </resources>

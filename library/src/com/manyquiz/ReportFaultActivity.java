@@ -34,7 +34,7 @@ public class ReportFaultActivity extends Activity {
 
 	public void sendFaultReport() {
 		EditText etFaultDescription = (EditText) findViewById(R.id.etFaultDescription);
-		String emailBody = "Problem(s) or Suggestion(s): " + etFaultDescription.getText();
+		String emailBody = etFaultDescription.getText().toString();
 
 		String pkg = getApplicationContext().getPackageName();
 		PackageManager manager = getApplicationContext().getPackageManager();
@@ -56,7 +56,9 @@ public class ReportFaultActivity extends Activity {
 		try {
 			startActivity(Intent.createChooser(intent, "Send mail..."));
 		} catch (android.content.ActivityNotFoundException ex) {
-			Toast.makeText(ReportFaultActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+			Toast.makeText(ReportFaultActivity.this,
+					getResources().getString(R.string.no_email_client), Toast.LENGTH_SHORT)
+					.show();
 		}
 	}
 }
