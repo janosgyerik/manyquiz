@@ -52,9 +52,9 @@ public class ReportFaultActivity extends Activity {
 		intent.putExtra(Intent.EXTRA_SUBJECT,
 				getResources().getString(R.string.fault_email_title));
 		intent.putExtra(Intent.EXTRA_TEXT, emailBody);
-
+		
 		try {
-			startActivity(Intent.createChooser(intent, "Send mail..."));
+			startActivity(Intent.createChooser(intent, getResources().getString(R.string.no_email_client)));
 		} catch (android.content.ActivityNotFoundException ex) {
 			Toast.makeText(ReportFaultActivity.this,
 					getResources().getString(R.string.no_email_client), Toast.LENGTH_SHORT)
