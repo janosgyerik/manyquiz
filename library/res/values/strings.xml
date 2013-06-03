@@ -48,5 +48,5 @@
     <string name="question_email_address">spiderdogsw@gmail.com</string>
     <string name="question_email_title">QUESTION_SUGGESTION</string>
     <string name="no_email_client">There are no email clients installed.</string>
-	<string name="email_client_chooser">Send e-mail...</string>
+    <string name="email_client_chooser">Send e-mail...</string>
 </resources>
