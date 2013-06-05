@@ -2,6 +2,7 @@ package com.manyquiz;
 
 import java.util.List;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -204,7 +205,11 @@ public class QuizActivity extends QuizBaseActivity {
 
 	private void finishGame() {
 		finish();
-		Toast.makeText(getApplicationContext(), "will load result screen here using intent when created", Toast.LENGTH_LONG).show();
+		//Bundle bundle = new Bundle();
+		//bundle.putSerializable(QuizActivity.PARAM_LEVEL, level);
+		Intent intent = new Intent(QuizActivity.this, ResultsActivity.class);
+		//intent.putExtras(bundle);
+		startActivity(intent);
 	}
 
 	private void displayFinishButton() {
