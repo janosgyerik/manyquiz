@@ -192,7 +192,7 @@ public class QuizActivity extends QuizBaseActivity {
 			}
 			else if (button.getText().equals(answer)) {
 				button.setBackgroundResource(R.drawable.btn_incorrect);
-				if ( level instanceof SuddenDeathLevel ) {
+				if (level instanceof SuddenDeathLevel) {
 					displayFinishButton();
 				}
 			}
@@ -204,9 +204,9 @@ public class QuizActivity extends QuizBaseActivity {
 
 	private void finishGame() {
 		finish();
-		// will load result screen here using intent, when the screen has been setup
 		Toast.makeText(getApplicationContext(), "will load result screen here using intent when created", Toast.LENGTH_LONG).show();
 	}
+
 	private void displayFinishButton() {
 		nextButton.setVisibility(View.GONE);
 		nextButton.setEnabled(false);
