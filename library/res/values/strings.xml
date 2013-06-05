@@ -50,4 +50,8 @@
     <string name="question_email_title">QUESTION_SUGGESTION</string>
     <string name="no_email_client">There are no email clients installed.</string>
     <string name="email_client_chooser">Send e-mail...</string>
+    
+    <string name="title_results">How did you do?</string>
+    <string name="score">Score: </string>
+    <string name="done">Done</string>
 </resources>
