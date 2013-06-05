@@ -51,8 +51,7 @@
 
             <TextView
                 android:id="@+id/question"
-                style="@style/question"
-                android:text="Q: One kilobyte is equal to:" />
+                style="@style/question" />
 
             <LinearLayout
                 android:id="@+id/choices"
@@ -61,26 +60,22 @@
                 android:orientation="vertical" >
 
                 <Button
-                    style="@style/answerButton"
-                    android:text="1000 bytes" />
+                    style="@style/answerButton" />
 
                 <Button
-                    style="@style/answerButton"
-                    android:text="100 bytes" />
+                    style="@style/answerButton" />
 
                 <Button
-                    style="@style/answerButton"
-                    android:text="1024 bytes" />
+                    style="@style/answerButton" />
 
                 <Button
-                    style="@style/answerButton"
-                    android:text="1023 bytes" />
+                    style="@style/answerButton" />
+                
             </LinearLayout>
 
             <TextView
                 android:id="@+id/explanation"
                 style="@style/explanation"
-                android:text="Although kilobyte is formally equal to 1000 bytes, a second definition and usage has historically been in practice in the field of computer science and IT, as 1024 bytes."
                 android:visibility="gone" />
         </LinearLayout>
     </ScrollView>
@@ -101,6 +96,12 @@
             style="@style/weightedButton"
             android:contentDescription="Next"
             android:src="@drawable/btn_next" />
+
+        <Button
+            android:id="@+id/btn_finish"
+            style="@style/weightedButton"
+            android:visibility="gone"
+            android:text="@string/btn_finish" />
     </LinearLayout>
 
     <include layout="@layout/ads" />
