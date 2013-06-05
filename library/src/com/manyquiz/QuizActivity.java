@@ -40,6 +40,7 @@ public class QuizActivity extends QuizBaseActivity {
 	private LinearLayout choicesView;
 	private ImageButton prevButton;
 	private ImageButton nextButton;
+	private Button finishButton;
 	private TextView questions_i;
 
 	@Override
@@ -68,7 +69,8 @@ public class QuizActivity extends QuizBaseActivity {
 		prevButton.setOnClickListener(new PrevNextClickListener(-1));
 		nextButton = (ImageButton) findViewById(R.id.btn_next);
 		nextButton.setOnClickListener(new PrevNextClickListener(1));
-
+		finishButton = (Button) findViewById(R.id.btn_finish);
+		finishButton.setOnClickListener(new PrevNextClickListener(1));
 		questions_i = (TextView) findViewById(R.id.questions_i);
 
 		TextView questions_n = (TextView) findViewById(R.id.questions_n);
@@ -182,11 +184,22 @@ public class QuizActivity extends QuizBaseActivity {
 			}
 			else if (button.getText().equals(answer)) {
 				button.setBackgroundResource(R.drawable.btn_incorrect);
+				if ( level instanceof SuddenDeathLevel ) {
+					displayFinishButton();
+				}
 			}
 
 			button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP, BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
 			button.setEnabled(false);
 		}
+	}
+	
+	private void displayFinishButton() {
+		//hide next button
+		nextButton.setVisibility(View.GONE);
+		nextButton.setEnabled(false);
+		
+		//show finish button
 	}
 
 	private int getNumberOfQuestionsToAsk() {
