@@ -29,14 +29,13 @@ public class QuizActivity extends QuizBaseActivity {
 	private static final int BTN_PADDING_BOTTOM = 15;
 
 	private QuizSQLiteOpenHelper helper;
-
 	private List<IQuestion> questions;
 	private IQuestion currentQuestion;
 	private int currentQuestionIndex = 0;
 	private int score = 0;
 	private Level level;
 	private int index = 0;
-
+	private int numberOfAnsweredQuestions = 0;
 	private TextView questionView;
 	private TextView explanationView;
 	private LinearLayout choicesView;
@@ -44,7 +43,9 @@ public class QuizActivity extends QuizBaseActivity {
 	private ImageButton nextButton;
 	private Button finishButton;
 	private TextView questions_i;
-
+	
+	public static int numberOfQuestionsToAsk = 0;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -56,13 +57,12 @@ public class QuizActivity extends QuizBaseActivity {
 		Bundle bundle = getIntent().getExtras();
 		level = (Level)bundle.getSerializable(PARAM_LEVEL);
 		Log.d(TAG, "use level = " + level);
-		int numberOfQuestionsToAsk = getNumberOfQuestionsToAsk();
-
+		numberOfQuestionsToAsk = getNumberOfQuestionsToAsk();
+		
 		helper = new QuizSQLiteOpenHelper(this);
 
 		IQuiz quiz = new DatabaseBackedQuiz(getHelper());
 		questions = quiz.pickRandomQuestions(numberOfQuestionsToAsk, level.getLevel());
-
 		questionView = (TextView) findViewById(R.id.question);
 		explanationView = (TextView) findViewById(R.id.explanation);
 		choicesView = (LinearLayout) findViewById(R.id.choices);
@@ -112,6 +112,7 @@ public class QuizActivity extends QuizBaseActivity {
 
 		@Override
 		public void onClick(View arg0) {
+			numberOfAnsweredQuestions ++;
 			setSelectedAnswer(answer);
 		}
 	}
@@ -183,32 +184,42 @@ public class QuizActivity extends QuizBaseActivity {
 	}
 
 	private void setSelectedAnswer(String answer) {
+	
 		currentQuestion.setSelectedAnswer(answer);
 		explanationView.setVisibility(View.VISIBLE);
 		for (int i = 0; i < choicesView.getChildCount(); ++i) {
 			Button button = (Button) choicesView.getChildAt(i);
 			if (button.getText().equals(currentQuestion.getCorrectAnswer())) {
 				button.setBackgroundResource(R.drawable.btn_correct);
-				score++;
 			}
 			else if (button.getText().equals(answer)) {
 				button.setBackgroundResource(R.drawable.btn_incorrect);
+
 				if (level instanceof SuddenDeathLevel) {
 					displayFinishButton();
 				}
 			}
 
+			if(numberOfQuestionsToAsk == numberOfAnsweredQuestions){
+				displayFinishButton();
+			}
+				
 			button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP, BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
 			button.setEnabled(false);
+		}
+		if (currentQuestion.getCorrectAnswer().equals(currentQuestion.getSelectedAnswer())) {
+			score++;
 		}
 	}
 
 	private void finishGame() {
 		finish();
-		//Bundle bundle = new Bundle();
-		//bundle.putSerializable(QuizActivity.PARAM_LEVEL, level);
+		Bundle bundle = new Bundle();
+		bundle.putSerializable(QuizActivity.PARAM_LEVEL, level);
+		bundle.putInt("score", score);
+		bundle.putInt("index", index);
 		Intent intent = new Intent(QuizActivity.this, ResultsActivity.class);
-		//intent.putExtras(bundle);
+		intent.putExtras(bundle);
 		startActivity(intent);
 	}
 
@@ -219,7 +230,7 @@ public class QuizActivity extends QuizBaseActivity {
 		finishButton.setEnabled(true);
 	}
 
-	private int getNumberOfQuestionsToAsk() {
+	public int getNumberOfQuestionsToAsk() {
 		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
 
 		if (level instanceof SuddenDeathLevel) {
