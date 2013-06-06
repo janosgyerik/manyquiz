@@ -44,7 +44,7 @@ public class QuizActivity extends QuizBaseActivity {
 	private Button finishButton;
 	private TextView questions_i;
 	
-	public static int numberOfQuestionsToAsk = 0;
+	public static int numberOfQuestionsToAsk;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

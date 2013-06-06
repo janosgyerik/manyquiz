@@ -24,6 +24,21 @@ public class ResultsActivity extends Activity {
 		String resultsDescription = "";
 		float percentageScore = (((float) score / (float) QuizActivity.numberOfQuestionsToAsk)*100);
 
+		resultsDescription = getResultsDescription(percentageScore);
+
+		TextView tvResultsScore = (TextView) findViewById(R.id.resultsScore);
+		TextView tvResultsReview = (TextView) findViewById(R.id.resultsDescription);
+
+		tvResultsScore.setText(Integer.toString(score) + "/" + Integer.toString(QuizActivity.numberOfQuestionsToAsk));
+		tvResultsReview.setText(resultsDescription);
+
+		findViewById(R.id.btnDoneResults).setOnClickListener(
+				new DoneClickListener());
+	}
+
+	private String getResultsDescription(float percentageScore) {
+		String resultsDescription = "";
+
 		if (percentageScore == 0) {
 			resultsDescription = getResources().getString(R.string.result_zero_pc);
 		}
@@ -44,18 +59,9 @@ public class ResultsActivity extends Activity {
 		}			
 		else if (percentageScore == 100) {
 			resultsDescription = getResources().getString(R.string.result_one_hundren_pc);
-		}			
-
-		TextView tvResultsScore = (TextView) findViewById(R.id.resultsScore);
-		TextView tvResultsReview = (TextView) findViewById(R.id.resultsDescription);
-
-		tvResultsScore.setText(Integer.toString(score) + "/" + Integer.toString(QuizActivity.numberOfQuestionsToAsk));
-		tvResultsReview.setText(resultsDescription);
-
-		findViewById(R.id.btnDoneResults).setOnClickListener(
-				new DoneClickListener());
+		}
+		return resultsDescription;
 	}
-
 	class DoneClickListener implements OnClickListener {
 
 		@Override
