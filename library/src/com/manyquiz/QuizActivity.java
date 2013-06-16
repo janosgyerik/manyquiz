@@ -1,4 +1,4 @@
-package com.manyquiz; 
+package com.manyquiz;
 
 import java.util.List;
 
@@ -42,9 +42,9 @@ public class QuizActivity extends QuizBaseActivity {
 	private ImageButton nextButton;
 	private ImageButton finishButton;
 	private TextView questions_i;
-	
+
 	public static int numberOfQuestionsToAsk;
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -54,14 +54,15 @@ public class QuizActivity extends QuizBaseActivity {
 		checkAndSetupForLiteVersion();
 
 		Bundle bundle = getIntent().getExtras();
-		level = (Level)bundle.getSerializable(PARAM_LEVEL);
+		level = (Level) bundle.getSerializable(PARAM_LEVEL);
 		Log.d(TAG, "use level = " + level);
 		numberOfQuestionsToAsk = getNumberOfQuestionsToAsk();
-		
+
 		helper = new QuizSQLiteOpenHelper(this);
 
 		IQuiz quiz = new DatabaseBackedQuiz(getHelper());
-		questions = quiz.pickRandomQuestions(numberOfQuestionsToAsk, level.getLevel());
+		questions = quiz.pickRandomQuestions(numberOfQuestionsToAsk,
+				level.getLevel());
 		questionView = (TextView) findViewById(R.id.question);
 		explanationView = (TextView) findViewById(R.id.explanation);
 		choicesView = (LinearLayout) findViewById(R.id.choices);
@@ -111,7 +112,7 @@ public class QuizActivity extends QuizBaseActivity {
 
 		@Override
 		public void onClick(View arg0) {
-			numberOfAnsweredQuestions ++;
+			numberOfAnsweredQuestions++;
 			setSelectedAnswer(answer);
 		}
 	}
@@ -128,8 +129,8 @@ public class QuizActivity extends QuizBaseActivity {
 	}
 
 	private void updateScoreDisplay(int index) {
-		questions_i.setText(Integer.toString(index+1));
-	}	
+		questions_i.setText(Integer.toString(index + 1));
+	}
 
 	private void updatePrevNext() {
 		if (!(level instanceof SuddenDeathLevel)) {
@@ -149,8 +150,7 @@ public class QuizActivity extends QuizBaseActivity {
 				prevButton.setEnabled(true);
 				nextButton.setEnabled(true);
 			}
-		}
-		else {
+		} else {
 			prevButton.setVisibility(View.GONE);
 			prevButton.setEnabled(false);
 		}
@@ -167,7 +167,8 @@ public class QuizActivity extends QuizBaseActivity {
 		for (String choice : question.getChoices()) {
 			Button button = new Button(this);
 			button.setText(choice);
-			button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP, BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
+			button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP,
+					BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
 			if (selectedAnswer == null) {
 				button.setOnClickListener(new ChoiceClickListener(choice));
 			}
@@ -176,22 +177,20 @@ public class QuizActivity extends QuizBaseActivity {
 		if (selectedAnswer != null) {
 			setSelectedAnswer(selectedAnswer);
 			explanationView.setVisibility(View.VISIBLE);
-		}
-		else {
+		} else {
 			explanationView.setVisibility(View.GONE);
 		}
 	}
 
 	private void setSelectedAnswer(String answer) {
-	
+
 		currentQuestion.setSelectedAnswer(answer);
 		explanationView.setVisibility(View.VISIBLE);
 		for (int i = 0; i < choicesView.getChildCount(); ++i) {
 			Button button = (Button) choicesView.getChildAt(i);
 			if (button.getText().equals(currentQuestion.getCorrectAnswer())) {
 				button.setBackgroundResource(R.drawable.btn_correct);
-			}
-			else if (button.getText().equals(answer)) {
+			} else if (button.getText().equals(answer)) {
 				button.setBackgroundResource(R.drawable.btn_incorrect);
 
 				if (level instanceof SuddenDeathLevel) {
@@ -199,14 +198,16 @@ public class QuizActivity extends QuizBaseActivity {
 				}
 			}
 
-			if(numberOfQuestionsToAsk == numberOfAnsweredQuestions){
+			if (numberOfQuestionsToAsk == numberOfAnsweredQuestions) {
 				displayFinishButton();
 			}
-				
-			button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP, BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
+
+			button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP,
+					BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
 			button.setEnabled(false);
 		}
-		if (currentQuestion.getCorrectAnswer().equals(currentQuestion.getSelectedAnswer())) {
+		if (currentQuestion.getCorrectAnswer().equals(
+				currentQuestion.getSelectedAnswer())) {
 			score++;
 		}
 	}
@@ -230,13 +231,13 @@ public class QuizActivity extends QuizBaseActivity {
 	}
 
 	public int getNumberOfQuestionsToAsk() {
-		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+		SharedPreferences settings = PreferenceManager
+				.getDefaultSharedPreferences(this);
 
 		if (level instanceof SuddenDeathLevel) {
 			String key = getString(R.string.key_max_questions_suddendeath);
 			return Integer.parseInt(settings.getString(key, null));
-		}
-		else {
+		} else {
 			String key = getString(R.string.key_max_questions_normal);
 			return Integer.parseInt(settings.getString(key, null));
 		}
@@ -259,11 +260,11 @@ public class QuizActivity extends QuizBaseActivity {
 		return helper;
 	}
 
-	@Override  
+	@Override
 	protected void onDestroy() {
 		Log.d(TAG, "++onDestroy");
 		super.onDestroy();
 		helper.close();
 	}
 
-} //end of activity class
+} // end of activity class
