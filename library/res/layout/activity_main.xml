@@ -81,22 +81,16 @@
         android:orientation="horizontal" >
 
         <ImageButton
-            android:id="@+id/btn_finish"
-            style="@style/weightedButton"
-            android:src="@drawable/btn_finish"
-            android:visibility="gone" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-        <ImageButton
             android:id="@+id/btn_prev"
             style="@style/weightedButton"
             android:contentDescription="Previous"
             android:src="@drawable/btn_prev" />
+
+        <ImageButton
+            android:id="@+id/btn_finish"
+            style="@style/weightedButton"
+            android:src="@drawable/btn_finish"
+            android:visibility="gone" />
 
         <ImageButton
             android:id="@+id/btn_next"
