@@ -190,6 +190,7 @@ public class QuizActivity extends QuizBaseActivity {
 			Button button = (Button) choicesView.getChildAt(i);
 			if (button.getText().equals(currentQuestion.getCorrectAnswer())) {
 				button.setBackgroundResource(R.drawable.btn_correct);
+				++score;
 			} else if (button.getText().equals(answer)) {
 				button.setBackgroundResource(R.drawable.btn_incorrect);
 
@@ -205,10 +206,6 @@ public class QuizActivity extends QuizBaseActivity {
 			button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP,
 					BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
 			button.setEnabled(false);
-		}
-		if (currentQuestion.getCorrectAnswer().equals(
-				currentQuestion.getSelectedAnswer())) {
-			score++;
 		}
 	}
 
