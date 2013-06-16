@@ -14,6 +14,7 @@ public class Question implements IQuestion {
 	private final String correctAnswer;
 
 	private String selectedAnswer;
+	private boolean answered;
 	private boolean correctlyAnswered;
 
 	public Question(String category, String text, String explanation,
@@ -22,6 +23,8 @@ public class Question implements IQuestion {
 		this.text = text;
 		this.explanation = explanation;
 		this.correctAnswer = answer;
+		
+		this.answered = false;
 		this.correctlyAnswered = false;
 		
 		this.choices = new ArrayList<String>(decoyChoices);
@@ -62,6 +65,7 @@ public class Question implements IQuestion {
 	@Override
 	public void setSelectedAnswer(String answer) {
 		this.selectedAnswer = answer;
+		answered = true;
 		correctlyAnswered = answer.equals(correctAnswer);
 	}
 
@@ -70,4 +74,8 @@ public class Question implements IQuestion {
 		return correctlyAnswered;
 	}
 
+	@Override
+	public boolean wasAnswered() {
+		return answered;
+	}
 }

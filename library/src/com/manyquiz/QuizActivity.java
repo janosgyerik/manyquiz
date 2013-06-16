@@ -43,6 +43,8 @@ public class QuizActivity extends QuizBaseActivity {
 	private ImageButton finishButton;
 	private TextView questions_i;
 
+	private boolean gameOver;
+
 	public static int numberOfQuestionsToAsk;
 
 	@Override
@@ -73,6 +75,7 @@ public class QuizActivity extends QuizBaseActivity {
 		nextButton.setOnClickListener(new PrevNextClickListener(1));
 		finishButton = (ImageButton) findViewById(R.id.btn_finish);
 		finishButton.setOnClickListener(new FinishClickListener());
+		finishButton.setEnabled(false);
 		questions_i = (TextView) findViewById(R.id.questions_i);
 
 		TextView questions_n = (TextView) findViewById(R.id.questions_n);
@@ -103,7 +106,6 @@ public class QuizActivity extends QuizBaseActivity {
 	}
 
 	class ChoiceClickListener implements OnClickListener {
-
 		private String answer;
 
 		ChoiceClickListener(String answer) {
@@ -112,8 +114,10 @@ public class QuizActivity extends QuizBaseActivity {
 
 		@Override
 		public void onClick(View arg0) {
-			numberOfAnsweredQuestions++;
-			setSelectedAnswer(answer);
+			if (!currentQuestion.wasAnswered()) {
+				setSelectedAnswer(answer);
+				updateScore();
+			}
 		}
 	}
 
@@ -162,50 +166,60 @@ public class QuizActivity extends QuizBaseActivity {
 		questionView.setText(question.getText());
 		explanationView.setText(question.getExplanation());
 
-		String selectedAnswer = question.getSelectedAnswer();
 		choicesView.removeAllViews();
+		boolean wasAnswered = question.wasAnswered();
 		for (String choice : question.getChoices()) {
 			Button button = new Button(this);
 			button.setText(choice);
 			button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP,
 					BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
-			if (selectedAnswer == null) {
+			if (!wasAnswered) {
 				button.setOnClickListener(new ChoiceClickListener(choice));
 			}
 			choicesView.addView(button);
 		}
-		if (selectedAnswer != null) {
-			setSelectedAnswer(selectedAnswer);
-			explanationView.setVisibility(View.VISIBLE);
-		} else {
-			explanationView.setVisibility(View.GONE);
+		if (wasAnswered) {
+			setSelectedAnswer(question.getSelectedAnswer());
 		}
 	}
 
 	private void setSelectedAnswer(String answer) {
-
 		currentQuestion.setSelectedAnswer(answer);
 		explanationView.setVisibility(View.VISIBLE);
+		
+		String correctAnswer = currentQuestion.getCorrectAnswer();
 		for (int i = 0; i < choicesView.getChildCount(); ++i) {
 			Button button = (Button) choicesView.getChildAt(i);
-			if (button.getText().equals(currentQuestion.getCorrectAnswer())) {
+			if (button.getText().equals(correctAnswer)) {
 				button.setBackgroundResource(R.drawable.btn_correct);
-				++score;
 			} else if (button.getText().equals(answer)) {
 				button.setBackgroundResource(R.drawable.btn_incorrect);
-
-				if (level instanceof SuddenDeathLevel) {
-					displayFinishButton();
-				}
-			}
-
-			if (numberOfQuestionsToAsk == numberOfAnsweredQuestions) {
-				displayFinishButton();
 			}
 
 			button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP,
 					BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
 			button.setEnabled(false);
+		}
+	}
+	
+	private void updateScore() {
+		if (currentQuestion.wasCorrectlyAnswered()) {
+			++score;
+		}
+		else {
+			if (level instanceof SuddenDeathLevel) {
+				gameOver = true;
+			}
+		}
+		
+		++numberOfAnsweredQuestions;
+		if (numberOfQuestionsToAsk == numberOfAnsweredQuestions) {
+			gameOver = true;
+		}
+		
+		if (gameOver) {
+			finishButton.setVisibility(View.VISIBLE);
+			finishButton.setEnabled(true);
 		}
 	}
 
@@ -218,13 +232,6 @@ public class QuizActivity extends QuizBaseActivity {
 		Intent intent = new Intent(QuizActivity.this, ResultsActivity.class);
 		intent.putExtras(bundle);
 		startActivity(intent);
-	}
-
-	private void displayFinishButton() {
-		nextButton.setVisibility(View.GONE);
-		nextButton.setEnabled(false);
-		finishButton.setVisibility(View.VISIBLE);
-		finishButton.setEnabled(true);
 	}
 
 	public int getNumberOfQuestionsToAsk() {
