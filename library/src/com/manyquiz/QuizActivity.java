@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class QuizActivity extends QuizBaseActivity {
 
@@ -41,7 +40,7 @@ public class QuizActivity extends QuizBaseActivity {
 	private LinearLayout choicesView;
 	private ImageButton prevButton;
 	private ImageButton nextButton;
-	private Button finishButton;
+	private ImageButton finishButton;
 	private TextView questions_i;
 	
 	public static int numberOfQuestionsToAsk;
@@ -71,7 +70,7 @@ public class QuizActivity extends QuizBaseActivity {
 		prevButton.setOnClickListener(new PrevNextClickListener(-1));
 		nextButton = (ImageButton) findViewById(R.id.btn_next);
 		nextButton.setOnClickListener(new PrevNextClickListener(1));
-		finishButton = (Button) findViewById(R.id.btn_finish);
+		finishButton = (ImageButton) findViewById(R.id.btn_finish);
 		finishButton.setOnClickListener(new FinishClickListener());
 		questions_i = (TextView) findViewById(R.id.questions_i);
 
