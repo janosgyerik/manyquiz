@@ -13,6 +13,6 @@ public interface IQuestion {
 	
 	String getSelectedAnswer();
 	void setSelectedAnswer(String answer);
-	boolean isCorrect();
+	boolean wasCorrectlyAnswered();
 
 }

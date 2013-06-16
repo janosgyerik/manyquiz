@@ -14,16 +14,19 @@ public class Question implements IQuestion {
 	private final String correctAnswer;
 
 	private String selectedAnswer;
+	private boolean correctlyAnswered;
 
 	public Question(String category, String text, String explanation,
 			String answer, List<String> decoyChoices) {
 		this.category = category;
 		this.text = text;
 		this.explanation = explanation;
+		this.correctAnswer = answer;
+		this.correctlyAnswered = false;
+		
 		this.choices = new ArrayList<String>(decoyChoices);
 		this.choices.add(answer);
 		Collections.shuffle(choices);
-		this.correctAnswer = answer;
 	}
 
 	@Override
@@ -59,11 +62,12 @@ public class Question implements IQuestion {
 	@Override
 	public void setSelectedAnswer(String answer) {
 		this.selectedAnswer = answer;
+		correctlyAnswered = answer.equals(correctAnswer);
 	}
 
 	@Override
-	public boolean isCorrect() {
-		return selectedAnswer != null && selectedAnswer.equals(correctAnswer);
+	public boolean wasCorrectlyAnswered() {
+		return correctlyAnswered;
 	}
 
 }
