@@ -3409,3 +3409,93 @@ The "clean" step typically removes build products, with the intention to start o
 4
 build-automation
 END
+What is the weakest point in the computer security of a typical large firm?
+The employees
+The firewall software used
+The antivirus software used
+The intranet software used
+The typical weakest point is the employees, as social engineering and human gallibility can often circumvent otherwise state of the art computer security system.
+4
+security
+END
+Which of these is the most dangerous security probing tool?
+nmap
+ping
+ifconfig
+telnet
+nmap is a sophisticated port scanner, and can reveal much more about a network than all the other tools combined.
+4
+security
+END
+What's the worst thing that can happen if you configure nmap with suid root?
+It could be used for privilege escalation
+It could be used to completely jam a network with DOS attacks
+It could be used to delete all files in the system
+It could be used to unleash the kraken
+Privilege escalation could be used to create all the other damages. Except maybe releasing the kraken. Not sure.
+4
+security
+END
+In Linux, what is the best way to give read permission to everybody on a file?
+chmod +r file.txt
+chmod 777 file.txt
+chmod 4777 file.txt
+chmod 444 file.txt
+The +r flag gives read permission to everybody on the system. 444 is not a good idea because it removes all other permissions that there might have been. Anybody taking the other options should be fired on the spot.
+4
+security
+END
+Which is the worst method for encrypting data?
+sha1
+des3
+aes-128-cbc
+crypt
+sha1 is not an encryption method but a message digest method. The next worst method here is crypt, if you wanted to know... :)
+4
+security
+END
+What's the scariest defect that can happen in a web application?
+Buffer overflow
+Blue screen of death
+Denial of service
+NullPointerException
+A buffer overflow can potentially lead to privilege escalation, which could be used to produce all the others and much worse.
+4
+security
+END
+Which C library function is the least unsafe?
+strncpy
+strcpy
+gets
+scanf
+Only the strncpy function checks bounds, the others don't. Not checking bounds is very likely to lead to buffer overflow defects.
+4
+security
+END
+Which tool cannot be used to encrypt files?
+nmap
+encfs
+openssl
+TrueCrypt
+encfs and TrueCrypt can be used to create encrypted directories, and openssl can be used to encrypt a stream of data. nmap is a network scanning tool, not for encryption.
+4
+security
+END
+Which tool cannot be used to find open ports in the local system?
+ping
+nmap
+telnet
+netstat
+ping can only send ICMP ECHO requests to hosts, it cannot be used to find open ports.
+4
+security
+END
+Which tool cannot be used to find open ports in a remote system?
+netstat
+nmap
+telnet
+curl
+Unlike the others, netstat cannot be used to scan arbitrary remote ports.
+4
+security
+END
