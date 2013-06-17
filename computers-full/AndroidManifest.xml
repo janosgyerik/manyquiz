@@ -27,19 +27,19 @@
             android:label="@string/title_activity_main" >
         </activity>
         <activity
-            android:name="com.manyquiz.InfoActivity"
-            android:label="@string/title_activity_main" >
-        </activity>
-        <activity
-            android:name="com.manyquiz.SettingsActivity"
-            android:label="@string/title_activity_main" >
-        </activity>
-        <activity
             android:name="com.manyquiz.QuestionSuggestionActivity"
             android:label="@string/title_activity_main" >
         </activity>
         <activity
             android:name="com.manyquiz.ReportFaultActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name="com.manyquiz.InfoActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name="com.manyquiz.SettingsActivity"
             android:label="@string/title_activity_main" >
         </activity>
         <activity

@@ -8,6 +8,9 @@
         android:minSdkVersion="4"
         android:targetSdkVersion="4" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name="com.manyquiz.LiteQuizApplication"
         android:icon="@drawable/launcher_main"
@@ -25,8 +28,6 @@
         <activity
             android:name="com.manyquiz.QuizActivity"
             android:label="@string/title_activity_main" >
-            <intent-filter>
-            </intent-filter>
         </activity>
         <activity
             android:name="com.manyquiz.QuestionSuggestionActivity"
@@ -56,8 +57,5 @@
             android:name="ADMOB_PUBLISHER_ID"
             android:value="a14b9eac992329e" />
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

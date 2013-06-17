@@ -2,6 +2,7 @@ package com.manyquiz;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -27,6 +28,8 @@ public class IntroActivity extends QuizBaseActivity {
 		setContentView(R.layout.activity_intro);
 		
 		checkAndSetupForLiteVersion();
+		
+		PreferenceManager.setDefaultValues(this, R.xml.settings, false);
 
 		helper = new QuizSQLiteOpenHelper(this);
 

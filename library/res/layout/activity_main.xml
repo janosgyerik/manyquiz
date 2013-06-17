@@ -59,18 +59,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
-                <Button
-                    style="@style/answerButton" />
+                <Button style="@style/answerButton" />
 
-                <Button
-                    style="@style/answerButton" />
+                <Button style="@style/answerButton" />
 
-                <Button
-                    style="@style/answerButton" />
+                <Button style="@style/answerButton" />
 
-                <Button
-                    style="@style/answerButton" />
-                
+                <Button style="@style/answerButton" />
             </LinearLayout>
 
             <TextView
@@ -92,16 +87,16 @@
             android:src="@drawable/btn_prev" />
 
         <ImageButton
+            android:id="@+id/btn_finish"
+            style="@style/weightedButton"
+            android:src="@drawable/btn_finish"
+            android:visibility="gone" />
+
+        <ImageButton
             android:id="@+id/btn_next"
             style="@style/weightedButton"
             android:contentDescription="Next"
             android:src="@drawable/btn_next" />
-
-        <Button
-            android:id="@+id/btn_finish"
-            style="@style/weightedButton"
-            android:visibility="gone"
-            android:text="@string/btn_finish" />
     </LinearLayout>
 
     <include layout="@layout/ads" />
