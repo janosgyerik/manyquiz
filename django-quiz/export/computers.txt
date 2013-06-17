@@ -3364,3 +3364,48 @@ Uploading a file requires enclosing an entity in the request, which is supported
 4
 web-programming
 END
+Which of these build tools is the oldest?
+Make
+Apache Ant
+Apache Maven
+CMake
+Make appeared in 1977, Ant in 2000, Maven in 2002, and CMake in 1999.
+4
+build-automation
+END
+What is NOT a main responsibility of an automated build system?
+Debug the source code
+Compile the source code
+Eliminate redundant tasks
+Execute unit tests
+Debugging is an activity that involves interacting with a running program, not really part of the build process.
+4
+build-automation
+END
+In an automated build system, which of these is the most logical next step after running unit tests?
+package
+compile
+deploy
+install
+The software must already be compiled to run unit tests. Without a package, what is there to install or deploy?
+4
+build-automation
+END
+What is the traditional step between "./configure" and "make install" when building a software from a source tarball?
+"make"
+"make universe"
+"make clean"
+"./run.sh"
+"make" without any arguments runs the default build task, which is typically building the entire software. This step is usually after the configuration step. After this the software can be installed with "make install".
+4
+build-automation
+END
+What is the purpose of the "clean" step in a typical automated build system?
+Remove generated files
+Detect and report bugs in the software
+Detect and eliminate bugs in the software
+Remove unknown files that don't belong to the project
+The "clean" step typically removes build products, with the intention to start over as if the "compile" or other build steps were never executed.
+4
+build-automation
+END
