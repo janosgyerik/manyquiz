@@ -30,6 +30,9 @@ class Command(BaseCommand):
                 print '%(count)5d -- %(category)s' % result
             self.stdout.write('')
 
+        self.stdout.write('Total number of Questions:')
+        self.stdout.write('%5d' % Question.objects.count())
+        self.stdout.write('')
 
 
 # eof
