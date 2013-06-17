@@ -1075,7 +1075,7 @@ Which of the following subnet masks belongs to a class C network?
 255 255 0 0
 255 255 255 255
 Class A: 255.0.0.0, Class B: 255.255.0.0, Class C: 255.255.255.0.
-2
+3
 networkcable
 END
 Which of the following is a popular anti malware program?
@@ -3191,5 +3191,86 @@ In the body section.
 In the meta section.
 The W3 statement will allways be placed at the start of a HTML document.
 3
-Programming (Web)
+web-programming
+END
+Which of these is NOT a web server software?
+X server
+nginx
+Apache
+Lighttpd
+X server is the server counterpart of the X Window System in UNIX, and has nothing to do with web servers.
+4
+tools
+END
+Which of these is NOT a network analysis tool?
+screen
+nmap
+tcpdump
+wireshark
+tcpdump dumps traffic on a network; wireshark is a network traffic analyzer; nmap is a network security auditing tool; that leaves us with screen, which is a terminal multiplexer tool.
+4
+tools
+END
+What is the purpose of the -h flag of the ls command in UNIX?
+Print file sizes in human readable format
+Print short help message
+Print long help message
+Print hidden files
+When used together with the -l flag for long format, the -h makes the ls command print file sizes in human readable format like 1K, 234M, 2G.
+4
+tools
+END
+Which of the following languages is NOT in the same group as Lisp?
+C++
+R
+Scheme
+Scala
+List, R, Scheme, and Scala are all functional languages. C++ is an imperative language.
+4
+programming
+END
+Which of the following languages is NOT in the same group as C++?
+Haskell
+C
+Java
+MATLAB
+C++, C, Java, and MATLAB, are all imperative languages. Haskell is a functional language.
+4
+programming
+END
+Which of the following is NOT a programming language?
+CGI
+Bash
+R
+Python
+CGI stands for Common Gateway Interface, a standard for dynamic generation of web pages by a web server. It is NOT a programming language.
+4
+programming
+END
+Can you parse an HTML document using regular expressions?
+No, because HTML is not a regular language
+Yes, you can parse anything using regular expressions
+Yes, but only if it contains only ASCII characters
+Yes, because HTML is a context-free language
+Regular expressions can only match regular languages but HTML is a context-free language. It is always possible to present a HTML file that will be matched wrongly by any regular expression.
+4
+programming
+END
+Which is a good reason to use a LinkedList instead of an ArrayList?
+I will only access elements by traversing from the beginning or the end
+LinkedList is more efficient than ArrayList in most practical cases
+LinkedList uses a hashmap internally
+I can access any element in a LinkedList very fast
+Each element in a doubly-linked list has a link to the previous and the next element. Insert and remove operations are more memory-efficient compared to an ArrayList, at the cost that random access of elements is less efficient.
+4
+programming
+END
+What is the advantage of using an ArrayList instead of a LinkedList?
+Accessing elements by index is faster
+Traversal of elements from start to end is faster
+ArrayList uses less memory than a LinkedList
+Removing an element in the middle of the list is faster
+Elements in an ArrayList can be accessed directly by a numeric index, but in a LinkedList you must travers the elements from the start or the end until the desired element.
+4
+programming
 END
