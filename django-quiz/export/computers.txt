@@ -3274,3 +3274,93 @@ Elements in an ArrayList can be accessed directly by a numeric index, but in a L
 4
 programming
 END
+In web programming, what is the QUERY_STRING?
+The part of a URL after the "?" mark
+The part of a URL after the "#" mark
+A variable in a HTTP GET request
+A variable in a HTTP POST request
+The QUERY_STRING is the part of a URL after the question mark, not including the question mark itself, for example "search=hello&page=2".
+4
+web-programming
+END
+Which one of these is NOT a common CGI environment variable?
+IOS_VERSION
+HTTP_REFERER
+HTTP_USER_AGENT
+DOCUMENT_ROOT
+HTTP_USER_AGENT is the browser type of the visitor, HTTP_REFERER is the URL of the page that called the current one, and DOCUMENT_ROOT is the root directory of the server.
+4
+web-programming
+END
+Which one of these is a common CGI environment variable?
+REMOTE_ADDR
+MOBILE_PHONE_TYPE
+IOS_VERSION
+ANDROID_VERSION
+REMOTE_ADDR is the IP address of the visitor.
+4
+web-programming
+END
+Which HTTP method was not part of the HTTP/1.0 specification?
+OPTIONS
+GET
+POST
+HEAD
+The OPTIONS method was added in the HTTP/1.1 specification.
+4
+web-programming
+END
+What is the difference between the HTTP GET and HEAD methods?
+HEAD doesn't include a response body
+HEAD returns only the <head> tag of HTML
+GET returns a response without a header
+GET can support SSL
+The response of a HEAD requests is a header identical to that of a GET request, but without a response body.
+4
+web-programming
+END
+What is the status code of a successful HTTP request?
+200
+100
+0
+1
+"200 OK" is the standard response for successful HTTP requests.
+4
+web-programming
+END
+Which one of these server responses is NOT part of the HTTP standard?
+404 Internal Server Error
+418 I'm a teapot
+400 Bad Request
+401 Unauthorized
+404 is part of the standard but it means something else: "Not Found"
+4
+web-programming
+END
+The 4xx class of HTTP status code indicates which type of error?
+Client error
+Server error
+Application error
+Connection error
+Status codes in the class 4xx all indicate some kind of client error, such as requesting a non-existent page, or a syntax error in the request, just to name a few.
+4
+web-programming
+END
+What was the limit of the header size in the HTTP/1.0 standard?
+Unspecified (no limit)
+8190 bytes
+1024 bytes
+512 bytes
+The standard itself does not set a limit on the header size, but most implementations impose some limits for practical and security reasons.
+4
+web-programming
+END
+What can you do with HTTP POST that you cannot do with HTTP GET?
+Upload files
+Implement session state
+Create cookies
+Pass multiple variables to a form
+Uploading a file requires enclosing an entity in the request, which is supported by a POST request but not by a GET request.
+4
+web-programming
+END
