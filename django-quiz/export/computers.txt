@@ -23,7 +23,7 @@ FILO
 LILO
 First In First Out. Picture a queue of people -- the first person (data item) in the queue is the first to leave the queue at the front. Additional people (data items) join at the back of the queue.
 2
-programming
+data-structures
 END
 A Microsoft Exchange server is used for what?
 E-mail
@@ -211,8 +211,8 @@ Pentium Ordered Processing
 Posting On-line Publishing
 Programming Ordered Process
 Post Office Protocol is used by a computer/device to download e-mails from a remote server.
-2
-x
+3
+network
 END
 What does SMTP stand for?
 Simple Mail Transfer Protocol
@@ -338,7 +338,7 @@ Creating simple programs
 Creating web pages and web based applications
 A computer can not (at it's basic level) work with numbers or characters etc, only ON or OFF values (represented by 1's and 0's in binary language). Binary is a low level programming language as it is close to what the computer can understand.
 2
-x
+programming
 END
 What is an OU used for in Active Directory?
 Organising users, computers etc.
@@ -1601,13 +1601,13 @@ IIS is a set of internet services for use with servers running Microsoft Windows
 x
 END
 What is Direct X?
-Multimedia API's
+Collection of multimedia APIs
 3D Graphics Hardware drivers
 Programming language
 3D sound support for UNIX
 Direct X is used to create 2D and 3D graphics and sound for use in applications.
 3
-x
+tools
 END
 What is System Locked Preinstallation used for?
 Preventing system restore discs being used in a different computer
@@ -3176,13 +3176,13 @@ The large cuboids were called 'Pascalines', but weren't programmable. Borland na
 x
 END
 What is a "string" in a programming language?
-A line of characters
-A Comma
+A sequence of characters
+A comma
 A way to represent 0
 A command
 A string is simply a line of characters.
 3
-Programming
+programming
 END
 Where will you find the following line in a HTML document: 'www.W3.org'?
 At the start before the HTML section.
@@ -3220,12 +3220,12 @@ When used together with the -l flag for long format, the -h makes the ls command
 4
 tools
 END
-Which of the following languages is NOT in the same group as Lisp?
+Which of the following languages is NOT in the same group as LISP?
 C++
 R
 Scheme
 Scala
-List, R, Scheme, and Scala are all functional languages. C++ is an imperative language.
+LISP, R, Scheme, and Scala are all functional languages. C++ is an imperative language.
 4
 programming
 END
@@ -3257,11 +3257,11 @@ Regular expressions can only match regular languages but HTML is a context-free 
 programming
 END
 Which is a good reason to use a LinkedList instead of an ArrayList?
-I will only access elements by traversing from the beginning or the end
+I will only access elements by traversing from the beginning
 LinkedList is more efficient than ArrayList in most practical cases
 LinkedList uses a hashmap internally
 I can access any element in a LinkedList very fast
-Each element in a doubly-linked list has a link to the previous and the next element. Insert and remove operations are more memory-efficient compared to an ArrayList, at the cost that random access of elements is less efficient.
+In a linked list, elements are chained together: each element has a pointer to the next. Insert and remove operations are more memory-efficient compared to an ArrayList, at the cost that random access of elements is less efficient.
 4
 programming
 END
@@ -3543,4 +3543,13 @@ mv
 In a centralized VCS all operations that involve the history need to access the repository on the central server. The status, add, and mv commands can be performed without access to the server.
 4
 version-control
+END
+What is the most likely cause of a stack overflow?
+Too deep recursion when using a recursive function 
+Trying to access an array element by an index beyond the end of the array
+Trying to access an array element by a negative index
+The stack size limit is not set to unlimited in your system
+A common cause of a stack overflow is very deep or infinite recursion, exhausting the address space of the call stack. A common solution is to improve the algorithm to reduce the depth of recursions.
+4
+programming
 END
