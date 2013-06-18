@@ -16,5 +16,7 @@ Version x (y.z)
 
 * Various minor layout improvements
 
-* More questions: 368 -> 370
+* More questions: 368 -> 407, most of the new questions
+  on Nightmare! level, in neglected categories (linx,
+  network, security, web-programming)
 
