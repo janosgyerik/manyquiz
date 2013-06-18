@@ -116,6 +116,7 @@ public class QuizActivity extends QuizBaseActivity {
 		public void onClick(View arg0) {
 			if (!currentQuestion.wasAnswered()) {
 				setSelectedAnswer(answer);
+				explanationView.setVisibility(View.VISIBLE);
 				updateScore();
 			}
 		}
@@ -180,12 +181,15 @@ public class QuizActivity extends QuizBaseActivity {
 		}
 		if (wasAnswered) {
 			setSelectedAnswer(question.getSelectedAnswer());
+			explanationView.setVisibility(View.VISIBLE);
+		}
+		else {
+			explanationView.setVisibility(View.GONE);
 		}
 	}
 
 	private void setSelectedAnswer(String answer) {
 		currentQuestion.setSelectedAnswer(answer);
-		explanationView.setVisibility(View.VISIBLE);
 		
 		String correctAnswer = currentQuestion.getCorrectAnswer();
 		for (int i = 0; i < choicesView.getChildCount(); ++i) {
