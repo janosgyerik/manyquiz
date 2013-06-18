@@ -3499,3 +3499,48 @@ Unlike the others, netstat cannot be used to scan arbitrary remote ports.
 4
 security
 END
+Which one of these is NOT a Version Control System?
+CSV
+Bazaar
+Subversion
+CVS
+CSV stands for Comma Separated Values, it is a common file format, not a Version Control System.
+4
+version-control
+END
+Which one of these is a Distributed Version Control System?
+Mercurial
+Subversion
+ClearCase
+Visual SourceSafe
+These are all version control systems, but only Mercurial has a distributed model, the others use a client-server model.
+4
+version-control
+END
+What can be a disadvantage of a distributed VCS in comparison to a centralized VCS?
+The initial cloning is slower
+Users cannot commit revisions without a server
+Most operations are slower without a server
+Users cannot create forks without a server
+In a distributed VCS, initial cloning is typically slower, as the tool must download the entire project history. The other choices are disadvantages of centralized VCS.
+4
+version-control
+END
+In a version control system, which type of conflict can have an automatic resolution when merging branchA into branchB?
+The same file was edited in both BranchA and BranchB
+The same file was edited in BranchA but deleted in BranchB
+The same file was edited in BranchA but renamed in BranchB
+A file with the same name was added in both BranchA and BranchB
+If branchA and branchB edited completely different parts of the file, that should be possible to resolve automatically. The other types of conflict require an explicit decision and action by a human.
+4
+version-control
+END
+What version control operation requires access to the server in a centralized VCS?
+log
+status
+add
+mv
+In a centralized VCS all operations that involve the history need to access the repository on the central server. The status, add, and mv commands can be performed without access to the server.
+4
+version-control
+END
