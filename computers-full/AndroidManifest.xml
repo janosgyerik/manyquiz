@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="4"
-        android:targetSdkVersion="4" />
+        android:targetSdkVersion="13" />
 
     <application
         android:name="com.manyquiz.FullQuizApplication"
