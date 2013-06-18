@@ -9,4 +9,4 @@ if test -f $virtualenv; then
 fi
 
 ./manage-computers.sh syncdb --noinput
-./manage-computers.sh import_questions export/computers.txt
+./manage-computers.sh importq export/computers.txt

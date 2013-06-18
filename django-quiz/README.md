@@ -6,7 +6,7 @@ Setup
 
 2. Import quiz data from text:
 
-        ./manage-computers.sh import_questions export/computers.txt
+        ./manage-computers.sh importq export/computers.txt
 
 3. Run Django site on localhost:8000
 
@@ -19,9 +19,9 @@ Import questions from a file
 ----------------------------
 The easiest way to import many questions (with answers) in bulk
 is to create them in a text file like `sample.txt` and use the
-`import_questions` command like this:
+`importq` command like this:
 
-    ./manage-computers.sh import_qustions /path/to/file.txt -n
+    ./manage-computers.sh importq /path/to/file.txt -n
 
 The `-n` flag is to do a dry-run, check what would be imported
 without actually importing anything. If the output looks good,
@@ -48,7 +48,7 @@ Update quiz data in the project and commit it
 ---------------------------------------------
 1. Export data in plain text format:
 
-        ./manage-computers.sh export_questions > export/computers.txt
+        ./manage-computers.sh exportq > export/computers.txt
 
 2. Commit and push
 
@@ -57,7 +57,7 @@ Import quiz data from the project
 ---------------------------------
 1. Create backup of Django data
 
-        ./manage-computers.sh export_questions > backup/computers.txt
+        ./manage-computers.sh exportq > backup/computers.txt
 
 2. Compare the backup data and the project data in a diff
    viewer tool like kdiff3 or gvimdiff, and if necessary merge
@@ -65,7 +65,7 @@ Import quiz data from the project
 
 3. Import data from the project
 
-        ./manage-computers.sh import_questions export/computers.txt -n
+        ./manage-computers.sh importq export/computers.txt -n
 
 
 View stats of quiz data

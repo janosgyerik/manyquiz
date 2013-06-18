@@ -5,7 +5,7 @@ Windows 98
 RedHat Linux
 Microsoft Office XP is a suite of desktop applications, including text editor, spreadsheet editor, etc, NOT an operating system.
 2
-software
+os
 END
 How many bytes is one kilobyte?
 1024 bytes
@@ -23,7 +23,7 @@ FILO
 LILO
 First In First Out. Picture a queue of people -- the first person (data item) in the queue is the first to leave the queue at the front. Additional people (data items) join at the back of the queue.
 2
-programming
+data-structures
 END
 A Microsoft Exchange server is used for what?
 E-mail
@@ -32,16 +32,16 @@ User accounts
 Intranet pages
 Exchange servers are used for managing e-mail. They also manage calendars and contacts.
 2
-exchange
+server-software
 END
-What is the preferred method to quickly and directly upload a file to a web server?
+Which method can quickly and directly upload a file to a web server?
 FTP
 HTTP
 RDP
 DOS
 FTP stands for File Transfer Protocol, and can directly upload files to a web server.
 2
-x
+network
 END
 What does a hard disk defragmenter do?
 Arranges data in order for faster reading
@@ -50,7 +50,7 @@ Erases unwanted data
 Compresses files in order to create space
 Data on the disk that has been split up is moved together, meaning there is less movement needed by the hard disk head to read the data.
 2
-defragment
+systems-programming
 END
 What is the Windows page file otherwise known as?
 Virtual memory
@@ -176,7 +176,7 @@ Internet Packets
 Internet Publisher
 Internet Protocol is a protocol used by the internet for sending data packets.
 2
-iexplore
+network
 END
 Which of these cannot be changed in a computer's settings?
 MAC address
@@ -211,8 +211,8 @@ Pentium Ordered Processing
 Posting On-line Publishing
 Programming Ordered Process
 Post Office Protocol is used by a computer/device to download e-mails from a remote server.
-2
-x
+3
+network
 END
 What does SMTP stand for?
 Simple Mail Transfer Protocol
@@ -239,7 +239,7 @@ At either end of a Hard Disk Drive
 Spread over multiple partitions on the same disk
 Parts of a single file that are spread out over the hard disk can be arranged so they are stored in order. Subsequent access is a lot faster.
 2
-harddisk
+hardware
 END
 What is the MBR on a PC hard disk?
 Master Boot Record
@@ -248,7 +248,7 @@ Missed BIOS Routines
 Mixed Booting Resources
 The Master Boot Record is used for storing partition information and/or startup information for the operating system.
 2
-x
+os
 END
 How might an unrecoverable BIOS password be reset?
 Removing and re-inserting the CMOS battery
@@ -266,7 +266,7 @@ Replace the motherboard, memory and processor and the laptop can be used
 Remove and re-insert the CMOS battery and the laptop can be used
 The only way to use an encrypted hard disk without the password, is to erase the contents. Data cannot be recovered.
 2
-harddisk
+security
 END
 Which of the following is NOT a programming language?
 WYSIWYG
@@ -311,7 +311,7 @@ Ensure the printer is never switched off, even overnight
 Daily checks of the IP address
 Assigning a static IP address using DHCP will mean every time the printer is switched on, it can be found using the same IP address.
 2
-networkcable
+network
 END
 How is data stored on a standard hard disk drive?
 Magnetic charge
@@ -320,7 +320,7 @@ Onto multiple memory cards build into a unit
 Ultraviolet data charge
 Magnetic charge is used to set each bit on or off (1 or 0). This is the data stored in its most basic form, and 'on or off' is the only form of data a computer can actually understand, as it is, in essence, and electronic device.
 2
-harddisk
+hardware
 END
 A user cannot run installation programs on their networked computer. How could the administrator change this?
 Change the user's access rights
@@ -329,7 +329,7 @@ Disconnect the computer from the network
 Connect the computer to the network
 Users can have different access permissions set up for many different files and settings, at varying levels of control.
 2
-networkcable
+os
 END
 What is low-level programming?
 Programming in a language that is closer to what a computer can understand
@@ -338,7 +338,7 @@ Creating simple programs
 Creating web pages and web based applications
 A computer can not (at it's basic level) work with numbers or characters etc, only ON or OFF values (represented by 1's and 0's in binary language). Binary is a low level programming language as it is close to what the computer can understand.
 2
-x
+programming
 END
 What is an OU used for in Active Directory?
 Organising users, computers etc.
@@ -401,7 +401,7 @@ Use static-IP addresses instead of dynamic ones
 Install a second network card in the computers on the wireless network
 A wireless repeater will 'refresh' the wireless signal by sending it out again, boosting the area covered.
 2
-wifi
+network
 END
 Which of the following would BEST help secure a home wireless network from malicious 'piggybacking'?
 Ensure the network is password protected/encrypted
@@ -410,7 +410,7 @@ Encrypt all hard drives on the network
 Set up a client-server network and add clients to the wireless network
 As long as the network is secure with a password, it is unlikely there will be any intrusions (although this is not guaranteed).
 2
-wifi
+security
 END
 What is a VLAN?
 Virtual Local Area Network
@@ -527,7 +527,7 @@ Storing of passwords for e-mail and online forms
 Uploading of a web-page
 If a webpage is cached, it does not need to be fully downloaded from the server the next time it is viewed, as some or all of the page will be in cached.
 2
-iexplore
+network
 END
 What process can be restarted if Windows has crashed, in order that the start menu and icons reappear?
 explorer.exe
@@ -619,14 +619,14 @@ Mapping drives allows any shared folder to be used like a separate drive. The sh
 2
 x
 END
-What does the registry key HKCR contain?
+What does the registry key HKCR contain in Windows?
 File association data
 User account information
 Startup programs
 Desktop settings
 Allows certain file types to be associated with applications (ie Word documents are associate with Microsoft Office Word).
-2
-regedit
+3
+windows
 END
 What is a batch file?
 A file containing a list of commands
@@ -662,7 +662,7 @@ Solaris
 Linux
 DOS, or 'Disk Operating System'
 2
-microsoft
+windows
 END
 Which operating system is NOT based on DOS?
 Windows XP
@@ -671,7 +671,7 @@ Windows 98
 Windows Me
 Windows XP is not based on DOS. Windows Me 'pretended' not to be based on DOS, but it was.
 2
-commandprompt
+windows
 END
 Which of the following companies have NEVER produced personal computers?
 American Megatrends
@@ -725,7 +725,7 @@ Data operating System
 Data On System
 DOS was Microsoft's first operating system, and was used as a basis for a number of it's future operating systems.
 2
-commandprompt
+history
 END
 What are Active X controls?
 An application run by a web browser
@@ -788,7 +788,7 @@ A disk is a partition
 A file system
 A partition will appear to the user as a separate disk drive. It may use a different file system and/or contain a separate operating system.
 2
-harddisk
+os
 END
 What does a server serve?
 Clients
@@ -851,7 +851,7 @@ A read only area of the disk
 The area of the disk that holds firmware
 A disk sector is a physical storage area on a hard disk drive.
 2
-harddisk
+hardware
 END
 How is data stored on a hard disk drive?
 Magnetically
@@ -860,7 +860,7 @@ Physically by small indentations
 ROM
 Data is stored magnetically on the disk platters, and by the read/write head.
 2
-harddisk
+hardware
 END
 What is a BSOD?
 An error screen
@@ -869,7 +869,7 @@ A BIOS setting
 A bootable partition
 BSOD stands for Blue Screen of Death, and results in a computer being restarted after a hardware or software error that the operating system cannot recover from.
 2
-bsod
+history
 END
 Which is most likely to cause a Blue Screen of Death?
 Faulty hardware
@@ -878,7 +878,7 @@ Memory leak
 Fragmented data
 Faulty hardware is a common cause of the BSOD, along with faulty drivers.
 2
-bsod
+windows
 END
 Which of the following is most likely to require its own fan?
 Processor
@@ -995,7 +995,7 @@ To store network addresses in a network
 To allow two network cables to be plugged into one socket
 A network transmission will deteriorate over distance and so a repeated amplifies the signal before sending it on.
 2
-networkcable
+network
 END
 What is a routing table used for?
 Calculating the destination of network data
@@ -1049,7 +1049,7 @@ Windows 2012 Server
 Windows Server 8
 It was codenamed Windows Server 8, but its release name is Windows Server 2012, in keeping with the naming convention used since Windows Server 2003. Before that was Windows 2000 Server.
 2
-windows8
+windows
 END
 What is the Windows 8 user interface based on?
 Metro
@@ -1058,7 +1058,7 @@ ModeI
 Glass
 The Windows 8 user interface will be based on Microsoft's Metro design language, and will be based more on typography than imagery.
 2
-windows8
+windows
 END
 What is the purpose of a subnet mask?
 To separate the IP address into network and host parts
@@ -1067,7 +1067,7 @@ To hide a small network inside a smaller one
 To prevent firewalls allowing internal netork access to the outside world
 A subnet mast looks something like this: 255.255.255.0
 2
-networkcable
+network
 END
 Which of the following subnet masks belongs to a class C network?
 255 255 255 0
@@ -1076,7 +1076,7 @@ Which of the following subnet masks belongs to a class C network?
 255 255 255 255
 Class A: 255.0.0.0, Class B: 255.255.0.0, Class C: 255.255.255.0.
 3
-networkcable
+network
 END
 Which of the following is a popular anti malware program?
 MalwareBytes
@@ -1130,7 +1130,7 @@ Apple Macintosh
 Apple Seed
 The Apple Computer is now referred to as the Apple I. It was not sold with keyboard, casing etc.
 2
-appleold
+history
 END
 When did Apple's first computer go on sale?
 1976
@@ -1139,7 +1139,7 @@ When did Apple's first computer go on sale?
 1980
 It was simply calle the Apple Computer. It is now referred to as the Apple I.
 2
-appleold
+history
 END
 What is the original name of Apple Inc.?
 Apple Computer Inc
@@ -1148,7 +1148,7 @@ Apple Technology Inc
 Apple Technologies Inc
 Apple Computer was founded in 1976.
 2
-appleold
+history
 END
 Which command can you use in Windows 7 to list running processes?
 tasklist
@@ -1256,7 +1256,7 @@ Any network cable would work
 Only wireless would work
 A straight through cable is used to connect a computer to a standard data point (which in turn would be patched to a switch).
 3
-networkcable
+network
 END
 What is default gateway?
 A link to another network
@@ -1283,7 +1283,7 @@ To allow easy cutting/resizing
 To create a consistent arrangement of wires
 Twisted cables will act as a form of interference reduction from external sources.
 3
-networkcable
+network
 END
 What is a virtual disk?
 An emulation of a physical disk
@@ -1355,7 +1355,7 @@ Any type of network cable
 Wireless must be used
 For example to connect a switch to a switch or a computer to a computer, a crossover cable is needed.
 3
-networkcable
+network
 END
 What is iEEE 1394 better known as?
 Firewire
@@ -1463,7 +1463,7 @@ A coating
 A small sector
 The platter is a physical disc on which data is written. There are usually several platters in a hard disk drive.
 3
-harddisk
+hardware
 END
 What is a jumper?
 An electrical connector
@@ -1481,7 +1481,7 @@ Turns the actuator arms
 Turns the read/write heads
 Each platter (disc) inside a hard disk drive is turned by the spindle.
 3
-harddisk
+hardware
 END
 In a laser printer, what does the imaging drum do?
 Attracts toner and applies it to the paper
@@ -1553,7 +1553,7 @@ Adjusts partition sizes
 Deletes the Master Boot Record
 Deltree (delete tree) is a Microsoft Dos command used for deleting entire directories (folders) and subdirectories.
 3
-deltree
+windows
 END
 What is Microsoft's first 32bit operating system?
 Windows NT 3.1
@@ -1580,7 +1580,7 @@ Sun
 American Megatrends
 The original name of Microsoft DOS was QDOS (Quick and Dirty Operating System). It was bought by Microsoft and then sold to IBM for use with their hardware.
 3
-commandprompt
+history
 END
 What is IANA
 Internet Assigned Numbers Authority
@@ -1601,13 +1601,13 @@ IIS is a set of internet services for use with servers running Microsoft Windows
 x
 END
 What is Direct X?
-Multimedia API's
+Collection of multimedia APIs
 3D Graphics Hardware drivers
 Programming language
 3D sound support for UNIX
 Direct X is used to create 2D and 3D graphics and sound for use in applications.
 3
-x
+tools
 END
 What is System Locked Preinstallation used for?
 Preventing system restore discs being used in a different computer
@@ -1670,7 +1670,7 @@ C
 XHTML
 A low level programming language is one that is close to what a computer can understand. Assembly is only one level up from binary language and so is a low level language.
 3
-assembly
+programming
 END
 What is this binary number converted to decimal - 00001010?
 10
@@ -1742,7 +1742,7 @@ VN
 Pin
 Telnet allows an administrator to connect into networked equipment in order to configure it remotely.
 3
-networkcable
+network
 END
 Which operating system was designed by Sun Microsystems?
 Solaris
@@ -1859,7 +1859,7 @@ Lex
 Bix
 Tux the penguin has been the Linux mascot since 1996.
 3
-tux
+linux
 END
 What is the name 'Microsoft' short for?
 Microcomputer Software
@@ -1940,7 +1940,7 @@ Suse
 Android
 Symbian is a mobile phone operating system, and is not based on Linux.
 3
-tux
+linux
 END
 What is UNIX?
 An operating system
@@ -1996,14 +1996,14 @@ COM is used for developing software components
 3
 x
 END
-Which of the following are part of the registry?
+Which of the following are part of the registry in Windows?
 Hives and Changelog
 Sectors and Partitions
 Buffers
 Linked Lists
 Hives are a group of keys, subkeys and values. Changelog is a log of changes made by users.
 3
-regedit
+windows
 END
 What does LSB stand for?
 Least Significant Bit
@@ -2147,7 +2147,7 @@ Diskpart
 Logon
 Defrag is NOT a recovery console command - it is short for defragmenter/defragment.
 3
-commandprompt
+windows
 END
 What does the Kernel of an operating system do?
 It provides core functions of the operating system
@@ -2187,12 +2187,12 @@ x
 END
 Which of the following is the lowest level programming language?
 Assembly
-c
-c plus plus
+C
+C++
 Java
 Assembly language works at a level closest to what a computer can actually understand, and so is considered low level. The others listed are high level programming languages.
 3
-assembly
+programming
 END
 How is data stored on a CD?
 Bumps and flats
@@ -2228,7 +2228,7 @@ push
 add
 All the others are valid commands (pop - pops data from the stack, push pushes data onto the stack, add adds two values)
 3
-assembly
+programming
 END
 What would a hash value NOT be used for?
 Disk de-fragmentation
@@ -2390,7 +2390,7 @@ installer.exe
 installorremove
 Appwiz.cpl opens the add/remove dialog where installed programs can be viewed or changed, and new programs/features added.
 3
-commandprompt
+windows
 END
 What is the IEEE standard 802.3?
 Ethernet
@@ -2453,7 +2453,7 @@ mv
 rm
 The ls command will list the contents of the current directory.
 3
-tux
+linux
 END
 A program written in Java can run on?
 Any system with the correct version of Java installed
@@ -2578,8 +2578,8 @@ Direct
 Driver
 Device
 CIDR: Classles InterDomain Routing
-3
-networkcable
+4
+network
 END
 What is the development language of Apple iPhone apps?
 Objective C
@@ -2741,7 +2741,7 @@ Natural
 Miles
 The name Oak came from an Oak tree outside James Gosling's office window (Gosling being one of the founders of Java/Oak).
 4
-nightmare
+history
 END
 Which of the following is designed specifically for embedded devices?
 Java ME
@@ -2750,7 +2750,7 @@ Java SE
 Java RE
 Java ME is used for embedded devices - ME stands for Micro Edition.
 4
-nightmare
+mobile
 END
 Which is NOT true of using 2's complement to represent binary numbers?
 2s complement represents the number 0 twice, as positive and negative
@@ -2759,7 +2759,7 @@ Negative numbers do not look the same as their positive counterparts (excluding 
 A byte can only represent up to 127 in decimal
 This is NOT true - in 2's complement 0 is represented only once.
 4
-nightmare
+systems-programming
 END
 What is the ASCII character code (decimal) for the character 'carriage return'?
 0D
@@ -2768,7 +2768,7 @@ What is the ASCII character code (decimal) for the character 'carriage return'?
 1F
 There are 128 ASCII characters in total - many are not graphical characters.
 4
-nightmare
+systems-programming
 END
 What does the 'P' stand for in ARPANET?
 Projects
@@ -2777,7 +2777,7 @@ Processing
 Protocol
 ARPA - Advanced Research Projects Agency - ARPANET was the world's first packet switching network.
 4
-nightmare
+history
 END
 In Octal, what is 7+1?
 10oct
@@ -2786,7 +2786,7 @@ In Octal, what is 7+1?
 11oct
 Remember, after 7oct you must carry the 1 the next next column on the left, making 10oct.
 4
-nightmare
+systems-programming
 END
 Convert 1011b (binary) to hexadecimal
 0Bh
@@ -2795,7 +2795,7 @@ Convert 1011b (binary) to hexadecimal
 0Ah
 Hexadecimal is base 16, so numbers go from 0-F (F being equivalent to 15 in decimal). Binary is base 2 and only 0 and 1 are used.
 4
-nightmare
+systems-programming
 END
 Convert 1111 from binary to octal
 17oct
@@ -2804,7 +2804,7 @@ Convert 1111 from binary to octal
 16oct
 Octal is base 8 and so used only the numbers 0 to 7. Binary is base 2 and uses only 0 to 1.
 4
-nightmare
+systems-programming
 END
 What is 2's complement used to represent in binary?
 Negative numbers
@@ -2813,7 +2813,7 @@ Decimal numbers
 Numbers beyond the range of the number base
 2's complement solves the dilema of working with only 0's and 1's (no '-' symbol to represent negative).
 4
-nightmare
+systems-programming
 END
 What might the following command do in Windows: SUBST?
 Associate a path with a drive letter
@@ -2822,7 +2822,7 @@ Rename the root directory of a drive
 Allow the user to change privelages of other users
 It is the basis of the drive mapping function in Windows.
 4
-nightmare
+windows
 END
 What does INT mean in Intel x86 assembly language?
 Interrupt
@@ -2831,7 +2831,7 @@ Intel
 Integrate
 Interrupts can be run to perform certain operations using the processor.
 4
-nightmare
+systems-programming
 END
 Where might you use the 'conf t' command?
 CISCO switch
@@ -2840,7 +2840,7 @@ Linux box
 A serial port data logger
 It is short for 'CONFigure Terminal'.
 4
-nightmare
+network
 END
 What do fa and gi stand for when configuring a CISCO switch?
 Fast Ethernet and Gigabit Ethernet
@@ -2849,7 +2849,7 @@ Fast Internet and Gigabit Internet
 Fast Bandwidth and Gigabit Bandwidth
 Fast Ethernet is 100 Megabits per second, Gigabit Ethernet is 1 Gigabit per second.
 4
-nightmare
+network
 END
 What is dark fibre?
 Unused fibre optic link
@@ -2858,7 +2858,7 @@ Extra shielded fibre optic link
 Fibre optics where light signals cannot be seen at the ends
 Dark fibre is so called because fibre obtic cabling trasmints data by light.
 4
-nightmare
+network
 END
 In 80xx microprocessor architechture, which of the following is an 8 bit general purpose register?
 AL
@@ -2867,7 +2867,7 @@ AR
 AZ
 A list of all 8 bit registers: AH, AL, BH, BL, CH, CL, DH, DL (H and L being High and Low respectively).
 4
-nightmare
+systems-programming
 END
 In 80xxx microprocessor architechture, which of the following is a 32 bit general purpose register?
 EAX
@@ -2876,7 +2876,7 @@ BH
 AX
 A list of all 32 bit registers: EAX, EBX, ECX, EDX
 4
-nightmare
+systems-programming
 END
 In 8086 microprocessor architecture, what does IP stand for?
 Instruction Pointer
@@ -2885,7 +2885,7 @@ Implementation Protocol
 Integer Pointer
 This points to the NEXT instruction that will be executed in the CPU.
 4
-nightmare
+systems-programming
 END
 Who developed TASM?
 Borland
@@ -2894,7 +2894,7 @@ Microsoft
 Sun
 TASM is short for Turbo Assembler, and is an assembler package.
 4
-nightmare
+history
 END
 Using 2's complement, negate the following binary number: 11100110
 00011010
@@ -2903,7 +2903,7 @@ Using 2's complement, negate the following binary number: 11100110
 00011001
 To negate a binary number using 2's complement: Invert all bits (so our example becomes 00011001), then add 1 to the inverted number.
 4
-nightmare
+systems-programming
 END
 How type of data structure is a stack?
 LIFO
@@ -2912,7 +2912,7 @@ FIFO
 FOFI
 Last In First Out - The last item pushed onto the stack is popped off first. Picture a stack as a stack of books - you must add books to the top of the pile or take from the top.
 4
-nightmare
+data-structures
 END
 What type of data structure is a queue?
 FIFO
@@ -2921,7 +2921,7 @@ LIFO
 LOFI
 First In First Out. Picture a queue of people - the first person (data item) in the queue is the first to leave the queue at the front. Additional people (data) joins at the back of the queue.
 4
-nightmare
+data-structures
 END
 What is the main use of a namespace in C++?
 To stop duplicate function names causing a problem
@@ -2930,7 +2930,7 @@ To allow several functions to share variables
 To allow several pointers to point to a single variable
 Due to the fact that functions can be shared for use by other developers, it is common for multiple functions to share the same name. A namespace 'categorises' these functions so they do not exist in the same namespace.
 4
-nightmare
+programming
 END
 In which language would you find the function malloc?
 C
@@ -2939,7 +2939,7 @@ Assembly
 XHTML
 The malloc() function allocates blocks of memory in the C programming language.
 4
-nightmare
+programming
 END
 Which of the following holds file access information?
 MAC time
@@ -2948,7 +2948,7 @@ LINUX time
 WIN time
 MAC stands for Modification time, Access time, Change time.
 4
-nightmare
+systems-programming
 END
 Who originally developed the Fortran programming language?
 IBM
@@ -2957,7 +2957,7 @@ Intel
 Microsoft
 FORTRAN was developed in 1950's. The name stands for FORmula TRANslating system.
 4
-nightmare
+history
 END
 What is Fortran?
 A scientific/mathmatic programming language
@@ -2966,7 +2966,7 @@ A scientific/mathmatic hardware calculator/data processor
 A scientific/mathmatic data logging program
 FORTRAN was developed in 1950's. The name stands for FORmula TRANslating system.
 4
-nightmare
+programming
 END
 What is ELKS otherwise knows as?
 Linux-8086
@@ -2975,7 +2975,7 @@ Linux-Intel
 Linux-386
 ELKS stands for 'Embeddable Linux Kernel System'
 4
-nightmare
+history
 END
 What is the surname of the creator of Java?
 Gosling
@@ -2984,7 +2984,7 @@ Robertson
 Todhunter
 His full name is James Gosling.
 4
-nightmare
+history
 END
 What is the name of the Java mascot?
 Duke
@@ -2993,7 +2993,7 @@ Dorf
 Dino
 Duke has always been the mascot for Java.
 4
-nightmare
+history
 END
 Running the command mmsys.cpl will do what in Windows 7?
 Open sound settings
@@ -3002,7 +3002,7 @@ Open language settings
 Open system properties
 From these settings options such as the default playback device can be changed.
 4
-nightmare
+windows
 END
 Which of the following will open the ODBC settings on a Windows XP computer?
 odbccp32.cpl
@@ -3011,7 +3011,7 @@ odbccp.cpl
 odbc32.cpl
 ODBC stands for Open Database Connectivity, and is used to create connections to shared databases.
 4
-nightmare
+windows
 END
 Which of the following will open the ODBC settings on a Windows 7 computer?
 odbcad32.exe
@@ -3020,7 +3020,7 @@ odbccp32.exe
 odbccp32.cpl
 ODBC stands for Open Database Connectivity, and is used to create connections to shared databases.
 4
-nightmare
+windows
 END
 A file with the extension .VHD is primarily used for what?
 Setting up virtual computers
@@ -3029,7 +3029,7 @@ Multimedia data
 3D video data
 VHD stands for Virtual Hard Disk - a software representation of a hard disk drive.
 4
-nightmare
+systems-programming
 END
 What year was the game Doom released for the PC (sorry, had to get a Doom question in...)?
 1993
@@ -3038,7 +3038,7 @@ What year was the game Doom released for the PC (sorry, had to get a Doom questi
 1995
 It was released by 'id Software'.
 4
-doom
+history
 END
 What would the following command do on a CISCO switch: switchport access vlan 978
 Place the current port in VLAN 978
@@ -3047,7 +3047,7 @@ Prepare the current VLAN for alterations
 Change the current VLAN number from 978
 The command must be run whilst configuring the terminal (after using the 'conf t' command).
 4
-nightmare
+network
 END
 In Java programming, what does the A stand for in AWT?
 Abstract
@@ -3056,7 +3056,7 @@ Access
 Always
 AWT stands for Abstract Window Class, and is used for creating window based graphical user interfaces.
 4
-nightmare
+programming
 END
 What does ATAPI stand for?
 Advanced Technology Attachment Packet Interface
@@ -3065,7 +3065,7 @@ Adaptable Technology Attachment Processing Interface
 Advanced Technology Adaptable Packet Interface
 ATAPI is a connection standard for connecing storage devices.
 4
-nightmare
+history
 END
 What does GRUB stand for in a Linux system?
 Grand Unified Boot-Loader
@@ -3074,7 +3074,7 @@ Grand Uninterruptible Boot-Loader
 Great Unified Boot-Loader
 Grub is used to load the Linux operating system.
 4
-nightmare
+linux
 END
 In Assembly language, what does JNE stand for?
 Jump if Not Equal
@@ -3083,7 +3083,7 @@ Jump if Not Even
 Jumper Not Even
 JNE is used to compare two values, and check if they are the same. If they are not, the jump is made to another section of code.
 4
-nightmare
+systems-programming
 END
 In Assembly language, what does JNZ stand for?
 Jump if Not Zero
@@ -3092,7 +3092,7 @@ Jumper is Not Zeroed
 Jumper is Now Zero
 JNZ compares a value to zero. If it equals zero, then the jump is made to another section of code.
 4
-nightmare
+systems-programming
 END
 Which command, in Windows 7, will open Authorization Manager?
 azman.msc
@@ -3101,7 +3101,7 @@ authmn.msc
 auman.msc
 AzMan provides role based access control for applications.
 4
-nightmare
+windows
 END
 What type of vulnerability does SQL Injection exploit?
 Database exploit
@@ -3110,7 +3110,7 @@ Buffer overflow
 MITM attack
 SQL injection is a technique used to access directories in a webserver and view databases.
 4
-nightmare
+security
 END
 What is the output of a 1,1 input on a 2 input XOR gate
 0
@@ -3119,7 +3119,7 @@ What is the output of a 1,1 input on a 2 input XOR gate
 0,0
 An xor gate produces a 1 as its output if either input is a 1 not both, not neither
 4
-nightmare
+systems-programming
 END
 Which Linux command gives IP address details?
 if config
@@ -3176,13 +3176,13 @@ The large cuboids were called 'Pascalines', but weren't programmable. Borland na
 x
 END
 What is a "string" in a programming language?
-A line of characters
-A Comma
+A sequence of characters
+A comma
 A way to represent 0
 A command
 A string is simply a line of characters.
 3
-Programming
+programming
 END
 Where will you find the following line in a HTML document: 'www.W3.org'?
 At the start before the HTML section.
@@ -3220,12 +3220,12 @@ When used together with the -l flag for long format, the -h makes the ls command
 4
 tools
 END
-Which of the following languages is NOT in the same group as Lisp?
+Which of the following languages is NOT in the same group as LISP?
 C++
 R
 Scheme
 Scala
-List, R, Scheme, and Scala are all functional languages. C++ is an imperative language.
+LISP, R, Scheme, and Scala are all functional languages. C++ is an imperative language.
 4
 programming
 END
@@ -3257,11 +3257,11 @@ Regular expressions can only match regular languages but HTML is a context-free 
 programming
 END
 Which is a good reason to use a LinkedList instead of an ArrayList?
-I will only access elements by traversing from the beginning or the end
+I will only access elements by traversing from the beginning
 LinkedList is more efficient than ArrayList in most practical cases
 LinkedList uses a hashmap internally
 I can access any element in a LinkedList very fast
-Each element in a doubly-linked list has a link to the previous and the next element. Insert and remove operations are more memory-efficient compared to an ArrayList, at the cost that random access of elements is less efficient.
+In a linked list, elements are chained together: each element has a pointer to the next. Insert and remove operations are more memory-efficient compared to an ArrayList, at the cost that random access of elements is less efficient.
 4
 programming
 END
@@ -3273,4 +3273,391 @@ Removing an element in the middle of the list is faster
 Elements in an ArrayList can be accessed directly by a numeric index, but in a LinkedList you must travers the elements from the start or the end until the desired element.
 4
 programming
+END
+In web programming, what is the QUERY_STRING?
+The part of a URL after the "?" mark
+The part of a URL after the "#" mark
+A variable in a HTTP GET request
+A variable in a HTTP POST request
+The QUERY_STRING is the part of a URL after the question mark, not including the question mark itself, for example "search=hello&page=2".
+4
+web-programming
+END
+Which one of these is NOT a common CGI environment variable?
+IOS_VERSION
+HTTP_REFERER
+HTTP_USER_AGENT
+DOCUMENT_ROOT
+HTTP_USER_AGENT is the browser type of the visitor, HTTP_REFERER is the URL of the page that called the current one, and DOCUMENT_ROOT is the root directory of the server.
+4
+web-programming
+END
+Which one of these is a common CGI environment variable?
+REMOTE_ADDR
+MOBILE_PHONE_TYPE
+IOS_VERSION
+ANDROID_VERSION
+REMOTE_ADDR is the IP address of the visitor.
+4
+web-programming
+END
+Which HTTP method was not part of the HTTP/1.0 specification?
+OPTIONS
+GET
+POST
+HEAD
+The OPTIONS method was added in the HTTP/1.1 specification.
+4
+web-programming
+END
+What is the difference between the HTTP GET and HEAD methods?
+HEAD doesn't include a response body
+HEAD returns only the <head> tag of HTML
+GET returns a response without a header
+GET can support SSL
+The response of a HEAD requests is a header identical to that of a GET request, but without a response body.
+4
+web-programming
+END
+What is the status code of a successful HTTP request?
+200
+100
+0
+1
+"200 OK" is the standard response for successful HTTP requests.
+4
+web-programming
+END
+Which one of these server responses is NOT part of the HTTP standard?
+404 Internal Server Error
+418 I'm a teapot
+400 Bad Request
+401 Unauthorized
+404 is part of the standard but it means something else: "Not Found"
+4
+web-programming
+END
+The 4xx class of HTTP status code indicates which type of error?
+Client error
+Server error
+Application error
+Connection error
+Status codes in the class 4xx all indicate some kind of client error, such as requesting a non-existent page, or a syntax error in the request, just to name a few.
+4
+web-programming
+END
+What was the limit of the header size in the HTTP/1.0 standard?
+Unspecified (no limit)
+8190 bytes
+1024 bytes
+512 bytes
+The standard itself does not set a limit on the header size, but most implementations impose some limits for practical and security reasons.
+4
+web-programming
+END
+What can you do with HTTP POST that you cannot do with HTTP GET?
+Upload files
+Implement session state
+Create cookies
+Pass multiple variables to a form
+Uploading a file requires enclosing an entity in the request, which is supported by a POST request but not by a GET request.
+4
+web-programming
+END
+Which of these build tools is the oldest?
+Make
+Apache Ant
+Apache Maven
+CMake
+Make appeared in 1977, Ant in 2000, Maven in 2002, and CMake in 1999.
+4
+build-automation
+END
+What is NOT a main responsibility of an automated build system?
+Debug the source code
+Compile the source code
+Eliminate redundant tasks
+Execute unit tests
+Debugging is an activity that involves interacting with a running program, not really part of the build process.
+4
+build-automation
+END
+In an automated build system, which of these is the most logical next step after running unit tests?
+package
+compile
+deploy
+install
+The software must already be compiled to run unit tests. Without a package, what is there to install or deploy?
+4
+build-automation
+END
+What is the traditional step between "./configure" and "make install" when building a software from a source tarball?
+"make"
+"make universe"
+"make clean"
+"./run.sh"
+"make" without any arguments runs the default build task, which is typically building the entire software. This step is usually after the configuration step. After this the software can be installed with "make install".
+4
+build-automation
+END
+What is the purpose of the "clean" step in a typical automated build system?
+Remove generated files
+Detect and report bugs in the software
+Detect and eliminate bugs in the software
+Remove unknown files that don't belong to the project
+The "clean" step typically removes build products, with the intention to start over as if the "compile" or other build steps were never executed.
+4
+build-automation
+END
+What is the weakest point in the computer security of a typical large firm?
+The employees
+The firewall software used
+The antivirus software used
+The intranet software used
+The typical weakest point is the employees, as social engineering and human gallibility can often circumvent otherwise state of the art computer security system.
+4
+security
+END
+Which of these is the most dangerous security probing tool?
+nmap
+ping
+ifconfig
+telnet
+nmap is a sophisticated port scanner, and can reveal much more about a network than all the other tools combined.
+4
+security
+END
+What's the worst thing that can happen if you configure nmap with suid root?
+It could be used for privilege escalation
+It could be used to completely jam a network with DOS attacks
+It could be used to delete all files in the system
+It could be used to unleash the kraken
+Privilege escalation could be used to create all the other damages. Except maybe releasing the kraken. Not sure.
+4
+security
+END
+In Linux, what is the best way to give read permission to everybody on a file?
+chmod +r file.txt
+chmod 777 file.txt
+chmod 4777 file.txt
+chmod 444 file.txt
+The +r flag gives read permission to everybody on the system. 444 is not a good idea because it removes all other permissions that there might have been. Anybody taking the other options should be fired on the spot.
+4
+security
+END
+Which is the worst method for encrypting data?
+sha1
+des3
+aes-128-cbc
+crypt
+sha1 is not an encryption method but a message digest method. The next worst method here is crypt, if you wanted to know... :)
+4
+security
+END
+What's the scariest defect that can happen in a web application?
+Buffer overflow
+Blue screen of death
+Denial of service
+NullPointerException
+A buffer overflow can potentially lead to privilege escalation, which could be used to produce all the others and much worse.
+4
+security
+END
+Which C library function is the least unsafe?
+strncpy
+strcpy
+gets
+scanf
+Only the strncpy function checks bounds, the others don't. Not checking bounds is very likely to lead to buffer overflow defects.
+4
+security
+END
+Which tool cannot be used to encrypt files?
+nmap
+encfs
+openssl
+TrueCrypt
+encfs and TrueCrypt can be used to create encrypted directories, and openssl can be used to encrypt a stream of data. nmap is a network scanning tool, not for encryption.
+4
+security
+END
+Which tool cannot be used to find open ports in the local system?
+ping
+nmap
+telnet
+netstat
+ping can only send ICMP ECHO requests to hosts, it cannot be used to find open ports.
+4
+security
+END
+Which tool cannot be used to find open ports in a remote system?
+netstat
+nmap
+telnet
+curl
+Unlike the others, netstat cannot be used to scan arbitrary remote ports.
+4
+security
+END
+Which one of these is NOT a Version Control System?
+CSV
+Bazaar
+Subversion
+CVS
+CSV stands for Comma Separated Values, it is a common file format, not a Version Control System.
+4
+version-control
+END
+Which one of these is a Distributed Version Control System?
+Mercurial
+Subversion
+ClearCase
+Visual SourceSafe
+These are all version control systems, but only Mercurial has a distributed model, the others use a client-server model.
+4
+version-control
+END
+What can be a disadvantage of a distributed VCS in comparison to a centralized VCS?
+The initial cloning is slower
+Users cannot commit revisions without a server
+Most operations are slower without a server
+Users cannot create forks without a server
+In a distributed VCS, initial cloning is typically slower, as the tool must download the entire project history. The other choices are disadvantages of centralized VCS.
+4
+version-control
+END
+In a version control system, which type of conflict can have an automatic resolution when merging branchA into branchB?
+The same file was edited in both BranchA and BranchB
+The same file was edited in BranchA but deleted in BranchB
+The same file was edited in BranchA but renamed in BranchB
+A file with the same name was added in both BranchA and BranchB
+If branchA and branchB edited completely different parts of the file, that should be possible to resolve automatically. The other types of conflict require an explicit decision and action by a human.
+4
+version-control
+END
+What version control operation requires access to the server in a centralized VCS?
+log
+status
+add
+mv
+In a centralized VCS all operations that involve the history need to access the repository on the central server. The status, add, and mv commands can be performed without access to the server.
+4
+version-control
+END
+What is the most likely cause of a stack overflow?
+Too deep recursion when using a recursive function 
+Trying to access an array element by an index beyond the end of the array
+Trying to access an array element by a negative index
+The stack size limit is not set to unlimited in your system
+A common cause of a stack overflow is very deep or infinite recursion, exhausting the address space of the call stack. A common solution is to improve the algorithm to reduce the depth of recursions.
+4
+programming
+END
+Which Linux distribution appeared first?
+Debian
+Mint
+Ubuntu
+Knoppix
+Knoppix, Ubuntu, Mint are all derivatives of Debian.
+4
+linux
+END
+Which command can be used to configure a firewall in Linux?
+iptables
+ipconfig
+ifconfig
+netstat
+iptables is an administration tool for IPv4 packet filtering and NAT, a common firewall software in Linux.
+3
+linux
+END
+In Linux, which command cannot be used to list the files in a directory?
+dirs
+ls
+tree
+echo
+The dirs command shows the list of remembered directories (stored by the pushd command), it cannot be used to list the files in a directory.
+4
+linux
+END
+Which is an example of input redirection in common shells?
+sort < data.txt
+cat data.txt | sort
+sort data.txt
+sort data.txt &
+"<" is the input redirection operator in common shells, even in DOS. 
+3
+linux
+END
+Which environment variable in Linux is typically not an absolute path?
+LOGNAME
+PWD
+HOME
+SHELL
+LOGNAME is usually the username of the current user, not a path.
+4
+linux
+END
+Which command cannot be used to send an email in Linux?
+groff
+telnet
+mailx
+mutt
+groff is a document formatting system (for example rendering man pages) and cannot be used to send emails. Yes you can send an email with telnet, though it won't be pretty.
+4
+linux
+END
+In Linux, which file controls the number of available virtual terminals?
+/etc/inittab
+/etc/virttab
+/etc/fstab
+/etc/mtab
+The virtual terminals are configured in the /etc/inittab file.
+4
+linux
+END
+In Linux, what information is usually NOT stored in /etc/passwd file?
+Password
+Username
+Shell
+Home directory
+The password is usually stored in /etc/shadow, with more strict access permissions.
+4
+linux
+END
+In Linux, which runlevel is a multi-user runlevel?
+2
+S
+1
+6
+Runlevels 2 to 5 are multi-user runlevels.
+4
+linux
+END
+In Linux, what is the name of the process with PID 1?
+init
+kernel
+root
+launchd
+In Linux the "init" process is the parent of all processes, it gets the first PID which is 1. 
+4
+linux
+END
+In Linux, which signal cannot be trapped?
+9 KILL
+3 QUIT
+6 ABRT
+15 TERM
+The KILL signal is non-catchable, non-ignorable, immediately kills a process without possibility of cleaning up.
+4
+linux
+END
+In Linux, which command can be used to check if a given PID is currently running or not?
+kill
+netstat
+top
+lsof
+The output of kill -0 PID includes the text "No such process" if the process doesn't exist. The command exits with 1 if the process does not exist or the user does not own it.
+4
+linux
 END
