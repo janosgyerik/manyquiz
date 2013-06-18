@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.manyquiz.computers.lite"
+    package="quizHarness.quiz"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="3.0" >
 
     <uses-sdk
         android:minSdkVersion="4"
-        android:targetSdkVersion="4" />
+        android:targetSdkVersion="13" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name="com.manyquiz.LiteQuizApplication"
+        android:allowBackup="false"
         android:icon="@drawable/launcher_main"
         android:label="@string/app_name"
         android:theme="@style/Theme.Light.NoTitleBar" >
