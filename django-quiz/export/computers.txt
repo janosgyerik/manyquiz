@@ -3553,3 +3553,111 @@ A common cause of a stack overflow is very deep or infinite recursion, exhaustin
 4
 programming
 END
+Which Linux distribution appeared first?
+Debian
+Mint
+Ubuntu
+Knoppix
+Knoppix, Ubuntu, Mint are all derivatives of Debian.
+4
+linux
+END
+Which command can be used to configure a firewall in Linux?
+iptables
+ipconfig
+ifconfig
+netstat
+iptables is an administration tool for IPv4 packet filtering and NAT, a common firewall software in Linux.
+3
+linux
+END
+In Linux, which command cannot be used to list the files in a directory?
+dirs
+ls
+tree
+echo
+The dirs command shows the list of remembered directories (stored by the pushd command), it cannot be used to list the files in a directory.
+4
+linux
+END
+Which is an example of input redirection in common shells?
+sort < data.txt
+cat data.txt | sort
+sort data.txt
+sort data.txt &
+"<" is the input redirection operator in common shells, even in DOS. 
+3
+linux
+END
+Which environment variable in Linux is typically not an absolute path?
+LOGNAME
+PWD
+HOME
+SHELL
+LOGNAME is usually the username of the current user, not a path.
+4
+linux
+END
+Which command cannot be used to send an email in Linux?
+groff
+telnet
+mailx
+mutt
+groff is a document formatting system (for example rendering man pages) and cannot be used to send emails. Yes you can send an email with telnet, though it won't be pretty.
+4
+linux
+END
+In Linux, which file controls the number of available virtual terminals?
+/etc/inittab
+/etc/virttab
+/etc/fstab
+/etc/mtab
+The virtual terminals are configured in the /etc/inittab file.
+4
+linux
+END
+In Linux, what information is usually NOT stored in /etc/passwd file?
+Password
+Username
+Shell
+Home directory
+The password is usually stored in /etc/shadow, with more strict access permissions.
+4
+linux
+END
+In Linux, which runlevel is a multi-user runlevel?
+2
+S
+1
+6
+Runlevels 2 to 5 are multi-user runlevels.
+4
+linux
+END
+In Linux, what is the name of the process with PID 1?
+init
+kernel
+root
+launchd
+In Linux the "init" process is the parent of all processes, it gets the first PID which is 1. 
+4
+linux
+END
+In Linux, which signal cannot be trapped?
+9 KILL
+3 QUIT
+6 ABRT
+15 TERM
+The KILL signal is non-catchable, non-ignorable, immediately kills a process without possibility of cleaning up.
+4
+linux
+END
+In Linux, which command can be used to check if a given PID is currently running or not?
+kill
+netstat
+top
+lsof
+The output of kill -0 PID includes the text "No such process" if the process doesn't exist. The command exits with 1 if the process does not exist or the user does not own it.
+4
+linux
+END
