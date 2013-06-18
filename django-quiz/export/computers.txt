@@ -5,7 +5,7 @@ Windows 98
 RedHat Linux
 Microsoft Office XP is a suite of desktop applications, including text editor, spreadsheet editor, etc, NOT an operating system.
 2
-software
+os
 END
 How many bytes is one kilobyte?
 1024 bytes
@@ -32,16 +32,16 @@ User accounts
 Intranet pages
 Exchange servers are used for managing e-mail. They also manage calendars and contacts.
 2
-exchange
+server-software
 END
-What is the preferred method to quickly and directly upload a file to a web server?
+Which method can quickly and directly upload a file to a web server?
 FTP
 HTTP
 RDP
 DOS
 FTP stands for File Transfer Protocol, and can directly upload files to a web server.
 2
-x
+network
 END
 What does a hard disk defragmenter do?
 Arranges data in order for faster reading
@@ -50,7 +50,7 @@ Erases unwanted data
 Compresses files in order to create space
 Data on the disk that has been split up is moved together, meaning there is less movement needed by the hard disk head to read the data.
 2
-defragment
+systems-programming
 END
 What is the Windows page file otherwise known as?
 Virtual memory
@@ -176,7 +176,7 @@ Internet Packets
 Internet Publisher
 Internet Protocol is a protocol used by the internet for sending data packets.
 2
-iexplore
+network
 END
 Which of these cannot be changed in a computer's settings?
 MAC address
@@ -239,7 +239,7 @@ At either end of a Hard Disk Drive
 Spread over multiple partitions on the same disk
 Parts of a single file that are spread out over the hard disk can be arranged so they are stored in order. Subsequent access is a lot faster.
 2
-harddisk
+hardware
 END
 What is the MBR on a PC hard disk?
 Master Boot Record
@@ -248,7 +248,7 @@ Missed BIOS Routines
 Mixed Booting Resources
 The Master Boot Record is used for storing partition information and/or startup information for the operating system.
 2
-x
+os
 END
 How might an unrecoverable BIOS password be reset?
 Removing and re-inserting the CMOS battery
@@ -266,7 +266,7 @@ Replace the motherboard, memory and processor and the laptop can be used
 Remove and re-insert the CMOS battery and the laptop can be used
 The only way to use an encrypted hard disk without the password, is to erase the contents. Data cannot be recovered.
 2
-harddisk
+security
 END
 Which of the following is NOT a programming language?
 WYSIWYG
@@ -311,7 +311,7 @@ Ensure the printer is never switched off, even overnight
 Daily checks of the IP address
 Assigning a static IP address using DHCP will mean every time the printer is switched on, it can be found using the same IP address.
 2
-networkcable
+network
 END
 How is data stored on a standard hard disk drive?
 Magnetic charge
@@ -320,7 +320,7 @@ Onto multiple memory cards build into a unit
 Ultraviolet data charge
 Magnetic charge is used to set each bit on or off (1 or 0). This is the data stored in its most basic form, and 'on or off' is the only form of data a computer can actually understand, as it is, in essence, and electronic device.
 2
-harddisk
+hardware
 END
 A user cannot run installation programs on their networked computer. How could the administrator change this?
 Change the user's access rights
@@ -329,7 +329,7 @@ Disconnect the computer from the network
 Connect the computer to the network
 Users can have different access permissions set up for many different files and settings, at varying levels of control.
 2
-networkcable
+os
 END
 What is low-level programming?
 Programming in a language that is closer to what a computer can understand
@@ -401,7 +401,7 @@ Use static-IP addresses instead of dynamic ones
 Install a second network card in the computers on the wireless network
 A wireless repeater will 'refresh' the wireless signal by sending it out again, boosting the area covered.
 2
-wifi
+network
 END
 Which of the following would BEST help secure a home wireless network from malicious 'piggybacking'?
 Ensure the network is password protected/encrypted
@@ -410,7 +410,7 @@ Encrypt all hard drives on the network
 Set up a client-server network and add clients to the wireless network
 As long as the network is secure with a password, it is unlikely there will be any intrusions (although this is not guaranteed).
 2
-wifi
+security
 END
 What is a VLAN?
 Virtual Local Area Network
@@ -527,7 +527,7 @@ Storing of passwords for e-mail and online forms
 Uploading of a web-page
 If a webpage is cached, it does not need to be fully downloaded from the server the next time it is viewed, as some or all of the page will be in cached.
 2
-iexplore
+network
 END
 What process can be restarted if Windows has crashed, in order that the start menu and icons reappear?
 explorer.exe
@@ -619,14 +619,14 @@ Mapping drives allows any shared folder to be used like a separate drive. The sh
 2
 x
 END
-What does the registry key HKCR contain?
+What does the registry key HKCR contain in Windows?
 File association data
 User account information
 Startup programs
 Desktop settings
 Allows certain file types to be associated with applications (ie Word documents are associate with Microsoft Office Word).
-2
-regedit
+3
+windows
 END
 What is a batch file?
 A file containing a list of commands
@@ -662,7 +662,7 @@ Solaris
 Linux
 DOS, or 'Disk Operating System'
 2
-microsoft
+windows
 END
 Which operating system is NOT based on DOS?
 Windows XP
@@ -671,7 +671,7 @@ Windows 98
 Windows Me
 Windows XP is not based on DOS. Windows Me 'pretended' not to be based on DOS, but it was.
 2
-commandprompt
+windows
 END
 Which of the following companies have NEVER produced personal computers?
 American Megatrends
@@ -725,7 +725,7 @@ Data operating System
 Data On System
 DOS was Microsoft's first operating system, and was used as a basis for a number of it's future operating systems.
 2
-commandprompt
+history
 END
 What are Active X controls?
 An application run by a web browser
@@ -788,7 +788,7 @@ A disk is a partition
 A file system
 A partition will appear to the user as a separate disk drive. It may use a different file system and/or contain a separate operating system.
 2
-harddisk
+os
 END
 What does a server serve?
 Clients
@@ -851,7 +851,7 @@ A read only area of the disk
 The area of the disk that holds firmware
 A disk sector is a physical storage area on a hard disk drive.
 2
-harddisk
+hardware
 END
 How is data stored on a hard disk drive?
 Magnetically
@@ -860,7 +860,7 @@ Physically by small indentations
 ROM
 Data is stored magnetically on the disk platters, and by the read/write head.
 2
-harddisk
+hardware
 END
 What is a BSOD?
 An error screen
@@ -869,7 +869,7 @@ A BIOS setting
 A bootable partition
 BSOD stands for Blue Screen of Death, and results in a computer being restarted after a hardware or software error that the operating system cannot recover from.
 2
-bsod
+history
 END
 Which is most likely to cause a Blue Screen of Death?
 Faulty hardware
@@ -878,7 +878,7 @@ Memory leak
 Fragmented data
 Faulty hardware is a common cause of the BSOD, along with faulty drivers.
 2
-bsod
+windows
 END
 Which of the following is most likely to require its own fan?
 Processor
@@ -995,7 +995,7 @@ To store network addresses in a network
 To allow two network cables to be plugged into one socket
 A network transmission will deteriorate over distance and so a repeated amplifies the signal before sending it on.
 2
-networkcable
+network
 END
 What is a routing table used for?
 Calculating the destination of network data
@@ -1049,7 +1049,7 @@ Windows 2012 Server
 Windows Server 8
 It was codenamed Windows Server 8, but its release name is Windows Server 2012, in keeping with the naming convention used since Windows Server 2003. Before that was Windows 2000 Server.
 2
-windows8
+windows
 END
 What is the Windows 8 user interface based on?
 Metro
@@ -1058,7 +1058,7 @@ ModeI
 Glass
 The Windows 8 user interface will be based on Microsoft's Metro design language, and will be based more on typography than imagery.
 2
-windows8
+windows
 END
 What is the purpose of a subnet mask?
 To separate the IP address into network and host parts
@@ -1067,7 +1067,7 @@ To hide a small network inside a smaller one
 To prevent firewalls allowing internal netork access to the outside world
 A subnet mast looks something like this: 255.255.255.0
 2
-networkcable
+network
 END
 Which of the following subnet masks belongs to a class C network?
 255 255 255 0
@@ -1076,7 +1076,7 @@ Which of the following subnet masks belongs to a class C network?
 255 255 255 255
 Class A: 255.0.0.0, Class B: 255.255.0.0, Class C: 255.255.255.0.
 3
-networkcable
+network
 END
 Which of the following is a popular anti malware program?
 MalwareBytes
@@ -1130,7 +1130,7 @@ Apple Macintosh
 Apple Seed
 The Apple Computer is now referred to as the Apple I. It was not sold with keyboard, casing etc.
 2
-appleold
+history
 END
 When did Apple's first computer go on sale?
 1976
@@ -1139,7 +1139,7 @@ When did Apple's first computer go on sale?
 1980
 It was simply calle the Apple Computer. It is now referred to as the Apple I.
 2
-appleold
+history
 END
 What is the original name of Apple Inc.?
 Apple Computer Inc
@@ -1148,7 +1148,7 @@ Apple Technology Inc
 Apple Technologies Inc
 Apple Computer was founded in 1976.
 2
-appleold
+history
 END
 Which command can you use in Windows 7 to list running processes?
 tasklist
@@ -1256,7 +1256,7 @@ Any network cable would work
 Only wireless would work
 A straight through cable is used to connect a computer to a standard data point (which in turn would be patched to a switch).
 3
-networkcable
+network
 END
 What is default gateway?
 A link to another network
@@ -1283,7 +1283,7 @@ To allow easy cutting/resizing
 To create a consistent arrangement of wires
 Twisted cables will act as a form of interference reduction from external sources.
 3
-networkcable
+network
 END
 What is a virtual disk?
 An emulation of a physical disk
@@ -1355,7 +1355,7 @@ Any type of network cable
 Wireless must be used
 For example to connect a switch to a switch or a computer to a computer, a crossover cable is needed.
 3
-networkcable
+network
 END
 What is iEEE 1394 better known as?
 Firewire
@@ -1463,7 +1463,7 @@ A coating
 A small sector
 The platter is a physical disc on which data is written. There are usually several platters in a hard disk drive.
 3
-harddisk
+hardware
 END
 What is a jumper?
 An electrical connector
@@ -1481,7 +1481,7 @@ Turns the actuator arms
 Turns the read/write heads
 Each platter (disc) inside a hard disk drive is turned by the spindle.
 3
-harddisk
+hardware
 END
 In a laser printer, what does the imaging drum do?
 Attracts toner and applies it to the paper
@@ -1553,7 +1553,7 @@ Adjusts partition sizes
 Deletes the Master Boot Record
 Deltree (delete tree) is a Microsoft Dos command used for deleting entire directories (folders) and subdirectories.
 3
-deltree
+windows
 END
 What is Microsoft's first 32bit operating system?
 Windows NT 3.1
@@ -1580,7 +1580,7 @@ Sun
 American Megatrends
 The original name of Microsoft DOS was QDOS (Quick and Dirty Operating System). It was bought by Microsoft and then sold to IBM for use with their hardware.
 3
-commandprompt
+history
 END
 What is IANA
 Internet Assigned Numbers Authority
@@ -1670,7 +1670,7 @@ C
 XHTML
 A low level programming language is one that is close to what a computer can understand. Assembly is only one level up from binary language and so is a low level language.
 3
-assembly
+programming
 END
 What is this binary number converted to decimal - 00001010?
 10
@@ -1742,7 +1742,7 @@ VN
 Pin
 Telnet allows an administrator to connect into networked equipment in order to configure it remotely.
 3
-networkcable
+network
 END
 Which operating system was designed by Sun Microsystems?
 Solaris
@@ -1859,7 +1859,7 @@ Lex
 Bix
 Tux the penguin has been the Linux mascot since 1996.
 3
-tux
+linux
 END
 What is the name 'Microsoft' short for?
 Microcomputer Software
@@ -1940,7 +1940,7 @@ Suse
 Android
 Symbian is a mobile phone operating system, and is not based on Linux.
 3
-tux
+linux
 END
 What is UNIX?
 An operating system
@@ -1996,14 +1996,14 @@ COM is used for developing software components
 3
 x
 END
-Which of the following are part of the registry?
+Which of the following are part of the registry in Windows?
 Hives and Changelog
 Sectors and Partitions
 Buffers
 Linked Lists
 Hives are a group of keys, subkeys and values. Changelog is a log of changes made by users.
 3
-regedit
+windows
 END
 What does LSB stand for?
 Least Significant Bit
@@ -2147,7 +2147,7 @@ Diskpart
 Logon
 Defrag is NOT a recovery console command - it is short for defragmenter/defragment.
 3
-commandprompt
+windows
 END
 What does the Kernel of an operating system do?
 It provides core functions of the operating system
@@ -2187,12 +2187,12 @@ x
 END
 Which of the following is the lowest level programming language?
 Assembly
-c
-c plus plus
+C
+C++
 Java
 Assembly language works at a level closest to what a computer can actually understand, and so is considered low level. The others listed are high level programming languages.
 3
-assembly
+programming
 END
 How is data stored on a CD?
 Bumps and flats
@@ -2228,7 +2228,7 @@ push
 add
 All the others are valid commands (pop - pops data from the stack, push pushes data onto the stack, add adds two values)
 3
-assembly
+programming
 END
 What would a hash value NOT be used for?
 Disk de-fragmentation
@@ -2390,7 +2390,7 @@ installer.exe
 installorremove
 Appwiz.cpl opens the add/remove dialog where installed programs can be viewed or changed, and new programs/features added.
 3
-commandprompt
+windows
 END
 What is the IEEE standard 802.3?
 Ethernet
@@ -2453,7 +2453,7 @@ mv
 rm
 The ls command will list the contents of the current directory.
 3
-tux
+linux
 END
 A program written in Java can run on?
 Any system with the correct version of Java installed
@@ -2578,8 +2578,8 @@ Direct
 Driver
 Device
 CIDR: Classles InterDomain Routing
-3
-networkcable
+4
+network
 END
 What is the development language of Apple iPhone apps?
 Objective C
@@ -2741,7 +2741,7 @@ Natural
 Miles
 The name Oak came from an Oak tree outside James Gosling's office window (Gosling being one of the founders of Java/Oak).
 4
-nightmare
+history
 END
 Which of the following is designed specifically for embedded devices?
 Java ME
@@ -2750,7 +2750,7 @@ Java SE
 Java RE
 Java ME is used for embedded devices - ME stands for Micro Edition.
 4
-nightmare
+mobile
 END
 Which is NOT true of using 2's complement to represent binary numbers?
 2s complement represents the number 0 twice, as positive and negative
@@ -2759,7 +2759,7 @@ Negative numbers do not look the same as their positive counterparts (excluding 
 A byte can only represent up to 127 in decimal
 This is NOT true - in 2's complement 0 is represented only once.
 4
-nightmare
+systems-programming
 END
 What is the ASCII character code (decimal) for the character 'carriage return'?
 0D
@@ -2768,7 +2768,7 @@ What is the ASCII character code (decimal) for the character 'carriage return'?
 1F
 There are 128 ASCII characters in total - many are not graphical characters.
 4
-nightmare
+systems-programming
 END
 What does the 'P' stand for in ARPANET?
 Projects
@@ -2777,7 +2777,7 @@ Processing
 Protocol
 ARPA - Advanced Research Projects Agency - ARPANET was the world's first packet switching network.
 4
-nightmare
+history
 END
 In Octal, what is 7+1?
 10oct
@@ -2786,7 +2786,7 @@ In Octal, what is 7+1?
 11oct
 Remember, after 7oct you must carry the 1 the next next column on the left, making 10oct.
 4
-nightmare
+systems-programming
 END
 Convert 1011b (binary) to hexadecimal
 0Bh
@@ -2795,7 +2795,7 @@ Convert 1011b (binary) to hexadecimal
 0Ah
 Hexadecimal is base 16, so numbers go from 0-F (F being equivalent to 15 in decimal). Binary is base 2 and only 0 and 1 are used.
 4
-nightmare
+systems-programming
 END
 Convert 1111 from binary to octal
 17oct
@@ -2804,7 +2804,7 @@ Convert 1111 from binary to octal
 16oct
 Octal is base 8 and so used only the numbers 0 to 7. Binary is base 2 and uses only 0 to 1.
 4
-nightmare
+systems-programming
 END
 What is 2's complement used to represent in binary?
 Negative numbers
@@ -2813,7 +2813,7 @@ Decimal numbers
 Numbers beyond the range of the number base
 2's complement solves the dilema of working with only 0's and 1's (no '-' symbol to represent negative).
 4
-nightmare
+systems-programming
 END
 What might the following command do in Windows: SUBST?
 Associate a path with a drive letter
@@ -2822,7 +2822,7 @@ Rename the root directory of a drive
 Allow the user to change privelages of other users
 It is the basis of the drive mapping function in Windows.
 4
-nightmare
+windows
 END
 What does INT mean in Intel x86 assembly language?
 Interrupt
@@ -2831,7 +2831,7 @@ Intel
 Integrate
 Interrupts can be run to perform certain operations using the processor.
 4
-nightmare
+systems-programming
 END
 Where might you use the 'conf t' command?
 CISCO switch
@@ -2840,7 +2840,7 @@ Linux box
 A serial port data logger
 It is short for 'CONFigure Terminal'.
 4
-nightmare
+network
 END
 What do fa and gi stand for when configuring a CISCO switch?
 Fast Ethernet and Gigabit Ethernet
@@ -2849,7 +2849,7 @@ Fast Internet and Gigabit Internet
 Fast Bandwidth and Gigabit Bandwidth
 Fast Ethernet is 100 Megabits per second, Gigabit Ethernet is 1 Gigabit per second.
 4
-nightmare
+network
 END
 What is dark fibre?
 Unused fibre optic link
@@ -2858,7 +2858,7 @@ Extra shielded fibre optic link
 Fibre optics where light signals cannot be seen at the ends
 Dark fibre is so called because fibre obtic cabling trasmints data by light.
 4
-nightmare
+network
 END
 In 80xx microprocessor architechture, which of the following is an 8 bit general purpose register?
 AL
@@ -2867,7 +2867,7 @@ AR
 AZ
 A list of all 8 bit registers: AH, AL, BH, BL, CH, CL, DH, DL (H and L being High and Low respectively).
 4
-nightmare
+systems-programming
 END
 In 80xxx microprocessor architechture, which of the following is a 32 bit general purpose register?
 EAX
@@ -2876,7 +2876,7 @@ BH
 AX
 A list of all 32 bit registers: EAX, EBX, ECX, EDX
 4
-nightmare
+systems-programming
 END
 In 8086 microprocessor architecture, what does IP stand for?
 Instruction Pointer
@@ -2885,7 +2885,7 @@ Implementation Protocol
 Integer Pointer
 This points to the NEXT instruction that will be executed in the CPU.
 4
-nightmare
+systems-programming
 END
 Who developed TASM?
 Borland
@@ -2894,7 +2894,7 @@ Microsoft
 Sun
 TASM is short for Turbo Assembler, and is an assembler package.
 4
-nightmare
+history
 END
 Using 2's complement, negate the following binary number: 11100110
 00011010
@@ -2903,7 +2903,7 @@ Using 2's complement, negate the following binary number: 11100110
 00011001
 To negate a binary number using 2's complement: Invert all bits (so our example becomes 00011001), then add 1 to the inverted number.
 4
-nightmare
+systems-programming
 END
 How type of data structure is a stack?
 LIFO
@@ -2912,7 +2912,7 @@ FIFO
 FOFI
 Last In First Out - The last item pushed onto the stack is popped off first. Picture a stack as a stack of books - you must add books to the top of the pile or take from the top.
 4
-nightmare
+data-structures
 END
 What type of data structure is a queue?
 FIFO
@@ -2921,7 +2921,7 @@ LIFO
 LOFI
 First In First Out. Picture a queue of people - the first person (data item) in the queue is the first to leave the queue at the front. Additional people (data) joins at the back of the queue.
 4
-nightmare
+data-structures
 END
 What is the main use of a namespace in C++?
 To stop duplicate function names causing a problem
@@ -2930,7 +2930,7 @@ To allow several functions to share variables
 To allow several pointers to point to a single variable
 Due to the fact that functions can be shared for use by other developers, it is common for multiple functions to share the same name. A namespace 'categorises' these functions so they do not exist in the same namespace.
 4
-nightmare
+programming
 END
 In which language would you find the function malloc?
 C
@@ -2939,7 +2939,7 @@ Assembly
 XHTML
 The malloc() function allocates blocks of memory in the C programming language.
 4
-nightmare
+programming
 END
 Which of the following holds file access information?
 MAC time
@@ -2948,7 +2948,7 @@ LINUX time
 WIN time
 MAC stands for Modification time, Access time, Change time.
 4
-nightmare
+systems-programming
 END
 Who originally developed the Fortran programming language?
 IBM
@@ -2957,7 +2957,7 @@ Intel
 Microsoft
 FORTRAN was developed in 1950's. The name stands for FORmula TRANslating system.
 4
-nightmare
+history
 END
 What is Fortran?
 A scientific/mathmatic programming language
@@ -2966,7 +2966,7 @@ A scientific/mathmatic hardware calculator/data processor
 A scientific/mathmatic data logging program
 FORTRAN was developed in 1950's. The name stands for FORmula TRANslating system.
 4
-nightmare
+programming
 END
 What is ELKS otherwise knows as?
 Linux-8086
@@ -2975,7 +2975,7 @@ Linux-Intel
 Linux-386
 ELKS stands for 'Embeddable Linux Kernel System'
 4
-nightmare
+history
 END
 What is the surname of the creator of Java?
 Gosling
@@ -2984,7 +2984,7 @@ Robertson
 Todhunter
 His full name is James Gosling.
 4
-nightmare
+history
 END
 What is the name of the Java mascot?
 Duke
@@ -2993,7 +2993,7 @@ Dorf
 Dino
 Duke has always been the mascot for Java.
 4
-nightmare
+history
 END
 Running the command mmsys.cpl will do what in Windows 7?
 Open sound settings
@@ -3002,7 +3002,7 @@ Open language settings
 Open system properties
 From these settings options such as the default playback device can be changed.
 4
-nightmare
+windows
 END
 Which of the following will open the ODBC settings on a Windows XP computer?
 odbccp32.cpl
@@ -3011,7 +3011,7 @@ odbccp.cpl
 odbc32.cpl
 ODBC stands for Open Database Connectivity, and is used to create connections to shared databases.
 4
-nightmare
+windows
 END
 Which of the following will open the ODBC settings on a Windows 7 computer?
 odbcad32.exe
@@ -3020,7 +3020,7 @@ odbccp32.exe
 odbccp32.cpl
 ODBC stands for Open Database Connectivity, and is used to create connections to shared databases.
 4
-nightmare
+windows
 END
 A file with the extension .VHD is primarily used for what?
 Setting up virtual computers
@@ -3029,7 +3029,7 @@ Multimedia data
 3D video data
 VHD stands for Virtual Hard Disk - a software representation of a hard disk drive.
 4
-nightmare
+systems-programming
 END
 What year was the game Doom released for the PC (sorry, had to get a Doom question in...)?
 1993
@@ -3038,7 +3038,7 @@ What year was the game Doom released for the PC (sorry, had to get a Doom questi
 1995
 It was released by 'id Software'.
 4
-doom
+history
 END
 What would the following command do on a CISCO switch: switchport access vlan 978
 Place the current port in VLAN 978
@@ -3047,7 +3047,7 @@ Prepare the current VLAN for alterations
 Change the current VLAN number from 978
 The command must be run whilst configuring the terminal (after using the 'conf t' command).
 4
-nightmare
+network
 END
 In Java programming, what does the A stand for in AWT?
 Abstract
@@ -3056,7 +3056,7 @@ Access
 Always
 AWT stands for Abstract Window Class, and is used for creating window based graphical user interfaces.
 4
-nightmare
+programming
 END
 What does ATAPI stand for?
 Advanced Technology Attachment Packet Interface
@@ -3065,7 +3065,7 @@ Adaptable Technology Attachment Processing Interface
 Advanced Technology Adaptable Packet Interface
 ATAPI is a connection standard for connecing storage devices.
 4
-nightmare
+history
 END
 What does GRUB stand for in a Linux system?
 Grand Unified Boot-Loader
@@ -3074,7 +3074,7 @@ Grand Uninterruptible Boot-Loader
 Great Unified Boot-Loader
 Grub is used to load the Linux operating system.
 4
-nightmare
+linux
 END
 In Assembly language, what does JNE stand for?
 Jump if Not Equal
@@ -3083,7 +3083,7 @@ Jump if Not Even
 Jumper Not Even
 JNE is used to compare two values, and check if they are the same. If they are not, the jump is made to another section of code.
 4
-nightmare
+systems-programming
 END
 In Assembly language, what does JNZ stand for?
 Jump if Not Zero
@@ -3092,7 +3092,7 @@ Jumper is Not Zeroed
 Jumper is Now Zero
 JNZ compares a value to zero. If it equals zero, then the jump is made to another section of code.
 4
-nightmare
+systems-programming
 END
 Which command, in Windows 7, will open Authorization Manager?
 azman.msc
@@ -3101,7 +3101,7 @@ authmn.msc
 auman.msc
 AzMan provides role based access control for applications.
 4
-nightmare
+windows
 END
 What type of vulnerability does SQL Injection exploit?
 Database exploit
@@ -3110,7 +3110,7 @@ Buffer overflow
 MITM attack
 SQL injection is a technique used to access directories in a webserver and view databases.
 4
-nightmare
+security
 END
 What is the output of a 1,1 input on a 2 input XOR gate
 0
@@ -3119,7 +3119,7 @@ What is the output of a 1,1 input on a 2 input XOR gate
 0,0
 An xor gate produces a 1 as its output if either input is a 1 not both, not neither
 4
-nightmare
+systems-programming
 END
 Which Linux command gives IP address details?
 if config
