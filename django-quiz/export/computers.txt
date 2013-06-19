@@ -2905,7 +2905,7 @@ To negate a binary number using 2's complement: Invert all bits (so our example 
 4
 systems-programming
 END
-How type of data structure is a stack?
+What type of data structure is a stack?
 LIFO
 LILO
 FIFO
