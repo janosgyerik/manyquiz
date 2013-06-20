@@ -1501,21 +1501,21 @@ The laser precisely charges areas of the drum, which then attracts the toner to 
 3
 x
 END
-Who invented the difference engine?
+Who designed the difference engine?
 Charles Babbage
 Linus Torvalds
 Bill Gates
 Steve Jobs
-The difference engine was a mechanical calculator/computer.
+The Difference Engine was an automatic mechanical calculator/computer. It wasn't, however, the first mechanical calculator to be invented.
 3
 x
 END
 What is/was the difference engine?
-A mechanical computer
+A mechanical computer/calculator
 A robot that built computers
 A Linux computer dedicated to solving famous equations
 A computer based on valves
-The difference engine (which was a large mechanical computer/calculator) was invented by Charles Babbage.
+The difference engine (which was a large mechanical computer/calculator) was invented by Charles Babbage. It wasn't, however, the first mechanical calculator to be invented.
 3
 x
 END
@@ -2366,10 +2366,10 @@ Electronically Erasable Programmable Read Only Memory. Data on a flash drive, fo
 x
 END
 What software might you use in Windows XP to prepare a system to be imaged?
+Sysprep
 Microsoft Project
 Windows File Compression
 ScanDisk
-SysPrep
 Sysprep is used to create an 'system image', so that other similar devices can be created from that 'system image' (rather than installing operating system and software from scratch).
 3
 x
@@ -2856,7 +2856,7 @@ Unused fibre optic link
 A fibre optic link laid side by side (shadowed) with copper cabling
 Extra shielded fibre optic link
 Fibre optics where light signals cannot be seen at the ends
-Dark fibre is so called because fibre obtic cabling trasmints data by light.
+Dark fibre is so called because fibre optic cabling transmits data by light, so a lack of data means no light.
 4
 network
 END
@@ -3171,7 +3171,7 @@ Blaise Pascal
 John Napier
 Ada Lovelace
 Charles Babbage
-The large cuboids were called 'Pascalines', but weren't programmable. Borland named a 3rd generation language after him.
+Blaise Pascal invented the first, in 1642. The large cuboids were called 'Pascalines', but weren't programmable.
 4
 x
 END
