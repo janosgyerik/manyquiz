@@ -4,3 +4,6 @@ gen
 tmp
 *.pyc
 /django-quiz/databases/*.db*
+local.properties
+computers-full/keys/
+computers-lite/keys/

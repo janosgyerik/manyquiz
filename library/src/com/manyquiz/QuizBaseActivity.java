@@ -4,29 +4,15 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
-
-import com.google.ads.AdRequest;
-import com.google.ads.AdView;
 
 public abstract class QuizBaseActivity extends Activity {
 
 	protected void checkAndSetupForLiteVersion() {
 		if (((QuizApplication)this.getApplication()).isLiteVersion()) {
 			findViewById(R.id.lite_watermark).setVisibility(View.VISIBLE);
-			setupAds();
 		}
-	}
-
-	protected void setupAds() {
-		AdView googleAdMobView = (AdView)this.findViewById(R.id.google_admob);
-		googleAdMobView.setBackgroundColor(Color.BLACK);
-		googleAdMobView.loadAd(new AdRequest());
-
-		findViewById(R.id.ads).setVisibility(View.VISIBLE);
 	}
 
 	@Override
@@ -43,7 +29,7 @@ public abstract class QuizBaseActivity extends Activity {
 			return true;
 		}
 		if (itemId == R.id.menu_report_fault) {
-			Intent intent = new Intent(getApplicationContext(), ReportFaultActivity.class);
+			Intent intent = new Intent(getApplicationContext(), ReportBugActivity.class);
 			startActivity(intent);
 			return true;
 		}

@@ -15,7 +15,7 @@
             android:id="@+id/title"
             style="@style/mainHeader"
             android:layout_alignParentLeft="true"
-            android:text="@string/app_name" />
+            android:text="@string/label_reportbug_activity" />
 
         <TextView
             android:id="@+id/lite_watermark"
@@ -33,33 +33,22 @@
 
             <TextView
                 style="@style/introduction"
-                android:text="@string/submit_question_title" />
+                android:text="@string/description_reportbug" />
 
-            <LinearLayout
+            <EditText
+                android:id="@+id/message"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:hint="@string/hint_reportbug"
+                android:lines="5"
+                android:gravity="top"
+                android:text="" />
 
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:text="@string/submit_question_prompt" />
-
-                <EditText
-                    android:id="@+id/etSuggestedQuestion"
-                    style="@style/linkButton"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="" />
-
-                <Button
-                    android:id="@+id/btnSubmitQuestion"
-                    style="@style/linkButton"
-                    android:text="@string/btn_submit_question" />
-            </LinearLayout>
+            <Button
+                android:id="@+id/btn_reportbug"
+                style="@style/linkButton"
+                android:text="@string/btn_reportbug" />
         </LinearLayout>
     </ScrollView>
-
-    <include layout="@layout/ads" />
 
 </LinearLayout>
