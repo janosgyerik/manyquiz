@@ -2,6 +2,16 @@
 <resources>
 
     <string name="app_name">Computer Quiz</string>
+    <string name="app_name_lite">Computer Quiz (LITE)</string>
+    
+    <string name="label_intro_activity">Intro</string>
+    <string name="label_info_activity">Info</string>
+    <string name="label_reportbug_activity">Report a bug</string>
+    <string name="label_sendmessage_activity">Suggest a question</string>
+    <string name="label_quiz_activity">Quiz</string>
+    <string name="label_results_activity">Results</string>
+    <string name="label_settings_activity">Settings</string>
+    
     <string name="menu_about">Info</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_quit">Quit</string>
@@ -36,20 +46,25 @@
     <string name="summary_max_questions_suddendeath">Number of questions in sudden death mode</string>
     <string name="summary_max_questions_suddendeath_format">Maximum # of questions = %s</string>
     
-    <string name="btn_submit_fault">Click to submit this fault >></string>
-    <string name="submit_fault_title">Submit a fault to us...</string>
-    <string name="submit_fault_prompt">Please type the problem in the text box below, and click the \'Submit\' button to e-mail this fault to me. Thank you.</string>
-    <string name="menu_report_fault">Report a Fault</string>
-    <string name="fault_email_address">spiderdogsw@gmail.com</string>
-    <string name="fault_email_title">FAULT_LOG</string>
-    <string name="btn_submit_question">Click to submit this question >></string>
-    <string name="submit_question_title">Suggest a quiz question to us...</string>
-    <string name="submit_question_prompt">Please type the suggested question and answers below, and click the \'Submit\' button to e-mail this suggestion to me. Thank you.</string>
-    <string name="menu_suggest_question">Suggest a Question</string>
-    <string name="question_email_address">spiderdogsw@gmail.com</string>
-    <string name="question_email_title">QUESTION_SUGGESTION</string>
-    <string name="no_email_client">There are no email clients installed.</string>
+    <string name="email_address">janos.gyerik@gmail.com</string>
+    <string name="no_email_client">Choose an email client</string>
     <string name="email_client_chooser">Send e-mail...</string>
+    
+    <string name="btn_reportbug">Report this bug >></string>
+    <string name="title_reportbug">Report a bug</string>
+    <string name="menu_reportbug">Report a bug</string>
+    <string name="subject_reportbug_prefix">[manyquiz-bug] </string>
+    
+    <string name="btn_sendmessage">Submit this question >></string>
+    <string name="title_sendmessage">Suggest a question</string>
+    <string name="menu_sendmessage">Suggest a question</string>
+    <string name="subject_sendmessage_prefix">[manyquiz-msg] </string>
+    
+    <string name="description_reportbug">Please describe the bug. The more details you include the better!</string>
+    <string name="hint_reportbug">Describe here the bug...</string>
+    
+    <string name="description_sendmessage">Please enter your question idea. We will review it and hopefully include in our next release!</string>
+    <string name="hint_sendmessage">Describe here your question...</string>
     
     <string name="title_results">How did you do?</string>
     <string name="score">Score: </string>

@@ -11,11 +11,11 @@
     <item
         android:id="@+id/menu_report_fault"
         android:icon="@drawable/ic_menu_end_conversation"
-        android:title="@string/menu_report_fault"/>
+        android:title="@string/menu_reportbug"/>
     <item
         android:id="@+id/menu_suggest_question"
         android:icon="@drawable/ic_menu_start_conversation"
-        android:title="@string/menu_suggest_question"/>
+        android:title="@string/menu_sendmessage"/>
     <item
         android:id="@+id/menu_quit"
         android:icon="@drawable/ic_menu_close_clear_cancel"

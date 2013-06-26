@@ -19,9 +19,9 @@ public class ReportFaultActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_report_fault);
+		setContentView(R.layout.activity_reportbug);
 
-		findViewById(R.id.btnSubmitFault).setOnClickListener(
+		findViewById(R.id.btn_reportbug).setOnClickListener(
 				new SubmitButtonOnClickListener());
 	}
 
@@ -33,8 +33,8 @@ public class ReportFaultActivity extends Activity {
 	}
 
 	public void sendFaultReport() {
-		EditText etFaultDescription = (EditText) findViewById(R.id.etFaultDescription);
-		String emailBody = etFaultDescription.getText().toString();
+		EditText message = (EditText) findViewById(R.id.message);
+		String emailBody = message.getText().toString();
 
 		String pkg = getApplicationContext().getPackageName();
 		PackageManager manager = getApplicationContext().getPackageManager();
@@ -48,9 +48,9 @@ public class ReportFaultActivity extends Activity {
 		Intent intent = new Intent(Intent.ACTION_SEND);
 		intent.setType("message/rfc822");
 		intent.putExtra(Intent.EXTRA_EMAIL, new String[] {
-				getResources().getString(R.string.fault_email_address) });
+				getResources().getString(R.string.email_address) });
 		intent.putExtra(Intent.EXTRA_SUBJECT,
-				getResources().getString(R.string.fault_email_title));
+				getResources().getString(R.string.subject_reportbug_prefix));
 		intent.putExtra(Intent.EXTRA_TEXT, emailBody);
 		
 		try {

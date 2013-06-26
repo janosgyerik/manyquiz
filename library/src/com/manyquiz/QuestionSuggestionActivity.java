@@ -13,9 +13,9 @@ public class QuestionSuggestionActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_submit_question);
+		setContentView(R.layout.activity_sendmessage);
 
-		findViewById(R.id.btnSubmitQuestion).setOnClickListener(
+		findViewById(R.id.btn_sendmessage).setOnClickListener(
 				new SubmitButtonOnClickListener());
 	}
 
@@ -27,15 +27,15 @@ public class QuestionSuggestionActivity extends Activity {
 	}
 
 	public void sendQuestionSuggestion() {
-		EditText etSuggestedQuestion = (EditText) findViewById(R.id.etSuggestedQuestion);
-		String emailBody = etSuggestedQuestion.getText().toString();
+		EditText message = (EditText) findViewById(R.id.message);
+		String emailBody = message.getText().toString();
 
 		Intent intent = new Intent(Intent.ACTION_SEND);
 		intent.setType("message/rfc822");
 		intent.putExtra(Intent.EXTRA_EMAIL, new String[] {
-				getResources().getString(R.string.question_email_address) });
+				getResources().getString(R.string.email_address) });
 		intent.putExtra(Intent.EXTRA_SUBJECT,
-				getResources().getString(R.string.question_email_title));
+				getResources().getString(R.string.subject_sendmessage_prefix));
 		intent.putExtra(Intent.EXTRA_TEXT, emailBody);
 
 		try {
