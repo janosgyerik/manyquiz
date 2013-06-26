@@ -99,6 +99,4 @@
             android:src="@drawable/btn_next" />
     </LinearLayout>
 
-    <include layout="@layout/ads" />
-
 </LinearLayout>

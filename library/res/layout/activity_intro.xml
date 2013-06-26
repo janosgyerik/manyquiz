@@ -57,6 +57,4 @@
 
     </LinearLayout>
 
-    <include layout="@layout/ads" />
-
 </LinearLayout>

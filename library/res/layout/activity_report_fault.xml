@@ -60,6 +60,4 @@
         </LinearLayout>
     </ScrollView>
 
-    <include layout="@layout/ads" />
-
 </LinearLayout>
