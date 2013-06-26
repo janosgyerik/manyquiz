@@ -29,7 +29,7 @@ public abstract class QuizBaseActivity extends Activity {
 			return true;
 		}
 		if (itemId == R.id.menu_report_fault) {
-			Intent intent = new Intent(getApplicationContext(), ReportFaultActivity.class);
+			Intent intent = new Intent(getApplicationContext(), ReportBugActivity.class);
 			startActivity(intent);
 			return true;
 		}

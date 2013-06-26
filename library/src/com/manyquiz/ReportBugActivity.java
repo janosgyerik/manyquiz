@@ -12,9 +12,9 @@ import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class ReportFaultActivity extends Activity {
+public class ReportBugActivity extends Activity {
 
-	private static final String TAG = ReportFaultActivity.class.getSimpleName();
+	private static final String TAG = ReportBugActivity.class.getSimpleName();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -56,7 +56,7 @@ public class ReportFaultActivity extends Activity {
 		try {
 			startActivity(Intent.createChooser(intent, getResources().getString(R.string.no_email_client)));
 		} catch (android.content.ActivityNotFoundException ex) {
-			Toast.makeText(ReportFaultActivity.this,
+			Toast.makeText(ReportBugActivity.this,
 					getResources().getString(R.string.no_email_client), Toast.LENGTH_SHORT)
 					.show();
 		}
