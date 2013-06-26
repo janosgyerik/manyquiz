@@ -213,6 +213,7 @@ public class QuizActivity extends QuizBaseActivity {
 		else {
 			if (level instanceof SuddenDeathLevel) {
 				gameOver = true;
+				nextButton.setVisibility(View.GONE);
 			}
 		}
 		
