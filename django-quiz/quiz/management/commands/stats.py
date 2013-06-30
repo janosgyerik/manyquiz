@@ -21,16 +21,16 @@ class Command(BaseCommand):
         if options['levels']:
             self.stdout.write('Questions per level:')
             for level in Level.objects.all():
-                print '%5d -- %s' % (level.question_set.count(), level)
+                self.stdout.write('%5d -- %s' % (level.question_set.count(), level))
             self.stdout.write('')
 
         if options['categories']:
             self.stdout.write('Questions per level per category:')
             for level in Level.objects.all():
-                print '%s:' % level
+                self.stdout.write('%s:' % level)
                 for result in Question.objects.filter(level=level).values('category').annotate(count=Count('id')).order_by():
-                    print '%(count)5d -- %(category)s' % result
-                print
+                    self.stdout.write('%(count)5d -- %(category)s' % result)
+                self.stdout.write('')
             self.stdout.write('')
 
         self.stdout.write('Total number of Questions:')
