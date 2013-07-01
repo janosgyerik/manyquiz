@@ -11,7 +11,7 @@ def export_questions(limit=10):
     query = Question.objects.all()
     if limit:
         query = query[:limit]
-    for question in query:
+    for question in query.order_by('category'):
         print question.text
         for answer in question.answer_set.all().order_by('-is_correct'):
             print answer.text
