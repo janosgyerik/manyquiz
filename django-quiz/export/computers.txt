@@ -43,6 +43,15 @@ The "clean" step typically removes build products, with the intention to start o
 4
 build-automation
 END
+Which database system uses the following commands: lsnrctl, isqlplusctl, emctl?
+Oracle
+Sybase
+MySQL
+PostgreSQL
+These commands are used by Oracle to provide various services.
+4
+database
+END
 Which Linux distribution appeared first?
 Debian
 Mint
@@ -151,6 +160,15 @@ The output of kill -0 PID includes the text "No such process" if the process doe
 4
 linux
 END
+Which file might contain the following line: nameserver 192.168.1.1
+/etc/resolv.conf
+/etc/hosts
+/etc/rc.common
+/etc/bashrc
+The /etc/resolv.conf file is used to provide various information to DNS resolver.
+4
+network
+END
 Which of the following languages is NOT in the same group as LISP?
 C++
 R
@@ -213,6 +231,24 @@ The stack size limit is not set to unlimited in your system
 A common cause of a stack overflow is very deep or infinite recursion, exhausting the address space of the call stack. A common solution is to improve the algorithm to reduce the depth of recursions.
 4
 programming
+END
+In which scripting language is this a valid statement: cmd=/bin/cat.exe
+bash
+perl
+python
+DOS
+This is a valid statement to assign the value "/bin/cat.exe" to the variable "cmd" in bash. The statement is not valid in the other languages.
+2
+scripting
+END
+How to redirect both stdout and stderr of a command to the same file?
+somecmd >file.out 2>&1
+somecmd >file.out 2>>&1
+somecmd 2>&1 >file.out
+somecmd 2>&1 >>file.out
+One way to achive this is to first redirect stdout and then redirect stderr to whatever stdout is pointing to.
+4
+scripting
 END
 What is the weakest point in the computer security of a typical large firm?
 The employees
