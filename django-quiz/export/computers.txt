@@ -350,7 +350,7 @@ In a centralized VCS all operations that involve the history need to access the 
 version-control
 END
 What is the most likely cause of a stack overflow?
-Too deep recursion when using a recursive function 
+Too deep recursion when using a recursive function
 Trying to access an array element by an index beyond the end of the array
 Trying to access an array element by a negative index
 The stack size limit is not set to unlimited in your system
@@ -390,7 +390,7 @@ sort < data.txt
 cat data.txt | sort
 sort data.txt
 sort data.txt &
-"<" is the input redirection operator in common shells, even in DOS. 
+"<" is the input redirection operator in common shells, even in DOS.
 3
 linux
 END
@@ -444,7 +444,7 @@ init
 kernel
 root
 launchd
-In Linux the "init" process is the parent of all processes, it gets the first PID which is 1. 
+In Linux the "init" process is the parent of all processes, it gets the first PID which is 1.
 4
 linux
 END
