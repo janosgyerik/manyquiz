@@ -52,6 +52,60 @@ These commands are used by Oracle to provide various services.
 4
 database
 END
+How many disks can fail in a RAID 5 array without risk of data loss?
+1
+0 (none)
+2
+3
+RAID 5 distributes parity along with the data and requires that all drives but one be present to operate. The array is not destroyed by a single drive failure. On drive failure, any subsequent reads can be calculated from the distributed parity such that the drive failure is masked from the end user.
+4
+hardware
+END
+Which RAID level provides the highest fault tolerance, given an array of 3 disks?
+RAID 1
+RAID 0
+RAID 3
+RAID 5
+With RAID 1, n-1 disks can fail without losing data. With RAID 3 and RAID 5 only one disk can fail. RAID 0 provides no fault tolerance at all.
+3
+hardware
+END
+Which is not essential for starting a computer with an operating system?
+Harddisk
+Memory
+Motherboard
+PSU
+Harddisk is not essential. An operating system can be loaded from CD or a USB storage, for example. Everything else is essential (PSU is the Power Supply Unit).
+2
+hardware
+END
+Which operating system was not derived from a version of UNIX?
+MINIX
+Mac OS X
+FreeBSD
+Solaris
+MINIX is a UNIX-like system but it was NOT derived from UNIX. The others can all be traced back to some version of UNIX.
+4
+history
+END
+Which operating system was the inspiration of Linux?
+MINIX
+FreeBSD
+UNIX
+DOS
+MINIX inspired Linus Torvalds to create Linux.
+4
+history
+END
+In what language was UNIX originally written?
+Assembly
+B
+C
+Pascal
+UNIX was originally written in assembly language, and later rewritten in C.
+4
+history
+END
 Which Linux distribution appeared first?
 Debian
 Mint
@@ -166,6 +220,15 @@ Which file might contain the following line: nameserver 192.168.1.1
 /etc/rc.common
 /etc/bashrc
 The /etc/resolv.conf file is used to provide various information to DNS resolver.
+4
+network
+END
+Which is not essential for connecting to another computer on the same local area network?
+name server configuration
+route configuration
+IP address configuration
+netmask configuration
+It is not possible to connect to another computer without configuring a network interface with an IP address and correct netmask, and a route between the computers. A name server is optional.
 4
 network
 END
@@ -501,4 +564,13 @@ Pass multiple variables to a form
 Uploading a file requires enclosing an entity in the request, which is supported by a POST request but not by a GET request.
 4
 web-programming
+END
+Which was the first version of Microsoft Windows that enforced preemptive multitasking?
+Windows NT
+Windows XP
+Windows 3.1
+Windows 98
+Windows NT was the first version of Microsoft Windows which enforced preemptive multitasking. Earlier versions used cooperative multitasking.
+4
+windows
 END
