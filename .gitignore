@@ -7,3 +7,9 @@ tmp
 local.properties
 computers-full/keys/
 computers-lite/keys/
+out/
+# Intellij project files
+*.iml
+*.ipr
+*.iws
+.idea/
