@@ -32,7 +32,7 @@ public class QuizActivity extends QuizBaseActivity {
 	private int currentQuestionIndex = 0;
 	private int score = 0;
 	private Level level;
-	private int numberOfAnsweredQuestions = 0;
+	private int answeredQuestionsNum = 0;
 	private TextView questionView;
 	private TextView explanationView;
 	private LinearLayout choicesView;
@@ -42,8 +42,6 @@ public class QuizActivity extends QuizBaseActivity {
 	private TextView questions_i;
 
 	private boolean gameOver;
-
-	private int numberOfQuestionsToAsk;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -56,12 +54,12 @@ public class QuizActivity extends QuizBaseActivity {
 		Bundle bundle = getIntent().getExtras();
 		level = (Level) bundle.getSerializable(PARAM_LEVEL);
 		Log.d(TAG, "use level = " + level);
-		numberOfQuestionsToAsk = getNumberOfQuestionsToAsk();
+		int preferredQuestionsNum = getPreferredQuestionsNum();
 
 		helper = new QuizSQLiteOpenHelper(this);
 
 		IQuiz quiz = new DatabaseBackedQuiz(getHelper());
-		questions = quiz.pickRandomQuestions(numberOfQuestionsToAsk,
+		questions = quiz.pickRandomQuestions(preferredQuestionsNum,
 				level.getLevel());
 		questionView = (TextView) findViewById(R.id.question);
 		explanationView = (TextView) findViewById(R.id.explanation);
@@ -216,8 +214,8 @@ public class QuizActivity extends QuizBaseActivity {
 			}
 		}
 		
-		++numberOfAnsweredQuestions;
-		if (numberOfQuestionsToAsk == numberOfAnsweredQuestions) {
+		++answeredQuestionsNum;
+		if (questions.size() == answeredQuestionsNum) {
 			gameOver = true;
 		}
 		
@@ -233,14 +231,14 @@ public class QuizActivity extends QuizBaseActivity {
 	private void finishGame() {
 		finish();
 		Bundle bundle = new Bundle();
-        bundle.putInt(ResultsActivity.PARAM_TOTAL_QUESTIONS_NUM, numberOfQuestionsToAsk);
+        bundle.putInt(ResultsActivity.PARAM_TOTAL_QUESTIONS_NUM, questions.size());
         bundle.putInt(ResultsActivity.PARAM_CORRECT_ANSWERS_NUM, score);
 		Intent intent = new Intent(QuizActivity.this, ResultsActivity.class);
 		intent.putExtras(bundle);
 		startActivity(intent);
 	}
 
-	public int getNumberOfQuestionsToAsk() {
+	public int getPreferredQuestionsNum() {
 		SharedPreferences settings = PreferenceManager
 				.getDefaultSharedPreferences(this);
 
