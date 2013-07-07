@@ -2,7 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <ListPreference
-        android:defaultValue="15"
+        android:defaultValue="10"
         android:dialogTitle="@string/dialog_title_max_questions_normal"
         android:entries="@array/max_questions_normal_entries"
         android:entryValues="@array/max_questions_normal_values"
@@ -10,7 +10,7 @@
         android:summary="@string/summary_max_questions_normal"
         android:title="@string/title_max_questions_normal" />
     <ListPreference
-        android:defaultValue="100"
+        android:defaultValue="25"
         android:dialogTitle="@string/dialog_title_max_questions_suddendeath"
         android:entries="@array/max_questions_suddendeath_entries"
         android:entryValues="@array/max_questions_suddendeath_values"
