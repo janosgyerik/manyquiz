@@ -39,10 +39,6 @@
                 android:label="@string/label_reportbug_activity">
         </activity>
         <activity
-                android:name="com.manyquiz.InfoActivity"
-                android:label="@string/label_info_activity">
-        </activity>
-        <activity
                 android:name="com.manyquiz.SettingsActivity"
                 android:label="@string/label_settings_activity"
                 android:theme="@style/Theme.Dialog">

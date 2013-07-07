@@ -5,7 +5,6 @@
     <string name="app_name_lite">Computer Quiz (LITE)</string>
     
     <string name="label_intro_activity">Intro</string>
-    <string name="label_info_activity">Info</string>
     <string name="label_reportbug_activity">Report a bug</string>
     <string name="label_sendmessage_activity">Suggest a question</string>
     <string name="label_quiz_activity">Quiz</string>
@@ -26,17 +25,6 @@
     <string name="btn_finish">Finish</string>
     <string name="btn_done">Done</string>
 
-    <string name="title_info">Computer and IT Quiz was developed by Mike Heyworth and
-         Janos Gyerik. Please see the links below for our other apps and websites/blogs.</string>
-    <string name="blou_calorie_counter">Blou Simple Calorie Counter</string>
-    <string name="wine_notes">Wine Notes (Lite)</string>
-    <string name="recipe_notes">Recipe Notes (Lite)</string>
-    <string name="mikes_blog">Visit Mike\'s Blog (AndroidMakeMoney.com)</string>
-    <string name="lnk_blou_calorie_counter">https://play.google.com/store/apps/details?id=com.spiderdog.simplecalorietrackeradfree</string>
-    <string name="lnk_wine_notes">https://play.google.com/store/apps/details?id=com.winenotes.lite</string>
-    <string name="lnk_recipe_notes">https://play.google.com/store/apps/details?id=com.recipenotes.lite</string>
-    <string name="lnk_mikes_blog">http://www.androidmakemoney.com</string>
-    
     <string name="key_max_questions_normal">max_questions_normal</string>
     <string name="title_max_questions_normal">Normal mode</string>
     <string name="dialog_title_max_questions_normal"># of questions</string>

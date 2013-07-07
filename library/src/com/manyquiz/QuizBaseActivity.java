@@ -18,11 +18,6 @@ public abstract class QuizBaseActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
-        if (itemId == R.id.menu_about) {
-            Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
-            startActivity(intent);
-            return true;
-        }
         if (itemId == R.id.menu_settings) {
             Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
             startActivity(intent);
