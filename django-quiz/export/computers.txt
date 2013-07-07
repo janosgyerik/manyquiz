@@ -1,3 +1,66 @@
+What is the average performance of the bubble sort algorithm?
+O(n^2)
+O(n)
+O(1)
+O(n log n)
+Bubble sort has worst-case and average complexity both О(n2), where n is the number of items being sorted.
+2
+algorithms
+END
+What is the average performance of the quicksort algorithm?
+O(n log n)
+O(n^2)
+O(n)
+O(1)
+On average, quicksort makes O(n log n) comparisons to sort n items.
+2
+algorithms
+END
+Which sort algorithm is not stable?
+heapsort
+bubble sort
+merge sort
+insertion sort
+Stable sorting algorithms preserve the relative order of items that compare as equal. Heapsort does not guarantee that.
+2
+algorithms
+END
+Which denotes the fastest time complexity?
+O(1)
+O(n)
+O(n log n)
+O(n^2)
+O(1) indicates constant time regardless of the size of the input.
+1
+algorithms
+END
+What is the notation of quadratic time complexity?
+O(n^2)
+O(1)
+O(n)
+O(n log n)
+O(n^2) indicates quadratic time complexity, for example an algorithm that requires all input elements to be compared to all other input elements.
+1
+algorithms
+END
+What is NOT a good use case of a hash function?
+Encrypt data
+Accelerate table lookup
+Accelerate data comparison
+Generate fixed length output data
+Hash functions are one-way, they cannot be applied in reverse, the input data is not recoverable from the output data, akin to lossy compression.
+2
+algorithms
+END
+Which is NOT generally true about hash functions?
+Hash functions are fast
+Hash functions are akin to lossy compression
+Hash functions return the same output for the same input
+Hash functions are related to checksums
+Hash functions are heavily used in cryptography, where they are designed to be slow on purpose, to make brute force attacks more difficult.
+2
+algorithms
+END
 Which of these build tools is the oldest?
 Make
 Apache Ant
@@ -43,6 +106,96 @@ The "clean" step typically removes build products, with the intention to start o
 4
 build-automation
 END
+What is "Ant"?
+A build tool based on Java
+An insect
+An IDE for the Java language
+A debugger for the Java language
+Ant is a build tool like "make", but it is based on Java. Unlike make, it can run on any platform that has a Java Virtual Machine.
+2
+build-automation
+END
+What is the name of the main configuration file used by make?
+Makefile
+make.config
+config.ini
+build.xml
+The default configuration file used by make is called Makefile.
+2
+build-automation
+END
+What is the name of the main configuration used by Ant?
+build.xml
+Makefile
+ant.config
+config.ini
+The default configuration file used by Ant is build.xml
+2
+build-automation
+END
+What is the name of the main configuration used by Maven?
+pom.xml
+build.xml
+maven.config
+config.ini
+The default configuration file used by Maven is pom.xml
+2
+build-automation
+END
+How to specify that taskA depends on taskB in a Makefile?
+taskA: taskB
+taskB: taskA
+taskA -> taskB
+taskB -> taskA
+The correct syntax is taskA: taskB, meaning taskB will be executed first (if needed) before performing taskA.
+2
+build-automation
+END
+What is the difference between a binary tree and a B-tree?
+A B-tree is a generalization of the binary tree.
+No difference, they are synonyms.
+In a B-tree each node has two child nodes.
+In a binary tree each node has two child nodes.
+A B-tree is a generalization of the binary search tree: nodes can have more than two children.
+2
+data-structures
+END
+What is the minimum number of internal (non-leaf) nodes in a binary tree with 7 nodes?
+3
+2
+4
+6
+The minimum possible number of nodes can be achieved in a full binary tree, where every node has strictly 0 or 2 children. In this case there will be 3 internal nodes and 4 leaf nodes.
+2
+data-structures
+END
+What is the maximum number of internal (non-leaf) nodes in a binary tree with 7 nodes?
+6
+2
+3
+4
+In a degenerate tree each parent node has only one child node, effectively behaving like a linked list data structure. In this case there will be n-1 = 6 internal nodes and 1 leaf node.
+2
+data-structures
+END
+Which term is not synonymous with the others?
+queue
+LIFO
+FILO
+stack
+Basically, LIFO = FILO = stack, while queue is the logical opposite.
+2
+data-structures
+END
+Which data structure is a natural choice to implement a queue?
+Linked list
+Array list
+Hash map
+Hash set
+A doubly linked list has O(1) insertion and deletion at both ends, so is a natural choice for queues.
+2
+data-structures
+END
 Which database system uses the following commands: lsnrctl, isqlplusctl, emctl?
 Oracle
 Sybase
@@ -50,6 +203,105 @@ MySQL
 PostgreSQL
 These commands are used by Oracle to provide various services.
 4
+database
+END
+What type of JOIN is this: SELECT * FROM t1 JOIN t2 ON t1.id = t2.id
+INNER JOIN
+OUTER JOIN
+CROSS JOIN
+LEFT JOIN
+When the type of the JOIN is unspecified, it is most commonly an INNER JOIN.
+2
+database
+END
+What will be the result of this query if there are 5 records in Employee and 3 records in Department: SELECT count(*) FROM Employee e LEFT JOIN Department d ON e.DepartmentID = d.DepartmentID
+5 or more
+3 or more
+15
+It depends
+Since this is a LEFT JOIN, there will be at least one record for each employee (the left table), therefore 5 or more records.
+2
+database
+END
+What will be the result of this query if there are 5 records in Employee and 3 records in Department: SELECT count(*) FROM Employee e RIGHT JOIN Department d ON e.DepartmentID = d.DepartmentID
+3 or more
+5 or more
+15
+It depends
+Since this is a RIGHT JOIN, there will be at least one record for each department (the right table), therefore 3 or more records.
+2
+database
+END
+In SQL, which form of the count() clause might be invalid?
+count(DepartmentID)
+count(*)
+count(1)
+count(null)
+If there is no column named DepartmentID in the source tables then count(DepartmentID) will be invalid. The other forms are always valid.
+2
+database
+END
+Which SQL statement is incorrect?
+SELECT DepartmentID, count(*) FROM Employee HAVING DepartmentID IS NOT NULL;
+SELECT DepartmentID, count(*) FROM Employee ORDER BY DepartmentID;
+SELECT DepartmentID, count(*) FROM Employee GROUP BY DepartmentID;
+SELECT DepartmentID, count(*) FROM Employee WHERE DepartmentID IS NOT NULL;
+A GROUP BY clause is required before HAVING.
+2
+database
+END
+How to find employees with DepartmentID set to NULL?
+SELECT * FROM Employee WHERE DepartmentID IS NULL;
+SELECT * FROM Employee WHERE DepartmentID = NULL;
+SELECT * FROM Employee WHERE DepartmentID EXISTS;
+SELECT * FROM Employee WHERE DepartmentID = 0;
+The correct syntax to test if something is NULL is using IS NULL.
+2
+database
+END
+Which SQL statement might select the department with the largest number of employees?
+SELECT d.DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID ORDER BY c DESC LIMIT 1;
+SELECT d.DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY DepartmentID ORDER BY c DESC LIMIT 1;
+SELECT DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID ORDER BY c DESC LIMIT 1;
+SELECT d.DepartmentID, count(null) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID HAVING c = MAX(c);
+The other statements either have SQL errors or incorrect.
+2
+database
+END
+How to get the current date in Oracle?
+SELECT SYSDATE FROM DUAL
+SELECT SYSDATE() FROM DUAL
+SELECT GETDATE
+SELECT GETDATE()
+The function to get the current date in Oracle is SYSDATE without parentheses.
+2
+database
+END
+How to get current date in Sybase?
+SELECT GETDATE()
+SELECT SYSDATE FROM DUAL
+SELECT SYSDATE() FROM DUAL
+SELECT GETDATE
+The function to get the current date in Sybase is GETDATE().
+2
+database
+END
+In SQL, what is the difference between UNION and UNION ALL?
+UNION ALL may return duplicate records
+They are the same, ALL is optional
+UNION ALL is incorrect syntax
+UNION is incorrect syntax
+Duplicate records are removed from the result of UNION, while UNION ALL returns all records.
+2
+database
+END
+What is an advantage of using a database instead of a CSV file?
+Columns can be indexed.
+Data records always take less disk space in a database.
+Finding a data record is always faster using a database.
+Inserting a data record is always more efficient using a database.
+In a database columns can be indexed, which can help finding data much faster. The other statements are not necessarily true.
+2
 database
 END
 How many disks can fail in a RAID 5 array without risk of data loss?
@@ -293,6 +545,51 @@ Trying to access an array element by a negative index
 The stack size limit is not set to unlimited in your system
 A common cause of a stack overflow is very deep or infinite recursion, exhausting the address space of the call stack. A common solution is to improve the algorithm to reduce the depth of recursions.
 4
+programming
+END
+What is wrong with static methods?
+Code calling static methods is hard to test
+Static methods are hard to test
+Static methods don't require an instance of the class
+Static methods cannot access the data of instances
+Code calling static methods is hard to test because you cannot mock the static calls. Static methods in themselves are not hard to test. The other statements are true of static methods but don't constitute a "problem".
+3
+programming
+END
+What is CORBA used for?
+Interprocess communication
+Memory management
+Schedule management
+Data encryption
+The Common Object Request Broker Architecture (CORBA) enables software components written in multiple computer languages and running on multiple computers to work together.
+2
+programming
+END
+What can use a CRC function for?
+Detect accidental changes to raw data
+Encrypt data
+Serialize data
+Compress data
+A cyclic redundancy check (CRC) is an error-detecting code commonly used in digital networks and storage devices to detect accidental changes to raw data.
+2
+programming
+END
+Which is the most efficient way to implement low-latency communication between remote processes?
+Binary protocol
+SOAP-based protocol
+XML-based protocol
+Text-based protocol
+A binary protocol yields the smallest possible footprint in the communication, which is often a significant boost compared to more verbose text-based protocols like SOAP or XML.
+2
+programming
+END
+What is endianness about?
+Ordering of bytes
+Operating systems
+Network file transfer
+Memory management
+Endian and endianness in the most common cases refers to how bytes are ordered.
+2
 programming
 END
 In which scripting language is this a valid statement: cmd=/bin/cat.exe
@@ -563,6 +860,24 @@ Create cookies
 Pass multiple variables to a form
 Uploading a file requires enclosing an entity in the request, which is supported by a POST request but not by a GET request.
 4
+web-programming
+END
+What does CGI stand for in web programming?
+Common Gateway Interface
+Computer Generated Imagery
+Cognitive Guided Instruction
+Computer Graphics Interface
+Common Gateway Interface, a standard for dynamic generation of web pages by a web server.
+2
+web-programming
+END
+In web programming, where are cookies stored?
+On the client
+On the web server
+On a router
+On a cookie server
+Cookies are stored on the client side and sent to the server until expired
+2
 web-programming
 END
 Which was the first version of Microsoft Windows that enforced preemptive multitasking?
