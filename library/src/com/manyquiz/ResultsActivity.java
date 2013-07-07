@@ -63,16 +63,6 @@ public class ResultsActivity extends Activity {
 
         TextView messageView = (TextView) findViewById(R.id.message);
         messageView.setText(message);
-
-        findViewById(R.id.btn_done).setOnClickListener(new DoneClickListener());
-    }
-
-    class DoneClickListener implements OnClickListener {
-
-        @Override
-        public void onClick(View arg0) {
-            finish();
-        }
     }
 
 }

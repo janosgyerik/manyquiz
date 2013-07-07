@@ -20,6 +20,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.settings);
+        setContentView(R.layout.settings_activity);
 
         // memo: this is how to reset to defaults
 //		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);

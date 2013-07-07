@@ -5,7 +5,6 @@
     <string name="app_name_lite">Computer Quiz (LITE)</string>
     
     <string name="label_intro_activity">Intro</string>
-    <string name="label_info_activity">Info</string>
     <string name="label_reportbug_activity">Report a bug</string>
     <string name="label_sendmessage_activity">Suggest a question</string>
     <string name="label_quiz_activity">Quiz</string>
@@ -26,25 +25,14 @@
     <string name="btn_finish">Finish</string>
     <string name="btn_done">Done</string>
 
-    <string name="title_info">Computer and IT Quiz was developed by Mike Heyworth and
-         Janos Gyerik. Please see the links below for our other apps and websites/blogs.</string>
-    <string name="blou_calorie_counter">Blou Simple Calorie Counter</string>
-    <string name="wine_notes">Wine Notes (Lite)</string>
-    <string name="recipe_notes">Recipe Notes (Lite)</string>
-    <string name="mikes_blog">Visit Mike\'s Blog (AndroidMakeMoney.com)</string>
-    <string name="lnk_blou_calorie_counter">https://play.google.com/store/apps/details?id=com.spiderdog.simplecalorietrackeradfree</string>
-    <string name="lnk_wine_notes">https://play.google.com/store/apps/details?id=com.winenotes.lite</string>
-    <string name="lnk_recipe_notes">https://play.google.com/store/apps/details?id=com.recipenotes.lite</string>
-    <string name="lnk_mikes_blog">http://www.androidmakemoney.com</string>
-    
     <string name="key_max_questions_normal">max_questions_normal</string>
-    <string name="title_max_questions_normal">Questions in normal mode</string>
+    <string name="title_max_questions_normal">Normal mode</string>
     <string name="dialog_title_max_questions_normal"># of questions</string>
     <string name="summary_max_questions_normal">Number of questions in normal mode</string>
     <string name="summary_max_questions_normal_format">Maximum # of questions = %s</string>
     
     <string name="key_max_questions_suddendeath">max_questions_suddendeath</string>
-    <string name="title_max_questions_suddendeath">Questions in Sudden Death mode</string>
+    <string name="title_max_questions_suddendeath">Sudden Death mode</string>
     <string name="dialog_title_max_questions_suddendeath"># of questions</string>
     <string name="summary_max_questions_suddendeath">Number of questions in sudden death mode</string>
     <string name="summary_max_questions_suddendeath_format">Maximum # of questions = %s</string>
@@ -78,6 +66,6 @@
 	<string name="result_less_than_90">Very good - You\'ve been studying!</string>
 	<string name="result_less_than_100">Wow - Almost perfect! You can make it all the way!</string>
 	<string name="result_100">Perfect. 100%! Bravo, you are a MACHINE!</string>
-    <string name="result_bug">Ouch. You found a bug. Please tell us!</string>
-		
+    <string name="result_bug">Ouch. You found a bug. Please tell us about it!</string>
+
 </resources>
