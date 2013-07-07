@@ -67,7 +67,7 @@ Apache Ant
 Apache Maven
 CMake
 Make appeared in 1977, Ant in 2000, Maven in 2002, and CMake in 1999.
-4
+3
 build-automation
 END
 What is NOT a main responsibility of an automated build system?
@@ -76,7 +76,7 @@ Compile the source code
 Eliminate redundant tasks
 Execute unit tests
 Debugging is an activity that involves interacting with a running program, not really part of the build process.
-4
+3
 build-automation
 END
 In an automated build system, which of these is the most logical next step after running unit tests?
@@ -85,7 +85,7 @@ compile
 deploy
 install
 The software must already be compiled to run unit tests. Without a package, what is there to install or deploy?
-4
+3
 build-automation
 END
 What is the traditional step between "./configure" and "make install" when building a software from a source tarball?
@@ -94,7 +94,7 @@ What is the traditional step between "./configure" and "make install" when build
 "make clean"
 "./run.sh"
 "make" without any arguments runs the default build task, which is typically building the entire software. This step is usually after the configuration step. After this the software can be installed with "make install".
-4
+3
 build-automation
 END
 What is the purpose of the "clean" step in a typical automated build system?
@@ -103,7 +103,7 @@ Detect and report bugs in the software
 Detect and eliminate bugs in the software
 Remove unknown files that don't belong to the project
 The "clean" step typically removes build products, with the intention to start over as if the "compile" or other build steps were never executed.
-4
+3
 build-automation
 END
 What is "Ant"?
@@ -202,7 +202,7 @@ Sybase
 MySQL
 PostgreSQL
 These commands are used by Oracle to provide various services.
-4
+3
 database
 END
 What type of JOIN is this: SELECT * FROM t1 JOIN t2 ON t1.id = t2.id
@@ -310,7 +310,7 @@ How many disks can fail in a RAID 5 array without risk of data loss?
 2
 3
 RAID 5 distributes parity along with the data and requires that all drives but one be present to operate. The array is not destroyed by a single drive failure. On drive failure, any subsequent reads can be calculated from the distributed parity such that the drive failure is masked from the end user.
-4
+3
 hardware
 END
 Which RAID level provides the highest fault tolerance, given an array of 3 disks?
@@ -337,7 +337,7 @@ Mac OS X
 FreeBSD
 Solaris
 MINIX is a UNIX-like system but it was NOT derived from UNIX. The others can all be traced back to some version of UNIX.
-4
+3
 history
 END
 Which operating system was the inspiration of Linux?
@@ -346,7 +346,7 @@ FreeBSD
 UNIX
 DOS
 MINIX inspired Linus Torvalds to create Linux.
-4
+3
 history
 END
 In what language was UNIX originally written?
@@ -355,7 +355,7 @@ B
 C
 Pascal
 UNIX was originally written in assembly language, and later rewritten in C.
-4
+3
 history
 END
 Which Linux distribution appeared first?
@@ -364,7 +364,7 @@ Mint
 Ubuntu
 Knoppix
 Knoppix, Ubuntu, Mint are all derivatives of Debian.
-4
+3
 linux
 END
 Which command can be used to configure a firewall in Linux?
@@ -382,7 +382,7 @@ ls
 tree
 echo
 The dirs command shows the list of remembered directories (stored by the pushd command), it cannot be used to list the files in a directory.
-4
+3
 linux
 END
 Which is an example of input redirection in common shells?
@@ -400,7 +400,7 @@ PWD
 HOME
 SHELL
 LOGNAME is usually the username of the current user, not a path.
-4
+3
 linux
 END
 Which command cannot be used to send an email in Linux?
@@ -409,7 +409,7 @@ telnet
 mailx
 mutt
 groff is a document formatting system (for example rendering man pages) and cannot be used to send emails. Yes you can send an email with telnet, though it won't be pretty.
-4
+3
 linux
 END
 In Linux, which file controls the number of available virtual terminals?
@@ -418,7 +418,7 @@ In Linux, which file controls the number of available virtual terminals?
 /etc/fstab
 /etc/mtab
 The virtual terminals are configured in the /etc/inittab file.
-4
+3
 linux
 END
 In Linux, what information is usually NOT stored in /etc/passwd file?
@@ -427,7 +427,7 @@ Username
 Shell
 Home directory
 The password is usually stored in /etc/shadow, with more strict access permissions.
-4
+3
 linux
 END
 In Linux, which runlevel is a multi-user runlevel?
@@ -436,7 +436,7 @@ S
 1
 6
 Runlevels 2 to 5 are multi-user runlevels.
-4
+3
 linux
 END
 In Linux, what is the name of the process with PID 1?
@@ -445,7 +445,7 @@ kernel
 root
 launchd
 In Linux the "init" process is the parent of all processes, it gets the first PID which is 1.
-4
+3
 linux
 END
 In Linux, which signal cannot be trapped?
@@ -454,7 +454,7 @@ In Linux, which signal cannot be trapped?
 6 ABRT
 15 TERM
 The KILL signal is non-catchable, non-ignorable, immediately kills a process without possibility of cleaning up.
-4
+3
 linux
 END
 In Linux, which command can be used to check if a given PID is currently running or not?
@@ -463,7 +463,7 @@ netstat
 top
 lsof
 The output of kill -0 PID includes the text "No such process" if the process doesn't exist. The command exits with 1 if the process does not exist or the user does not own it.
-4
+3
 linux
 END
 Which file might contain the following line: nameserver 192.168.1.1
@@ -472,7 +472,7 @@ Which file might contain the following line: nameserver 192.168.1.1
 /etc/rc.common
 /etc/bashrc
 The /etc/resolv.conf file is used to provide various information to DNS resolver.
-4
+3
 network
 END
 Which is not essential for connecting to another computer on the same local area network?
@@ -481,7 +481,7 @@ route configuration
 IP address configuration
 netmask configuration
 It is not possible to connect to another computer without configuring a network interface with an IP address and correct netmask, and a route between the computers. A name server is optional.
-4
+3
 network
 END
 Which of the following languages is NOT in the same group as LISP?
@@ -490,7 +490,7 @@ R
 Scheme
 Scala
 LISP, R, Scheme, and Scala are all functional languages. C++ is an imperative language.
-4
+3
 programming
 END
 Which of the following languages is NOT in the same group as C++?
@@ -499,7 +499,7 @@ C
 Java
 MATLAB
 C++, C, Java, and MATLAB, are all imperative languages. Haskell is a functional language.
-4
+3
 programming
 END
 Which of the following is NOT a programming language?
@@ -508,7 +508,7 @@ Bash
 R
 Python
 CGI stands for Common Gateway Interface, a standard for dynamic generation of web pages by a web server. It is NOT a programming language.
-4
+3
 programming
 END
 Can you parse an HTML document using regular expressions?
@@ -517,7 +517,7 @@ Yes, you can parse anything using regular expressions
 Yes, but only if it contains only ASCII characters
 Yes, because HTML is a context-free language
 Regular expressions can only match regular languages but HTML is a context-free language. It is always possible to present a HTML file that will be matched wrongly by any regular expression.
-4
+3
 programming
 END
 Which is a good reason to use a LinkedList instead of an ArrayList?
@@ -526,7 +526,7 @@ LinkedList is more efficient than ArrayList in most practical cases
 LinkedList uses a hashmap internally
 I can access any element in a LinkedList very fast
 In a linked list, elements are chained together: each element has a pointer to the next. Insert and remove operations are more memory-efficient compared to an ArrayList, at the cost that random access of elements is less efficient.
-4
+3
 programming
 END
 What is the advantage of using an ArrayList instead of a LinkedList?
@@ -535,7 +535,7 @@ Traversal of elements from start to end is faster
 ArrayList uses less memory than a LinkedList
 Removing an element in the middle of the list is faster
 Elements in an ArrayList can be accessed directly by a numeric index, but in a LinkedList you must travers the elements from the start or the end until the desired element.
-4
+3
 programming
 END
 What is the most likely cause of a stack overflow?
@@ -544,7 +544,7 @@ Trying to access an array element by an index beyond the end of the array
 Trying to access an array element by a negative index
 The stack size limit is not set to unlimited in your system
 A common cause of a stack overflow is very deep or infinite recursion, exhausting the address space of the call stack. A common solution is to improve the algorithm to reduce the depth of recursions.
-4
+3
 programming
 END
 What is wrong with static methods?
@@ -607,7 +607,7 @@ somecmd >file.out 2>>&1
 somecmd 2>&1 >file.out
 somecmd 2>&1 >>file.out
 One way to achive this is to first redirect stdout and then redirect stderr to whatever stdout is pointing to.
-4
+3
 scripting
 END
 What is the weakest point in the computer security of a typical large firm?
@@ -616,7 +616,7 @@ The firewall software used
 The antivirus software used
 The intranet software used
 The typical weakest point is the employees, as social engineering and human gallibility can often circumvent otherwise state of the art computer security system.
-4
+3
 security
 END
 Which of these is the most dangerous security probing tool?
@@ -625,7 +625,7 @@ ping
 ifconfig
 telnet
 nmap is a sophisticated port scanner, and can reveal much more about a network than all the other tools combined.
-4
+3
 security
 END
 What's the worst thing that can happen if you configure nmap with suid root?
@@ -634,7 +634,7 @@ It could be used to completely jam a network with DOS attacks
 It could be used to delete all files in the system
 It could be used to unleash the kraken
 Privilege escalation could be used to create all the other damages. Except maybe releasing the kraken. Not sure.
-4
+3
 security
 END
 In Linux, what is the best way to give read permission to everybody on a file?
@@ -643,7 +643,7 @@ chmod 777 file.txt
 chmod 4777 file.txt
 chmod 444 file.txt
 The +r flag gives read permission to everybody on the system. 444 is not a good idea because it removes all other permissions that there might have been. Anybody taking the other options should be fired on the spot.
-4
+3
 security
 END
 Which is the worst method for encrypting data?
@@ -652,7 +652,7 @@ des3
 aes-128-cbc
 crypt
 sha1 is not an encryption method but a message digest method. The next worst method here is crypt, if you wanted to know... :)
-4
+3
 security
 END
 What's the scariest defect that can happen in a web application?
@@ -661,7 +661,7 @@ Blue screen of death
 Denial of service
 NullPointerException
 A buffer overflow can potentially lead to privilege escalation, which could be used to produce all the others and much worse.
-4
+3
 security
 END
 Which C library function is the least unsafe?
@@ -670,7 +670,7 @@ strcpy
 gets
 scanf
 Only the strncpy function checks bounds, the others don't. Not checking bounds is very likely to lead to buffer overflow defects.
-4
+3
 security
 END
 Which tool cannot be used to encrypt files?
@@ -679,7 +679,7 @@ encfs
 openssl
 TrueCrypt
 encfs and TrueCrypt can be used to create encrypted directories, and openssl can be used to encrypt a stream of data. nmap is a network scanning tool, not for encryption.
-4
+3
 security
 END
 Which tool cannot be used to find open ports in the local system?
@@ -688,7 +688,7 @@ nmap
 telnet
 netstat
 ping can only send ICMP ECHO requests to hosts, it cannot be used to find open ports.
-4
+3
 security
 END
 Which tool cannot be used to find open ports in a remote system?
@@ -697,7 +697,7 @@ nmap
 telnet
 curl
 Unlike the others, netstat cannot be used to scan arbitrary remote ports.
-4
+3
 security
 END
 Which of these is NOT a web server software?
@@ -706,7 +706,7 @@ nginx
 Apache
 Lighttpd
 X server is the server counterpart of the X Window System in UNIX, and has nothing to do with web servers.
-4
+3
 tools
 END
 Which of these is NOT a network analysis tool?
@@ -715,7 +715,7 @@ nmap
 tcpdump
 wireshark
 tcpdump dumps traffic on a network; wireshark is a network traffic analyzer; nmap is a network security auditing tool; that leaves us with screen, which is a terminal multiplexer tool.
-4
+3
 tools
 END
 What is the purpose of the -h flag of the ls command in UNIX?
@@ -724,7 +724,7 @@ Print short help message
 Print long help message
 Print hidden files
 When used together with the -l flag for long format, the -h makes the ls command print file sizes in human readable format like 1K, 234M, 2G.
-4
+3
 tools
 END
 Which one of these is NOT a Version Control System?
@@ -733,7 +733,7 @@ Bazaar
 Subversion
 CVS
 CSV stands for Comma Separated Values, it is a common file format, not a Version Control System.
-4
+3
 version-control
 END
 Which one of these is a Distributed Version Control System?
@@ -742,7 +742,7 @@ Subversion
 ClearCase
 Visual SourceSafe
 These are all version control systems, but only Mercurial has a distributed model, the others use a client-server model.
-4
+3
 version-control
 END
 What can be a disadvantage of a distributed VCS in comparison to a centralized VCS?
@@ -751,7 +751,7 @@ Users cannot commit revisions without a server
 Most operations are slower without a server
 Users cannot create forks without a server
 In a distributed VCS, initial cloning is typically slower, as the tool must download the entire project history. The other choices are disadvantages of centralized VCS.
-4
+3
 version-control
 END
 In a version control system, which type of conflict can have an automatic resolution when merging branchA into branchB?
@@ -760,7 +760,7 @@ The same file was edited in BranchA but deleted in BranchB
 The same file was edited in BranchA but renamed in BranchB
 A file with the same name was added in both BranchA and BranchB
 If branchA and branchB edited completely different parts of the file, that should be possible to resolve automatically. The other types of conflict require an explicit decision and action by a human.
-4
+3
 version-control
 END
 What version control operation requires access to the server in a centralized VCS?
@@ -769,7 +769,7 @@ status
 add
 mv
 In a centralized VCS all operations that involve the history need to access the repository on the central server. The status, add, and mv commands can be performed without access to the server.
-4
+3
 version-control
 END
 In web programming, what is the QUERY_STRING?
@@ -778,7 +778,7 @@ The part of a URL after the "#" mark
 A variable in a HTTP GET request
 A variable in a HTTP POST request
 The QUERY_STRING is the part of a URL after the question mark, not including the question mark itself, for example "search=hello&page=2".
-4
+3
 web-programming
 END
 Which one of these is NOT a common CGI environment variable?
@@ -787,7 +787,7 @@ HTTP_REFERER
 HTTP_USER_AGENT
 DOCUMENT_ROOT
 HTTP_USER_AGENT is the browser type of the visitor, HTTP_REFERER is the URL of the page that called the current one, and DOCUMENT_ROOT is the root directory of the server.
-4
+3
 web-programming
 END
 Which one of these is a common CGI environment variable?
@@ -796,7 +796,7 @@ MOBILE_PHONE_TYPE
 IOS_VERSION
 ANDROID_VERSION
 REMOTE_ADDR is the IP address of the visitor.
-4
+3
 web-programming
 END
 Which HTTP method was not part of the HTTP/1.0 specification?
@@ -805,7 +805,7 @@ GET
 POST
 HEAD
 The OPTIONS method was added in the HTTP/1.1 specification.
-4
+3
 web-programming
 END
 What is the difference between the HTTP GET and HEAD methods?
@@ -814,7 +814,7 @@ HEAD returns only the <head> tag of HTML
 GET returns a response without a header
 GET can support SSL
 The response of a HEAD requests is a header identical to that of a GET request, but without a response body.
-4
+3
 web-programming
 END
 What is the status code of a successful HTTP request?
@@ -823,7 +823,7 @@ What is the status code of a successful HTTP request?
 0
 1
 "200 OK" is the standard response for successful HTTP requests.
-4
+3
 web-programming
 END
 Which one of these server responses is NOT part of the HTTP standard?
@@ -832,7 +832,7 @@ Which one of these server responses is NOT part of the HTTP standard?
 400 Bad Request
 401 Unauthorized
 404 is part of the standard but it means something else: "Not Found"
-4
+3
 web-programming
 END
 The 4xx class of HTTP status code indicates which type of error?
@@ -841,7 +841,7 @@ Server error
 Application error
 Connection error
 Status codes in the class 4xx all indicate some kind of client error, such as requesting a non-existent page, or a syntax error in the request, just to name a few.
-4
+3
 web-programming
 END
 What was the limit of the header size in the HTTP/1.0 standard?
@@ -850,7 +850,7 @@ Unspecified (no limit)
 1024 bytes
 512 bytes
 The standard itself does not set a limit on the header size, but most implementations impose some limits for practical and security reasons.
-4
+3
 web-programming
 END
 What can you do with HTTP POST that you cannot do with HTTP GET?
@@ -859,7 +859,7 @@ Implement session state
 Create cookies
 Pass multiple variables to a form
 Uploading a file requires enclosing an entity in the request, which is supported by a POST request but not by a GET request.
-4
+3
 web-programming
 END
 What does CGI stand for in web programming?
@@ -886,6 +886,6 @@ Windows XP
 Windows 3.1
 Windows 98
 Windows NT was the first version of Microsoft Windows which enforced preemptive multitasking. Earlier versions used cooperative multitasking.
-4
+3
 windows
 END
