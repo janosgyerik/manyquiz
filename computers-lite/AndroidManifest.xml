@@ -48,7 +48,8 @@
         </activity>
         <activity
             android:name="com.manyquiz.ResultsActivity"
-            android:label="@string/label_results_activity" >
+            android:label="@string/label_results_activity"
+            android:theme="@android:style/Theme.Dialog" >
         </activity>
     </application>
 

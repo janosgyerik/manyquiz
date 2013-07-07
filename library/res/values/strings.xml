@@ -78,6 +78,6 @@
 	<string name="result_less_than_90">Very good - You\'ve been studying!</string>
 	<string name="result_less_than_100">Wow - Almost perfect! You can make it all the way!</string>
 	<string name="result_100">Perfect. 100%! Bravo, you are a MACHINE!</string>
-    <string name="result_bug">Ouch. You found a bug. Please tell us!</string>
-		
+    <string name="result_bug">Ouch. You found a bug. Please tell us about it!</string>
+
 </resources>

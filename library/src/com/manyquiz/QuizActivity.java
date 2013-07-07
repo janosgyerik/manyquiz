@@ -227,7 +227,6 @@ public class QuizActivity extends QuizBaseActivity {
     }
 
     private void finishGame() {
-        finish();
         Bundle bundle = new Bundle();
         bundle.putInt(ResultsActivity.PARAM_TOTAL_QUESTIONS_NUM, questions.size());
         bundle.putInt(ResultsActivity.PARAM_CORRECT_ANSWERS_NUM, score);

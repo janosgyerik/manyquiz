@@ -78,6 +78,10 @@
         <item name="android:layout_weight">1</item>
     </style>
 
+    <style name="answerButton" parent="wideButton"></style>
+    <style name="difficultyButton" parent="wideButton"></style>
+    <style name="linkButton" parent="wideButton"></style>
+
     <style name="fillWidth">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -106,7 +110,16 @@
         <item name="android:textStyle">italic</item>
     </style>
 
-    <style name="answerButton" parent="wideButton"></style>
-	<style name="difficultyButton" parent="wideButton"></style>
-	<style name="linkButton" parent="wideButton"></style>
+    <style name="dialogContent">
+        <item name="android:background">#ffffff</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <style name="dialogSummary" parent="summary">
+        <item name="android:textColor">#000000</item>
+    </style>
+
 </resources>
