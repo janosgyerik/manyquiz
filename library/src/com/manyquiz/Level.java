@@ -4,33 +4,33 @@ import java.io.Serializable;
 
 public class Level implements Serializable {
 
-	private static final long serialVersionUID = -2650243060379640957L;
-	
-	private final String id;
-	private final String name;
-	private final int level;
+    private static final long serialVersionUID = -2650243060379640957L;
 
-	public Level(String id, String name, int level) {
-		this.id = id;
-		this.name = name;
-		this.level = level;
-	}
+    private final String id;
+    private final String name;
+    private final int level;
 
-	public String getId() {
-		return id;
-	}
+    public Level(String id, String name, int level) {
+        this.id = id;
+        this.name = name;
+        this.level = level;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public int getLevel() {
-		return level;
-	}
+    public String getName() {
+        return name;
+    }
 
-	@Override
-	public String toString() {
-		return String.format("%s (level %d)", name, level);
-	}
+    public int getLevel() {
+        return level;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s (level %d)", name, level);
+    }
 
 }

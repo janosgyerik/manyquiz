@@ -15,7 +15,7 @@
             android:id="@+id/title"
             style="@style/mainHeader"
             android:layout_alignParentLeft="true"
-            android:text="@string/label_sendmessage_activity" />
+            android:text="@string/label_reportbug_activity" />
 
         <TextView
             android:id="@+id/lite_watermark"
@@ -32,22 +32,22 @@
             android:orientation="vertical" >
 
             <TextView
-                style="@style/introduction"
-                android:text="@string/description_sendmessage" />
+                style="@style/summary"
+                android:text="@string/description_reportbug" />
 
             <EditText
                 android:id="@+id/message"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_sendmessage"
+                android:hint="@string/hint_reportbug"
                 android:lines="5"
                 android:gravity="top"
                 android:text="" />
 
             <Button
-                android:id="@+id/btn_sendmessage"
+                android:id="@+id/btn_reportbug"
                 style="@style/linkButton"
-                android:text="@string/btn_sendmessage" />
+                android:text="@string/btn_reportbug" />
         </LinearLayout>
     </ScrollView>
 

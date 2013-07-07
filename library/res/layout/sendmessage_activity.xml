@@ -15,7 +15,7 @@
             android:id="@+id/title"
             style="@style/mainHeader"
             android:layout_alignParentLeft="true"
-            android:text="@string/app_name" />
+            android:text="@string/label_sendmessage_activity" />
 
         <TextView
             android:id="@+id/lite_watermark"
@@ -32,27 +32,22 @@
             android:orientation="vertical" >
 
             <TextView
-                style="@style/introduction"
-                android:text="@string/title_results" />
-            <TextView
-                android:id="@+id/resultsScore"
-                style="@style/introduction"
-                android:text="@string/score" />
-             <TextView
-                android:id="@+id/resultsDescription"
-                style="@style/introduction"
-                android:text="@string/title_results" />
-                        
-            <LinearLayout
+                style="@style/summary"
+                android:text="@string/description_sendmessage" />
+
+            <EditText
+                android:id="@+id/message"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:hint="@string/hint_sendmessage"
+                android:lines="5"
+                android:gravity="top"
+                android:text="" />
 
-                <Button
-                    android:id="@+id/btnDoneResults"
-                    style="@style/linkButton"
-                    android:text="@string/done" />
-            </LinearLayout>
+            <Button
+                android:id="@+id/btn_sendmessage"
+                style="@style/linkButton"
+                android:text="@string/btn_sendmessage" />
         </LinearLayout>
     </ScrollView>
 

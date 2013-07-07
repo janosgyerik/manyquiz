@@ -15,7 +15,7 @@
             android:id="@+id/title"
             style="@style/mainHeader"
             android:layout_alignParentLeft="true"
-            android:text="@string/label_reportbug_activity" />
+            android:text="@string/app_name" />
 
         <TextView
             android:id="@+id/lite_watermark"
@@ -32,22 +32,34 @@
             android:orientation="vertical" >
 
             <TextView
-                style="@style/introduction"
-                android:text="@string/description_reportbug" />
+                style="@style/summary"
+                android:text="@string/title_info" />
 
-            <EditText
-                android:id="@+id/message"
+            <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_reportbug"
-                android:lines="5"
-                android:gravity="top"
-                android:text="" />
+                android:orientation="vertical" >
 
-            <Button
-                android:id="@+id/btn_reportbug"
-                style="@style/linkButton"
-                android:text="@string/btn_reportbug" />
+                <Button
+                    android:id="@+id/btnBlouCalorieCounter"
+                    style="@style/linkButton"
+                    android:text="@string/blou_calorie_counter" />
+
+                <Button
+                    android:id="@+id/btnWineNotes"
+                    style="@style/linkButton"
+                    android:text="@string/wine_notes" />
+
+                <Button
+                    android:id="@+id/btnRecipeNotes"
+                    style="@style/linkButton"
+                    android:text="@string/recipe_notes" />
+
+                <Button
+                    android:id="@+id/btnMikesBlog"
+                    style="@style/linkButton"
+                    android:text="@string/mikes_blog" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

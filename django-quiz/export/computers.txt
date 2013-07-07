@@ -61,7 +61,7 @@ Hash functions are heavily used in cryptography, where they are designed to be s
 2
 algorithms
 END
-Which of these build tools is the oldest?
+Which is the oldest build tool?
 Make
 Apache Ant
 Apache Maven
@@ -79,7 +79,7 @@ Debugging is an activity that involves interacting with a running program, not r
 3
 build-automation
 END
-In an automated build system, which of these is the most logical next step after running unit tests?
+In an automated build system, which is the most logical step after running unit tests?
 package
 compile
 deploy
@@ -88,16 +88,16 @@ The software must already be compiled to run unit tests. Without a package, what
 3
 build-automation
 END
-What is the traditional step between "./configure" and "make install" when building a software from a source tarball?
-"make"
-"make universe"
-"make clean"
-"./run.sh"
+What is the common step between "./configure" and "make install" when building a software from source?
+make
+make universe
+make clean
+./run.sh
 "make" without any arguments runs the default build task, which is typically building the entire software. This step is usually after the configuration step. After this the software can be installed with "make install".
 3
 build-automation
 END
-What is the purpose of the "clean" step in a typical automated build system?
+What is the purpose of the "clean" step in an automated build system?
 Remove generated files
 Detect and report bugs in the software
 Detect and eliminate bugs in the software
@@ -106,12 +106,12 @@ The "clean" step typically removes build products, with the intention to start o
 3
 build-automation
 END
-What is "Ant"?
+What is Ant?
 A build tool based on Java
 An insect
 An IDE for the Java language
 A debugger for the Java language
-Ant is a build tool like "make", but it is based on Java. Unlike make, it can run on any platform that has a Java Virtual Machine.
+Ant is a build tool like make, but it is based on Java. Unlike make, it can run on any platform that has a Java Virtual Machine.
 2
 build-automation
 END
@@ -196,7 +196,7 @@ A doubly linked list has O(1) insertion and deletion at both ends, so is a natur
 2
 data-structures
 END
-Which database system uses the following commands: lsnrctl, isqlplusctl, emctl?
+Which database system uses the commands: lsnrctl, isqlplusctl, emctl?
 Oracle
 Sybase
 MySQL
@@ -358,7 +358,7 @@ UNIX was originally written in assembly language, and later rewritten in C.
 3
 history
 END
-Which Linux distribution appeared first?
+Which was the earliest Linux distribution?
 Debian
 Mint
 Ubuntu
@@ -367,7 +367,7 @@ Knoppix, Ubuntu, Mint are all derivatives of Debian.
 3
 linux
 END
-Which command can be used to configure a firewall in Linux?
+Which command is used to configure a firewall in Linux?
 iptables
 ipconfig
 ifconfig
@@ -376,7 +376,7 @@ iptables is an administration tool for IPv4 packet filtering and NAT, a common f
 3
 linux
 END
-In Linux, which command cannot be used to list the files in a directory?
+Which command CANNOT be used to list the files in a directory?
 dirs
 ls
 tree
@@ -385,7 +385,7 @@ The dirs command shows the list of remembered directories (stored by the pushd c
 3
 linux
 END
-Which is an example of input redirection in common shells?
+Which is an example of input redirection?
 sort < data.txt
 cat data.txt | sort
 sort data.txt
@@ -394,7 +394,7 @@ sort data.txt &
 3
 linux
 END
-Which environment variable in Linux is typically not an absolute path?
+Which environment variable is typically not an absolute path?
 LOGNAME
 PWD
 HOME
@@ -403,7 +403,7 @@ LOGNAME is usually the username of the current user, not a path.
 3
 linux
 END
-Which command cannot be used to send an email in Linux?
+Which command CANNOT be used to send an email in Linux?
 groff
 telnet
 mailx
@@ -412,7 +412,7 @@ groff is a document formatting system (for example rendering man pages) and cann
 3
 linux
 END
-In Linux, which file controls the number of available virtual terminals?
+Which file controls the number of available virtual terminals in Linux?
 /etc/inittab
 /etc/virttab
 /etc/fstab
@@ -421,7 +421,7 @@ The virtual terminals are configured in the /etc/inittab file.
 3
 linux
 END
-In Linux, what information is usually NOT stored in /etc/passwd file?
+In Linux, what is usually NOT stored in /etc/passwd?
 Password
 Username
 Shell
@@ -457,7 +457,7 @@ The KILL signal is non-catchable, non-ignorable, immediately kills a process wit
 3
 linux
 END
-In Linux, which command can be used to check if a given PID is currently running or not?
+In Linux, which command can be used to check if any given PID is currently running or not?
 kill
 netstat
 top
@@ -466,7 +466,7 @@ The output of kill -0 PID includes the text "No such process" if the process doe
 3
 linux
 END
-Which file might contain the following line: nameserver 192.168.1.1
+Which file might contain such line: nameserver 192.168.1.1
 /etc/resolv.conf
 /etc/hosts
 /etc/rc.common
@@ -475,7 +475,7 @@ The /etc/resolv.conf file is used to provide various information to DNS resolver
 3
 network
 END
-Which is not essential for connecting to another computer on the same local area network?
+Which is not essential for connecting to another computer on the same LAN?
 name server configuration
 route configuration
 IP address configuration
@@ -484,7 +484,7 @@ It is not possible to connect to another computer without configuring a network 
 3
 network
 END
-Which of the following languages is NOT in the same group as LISP?
+Which is NOT in the same group as LISP?
 C++
 R
 Scheme
@@ -493,7 +493,7 @@ LISP, R, Scheme, and Scala are all functional languages. C++ is an imperative la
 3
 programming
 END
-Which of the following languages is NOT in the same group as C++?
+Which is NOT in the same group as C++?
 Haskell
 C
 Java
@@ -502,7 +502,7 @@ C++, C, Java, and MATLAB, are all imperative languages. Haskell is a functional 
 3
 programming
 END
-Which of the following is NOT a programming language?
+Which is NOT a programming language?
 CGI
 Bash
 R
@@ -520,8 +520,8 @@ Regular expressions can only match regular languages but HTML is a context-free 
 3
 programming
 END
-Which is a good reason to use a LinkedList instead of an ArrayList?
-I will only access elements by traversing from the beginning
+When would you use a LinkedList instead of an ArrayList?
+When you only need to traverse elements from the beginning
 LinkedList is more efficient than ArrayList in most practical cases
 LinkedList uses a hashmap internally
 I can access any element in a LinkedList very fast
@@ -538,7 +538,7 @@ Elements in an ArrayList can be accessed directly by a numeric index, but in a L
 3
 programming
 END
-What is the most likely cause of a stack overflow?
+What is the most likely to cause a stack overflow?
 Too deep recursion when using a recursive function
 Trying to access an array element by an index beyond the end of the array
 Trying to access an array element by a negative index
@@ -619,7 +619,7 @@ The typical weakest point is the employees, as social engineering and human gall
 3
 security
 END
-Which of these is the most dangerous security probing tool?
+Which is the most dangerous security probing tool?
 nmap
 ping
 ifconfig
@@ -651,7 +651,7 @@ sha1
 des3
 aes-128-cbc
 crypt
-sha1 is not an encryption method but a message digest method. The next worst method here is crypt, if you wanted to know... :)
+sha1 is not an encryption method but a message digest method.
 3
 security
 END
@@ -664,7 +664,7 @@ A buffer overflow can potentially lead to privilege escalation, which could be u
 3
 security
 END
-Which C library function is the least unsafe?
+Which is the least unsafe?
 strncpy
 strcpy
 gets
@@ -673,7 +673,7 @@ Only the strncpy function checks bounds, the others don't. Not checking bounds i
 3
 security
 END
-Which tool cannot be used to encrypt files?
+Which tool CANNOT be used to encrypt files?
 nmap
 encfs
 openssl
@@ -682,7 +682,7 @@ encfs and TrueCrypt can be used to create encrypted directories, and openssl can
 3
 security
 END
-Which tool cannot be used to find open ports in the local system?
+Which tool CANNOT be used to find open ports in the local system?
 ping
 nmap
 telnet
@@ -691,7 +691,7 @@ ping can only send ICMP ECHO requests to hosts, it cannot be used to find open p
 3
 security
 END
-Which tool cannot be used to find open ports in a remote system?
+Which tool CANNOT be used to find open ports in a remote system?
 netstat
 nmap
 telnet
@@ -700,7 +700,7 @@ Unlike the others, netstat cannot be used to scan arbitrary remote ports.
 3
 security
 END
-Which of these is NOT a web server software?
+Which is NOT a web server software?
 X server
 nginx
 Apache
@@ -709,7 +709,7 @@ X server is the server counterpart of the X Window System in UNIX, and has nothi
 3
 tools
 END
-Which of these is NOT a network analysis tool?
+Which is NOT a network analysis tool?
 screen
 nmap
 tcpdump
@@ -727,7 +727,7 @@ When used together with the -l flag for long format, the -h makes the ls command
 3
 tools
 END
-Which one of these is NOT a Version Control System?
+Which is NOT a Version Control System?
 CSV
 Bazaar
 Subversion
@@ -736,7 +736,7 @@ CSV stands for Comma Separated Values, it is a common file format, not a Version
 3
 version-control
 END
-Which one of these is a Distributed Version Control System?
+Which is a Distributed Version Control System?
 Mercurial
 Subversion
 ClearCase
@@ -763,7 +763,7 @@ If branchA and branchB edited completely different parts of the file, that shoul
 3
 version-control
 END
-What version control operation requires access to the server in a centralized VCS?
+Which version control operation requires access to the server in a centralized VCS?
 log
 status
 add
@@ -781,7 +781,7 @@ The QUERY_STRING is the part of a URL after the question mark, not including the
 3
 web-programming
 END
-Which one of these is NOT a common CGI environment variable?
+Which is NOT a common CGI environment variable?
 IOS_VERSION
 HTTP_REFERER
 HTTP_USER_AGENT
@@ -790,7 +790,7 @@ HTTP_USER_AGENT is the browser type of the visitor, HTTP_REFERER is the URL of t
 3
 web-programming
 END
-Which one of these is a common CGI environment variable?
+Which is a common CGI environment variable?
 REMOTE_ADDR
 MOBILE_PHONE_TYPE
 IOS_VERSION
@@ -826,7 +826,7 @@ What is the status code of a successful HTTP request?
 3
 web-programming
 END
-Which one of these server responses is NOT part of the HTTP standard?
+Which server response is NOT part of the HTTP standard?
 404 Internal Server Error
 418 I'm a teapot
 400 Bad Request
@@ -835,7 +835,7 @@ Which one of these server responses is NOT part of the HTTP standard?
 3
 web-programming
 END
-The 4xx class of HTTP status code indicates which type of error?
+Which type of error is indicated by a 4xx class of HTTP status code?
 Client error
 Server error
 Application error

@@ -8,66 +8,71 @@ import android.widget.TextView;
 
 public class ResultsActivity extends Activity {
 
-	private Level level;
-	int score = 0;
-	int index = 0;
+    protected static final String PARAM_TOTAL_QUESTIONS_NUM = "TOTAL_QUESTIONS_NUM";
+    protected static final String PARAM_CORRECT_ANSWERS_NUM = "CORRECT_ANSWERS_NUM";
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_results);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.results_activity);
 
-		Bundle bundle = getIntent().getExtras();
-		level = (Level)bundle.getSerializable(QuizActivity.PARAM_LEVEL);
-		score = bundle.getInt("score");
-		index = bundle.getInt("index");
-		String resultsDescription = "";
-		float percentageScore = (((float) score / (float) QuizActivity.numberOfQuestionsToAsk)*100);
+        Bundle bundle = getIntent().getExtras();
+        int correctAnswers = 0;
+        int totalQuestions = 1;
+        if (bundle != null) {
+            totalQuestions = bundle.getInt(PARAM_TOTAL_QUESTIONS_NUM);
+            correctAnswers = bundle.getInt(PARAM_CORRECT_ANSWERS_NUM);
+        }
+        int correctPercent = 100 * correctAnswers / totalQuestions;
 
-		resultsDescription = getResultsDescription(percentageScore);
+        String score = String.format(getString(R.string.result_score_format),
+                correctAnswers, totalQuestions, correctPercent);
+        TextView scoreView = (TextView) findViewById(R.id.score);
+        scoreView.setText(score);
 
-		TextView tvResultsScore = (TextView) findViewById(R.id.resultsScore);
-		TextView tvResultsReview = (TextView) findViewById(R.id.resultsDescription);
+        String message;
 
-		tvResultsScore.setText(Integer.toString(score) + "/" + Integer.toString(QuizActivity.numberOfQuestionsToAsk));
-		tvResultsReview.setText(resultsDescription);
+        switch (correctPercent / 10) {
+            case 0:
+                message = getString(R.string.result_0);
+                break;
+            case 1:
+            case 2:
+            case 3:
+                message = getString(R.string.result_less_than_40);
+                break;
+            case 4:
+            case 5:
+            case 6:
+                message = getString(R.string.result_less_than_70);
+                break;
+            case 7:
+            case 8:
+                message = getString(R.string.result_less_than_90);
+                break;
+            case 9:
+                message = getString(R.string.result_less_than_100);
+                break;
+            case 10:
+                message = getString(R.string.result_100);
+                break;
+            default:
+                message = getString(R.string.result_bug);
+                break;
+        }
 
-		findViewById(R.id.btnDoneResults).setOnClickListener(
-				new DoneClickListener());
-	}
+        TextView messageView = (TextView) findViewById(R.id.message);
+        messageView.setText(message);
 
-	private String getResultsDescription(float percentageScore) {
-		String resultsDescription = "";
+        findViewById(R.id.btn_done).setOnClickListener(new DoneClickListener());
+    }
 
-		if (percentageScore == 0) {
-			resultsDescription = getResources().getString(R.string.result_zero_pc);
-		}
-		else if (percentageScore < 10) {
-			resultsDescription = getResources().getString(R.string.result_less_than_ten_pc);
-		}
-		else if (percentageScore < 40) {
-			resultsDescription = getResources().getString(R.string.result_less_than_forty_pc);
-		}
-		else if (percentageScore < 70) {
-			resultsDescription = getResources().getString(R.string.result_less_than_seventy_pc);
-		}		
-		else if (percentageScore < 90) {
-			resultsDescription = getResources().getString(R.string.result_less_than_ninety_pc);
-		}	
-		else if (percentageScore < 100) {
-			resultsDescription = getResources().getString(R.string.result_less_than_one_hundred_pc);
-		}			
-		else if (percentageScore == 100) {
-			resultsDescription = getResources().getString(R.string.result_one_hundren_pc);
-		}
-		return resultsDescription;
-	}
-	class DoneClickListener implements OnClickListener {
+    class DoneClickListener implements OnClickListener {
 
-		@Override
-		public void onClick(View arg0) {
-			finish();
-		}
-	}
+        @Override
+        public void onClick(View arg0) {
+            finish();
+        }
+    }
 
 }

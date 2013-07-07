@@ -1,9 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:scrollbars="none" >
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical"
+              android:scrollbars="none">
 
     <RelativeLayout
         style="@style/mainHeaderWrapper"
@@ -32,33 +31,20 @@
             android:orientation="vertical" >
 
             <TextView
-                style="@style/introduction"
-                android:text="@string/title_info" />
-
+                android:id="@+id/score"
+                style="@style/summary" />
+             <TextView
+                android:id="@+id/message"
+                style="@style/summary" />
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
                 <Button
-                    android:id="@+id/btnBlouCalorieCounter"
+                    android:id="@+id/btn_done"
                     style="@style/linkButton"
-                    android:text="@string/blou_calorie_counter" />
-
-                <Button
-                    android:id="@+id/btnWineNotes"
-                    style="@style/linkButton"
-                    android:text="@string/wine_notes" />
-
-                <Button
-                    android:id="@+id/btnRecipeNotes"
-                    style="@style/linkButton"
-                    android:text="@string/recipe_notes" />
-
-                <Button
-                    android:id="@+id/btnMikesBlog"
-                    style="@style/linkButton"
-                    android:text="@string/mikes_blog" />
+                    android:text="@string/btn_done" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
