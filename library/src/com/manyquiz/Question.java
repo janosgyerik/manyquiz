@@ -6,76 +6,76 @@ import java.util.List;
 
 public class Question implements IQuestion {
 
-	private final String category;
-	private final String text;
-	private final String explanation;
+    private final String category;
+    private final String text;
+    private final String explanation;
 
-	private final List<String> choices;
-	private final String correctAnswer;
+    private final List<String> choices;
+    private final String correctAnswer;
 
-	private String selectedAnswer;
-	private boolean answered;
-	private boolean correctlyAnswered;
+    private String selectedAnswer;
+    private boolean answered;
+    private boolean correctlyAnswered;
 
-	public Question(String category, String text, String explanation,
-			String answer, List<String> decoyChoices) {
-		this.category = category;
-		this.text = text;
-		this.explanation = explanation;
-		this.correctAnswer = answer;
-		
-		this.answered = false;
-		this.correctlyAnswered = false;
-		
-		this.choices = new ArrayList<String>(decoyChoices);
-		this.choices.add(answer);
-		Collections.shuffle(choices);
-	}
+    public Question(String category, String text, String explanation,
+                    String answer, List<String> decoyChoices) {
+        this.category = category;
+        this.text = text;
+        this.explanation = explanation;
+        this.correctAnswer = answer;
 
-	@Override
-	public String getCategory() {
-		return category;
-	}
+        this.answered = false;
+        this.correctlyAnswered = false;
 
-	@Override
-	public String getText() {
-		return text;
-	}
+        this.choices = new ArrayList<String>(decoyChoices);
+        this.choices.add(answer);
+        Collections.shuffle(choices);
+    }
 
-	@Override
-	public String getExplanation() {
-		return explanation;
-	}
+    @Override
+    public String getCategory() {
+        return category;
+    }
 
-	@Override
-	public List<String> getChoices() {
-		return choices;
-	}
+    @Override
+    public String getText() {
+        return text;
+    }
 
-	@Override
-	public String getCorrectAnswer() {
-		return correctAnswer;
-	}
+    @Override
+    public String getExplanation() {
+        return explanation;
+    }
 
-	@Override
-	public String getSelectedAnswer() {
-		return selectedAnswer;
-	}
+    @Override
+    public List<String> getChoices() {
+        return choices;
+    }
 
-	@Override
-	public void setSelectedAnswer(String answer) {
-		this.selectedAnswer = answer;
-		answered = true;
-		correctlyAnswered = answer.equals(correctAnswer);
-	}
+    @Override
+    public String getCorrectAnswer() {
+        return correctAnswer;
+    }
 
-	@Override
-	public boolean wasCorrectlyAnswered() {
-		return correctlyAnswered;
-	}
+    @Override
+    public String getSelectedAnswer() {
+        return selectedAnswer;
+    }
 
-	@Override
-	public boolean wasAnswered() {
-		return answered;
-	}
+    @Override
+    public void setSelectedAnswer(String answer) {
+        this.selectedAnswer = answer;
+        answered = true;
+        correctlyAnswered = answer.equals(correctAnswer);
+    }
+
+    @Override
+    public boolean wasCorrectlyAnswered() {
+        return correctlyAnswered;
+    }
+
+    @Override
+    public boolean wasAnswered() {
+        return answered;
+    }
 }

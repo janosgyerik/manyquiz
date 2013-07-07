@@ -12,11 +12,11 @@ public class ResultsActivity extends Activity {
     protected static final String PARAM_CORRECT_ANSWERS_NUM = "CORRECT_ANSWERS_NUM";
 
     @Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.results_activity);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.results_activity);
 
-		Bundle bundle = getIntent().getExtras();
+        Bundle bundle = getIntent().getExtras();
         int correctAnswers = 0;
         int totalQuestions = 1;
         if (bundle != null) {
@@ -61,18 +61,18 @@ public class ResultsActivity extends Activity {
                 break;
         }
 
-		TextView messageView = (TextView) findViewById(R.id.message);
-		messageView.setText(message);
+        TextView messageView = (TextView) findViewById(R.id.message);
+        messageView.setText(message);
 
-		findViewById(R.id.btn_done).setOnClickListener(new DoneClickListener());
-	}
+        findViewById(R.id.btn_done).setOnClickListener(new DoneClickListener());
+    }
 
-	class DoneClickListener implements OnClickListener {
+    class DoneClickListener implements OnClickListener {
 
-		@Override
-		public void onClick(View arg0) {
-			finish();
-		}
-	}
+        @Override
+        public void onClick(View arg0) {
+            finish();
+        }
+    }
 
 }
