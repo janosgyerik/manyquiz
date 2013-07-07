@@ -8,11 +8,11 @@ Building and running the Computer Quiz
 --------------------------------------
 1. Import the following projects in Eclipse:
 
-    * library/ -- common quiz logic and layouts
+        * library/ -- common quiz logic and layouts
 
-    * computers/ -- logic and layouts for Computer Quiz
+        * computers/ -- logic and layouts for Computer Quiz
 
-    * computers-lite/ -- the Computer Quiz LITE application
+        * computers-lite/ -- the Computer Quiz LITE application
 
 2. Run the Computer Quiz LITE project as Android application
 
@@ -65,14 +65,13 @@ following these steps:
 
         ./computers-lite/scripts/gen-sql-create.sh
 
-4. Refresh the project in Eclipse
+4. Refresh the project in Eclipse or Android Studio
 
-5. (Temporary step, to be fixed soon:) In the QuizSQLiteOpenHelper
-  class, uncomment this line to force deleting the database:
-
-        context.deleteDatabase(DATABASE_NAME);
+5. Increment QuizSQLiteOpenHelper.DATABASE_VERSION
 
 6. Rebuild and run the project
+
+7. Revert the QuizSQLiteOpenHelper.DATABASE_VERSION change
 
 
 Creating a new quiz clone
