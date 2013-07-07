@@ -32,10 +32,10 @@
 
             <TextView
                 android:id="@+id/score"
-                style="@style/introduction" />
+                style="@style/summary" />
              <TextView
                 android:id="@+id/message"
-                style="@style/introduction" />
+                style="@style/summary" />
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

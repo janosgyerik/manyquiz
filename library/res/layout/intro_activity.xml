@@ -33,7 +33,7 @@
 
             <TextView
                 android:id="@+id/introduction"
-                style="@style/introduction"
+                style="@style/summary"
                 android:text="@string/introduction" />
 
             <RadioGroup

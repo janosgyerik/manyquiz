@@ -32,7 +32,7 @@
             android:orientation="vertical" >
 
             <TextView
-                style="@style/introduction"
+                style="@style/summary"
                 android:text="@string/description_sendmessage" />
 
             <EditText
