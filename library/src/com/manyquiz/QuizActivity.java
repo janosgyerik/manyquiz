@@ -224,6 +224,9 @@ public class QuizActivity extends QuizBaseActivity {
 		if (gameOver) {
 			finishButton.setVisibility(View.VISIBLE);
 			finishButton.setEnabled(true);
+            if (level instanceof  SuddenDeathLevel) {
+                nextButton.setVisibility(View.GONE);
+            }
 		}
 	}
 
