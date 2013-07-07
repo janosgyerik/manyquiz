@@ -51,7 +51,7 @@ public class QuizActivity extends QuizBaseActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Log.d(TAG, "++onCreate");
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.main_activity);
 
 		checkAndSetupForLiteVersion();
 

@@ -15,7 +15,7 @@ public class ResultsActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_results);
+		setContentView(R.layout.results_activity);
 
 		Bundle bundle = getIntent().getExtras();
 		level = (Level)bundle.getSerializable(QuizActivity.PARAM_LEVEL);

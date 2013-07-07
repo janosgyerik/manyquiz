@@ -13,7 +13,7 @@ public class QuestionSuggestionActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_sendmessage);
+		setContentView(R.layout.sendmessage_activity);
 
 		findViewById(R.id.btn_sendmessage).setOnClickListener(
 				new SubmitButtonOnClickListener());

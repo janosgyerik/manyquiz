@@ -12,7 +12,7 @@ public class InfoActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_info);
+		setContentView(R.layout.info_activity);
 
 		findViewById(R.id.btnBlouCalorieCounter).setOnClickListener(
 				new LinkButtonOnClickListener(R.string.lnk_blou_calorie_counter));

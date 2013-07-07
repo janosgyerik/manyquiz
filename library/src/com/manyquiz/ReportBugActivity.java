@@ -19,7 +19,7 @@ public class ReportBugActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_reportbug);
+		setContentView(R.layout.reportbug_activity);
 
 		findViewById(R.id.btn_reportbug).setOnClickListener(
 				new SubmitButtonOnClickListener());
