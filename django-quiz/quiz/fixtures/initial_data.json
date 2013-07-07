@@ -1,28 +1,68 @@
 [
-    {
-        "pk": 1, 
-        "model": "auth.user", 
-        "fields": {
-            "username": "admin", 
-            "first_name": "", 
-            "last_name": "", 
-            "is_active": true, 
-            "is_superuser": true, 
-            "is_staff": true, 
-            "last_login": "2013-01-27T00:25:29", 
-            "groups": [], 
-            "user_permissions": [], 
-            "password": "sha1$40c19$7f8b2bb9be6df68fe27a26fe7e4ba0e2f99e8a2e", 
-            "email": "janos.gyerik@gmail.com", 
-            "date_joined": "2013-01-27T00:25:17"
-        }
-    }, 
-    {
-        "pk": 1, 
-        "model": "sites.site", 
-        "fields": {
-            "domain": "example.com", 
-            "name": "example.com"
-        }
+{
+    "pk": 1, 
+    "model": "quiz.level", 
+    "fields": {
+        "created_dt": "2013-01-27T00:42:27", 
+        "updated_dt": "2013-01-27T00:42:27", 
+        "name": "Hobbyist", 
+        "level": 1
     }
+},
+{
+    "pk": 2, 
+    "model": "quiz.level", 
+    "fields": {
+        "created_dt": "2013-01-27T00:42:43", 
+        "updated_dt": "2013-01-27T00:42:43", 
+        "name": "Professional", 
+        "level": 2
+    }
+},
+{
+    "pk": 3, 
+    "model": "quiz.level", 
+    "fields": {
+        "created_dt": "2013-01-27T00:42:43", 
+        "updated_dt": "2013-01-27T00:42:43", 
+        "name": "Expert", 
+        "level": 3
+    }
+},
+{
+    "pk": 4, 
+    "model": "quiz.level", 
+    "fields": {
+        "created_dt": "2013-01-27T00:42:51", 
+        "updated_dt": "2013-01-27T00:42:51", 
+        "name": "Nightmare!", 
+        "level": 4
+    }
+},
+{
+    "pk": 1, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "admin", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "last_login": "2013-06-16T05:50:40.381", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$10000$lrf1MJJCmLNn$QBZ8mKjSJhLpghDKQdiglCy9TsWK3dSOklM4NJzTIWQ=", 
+        "email": "janos.gyerik@gmail.com", 
+        "date_joined": "2013-01-27T00:25:17"
+    }
+},
+{
+    "pk": 1, 
+    "model": "sites.site", 
+    "fields": {
+        "domain": "example.com", 
+        "name": "example.com"
+    }
+}
 ]

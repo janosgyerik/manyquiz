@@ -1,173 +1,65 @@
-Which of these is NOT a web server software?
-X server
-nginx
-Apache
-Lighttpd
-X server is the server counterpart of the X Window System in UNIX, and has nothing to do with web servers.
-4
-tools
+What is the average performance of the bubble sort algorithm?
+O(n^2)
+O(n)
+O(1)
+O(n log n)
+Bubble sort has worst-case and average complexity both О(n2), where n is the number of items being sorted.
+2
+algorithms
 END
-Which of these is NOT a network analysis tool?
-screen
-nmap
-tcpdump
-wireshark
-tcpdump dumps traffic on a network; wireshark is a network traffic analyzer; nmap is a network security auditing tool; that leaves us with screen, which is a terminal multiplexer tool.
-4
-tools
+What is the average performance of the quicksort algorithm?
+O(n log n)
+O(n^2)
+O(n)
+O(1)
+On average, quicksort makes O(n log n) comparisons to sort n items.
+2
+algorithms
 END
-What is the purpose of the -h flag of the ls command in UNIX?
-Print file sizes in human readable format
-Print short help message
-Print long help message
-Print hidden files
-When used together with the -l flag for long format, the -h makes the ls command print file sizes in human readable format like 1K, 234M, 2G.
-4
-tools
+Which sort algorithm is not stable?
+heapsort
+bubble sort
+merge sort
+insertion sort
+Stable sorting algorithms preserve the relative order of items that compare as equal. Heapsort does not guarantee that.
+2
+algorithms
 END
-Which of the following languages is NOT in the same group as LISP?
-C++
-R
-Scheme
-Scala
-LISP, R, Scheme, and Scala are all functional languages. C++ is an imperative language.
-4
-programming
-END
-Which of the following languages is NOT in the same group as C++?
-Haskell
-C
-Java
-MATLAB
-C++, C, Java, and MATLAB, are all imperative languages. Haskell is a functional language.
-4
-programming
-END
-Which of the following is NOT a programming language?
-CGI
-Bash
-R
-Python
-CGI stands for Common Gateway Interface, a standard for dynamic generation of web pages by a web server. It is NOT a programming language.
-4
-programming
-END
-Can you parse an HTML document using regular expressions?
-No, because HTML is not a regular language
-Yes, you can parse anything using regular expressions
-Yes, but only if it contains only ASCII characters
-Yes, because HTML is a context-free language
-Regular expressions can only match regular languages but HTML is a context-free language. It is always possible to present a HTML file that will be matched wrongly by any regular expression.
-4
-programming
-END
-Which is a good reason to use a LinkedList instead of an ArrayList?
-I will only access elements by traversing from the beginning
-LinkedList is more efficient than ArrayList in most practical cases
-LinkedList uses a hashmap internally
-I can access any element in a LinkedList very fast
-In a linked list, elements are chained together: each element has a pointer to the next. Insert and remove operations are more memory-efficient compared to an ArrayList, at the cost that random access of elements is less efficient.
-4
-programming
-END
-What is the advantage of using an ArrayList instead of a LinkedList?
-Accessing elements by index is faster
-Traversal of elements from start to end is faster
-ArrayList uses less memory than a LinkedList
-Removing an element in the middle of the list is faster
-Elements in an ArrayList can be accessed directly by a numeric index, but in a LinkedList you must travers the elements from the start or the end until the desired element.
-4
-programming
-END
-In web programming, what is the QUERY_STRING?
-The part of a URL after the "?" mark
-The part of a URL after the "#" mark
-A variable in a HTTP GET request
-A variable in a HTTP POST request
-The QUERY_STRING is the part of a URL after the question mark, not including the question mark itself, for example "search=hello&page=2".
-4
-web-programming
-END
-Which one of these is NOT a common CGI environment variable?
-IOS_VERSION
-HTTP_REFERER
-HTTP_USER_AGENT
-DOCUMENT_ROOT
-HTTP_USER_AGENT is the browser type of the visitor, HTTP_REFERER is the URL of the page that called the current one, and DOCUMENT_ROOT is the root directory of the server.
-4
-web-programming
-END
-Which one of these is a common CGI environment variable?
-REMOTE_ADDR
-MOBILE_PHONE_TYPE
-IOS_VERSION
-ANDROID_VERSION
-REMOTE_ADDR is the IP address of the visitor.
-4
-web-programming
-END
-Which HTTP method was not part of the HTTP/1.0 specification?
-OPTIONS
-GET
-POST
-HEAD
-The OPTIONS method was added in the HTTP/1.1 specification.
-4
-web-programming
-END
-What is the difference between the HTTP GET and HEAD methods?
-HEAD doesn't include a response body
-HEAD returns only the <head> tag of HTML
-GET returns a response without a header
-GET can support SSL
-The response of a HEAD requests is a header identical to that of a GET request, but without a response body.
-4
-web-programming
-END
-What is the status code of a successful HTTP request?
-200
-100
-0
+Which denotes the fastest time complexity?
+O(1)
+O(n)
+O(n log n)
+O(n^2)
+O(1) indicates constant time regardless of the size of the input.
 1
-"200 OK" is the standard response for successful HTTP requests.
-4
-web-programming
+algorithms
 END
-Which one of these server responses is NOT part of the HTTP standard?
-404 Internal Server Error
-418 I'm a teapot
-400 Bad Request
-401 Unauthorized
-404 is part of the standard but it means something else: "Not Found"
-4
-web-programming
+What is the notation of quadratic time complexity?
+O(n^2)
+O(1)
+O(n)
+O(n log n)
+O(n^2) indicates quadratic time complexity, for example an algorithm that requires all input elements to be compared to all other input elements.
+1
+algorithms
 END
-The 4xx class of HTTP status code indicates which type of error?
-Client error
-Server error
-Application error
-Connection error
-Status codes in the class 4xx all indicate some kind of client error, such as requesting a non-existent page, or a syntax error in the request, just to name a few.
-4
-web-programming
+What is NOT a good use case of a hash function?
+Encrypt data
+Accelerate table lookup
+Accelerate data comparison
+Generate fixed length output data
+Hash functions are one-way, they cannot be applied in reverse, the input data is not recoverable from the output data, akin to lossy compression.
+2
+algorithms
 END
-What was the limit of the header size in the HTTP/1.0 standard?
-Unspecified (no limit)
-8190 bytes
-1024 bytes
-512 bytes
-The standard itself does not set a limit on the header size, but most implementations impose some limits for practical and security reasons.
-4
-web-programming
-END
-What can you do with HTTP POST that you cannot do with HTTP GET?
-Upload files
-Implement session state
-Create cookies
-Pass multiple variables to a form
-Uploading a file requires enclosing an entity in the request, which is supported by a POST request but not by a GET request.
-4
-web-programming
+Which is NOT generally true about hash functions?
+Hash functions are fast
+Hash functions are akin to lossy compression
+Hash functions return the same output for the same input
+Hash functions are related to checksums
+Hash functions are heavily used in cryptography, where they are designed to be slow on purpose, to make brute force attacks more difficult.
+2
+algorithms
 END
 Which of these build tools is the oldest?
 Make
@@ -175,7 +67,7 @@ Apache Ant
 Apache Maven
 CMake
 Make appeared in 1977, Ant in 2000, Maven in 2002, and CMake in 1999.
-4
+3
 build-automation
 END
 What is NOT a main responsibility of an automated build system?
@@ -184,7 +76,7 @@ Compile the source code
 Eliminate redundant tasks
 Execute unit tests
 Debugging is an activity that involves interacting with a running program, not really part of the build process.
-4
+3
 build-automation
 END
 In an automated build system, which of these is the most logical next step after running unit tests?
@@ -193,7 +85,7 @@ compile
 deploy
 install
 The software must already be compiled to run unit tests. Without a package, what is there to install or deploy?
-4
+3
 build-automation
 END
 What is the traditional step between "./configure" and "make install" when building a software from a source tarball?
@@ -202,7 +94,7 @@ What is the traditional step between "./configure" and "make install" when build
 "make clean"
 "./run.sh"
 "make" without any arguments runs the default build task, which is typically building the entire software. This step is usually after the configuration step. After this the software can be installed with "make install".
-4
+3
 build-automation
 END
 What is the purpose of the "clean" step in a typical automated build system?
@@ -211,152 +103,260 @@ Detect and report bugs in the software
 Detect and eliminate bugs in the software
 Remove unknown files that don't belong to the project
 The "clean" step typically removes build products, with the intention to start over as if the "compile" or other build steps were never executed.
-4
+3
 build-automation
 END
-What is the weakest point in the computer security of a typical large firm?
-The employees
-The firewall software used
-The antivirus software used
-The intranet software used
-The typical weakest point is the employees, as social engineering and human gallibility can often circumvent otherwise state of the art computer security system.
-4
-security
+What is "Ant"?
+A build tool based on Java
+An insect
+An IDE for the Java language
+A debugger for the Java language
+Ant is a build tool like "make", but it is based on Java. Unlike make, it can run on any platform that has a Java Virtual Machine.
+2
+build-automation
 END
-Which of these is the most dangerous security probing tool?
-nmap
-ping
-ifconfig
-telnet
-nmap is a sophisticated port scanner, and can reveal much more about a network than all the other tools combined.
-4
-security
+What is the name of the main configuration file used by make?
+Makefile
+make.config
+config.ini
+build.xml
+The default configuration file used by make is called Makefile.
+2
+build-automation
 END
-What's the worst thing that can happen if you configure nmap with suid root?
-It could be used for privilege escalation
-It could be used to completely jam a network with DOS attacks
-It could be used to delete all files in the system
-It could be used to unleash the kraken
-Privilege escalation could be used to create all the other damages. Except maybe releasing the kraken. Not sure.
-4
-security
+What is the name of the main configuration used by Ant?
+build.xml
+Makefile
+ant.config
+config.ini
+The default configuration file used by Ant is build.xml
+2
+build-automation
 END
-In Linux, what is the best way to give read permission to everybody on a file?
-chmod +r file.txt
-chmod 777 file.txt
-chmod 4777 file.txt
-chmod 444 file.txt
-The +r flag gives read permission to everybody on the system. 444 is not a good idea because it removes all other permissions that there might have been. Anybody taking the other options should be fired on the spot.
-4
-security
+What is the name of the main configuration used by Maven?
+pom.xml
+build.xml
+maven.config
+config.ini
+The default configuration file used by Maven is pom.xml
+2
+build-automation
 END
-Which is the worst method for encrypting data?
-sha1
-des3
-aes-128-cbc
-crypt
-sha1 is not an encryption method but a message digest method. The next worst method here is crypt, if you wanted to know... :)
-4
-security
+How to specify that taskA depends on taskB in a Makefile?
+taskA: taskB
+taskB: taskA
+taskA -> taskB
+taskB -> taskA
+The correct syntax is taskA: taskB, meaning taskB will be executed first (if needed) before performing taskA.
+2
+build-automation
 END
-What's the scariest defect that can happen in a web application?
-Buffer overflow
-Blue screen of death
-Denial of service
-NullPointerException
-A buffer overflow can potentially lead to privilege escalation, which could be used to produce all the others and much worse.
-4
-security
+What is the difference between a binary tree and a B-tree?
+A B-tree is a generalization of the binary tree.
+No difference, they are synonyms.
+In a B-tree each node has two child nodes.
+In a binary tree each node has two child nodes.
+A B-tree is a generalization of the binary search tree: nodes can have more than two children.
+2
+data-structures
 END
-Which C library function is the least unsafe?
-strncpy
-strcpy
-gets
-scanf
-Only the strncpy function checks bounds, the others don't. Not checking bounds is very likely to lead to buffer overflow defects.
+What is the minimum number of internal (non-leaf) nodes in a binary tree with 7 nodes?
+3
+2
 4
-security
+6
+The minimum possible number of nodes can be achieved in a full binary tree, where every node has strictly 0 or 2 children. In this case there will be 3 internal nodes and 4 leaf nodes.
+2
+data-structures
 END
-Which tool cannot be used to encrypt files?
-nmap
-encfs
-openssl
-TrueCrypt
-encfs and TrueCrypt can be used to create encrypted directories, and openssl can be used to encrypt a stream of data. nmap is a network scanning tool, not for encryption.
+What is the maximum number of internal (non-leaf) nodes in a binary tree with 7 nodes?
+6
+2
+3
 4
-security
+In a degenerate tree each parent node has only one child node, effectively behaving like a linked list data structure. In this case there will be n-1 = 6 internal nodes and 1 leaf node.
+2
+data-structures
 END
-Which tool cannot be used to find open ports in the local system?
-ping
-nmap
-telnet
-netstat
-ping can only send ICMP ECHO requests to hosts, it cannot be used to find open ports.
-4
-security
+Which term is not synonymous with the others?
+queue
+LIFO
+FILO
+stack
+Basically, LIFO = FILO = stack, while queue is the logical opposite.
+2
+data-structures
 END
-Which tool cannot be used to find open ports in a remote system?
-netstat
-nmap
-telnet
-curl
-Unlike the others, netstat cannot be used to scan arbitrary remote ports.
-4
-security
+Which data structure is a natural choice to implement a queue?
+Linked list
+Array list
+Hash map
+Hash set
+A doubly linked list has O(1) insertion and deletion at both ends, so is a natural choice for queues.
+2
+data-structures
 END
-Which one of these is NOT a Version Control System?
-CSV
-Bazaar
-Subversion
-CVS
-CSV stands for Comma Separated Values, it is a common file format, not a Version Control System.
-4
-version-control
+Which database system uses the following commands: lsnrctl, isqlplusctl, emctl?
+Oracle
+Sybase
+MySQL
+PostgreSQL
+These commands are used by Oracle to provide various services.
+3
+database
 END
-Which one of these is a Distributed Version Control System?
-Mercurial
-Subversion
-ClearCase
-Visual SourceSafe
-These are all version control systems, but only Mercurial has a distributed model, the others use a client-server model.
-4
-version-control
+What type of JOIN is this: SELECT * FROM t1 JOIN t2 ON t1.id = t2.id
+INNER JOIN
+OUTER JOIN
+CROSS JOIN
+LEFT JOIN
+When the type of the JOIN is unspecified, it is most commonly an INNER JOIN.
+2
+database
 END
-What can be a disadvantage of a distributed VCS in comparison to a centralized VCS?
-The initial cloning is slower
-Users cannot commit revisions without a server
-Most operations are slower without a server
-Users cannot create forks without a server
-In a distributed VCS, initial cloning is typically slower, as the tool must download the entire project history. The other choices are disadvantages of centralized VCS.
-4
-version-control
+What will be the result of this query if there are 5 records in Employee and 3 records in Department: SELECT count(*) FROM Employee e LEFT JOIN Department d ON e.DepartmentID = d.DepartmentID
+5 or more
+3 or more
+15
+It depends
+Since this is a LEFT JOIN, there will be at least one record for each employee (the left table), therefore 5 or more records.
+2
+database
 END
-In a version control system, which type of conflict can have an automatic resolution when merging branchA into branchB?
-The same file was edited in both BranchA and BranchB
-The same file was edited in BranchA but deleted in BranchB
-The same file was edited in BranchA but renamed in BranchB
-A file with the same name was added in both BranchA and BranchB
-If branchA and branchB edited completely different parts of the file, that should be possible to resolve automatically. The other types of conflict require an explicit decision and action by a human.
-4
-version-control
+What will be the result of this query if there are 5 records in Employee and 3 records in Department: SELECT count(*) FROM Employee e RIGHT JOIN Department d ON e.DepartmentID = d.DepartmentID
+3 or more
+5 or more
+15
+It depends
+Since this is a RIGHT JOIN, there will be at least one record for each department (the right table), therefore 3 or more records.
+2
+database
 END
-What version control operation requires access to the server in a centralized VCS?
-log
-status
-add
-mv
-In a centralized VCS all operations that involve the history need to access the repository on the central server. The status, add, and mv commands can be performed without access to the server.
-4
-version-control
+In SQL, which form of the count() clause might be invalid?
+count(DepartmentID)
+count(*)
+count(1)
+count(null)
+If there is no column named DepartmentID in the source tables then count(DepartmentID) will be invalid. The other forms are always valid.
+2
+database
 END
-What is the most likely cause of a stack overflow?
-Too deep recursion when using a recursive function 
-Trying to access an array element by an index beyond the end of the array
-Trying to access an array element by a negative index
-The stack size limit is not set to unlimited in your system
-A common cause of a stack overflow is very deep or infinite recursion, exhausting the address space of the call stack. A common solution is to improve the algorithm to reduce the depth of recursions.
-4
-programming
+Which SQL statement is incorrect?
+SELECT DepartmentID, count(*) FROM Employee HAVING DepartmentID IS NOT NULL;
+SELECT DepartmentID, count(*) FROM Employee ORDER BY DepartmentID;
+SELECT DepartmentID, count(*) FROM Employee GROUP BY DepartmentID;
+SELECT DepartmentID, count(*) FROM Employee WHERE DepartmentID IS NOT NULL;
+A GROUP BY clause is required before HAVING.
+2
+database
+END
+How to find employees with DepartmentID set to NULL?
+SELECT * FROM Employee WHERE DepartmentID IS NULL;
+SELECT * FROM Employee WHERE DepartmentID = NULL;
+SELECT * FROM Employee WHERE DepartmentID EXISTS;
+SELECT * FROM Employee WHERE DepartmentID = 0;
+The correct syntax to test if something is NULL is using IS NULL.
+2
+database
+END
+Which SQL statement might select the department with the largest number of employees?
+SELECT d.DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID ORDER BY c DESC LIMIT 1;
+SELECT d.DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY DepartmentID ORDER BY c DESC LIMIT 1;
+SELECT DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID ORDER BY c DESC LIMIT 1;
+SELECT d.DepartmentID, count(null) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID HAVING c = MAX(c);
+The other statements either have SQL errors or incorrect.
+2
+database
+END
+How to get the current date in Oracle?
+SELECT SYSDATE FROM DUAL
+SELECT SYSDATE() FROM DUAL
+SELECT GETDATE
+SELECT GETDATE()
+The function to get the current date in Oracle is SYSDATE without parentheses.
+2
+database
+END
+How to get current date in Sybase?
+SELECT GETDATE()
+SELECT SYSDATE FROM DUAL
+SELECT SYSDATE() FROM DUAL
+SELECT GETDATE
+The function to get the current date in Sybase is GETDATE().
+2
+database
+END
+In SQL, what is the difference between UNION and UNION ALL?
+UNION ALL may return duplicate records
+They are the same, ALL is optional
+UNION ALL is incorrect syntax
+UNION is incorrect syntax
+Duplicate records are removed from the result of UNION, while UNION ALL returns all records.
+2
+database
+END
+What is an advantage of using a database instead of a CSV file?
+Columns can be indexed.
+Data records always take less disk space in a database.
+Finding a data record is always faster using a database.
+Inserting a data record is always more efficient using a database.
+In a database columns can be indexed, which can help finding data much faster. The other statements are not necessarily true.
+2
+database
+END
+How many disks can fail in a RAID 5 array without risk of data loss?
+1
+0 (none)
+2
+3
+RAID 5 distributes parity along with the data and requires that all drives but one be present to operate. The array is not destroyed by a single drive failure. On drive failure, any subsequent reads can be calculated from the distributed parity such that the drive failure is masked from the end user.
+3
+hardware
+END
+Which RAID level provides the highest fault tolerance, given an array of 3 disks?
+RAID 1
+RAID 0
+RAID 3
+RAID 5
+With RAID 1, n-1 disks can fail without losing data. With RAID 3 and RAID 5 only one disk can fail. RAID 0 provides no fault tolerance at all.
+3
+hardware
+END
+Which is not essential for starting a computer with an operating system?
+Harddisk
+Memory
+Motherboard
+PSU
+Harddisk is not essential. An operating system can be loaded from CD or a USB storage, for example. Everything else is essential (PSU is the Power Supply Unit).
+2
+hardware
+END
+Which operating system was not derived from a version of UNIX?
+MINIX
+Mac OS X
+FreeBSD
+Solaris
+MINIX is a UNIX-like system but it was NOT derived from UNIX. The others can all be traced back to some version of UNIX.
+3
+history
+END
+Which operating system was the inspiration of Linux?
+MINIX
+FreeBSD
+UNIX
+DOS
+MINIX inspired Linus Torvalds to create Linux.
+3
+history
+END
+In what language was UNIX originally written?
+Assembly
+B
+C
+Pascal
+UNIX was originally written in assembly language, and later rewritten in C.
+3
+history
 END
 Which Linux distribution appeared first?
 Debian
@@ -364,7 +364,7 @@ Mint
 Ubuntu
 Knoppix
 Knoppix, Ubuntu, Mint are all derivatives of Debian.
-4
+3
 linux
 END
 Which command can be used to configure a firewall in Linux?
@@ -382,7 +382,7 @@ ls
 tree
 echo
 The dirs command shows the list of remembered directories (stored by the pushd command), it cannot be used to list the files in a directory.
-4
+3
 linux
 END
 Which is an example of input redirection in common shells?
@@ -390,7 +390,7 @@ sort < data.txt
 cat data.txt | sort
 sort data.txt
 sort data.txt &
-"<" is the input redirection operator in common shells, even in DOS. 
+"<" is the input redirection operator in common shells, even in DOS.
 3
 linux
 END
@@ -400,7 +400,7 @@ PWD
 HOME
 SHELL
 LOGNAME is usually the username of the current user, not a path.
-4
+3
 linux
 END
 Which command cannot be used to send an email in Linux?
@@ -409,7 +409,7 @@ telnet
 mailx
 mutt
 groff is a document formatting system (for example rendering man pages) and cannot be used to send emails. Yes you can send an email with telnet, though it won't be pretty.
-4
+3
 linux
 END
 In Linux, which file controls the number of available virtual terminals?
@@ -418,7 +418,7 @@ In Linux, which file controls the number of available virtual terminals?
 /etc/fstab
 /etc/mtab
 The virtual terminals are configured in the /etc/inittab file.
-4
+3
 linux
 END
 In Linux, what information is usually NOT stored in /etc/passwd file?
@@ -427,7 +427,7 @@ Username
 Shell
 Home directory
 The password is usually stored in /etc/shadow, with more strict access permissions.
-4
+3
 linux
 END
 In Linux, which runlevel is a multi-user runlevel?
@@ -436,7 +436,7 @@ S
 1
 6
 Runlevels 2 to 5 are multi-user runlevels.
-4
+3
 linux
 END
 In Linux, what is the name of the process with PID 1?
@@ -444,8 +444,8 @@ init
 kernel
 root
 launchd
-In Linux the "init" process is the parent of all processes, it gets the first PID which is 1. 
-4
+In Linux the "init" process is the parent of all processes, it gets the first PID which is 1.
+3
 linux
 END
 In Linux, which signal cannot be trapped?
@@ -454,7 +454,7 @@ In Linux, which signal cannot be trapped?
 6 ABRT
 15 TERM
 The KILL signal is non-catchable, non-ignorable, immediately kills a process without possibility of cleaning up.
-4
+3
 linux
 END
 In Linux, which command can be used to check if a given PID is currently running or not?
@@ -463,6 +463,429 @@ netstat
 top
 lsof
 The output of kill -0 PID includes the text "No such process" if the process doesn't exist. The command exits with 1 if the process does not exist or the user does not own it.
-4
+3
 linux
+END
+Which file might contain the following line: nameserver 192.168.1.1
+/etc/resolv.conf
+/etc/hosts
+/etc/rc.common
+/etc/bashrc
+The /etc/resolv.conf file is used to provide various information to DNS resolver.
+3
+network
+END
+Which is not essential for connecting to another computer on the same local area network?
+name server configuration
+route configuration
+IP address configuration
+netmask configuration
+It is not possible to connect to another computer without configuring a network interface with an IP address and correct netmask, and a route between the computers. A name server is optional.
+3
+network
+END
+Which of the following languages is NOT in the same group as LISP?
+C++
+R
+Scheme
+Scala
+LISP, R, Scheme, and Scala are all functional languages. C++ is an imperative language.
+3
+programming
+END
+Which of the following languages is NOT in the same group as C++?
+Haskell
+C
+Java
+MATLAB
+C++, C, Java, and MATLAB, are all imperative languages. Haskell is a functional language.
+3
+programming
+END
+Which of the following is NOT a programming language?
+CGI
+Bash
+R
+Python
+CGI stands for Common Gateway Interface, a standard for dynamic generation of web pages by a web server. It is NOT a programming language.
+3
+programming
+END
+Can you parse an HTML document using regular expressions?
+No, because HTML is not a regular language
+Yes, you can parse anything using regular expressions
+Yes, but only if it contains only ASCII characters
+Yes, because HTML is a context-free language
+Regular expressions can only match regular languages but HTML is a context-free language. It is always possible to present a HTML file that will be matched wrongly by any regular expression.
+3
+programming
+END
+Which is a good reason to use a LinkedList instead of an ArrayList?
+I will only access elements by traversing from the beginning
+LinkedList is more efficient than ArrayList in most practical cases
+LinkedList uses a hashmap internally
+I can access any element in a LinkedList very fast
+In a linked list, elements are chained together: each element has a pointer to the next. Insert and remove operations are more memory-efficient compared to an ArrayList, at the cost that random access of elements is less efficient.
+3
+programming
+END
+What is the advantage of using an ArrayList instead of a LinkedList?
+Accessing elements by index is faster
+Traversal of elements from start to end is faster
+ArrayList uses less memory than a LinkedList
+Removing an element in the middle of the list is faster
+Elements in an ArrayList can be accessed directly by a numeric index, but in a LinkedList you must travers the elements from the start or the end until the desired element.
+3
+programming
+END
+What is the most likely cause of a stack overflow?
+Too deep recursion when using a recursive function
+Trying to access an array element by an index beyond the end of the array
+Trying to access an array element by a negative index
+The stack size limit is not set to unlimited in your system
+A common cause of a stack overflow is very deep or infinite recursion, exhausting the address space of the call stack. A common solution is to improve the algorithm to reduce the depth of recursions.
+3
+programming
+END
+What is wrong with static methods?
+Code calling static methods is hard to test
+Static methods are hard to test
+Static methods don't require an instance of the class
+Static methods cannot access the data of instances
+Code calling static methods is hard to test because you cannot mock the static calls. Static methods in themselves are not hard to test. The other statements are true of static methods but don't constitute a "problem".
+3
+programming
+END
+What is CORBA used for?
+Interprocess communication
+Memory management
+Schedule management
+Data encryption
+The Common Object Request Broker Architecture (CORBA) enables software components written in multiple computer languages and running on multiple computers to work together.
+2
+programming
+END
+What can use a CRC function for?
+Detect accidental changes to raw data
+Encrypt data
+Serialize data
+Compress data
+A cyclic redundancy check (CRC) is an error-detecting code commonly used in digital networks and storage devices to detect accidental changes to raw data.
+2
+programming
+END
+Which is the most efficient way to implement low-latency communication between remote processes?
+Binary protocol
+SOAP-based protocol
+XML-based protocol
+Text-based protocol
+A binary protocol yields the smallest possible footprint in the communication, which is often a significant boost compared to more verbose text-based protocols like SOAP or XML.
+2
+programming
+END
+What is endianness about?
+Ordering of bytes
+Operating systems
+Network file transfer
+Memory management
+Endian and endianness in the most common cases refers to how bytes are ordered.
+2
+programming
+END
+In which scripting language is this a valid statement: cmd=/bin/cat.exe
+bash
+perl
+python
+DOS
+This is a valid statement to assign the value "/bin/cat.exe" to the variable "cmd" in bash. The statement is not valid in the other languages.
+2
+scripting
+END
+How to redirect both stdout and stderr of a command to the same file?
+somecmd >file.out 2>&1
+somecmd >file.out 2>>&1
+somecmd 2>&1 >file.out
+somecmd 2>&1 >>file.out
+One way to achive this is to first redirect stdout and then redirect stderr to whatever stdout is pointing to.
+3
+scripting
+END
+What is the weakest point in the computer security of a typical large firm?
+The employees
+The firewall software used
+The antivirus software used
+The intranet software used
+The typical weakest point is the employees, as social engineering and human gallibility can often circumvent otherwise state of the art computer security system.
+3
+security
+END
+Which of these is the most dangerous security probing tool?
+nmap
+ping
+ifconfig
+telnet
+nmap is a sophisticated port scanner, and can reveal much more about a network than all the other tools combined.
+3
+security
+END
+What's the worst thing that can happen if you configure nmap with suid root?
+It could be used for privilege escalation
+It could be used to completely jam a network with DOS attacks
+It could be used to delete all files in the system
+It could be used to unleash the kraken
+Privilege escalation could be used to create all the other damages. Except maybe releasing the kraken. Not sure.
+3
+security
+END
+In Linux, what is the best way to give read permission to everybody on a file?
+chmod +r file.txt
+chmod 777 file.txt
+chmod 4777 file.txt
+chmod 444 file.txt
+The +r flag gives read permission to everybody on the system. 444 is not a good idea because it removes all other permissions that there might have been. Anybody taking the other options should be fired on the spot.
+3
+security
+END
+Which is the worst method for encrypting data?
+sha1
+des3
+aes-128-cbc
+crypt
+sha1 is not an encryption method but a message digest method. The next worst method here is crypt, if you wanted to know... :)
+3
+security
+END
+What's the scariest defect that can happen in a web application?
+Buffer overflow
+Blue screen of death
+Denial of service
+NullPointerException
+A buffer overflow can potentially lead to privilege escalation, which could be used to produce all the others and much worse.
+3
+security
+END
+Which C library function is the least unsafe?
+strncpy
+strcpy
+gets
+scanf
+Only the strncpy function checks bounds, the others don't. Not checking bounds is very likely to lead to buffer overflow defects.
+3
+security
+END
+Which tool cannot be used to encrypt files?
+nmap
+encfs
+openssl
+TrueCrypt
+encfs and TrueCrypt can be used to create encrypted directories, and openssl can be used to encrypt a stream of data. nmap is a network scanning tool, not for encryption.
+3
+security
+END
+Which tool cannot be used to find open ports in the local system?
+ping
+nmap
+telnet
+netstat
+ping can only send ICMP ECHO requests to hosts, it cannot be used to find open ports.
+3
+security
+END
+Which tool cannot be used to find open ports in a remote system?
+netstat
+nmap
+telnet
+curl
+Unlike the others, netstat cannot be used to scan arbitrary remote ports.
+3
+security
+END
+Which of these is NOT a web server software?
+X server
+nginx
+Apache
+Lighttpd
+X server is the server counterpart of the X Window System in UNIX, and has nothing to do with web servers.
+3
+tools
+END
+Which of these is NOT a network analysis tool?
+screen
+nmap
+tcpdump
+wireshark
+tcpdump dumps traffic on a network; wireshark is a network traffic analyzer; nmap is a network security auditing tool; that leaves us with screen, which is a terminal multiplexer tool.
+3
+tools
+END
+What is the purpose of the -h flag of the ls command in UNIX?
+Print file sizes in human readable format
+Print short help message
+Print long help message
+Print hidden files
+When used together with the -l flag for long format, the -h makes the ls command print file sizes in human readable format like 1K, 234M, 2G.
+3
+tools
+END
+Which one of these is NOT a Version Control System?
+CSV
+Bazaar
+Subversion
+CVS
+CSV stands for Comma Separated Values, it is a common file format, not a Version Control System.
+3
+version-control
+END
+Which one of these is a Distributed Version Control System?
+Mercurial
+Subversion
+ClearCase
+Visual SourceSafe
+These are all version control systems, but only Mercurial has a distributed model, the others use a client-server model.
+3
+version-control
+END
+What can be a disadvantage of a distributed VCS in comparison to a centralized VCS?
+The initial cloning is slower
+Users cannot commit revisions without a server
+Most operations are slower without a server
+Users cannot create forks without a server
+In a distributed VCS, initial cloning is typically slower, as the tool must download the entire project history. The other choices are disadvantages of centralized VCS.
+3
+version-control
+END
+In a version control system, which type of conflict can have an automatic resolution when merging branchA into branchB?
+The same file was edited in both BranchA and BranchB
+The same file was edited in BranchA but deleted in BranchB
+The same file was edited in BranchA but renamed in BranchB
+A file with the same name was added in both BranchA and BranchB
+If branchA and branchB edited completely different parts of the file, that should be possible to resolve automatically. The other types of conflict require an explicit decision and action by a human.
+3
+version-control
+END
+What version control operation requires access to the server in a centralized VCS?
+log
+status
+add
+mv
+In a centralized VCS all operations that involve the history need to access the repository on the central server. The status, add, and mv commands can be performed without access to the server.
+3
+version-control
+END
+In web programming, what is the QUERY_STRING?
+The part of a URL after the "?" mark
+The part of a URL after the "#" mark
+A variable in a HTTP GET request
+A variable in a HTTP POST request
+The QUERY_STRING is the part of a URL after the question mark, not including the question mark itself, for example "search=hello&page=2".
+3
+web-programming
+END
+Which one of these is NOT a common CGI environment variable?
+IOS_VERSION
+HTTP_REFERER
+HTTP_USER_AGENT
+DOCUMENT_ROOT
+HTTP_USER_AGENT is the browser type of the visitor, HTTP_REFERER is the URL of the page that called the current one, and DOCUMENT_ROOT is the root directory of the server.
+3
+web-programming
+END
+Which one of these is a common CGI environment variable?
+REMOTE_ADDR
+MOBILE_PHONE_TYPE
+IOS_VERSION
+ANDROID_VERSION
+REMOTE_ADDR is the IP address of the visitor.
+3
+web-programming
+END
+Which HTTP method was not part of the HTTP/1.0 specification?
+OPTIONS
+GET
+POST
+HEAD
+The OPTIONS method was added in the HTTP/1.1 specification.
+3
+web-programming
+END
+What is the difference between the HTTP GET and HEAD methods?
+HEAD doesn't include a response body
+HEAD returns only the <head> tag of HTML
+GET returns a response without a header
+GET can support SSL
+The response of a HEAD requests is a header identical to that of a GET request, but without a response body.
+3
+web-programming
+END
+What is the status code of a successful HTTP request?
+200
+100
+0
+1
+"200 OK" is the standard response for successful HTTP requests.
+3
+web-programming
+END
+Which one of these server responses is NOT part of the HTTP standard?
+404 Internal Server Error
+418 I'm a teapot
+400 Bad Request
+401 Unauthorized
+404 is part of the standard but it means something else: "Not Found"
+3
+web-programming
+END
+The 4xx class of HTTP status code indicates which type of error?
+Client error
+Server error
+Application error
+Connection error
+Status codes in the class 4xx all indicate some kind of client error, such as requesting a non-existent page, or a syntax error in the request, just to name a few.
+3
+web-programming
+END
+What was the limit of the header size in the HTTP/1.0 standard?
+Unspecified (no limit)
+8190 bytes
+1024 bytes
+512 bytes
+The standard itself does not set a limit on the header size, but most implementations impose some limits for practical and security reasons.
+3
+web-programming
+END
+What can you do with HTTP POST that you cannot do with HTTP GET?
+Upload files
+Implement session state
+Create cookies
+Pass multiple variables to a form
+Uploading a file requires enclosing an entity in the request, which is supported by a POST request but not by a GET request.
+3
+web-programming
+END
+What does CGI stand for in web programming?
+Common Gateway Interface
+Computer Generated Imagery
+Cognitive Guided Instruction
+Computer Graphics Interface
+Common Gateway Interface, a standard for dynamic generation of web pages by a web server.
+2
+web-programming
+END
+In web programming, where are cookies stored?
+On the client
+On the web server
+On a router
+On a cookie server
+Cookies are stored on the client side and sent to the server until expired
+2
+web-programming
+END
+Which was the first version of Microsoft Windows that enforced preemptive multitasking?
+Windows NT
+Windows XP
+Windows 3.1
+Windows 98
+Windows NT was the first version of Microsoft Windows which enforced preemptive multitasking. Earlier versions used cooperative multitasking.
+3
+windows
 END
