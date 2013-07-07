@@ -19,8 +19,7 @@ public class QuizActivity extends QuizBaseActivity {
 
 	private static final String TAG = QuizActivity.class.getSimpleName();
 
-	public static final String PARAM_LEVEL = "level";
-	public static final String PARAM_MODE = "mode";
+	public static final String PARAM_LEVEL = "LEVEL";
 
 	private static final int BTN_PADDING_LEFT = 10;
 	private static final int BTN_PADDING_TOP = 15;
@@ -33,7 +32,6 @@ public class QuizActivity extends QuizBaseActivity {
 	private int currentQuestionIndex = 0;
 	private int score = 0;
 	private Level level;
-	private int index = 0;
 	private int numberOfAnsweredQuestions = 0;
 	private TextView questionView;
 	private TextView explanationView;
@@ -81,6 +79,7 @@ public class QuizActivity extends QuizBaseActivity {
 		TextView questions_n = (TextView) findViewById(R.id.questions_n);
 		questions_n.setText(Integer.toString(questions.size()));
 
+		int index = 0;
 		navigateToQuestion(index);
 	}
 
