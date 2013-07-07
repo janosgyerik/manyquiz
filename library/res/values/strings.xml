@@ -20,9 +20,12 @@
     <string name="option_sudden_death">Sudden Death - 100 Questions</string>
     <string name="startQuiz">Start Quiz!</string>
     <string name="msg_quit">Are you sure you want to quit?</string>
+
     <string name="btn_yes">Yes</string>
     <string name="btn_cancel">Cancel</string>
     <string name="btn_finish">Finish</string>
+    <string name="btn_done">Done</string>
+
     <string name="title_info">Computer and IT Quiz was developed by Mike Heyworth and
          Janos Gyerik. Please see the links below for our other apps and websites/blogs.</string>
     <string name="blou_calorie_counter">Blou Simple Calorie Counter</string>
@@ -66,16 +69,15 @@
     <string name="description_sendmessage">Please enter your question idea. We will review it and hopefully include in our next release!</string>
     <string name="hint_sendmessage">Describe here your question...</string>
     
-    <string name="title_results">How did you do?</string>
-    <string name="score">Score: </string>
-    <string name="done">Done</string>
-    
-    <string name="result_zero_pc">Dude...you got them all wrong!</string>
-	<string name="result_less_than_ten_pc">It\'s not looking great...</string>
-	<string name="result_less_than_forty_pc">Good try. Good, but not great.</string>
-	<string name="result_less_than_seventy_pc">Pretty good try... keep practicing!</string>
-	<string name="result_less_than_ninety_pc">Very good - you\'ve been studying!</string>
-	<string name="result_less_than_one_hundred_pc">Wow - almost perfect. You can make it all the way!</string>
-	<string name="result_one_hundren_pc">Perfect. 100%. Well done!</string>
+    <string name="result_score_format" formatted="false">Score: %d / %d (%d%%)</string>
+
+    <string name="result_0">Dude...you got them all wrong!</string>
+	<string name="result_less_than_10">Not looking great...</string>
+	<string name="result_less_than_40">Good try. Good, but not great.</string>
+	<string name="result_less_than_70">Pretty good try... Keep practicing!</string>
+	<string name="result_less_than_90">Very good - You\'ve been studying!</string>
+	<string name="result_less_than_100">Wow - Almost perfect! You can make it all the way!</string>
+	<string name="result_100">Perfect. 100%! Bravo, you are a MACHINE!</string>
+    <string name="result_bug">Ouch. You found a bug. Please tell us!</string>
 		
 </resources>

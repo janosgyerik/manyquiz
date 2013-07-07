@@ -45,7 +45,7 @@ public class QuizActivity extends QuizBaseActivity {
 
 	private boolean gameOver;
 
-	public static int numberOfQuestionsToAsk;
+	private int numberOfQuestionsToAsk;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -231,9 +231,8 @@ public class QuizActivity extends QuizBaseActivity {
 	private void finishGame() {
 		finish();
 		Bundle bundle = new Bundle();
-		bundle.putSerializable(QuizActivity.PARAM_LEVEL, level);
-		bundle.putInt("score", score);
-		bundle.putInt("index", index);
+        bundle.putInt(ResultsActivity.PARAM_TOTAL_QUESTIONS_NUM, numberOfQuestionsToAsk);
+        bundle.putInt(ResultsActivity.PARAM_CORRECT_ANSWERS_NUM, score);
 		Intent intent = new Intent(QuizActivity.this, ResultsActivity.class);
 		intent.putExtras(bundle);
 		startActivity(intent);

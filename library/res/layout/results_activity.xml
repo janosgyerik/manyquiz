@@ -32,26 +32,20 @@
             android:orientation="vertical" >
 
             <TextView
-                style="@style/introduction"
-                android:text="@string/title_results" />
-            <TextView
-                android:id="@+id/resultsScore"
-                style="@style/introduction"
-                android:text="@string/score" />
+                android:id="@+id/score"
+                style="@style/introduction" />
              <TextView
-                android:id="@+id/resultsDescription"
-                style="@style/introduction"
-                android:text="@string/title_results" />
-                        
+                android:id="@+id/message"
+                style="@style/introduction" />
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
                 <Button
-                    android:id="@+id/btnDoneResults"
+                    android:id="@+id/btn_done"
                     style="@style/linkButton"
-                    android:text="@string/done" />
+                    android:text="@string/btn_done" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
