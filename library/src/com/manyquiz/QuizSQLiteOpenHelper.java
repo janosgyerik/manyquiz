@@ -31,17 +31,11 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
     private static final String ANSWERS_TABLE_NAME = "quiz_answer";
 
     private List<String> sqlCreateStatements;
-    private SparseArray<List<String>> sqlUpgradeStatements;
 
     QuizSQLiteOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
 
-        // context.deleteDatabase(DATABASE_NAME);
-
         sqlCreateStatements = getSqlStatements(context, "sql_create.sql");
-        sqlUpgradeStatements = new SparseArray<List<String>>();
-        // sqlUpgradeStatements.put(2, getSqlStatements(context,
-        // "sql_upgrade2.sql"));
     }
 
     private List<String> getSqlStatements(Context context, String assetName) {
@@ -81,18 +75,29 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
         }
     }
 
+    /**
+     * Very primitive for now: recreate all tables
+     * (drop all existing tables and then call onCreate)
+     * @param db
+     * @param oldVersion
+     * @param newVersion
+     */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        for (int i = oldVersion; i < newVersion; ++i) {
-            upgradeToVersion(db, i + 1);
+        List<String> tables = new ArrayList<String>();
+        Cursor cursor = db.rawQuery("SELECT * FROM sqlite_master WHERE type='table';", null);
+        while (cursor.moveToNext()) {
+            String tableName = cursor.getString(1);
+            if (!tableName.equals("android_metadata") &&
+                    !tableName.equals("sqlite_sequence"))
+                tables.add(tableName);
         }
-    }
+        cursor.close();
 
-    private void upgradeToVersion(SQLiteDatabase db, int version) {
-        Log.d(TAG, "upgrade to version " + version);
-        for (String sql : sqlUpgradeStatements.get(version)) {
-            db.execSQL(sql);
+        for (String tableName : tables) {
+            db.execSQL("DROP TABLE IF EXISTS " + tableName);
         }
+        onCreate(db);
     }
 
     public Cursor getLevelListCursor() {
