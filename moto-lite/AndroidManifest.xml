@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.manyquiz.moto.lite"
+          android:versionCode="1"
+          android:versionName="0.1-beta">
+
+    <uses-sdk
+            android:minSdkVersion="4"
+            android:targetSdkVersion="4"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+            android:name="com.manyquiz.application.LiteQuizApplication"
+            android:allowBackup="false"
+            android:icon="@drawable/launcher_main"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Light.NoTitleBar">
+        <activity
+                android:name="com.manyquiz.activity.IntroActivity"
+                android:label="@string/app_name_lite">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name="com.manyquiz.activity.QuizActivity"
+                android:label="@string/label_quiz_activity">
+        </activity>
+        <activity
+                android:name="com.manyquiz.activity.QuestionSuggestionActivity"
+                android:label="@string/label_sendmessage_activity">
+        </activity>
+        <activity
+                android:name="com.manyquiz.activity.ReportBugActivity"
+                android:label="@string/label_reportbug_activity">
+        </activity>
+        <activity
+                android:name="com.manyquiz.activity.SettingsActivity"
+                android:label="@string/label_settings_activity"
+                android:theme="@style/Theme.Dialog">
+        </activity>
+        <activity
+                android:name="com.manyquiz.activity.ResultsActivity"
+                android:label="@string/label_results_activity"
+                android:theme="@style/Theme.Dialog">
+        </activity>
+    </application>
+
+</manifest>
