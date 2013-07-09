@@ -1,6 +1,7 @@
 package com.manyquiz;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -8,6 +9,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -16,6 +18,7 @@ public class IntroActivity extends QuizBaseActivity {
     private static final String TAG = IntroActivity.class.getSimpleName();
 
     private RadioGroup levelChoices;
+    private CheckBox suddenDeathMode;
     private Button btnStartQuiz;
 
     private QuizSQLiteOpenHelper helper;
@@ -44,18 +47,23 @@ public class IntroActivity extends QuizBaseActivity {
             }
             levelChoices.addView(levelOption);
         }
-        RadioButton suddenDeathOption = new RadioButton(this);
-        suddenDeathOption.setText(getString(R.string.option_sudden_death));
-        suddenDeathOption.setTag(new SuddenDeathLevel());
-        levelChoices.addView(suddenDeathOption);
         levelChoices.check(first.getId());
+
+        SharedPreferences settings = PreferenceManager
+                .getDefaultSharedPreferences(this);
+        String key = getString(R.string.key_max_questions_suddendeath);
+        int maxQuestionsSuddenDeath = Integer.parseInt(settings.getString(key, null));
+
+        suddenDeathMode = (CheckBox) findViewById(R.id.suddendeath_mode);
+        suddenDeathMode.setText(String.format(getString(R.string.suddendeath_mode_format),
+                maxQuestionsSuddenDeath
+        ));
 
         btnStartQuiz = (Button) findViewById(R.id.btn_startQuiz);
         btnStartQuiz.setOnClickListener(new StartQuizClickListener());
     }
 
     class ExitClickListener implements OnClickListener {
-
         @Override
         public void onClick(View v) {
             finish();
@@ -71,6 +79,7 @@ public class IntroActivity extends QuizBaseActivity {
 
             Bundle bundle = new Bundle();
             bundle.putSerializable(QuizActivity.PARAM_LEVEL, level);
+            bundle.putBoolean(QuizActivity.PARAM_SUDDENDEATH_MODE, suddenDeathMode.isChecked());
 
             Intent intent = new Intent(IntroActivity.this, QuizActivity.class);
             intent.putExtras(bundle);

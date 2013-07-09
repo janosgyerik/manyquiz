@@ -20,6 +20,7 @@ public class QuizActivity extends QuizBaseActivity {
     private static final String TAG = QuizActivity.class.getSimpleName();
 
     public static final String PARAM_LEVEL = "LEVEL";
+    public static final String PARAM_SUDDENDEATH_MODE = "SUDDENDEATH_MODE";
 
     private static final int BTN_PADDING_LEFT = 10;
     private static final int BTN_PADDING_TOP = 15;
@@ -31,7 +32,10 @@ public class QuizActivity extends QuizBaseActivity {
     private IQuestion currentQuestion;
     private int currentQuestionIndex = 0;
     private int score = 0;
+
     private Level level;
+    private boolean suddenDeathMode;
+
     private int answeredQuestionsNum = 0;
     private TextView questionView;
     private TextView explanationView;
@@ -53,6 +57,8 @@ public class QuizActivity extends QuizBaseActivity {
 
         Bundle bundle = getIntent().getExtras();
         level = (Level) bundle.getSerializable(PARAM_LEVEL);
+        suddenDeathMode = bundle.getBoolean(PARAM_SUDDENDEATH_MODE);
+
         Log.d(TAG, "use level = " + level);
         int preferredQuestionsNum = getPreferredQuestionsNum();
 
@@ -135,7 +141,7 @@ public class QuizActivity extends QuizBaseActivity {
     }
 
     private void updatePrevNext() {
-        if (!(level instanceof SuddenDeathLevel)) {
+        if (! suddenDeathMode) {
             if (currentQuestionIndex == 0) {
                 prevButton.setVisibility(View.INVISIBLE);
                 nextButton.setVisibility(View.VISIBLE);
@@ -206,7 +212,7 @@ public class QuizActivity extends QuizBaseActivity {
         if (currentQuestion.wasCorrectlyAnswered()) {
             ++score;
         } else {
-            if (level instanceof SuddenDeathLevel) {
+            if (suddenDeathMode) {
                 gameOver = true;
                 nextButton.setVisibility(View.GONE);
             }
@@ -220,7 +226,7 @@ public class QuizActivity extends QuizBaseActivity {
         if (gameOver) {
             finishButton.setVisibility(View.VISIBLE);
             finishButton.setEnabled(true);
-            if (level instanceof SuddenDeathLevel) {
+            if (suddenDeathMode) {
                 nextButton.setVisibility(View.GONE);
             }
         }
@@ -239,7 +245,7 @@ public class QuizActivity extends QuizBaseActivity {
         SharedPreferences settings = PreferenceManager
                 .getDefaultSharedPreferences(this);
 
-        if (level instanceof SuddenDeathLevel) {
+        if (suddenDeathMode) {
             String key = getString(R.string.key_max_questions_suddendeath);
             return Integer.parseInt(settings.getString(key, null));
         } else {
