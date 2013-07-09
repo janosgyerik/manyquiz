@@ -565,7 +565,7 @@ The Common Object Request Broker Architecture (CORBA) enables software component
 2
 programming
 END
-What can use a CRC function for?
+What is the purpose of a CRC function?
 Detect accidental changes to raw data
 Encrypt data
 Serialize data
