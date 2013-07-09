@@ -36,7 +36,12 @@ public class ResultsActivity extends Activity {
 
         switch (correctPercent / 10) {
             case 0:
-                message = getString(R.string.result_0);
+                if (correctAnswers == 0) {
+                    message = getString(R.string.result_0);
+                }
+                else {
+                    message = getString(R.string.result_less_than_10);
+                }
                 break;
             case 1:
             case 2:
