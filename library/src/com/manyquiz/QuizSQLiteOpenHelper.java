@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 import android.util.Log;
-import android.util.SparseArray;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -78,6 +77,7 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
     /**
      * Very primitive for now: recreate all tables
      * (drop all existing tables and then call onCreate)
+     *
      * @param db
      * @param oldVersion
      * @param newVersion
@@ -115,7 +115,7 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
     public Cursor getQuestionListCursor(int level) {
         Log.d(TAG, "get all questions at level = " + level);
         Cursor cursor;
-        if (level == SuddenDeathLevel.LEVEL) {
+        if (level == Level.ANY) {
             cursor = getReadableDatabase().query(
                     QUESTIONS_TABLE_NAME,
                     new String[]{BaseColumns._ID, "text", "category", "hint",
@@ -136,7 +136,7 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
     public Cursor getAnswerListCursor(int level) {
         Log.d(TAG, "get all answers");
         Cursor cursor;
-        if (level == SuddenDeathLevel.LEVEL) {
+        if (level == Level.ANY) {
             cursor = getReadableDatabase().query(
                     ANSWERS_TABLE_NAME,
                     new String[]{BaseColumns._ID, "question_id", "text",
@@ -206,7 +206,7 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
     }
 
     public List<IQuestion> getQuestions() {
-        return getQuestions(SuddenDeathLevel.LEVEL);
+        return getQuestions(Level.ANY);
     }
 
     public List<Level> getLevels() {

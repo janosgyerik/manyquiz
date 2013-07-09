@@ -16,7 +16,7 @@
     <string name="menu_quit">Quit</string>
     <string name="title_activity_main">Computer Quiz</string>
     <string name="introduction">Welcome to the Computer Quiz!\nSelect a difficulty level:</string>
-    <string name="option_sudden_death">Sudden Death! - 25 Questions</string>
+    <string name="suddendeath_mode_format" formatted="false">Sudden Death! - %d Questions</string>
     <string name="startQuiz">Start Quiz!</string>
     <string name="msg_quit">Are you sure you want to quit?</string>
 
