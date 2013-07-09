@@ -9,6 +9,8 @@ import android.view.View;
 
 public abstract class QuizBaseActivity extends Activity {
 
+    protected static final int RETURN_FROM_SETTINGS = 1;
+
     protected void checkAndSetupForLiteVersion() {
         if (((QuizApplication) this.getApplication()).isLiteVersion()) {
             findViewById(R.id.lite_watermark).setVisibility(View.VISIBLE);
@@ -20,7 +22,7 @@ public abstract class QuizBaseActivity extends Activity {
         int itemId = item.getItemId();
         if (itemId == R.id.menu_settings) {
             Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
-            startActivity(intent);
+            startActivityForResult(intent, RETURN_FROM_SETTINGS);
             return true;
         }
         if (itemId == R.id.menu_report_fault) {

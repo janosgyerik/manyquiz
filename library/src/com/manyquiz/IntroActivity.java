@@ -49,15 +49,8 @@ public class IntroActivity extends QuizBaseActivity {
         }
         levelChoices.check(first.getId());
 
-        SharedPreferences settings = PreferenceManager
-                .getDefaultSharedPreferences(this);
-        String key = getString(R.string.key_max_questions_suddendeath);
-        int maxQuestionsSuddenDeath = Integer.parseInt(settings.getString(key, null));
-
         suddenDeathMode = (CheckBox) findViewById(R.id.suddendeath_mode);
-        suddenDeathMode.setText(String.format(getString(R.string.suddendeath_mode_format),
-                maxQuestionsSuddenDeath
-        ));
+        updateSuddenDeathModeLabel();
 
         btnStartQuiz = (Button) findViewById(R.id.btn_startQuiz);
         btnStartQuiz.setOnClickListener(new StartQuizClickListener());
@@ -87,6 +80,33 @@ public class IntroActivity extends QuizBaseActivity {
         }
     }
 
+    private void updateSuddenDeathModeLabel() {
+        SharedPreferences settings = PreferenceManager
+                .getDefaultSharedPreferences(this);
+        String key = getString(R.string.key_max_questions_suddendeath);
+        int maxQuestionsSuddenDeath = Integer.parseInt(settings.getString(key, null));
+
+        suddenDeathMode.setText(String.format(getString(R.string.suddendeath_mode_format),
+                maxQuestionsSuddenDeath
+        ));
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case RETURN_FROM_SETTINGS:
+                updateSuddenDeathModeLabel();
+                break;
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    protected void onResume() {
+        updateSuddenDeathModeLabel();
+        super.onResume();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main, menu);
@@ -100,4 +120,4 @@ public class IntroActivity extends QuizBaseActivity {
         helper.close();
     }
 
-} //end of activity class
+}
