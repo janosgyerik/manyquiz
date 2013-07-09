@@ -1,4 +1,4 @@
-package com.manyquiz;
+package com.manyquiz.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,6 +12,13 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.manyquiz.db.DatabaseBackedQuiz;
+import com.manyquiz.quiz.IQuestion;
+import com.manyquiz.quiz.IQuiz;
+import com.manyquiz.quiz.Level;
+import com.manyquiz.db.QuizSQLiteOpenHelper;
+import com.manyquiz.R;
 
 import java.util.List;
 

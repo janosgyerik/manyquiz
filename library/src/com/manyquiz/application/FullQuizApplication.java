@@ -1,9 +1,9 @@
-package com.manyquiz;
+package com.manyquiz.application;
 
 public class FullQuizApplication extends QuizApplication {
 
     @Override
-    boolean isLiteVersion() {
+    public boolean isLiteVersion() {
         return false;
     }
 

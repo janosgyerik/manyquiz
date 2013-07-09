@@ -1,4 +1,4 @@
-package com.manyquiz;
+package com.manyquiz.db;
 
 
 public class LevelData {

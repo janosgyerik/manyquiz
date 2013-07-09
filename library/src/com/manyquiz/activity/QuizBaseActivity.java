@@ -1,4 +1,4 @@
-package com.manyquiz;
+package com.manyquiz.activity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -6,6 +6,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.manyquiz.application.QuizApplication;
+import com.manyquiz.R;
 
 public abstract class QuizBaseActivity extends Activity {
 

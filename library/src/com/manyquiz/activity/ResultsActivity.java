@@ -1,10 +1,12 @@
-package com.manyquiz;
+package com.manyquiz.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+
+import com.manyquiz.R;
 
 public class ResultsActivity extends Activity {
 

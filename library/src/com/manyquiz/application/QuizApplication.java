@@ -1,8 +1,8 @@
-package com.manyquiz;
+package com.manyquiz.application;
 
 import android.app.Application;
 
 public abstract class QuizApplication extends Application {
 
-    abstract boolean isLiteVersion();
+    public abstract boolean isLiteVersion();
 }

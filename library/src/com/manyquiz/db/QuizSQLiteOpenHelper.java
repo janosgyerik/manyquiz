@@ -1,4 +1,4 @@
-package com.manyquiz;
+package com.manyquiz.db;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -6,6 +6,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 import android.util.Log;
+
+import com.manyquiz.quiz.IQuestion;
+import com.manyquiz.quiz.Level;
+import com.manyquiz.quiz.Question;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -31,7 +35,7 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
 
     private List<String> sqlCreateStatements;
 
-    QuizSQLiteOpenHelper(Context context) {
+    public QuizSQLiteOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
 
         sqlCreateStatements = getSqlStatements(context, "sql_create.sql");
