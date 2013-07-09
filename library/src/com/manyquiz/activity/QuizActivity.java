@@ -175,6 +175,9 @@ public class QuizActivity extends QuizBaseActivity {
                 finishButton.setEnabled(true);
                 gameOver = true;
             }
+            else {
+                nextButton.setVisibility(View.GONE);
+            }
         }
     }
 
@@ -243,6 +246,9 @@ public class QuizActivity extends QuizBaseActivity {
             if (suddenDeathMode) {
                 nextButton.setVisibility(View.GONE);
             }
+        }
+        else if (suddenDeathMode) {
+            nextButton.setVisibility(View.VISIBLE);
         }
     }
 
