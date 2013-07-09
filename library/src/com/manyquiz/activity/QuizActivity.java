@@ -168,6 +168,13 @@ public class QuizActivity extends QuizBaseActivity {
                 prevButton.setEnabled(true);
                 nextButton.setEnabled(true);
             }
+        } else {
+            if (currentQuestionIndex == questions.size() - 1) {
+                nextButton.setVisibility(View.GONE);
+                finishButton.setVisibility(View.VISIBLE);
+                finishButton.setEnabled(true);
+                gameOver = true;
+            }
         }
     }
 
