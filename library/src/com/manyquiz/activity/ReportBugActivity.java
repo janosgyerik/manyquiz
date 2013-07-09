@@ -1,47 +1,64 @@
-package com.manyquiz;
+package com.manyquiz.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class QuestionSuggestionActivity extends Activity {
+import com.manyquiz.R;
+
+public class ReportBugActivity extends Activity {
+
+    private static final String TAG = ReportBugActivity.class.getSimpleName();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sendmessage_activity);
+        setContentView(R.layout.reportbug_activity);
 
-        findViewById(R.id.btn_sendmessage).setOnClickListener(
+        findViewById(R.id.btn_reportbug).setOnClickListener(
                 new SubmitButtonOnClickListener());
     }
 
     class SubmitButtonOnClickListener implements OnClickListener {
         @Override
         public void onClick(View arg0) {
-            sendQuestionSuggestion();
+            sendFaultReport();
         }
     }
 
-    public void sendQuestionSuggestion() {
+    public void sendFaultReport() {
         EditText message = (EditText) findViewById(R.id.message);
         String emailBody = message.getText().toString();
+
+        String pkg = getApplicationContext().getPackageName();
+        PackageManager manager = getApplicationContext().getPackageManager();
+        try {
+            PackageInfo info = manager.getPackageInfo(pkg, 0);
+            emailBody += String.format("  [Version: %d/%s]", info.versionCode, info.versionName);
+        } catch (NameNotFoundException e) {
+            Log.e(TAG, "Could not get package info", e);
+        }
 
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("message/rfc822");
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{
                 getResources().getString(R.string.email_address)});
         intent.putExtra(Intent.EXTRA_SUBJECT,
-                getResources().getString(R.string.subject_sendmessage_prefix));
+                getResources().getString(R.string.subject_reportbug_prefix));
         intent.putExtra(Intent.EXTRA_TEXT, emailBody);
 
         try {
             startActivity(Intent.createChooser(intent, getResources().getString(R.string.no_email_client)));
         } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(QuestionSuggestionActivity.this,
+            Toast.makeText(ReportBugActivity.this,
                     getResources().getString(R.string.no_email_client), Toast.LENGTH_SHORT)
                     .show();
         }

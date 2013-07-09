@@ -1,4 +1,7 @@
-package com.manyquiz;
+package com.manyquiz.db;
+
+import com.manyquiz.quiz.IQuestion;
+import com.manyquiz.quiz.IQuiz;
 
 import java.util.Collections;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.manyquiz;
+package com.manyquiz.quiz;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -64,7 +64,7 @@ public class Question implements IQuestion {
 
     @Override
     public void setSelectedAnswer(String answer) {
-        this.selectedAnswer = answer;
+        selectedAnswer = answer;
         answered = true;
         correctlyAnswered = answer.equals(correctAnswer);
     }

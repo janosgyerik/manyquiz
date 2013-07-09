@@ -1,4 +1,4 @@
-package com.manyquiz;
+package com.manyquiz.quiz;
 
 import java.util.List;
 

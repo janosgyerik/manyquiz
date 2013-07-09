@@ -1,4 +1,4 @@
-package com.manyquiz;
+package com.manyquiz.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,6 +12,10 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import com.manyquiz.quiz.Level;
+import com.manyquiz.db.QuizSQLiteOpenHelper;
+import com.manyquiz.R;
 
 public class IntroActivity extends QuizBaseActivity {
 
