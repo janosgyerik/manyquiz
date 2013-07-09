@@ -90,12 +90,15 @@ public class QuizActivity extends QuizBaseActivity {
         TextView questions_n = (TextView) findViewById(R.id.questions_n);
         questions_n.setText(Integer.toString(questions.size()));
 
+        if (suddenDeathMode) {
+            prevButton.setVisibility(View.GONE);
+            prevButton.setEnabled(false);
+        }
         int index = 0;
         navigateToQuestion(index);
     }
 
     class PrevNextClickListener implements OnClickListener {
-
         private int offset;
 
         PrevNextClickListener(int offset) {
@@ -165,9 +168,6 @@ public class QuizActivity extends QuizBaseActivity {
                 prevButton.setEnabled(true);
                 nextButton.setEnabled(true);
             }
-        } else {
-            prevButton.setVisibility(View.GONE);
-            prevButton.setEnabled(false);
         }
     }
 
@@ -285,4 +285,4 @@ public class QuizActivity extends QuizBaseActivity {
         helper.close();
     }
 
-} // end of activity class
+}
