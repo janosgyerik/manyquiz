@@ -72,11 +72,11 @@ View stats of quiz data
 -----------------------
 View a breakdown of # of questions per level:
 
-    ./manage-computers.sh stats -l
+    ./manage-computers.sh stats --per-level
 
 View a breakdown of # of questions per category:
 
-    ./manage-computers.sh stats -c
+    ./manage-computers.sh stats --per-category
 
 
 Misc memo

@@ -11,26 +11,23 @@ class Command(BaseCommand):
     help = 'Show stats about quiz data'
 
     option_list = BaseCommand.option_list + (
-            make_option('--levels', '-l', action='store_true',
-                help='Show stats about levels'),
-            make_option('--categories', '-c', action='store_true',
-                help='Show stats about categories'),
+            make_option('--per-level', action='store_true',
+                help='Show stats per level'),
+            make_option('--per-category', action='store_true',
+                help='Show stats per category'),
             )
 
     def handle(self, *args, **options):
-        if options['levels']:
+        if options['per_level']:
             self.stdout.write('Questions per level:')
             for level in Level.objects.all():
                 self.stdout.write('%5d -- %s' % (level.question_set.count(), level))
             self.stdout.write('')
 
-        if options['categories']:
-            self.stdout.write('Questions per level per category:')
-            for level in Level.objects.all():
-                self.stdout.write('%s:' % level)
-                for result in Question.objects.filter(level=level).values('category').annotate(count=Count('id')).order_by():
-                    self.stdout.write('%(count)5d -- %(category)s' % result)
-                self.stdout.write('')
+        if options['per_category']:
+            self.stdout.write('Questions per category:')
+            for result in Question.objects.values('category').annotate(count=Count('id')).order_by():
+                self.stdout.write('%(count)5d -- %(category)s' % result)
             self.stdout.write('')
 
         self.stdout.write('Total number of Questions:')
