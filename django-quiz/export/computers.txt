@@ -1,3 +1,21 @@
+Which denotes the fastest time complexity?
+O(1)
+O(n)
+O(n log n)
+O(n^2)
+O(1) indicates constant time regardless of the size of the input.
+1
+algorithms
+END
+What is the notation of quadratic time complexity?
+O(n^2)
+O(1)
+O(n)
+O(n log n)
+O(n^2) indicates quadratic time complexity, for example an algorithm that requires all input elements to be compared to all other input elements.
+1
+algorithms
+END
 What is the average performance of the bubble sort algorithm?
 O(n^2)
 O(n)
@@ -23,24 +41,6 @@ merge sort
 insertion sort
 Stable sorting algorithms preserve the relative order of items that compare as equal. Heapsort does not guarantee that.
 2
-algorithms
-END
-Which denotes the fastest time complexity?
-O(1)
-O(n)
-O(n log n)
-O(n^2)
-O(1) indicates constant time regardless of the size of the input.
-1
-algorithms
-END
-What is the notation of quadratic time complexity?
-O(n^2)
-O(1)
-O(n)
-O(n log n)
-O(n^2) indicates quadratic time complexity, for example an algorithm that requires all input elements to be compared to all other input elements.
-1
 algorithms
 END
 What is NOT a good use case of a hash function?
@@ -79,15 +79,6 @@ Debugging is an activity that involves interacting with a running program, not r
 2
 build-automation
 END
-In an automated build system, which is the most logical step after running unit tests?
-package
-compile
-deploy
-install
-The software must already be compiled to run unit tests. Without a package, what is there to install or deploy?
-3
-build-automation
-END
 What is the common step between "./configure" and "make install" when building a software from source?
 make
 make universe
@@ -95,15 +86,6 @@ make clean
 ./run.sh
 "make" without any arguments runs the default build task, which is typically building the entire software. This step is usually after the configuration step. After this the software can be installed with "make install".
 2
-build-automation
-END
-What is the purpose of the "clean" step in an automated build system?
-Remove generated files
-Detect and report bugs in the software
-Detect and fix bugs in the software
-Remove unknown files that don't belong to the project
-The "clean" step typically removes build products, with the intention to start over as if the "compile" or other build steps were never executed.
-3
 build-automation
 END
 What is Ant?
@@ -151,6 +133,33 @@ The correct syntax is taskA: taskB, meaning taskB will be executed first (if nee
 2
 build-automation
 END
+In an automated build system, which is the most logical step after running unit tests?
+package
+compile
+deploy
+install
+The software must already be compiled to run unit tests. Without a package, what is there to install or deploy?
+3
+build-automation
+END
+What is the purpose of the "clean" step in an automated build system?
+Remove generated files
+Detect and report bugs in the software
+Detect and fix bugs in the software
+Remove unknown files that don't belong to the project
+The "clean" step typically removes build products, with the intention to start over as if the "compile" or other build steps were never executed.
+3
+build-automation
+END
+Can you parse an HTML document using regular expressions?
+No, because HTML is not a regular language
+Yes, you can parse anything using regular expressions
+Yes, but only if it contains only ASCII characters
+Yes, because HTML is a context-free language
+Regular expressions can only match regular languages but HTML is a context-free language. It is always possible to present a HTML file that will be matched wrongly by any regular expression.
+3
+computer-science
+END
 What is the difference between a binary tree and a B-tree?
 A B-tree is a generalization of the binary tree.
 No difference, they are synonyms.
@@ -195,15 +204,6 @@ Hash set
 A doubly linked list has O(1) insertion and deletion at both ends, so is a natural choice for queues.
 2
 data-structures
-END
-Which database system uses the commands: lsnrctl, isqlplusctl, emctl?
-Oracle
-Sybase
-MySQL
-PostgreSQL
-These commands are used by Oracle to provide various services.
-3
-database
 END
 What type of JOIN is this: SELECT * FROM t1 JOIN t2 ON t1.id = t2.id
 INNER JOIN
@@ -259,6 +259,33 @@ The correct syntax to test if something is NULL is using IS NULL.
 2
 database
 END
+In SQL, what is the difference between UNION and UNION ALL?
+UNION ALL may return duplicate records
+They are the same, ALL is optional
+UNION ALL is incorrect syntax
+UNION is incorrect syntax
+Duplicate records are removed from the result of UNION, while UNION ALL returns all records.
+2
+database
+END
+What is an advantage of using a database instead of a CSV file?
+Columns can be indexed.
+Data records always take less disk space in a database.
+Finding a data record is always faster using a database.
+Inserting a data record is always more efficient using a database.
+In a database columns can be indexed, which can help finding data much faster. The other statements are not necessarily true.
+2
+database
+END
+Which database system uses the commands: lsnrctl, isqlplusctl, emctl?
+Oracle
+Sybase
+MySQL
+PostgreSQL
+These commands are used by Oracle to provide various services.
+3
+database
+END
 Which SQL statement might select the department with the largest number of employees?
 SELECT d.DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID ORDER BY c DESC LIMIT 1;
 SELECT d.DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY DepartmentID ORDER BY c DESC LIMIT 1;
@@ -286,23 +313,14 @@ The function to get the current date in Sybase is GETDATE().
 3
 database
 END
-In SQL, what is the difference between UNION and UNION ALL?
-UNION ALL may return duplicate records
-They are the same, ALL is optional
-UNION ALL is incorrect syntax
-UNION is incorrect syntax
-Duplicate records are removed from the result of UNION, while UNION ALL returns all records.
+Which is NOT essential for starting an operating system?
+Harddisk
+Memory
+Motherboard
+PSU
+Harddisk is not essential. An operating system can be loaded from CD or a USB storage, for example. Everything else is essential (PSU is the Power Supply Unit).
 2
-database
-END
-What is an advantage of using a database instead of a CSV file?
-Columns can be indexed.
-Data records always take less disk space in a database.
-Finding a data record is always faster using a database.
-Inserting a data record is always more efficient using a database.
-In a database columns can be indexed, which can help finding data much faster. The other statements are not necessarily true.
-2
-database
+hardware
 END
 How many disks can fail in a RAID 5 array without risk of data loss?
 1
@@ -320,15 +338,6 @@ RAID 3
 RAID 5
 With RAID 1, n-1 disks can fail without losing data. With RAID 3 and RAID 5 only one disk can fail. RAID 0 provides no fault tolerance at all.
 3
-hardware
-END
-Which is NOT essential for starting an operating system?
-Harddisk
-Memory
-Motherboard
-PSU
-Harddisk is not essential. An operating system can be loaded from CD or a USB storage, for example. Everything else is essential (PSU is the Power Supply Unit).
-2
 hardware
 END
 Which operating system was NOT derived from a version of UNIX?
@@ -358,6 +367,15 @@ UNIX was originally written in assembly language, and later rewritten in C.
 3
 history
 END
+Which is an example of input redirection?
+sort < data.txt
+cat data.txt | sort
+sort data.txt
+sort data.txt &
+"<" is the input redirection operator in common shells, even in DOS.
+2
+linux
+END
 Which was the earliest Linux distribution?
 Debian
 Mint
@@ -376,24 +394,6 @@ iptables is an administration tool for IPv4 packet filtering and NAT, a common f
 3
 linux
 END
-Which command CANNOT be used to list the files in a directory?
-dirs
-ls
-tree
-echo
-The dirs command shows the list of remembered directories (stored by the pushd command), it cannot be used to list the files in a directory.
-4
-linux
-END
-Which is an example of input redirection?
-sort < data.txt
-cat data.txt | sort
-sort data.txt
-sort data.txt &
-"<" is the input redirection operator in common shells, even in DOS.
-2
-linux
-END
 Which environment variable is typically NOT an absolute path?
 LOGNAME
 PWD
@@ -401,15 +401,6 @@ HOME
 SHELL
 LOGNAME is usually the username of the current user, not a path.
 3
-linux
-END
-Which command CANNOT be used to send an email in Linux?
-groff
-telnet
-mailx
-mutt
-groff is a document formatting system (for example rendering man pages) and cannot be used to send emails. Yes you can send an email with telnet, though it won't be pretty.
-4
 linux
 END
 Which file controls the number of available virtual terminals in Linux?
@@ -457,6 +448,24 @@ The KILL signal is non-catchable, non-ignorable, immediately kills a process wit
 3
 linux
 END
+Which command CANNOT be used to list the files in a directory?
+dirs
+ls
+tree
+echo
+The dirs command shows the list of remembered directories (stored by the pushd command), it cannot be used to list the files in a directory.
+4
+linux
+END
+Which command CANNOT be used to send an email in Linux?
+groff
+telnet
+mailx
+mutt
+groff is a document formatting system (for example rendering man pages) and cannot be used to send emails. Yes you can send an email with telnet, though it won't be pretty.
+4
+linux
+END
 In Linux, which command can be used to check if any given PID is currently running or not?
 kill
 netstat
@@ -484,42 +493,6 @@ It is not possible to connect to another computer without configuring a network 
 3
 network
 END
-Which is NOT in the same group as LISP?
-C++
-R
-Scheme
-Scala
-LISP, R, Scheme, and Scala are all functional languages. C++ is an imperative language.
-3
-programming
-END
-Which is NOT in the same group as C++?
-Haskell
-C
-Java
-MATLAB
-C++, C, Java, and MATLAB, are all imperative languages. Haskell is a functional language.
-3
-programming
-END
-Which is NOT a programming language?
-CGI
-Bash
-R
-Python
-CGI stands for Common Gateway Interface, a standard for dynamic generation of web pages by a web server. It is NOT a programming language.
-3
-system-programming
-END
-Can you parse an HTML document using regular expressions?
-No, because HTML is not a regular language
-Yes, you can parse anything using regular expressions
-Yes, but only if it contains only ASCII characters
-Yes, because HTML is a context-free language
-Regular expressions can only match regular languages but HTML is a context-free language. It is always possible to present a HTML file that will be matched wrongly by any regular expression.
-3
-computer-science
-END
 When would you use a LinkedList instead of an ArrayList?
 When you only need to traverse elements from the beginning
 LinkedList is more efficient than ArrayList in most practical cases
@@ -536,24 +509,6 @@ ArrayList uses less memory than a LinkedList
 Removing an element in the middle of the list is faster
 Elements in an ArrayList can be accessed directly by a numeric index, but in a LinkedList you must travers the elements from the start or the end until the desired element.
 2
-programming
-END
-What is the most likely to cause a stack overflow?
-Too deep recursion when using a recursive function
-Trying to access an array element by an index beyond the end of the array
-Trying to access an array element by a negative index
-The stack size limit is not set to unlimited in your system
-A common cause of a stack overflow is very deep or infinite recursion, exhausting the address space of the call stack. A common solution is to improve the algorithm to reduce the depth of recursions.
-3
-programming
-END
-What is wrong with static methods?
-Code calling static methods is hard to test
-Static methods are hard to test
-Static methods don't require an instance of the class
-Static methods cannot access the data of instances
-Code calling static methods is hard to test because you cannot mock the static calls. Static methods in themselves are not hard to test. The other statements are true of static methods but don't constitute a "problem".
-3
 programming
 END
 What is CORBA used for?
@@ -583,14 +538,41 @@ A binary protocol yields the smallest possible footprint in the communication, w
 2
 programming
 END
-What is endianness about?
-Ordering of bytes
-Operating systems
-Network file transfer
-Memory management
-Endian and endianness in the most common cases refers to how bytes are ordered.
-2
-system-programming
+Which is NOT in the same group as LISP?
+C++
+R
+Scheme
+Scala
+LISP, R, Scheme, and Scala are all functional languages. C++ is an imperative language.
+3
+programming
+END
+Which is NOT in the same group as C++?
+Haskell
+C
+Java
+MATLAB
+C++, C, Java, and MATLAB, are all imperative languages. Haskell is a functional language.
+3
+programming
+END
+What is the most likely to cause a stack overflow?
+Too deep recursion when using a recursive function
+Trying to access an array element by an index beyond the end of the array
+Trying to access an array element by a negative index
+The stack size limit is not set to unlimited in your system
+A common cause of a stack overflow is very deep or infinite recursion, exhausting the address space of the call stack. A common solution is to improve the algorithm to reduce the depth of recursions.
+3
+programming
+END
+What is wrong with static methods?
+Code calling static methods is hard to test
+Static methods are hard to test
+Static methods don't require an instance of the class
+Static methods cannot access the data of instances
+Code calling static methods is hard to test because you cannot mock the static calls. Static methods in themselves are not hard to test. The other statements are true of static methods but don't constitute a "problem".
+3
+programming
 END
 In which scripting language is this a valid statement: cmd=/bin/cat.exe
 bash
@@ -610,6 +592,15 @@ One way to achive this is to first redirect stdout and then redirect stderr to w
 3
 scripting
 END
+Which is the least unsafe?
+strncpy
+strcpy
+gets
+scanf
+Only the strncpy function checks bounds, the others don't. Not checking bounds is very likely to lead to buffer overflow defects.
+2
+security
+END
 What is the weakest point in the computer security of a typical large firm?
 The employees
 The firewall software used
@@ -628,15 +619,6 @@ nmap is a sophisticated port scanner, and can reveal much more about a network t
 3
 security
 END
-What's the worst thing that can happen if you configure nmap with suid root?
-It could be used for privilege escalation
-It could be used to completely jam a network with DOS attacks
-It could be used to delete all files in the system
-It could be used to unleash the kraken
-Privilege escalation could be used to create all the other damages. Except maybe releasing the kraken. Not sure.
-4
-security
-END
 In Linux, what is the best way to give read permission to everybody on a file?
 chmod +r file.txt
 chmod 777 file.txt
@@ -653,24 +635,6 @@ aes-128-cbc
 crypt
 sha1 is not an encryption method but a message digest method.
 3
-security
-END
-What's the scariest defect that can happen in a web application?
-Buffer overflow
-Blue screen of death
-Denial of service
-NullPointerException
-A buffer overflow can potentially lead to privilege escalation, which could be used to produce all the others and much worse.
-4
-security
-END
-Which is the least unsafe?
-strncpy
-strcpy
-gets
-scanf
-Only the strncpy function checks bounds, the others don't. Not checking bounds is very likely to lead to buffer overflow defects.
-2
 security
 END
 Which tool CANNOT be used to encrypt files?
@@ -699,6 +663,42 @@ curl
 Unlike the others, netstat cannot be used to scan arbitrary remote ports.
 3
 security
+END
+What's the worst thing that can happen if you configure nmap with suid root?
+It could be used for privilege escalation
+It could be used to completely jam a network with DOS attacks
+It could be used to delete all files in the system
+It could be used to unleash the kraken
+Privilege escalation could be used to create all the other damages. Except maybe releasing the kraken. Not sure.
+4
+security
+END
+What's the scariest defect that can happen in a web application?
+Buffer overflow
+Blue screen of death
+Denial of service
+NullPointerException
+A buffer overflow can potentially lead to privilege escalation, which could be used to produce all the others and much worse.
+4
+security
+END
+What is endianness about?
+Ordering of bytes
+Operating systems
+Network file transfer
+Memory management
+Endian and endianness in the most common cases refers to how bytes are ordered.
+2
+system-programming
+END
+Which is NOT a programming language?
+CGI
+Bash
+R
+Python
+CGI stands for Common Gateway Interface, a standard for dynamic generation of web pages by a web server. It is NOT a programming language.
+3
+system-programming
 END
 Which is NOT a web server software?
 X server
@@ -745,6 +745,15 @@ These are all version control systems, but only Mercurial has a distributed mode
 3
 version-control
 END
+Which version control operation requires access to the server in a centralized VCS?
+log
+status
+add
+mv
+In a centralized VCS all operations that involve the history need to access the repository on the central server. The status, add, and mv commands can be performed without access to the server.
+3
+version-control
+END
 What can be a disadvantage of a distributed VCS compared to a centralized VCS?
 The initial cloning is slower
 Users cannot commit revisions without a server
@@ -763,21 +772,39 @@ If branchA and branchB edited completely different parts of the file, that shoul
 4
 version-control
 END
-Which version control operation requires access to the server in a centralized VCS?
-log
-status
-add
-mv
-In a centralized VCS all operations that involve the history need to access the repository on the central server. The status, add, and mv commands can be performed without access to the server.
-3
-version-control
-END
 In web programming, what is the QUERY_STRING?
 The part of a URL after the "?" mark
 The part of a URL after the "#" mark
 A variable in a HTTP GET request
 A variable in a HTTP POST request
 The QUERY_STRING is the part of a URL after the question mark, not including the question mark itself, for example "search=hello&page=2".
+2
+web-programming
+END
+What is the status code of a successful HTTP request?
+200
+100
+0
+1
+"200 OK" is the standard response for successful HTTP requests.
+2
+web-programming
+END
+What does CGI stand for in web programming?
+Common Gateway Interface
+Computer Generated Imagery
+Cognitive Guided Instruction
+Computer Graphics Interface
+Common Gateway Interface, a standard for dynamic generation of web pages by a web server.
+2
+web-programming
+END
+In web programming, where are cookies stored?
+On the client
+On the web server
+On a router
+On a cookie server
+Cookies are stored on the client side and sent to the server until expired
 2
 web-programming
 END
@@ -817,15 +844,6 @@ The response of a HEAD requests is a header identical to that of a GET request, 
 3
 web-programming
 END
-What is the status code of a successful HTTP request?
-200
-100
-0
-1
-"200 OK" is the standard response for successful HTTP requests.
-2
-web-programming
-END
 Which server response is NOT part of the HTTP standard?
 404 Internal Server Error
 418 I'm a teapot
@@ -844,15 +862,6 @@ Status codes in the class 4xx all indicate some kind of client error, such as re
 3
 web-programming
 END
-What was the limit of the header size in the HTTP/1.0 standard?
-Unspecified (no limit)
-8190 bytes
-1024 bytes
-512 bytes
-The standard itself does not set a limit on the header size, but most implementations impose some limits for practical and security reasons.
-4
-web-programming
-END
 What can you do with HTTP POST that you cannot do with HTTP GET?
 Upload files
 Implement session state
@@ -862,22 +871,13 @@ Uploading a file requires enclosing an entity in the request, which is supported
 3
 web-programming
 END
-What does CGI stand for in web programming?
-Common Gateway Interface
-Computer Generated Imagery
-Cognitive Guided Instruction
-Computer Graphics Interface
-Common Gateway Interface, a standard for dynamic generation of web pages by a web server.
-2
-web-programming
-END
-In web programming, where are cookies stored?
-On the client
-On the web server
-On a router
-On a cookie server
-Cookies are stored on the client side and sent to the server until expired
-2
+What was the limit of the header size in the HTTP/1.0 standard?
+Unspecified (no limit)
+8190 bytes
+1024 bytes
+512 bytes
+The standard itself does not set a limit on the header size, but most implementations impose some limits for practical and security reasons.
+4
 web-programming
 END
 Which was the first version of Microsoft Windows that enforced preemptive multitasking?
