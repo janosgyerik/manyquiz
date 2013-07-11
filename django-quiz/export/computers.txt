@@ -67,7 +67,7 @@ Apache Ant
 Apache Maven
 CMake
 Make appeared in 1977, Ant in 2000, Maven in 2002, and CMake in 1999.
-3
+2
 build-automation
 END
 What is NOT a main responsibility of an automated build system?
@@ -76,7 +76,7 @@ Compile the source code
 Eliminate redundant tasks
 Execute unit tests
 Debugging is an activity that involves interacting with a running program, not really part of the build process.
-3
+2
 build-automation
 END
 In an automated build system, which is the most logical step after running unit tests?
@@ -94,13 +94,13 @@ make universe
 make clean
 ./run.sh
 "make" without any arguments runs the default build task, which is typically building the entire software. This step is usually after the configuration step. After this the software can be installed with "make install".
-3
+2
 build-automation
 END
 What is the purpose of the "clean" step in an automated build system?
 Remove generated files
 Detect and report bugs in the software
-Detect and eliminate bugs in the software
+Detect and fix bugs in the software
 Remove unknown files that don't belong to the project
 The "clean" step typically removes build products, with the intention to start over as if the "compile" or other build steps were never executed.
 3
@@ -178,7 +178,7 @@ In a degenerate tree each parent node has only one child node, effectively behav
 2
 data-structures
 END
-Which term is not synonymous with the others?
+Which term is NOT synonymous with the others?
 queue
 LIFO
 FILO
@@ -265,7 +265,7 @@ SELECT d.DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.Departm
 SELECT DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID ORDER BY c DESC LIMIT 1;
 SELECT d.DepartmentID, count(null) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID HAVING c = MAX(c);
 The other statements either have SQL errors or incorrect.
-2
+3
 database
 END
 How to get the current date in Oracle?
@@ -274,7 +274,7 @@ SELECT SYSDATE() FROM DUAL
 SELECT GETDATE
 SELECT GETDATE()
 The function to get the current date in Oracle is SYSDATE without parentheses.
-2
+3
 database
 END
 How to get current date in Sybase?
@@ -283,7 +283,7 @@ SELECT SYSDATE FROM DUAL
 SELECT SYSDATE() FROM DUAL
 SELECT GETDATE
 The function to get the current date in Sybase is GETDATE().
-2
+3
 database
 END
 In SQL, what is the difference between UNION and UNION ALL?
@@ -322,7 +322,7 @@ With RAID 1, n-1 disks can fail without losing data. With RAID 3 and RAID 5 only
 3
 hardware
 END
-Which is not essential for starting a computer with an operating system?
+Which is NOT essential for starting an operating system?
 Harddisk
 Memory
 Motherboard
@@ -331,7 +331,7 @@ Harddisk is not essential. An operating system can be loaded from CD or a USB st
 2
 hardware
 END
-Which operating system was not derived from a version of UNIX?
+Which operating system was NOT derived from a version of UNIX?
 MINIX
 Mac OS X
 FreeBSD
@@ -382,7 +382,7 @@ ls
 tree
 echo
 The dirs command shows the list of remembered directories (stored by the pushd command), it cannot be used to list the files in a directory.
-3
+4
 linux
 END
 Which is an example of input redirection?
@@ -391,10 +391,10 @@ cat data.txt | sort
 sort data.txt
 sort data.txt &
 "<" is the input redirection operator in common shells, even in DOS.
-3
+2
 linux
 END
-Which environment variable is typically not an absolute path?
+Which environment variable is typically NOT an absolute path?
 LOGNAME
 PWD
 HOME
@@ -409,7 +409,7 @@ telnet
 mailx
 mutt
 groff is a document formatting system (for example rendering man pages) and cannot be used to send emails. Yes you can send an email with telnet, though it won't be pretty.
-3
+4
 linux
 END
 Which file controls the number of available virtual terminals in Linux?
@@ -463,7 +463,7 @@ netstat
 top
 lsof
 The output of kill -0 PID includes the text "No such process" if the process doesn't exist. The command exits with 1 if the process does not exist or the user does not own it.
-3
+4
 linux
 END
 Which file might contain such line: nameserver 192.168.1.1
@@ -509,7 +509,7 @@ R
 Python
 CGI stands for Common Gateway Interface, a standard for dynamic generation of web pages by a web server. It is NOT a programming language.
 3
-programming
+system-programming
 END
 Can you parse an HTML document using regular expressions?
 No, because HTML is not a regular language
@@ -518,7 +518,7 @@ Yes, but only if it contains only ASCII characters
 Yes, because HTML is a context-free language
 Regular expressions can only match regular languages but HTML is a context-free language. It is always possible to present a HTML file that will be matched wrongly by any regular expression.
 3
-programming
+computer-science
 END
 When would you use a LinkedList instead of an ArrayList?
 When you only need to traverse elements from the beginning
@@ -526,7 +526,7 @@ LinkedList is more efficient than ArrayList in most practical cases
 LinkedList uses a hashmap internally
 I can access any element in a LinkedList very fast
 In a linked list, elements are chained together: each element has a pointer to the next. Insert and remove operations are more memory-efficient compared to an ArrayList, at the cost that random access of elements is less efficient.
-3
+2
 programming
 END
 What is the advantage of using an ArrayList instead of a LinkedList?
@@ -535,7 +535,7 @@ Traversal of elements from start to end is faster
 ArrayList uses less memory than a LinkedList
 Removing an element in the middle of the list is faster
 Elements in an ArrayList can be accessed directly by a numeric index, but in a LinkedList you must travers the elements from the start or the end until the desired element.
-3
+2
 programming
 END
 What is the most likely to cause a stack overflow?
@@ -590,7 +590,7 @@ Network file transfer
 Memory management
 Endian and endianness in the most common cases refers to how bytes are ordered.
 2
-programming
+system-programming
 END
 In which scripting language is this a valid statement: cmd=/bin/cat.exe
 bash
@@ -634,7 +634,7 @@ It could be used to completely jam a network with DOS attacks
 It could be used to delete all files in the system
 It could be used to unleash the kraken
 Privilege escalation could be used to create all the other damages. Except maybe releasing the kraken. Not sure.
-3
+4
 security
 END
 In Linux, what is the best way to give read permission to everybody on a file?
@@ -661,7 +661,7 @@ Blue screen of death
 Denial of service
 NullPointerException
 A buffer overflow can potentially lead to privilege escalation, which could be used to produce all the others and much worse.
-3
+4
 security
 END
 Which is the least unsafe?
@@ -670,7 +670,7 @@ strcpy
 gets
 scanf
 Only the strncpy function checks bounds, the others don't. Not checking bounds is very likely to lead to buffer overflow defects.
-3
+2
 security
 END
 Which tool CANNOT be used to encrypt files?
@@ -682,7 +682,7 @@ encfs and TrueCrypt can be used to create encrypted directories, and openssl can
 3
 security
 END
-Which tool CANNOT be used to find open ports in the local system?
+Which tool CANNOT be used to find open ports on the local system?
 ping
 nmap
 telnet
@@ -691,7 +691,7 @@ ping can only send ICMP ECHO requests to hosts, it cannot be used to find open p
 3
 security
 END
-Which tool CANNOT be used to find open ports in a remote system?
+Which tool CANNOT be used to find open ports on a remote system?
 netstat
 nmap
 telnet
@@ -733,7 +733,7 @@ Bazaar
 Subversion
 CVS
 CSV stands for Comma Separated Values, it is a common file format, not a Version Control System.
-3
+2
 version-control
 END
 Which is a Distributed Version Control System?
@@ -745,13 +745,13 @@ These are all version control systems, but only Mercurial has a distributed mode
 3
 version-control
 END
-What can be a disadvantage of a distributed VCS in comparison to a centralized VCS?
+What can be a disadvantage of a distributed VCS compared to a centralized VCS?
 The initial cloning is slower
 Users cannot commit revisions without a server
 Most operations are slower without a server
 Users cannot create forks without a server
 In a distributed VCS, initial cloning is typically slower, as the tool must download the entire project history. The other choices are disadvantages of centralized VCS.
-3
+4
 version-control
 END
 In a version control system, which type of conflict can have an automatic resolution when merging branchA into branchB?
@@ -760,7 +760,7 @@ The same file was edited in BranchA but deleted in BranchB
 The same file was edited in BranchA but renamed in BranchB
 A file with the same name was added in both BranchA and BranchB
 If branchA and branchB edited completely different parts of the file, that should be possible to resolve automatically. The other types of conflict require an explicit decision and action by a human.
-3
+4
 version-control
 END
 Which version control operation requires access to the server in a centralized VCS?
@@ -778,7 +778,7 @@ The part of a URL after the "#" mark
 A variable in a HTTP GET request
 A variable in a HTTP POST request
 The QUERY_STRING is the part of a URL after the question mark, not including the question mark itself, for example "search=hello&page=2".
-3
+2
 web-programming
 END
 Which is NOT a common CGI environment variable?
@@ -808,7 +808,7 @@ The OPTIONS method was added in the HTTP/1.1 specification.
 3
 web-programming
 END
-What is the difference between the HTTP GET and HEAD methods?
+What is the difference between the GET and HEAD methods of the HTTP protocol?
 HEAD doesn't include a response body
 HEAD returns only the <head> tag of HTML
 GET returns a response without a header
@@ -823,7 +823,7 @@ What is the status code of a successful HTTP request?
 0
 1
 "200 OK" is the standard response for successful HTTP requests.
-3
+2
 web-programming
 END
 Which server response is NOT part of the HTTP standard?
@@ -850,7 +850,7 @@ Unspecified (no limit)
 1024 bytes
 512 bytes
 The standard itself does not set a limit on the header size, but most implementations impose some limits for practical and security reasons.
-3
+4
 web-programming
 END
 What can you do with HTTP POST that you cannot do with HTTP GET?
@@ -886,6 +886,6 @@ Windows XP
 Windows 3.1
 Windows 98
 Windows NT was the first version of Microsoft Windows which enforced preemptive multitasking. Earlier versions used cooperative multitasking.
-3
+4
 windows
 END
