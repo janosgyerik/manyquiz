@@ -33,8 +33,16 @@ class Command(BaseCommand):
                 q = q.filter(level__in=levels)
                 self.stdout.write('# Levels = %s' % ', '.join(levels))
             self.stdout.write('Questions per category:')
+            total = 0
+            longest = 0
             for result in q.values('category').annotate(count=Count('id')).order_by():
                 self.stdout.write('%(count)5d -- %(category)s' % result)
+                total += result['count']
+                if len(result['category']) > longest:
+                    longest = len(result['category'])
+            if total:
+                self.stdout.write('         ' + '=' * longest)
+                self.stdout.write('%5d -- Total' % total)
             self.stdout.write('')
 
         self.stdout.write('Total number of Questions:')
