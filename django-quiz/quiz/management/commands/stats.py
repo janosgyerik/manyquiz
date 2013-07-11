@@ -15,6 +15,8 @@ class Command(BaseCommand):
                 help='Show stats per level'),
             make_option('--per-category', action='store_true',
                 help='Show stats per category'),
+            make_option('--levels', '-l',
+                help='Filter by levels (comma separated)'),
             )
 
     def handle(self, *args, **options):
@@ -25,8 +27,13 @@ class Command(BaseCommand):
             self.stdout.write('')
 
         if options['per_category']:
+            q = Question.objects.all()
+            if options['levels']:
+                levels = options['levels'].split(',')
+                q = q.filter(level__in=levels)
+                self.stdout.write('# Levels = %s' % ', '.join(levels))
             self.stdout.write('Questions per category:')
-            for result in Question.objects.values('category').annotate(count=Count('id')).order_by():
+            for result in q.values('category').annotate(count=Count('id')).order_by():
                 self.stdout.write('%(count)5d -- %(category)s' % result)
             self.stdout.write('')
 
