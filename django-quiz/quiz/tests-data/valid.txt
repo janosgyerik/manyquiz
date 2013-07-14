@@ -7,12 +7,3 @@ O(1) indicates constant time regardless of the size of the input.
 1
 algorithms
 END
-What is the notation of quadratic time complexity?
-O(n^2)
-O(1)
-O(n)
-O(n log n)
-O(n^2) indicates quadratic time complexity, for example an algorithm that requires all input elements to be compared to all other input elements.
-1
-algorithms
-END

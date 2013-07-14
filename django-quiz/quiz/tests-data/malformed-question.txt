@@ -1,5 +1,4 @@
-just invalid
-Which denotes the fastest time complexity?
+malformed question
 O(1)
 O(n)
 O(n log n)

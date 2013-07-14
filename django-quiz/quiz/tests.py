@@ -15,6 +15,21 @@ class ImportQuestionTest(TestCase):
     def test_invalid(self):
         self.assertRaises(MalformedInput, self.check_file, 'invalid.txt')
 
+    def test_malformed_question(self):
+        self.assertRaises(MalformedInput, self.check_file, 'malformed-question.txt')
+
+    def test_malformed_level(self):
+        self.assertRaises(MalformedInput, self.check_file, 'malformed-level.txt')
+
+    def test_malformed_category(self):
+        self.assertRaises(MalformedInput, self.check_file, 'malformed-category.txt')
+
+    def test_malformed_endmarker(self):
+        self.assertRaises(MalformedInput, self.check_file, 'malformed-endmarker.txt')
+
+    def test_incomplete_input(self):
+        self.assertRaises(MalformedInput, self.check_file, 'incomplete-input.txt')
+
     def check_file(self, filename):
         path = self.get_testdata_path(filename)
         check_file(path, sys.stdout)
