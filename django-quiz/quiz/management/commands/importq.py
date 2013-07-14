@@ -85,6 +85,8 @@ class Command(BaseCommand):
                 help='Reset the database before import'),
             make_option('--dry-run', '-n', action='store_true',
                 help='Do not really import, just print what would happen'),
+            make_option('--check', action='store_true',
+                help='Check that the import file is well-formatted'),
             )
 
     def handle(self, *args, **options):
@@ -93,7 +95,39 @@ class Command(BaseCommand):
             Question.objects.all().delete()
         for path in args:
             if os.path.isfile(path):
-                import_file(path, options['dry_run'])
+                self.check_file(path)
+                if not options['check']:
+                    import_file(path, options['dry_run'])
 
-
-# eof
+    def check_file(self, path):
+        ok = True
+        i = 0
+        data = []
+        instream = open(path)
+        for line in instream:
+            data.append(line.strip())
+            i += 1
+            if i % 9 == 0:
+                (text, a1, a2, a3, a4,
+                 explanation, difficulty, image, marker) = data
+                if marker != END_MARKER:
+                    warn('end marker expected but found: "%s"' % marker)
+                    warn('current segment:')
+                    print '\n'.join(data)
+                    ok = False
+                data = []
+                level = get_level(difficulty)
+                question = Question(
+                        text=text,
+                        category=image,
+                        level=get_level(difficulty),
+                        #hint=None,
+                        explanation=explanation,
+                        )
+                answer = Answer(question=question, text=a1, is_correct=True)
+                for ax in a2, a3, a4:
+                    answer = Answer(question=question, text=ax)
+        if ok:
+            print 'looks ok'
+        else:
+            print 'warnings detected, see above'
