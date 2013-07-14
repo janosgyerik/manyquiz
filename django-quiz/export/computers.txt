@@ -536,7 +536,133 @@ XML-based protocol
 Text-based protocol
 A binary protocol yields the smallest possible footprint in the communication, which is often a significant boost compared to more verbose text-based protocols like SOAP or XML.
 2
+software-engineering
+END
+How to declare the main method of a C program?
+int main(int argc, char **argv)
+void main(int argc, char **argv)
+void main(int argc)
+int main()
+The main method should return integer, and the arguments should give the number and values of the program's command-line arguments.
+2
 programming
+END
+In C, given char **argv, what is the equivalent of printf("%s\n", argv[0])
+printf("%s\n", *(argv + 0));
+printf("%s\n", &argv[0]);
+printf("%s\n", &argv);
+printf("%s\n", argv);
+argv + n is the address of the n-th element in the array. The * operator dereferences the pointer, obtaining the value stored at the pointed location.
+3
+programming
+END
+What is the common port of FTP?
+21
+20
+25
+8080
+The common port of an FTP server is 21.
+2
+network
+END
+What is the purpose of the PAGER variable in UNIX?
+Path to a program to view man pages
+Path to a program to generate beeps
+Path to the default document viewer
+Enable or disable the system beep
+The PAGER variable can be used to override the default program used to view man pages.
+3
+linux
+END
+When will this cron job run? 0 */5 * * * date
+Every 5th hour
+Every 5th minute
+Every 5th day
+At midnight
+The first column indicates the minute, the second column indicates the hour in a cron job definition.
+2
+linux
+END
+Which is NOT one of the default chains of an iptables firewall?
+ACCEPT
+INPUT
+OUTPUT
+FORWARD
+ACCEPT is not a chain, but a rule. The others are typical chains.
+2
+network
+END
+In the bash shell, which can be used instead of `cmd`?
+$(cmd)
+eval cmd
+. cmd
+./cmd
+$(command) and `command` are the two forms of command substitution.
+2
+linux
+END
+Which regular expression will NOT match "foobar"?
+foo.bar
+foo?bar
+foo*bar
+foo+bar
+The "." matches any character, but since there is nothing between "foo" and "bar", this won't match.
+2
+programming
+END
+What kind of regular expression is this: (?=pattern)
+Positive look-ahead assertion
+Negative look-ahead assertion
+Negative look-behind assertion
+Negative look-behind assertion
+This is zero-width positive look-ahead assertion. For example /\w+(?=\t)/ matches a word followed by a tab.
+4
+programming
+END
+Which regular expression is a zero-width positive look-behind assertion?
+(?<=pattern)
+(?=pattern)
+(?!pattern)
+(?<!pattern)
+Usually, "<" indicates a look-behind assertion, and "!" indicates a negative assertion.
+3
+programming
+END
+How to convert all characters in a file to lowercase?
+tr A-Z a-z < input.txt > output.txt
+tr A-Z a-z input.txt output.txt
+tr A-Z a-z input.txt > output.txt
+tr A-Z a-z < input.txt output.txt
+tr reads text from standard input and writes to standard output. It does not take filenames as input or output arguments.
+2
+scripting
+END
+How to append .bak extension to all files in a directory and all its sub-directories?
+find dir -type f -exec mv "{}" "{}".bak \;
+find dir -type f -exec mv "{}" "{}".bak ;
+find dir -type f -exec mv "{}" "{}".bak
+find dir -type f -exec mv "{}" "{}".bak +
+The -exec flag of the find command should end either with \; or +. With + the command will be executed only once with all files as arguments. With \; the command will be executed once for each file.
+2
+scripting
+END
+What is the file descriptor number of standard error in Linux?
+2
+1
+0
+-1
+The file descriptor number of standard error is 2.
+2
+linux
+END
+What is the file descriptor number of standard error in DOS?
+2
+1
+0
+-1
+The file descriptor number of standard error in DOS is 2 (the same as in Linux).
+3
+windows
 END
 Which is NOT in the same group as LISP?
 C++
