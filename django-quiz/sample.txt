@@ -1,90 +1,18 @@
-What might you use to automate tasks in Microsoft Office?x
-A macro
-A keyword
-A toolbar
-A docx
-Macro's can automate tasks in Microsoft Office, but can also be used maliciously to cause harm.
+Which denotes the fastest time complexity?
+O(1)
+O(n)
+O(n log n)
+O(n^2)
+O(1) indicates constant time regardless of the size of the input.
 1
-office
+algorithms
 END
-Which of the following would be capable of printing, scanning and copying?x
-MFD
-USB
-SATA
-PDA
-An MFD or MultiFunction Device (sometimes known as MFP or MultiFunction Printer) allows printing, scanning and copying.
+What is the notation of quadratic time complexity?
+O(n^2)
+O(1)
+O(n)
+O(n log n)
+O(n^2) indicates quadratic time complexity, for example an algorithm that requires all input elements to be compared to all other input elements.
 1
-x
-END
-Which of the following Microsoft products is primarily used for databases?x
-Access
-Outlook
-Project
-Excel
-Microsoft Access is used to create databases.
-1
-microsoft
-END
-How might a computer actively block outside connections from harmful sources?x
-Firewall
-Antivirus scan
-Malware removal tool
-Registry defragment tool
-A firewall can block incoming and outgoing connections. Optionaly, certain connections can be allowed.
-1
-x
-END
-Who is the owner of Microsoft?x
-Bill Gates
-Linus Torvalds
-Michael Rowsoft
-Alan Sugar
-Bill Gates is the founder and owner of the Microsoft Corporation.
-1
-microsoft
-END
-Which is the most common use for 'task manager' in Windows?x
-To recover from a software crash
-To switch between applications
-To create/delete files
-To dial a number on a fax modem
-Task manager has many uses but is most commonly used for stopping unresponsive software. It can also be used to start and end tasks, and see what resources are being used by what tasks, and can do much more.
-1
-x
-END
-What does formatting a hard drive do?x
-Wipes the drive
-Re-orders data on the disk
-Writes data to a CD
-Fixes damaged operating system files
-Formatting a hard drive wipes information from it. It will also mark any bad sectors of the disk.
-1
-harddisk
-END
-Where might you find the option to change the screen resolution on a Windows computer?x
-Display settings
-Network neightborhood
-Screensaver
-Device Manager
-The display settings on a Windows computer will have the option to change the resolution. Some graphics adaptors will have their own software that will also do this (eg an NVIDIA graphics card).
-1
-x
-END
-What is QWERTY?x
-A keyboard layout
-A network protocol
-A software development standard
-Antivirus software
-There are many other layouts of keys on keyboards designed for comfort and speed, but the qwerty layout is by far the most common.
-1
-x
-END
-What type of connection would NOT be used to connect a mouse/keyboard to a personal computer?x
-Parallel
-USB
-Serial
-PS/2
-A parallel port is used to connnect scanners and printers and other such devices to computers, although parallel is an old standard and has been replaced for the most part by USB.
-1
-x
+algorithms
 END
