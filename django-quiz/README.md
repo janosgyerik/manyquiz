@@ -21,11 +21,7 @@ The easiest way to import many questions (with answers) in bulk
 is to create them in a text file like `sample.txt` and use the
 `importq` command like this:
 
-    ./manage-computers.sh importq /path/to/file.txt -n
-
-The `-n` flag is to do a dry-run, check what would be imported
-without actually importing anything. If the output looks good,
-then re-run the command without the `-n` flag.
+    ./manage-computers.sh importq /path/to/file.txt
 
 
 Update quiz data in the app based on data in Django
@@ -65,7 +61,7 @@ Import quiz data from the project
 
 3. Import data from the project
 
-        ./manage-computers.sh importq export/computers.txt -n
+        ./manage-computers.sh importq export/computers.txt
 
 
 View stats of quiz data
