@@ -1,7 +1,8 @@
 import os
 
 from django.test import TestCase
-from quiz.management.commands.importq import Command
+
+from quiz.commands import check_file
 
 TESTS_DATA_DIR = os.path.join(os.path.dirname(__file__), 'tests-data')
 
