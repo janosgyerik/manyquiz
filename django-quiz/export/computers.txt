@@ -403,6 +403,60 @@ The file descriptor number of standard error is 2.
 2
 linux
 END
+Which variable controls the prompt in bash?
+PS1
+PS2
+PROMPT
+DISPLAY
+PS1 controls the primary prompt string in bash.
+2
+linux
+END
+In which column of /etc/fstab might you see /proc?
+2nd
+1st
+3rd
+4th
+/proc looks like a mount point, so it is most likely the second column.
+2
+linux
+END
+In Linux, which file can be used to restrict access to the system?
+/etc/hosts.allow
+/etc/hosts_access
+/etc/hosts
+/etc/host.conf
+The /etc/hosts.allow file can contain a list of hosts that are allowed to access the system.
+2
+linux
+END
+Which file contains well known port numbers?
+/etc/services
+/etc/ports
+/etc/hosts
+/etc/named.conf
+The /etc/services file contains well known port numbers of common services, as assigned by IANA.
+2
+linux
+END
+Which command produces different output from all the others?
+ls | perl -e 'm/tmp/ && print;'
+ls | sed -n /tmp/p
+ls | grep tmp
+ls | awk '/tmp/ {print}'
+The perl command does not read standard input, therefore it cannot match the string "tmp" like the other commands.
+3
+linux
+END
+Which command will create a backup of /opt/apache/ directory?
+tar cf /tmp/apache.tar -C /opt apache
+tar cf /tmp/apache.tar -C /opt/apache
+tar cf /opt/apache/* > /tmp/apache.tar
+tar c /opt/apache/* | gzip -d > /tmp/apache.tar
+The "c" specifies that we want to create an archive, the "f" followed by a filename is the destination, the -C followed by a directory to change to, the "apache" in the end is the name of the file/directory to backup. The other choices are incorrect.
+3
+linux
+END
 Which was the earliest Linux distribution?
 Debian
 Mint
@@ -535,7 +589,7 @@ Which file might contain such line: nameserver 192.168.1.1
 /etc/rc.common
 /etc/bashrc
 The /etc/resolv.conf file is used to provide various information to DNS resolver.
-3
+2
 network
 END
 Which is not essential for connecting to another computer on the same LAN?
@@ -544,7 +598,34 @@ route configuration
 IP address configuration
 netmask configuration
 It is not possible to connect to another computer without configuring a network interface with an IP address and correct netmask, and a route between the computers. A name server is optional.
-3
+2
+network
+END
+Which command would you use to find the default gateway?
+route
+ifconfig
+iptables
+ping
+The route command prints all the routes, including the default gateway.
+2
+network
+END
+How to check if port 1234 is listening on incoming connections?
+telnet localhost 1234
+ping localhost 1234
+telnet 1234
+netstat -p 1234
+telnet is useful to check if a port is open. Another easy way is using netstat, but not with the -p flag.
+2
+network
+END
+Which does not necessarily cause the failure of the command: ping google.com
+The local PC is on a NAT
+The nameserver has crashed
+The firewall is blocking all ICMP packets
+There is no route from the local PC to google.com
+Being on a NAT does not necessarily prevent access to the outside. The other factors would necessarily prevent pinging google.com
+2
 network
 END
 When would you use a LinkedList instead of an ArrayList?
@@ -691,6 +772,42 @@ This is a valid statement to assign the value "/bin/cat.exe" to the variable "cm
 2
 scripting
 END
+The bash shell reads which file first on startup?
+/etc/profile
+/etc/bash_profile
+~/.bash_profile
+~/.profile
+When run without special options, bash reads /etc/profile first.
+2
+scripting
+END
+How many lines will be printed by this command: echo 1 && echo 2 || echo 3
+2
+1
+0
+3
+2 lines: "echo 1" succeeds, therefore "echo 2" is executed, and since that succeeds, "echo 3" is not executed at all.
+2
+scripting
+END
+How many lines will be printed by this command: seq 9 | paste - - -
+3
+0
+9
+6
+seq 9 will print the numbers 1 to 9, each on a separate line, and paste will organize them to 3 columns, resulting in 3 total lines in the output, starting with 1 2 3 on the first line, and so on.
+2
+scripting
+END
+What will be the output of this command: echo hello | grep hi && echo one || echo two
+two
+one
+3 lines: hello, one, two
+hello
+The grep will not match anything, which is a failure, therefore echo two will be executed.
+2
+scripting
+END
 How to redirect both stdout and stderr of a command to the same file?
 somecmd >file.out 2>&1
 somecmd >file.out 2>>&1
@@ -816,6 +933,15 @@ Python
 CGI stands for Common Gateway Interface, a standard for dynamic generation of web pages by a web server. It is NOT a programming language.
 3
 system-programming
+END
+Which compression tool cannot work as a filter?
+7zip
+zip
+gzip
+lzma
+7zip has a very compression ratio but it cannot be used a filter.
+2
+tools
 END
 Which is NOT a web server software?
 X server
