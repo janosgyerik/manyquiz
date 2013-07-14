@@ -127,7 +127,4 @@ class Command(BaseCommand):
                 answer = Answer(question=question, text=a1, is_correct=True)
                 for ax in a2, a3, a4:
                     answer = Answer(question=question, text=ax)
-        if ok:
-            print 'looks ok'
-        else:
-            print 'warnings detected, see above'
+        return ok
