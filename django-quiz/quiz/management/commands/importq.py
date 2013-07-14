@@ -32,7 +32,7 @@ class Command(BaseCommand):
                 self.warn('not a file: %s' % path)
 
     def msg(self, *args):
-        self.stdout.write('[*] ' + ' '.join([str(x) for x in args]))
+        self.stdout.write('* ' + ' '.join([str(x) for x in args]))
 
     def warn(self, *args):
-        self.stdout.write('[WARNING] ' + ' '.join([str(x) for x in args]))
+        self.stdout.write('WARNING: ' + ' '.join([str(x) for x in args]))
