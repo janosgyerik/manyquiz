@@ -979,6 +979,42 @@ CSV stands for Comma Separated Values, it is a common file format, not a Version
 2
 version-control
 END
+Which version control operation will never result in a conflict?
+add
+update
+merge
+rebase
+The update, merge and rebase operations all involve some sort of merging, and may result in conflicts. The add operation can never result in a conflict.
+2
+version-control
+END
+Which version control operation may alter the history?
+rebase
+merge
+commit
+revert
+The rebase operation rewrites the history of a branch by replaying a set of changes on top another branch.
+2
+version-control
+END
+In version control, what is the term for merging another branch that is not diverged but some versions ahead of the current branch?
+fast-forward
+branching
+rebasing
+pulling
+In this situation the current branch HEAD can be simply fast-forwarded to the same position as the other branch HEAD, hence the name.
+2
+version-control
+END
+In version control, which is the least scalable workflow?
+centralized workflow
+gatekeeper workflow
+automated gatekeeper workflow
+commander-lieutenant workflow
+The central server can become a bottleneck. The other workflows can be scaled by replicating them on multiple layers.
+2
+version-control
+END
 Which is a Distributed Version Control System?
 Mercurial
 Subversion
