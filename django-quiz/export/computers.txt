@@ -613,7 +613,7 @@ END
 What kind of regular expression is this: (?=pattern)
 Positive look-ahead assertion
 Negative look-ahead assertion
-Negative look-behind assertion
+Positive look-behind assertion
 Negative look-behind assertion
 This is zero-width positive look-ahead assertion. For example /\w+(?=\t)/ matches a word followed by a tab.
 4
