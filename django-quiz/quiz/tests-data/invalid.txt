@@ -1,0 +1,10 @@
+END
+What type of connection would NOT be used to connect a mouse/keyboard to a personal computer?x
+Parallel
+USB
+Serial
+PS/2
+A parallel port is used to connnect scanners and printers and other such devices to computers, although parallel is an old standard and has been replaced for the most part by USB.
+1
+x
+END

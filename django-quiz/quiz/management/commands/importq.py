@@ -115,12 +115,18 @@ class Command(BaseCommand):
                     warn('current segment:')
                     print '\n'.join(data)
                     ok = False
+                    continue
                 data = []
-                level = get_level(difficulty)
+                try:
+                    level = get_level(difficulty)
+                except:
+                    warn('invalid level: %s' % difficulty)
+                    ok = False
+                    continue
                 question = Question(
                         text=text,
                         category=image,
-                        level=get_level(difficulty),
+                        level=level,
                         #hint=None,
                         explanation=explanation,
                         )
