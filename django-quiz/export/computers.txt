@@ -313,12 +313,48 @@ The function to get the current date in Sybase is GETDATE().
 3
 database
 END
-Which is NOT essential for starting an operating system?
+Which is NOT essential to boot an operating system?
 Harddisk
 Memory
 Motherboard
 PSU
 Harddisk is not essential. An operating system can be loaded from CD or a USB storage, for example. Everything else is essential (PSU is the Power Supply Unit).
+2
+hardware
+END
+What is the maximum amount of RAM directly addressable in a 32-bit system?
+4GB
+8GB
+2GB
+3GB
+A 32-bit register can store 2^32 different values. Hence, a processor with 32-bit memory addresses can directly access 4 GiB of byte-addressable memory.
+2
+hardware
+END
+Which statement is false?
+A 64-bit processor is not compatible with 32-bit software.
+A 64-bit processor performs best with 64-bit software.
+A 32-bit processor is not compatible with 64-bit software.
+A 32-bit processor performs best with 32-bit software.
+A 64-bit processor has backward compatibility and will handle most 32-bit software.
+2
+hardware
+END
+What is the difference between GPU and CPU?
+GPU emphasizes executing many concurrent threads slowly
+GPU is faster than CPU
+CPU is faster than GPU
+GPU emphasizes executing a single thread very quickly
+GPUs have a parallel throughput architecture that emphasizes executing many concurrent threads slowly, rather than executing a single thread very quickly.
+2
+hardware
+END
+Which storage has the highest theoretical transfer rate?
+SSD
+SATA
+SCSI
+iSCSI
+SSD has the highest theoretical and practical transfer rate among these choices.
 2
 hardware
 END
@@ -373,6 +409,15 @@ cat data.txt | sort
 sort data.txt
 sort data.txt &
 "<" is the input redirection operator in common shells, even in DOS.
+2
+linux
+END
+If you have a guest account on a Linux system, which port can you use to setup your personal ping server?
+1234
+1000
+888
+1010
+In Linux only a superuser can open ports below 1024.
 2
 linux
 END
