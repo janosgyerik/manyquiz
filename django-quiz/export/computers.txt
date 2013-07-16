@@ -1132,6 +1132,24 @@ Cookies are stored on the client side and sent to the server until expired
 2
 web-programming
 END
+Which is NOT a standard attribute of HTTP cookie parameters?
+Date
+Expires
+Domain
+Path
+Standard parameters of HTTP cookies are: Expires, Domain, Path, HttpOnly, Secure. Date is not one of them.
+2
+web-programming
+END
+What marks the end of an HTTP header?
+empty line
+.
+Content-type: text/html
+</head>
+The end of the header fields is indicated by an empty field, resulting in the transmission of two consecutive CR-LF pairs.
+2
+web-programming
+END
 Which is NOT a common CGI environment variable?
 IOS_VERSION
 HTTP_REFERER
