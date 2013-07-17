@@ -871,6 +871,51 @@ Only the strncpy function checks bounds, the others don't. Not checking bounds i
 2
 security
 END
+Which is the most secure method to protect access to a website?
+Public key authentication
+HTTP+HTML form-based authentication
+Basic access authentication
+Digest access authentication
+Public key authentication is usually implemented with HTTPS / SSL client certificates, and it is much safer than the other methods, where the password can be either sniffed or the authentication token replayed.
+2
+security
+END
+Which kind of attack on computer security is a form of active eavesdropping (secretly listening)?
+man in the middle
+dns poisoning
+cross site scripting
+sql injection
+The attacker makes independent connections with the victims and relays messages between them, making them believe that they are talking directly to each other over a private connection, when in fact the entire conversation is controlled by the attacker. 
+2
+security
+END
+What is the recommended permission setting on a user's ~/.ssh/authorized_keys file?
+0600
+0655
+0644
+0640
+Only the owner of the file should have any kind of access.
+2
+security
+END
+Which service should be removed to harden the security of a system?
+FTP
+SFTP
+SSH
+iptables
+File transfers via FTP are not encrypted, therefore they can be captured by anyone on the same network using a packet sniffereasily revealing login usernames and passwords.
+2
+security
+END
+Which open port signals a potential security risk in a UNIX-like system?
+23
+22
+443
+587
+Port 23 is default port of Telnet, an obsolete, insecure login service. The other ports correspond to more secure services protected by encryption.
+2
+security
+END
 What is the weakest point in the computer security of a typical large firm?
 The employees
 The firewall software used
