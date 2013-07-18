@@ -1,0 +1,9 @@
+Which denotes the fastest time complexity?
+O(1)
+O(n)
+O(n log n)
+O(n^2)
+O(1) indicates constant time regardless of the size of the input.
+1
+algorithms
+END-malformed

@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/bash -e
 #
 # SCRIPT: build.sh
 # AUTHOR: Janos Gyerik <info@titan2x.com>
@@ -85,7 +85,7 @@ msg() {
 randstring() {
     md5sum=$(which md5sum 2>/dev/null || which md5)
     POS=2
-    LEN=8
+    LEN=12
     str=$(echo $1 $$ $(date +%S) | $md5sum | $md5sum)
     echo ${str:$POS:$LEN}
 }
@@ -99,10 +99,11 @@ test -f local.properties -a -f build.xml || {
 
 projectname=$(grep project.name build.xml | head -n 1 | sed -e 's/.*project name="\([^"]*\)".*/\1/')
 
+keys_config=./keys/config.sh
 if test $setup_keys = on; then
-    test -f keys/config.sh || {
+    test -f $keys_config || {
         mkdir -p keys
-        cat<<EOF >keys/config.sh
+        cat<<EOF >$keys_config
 #!/bin/sh
 
 keystore=keys/$projectname.keystore
@@ -115,7 +116,7 @@ keypass=$(randstring key)
 EOF
     }
     test -f keys/$projectname.keystore || {
-        . keys/config.sh
+        . $keys_config
         keytool -genkey -v -keystore keys/$projectname.keystore -storepass $storepass -keypass $keypass -validity 10000 -keyalg RSA
     }
 fi
@@ -128,7 +129,7 @@ if test $build = on; then
         msg ant build
         ant release
         msg jarsigner
-        . keys/config.sh
+        . $keys_config
         jarsigner -verbose -keystore $keystore -storepass $storepass -keypass $keypass bin/$projectname-release-unsigned.apk $alias
         msg zipalign
         rm -f bin/$projectname-release.apk

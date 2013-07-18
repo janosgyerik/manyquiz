@@ -1,3 +1,21 @@
+Which denotes the fastest time complexity?
+O(1)
+O(n)
+O(n log n)
+O(n^2)
+O(1) indicates constant time regardless of the size of the input.
+1
+algorithms
+END
+What is the notation of quadratic time complexity?
+O(n^2)
+O(1)
+O(n)
+O(n log n)
+O(n^2) indicates quadratic time complexity, for example an algorithm that requires all input elements to be compared to all other input elements.
+1
+algorithms
+END
 What is the average performance of the bubble sort algorithm?
 O(n^2)
 O(n)
@@ -25,24 +43,6 @@ Stable sorting algorithms preserve the relative order of items that compare as e
 2
 algorithms
 END
-Which denotes the fastest time complexity?
-O(1)
-O(n)
-O(n log n)
-O(n^2)
-O(1) indicates constant time regardless of the size of the input.
-1
-algorithms
-END
-What is the notation of quadratic time complexity?
-O(n^2)
-O(1)
-O(n)
-O(n log n)
-O(n^2) indicates quadratic time complexity, for example an algorithm that requires all input elements to be compared to all other input elements.
-1
-algorithms
-END
 What is NOT a good use case of a hash function?
 Encrypt data
 Accelerate table lookup
@@ -67,7 +67,7 @@ Apache Ant
 Apache Maven
 CMake
 Make appeared in 1977, Ant in 2000, Maven in 2002, and CMake in 1999.
-3
+2
 build-automation
 END
 What is NOT a main responsibility of an automated build system?
@@ -76,16 +76,7 @@ Compile the source code
 Eliminate redundant tasks
 Execute unit tests
 Debugging is an activity that involves interacting with a running program, not really part of the build process.
-3
-build-automation
-END
-In an automated build system, which is the most logical step after running unit tests?
-package
-compile
-deploy
-install
-The software must already be compiled to run unit tests. Without a package, what is there to install or deploy?
-3
+2
 build-automation
 END
 What is the common step between "./configure" and "make install" when building a software from source?
@@ -94,16 +85,7 @@ make universe
 make clean
 ./run.sh
 "make" without any arguments runs the default build task, which is typically building the entire software. This step is usually after the configuration step. After this the software can be installed with "make install".
-3
-build-automation
-END
-What is the purpose of the "clean" step in an automated build system?
-Remove generated files
-Detect and report bugs in the software
-Detect and eliminate bugs in the software
-Remove unknown files that don't belong to the project
-The "clean" step typically removes build products, with the intention to start over as if the "compile" or other build steps were never executed.
-3
+2
 build-automation
 END
 What is Ant?
@@ -151,6 +133,33 @@ The correct syntax is taskA: taskB, meaning taskB will be executed first (if nee
 2
 build-automation
 END
+In an automated build system, which is the most logical step after running unit tests?
+package
+compile
+deploy
+install
+The software must already be compiled to run unit tests. Without a package, what is there to install or deploy?
+3
+build-automation
+END
+What is the purpose of the "clean" step in an automated build system?
+Remove generated files
+Detect and report bugs in the software
+Detect and fix bugs in the software
+Remove unknown files that don't belong to the project
+The "clean" step typically removes build products, with the intention to start over as if the "compile" or other build steps were never executed.
+3
+build-automation
+END
+Can you parse an HTML document using regular expressions?
+No, because HTML is not a regular language
+Yes, you can parse anything using regular expressions
+Yes, but only if it contains only ASCII characters
+Yes, because HTML is a context-free language
+Regular expressions can only match regular languages but HTML is a context-free language. It is always possible to present a HTML file that will be matched wrongly by any regular expression.
+3
+computer-science
+END
 What is the difference between a binary tree and a B-tree?
 A B-tree is a generalization of the binary tree.
 No difference, they are synonyms.
@@ -178,7 +187,7 @@ In a degenerate tree each parent node has only one child node, effectively behav
 2
 data-structures
 END
-Which term is not synonymous with the others?
+Which term is NOT synonymous with the others?
 queue
 LIFO
 FILO
@@ -195,15 +204,6 @@ Hash set
 A doubly linked list has O(1) insertion and deletion at both ends, so is a natural choice for queues.
 2
 data-structures
-END
-Which database system uses the commands: lsnrctl, isqlplusctl, emctl?
-Oracle
-Sybase
-MySQL
-PostgreSQL
-These commands are used by Oracle to provide various services.
-3
-database
 END
 What type of JOIN is this: SELECT * FROM t1 JOIN t2 ON t1.id = t2.id
 INNER JOIN
@@ -259,33 +259,6 @@ The correct syntax to test if something is NULL is using IS NULL.
 2
 database
 END
-Which SQL statement might select the department with the largest number of employees?
-SELECT d.DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID ORDER BY c DESC LIMIT 1;
-SELECT d.DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY DepartmentID ORDER BY c DESC LIMIT 1;
-SELECT DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID ORDER BY c DESC LIMIT 1;
-SELECT d.DepartmentID, count(null) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID HAVING c = MAX(c);
-The other statements either have SQL errors or incorrect.
-2
-database
-END
-How to get the current date in Oracle?
-SELECT SYSDATE FROM DUAL
-SELECT SYSDATE() FROM DUAL
-SELECT GETDATE
-SELECT GETDATE()
-The function to get the current date in Oracle is SYSDATE without parentheses.
-2
-database
-END
-How to get current date in Sybase?
-SELECT GETDATE()
-SELECT SYSDATE FROM DUAL
-SELECT SYSDATE() FROM DUAL
-SELECT GETDATE
-The function to get the current date in Sybase is GETDATE().
-2
-database
-END
 In SQL, what is the difference between UNION and UNION ALL?
 UNION ALL may return duplicate records
 They are the same, ALL is optional
@@ -303,6 +276,87 @@ Inserting a data record is always more efficient using a database.
 In a database columns can be indexed, which can help finding data much faster. The other statements are not necessarily true.
 2
 database
+END
+Which database system uses the commands: lsnrctl, isqlplusctl, emctl?
+Oracle
+Sybase
+MySQL
+PostgreSQL
+These commands are used by Oracle to provide various services.
+3
+database
+END
+Which SQL statement might select the department with the largest number of employees?
+SELECT d.DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID ORDER BY c DESC LIMIT 1;
+SELECT d.DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY DepartmentID ORDER BY c DESC LIMIT 1;
+SELECT DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID ORDER BY c DESC LIMIT 1;
+SELECT d.DepartmentID, count(null) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID HAVING c = MAX(c);
+The other statements either have SQL errors or incorrect.
+3
+database
+END
+How to get the current date in Oracle?
+SELECT SYSDATE FROM DUAL
+SELECT SYSDATE() FROM DUAL
+SELECT GETDATE
+SELECT GETDATE()
+The function to get the current date in Oracle is SYSDATE without parentheses.
+3
+database
+END
+How to get current date in Sybase?
+SELECT GETDATE()
+SELECT SYSDATE FROM DUAL
+SELECT SYSDATE() FROM DUAL
+SELECT GETDATE
+The function to get the current date in Sybase is GETDATE().
+3
+database
+END
+Which is NOT essential to boot an operating system?
+Harddisk
+Memory
+Motherboard
+PSU
+Harddisk is not essential. An operating system can be loaded from CD or a USB storage, for example. Everything else is essential (PSU is the Power Supply Unit).
+2
+hardware
+END
+What is the maximum amount of RAM directly addressable in a 32-bit system?
+4GB
+8GB
+2GB
+3GB
+A 32-bit register can store 2^32 different values. Hence, a processor with 32-bit memory addresses can directly access 4 GiB of byte-addressable memory.
+2
+hardware
+END
+Which statement is false?
+A 64-bit processor is not compatible with 32-bit software.
+A 64-bit processor performs best with 64-bit software.
+A 32-bit processor is not compatible with 64-bit software.
+A 32-bit processor performs best with 32-bit software.
+A 64-bit processor has backward compatibility and will handle most 32-bit software.
+2
+hardware
+END
+What is the difference between GPU and CPU?
+GPU emphasizes executing many concurrent threads slowly
+GPU is faster than CPU
+CPU is faster than GPU
+GPU emphasizes executing a single thread very quickly
+GPUs have a parallel throughput architecture that emphasizes executing many concurrent threads slowly, rather than executing a single thread very quickly.
+2
+hardware
+END
+Which storage has the highest theoretical transfer rate?
+SSD
+SATA
+SCSI
+iSCSI
+SSD has the highest theoretical and practical transfer rate among these choices.
+2
+hardware
 END
 How many disks can fail in a RAID 5 array without risk of data loss?
 1
@@ -322,16 +376,7 @@ With RAID 1, n-1 disks can fail without losing data. With RAID 3 and RAID 5 only
 3
 hardware
 END
-Which is not essential for starting a computer with an operating system?
-Harddisk
-Memory
-Motherboard
-PSU
-Harddisk is not essential. An operating system can be loaded from CD or a USB storage, for example. Everything else is essential (PSU is the Power Supply Unit).
-2
-hardware
-END
-Which operating system was not derived from a version of UNIX?
+Which operating system was NOT derived from a version of UNIX?
 MINIX
 Mac OS X
 FreeBSD
@@ -358,6 +403,105 @@ UNIX was originally written in assembly language, and later rewritten in C.
 3
 history
 END
+Which is an example of input redirection?
+sort < data.txt
+cat data.txt | sort
+sort data.txt
+sort data.txt &
+"<" is the input redirection operator in common shells, even in DOS.
+2
+linux
+END
+If you have a guest account on a Linux system, which port can you use to setup your personal ping server?
+1234
+1000
+888
+1010
+In Linux only a superuser can open ports below 1024.
+2
+linux
+END
+When will this cron job run? 0 */5 * * * date
+Every 5th hour
+Every 5th minute
+Every 5th day
+At midnight
+The first column indicates the minute, the second column indicates the hour in a cron job definition.
+2
+linux
+END
+In the bash shell, which can be used instead of `cmd`?
+$(cmd)
+eval cmd
+. cmd
+./cmd
+$(command) and `command` are the two forms of command substitution.
+2
+linux
+END
+What is the file descriptor number of standard error in Linux?
+2
+1
+0
+-1
+The file descriptor number of standard error is 2.
+2
+linux
+END
+Which variable controls the prompt in bash?
+PS1
+PS2
+PROMPT
+DISPLAY
+PS1 controls the primary prompt string in bash.
+2
+linux
+END
+In which column of /etc/fstab might you see /proc?
+2nd
+1st
+3rd
+4th
+/proc looks like a mount point, so it is most likely the second column.
+2
+linux
+END
+In Linux, which file can be used to restrict access to the system?
+/etc/hosts.allow
+/etc/hosts_access
+/etc/hosts
+/etc/host.conf
+The /etc/hosts.allow file can contain a list of hosts that are allowed to access the system.
+2
+linux
+END
+Which file contains well known port numbers?
+/etc/services
+/etc/ports
+/etc/hosts
+/etc/named.conf
+The /etc/services file contains well known port numbers of common services, as assigned by IANA.
+2
+linux
+END
+Which command produces different output from all the others?
+ls | perl -e 'm/tmp/ && print;'
+ls | sed -n /tmp/p
+ls | grep tmp
+ls | awk '/tmp/ {print}'
+The perl command does not read standard input, therefore it cannot match the string "tmp" like the other commands.
+3
+linux
+END
+Which command will create a backup of /opt/apache/ directory?
+tar cf /tmp/apache.tar -C /opt apache
+tar cf /tmp/apache.tar -C /opt/apache
+tar cf /opt/apache/* > /tmp/apache.tar
+tar c /opt/apache/* | gzip -d > /tmp/apache.tar
+The "c" specifies that we want to create an archive, the "f" followed by a filename is the destination, the -C followed by a directory to change to, the "apache" in the end is the name of the file/directory to backup. The other choices are incorrect.
+3
+linux
+END
 Which was the earliest Linux distribution?
 Debian
 Mint
@@ -376,39 +520,12 @@ iptables is an administration tool for IPv4 packet filtering and NAT, a common f
 3
 linux
 END
-Which command CANNOT be used to list the files in a directory?
-dirs
-ls
-tree
-echo
-The dirs command shows the list of remembered directories (stored by the pushd command), it cannot be used to list the files in a directory.
-3
-linux
-END
-Which is an example of input redirection?
-sort < data.txt
-cat data.txt | sort
-sort data.txt
-sort data.txt &
-"<" is the input redirection operator in common shells, even in DOS.
-3
-linux
-END
-Which environment variable is typically not an absolute path?
+Which environment variable is typically NOT an absolute path?
 LOGNAME
 PWD
 HOME
 SHELL
 LOGNAME is usually the username of the current user, not a path.
-3
-linux
-END
-Which command CANNOT be used to send an email in Linux?
-groff
-telnet
-mailx
-mutt
-groff is a document formatting system (for example rendering man pages) and cannot be used to send emails. Yes you can send an email with telnet, though it won't be pretty.
 3
 linux
 END
@@ -457,14 +574,59 @@ The KILL signal is non-catchable, non-ignorable, immediately kills a process wit
 3
 linux
 END
+What is the purpose of the PAGER variable in UNIX?
+Path to a program to view man pages
+Path to a program to generate beeps
+Path to the default document viewer
+Enable or disable the system beep
+The PAGER variable can be used to override the default program used to view man pages.
+3
+linux
+END
+Which command CANNOT be used to list the files in a directory?
+dirs
+ls
+tree
+echo
+The dirs command shows the list of remembered directories (stored by the pushd command), it cannot be used to list the files in a directory.
+4
+linux
+END
+Which command CANNOT be used to send an email in Linux?
+groff
+telnet
+mailx
+mutt
+groff is a document formatting system (for example rendering man pages) and cannot be used to send emails. Yes you can send an email with telnet, though it won't be pretty.
+4
+linux
+END
 In Linux, which command can be used to check if any given PID is currently running or not?
 kill
 netstat
 top
 lsof
 The output of kill -0 PID includes the text "No such process" if the process doesn't exist. The command exits with 1 if the process does not exist or the user does not own it.
-3
+4
 linux
+END
+What is the common port of FTP?
+21
+20
+25
+8080
+The common port of an FTP server is 21.
+2
+network
+END
+Which is NOT one of the default chains of an iptables firewall?
+ACCEPT
+INPUT
+OUTPUT
+FORWARD
+ACCEPT is not a chain, but a rule. The others are typical chains.
+2
+network
 END
 Which file might contain such line: nameserver 192.168.1.1
 /etc/resolv.conf
@@ -472,7 +634,7 @@ Which file might contain such line: nameserver 192.168.1.1
 /etc/rc.common
 /etc/bashrc
 The /etc/resolv.conf file is used to provide various information to DNS resolver.
-3
+2
 network
 END
 Which is not essential for connecting to another computer on the same LAN?
@@ -481,8 +643,107 @@ route configuration
 IP address configuration
 netmask configuration
 It is not possible to connect to another computer without configuring a network interface with an IP address and correct netmask, and a route between the computers. A name server is optional.
-3
+2
 network
+END
+Which command would you use to find the default gateway?
+route
+ifconfig
+iptables
+ping
+The route command prints all the routes, including the default gateway.
+2
+network
+END
+How to check if port 1234 is listening on incoming connections?
+telnet localhost 1234
+ping localhost 1234
+telnet 1234
+netstat -p 1234
+telnet is useful to check if a port is open. Another easy way is using netstat, but not with the -p flag.
+2
+network
+END
+Which does not necessarily cause the failure of the command: ping google.com
+The local PC is on a NAT
+The nameserver has crashed
+The firewall is blocking all ICMP packets
+There is no route from the local PC to google.com
+Being on a NAT does not necessarily prevent access to the outside. The other factors would necessarily prevent pinging google.com
+2
+network
+END
+When would you use a LinkedList instead of an ArrayList?
+When you only need to traverse elements from the beginning
+LinkedList is more efficient than ArrayList in most practical cases
+LinkedList uses a hashmap internally
+I can access any element in a LinkedList very fast
+In a linked list, elements are chained together: each element has a pointer to the next. Insert and remove operations are more memory-efficient compared to an ArrayList, at the cost that random access of elements is less efficient.
+2
+programming
+END
+What is the advantage of using an ArrayList instead of a LinkedList?
+Accessing elements by index is faster
+Traversal of elements from start to end is faster
+ArrayList uses less memory than a LinkedList
+Removing an element in the middle of the list is faster
+Elements in an ArrayList can be accessed directly by a numeric index, but in a LinkedList you must travers the elements from the start or the end until the desired element.
+2
+programming
+END
+What is CORBA used for?
+Interprocess communication
+Memory management
+Schedule management
+Data encryption
+The Common Object Request Broker Architecture (CORBA) enables software components written in multiple computer languages and running on multiple computers to work together.
+2
+programming
+END
+What is the purpose of a CRC function?
+Detect accidental changes to raw data
+Encrypt data
+Serialize data
+Compress data
+A cyclic redundancy check (CRC) is an error-detecting code commonly used in digital networks and storage devices to detect accidental changes to raw data.
+2
+programming
+END
+How to declare the main method of a C program?
+int main(int argc, char **argv)
+void main(int argc, char **argv)
+void main(int argc)
+int main()
+The main method should return integer, and the arguments should give the number and values of the program's command-line arguments.
+2
+programming
+END
+Which regular expression will NOT match "foobar"?
+foo.bar
+foo?bar
+foo*bar
+foo+bar
+The "." matches any character, but since there is nothing between "foo" and "bar", this won't match.
+2
+programming
+END
+In C, given char **argv, what is the equivalent of printf("%s\n", argv[0])
+printf("%s\n", *(argv + 0));
+printf("%s\n", &argv[0]);
+printf("%s\n", &argv);
+printf("%s\n", argv);
+argv + n is the address of the n-th element in the array. The * operator dereferences the pointer, obtaining the value stored at the pointed location.
+3
+programming
+END
+Which regular expression is a zero-width positive look-behind assertion?
+(?<=pattern)
+(?=pattern)
+(?!pattern)
+(?<!pattern)
+Usually, "<" indicates a look-behind assertion, and "!" indicates a negative assertion.
+3
+programming
 END
 Which is NOT in the same group as LISP?
 C++
@@ -499,42 +760,6 @@ C
 Java
 MATLAB
 C++, C, Java, and MATLAB, are all imperative languages. Haskell is a functional language.
-3
-programming
-END
-Which is NOT a programming language?
-CGI
-Bash
-R
-Python
-CGI stands for Common Gateway Interface, a standard for dynamic generation of web pages by a web server. It is NOT a programming language.
-3
-programming
-END
-Can you parse an HTML document using regular expressions?
-No, because HTML is not a regular language
-Yes, you can parse anything using regular expressions
-Yes, but only if it contains only ASCII characters
-Yes, because HTML is a context-free language
-Regular expressions can only match regular languages but HTML is a context-free language. It is always possible to present a HTML file that will be matched wrongly by any regular expression.
-3
-programming
-END
-When would you use a LinkedList instead of an ArrayList?
-When you only need to traverse elements from the beginning
-LinkedList is more efficient than ArrayList in most practical cases
-LinkedList uses a hashmap internally
-I can access any element in a LinkedList very fast
-In a linked list, elements are chained together: each element has a pointer to the next. Insert and remove operations are more memory-efficient compared to an ArrayList, at the cost that random access of elements is less efficient.
-3
-programming
-END
-What is the advantage of using an ArrayList instead of a LinkedList?
-Accessing elements by index is faster
-Traversal of elements from start to end is faster
-ArrayList uses less memory than a LinkedList
-Removing an element in the middle of the list is faster
-Elements in an ArrayList can be accessed directly by a numeric index, but in a LinkedList you must travers the elements from the start or the end until the desired element.
 3
 programming
 END
@@ -556,41 +781,32 @@ Code calling static methods is hard to test because you cannot mock the static c
 3
 programming
 END
-What is CORBA used for?
-Interprocess communication
-Memory management
-Schedule management
-Data encryption
-The Common Object Request Broker Architecture (CORBA) enables software components written in multiple computer languages and running on multiple computers to work together.
-2
+What kind of regular expression is this: (?=pattern)
+Positive look-ahead assertion
+Negative look-ahead assertion
+Positive look-behind assertion
+Negative look-behind assertion
+This is zero-width positive look-ahead assertion. For example /\w+(?=\t)/ matches a word followed by a tab.
+4
 programming
 END
-What is the purpose of a CRC function?
-Detect accidental changes to raw data
-Encrypt data
-Serialize data
-Compress data
-A cyclic redundancy check (CRC) is an error-detecting code commonly used in digital networks and storage devices to detect accidental changes to raw data.
+How to convert all characters in a file to lowercase?
+tr A-Z a-z < input.txt > output.txt
+tr A-Z a-z input.txt output.txt
+tr A-Z a-z input.txt > output.txt
+tr A-Z a-z < input.txt output.txt
+tr reads text from standard input and writes to standard output. It does not take filenames as input or output arguments.
 2
-programming
+scripting
 END
-Which is the most efficient way to implement low-latency communication between remote processes?
-Binary protocol
-SOAP-based protocol
-XML-based protocol
-Text-based protocol
-A binary protocol yields the smallest possible footprint in the communication, which is often a significant boost compared to more verbose text-based protocols like SOAP or XML.
+How to append .bak extension to all files in a directory and all its sub-directories?
+find dir -type f -exec mv "{}" "{}".bak \;
+find dir -type f -exec mv "{}" "{}".bak ;
+find dir -type f -exec mv "{}" "{}".bak
+find dir -type f -exec mv "{}" "{}".bak +
+The -exec flag of the find command should end either with \; or +. With + the command will be executed only once with all files as arguments. With \; the command will be executed once for each file.
 2
-programming
-END
-What is endianness about?
-Ordering of bytes
-Operating systems
-Network file transfer
-Memory management
-Endian and endianness in the most common cases refers to how bytes are ordered.
-2
-programming
+scripting
 END
 In which scripting language is this a valid statement: cmd=/bin/cat.exe
 bash
@@ -598,6 +814,42 @@ perl
 python
 DOS
 This is a valid statement to assign the value "/bin/cat.exe" to the variable "cmd" in bash. The statement is not valid in the other languages.
+2
+scripting
+END
+The bash shell reads which file first on startup?
+/etc/profile
+/etc/bash_profile
+~/.bash_profile
+~/.profile
+When run without special options, bash reads /etc/profile first.
+2
+scripting
+END
+How many lines will be printed by this command: echo 1 && echo 2 || echo 3
+2
+1
+0
+3
+2 lines: "echo 1" succeeds, therefore "echo 2" is executed, and since that succeeds, "echo 3" is not executed at all.
+2
+scripting
+END
+How many lines will be printed by this command: seq 9 | paste - - -
+3
+0
+9
+6
+seq 9 will print the numbers 1 to 9, each on a separate line, and paste will organize them to 3 columns, resulting in 3 total lines in the output, starting with 1 2 3 on the first line, and so on.
+2
+scripting
+END
+What will be the output of this command: echo hello | grep hi && echo one || echo two
+two
+one
+3 lines: hello, one, two
+hello
+The grep will not match anything, which is a failure, therefore echo two will be executed.
 2
 scripting
 END
@@ -609,6 +861,60 @@ somecmd 2>&1 >>file.out
 One way to achive this is to first redirect stdout and then redirect stderr to whatever stdout is pointing to.
 3
 scripting
+END
+Which is the least unsafe?
+strncpy
+strcpy
+gets
+scanf
+Only the strncpy function checks bounds, the others don't. Not checking bounds is very likely to lead to buffer overflow defects.
+2
+security
+END
+Which is the most secure method to protect access to a website?
+Public key authentication
+HTTP+HTML form-based authentication
+Basic access authentication
+Digest access authentication
+Public key authentication is usually implemented with HTTPS / SSL client certificates, and it is much safer than the other methods, where the password can be either sniffed or the authentication token replayed.
+2
+security
+END
+Which kind of attack on computer security is a form of active eavesdropping (secretly listening)?
+man in the middle
+dns poisoning
+cross site scripting
+sql injection
+The attacker makes independent connections with the victims and relays messages between them, making them believe that they are talking directly to each other over a private connection, when in fact the entire conversation is controlled by the attacker. 
+2
+security
+END
+What is the recommended permission setting on a user's ~/.ssh/authorized_keys file?
+0600
+0655
+0644
+0640
+Only the owner of the file should have any kind of access.
+2
+security
+END
+Which service should be removed to harden the security of a system?
+FTP
+SFTP
+SSH
+iptables
+File transfers via FTP are not encrypted, therefore they can be captured by anyone on the same network using a packet sniffereasily revealing login usernames and passwords.
+2
+security
+END
+Which open port signals a potential security risk in a UNIX-like system?
+23
+22
+443
+587
+Port 23 is default port of Telnet, an obsolete, insecure login service. The other ports correspond to more secure services protected by encryption.
+2
+security
 END
 What is the weakest point in the computer security of a typical large firm?
 The employees
@@ -625,15 +931,6 @@ ping
 ifconfig
 telnet
 nmap is a sophisticated port scanner, and can reveal much more about a network than all the other tools combined.
-3
-security
-END
-What's the worst thing that can happen if you configure nmap with suid root?
-It could be used for privilege escalation
-It could be used to completely jam a network with DOS attacks
-It could be used to delete all files in the system
-It could be used to unleash the kraken
-Privilege escalation could be used to create all the other damages. Except maybe releasing the kraken. Not sure.
 3
 security
 END
@@ -655,24 +952,6 @@ sha1 is not an encryption method but a message digest method.
 3
 security
 END
-What's the scariest defect that can happen in a web application?
-Buffer overflow
-Blue screen of death
-Denial of service
-NullPointerException
-A buffer overflow can potentially lead to privilege escalation, which could be used to produce all the others and much worse.
-3
-security
-END
-Which is the least unsafe?
-strncpy
-strcpy
-gets
-scanf
-Only the strncpy function checks bounds, the others don't. Not checking bounds is very likely to lead to buffer overflow defects.
-3
-security
-END
 Which tool CANNOT be used to encrypt files?
 nmap
 encfs
@@ -682,7 +961,7 @@ encfs and TrueCrypt can be used to create encrypted directories, and openssl can
 3
 security
 END
-Which tool CANNOT be used to find open ports in the local system?
+Which tool CANNOT be used to find open ports on the local system?
 ping
 nmap
 telnet
@@ -691,7 +970,7 @@ ping can only send ICMP ECHO requests to hosts, it cannot be used to find open p
 3
 security
 END
-Which tool CANNOT be used to find open ports in a remote system?
+Which tool CANNOT be used to find open ports on a remote system?
 netstat
 nmap
 telnet
@@ -699,6 +978,60 @@ curl
 Unlike the others, netstat cannot be used to scan arbitrary remote ports.
 3
 security
+END
+What's the worst thing that can happen if you configure nmap with suid root?
+It could be used for privilege escalation
+It could be used to completely jam a network with DOS attacks
+It could be used to delete all files in the system
+It could be used to unleash the kraken
+Privilege escalation could be used to create all the other damages. Except maybe releasing the kraken. Not sure.
+4
+security
+END
+What's the scariest defect that can happen in a web application?
+Buffer overflow
+Blue screen of death
+Denial of service
+NullPointerException
+A buffer overflow can potentially lead to privilege escalation, which could be used to produce all the others and much worse.
+4
+security
+END
+Which is the most efficient way to implement low-latency communication between remote processes?
+Binary protocol
+SOAP-based protocol
+XML-based protocol
+Text-based protocol
+A binary protocol yields the smallest possible footprint in the communication, which is often a significant boost compared to more verbose text-based protocols like SOAP or XML.
+2
+software-engineering
+END
+What is endianness about?
+Ordering of bytes
+Operating systems
+Network file transfer
+Memory management
+Endian and endianness in the most common cases refers to how bytes are ordered.
+2
+system-programming
+END
+Which is NOT a programming language?
+CGI
+Bash
+R
+Python
+CGI stands for Common Gateway Interface, a standard for dynamic generation of web pages by a web server. It is NOT a programming language.
+3
+system-programming
+END
+Which compression tool cannot work as a filter?
+7zip
+zip
+gzip
+lzma
+7zip has a very compression ratio but it cannot be used a filter.
+2
+tools
 END
 Which is NOT a web server software?
 X server
@@ -733,7 +1066,43 @@ Bazaar
 Subversion
 CVS
 CSV stands for Comma Separated Values, it is a common file format, not a Version Control System.
-3
+2
+version-control
+END
+Which version control operation will never result in a conflict?
+add
+update
+merge
+rebase
+The update, merge and rebase operations all involve some sort of merging, and may result in conflicts. The add operation can never result in a conflict.
+2
+version-control
+END
+Which version control operation may alter the history?
+rebase
+merge
+commit
+revert
+The rebase operation rewrites the history of a branch by replaying a set of changes on top another branch.
+2
+version-control
+END
+In version control, what is the term for merging another branch that is not diverged but some versions ahead of the current branch?
+fast-forward
+branching
+rebasing
+pulling
+In this situation the current branch HEAD can be simply fast-forwarded to the same position as the other branch HEAD, hence the name.
+2
+version-control
+END
+In version control, which is the least scalable workflow?
+centralized workflow
+gatekeeper workflow
+automated gatekeeper workflow
+commander-lieutenant workflow
+The central server can become a bottleneck. The other workflows can be scaled by replicating them on multiple layers.
+2
 version-control
 END
 Which is a Distributed Version Control System?
@@ -742,24 +1111,6 @@ Subversion
 ClearCase
 Visual SourceSafe
 These are all version control systems, but only Mercurial has a distributed model, the others use a client-server model.
-3
-version-control
-END
-What can be a disadvantage of a distributed VCS in comparison to a centralized VCS?
-The initial cloning is slower
-Users cannot commit revisions without a server
-Most operations are slower without a server
-Users cannot create forks without a server
-In a distributed VCS, initial cloning is typically slower, as the tool must download the entire project history. The other choices are disadvantages of centralized VCS.
-3
-version-control
-END
-In a version control system, which type of conflict can have an automatic resolution when merging branchA into branchB?
-The same file was edited in both BranchA and BranchB
-The same file was edited in BranchA but deleted in BranchB
-The same file was edited in BranchA but renamed in BranchB
-A file with the same name was added in both BranchA and BranchB
-If branchA and branchB edited completely different parts of the file, that should be possible to resolve automatically. The other types of conflict require an explicit decision and action by a human.
 3
 version-control
 END
@@ -772,13 +1123,76 @@ In a centralized VCS all operations that involve the history need to access the 
 3
 version-control
 END
+What can be a disadvantage of a distributed VCS compared to a centralized VCS?
+The initial cloning is slower
+Users cannot commit revisions without a server
+Most operations are slower without a server
+Users cannot create forks without a server
+In a distributed VCS, initial cloning is typically slower, as the tool must download the entire project history. The other choices are disadvantages of centralized VCS.
+4
+version-control
+END
+In a version control system, which type of conflict can have an automatic resolution when merging branchA into branchB?
+The same file was edited in both BranchA and BranchB
+The same file was edited in BranchA but deleted in BranchB
+The same file was edited in BranchA but renamed in BranchB
+A file with the same name was added in both BranchA and BranchB
+If branchA and branchB edited completely different parts of the file, that should be possible to resolve automatically. The other types of conflict require an explicit decision and action by a human.
+4
+version-control
+END
 In web programming, what is the QUERY_STRING?
 The part of a URL after the "?" mark
 The part of a URL after the "#" mark
 A variable in a HTTP GET request
 A variable in a HTTP POST request
 The QUERY_STRING is the part of a URL after the question mark, not including the question mark itself, for example "search=hello&page=2".
-3
+2
+web-programming
+END
+What is the status code of a successful HTTP request?
+200
+100
+0
+1
+"200 OK" is the standard response for successful HTTP requests.
+2
+web-programming
+END
+What does CGI stand for in web programming?
+Common Gateway Interface
+Computer Generated Imagery
+Cognitive Guided Instruction
+Computer Graphics Interface
+Common Gateway Interface, a standard for dynamic generation of web pages by a web server.
+2
+web-programming
+END
+In web programming, where are cookies stored?
+On the client
+On the web server
+On a router
+On a cookie server
+Cookies are stored on the client side and sent to the server until expired
+2
+web-programming
+END
+Which is NOT a standard attribute of HTTP cookie parameters?
+Date
+Expires
+Domain
+Path
+Standard parameters of HTTP cookies are: Expires, Domain, Path, HttpOnly, Secure. Date is not one of them.
+2
+web-programming
+END
+What marks the end of an HTTP header?
+empty line
+.
+Content-type: text/html
+</head>
+The end of the header fields is indicated by an empty field, resulting in the transmission of two consecutive CR-LF pairs.
+2
 web-programming
 END
 Which is NOT a common CGI environment variable?
@@ -808,21 +1222,12 @@ The OPTIONS method was added in the HTTP/1.1 specification.
 3
 web-programming
 END
-What is the difference between the HTTP GET and HEAD methods?
+What is the difference between the GET and HEAD methods of the HTTP protocol?
 HEAD doesn't include a response body
 HEAD returns only the <head> tag of HTML
 GET returns a response without a header
 GET can support SSL
 The response of a HEAD requests is a header identical to that of a GET request, but without a response body.
-3
-web-programming
-END
-What is the status code of a successful HTTP request?
-200
-100
-0
-1
-"200 OK" is the standard response for successful HTTP requests.
 3
 web-programming
 END
@@ -844,15 +1249,6 @@ Status codes in the class 4xx all indicate some kind of client error, such as re
 3
 web-programming
 END
-What was the limit of the header size in the HTTP/1.0 standard?
-Unspecified (no limit)
-8190 bytes
-1024 bytes
-512 bytes
-The standard itself does not set a limit on the header size, but most implementations impose some limits for practical and security reasons.
-3
-web-programming
-END
 What can you do with HTTP POST that you cannot do with HTTP GET?
 Upload files
 Implement session state
@@ -862,23 +1258,23 @@ Uploading a file requires enclosing an entity in the request, which is supported
 3
 web-programming
 END
-What does CGI stand for in web programming?
-Common Gateway Interface
-Computer Generated Imagery
-Cognitive Guided Instruction
-Computer Graphics Interface
-Common Gateway Interface, a standard for dynamic generation of web pages by a web server.
-2
+What was the limit of the header size in the HTTP/1.0 standard?
+Unspecified (no limit)
+8190 bytes
+1024 bytes
+512 bytes
+The standard itself does not set a limit on the header size, but most implementations impose some limits for practical and security reasons.
+4
 web-programming
 END
-In web programming, where are cookies stored?
-On the client
-On the web server
-On a router
-On a cookie server
-Cookies are stored on the client side and sent to the server until expired
+What is the file descriptor number of standard error in DOS?
 2
-web-programming
+1
+0
+-1
+The file descriptor number of standard error in DOS is 2 (the same as in Linux).
+3
+windows
 END
 Which was the first version of Microsoft Windows that enforced preemptive multitasking?
 Windows NT
@@ -886,6 +1282,6 @@ Windows XP
 Windows 3.1
 Windows 98
 Windows NT was the first version of Microsoft Windows which enforced preemptive multitasking. Earlier versions used cooperative multitasking.
-3
+4
 windows
 END

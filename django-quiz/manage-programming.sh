@@ -2,4 +2,4 @@
 
 cd $(dirname "$0")
 
-./manage.sh movies $*
+./manage.sh programming $*

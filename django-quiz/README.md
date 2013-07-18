@@ -1,5 +1,9 @@
 Setup
 -----
+0. Common Django setup (only run once, not per project)
+
+        ./setup.sh
+
 1. Create initial database:
 
         ./manage-computers.sh syncdb --noinput
@@ -21,11 +25,7 @@ The easiest way to import many questions (with answers) in bulk
 is to create them in a text file like `sample.txt` and use the
 `importq` command like this:
 
-    ./manage-computers.sh importq /path/to/file.txt -n
-
-The `-n` flag is to do a dry-run, check what would be imported
-without actually importing anything. If the output looks good,
-then re-run the command without the `-n` flag.
+    ./manage-computers.sh importq /path/to/file.txt
 
 
 Update quiz data in the app based on data in Django
@@ -65,18 +65,18 @@ Import quiz data from the project
 
 3. Import data from the project
 
-        ./manage-computers.sh importq export/computers.txt -n
+        ./manage-computers.sh importq export/computers.txt
 
 
 View stats of quiz data
 -----------------------
 View a breakdown of # of questions per level:
 
-    ./manage-computers.sh stats -l
+    ./manage-computers.sh stats --per-level
 
 View a breakdown of # of questions per category:
 
-    ./manage-computers.sh stats -c
+    ./manage-computers.sh stats --per-category
 
 
 Misc memo

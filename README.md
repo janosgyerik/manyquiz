@@ -59,7 +59,8 @@ following these steps:
 
 2. Import the questions into Django:
 
-        ./django-quiz/reimport-computers.sh
+        cd django-quiz
+        ./manage-computers.sh importq export/computers.txt
 
 3. Generate the SQL statements for the `computers-lite` project:
 
