@@ -1,5 +1,9 @@
 Setup
 -----
+0. Common Django setup (only run once, not per project)
+
+        ./setup.sh
+
 1. Create initial database:
 
         ./manage-computers.sh syncdb --noinput
