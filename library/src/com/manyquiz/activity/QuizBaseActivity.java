@@ -33,11 +33,6 @@ public abstract class QuizBaseActivity extends Activity {
             startActivity(intent);
             return true;
         }
-        if (itemId == R.id.menu_suggest_question) {
-            Intent intent = new Intent(getApplicationContext(), QuestionSuggestionActivity.class);
-            startActivity(intent);
-            return true;
-        }
         if (itemId == R.id.menu_quit) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage(R.string.msg_quit)

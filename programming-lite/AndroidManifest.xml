@@ -28,10 +28,6 @@
                 android:label="@string/label_quiz_activity">
         </activity>
         <activity
-                android:name="com.manyquiz.activity.QuestionSuggestionActivity"
-                android:label="@string/label_sendmessage_activity">
-        </activity>
-        <activity
                 android:name="com.manyquiz.activity.ReportBugActivity"
                 android:label="@string/label_reportbug_activity">
         </activity>

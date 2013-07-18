@@ -6,7 +6,6 @@
     
     <string name="label_intro_activity">Intro</string>
     <string name="label_reportbug_activity">Report a bug</string>
-    <string name="label_sendmessage_activity">Suggest a question</string>
     <string name="label_quiz_activity">Quiz</string>
     <string name="label_results_activity">Results</string>
     <string name="label_settings_activity">Settings</string>
@@ -46,16 +45,8 @@
     <string name="menu_reportbug">Report a bug</string>
     <string name="subject_reportbug_prefix">[manyquiz-bug] </string>
     
-    <string name="btn_sendmessage">Submit this question >></string>
-    <string name="title_sendmessage">Suggest a question</string>
-    <string name="menu_sendmessage">Suggest a question</string>
-    <string name="subject_sendmessage_prefix">[manyquiz-msg] </string>
-    
     <string name="description_reportbug">Please describe the bug. The more details you include the better!</string>
     <string name="hint_reportbug">Describe here the bug...</string>
-    
-    <string name="description_sendmessage">Please enter your question idea. We will review it and hopefully include in our next release!</string>
-    <string name="hint_sendmessage">Describe here your question...</string>
     
     <string name="result_score_format" formatted="false">Score: %d / %d (%d%%)</string>
 
