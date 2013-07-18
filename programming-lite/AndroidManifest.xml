@@ -8,9 +8,6 @@
             android:minSdkVersion="4"
             android:targetSdkVersion="4"/>
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-
     <application
             android:name="com.manyquiz.application.LiteQuizApplication"
             android:allowBackup="false"
