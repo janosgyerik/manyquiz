@@ -35,8 +35,8 @@
                 android:label="@string/label_sendmessage_activity">
         </activity>
         <activity
-                android:name="com.manyquiz.activity.ReportBugActivity"
-                android:label="@string/label_reportbug_activity">
+                android:name="com.manyquiz.activity.ContactActivity"
+                android:label="@string/label_contact_activity">
         </activity>
         <activity
                 android:name="com.manyquiz.activity.SettingsActivity"

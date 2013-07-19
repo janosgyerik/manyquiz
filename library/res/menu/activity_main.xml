@@ -10,15 +10,10 @@
         android:icon="@drawable/ic_menu_preferences"
         android:title="@string/menu_settings"/>
     <item
-        android:id="@+id/menu_report_fault"
-        android:icon="@drawable/ic_menu_end_conversation"
-        android:title="@string/menu_reportbug"
-        android:visible="false"/>
-    <item
-        android:id="@+id/menu_suggest_question"
+        android:id="@+id/menu_contact"
         android:icon="@drawable/ic_menu_start_conversation"
-        android:title="@string/menu_sendmessage"
-        android:visible="false"/>
+        android:title="@string/menu_contact"
+        android:visible="true"/>
     <item
         android:id="@+id/menu_quit"
         android:icon="@drawable/ic_menu_close_clear_cancel"

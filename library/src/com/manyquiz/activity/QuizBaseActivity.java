@@ -28,13 +28,8 @@ public abstract class QuizBaseActivity extends Activity {
             startActivityForResult(intent, RETURN_FROM_SETTINGS);
             return true;
         }
-        if (itemId == R.id.menu_report_fault) {
-            Intent intent = new Intent(getApplicationContext(), ReportBugActivity.class);
-            startActivity(intent);
-            return true;
-        }
-        if (itemId == R.id.menu_suggest_question) {
-            Intent intent = new Intent(getApplicationContext(), QuestionSuggestionActivity.class);
+        if (itemId == R.id.menu_contact) {
+            Intent intent = new Intent(getApplicationContext(), ContactActivity.class);
             startActivity(intent);
             return true;
         }

@@ -10,31 +10,32 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.manyquiz.R;
 
-public class ReportBugActivity extends Activity {
+public class ContactActivity extends Activity {
 
-    private static final String TAG = ReportBugActivity.class.getSimpleName();
+    private static final String TAG = ContactActivity.class.getSimpleName();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.reportbug_activity);
+        setContentView(R.layout.contact_activity);
 
-        findViewById(R.id.btn_reportbug).setOnClickListener(
-                new SubmitButtonOnClickListener());
+        findViewById(R.id.btn_sendmessage).setOnClickListener(
+                new SendMessageButtonOnClickListener());
     }
 
-    class SubmitButtonOnClickListener implements OnClickListener {
+    class SendMessageButtonOnClickListener implements OnClickListener {
         @Override
         public void onClick(View arg0) {
-            sendFaultReport();
+            sendMessage();
         }
     }
 
-    public void sendFaultReport() {
+    public void sendMessage() {
         EditText message = (EditText) findViewById(R.id.message);
         String emailBody = message.getText().toString();
 
@@ -47,18 +48,21 @@ public class ReportBugActivity extends Activity {
             Log.e(TAG, "Could not get package info", e);
         }
 
+        RadioGroup messageTypeChoices = (RadioGroup) findViewById(R.id.message_type_choices);
+        String tag = (String) findViewById(messageTypeChoices.getCheckedRadioButtonId()).getTag();
+        String subject = String.format(getString(R.string.subject_contact_prefix), tag);
+
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("message/rfc822");
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{
                 getResources().getString(R.string.email_address)});
-        intent.putExtra(Intent.EXTRA_SUBJECT,
-                getResources().getString(R.string.subject_reportbug_prefix));
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         intent.putExtra(Intent.EXTRA_TEXT, emailBody);
 
         try {
             startActivity(Intent.createChooser(intent, getResources().getString(R.string.no_email_client)));
         } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(ReportBugActivity.this,
+            Toast.makeText(ContactActivity.this,
                     getResources().getString(R.string.no_email_client), Toast.LENGTH_SHORT)
                     .show();
         }

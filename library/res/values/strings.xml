@@ -5,8 +5,7 @@
     <string name="app_name_lite">Computer Quiz (LITE)</string>
     
     <string name="label_intro_activity">Intro</string>
-    <string name="label_reportbug_activity">Report a bug</string>
-    <string name="label_sendmessage_activity">Suggest a question</string>
+    <string name="label_contact_activity">Contact Us</string>
     <string name="label_quiz_activity">Quiz</string>
     <string name="label_results_activity">Results</string>
     <string name="label_settings_activity">Settings</string>
@@ -41,21 +40,17 @@
     <string name="no_email_client">Choose an email client</string>
     <string name="email_client_chooser">Send e-mail...</string>
     
-    <string name="btn_reportbug">Report this bug >></string>
-    <string name="title_reportbug">Report a bug</string>
-    <string name="menu_reportbug">Report a bug</string>
-    <string name="subject_reportbug_prefix">[manyquiz-bug] </string>
+    <string name="btn_sendmessage">Send message >></string>
+    <string name="title_contact">Contact Us</string>
+    <string name="menu_contact">Contact Us</string>
+    <string name="subject_contact_prefix" formatted="false">[manyquiz-app-%s] </string>
     
-    <string name="btn_sendmessage">Submit this question >></string>
-    <string name="title_sendmessage">Suggest a question</string>
-    <string name="menu_sendmessage">Suggest a question</string>
-    <string name="subject_sendmessage_prefix">[manyquiz-msg] </string>
-    
-    <string name="description_reportbug">Please describe the bug. The more details you include the better!</string>
-    <string name="hint_reportbug">Describe here the bug...</string>
-    
-    <string name="description_sendmessage">Please enter your question idea. We will review it and hopefully include in our next release!</string>
-    <string name="hint_sendmessage">Describe here your question...</string>
+    <string name="description_contact">Let us know about bugs, or your comments and question ideas!</string>
+    <string name="hint_contact">Enter your message...</string>
+
+    <string name="message_type_bug">Bug</string>
+    <string name="message_type_comment">Comment</string>
+    <string name="message_type_idea">Idea</string>
     
     <string name="result_score_format" formatted="false">Score: %d / %d (%d%%)</string>
 
