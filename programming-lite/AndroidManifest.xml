@@ -28,8 +28,9 @@
                 android:label="@string/label_quiz_activity">
         </activity>
         <activity
-                android:name="com.manyquiz.activity.ReportBugActivity"
-                android:label="@string/label_reportbug_activity">
+                android:name="com.manyquiz.activity.ContactActivity"
+                android:label="@string/label_contact_activity"
+                android:theme="@style/Theme.Dialog">
         </activity>
         <activity
                 android:name="com.manyquiz.activity.SettingsActivity"

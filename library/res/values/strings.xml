@@ -5,7 +5,7 @@
     <string name="app_name_lite">Computer Quiz (LITE)</string>
     
     <string name="label_intro_activity">Intro</string>
-    <string name="label_reportbug_activity">Report a bug</string>
+    <string name="label_contact_activity">Contact Us</string>
     <string name="label_quiz_activity">Quiz</string>
     <string name="label_results_activity">Results</string>
     <string name="label_settings_activity">Settings</string>
@@ -40,13 +40,13 @@
     <string name="no_email_client">Choose an email client</string>
     <string name="email_client_chooser">Send e-mail...</string>
     
-    <string name="btn_reportbug">Report this bug >></string>
-    <string name="title_reportbug">Report a bug</string>
-    <string name="menu_reportbug">Report a bug</string>
-    <string name="subject_reportbug_prefix">[manyquiz-bug] </string>
+    <string name="btn_sendmessage">Send message >></string>
+    <string name="title_contact">Contact Us</string>
+    <string name="menu_contact">Contact Us</string>
+    <string name="subject_contact_prefix">[manyquiz-app] </string>
     
-    <string name="description_reportbug">Please describe the bug. The more details you include the better!</string>
-    <string name="hint_reportbug">Describe here the bug...</string>
+    <string name="description_contact">Let us know your question, suggestion, or bug report!</string>
+    <string name="hint_contact">Enter your message...</string>
     
     <string name="result_score_format" formatted="false">Score: %d / %d (%d%%)</string>
 
