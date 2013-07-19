@@ -25,17 +25,17 @@ public class ContactActivity extends Activity {
         setContentView(R.layout.contact_activity);
 
         findViewById(R.id.btn_sendmessage).setOnClickListener(
-                new SubmitButtonOnClickListener());
+                new SendMessageButtonOnClickListener());
     }
 
-    class SubmitButtonOnClickListener implements OnClickListener {
+    class SendMessageButtonOnClickListener implements OnClickListener {
         @Override
         public void onClick(View arg0) {
-            sendFaultReport();
+            sendMessage();
         }
     }
 
-    public void sendFaultReport() {
+    public void sendMessage() {
         EditText message = (EditText) findViewById(R.id.message);
         String emailBody = message.getText().toString();
 
