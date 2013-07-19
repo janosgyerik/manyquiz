@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.manyquiz.R;
@@ -47,12 +48,15 @@ public class ContactActivity extends Activity {
             Log.e(TAG, "Could not get package info", e);
         }
 
+        RadioGroup messageTypeChoices = (RadioGroup) findViewById(R.id.message_type_choices);
+        String tag = (String) findViewById(messageTypeChoices.getCheckedRadioButtonId()).getTag();
+        String subject = String.format(getString(R.string.subject_contact_prefix), tag);
+
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("message/rfc822");
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{
                 getResources().getString(R.string.email_address)});
-        intent.putExtra(Intent.EXTRA_SUBJECT,
-                getResources().getString(R.string.subject_contact_prefix));
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         intent.putExtra(Intent.EXTRA_TEXT, emailBody);
 
         try {

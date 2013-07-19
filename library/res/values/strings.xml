@@ -43,10 +43,14 @@
     <string name="btn_sendmessage">Send message >></string>
     <string name="title_contact">Contact Us</string>
     <string name="menu_contact">Contact Us</string>
-    <string name="subject_contact_prefix">[manyquiz-app] </string>
+    <string name="subject_contact_prefix" formatted="false">[manyquiz-app-%s] </string>
     
-    <string name="description_contact">Let us know your question, suggestion, or bug report!</string>
+    <string name="description_contact">Let us know about bugs, or your comments and question ideas!</string>
     <string name="hint_contact">Enter your message...</string>
+
+    <string name="message_type_bug">Bug</string>
+    <string name="message_type_comment">Comment</string>
+    <string name="message_type_idea">Idea</string>
     
     <string name="result_score_format" formatted="false">Score: %d / %d (%d%%)</string>
 
