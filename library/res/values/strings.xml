@@ -19,6 +19,10 @@
     <string name="startQuiz">Start Quiz!</string>
     <string name="msg_quit">Are you sure you want to quit?</string>
 
+    <string name="title_beta_notice">BETA Notice</string>
+    <string name="msg_beta_notice">Hi there!\n\nThis is only a BETA version. Everything is working, just there are not a lot of questions. Enjoy anyway, and the first release is coming really soon!</string>
+
+    <string name="btn_ok">Ok</string>
     <string name="btn_yes">Yes</string>
     <string name="btn_cancel">Cancel</string>
     <string name="btn_finish">Finish</string>
