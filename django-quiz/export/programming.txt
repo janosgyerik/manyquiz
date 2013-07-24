@@ -691,7 +691,7 @@ Elements in an ArrayList can be accessed directly by a numeric index, but in a L
 2
 programming
 END
-What is CORBA used for?
+What is CORBA for?
 Interprocess communication
 Memory management
 Schedule management
@@ -724,6 +724,24 @@ foo?bar
 foo*bar
 foo+bar
 The "." matches any character, but since there is nothing between "foo" and "bar", this won't match.
+2
+programming
+END
+Which regular expression will match a word that starts with "foo" and has at least 4 letters?
+\<foo\w+
+\<foo
+\<foo\w*
+foo\w*
+The "\<" indicates the start of a word, and "\w+" indicates one or more word characters. The other choices are not restrictive enough, and may match input that doesn't meet the criteria.
+2
+programming
+END
+How to match an empty line using regular expressions?
+^$
+\s*
+\S*
+^.*
+The "^" indicates the beginning of the line, and the "$" indicates the end of the line. Thus, if the beginning of the line is followed directly by the end of the line, that must be an empty line.
 2
 programming
 END
