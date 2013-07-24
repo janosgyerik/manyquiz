@@ -1,5 +1,8 @@
 package com.manyquiz.activity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -58,6 +61,19 @@ public class IntroActivity extends QuizBaseActivity {
 
         btnStartQuiz = (Button) findViewById(R.id.btn_startQuiz);
         btnStartQuiz.setOnClickListener(new StartQuizClickListener());
+
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.title_beta_notice)
+                .setMessage(R.string.msg_beta_notice)
+                .setCancelable(true)
+                .setPositiveButton(R.string.btn_ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 
     class ExitClickListener implements OnClickListener {
