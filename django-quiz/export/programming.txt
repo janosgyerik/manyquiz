@@ -403,6 +403,15 @@ UNIX was originally written in assembly language, and later rewritten in C.
 3
 history
 END
+Which command will give read permission to a file for everyone?
+chmod a+r core
+chmod 777 core
+chmod u+r core
+chmod 444 core
+"a" means everyone, "+r" means give read permission. 444 is not correct, because it does more than just give read permission, at the same time it removes write and execute permissions.
+1
+linux
+END
 Which is an example of input redirection?
 sort < data.txt
 cat data.txt | sort
@@ -481,6 +490,15 @@ Which file contains well known port numbers?
 /etc/hosts
 /etc/named.conf
 The /etc/services file contains well known port numbers of common services, as assigned by IANA.
+2
+linux
+END
+Which command will assign permissions rwxr-x--- to a file?
+chmod 750 script.sh
+chmod u+rwx,g-w script.sh
+chmod 4750 script.sh
+chmod 022 script.sh
+chmod 750 gives all permissions to the owner (4 + 2 + 1), read and execute permission to the group (4 + 1), and no permissions for others (0).
 2
 linux
 END
@@ -673,6 +691,24 @@ Being on a NAT does not necessarily prevent access to the outside. The other fac
 2
 network
 END
+How to declare a pointer to an integer in C?
+int * p;
+int & p;
+int ** p;
+int p;
+In the C language you declare pointers using *, which is called the value-at-address operator or indirection operator.
+1
+programming
+END
+What will be the value of i when executing int i = 10 / 3; ?
+3
+3.333333
+3.4
+4
+Since i is integer, the decimal part of the computation will be simply ignored.
+1
+programming
+END
 When would you use a LinkedList instead of an ArrayList?
 When you only need to traverse elements from the beginning
 LinkedList is more efficient than ArrayList in most practical cases
@@ -742,6 +778,33 @@ How to match an empty line using regular expressions?
 \S*
 ^.*
 The "^" indicates the beginning of the line, and the "$" indicates the end of the line. Thus, if the beginning of the line is followed directly by the end of the line, that must be an empty line.
+2
+programming
+END
+If i=3 and j=i++, what is the value of j?
+3
+4
+5
+0
+In j=i++ the value of i will be first copied to j before i is incremented.
+2
+programming
+END
+What will be the value of f when executing float f = 5 / 2 / .5; in the C language?
+4
+5
+compile error
+0
+The first division will be treated as an operation on integers, resulting in 2, which divided by 0.5 will result in 4.
+2
+programming
+END
+What will be the value of f when executing float f = 5 / 2. / .5; in the C language?
+5
+4
+compile error
+0
+In the first division, "2." will be treated as a float, and the result of the division will be 2.5, which then divided by 0.5 will result in 5.
 2
 programming
 END
@@ -903,7 +966,7 @@ man in the middle
 dns poisoning
 cross site scripting
 sql injection
-The attacker makes independent connections with the victims and relays messages between them, making them believe that they are talking directly to each other over a private connection, when in fact the entire conversation is controlled by the attacker. 
+The attacker makes independent connections with the victims and relays messages between them, making them believe that they are talking directly to each other over a private connection, when in fact the entire conversation is controlled by the attacker.
 2
 security
 END
@@ -952,7 +1015,7 @@ nmap is a sophisticated port scanner, and can reveal much more about a network t
 3
 security
 END
-In Linux, what is the best way to give read permission to everybody on a file?
+Which command will give read permission to a file for everyone?
 chmod +r file.txt
 chmod 777 file.txt
 chmod 4777 file.txt
@@ -1024,12 +1087,84 @@ A binary protocol yields the smallest possible footprint in the communication, w
 2
 software-engineering
 END
+What is the decimal value of 0x15?
+21
+15
+13
+51
+0x15 is a hexadecimal notation, its decimal value is calculated like this: 1 * 16^1 + 5 * 16^0 = 1 * 16 + 5 * 1 = 16 + 5 = 21
+1
+system-programming
+END
+What is the decimal value of 015?
+13
+15
+21
+51
+015 is an octal notation, its decimal value is calculated like this: 1 * 8^1 + 5 * 8^0 = 1 * 8 + 5 * 1 = 8 + 5 = 13
+1
+system-programming
+END
+What is the decimal value of 0b1101?
+13
+14
+15
+11
+0b1101 is a binary notation, its decimal value is calculated like this: 1 * 2^3 + 1 * 2^2 + 0 * 2^1 + 1 * 2^0 = 8 + 4 + 1 = 13
+1
+system-programming
+END
+How to write the number 11 in binary notation?
+0b1011
+0b11
+0x0b
+0b11111111111
+The value of the binary expression 0b1011 = 2^3 + 2^1 + 2^0 = 8 + 2 + 1 = 11
+1
+system-programming
+END
 What is endianness about?
 Ordering of bytes
 Operating systems
 Network file transfer
 Memory management
 Endian and endianness in the most common cases refers to how bytes are ordered.
+2
+system-programming
+END
+Which is NOT a system call?
+printf
+open
+close
+execve
+printf calls the write system call to print text on standard output.
+2
+system-programming
+END
+What is 0x15 + 0x17?
+44
+32
+28
+30
+0x15 is 16 + 5 = 21 and 0x17 is 16 + 7 = 23, so 21 + 23 = 44
+2
+system-programming
+END
+What is 0x15 & 0x17?
+21
+44
+32
+28
+0x15 is 10101 and 0x17 is 10111, so 10101 & 10111 = 10101 = 21
+2
+system-programming
+END
+How to represent -15 using 8-bit two's complement?
+0b11110001
+0b10001111
+0b10001110
+0b11110010
+The 8-bit two's complement of a number can be calculated by subtracting the unsigned number from 256, in this case 256 - 15 = 241 = 0b11110001
 2
 system-programming
 END
