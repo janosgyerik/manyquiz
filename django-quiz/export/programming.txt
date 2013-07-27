@@ -1123,6 +1123,15 @@ The value of the binary expression 0b1011 = 2^3 + 2^1 + 2^0 = 8 + 2 + 1 = 11
 1
 system-programming
 END
+Which is a low-level system programming language?
+Assembly
+C
+C++
+Java
+Assembly is a low level language, designed for writing system software as distinct from application software.
+1
+system-programming
+END
 What is endianness about?
 Ordering of bytes
 Operating systems
@@ -1437,4 +1446,49 @@ Windows 98
 Windows NT was the first version of Microsoft Windows which enforced preemptive multitasking. Earlier versions used cooperative multitasking.
 4
 windows
+END
+Mac OS X is based on which operating system?
+NeXTSTEP
+FreeBSD
+UNIX
+Mac OS 9
+OS X, previously Mac OS X, is based on the NeXTSTEP operating system, which incorporates certain parts from FreeBSD's and NetBSD's implementation of UNIX.
+2
+mac
+END
+The kernel of Mac OS X is based on which kernel?
+Mach
+Linux
+Darwin
+FreeBSD
+Mach is an operating system kernel developed at Carnegie Mellon University to support operating system research, primarily distributed and parallel computation.
+2
+mac
+END
+Which is NOT a version of Mac OS X?
+10.1 Kitten
+10.4 Tiger
+10.5 Leopard
+10.7 Lion
+There was no Mac OS X version with codename Kitten, the codename of version 10.1 was Puma.
+2
+mac
+END
+Which utility is not installed by default on a Mac OS X?
+gawk
+awk
+sed
+tar
+Mac OS X uses mostly BSD implementation of common UNIX tools, as opposed to GNU implementation. Gawk is the GNU implementation of the AWK programming language.
+2
+mac
+END
+What does the "X" stand for in Mac OS X?
+The roman letter X
+Extreme
+X Windows
+Experimental
+The X stands for the roman letter, meaning 10. Its predecessor was Mac OS 9.
+2
+mac
 END
