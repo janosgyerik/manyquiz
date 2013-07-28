@@ -1231,12 +1231,84 @@ CGI stands for Common Gateway Interface, a standard for dynamic generation of we
 3
 system-programming
 END
+How to check the owner of a domain name?
+whois example.com
+ping example.com
+checkdomain example.com
+curl example.com
+The whois command looks up records in the database maintained by several Network Information Centers (NICs).
+1
+tools
+END
 Which compression tool cannot work as a filter?
 7zip
 zip
 gzip
 lzma
 7zip has a very compression ratio but it cannot be used a filter.
+2
+tools
+END
+How to print the 3rd and 5th columns of a csv file?
+cut -f3,5 -d, file.csv
+cut -k3,5 -d, file.csv
+cut -f3,5 -s, file.csv
+cut -f3,5 file.csv
+The -f flag is used to specify the columns, which can be a comma separated list. The -d flag is used to specify the delimiter of the columns.
+2
+tools
+END
+How to check if a web server is running?
+telnet server 80
+ping server 80
+netstat -n -s server | grep 80
+tcpdump -i eth0 dst host server and port 80
+One way to check if a web server is running is to send a GET request to it using telnet, for example by sending the text "GET /".
+2
+tools
+END
+Which filesystem does not use journaling?
+ext2
+reiserfs
+JFS
+NTFS
+ext2 is an old filesystem introduced in 1993, it did not use a journal. It has been supplanted by ext3, which is almost completely compatible with ext2 and is a journaling file system.
+2
+tools
+END
+How to check if the network interface is correctly configured in Linux?
+ifconfig
+ipconfig
+netstat
+iptables
+The ifconfig command shows the configuration of network interfaces, including such details as IP address, netmask, broadcast address and MAC address.
+2
+tools
+END
+How to permit incoming connections to the web server on an iptables firewall?
+iptables -i eth0 -A INPUT -p tcp --dport 80 -j ACCEPT
+iptables -i eth0 -p tcp --dport 80 -j ACCEPT
+iptables -i eth0 -A INPUT -p tcp -j ACCEPT
+iptables -i eth0 -A INPUT -p tcp --dport 80
+-A INPUT is required to indicate incoming connections, --dport 80 is required to match destination port 80, -j ACCEPT is required to permit the connection.
+2
+tools
+END
+How to check the currently mounted file systems?
+mount
+df -h
+cat /etc/fstab
+ls /media
+The mount command with no parameters shows the currently mounted file systems.
+2
+tools
+END
+Which tool is most useful for load testing a web server?
+ab
+nmap
+curl
+wget
+ab is the Apache HTTP server benchmarking tool, but it is useful to perform load testing on any web server.
 2
 tools
 END
@@ -1264,6 +1336,15 @@ Print short help message
 Print long help message
 Print hidden files
 When used together with the -l flag for long format, the -h makes the ls command print file sizes in human readable format like 1K, 234M, 2G.
+3
+tools
+END
+How to print the 2nd and 1st columns of a csv file, in that order?
+awk -v FS=, -v OFS=, '{print $2, $1}' file.csv
+cut -f2,1 -d, file.csv
+fmt -f2,1 -s, file.csv
+while read a b; do echo $b,$a; done < file.csv
+The awk solution works, by setting the input and output field separators to a comma, and printing the selected columns in the desired order.
 3
 tools
 END
