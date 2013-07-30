@@ -1609,3 +1609,93 @@ Windows NT was the first version of Microsoft Windows which enforced preemptive 
 3
 windows
 END
+In assembly, how do you usually copy a value?
+mov
+jne
+add
+cp
+mov exists in different flavor if it copies a fixed value, a register, a value in memory.
+2
+system-programming
+END
+In C#, which keyword is not related to method overloading?
+implements
+new
+virtual
+override
+"implements" is a keyword in Java but not in C#. 
+2
+programming
+END
+In assembly, what is an interrupt?
+Some kind of signal to the processor
+An instruction to pause the program for n millisec
+A keyword to skip one instruction
+A small button to start/stop the program
+An interrupt is a signal to the processor emitted by hardware or software indicating an event that needs immediate attention.
+2
+system-programming
+END
+How much is ((1 << 2) | (1 << 1)) & 0x03 in decimal? 
+2
+1
+0
+6
+(0100 | 0010) & 0011 = 0110 & 0011 = 0010 = 2
+2
+system-programming
+END
+How do you clear the 3rd bit of a byte Z?
+Z = Z & ~(1 << 2)
+Z = Z | (1 << 3)
+Z = Z & ~(1 << 3)
+Z = Z | (1 << 2)
+Z = Z & ~0100 = Z & 1011 = effectively setting the 3rd bit to zero.
+2
+system-programming
+END
+What is the operator of bitwise XOR in C?
+^
+&
+~
+|
+& is bitwise AND, | is bitwise OR, ~ is bitwise NOT, and ^ is bitwise XOR (exclusive OR).
+2
+programming
+END
+In C/C++ what is the effect of the volatile keyword ?
+Tell the compiler to not optimize access to this variable
+Tell the compiler to load the variable in the low-memory zone for fast access
+Tell the compiler to reserve a register to store this variable all along
+Tell the compiler to make the variable access threadsafe with a lock
+The variable may change "on its own" (means an interrupt or another thread might change it) so don't optimize code and always read the value of this variable.
+3
+programming
+END
+What is the maximum value of a uint16_t?
+65535
+32768
+256
+16
+uint16_t = unsigned int over 16 bits = 2^16-1 = 65535
+2
+programming
+END
+Who invented semaphores in concurrent programs?
+Dijkstra
+Traffic Man
+Kierkegaard
+Descartes
+Edsger W. Dijkstra, to whom we owe much (banker's algorithm, philosopher's dinner, Dijkstra algorithm, ...) 
+2
+history
+END
+Who said that the number of transistors in a chip will double every 18 months?
+Moore
+Von Neuman
+Turing
+MacGyver
+The co-founder of Intel, Gordon E. Moore.
+1
+history
+END
