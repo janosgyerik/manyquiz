@@ -160,6 +160,15 @@ Regular expressions can only match regular languages but HTML is a context-free 
 3
 computer-science
 END
+Which data structure is most suitable to implement an index?
+Map
+Set
+List
+Array
+The concept of an index is like a lookup table: it allows looking up a specific value directly by its known index, without inspecting elements one by one.
+1
+data-structure
+END
 What is the difference between a binary tree and a B-tree?
 A B-tree is a generalization of the binary tree.
 No difference, they are synonyms.
@@ -204,6 +213,15 @@ Hash set
 A doubly linked list has O(1) insertion and deletion at both ends, so is a natural choice for queues.
 2
 data-structures
+END
+How to count the number of sheep in the farm table?
+SELECT count(*) FROM farm;
+SELECT count sheep FROM farm;
+SELECT count(sheep) FROM farm;
+SELECT sheep FROM farm;
+The SQL syntax for counting records in some table is SELECT count(*) FROM table_name;
+1
+database
 END
 What type of JOIN is this: SELECT * FROM t1 JOIN t2 ON t1.id = t2.id
 INNER JOIN
@@ -313,6 +331,33 @@ The function to get the current date in Sybase is GETDATE().
 3
 database
 END
+A computer uses the least power in which mode?
+hibernate
+sleep
+stand-by
+lock
+When hibernated, the computer is completely off. It can restore itself by reloading the previously saved content of the memory.
+1
+hardware
+END
+How to reset the BIOS password if you forgot it?
+Remove the motherboard battery for a few seconds
+Reboot the computer
+Reboot the computer using a system rescue CD
+Replace hard disk
+You can try to remove and reinsert the battery on the motherboard. If that doesn't work, the solution might be changing a jumper setting. Look for the manual of your computer.
+1
+hardware
+END
+Which one looks like a MAC address?
+58:b0:35:80:36:9f
+192.168.2.103
+fe80::5ab0:35ff:fe80:369f
+0xffffff00
+MAC addresses are used as a network address for most IEEE 802 network technologies, including Ethernet.
+1
+hardware
+END
 Which is optional to boot an operating system?
 Harddisk
 Memory
@@ -376,6 +421,51 @@ With RAID 1, n-1 disks can fail without losing data. With RAID 3 and RAID 5 only
 3
 hardware
 END
+Who said that the number of transistors in a chip will double every 18 months?
+Moore
+Von Neuman
+Turing
+MacGyver
+The co-founder of Intel, Gordon E. Moore.
+1
+history
+END
+What is SMTP for?
+Mail server
+SMS server
+FTP server
+SPAM server
+SMTP stands for Simple Message Transfer Protocol, it is used by mail servers to send and receive mail messages.
+1
+history
+END
+When will the world run out of the free pool of IPv4 addresses?
+31 January 2011
+12 December 2012
+Not in the foreseeable future
+29 February 2015
+On 31 January 2011, IANA (Internet Assigned Numbers Authority) announced it had exhausted its free pool of IPv4 addresses.
+1
+history
+END
+Which browser was the ancestor of Firefox?
+Mozilla
+Godzilla
+Netscape
+Colossus
+The Firefox project began as an experimental branch of the Mozilla project.
+1
+history
+END
+Who invented semaphores in concurrent programs?
+Dijkstra
+Traffic Man
+Kierkegaard
+Descartes
+Edsger W. Dijkstra, to whom we owe much (banker's algorithm, philosopher's dinner, Dijkstra algorithm, ...)
+2
+history
+END
 Which operating system was not derived from a version of UNIX?
 MINIX
 Mac OS X
@@ -409,6 +499,42 @@ chmod 777 core
 chmod go+r core
 chmod 444 core
 "a" means everyone, "+r" means give read permission. 444 is not correct, because it does more than just give read permission, at the same time it removes write and execute permissions.
+1
+linux
+END
+How to shutdown safely a GNU/Linux machine?
+Press Ctrl-Alt-F1 first, and then Ctrl-Alt-Del
+Press Ctrl-Alt-SysRq-b
+Hold the power button until lights go bye bye
+Pull the plug out
+Ctrl-Alt-F1 will switch from graphical mode to the first virtual terminal in GNU/Linux. When on a virtual terminal, most GNU/Linux systems are configured to shut down safely.
+1
+linux
+END
+Which command will print the current working directory in UNIX?
+pwd
+cwd
+dir
+cd
+The pwd command prints the absolute path of the current working directory. Usually the same value is also stored in the environment variable $PWD.
+1
+linux
+END
+How to check the available disk space in GNU/Linux?
+df -h
+du -sm /*
+diskusage
+free
+The letters of the command stand for "disk free", and the "-h" makes the output more "human-friendly".
+1
+linux
+END
+In UNIX, how to put the current command in the background?
+Press Ctrl-z and run the command: bg
+Press Ctrl-c and run the command: bg
+Press Ctrl-z and run the command: bg &
+Press Ctrl-Alt-Del and run the command: bg
+Ctrl-z pauses execution of the current job, and the bg program puts the paused job in the background.
 1
 linux
 END
@@ -664,6 +790,33 @@ The X stands for the roman letter, meaning 10. Its predecessor was Mac OS 9.
 2
 mac
 END
+What is the purpose of a DHCP server?
+Dynamically assign IP addresses to PCs
+Dynamically assign MAC addresses to PCs
+Proxy connections from a local network to internet
+Increase the security of a network
+The Dynamic Host Configuration Protocol (DHCP) is a network protocol used to configure devices that are connected to a network so they can communicate on that network using the Internet Protocol (IP).
+1
+network
+END
+What is IPsec?
+A security scheme
+Secure IP address
+Secondary IP address
+Proxy server
+IPsec is an end-to-end security scheme operating in the Internet Layer of the Internet Protocol Suite.
+1
+network
+END
+Which one looks like a netmask?
+255.255.255.0
+192.168.2.103
+192.168.2.255
+192.168.2.1
+The subnet mask is used to separate the network address part and the host identifier part of an IP address. For example if the IP address is 192.168.2.103 and the subnet mask is 255.255.255.0, then the network address is 192.168.2.0 and the host identifier is 103.
+1
+network
+END
 What is the common port number of an FTP server?
 21
 20
@@ -727,6 +880,15 @@ Being on a NAT does not necessarily prevent access to the outside. The other fac
 2
 network
 END
+What is the purpose of mounting a disk?
+Make a filesystem accessible
+Format a disk to store data
+Crush a disk by sitting on it
+Prepare an installation disk
+Mounting a disk is the process of making a file system accessible.
+1
+os
+END
 Which is not an operating system?
 Linux
 FreeBSD
@@ -760,6 +922,15 @@ What will be the value of i when executing int i = 10 / 3
 3.4
 4
 Since i is integer, the decimal part of the computation will be simply ignored.
+1
+programming
+END
+What will be the value of int i = 3 % 5?
+3
+2
+5
+0
+The modulo (sometimes called modulus) operation finds the remainder of division of one number by another. 3 divided by 5 is 0, and the remainder is 3.
 1
 programming
 END
@@ -862,6 +1033,33 @@ In the first division, "2." will be treated as a float, and the result of the di
 2
 programming
 END
+In C#, which keyword is not related to method overloading?
+implements
+new
+virtual
+override
+"implements" is a keyword in Java but not in C#.
+2
+programming
+END
+What is the operator of bitwise XOR in C?
+^
+&
+~
+|
+& is bitwise AND, | is bitwise OR, ~ is bitwise NOT, and ^ is bitwise XOR (exclusive OR).
+2
+programming
+END
+What is the maximum value of a uint16_t?
+65535
+32768
+256
+16
+uint16_t = unsigned int over 16 bits = 2^16-1 = 65535
+2
+programming
+END
 In C, given char **argv, what is equivalent to printf("%s\n", argv[0])
 printf("%s\n", *(argv + 0));
 printf("%s\n", &argv[0]);
@@ -924,6 +1122,51 @@ Negative look-behind assertion
 This is zero-width positive look-ahead assertion. For example /\w+(?=\t)/ matches a word followed by a tab.
 3
 programming
+END
+In C/C++ what is the effect of the volatile keyword ?
+Tell the compiler to not optimize access to this variable
+Tell the compiler to load the variable in the low-memory zone for fast access
+Tell the compiler to reserve a register to store this variable all along
+Tell the compiler to make the variable access threadsafe with a lock
+The variable may change "on its own" (means an interrupt or another thread might change it) so don't optimize code and always read the value of this variable.
+3
+programming
+END
+Which command will change to your home directory in UNIX?
+cd
+cd -
+cd .
+cd ..
+The cd command without arguments changes to the home directory in UNIX and GNU/Linux systems.
+1
+scripting
+END
+In UNIX, which shell variable stores the exit code of the last executed command?
+$?
+$$
+$@
+$1
+$? stores the exit code of the last executed command. $$ is the PID of the current process, $@ is the list of command line arguments and $1 is the first command line argument.
+1
+scripting
+END
+How to save the output of a command to a file and see it at the same time?
+somecmd | tee somefile.txt
+somecmd >> somefile.txt
+somecmd | ttt somefile.txt
+somecmd >> tee somefile.txt
+The tee command takes standard input, save it to the specified file and at the same time prints it back to standard output.
+1
+scripting
+END
+How to redirect the output of a script to /dev/null in Windows?
+script.bat >nul
+script.bat >null
+script.bat >/dev/null
+script.bat >0
+The Null Device Driver component provides the functional equivalent of \dev\null in the Unix environment by accepting I/O request packets and returning them to the caller.
+1
+scripting
 END
 How to convert all characters in a file to lowercase?
 tr A-Z a-z < input.txt > output.txt
@@ -996,6 +1239,33 @@ somecmd 2>&1 >>file.out
 One way to achive this is to first redirect stdout and then redirect stderr to whatever stdout is pointing to.
 3
 scripting
+END
+How to give read permission on a file to other users in GNU/Linux?
+chmod o+r file.txt
+chmod 777
+chmod o+rwx file.txt
+chmod u+r file.txt
+"o" means other users (not you and not users in the same group), and "+r" means "add read permission". Every time you do chmod 777, somewhere in the world a puppy gets killed.
+1
+security
+END
+What is a disadvantage of a closed-source operating system?
+A closed-source system may spy on you without your knowledge
+A closed-source system has inherently more viruses
+A closed-source system is inherently insecure
+A closed-source system attracts game developers
+You cannot verify how the system works, so you put yourself at the mercy of the vendor of the closed-source operating system.
+1
+security
+END
+Which wireless security algorithm is the most insecure?
+WEP
+WPA
+WPA2
+RSN
+WEP has been demonstrated to have numerous flaws and has been deprecated in favour of newer standards such as WPA2.
+1
+security
 END
 Which is the least unsafe?
 strncpy
@@ -1222,6 +1492,42 @@ The 8-bit two's complement of a number can be calculated by subtracting the unsi
 2
 system-programming
 END
+In assembly, how do you usually copy a value?
+mov
+jne
+add
+cp
+mov exists in different flavor if it copies a fixed value, a register, a value in memory.
+2
+system-programming
+END
+In assembly, what is an interrupt?
+Some kind of signal to the processor
+An instruction to pause the program for n millisec
+A keyword to skip one instruction
+A small button to start/stop the program
+An interrupt is a signal to the processor emitted by hardware or software indicating an event that needs immediate attention.
+2
+system-programming
+END
+How much is ((1 << 2) | (1 << 1)) & 0x03 in decimal?
+2
+1
+0
+6
+(0100 | 0010) & 0011 = 0110 & 0011 = 0010 = 2
+2
+system-programming
+END
+How do you clear the 3rd bit of a byte Z?
+Z = Z & ~(1 << 2)
+Z = Z | (1 << 3)
+Z = Z & ~(1 << 3)
+Z = Z | (1 << 2)
+Z = Z & ~0100 = Z & 1011 = effectively setting the 3rd bit to zero.
+2
+system-programming
+END
 Which is not a programming language?
 CGI
 Bash
@@ -1237,6 +1543,42 @@ ping example.com
 checkdomain example.com
 knock-knock example.com
 The whois command looks up records in the database maintained by several Network Information Centers (NICs).
+1
+tools
+END
+What is the purpose of an .md5 file?
+Verify the integrity of a file downloaded from server
+Store encrypted data
+Store cryptographic signature
+Completely pointless
+md5 is a so-called digest function. You can use it to calculate the digest of a downloaded file, and if doesn't match with the .md5 file provided by the server, that means the downloaded file is corrupt, not identical to the original file on the server.
+1
+tools
+END
+How to cycle between tabs in most tabbed browsers?
+Ctrl-Tab
+Alt-Tab
+ESC-Tab
+Ctrl-Alt-Tab
+Usually, Ctrl-Tab switches to the next tab and Ctrl-Shift-Tab switches to the previous tab in a tabbed browser.
+1
+tools
+END
+How many characters wide is a TAB?
+It depends
+4
+8
+2
+The visual length of the TAB character depends on the viewing application and your personal settings.
+1
+tools
+END
+Which audio format is lossless?
+flac
+ogg-vorbis
+mp3
+aac
+FLAC (Free Lossless Audio Codec) is a codec (compressor-decompressor or coder-decoder) which allows digital audio to be losslessly compressed such that file size is reduced without any information being lost.
 1
 tools
 END
@@ -1348,6 +1690,15 @@ The awk solution works, by setting the input and output field separators to a co
 3
 tools
 END
+Which is a common version control operation?
+merge
+slice
+dice
+truncate
+The merge operation is used to combine multiple branches of code under version control into one.
+1
+version-control
+END
 Which is not a Version Control System?
 CSV
 Bazaar
@@ -1428,6 +1779,51 @@ A file with the same name was added in both BranchA and BranchB
 If branchA and branchB edited completely different parts of the file, that should be possible to resolve automatically. The other types of conflict require an explicit decision and action by a human.
 3
 version-control
+END
+Which is not a valid character in HTML as tag content?
+&
+$
+%
+!
+In HTML content "&" should be written as &amp;
+1
+web-programming
+END
+In web programming, which variable stores the input data of a GET request?
+QUERY_STRING
+INPUT
+QUERY_INPUT
+GET_READY
+The QUERY_STRING is the part of a URL after the question mark, not including the question mark itself, for example "search=hello&page=2".
+1
+web-programming
+END
+Which website offers free validation of your HTML code?
+validator.w3.org
+twitter.com
+facebook.com
+github.com
+The website http://validator.w3.org/ can validate all kinds of web documents and show the list of errors with explanations.
+1
+web-programming
+END
+When might you see this: 404 - File not found
+When visiting a URL that does not exist
+When copying a file that does not exist
+When running a command that does not exist
+When opening an email attachment
+404 is an HTTP status code, returned by the web server when the requested URL is unknown to the server.
+1
+web-programming
+END
+Where exactly is the HTTP 404 File not found error generated?
+The web server
+The client browser
+The client operating system
+The router between client and server
+When the requested URL doesn't exist, the web server responds with 404 status code to the client.
+1
+web-programming
 END
 In web programming, what is the QUERY_STRING?
 The part of the URL after the "?" mark
@@ -1555,6 +1951,42 @@ The standard itself does not set a limit on the header size, but most implementa
 3
 web-programming
 END
+What is the command to open a remote desktop connection in Windows?
+mstsc
+remote-desktop
+msdesktop
+msterm
+It's mstsc.exe
+1
+windows
+END
+What is the keyboard shortcut to lock your PC on Windows?
+Windows + l
+Ctrl-Alt-Del
+Ctrl-Escape
+Windows + d
+It's Windows-l, for "lock"
+1
+windows
+END
+What is the keyboard shortcut to open the system properties in Windows?
+Windows + Pause/Break
+Windows + Home
+Windows + l
+Windows + m
+The Windows-Pause/Break combo opens the system properties window, useful to check basic system properties, edit environment variable, among others.
+1
+windows
+END
+What is the keyboard shortcut to open the task manager in Windows?
+Ctrl + Shift + Escape
+Ctrl + Escape
+Windows + l
+Windows + m
+Ctrl + Shift + Escape opens the task manager, useful to view memory usage and kill processes.
+1
+windows
+END
 How to delete a directory recursively in Windows?
 rmdir /s/q
 rm -fr
@@ -1608,436 +2040,4 @@ Windows 98
 Windows NT was the first version of Microsoft Windows which enforced preemptive multitasking. Earlier versions used cooperative multitasking.
 3
 windows
-END
-In assembly, how do you usually copy a value?
-mov
-jne
-add
-cp
-mov exists in different flavor if it copies a fixed value, a register, a value in memory.
-2
-system-programming
-END
-In C#, which keyword is not related to method overloading?
-implements
-new
-virtual
-override
-"implements" is a keyword in Java but not in C#. 
-2
-programming
-END
-In assembly, what is an interrupt?
-Some kind of signal to the processor
-An instruction to pause the program for n millisec
-A keyword to skip one instruction
-A small button to start/stop the program
-An interrupt is a signal to the processor emitted by hardware or software indicating an event that needs immediate attention.
-2
-system-programming
-END
-How much is ((1 << 2) | (1 << 1)) & 0x03 in decimal? 
-2
-1
-0
-6
-(0100 | 0010) & 0011 = 0110 & 0011 = 0010 = 2
-2
-system-programming
-END
-How do you clear the 3rd bit of a byte Z?
-Z = Z & ~(1 << 2)
-Z = Z | (1 << 3)
-Z = Z & ~(1 << 3)
-Z = Z | (1 << 2)
-Z = Z & ~0100 = Z & 1011 = effectively setting the 3rd bit to zero.
-2
-system-programming
-END
-What is the operator of bitwise XOR in C?
-^
-&
-~
-|
-& is bitwise AND, | is bitwise OR, ~ is bitwise NOT, and ^ is bitwise XOR (exclusive OR).
-2
-programming
-END
-In C/C++ what is the effect of the volatile keyword ?
-Tell the compiler to not optimize access to this variable
-Tell the compiler to load the variable in the low-memory zone for fast access
-Tell the compiler to reserve a register to store this variable all along
-Tell the compiler to make the variable access threadsafe with a lock
-The variable may change "on its own" (means an interrupt or another thread might change it) so don't optimize code and always read the value of this variable.
-3
-programming
-END
-What is the maximum value of a uint16_t?
-65535
-32768
-256
-16
-uint16_t = unsigned int over 16 bits = 2^16-1 = 65535
-2
-programming
-END
-Who invented semaphores in concurrent programs?
-Dijkstra
-Traffic Man
-Kierkegaard
-Descartes
-Edsger W. Dijkstra, to whom we owe much (banker's algorithm, philosopher's dinner, Dijkstra algorithm, ...) 
-2
-history
-END
-Who said that the number of transistors in a chip will double every 18 months?
-Moore
-Von Neuman
-Turing
-MacGyver
-The co-founder of Intel, Gordon E. Moore.
-1
-history
-END
-What is the purpose of an .md5 file?
-Verify the integrity of a file downloaded from server
-Store encrypted data
-Store cryptographic signature
-Completely pointless
-md5 is a so-called digest function. You can use it to calculate the digest of a downloaded file, and if doesn't match with the .md5 file provided by the server, that means the downloaded file is corrupt, not identical to the original file on the server.
-1
-tools
-END
-A computer uses the least power in which mode?
-hibernate
-sleep
-stand-by
-lock
-When hibernated, the computer is completely off. It can restore itself by reloading the previously saved content of the memory.
-1
-hardware
-END
-What is the purpose of mounting a disk?
-Make a filesystem accessible
-Format a disk to store data
-Crush a disk by sitting on it
-Prepare an installation disk
-Mounting a disk is the process of making a file system accessible.
-1
-os
-END
-What will be the value of int i = 3 % 5?
-3
-2
-5
-0
-The modulo (sometimes called modulus) operation finds the remainder of division of one number by another. 3 divided by 5 is 0, and the remainder is 3.
-1
-programming
-END
-How to give read permission on a file to other users in GNU/Linux?
-chmod o+r file.txt
-chmod 777
-chmod o+rwx file.txt
-chmod u+r file.txt
-"o" means other users (not you and not users in the same group), and "+r" means "add read permission". Every time you do chmod 777, somewhere in the world a puppy gets killed.
-1
-security
-END
-How to shutdown safely a GNU/Linux machine?
-Press Ctrl-Alt-F1 first, and then Ctrl-Alt-Del
-Press Ctrl-Alt-SysRq-b
-Hold the power button until lights go bye bye
-Pull the plug out
-Ctrl-Alt-F1 will switch from graphical mode to the first virtual terminal in GNU/Linux. When on a virtual terminal, most GNU/Linux systems are configured to shut down safely.
-1
-linux
-END
-How to reset the BIOS password if you forgot it?
-Remove the motherboard battery for a few seconds
-Reboot the computer
-Reboot the computer using a system rescue CD
-Replace hard disk
-You can try to remove and reinsert the battery on the motherboard. If that doesn't work, the solution might be changing a jumper setting. Look for the manual of your computer.
-1
-hardware
-END
-Which command will change to your home directory in UNIX?
-cd
-cd -
-cd .
-cd ..
-The cd command without arguments changes to the home directory in UNIX and GNU/Linux systems.
-1
-scripting
-END
-What is SMTP for?
-Mail server
-SMS server
-FTP server
-SPAM server
-SMTP stands for Simple Message Transfer Protocol, it is used by mail servers to send and receive mail messages.
-1
-history
-END
-When will the world run out of the free pool of IPv4 addresses?
-31 January 2011
-12 December 2012
-Not in the foreseeable future
-29 February 2015
-On 31 January 2011, IANA (Internet Assigned Numbers Authority) announced it had exhausted its free pool of IPv4 addresses.
-1
-history
-END
-What is the command to open a remote desktop connection in Windows?
-mstsc
-remote-desktop
-msdesktop
-msterm
-It's mstsc.exe
-1
-windows
-END
-What is the keyboard shortcut to lock your PC on Windows?
-Windows + l
-Ctrl-Alt-Del
-Ctrl-Escape
-Windows + d
-It's Windows-l, for "lock"
-1
-windows
-END
-How to cycle between tabs in most tabbed browsers?
-Ctrl-Tab
-Alt-Tab
-ESC-Tab
-Ctrl-Alt-Tab
-Usually, Ctrl-Tab switches to the next tab and Ctrl-Shift-Tab switches to the previous tab in a tabbed browser.
-1
-tools
-END
-How many characters wide is a TAB?
-It depends
-4
-8
-2
-The visual length of the TAB character depends on the viewing application and your personal settings.
-1
-tools
-END
-Which is not a valid character in HTML as tag content?
-&
-$
-%
-!
-In HTML content "&" should be written as &amp;
-1
-web-programming
-END
-Which command will print the current working directory in UNIX?
-pwd
-cwd
-dir
-cd
-The pwd command prints the absolute path of the current working directory. Usually the same value is also stored in the environment variable $PWD.
-1
-linux
-END
-How to check the available disk space in GNU/Linux?
-df -h
-du -sm /*
-diskusage
-free
-The letters of the command stand for "disk free", and the "-h" makes the output more "human-friendly".
-1
-linux
-END
-In UNIX, how to put the current command in the background?
-Press Ctrl-z and run the command: bg
-Press Ctrl-c and run the command: bg
-Press Ctrl-z and run the command: bg &
-Press Ctrl-Alt-Del and run the command: bg
-Ctrl-z pauses execution of the current job, and the bg program puts the paused job in the background.
-1
-linux
-END
-In UNIX, which shell variable stores the exit code of the last executed command?
-$?
-$$
-$@
-$1
-$? stores the exit code of the last executed command. $$ is the PID of the current process, $@ is the list of command line arguments and $1 is the first command line argument.
-1
-scripting
-END
-How to save the output of a command to a file and see it at the same time?
-somecmd | tee somefile.txt
-somecmd >> somefile.txt
-somecmd | ttt somefile.txt
-somecmd >> tee somefile.txt
-The tee command takes standard input, save it to the specified file and at the same time prints it back to standard output.
-1
-scripting
-END
-In web programming, which variable stores the input data of a GET request?
-QUERY_STRING
-INPUT
-QUERY_INPUT
-GET_READY
-The QUERY_STRING is the part of a URL after the question mark, not including the question mark itself, for example "search=hello&page=2".
-1
-web-programming
-END
-Which website offers free validation of your HTML code?
-validator.w3.org
-twitter.com
-facebook.com
-github.com
-The website http://validator.w3.org/ can validate all kinds of web documents and show the list of errors with explanations.
-1
-web-programming
-END
-Which browser was the ancestor of Firefox?
-Mozilla
-Godzilla
-Netscape
-Colossus
-The Firefox project began as an experimental branch of the Mozilla project.
-1
-history
-END
-What is a disadvantage of a closed-source operating system?
-A closed-source system may spy on you without your knowledge
-A closed-source system has inherently more viruses
-A closed-source system is inherently insecure
-A closed-source system attracts game developers
-You cannot verify how the system works, so you put yourself at the mercy of the vendor of the closed-source operating system.
-1
-security
-END
-What is the purpose of a DHCP server?
-Dynamically assign IP addresses to PCs
-Dynamically assign MAC addresses to PCs
-Proxy connections from a local network to internet
-Increase the security of a network
-The Dynamic Host Configuration Protocol (DHCP) is a network protocol used to configure devices that are connected to a network so they can communicate on that network using the Internet Protocol (IP).
-1
-network
-END
-What is IPsec?
-A security scheme
-Secure IP address
-Secondary IP address
-Proxy server
-IPsec is an end-to-end security scheme operating in the Internet Layer of the Internet Protocol Suite.
-1
-network
-END
-Which wireless security algorithm is the most insecure?
-WEP
-WPA
-WPA2
-RSN
-WEP has been demonstrated to have numerous flaws and has been deprecated in favour of newer standards such as WPA2.
-1
-security
-END
-How to redirect the output of a script to /dev/null in Windows?
-script.bat >nul
-script.bat >null
-script.bat >/dev/null
-script.bat >0
-The Null Device Driver component provides the functional equivalent of \dev\null in the Unix environment by accepting I/O request packets and returning them to the caller.
-1
-scripting
-END
-What is the keyboard shortcut to open the system properties in Windows?
-Windows + Pause/Break
-Windows + Home
-Windows + l
-Windows + m
-The Windows-Pause/Break combo opens the system properties window, useful to check basic system properties, edit environment variable, among others.
-1
-windows
-END
-What is the keyboard shortcut to open the task manager in Windows?
-Ctrl + Shift + Escape
-Ctrl + Escape
-Windows + l
-Windows + m
-Ctrl + Shift + Escape opens the task manager, useful to view memory usage and kill processes.
-1
-windows
-END
-How to count the number of sheep in the farm table?
-SELECT count(*) FROM farm;
-SELECT count sheep FROM farm;
-SELECT count(sheep) FROM farm;
-SELECT sheep FROM farm;
-The SQL syntax for counting records in some table is SELECT count(*) FROM table_name;
-1
-database
-END
-Which is a common version control operation?
-merge
-slice
-dice
-truncate
-The merge operation is used to combine multiple branches of code under version control into one.
-1
-version-control
-END
-Which audio format is lossless?
-flac
-ogg-vorbis
-mp3
-aac
-FLAC (Free Lossless Audio Codec) is a codec (compressor-decompressor or coder-decoder) which allows digital audio to be losslessly compressed such that file size is reduced without any information being lost.
-1
-tools
-END
-Which one looks like a MAC address?
-58:b0:35:80:36:9f
-192.168.2.103
-fe80::5ab0:35ff:fe80:369f
-0xffffff00
-MAC addresses are used as a network address for most IEEE 802 network technologies, including Ethernet.
-1
-hardware
-END
-Which data structure is most suitable to implement an index?
-Map
-Set
-List
-Array
-The concept of an index is like a lookup table: it allows looking up a specific value directly by its known index, without inspecting elements one by one.
-1
-data-structure
-END
-When might you see this: 404 - File not found
-When visiting a URL that does not exist
-When copying a file that does not exist
-When running a command that does not exist
-When opening an email attachment
-404 is an HTTP status code, returned by the web server when the requested URL is unknown to the server.
-1
-web-programming
-END
-Where exactly is the HTTP 404 File not found error generated?
-The web server
-The client browser
-The client operating system
-The router between client and server
-When the requested URL doesn't exist, the web server responds with 404 status code to the client.
-1
-web-programming
-END
-Which one looks like a netmask?
-255.255.255.0
-192.168.2.103
-192.168.2.255
-192.168.2.1
-The subnet mask is used to separate the network address part and the host identifier part of an IP address. For example if the IP address is 192.168.2.103 and the subnet mask is 255.255.255.0, then the network address is 192.168.2.0 and the host identifier is 103.
-1
-network
 END
