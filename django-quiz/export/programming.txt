@@ -167,7 +167,7 @@ List
 Array
 The concept of an index is like a lookup table: it allows looking up a specific value directly by its known index, without inspecting elements one by one.
 1
-data-structure
+data-structures
 END
 What is the difference between a binary tree and a B-tree?
 A B-tree is a generalization of the binary tree.
@@ -886,6 +886,15 @@ Format a disk to store data
 Crush a disk by sitting on it
 Prepare an installation disk
 Mounting a disk is the process of making a file system accessible.
+1
+os
+END
+How many primary partitions are allowed on a PC hard disk?
+4
+3
+5
+unlimited
+The total data storage space of a PC HDD can be divided into at most four primary partitions, or alternatively three primary partitions and an extended partition.
 1
 os
 END
