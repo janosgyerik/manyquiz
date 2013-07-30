@@ -34,7 +34,7 @@ On average, quicksort makes O(n log n) comparisons to sort n items.
 2
 algorithms
 END
-Which not a stable sorting algorithm?
+Which is not a stable sorting algorithm?
 heapsort
 bubble sort
 merge sort
@@ -876,7 +876,7 @@ Which regular expression is a zero-width positive look-behind assertion?
 (?=pattern)
 (?!pattern)
 (?<!pattern)
-Usually, "<" indicates a look-behind assertion, and "!" indicates a negative assertion.
+Usually, "<" indicates a look-behind assertion, and its absence a look-ahead assertion. Usually "=" indicates a positive assertion and "!" a negative assertion.
 3
 programming
 END
@@ -1141,7 +1141,7 @@ What is the decimal value of 0x15?
 1
 system-programming
 END
-What is the decimal value of 015?
+What is the decimal value of 015 (octal)?
 13
 15
 21
