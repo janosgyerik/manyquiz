@@ -1069,6 +1069,15 @@ uint16_t = unsigned int over 16 bits = 2^16-1 = 65535
 2
 programming
 END
+Which kind of protocol would be the most efficient to implement low-latency communication between remote processes?
+Binary protocol
+SOAP-based protocol
+XML-based protocol
+Text-based protocol
+A binary protocol yields the smallest possible footprint in the communication, which is often a significant boost compared to more verbose text-based protocols like SOAP or XML.
+2
+programming
+END
 In C, given char **argv, what is equivalent to printf("%s\n", argv[0])
 printf("%s\n", *(argv + 0));
 printf("%s\n", &argv[0]);
@@ -1402,15 +1411,6 @@ A buffer overflow can potentially lead to privilege escalation, which could be u
 3
 security
 END
-Which kind of protocol would be the most efficient to implement low-latency communication between remote processes?
-Binary protocol
-SOAP-based protocol
-XML-based protocol
-Text-based protocol
-A binary protocol yields the smallest possible footprint in the communication, which is often a significant boost compared to more verbose text-based protocols like SOAP or XML.
-2
-programming
-END
 What is the decimal value of 0x15?
 21
 15
@@ -1708,13 +1708,49 @@ The merge operation is used to combine multiple branches of code under version c
 1
 version-control
 END
+How to get the source code from a Version Control System?
+checkout
+checkin
+get
+download
+The command to get the source code is usually either "checkout" or "clone".
+1
+version-control
+END
+How to save changes in a Version Control System?
+commit
+log
+save
+upload
+The command to save changes is usually either "commit" or "checkin".
+1
+version-control
+END
+What is the command to view pending changes in a Version Control System?
+status
+check
+summary
+view
+The command to view pending changes is usually "status". Very often the shortcut "st" works too.
+1
+version-control
+END
+What does VCS stand for in source code management?
+Version Control System
+Version Change System
+Version Control Software
+Version Change Software
+A version control system is used to manage changes to source code. Such system is for example Git, Mercurial, Subversion, Bazaar.
+1
+version-control
+END
 Which is not a Version Control System?
 CSV
 Bazaar
 Subversion
 CVS
 CSV stands for Comma Separated Values, it is a common file format, not a Version Control System.
-2
+1
 version-control
 END
 Which version control operation will never result in a conflict?
