@@ -223,6 +223,51 @@ The SQL syntax for counting records in some table is SELECT count(*) FROM table_
 1
 database
 END
+What does SQL stand for?
+Structured Query Language
+Standard Query Language
+Simple Query Language
+Signal Query Language
+SQL, Structured Query Language, is a special-purpose programming language designed for managing data held in a relational database management system (RDBMS).
+1
+database
+END
+Which is not a common SQL command?
+FIND
+SELECT
+UPDATE
+INSERT
+SELECT, UPDATE and INSERT are common SQL commands, FIND is not.
+1
+database
+END
+How to find all employees whose name is "Smith"?
+SELECT * FROM Employees WHERE Name = 'Smith';
+SELECT * FROM Employees WHERE Name IS 'Sales';
+SELECT * FROM Employees WHERE Name = "Sales";
+SELECT * FROM Employees WHERE Name == 'Sales';
+Strings must be enclosed within single quotes, and the operator to check for equality is "==".
+1
+database
+END
+How to find all employees with NULL as email address?
+SELECT * FROM Employees WHERE Email IS NULL;
+SELECT * FROM Employees WHERE Email = 'NULL';
+SELECT * FROM Employees WHERE Email == 'NULL';
+SELECT * FROM Employees WHERE Email = NULL;
+NULL is a special keyword in SQL, it should not be quoted. The syntax to check whether something is NULL or not is "IS NULL" and "IS NOT NULL".
+1
+database
+END
+In a relational database, what is the term for minimizing redundancy and dependency?
+normalization
+optimization
+denormalization
+truncation
+Normalization usually involves dividing large tables into smaller, less redundant tables and defining relationships between them.
+1
+database
+END
 What type of JOIN is this: SELECT * FROM t1 JOIN t2 ON t1.id = t2.id
 INNER JOIN
 OUTER JOIN
@@ -736,7 +781,7 @@ groff is a document formatting system (for example rendering man pages) and cann
 3
 linux
 END
-Which command check if a given PID is running or not?
+Which command can check if any given PID is running or not?
 kill
 netstat
 top
@@ -1069,6 +1114,15 @@ uint16_t = unsigned int over 16 bits = 2^16-1 = 65535
 2
 programming
 END
+Which kind of protocol would be the most efficient to implement low-latency communication between remote processes?
+Binary protocol
+SOAP-based protocol
+XML-based protocol
+Text-based protocol
+A binary protocol yields the smallest possible footprint in the communication, which is often a significant boost compared to more verbose text-based protocols like SOAP or XML.
+2
+programming
+END
 In C, given char **argv, what is equivalent to printf("%s\n", argv[0])
 printf("%s\n", *(argv + 0));
 printf("%s\n", &argv[0]);
@@ -1083,11 +1137,11 @@ Which regular expression is a zero-width positive look-behind assertion?
 (?=pattern)
 (?!pattern)
 (?<!pattern)
-Usually, "<" indicates a look-behind assertion, and its absence a look-ahead assertion. Usually "=" indicates a positive assertion and "!" a negative assertion.
+The symbol "<" usually indicates a look-behind assertion, and its absence a look-ahead assertion. The symbol "=" usually indicates a positive assertion, and the symbol "!" a negative assertion.
 3
 programming
 END
-Which is not in the same group as LISP?
+Which language is not in the same group as LISP?
 C++
 R
 Scheme
@@ -1096,7 +1150,7 @@ LISP, R, Scheme, and Scala are all functional languages. C++ is an imperative la
 3
 programming
 END
-Which is not in the same group as C++?
+Which language is not in the same group as C++?
 Haskell
 C
 Java
@@ -1128,7 +1182,7 @@ Positive look-ahead assertion
 Negative look-ahead assertion
 Positive look-behind assertion
 Negative look-behind assertion
-This is zero-width positive look-ahead assertion. For example /\w+(?=\t)/ matches a word followed by a tab.
+This is a zero-width positive look-ahead assertion. For example /\w+(?=\t)/ matches a word followed by a TAB, without including the TAB in the matched string.
 3
 programming
 END
@@ -1317,7 +1371,7 @@ FTP
 SFTP
 SSH
 Windows
-File transfers via FTP are not encrypted, therefore they can be captured by anyone on the same network using a packet sniffereasily revealing login usernames and passwords. Windows is not a "service", it's an operating system.
+File transfers via FTP are not encrypted, therefore they can be captured by anyone on the same network using a packet sniffer, easily revealing login usernames and passwords. Windows is not a "service", it's an operating system.
 2
 security
 END
@@ -1401,15 +1455,6 @@ NullPointerException
 A buffer overflow can potentially lead to privilege escalation, which could be used to produce all the others and much worse.
 3
 security
-END
-Which kind of protocol would be the most efficient to implement low-latency communication between remote processes?
-Binary protocol
-SOAP-based protocol
-XML-based protocol
-Text-based protocol
-A binary protocol yields the smallest possible footprint in the communication, which is often a significant boost compared to more verbose text-based protocols like SOAP or XML.
-2
-software-engineering
 END
 What is the decimal value of 0x15?
 21
@@ -1708,13 +1753,49 @@ The merge operation is used to combine multiple branches of code under version c
 1
 version-control
 END
+How to get the source code from a Version Control System?
+checkout
+checkin
+get
+download
+The command to get the source code is usually either "checkout" or "clone".
+1
+version-control
+END
+How to save changes in a Version Control System?
+commit
+log
+save
+upload
+The command to save changes is usually either "commit" or "checkin".
+1
+version-control
+END
+What is the command to view pending changes in a Version Control System?
+status
+check
+summary
+view
+The command to view pending changes is usually "status". Very often the shortcut "st" works too.
+1
+version-control
+END
+What does VCS stand for in source code management?
+Version Control System
+Version Change System
+Version Control Software
+Version Change Software
+A version control system is used to manage changes to source code. Such system is for example Git, Mercurial, Subversion, Bazaar.
+1
+version-control
+END
 Which is not a Version Control System?
 CSV
 Bazaar
 Subversion
 CVS
 CSV stands for Comma Separated Values, it is a common file format, not a Version Control System.
-2
+1
 version-control
 END
 Which version control operation will never result in a conflict?

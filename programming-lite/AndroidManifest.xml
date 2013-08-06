@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.manyquiz.programming.lite"
-          android:versionCode="4"
-          android:versionName="1.0">
+          android:versionCode="5"
+          android:versionName="1.0.1">
 
     <uses-sdk
             android:minSdkVersion="4"
@@ -12,34 +12,34 @@
             android:name="com.manyquiz.application.LiteQuizApplication"
             android:allowBackup="false"
             android:icon="@drawable/launcher_main"
-            android:label="@string/app_name"
+            android:label="@string/app_name_lite"
             android:theme="@style/Theme.Light.NoTitleBar">
-        <activity
-                android:name="com.manyquiz.activity.IntroActivity"
-                android:label="@string/app_name_lite">
+        <activity android:name="com.manyquiz.activity.IntroActivity"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-                android:name="com.manyquiz.activity.QuizActivity"
-                android:label="@string/label_quiz_activity">
-        </activity>
+        <activity android:name="com.manyquiz.activity.QuizActivity"
+                  android:screenOrientation="portrait" />
         <activity
                 android:name="com.manyquiz.activity.ContactActivity"
                 android:label="@string/label_contact_activity"
+                android:screenOrientation="portrait"
                 android:theme="@style/Theme.Dialog">
         </activity>
         <activity
                 android:name="com.manyquiz.activity.SettingsActivity"
                 android:label="@string/label_settings_activity"
+                android:screenOrientation="portrait"
                 android:theme="@style/Theme.Dialog">
         </activity>
         <activity
                 android:name="com.manyquiz.activity.ResultsActivity"
                 android:label="@string/label_results_activity"
+                android:screenOrientation="portrait"
                 android:theme="@style/Theme.Dialog">
         </activity>
     </application>
