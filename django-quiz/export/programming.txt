@@ -736,7 +736,7 @@ groff is a document formatting system (for example rendering man pages) and cann
 3
 linux
 END
-Which command check if a given PID is running or not?
+Which command can check if any given PID is running or not?
 kill
 netstat
 top
@@ -1083,11 +1083,11 @@ Which regular expression is a zero-width positive look-behind assertion?
 (?=pattern)
 (?!pattern)
 (?<!pattern)
-Usually, "<" indicates a look-behind assertion, and its absence a look-ahead assertion. Usually "=" indicates a positive assertion and "!" a negative assertion.
+The symbol "<" usually indicates a look-behind assertion, and its absence a look-ahead assertion. The symbol "=" usually indicates a positive assertion, and the symbol "!" a negative assertion.
 3
 programming
 END
-Which is not in the same group as LISP?
+Which language is not in the same group as LISP?
 C++
 R
 Scheme
@@ -1096,7 +1096,7 @@ LISP, R, Scheme, and Scala are all functional languages. C++ is an imperative la
 3
 programming
 END
-Which is not in the same group as C++?
+Which language is not in the same group as C++?
 Haskell
 C
 Java
@@ -1128,7 +1128,7 @@ Positive look-ahead assertion
 Negative look-ahead assertion
 Positive look-behind assertion
 Negative look-behind assertion
-This is zero-width positive look-ahead assertion. For example /\w+(?=\t)/ matches a word followed by a tab.
+This is a zero-width positive look-ahead assertion. For example /\w+(?=\t)/ matches a word followed by a TAB, without including the TAB in the matched string.
 3
 programming
 END
@@ -1317,7 +1317,7 @@ FTP
 SFTP
 SSH
 Windows
-File transfers via FTP are not encrypted, therefore they can be captured by anyone on the same network using a packet sniffereasily revealing login usernames and passwords. Windows is not a "service", it's an operating system.
+File transfers via FTP are not encrypted, therefore they can be captured by anyone on the same network using a packet sniffer, easily revealing login usernames and passwords. Windows is not a "service", it's an operating system.
 2
 security
 END
