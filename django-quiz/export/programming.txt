@@ -1321,7 +1321,7 @@ You cannot verify how the system works, so you put yourself at the mercy of the 
 1
 security
 END
-Which wireless security algorithm is the most insecure?
+Which wireless security algorithm is the least secure?
 WEP
 WPA
 WPA2
