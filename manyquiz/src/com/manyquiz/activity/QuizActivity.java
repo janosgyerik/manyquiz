@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -28,11 +29,6 @@ public class QuizActivity extends QuizBaseActivity {
 
     public static final String PARAM_LEVEL = "LEVEL";
     public static final String PARAM_SUDDENDEATH_MODE = "SUDDENDEATH_MODE";
-
-    private static final int BTN_PADDING_LEFT = 10;
-    private static final int BTN_PADDING_TOP = 15;
-    private static final int BTN_PADDING_RIGHT = 10;
-    private static final int BTN_PADDING_BOTTOM = 15;
 
     private QuizSQLiteOpenHelper helper;
     private List<IQuestion> questions;
@@ -190,10 +186,10 @@ public class QuizActivity extends QuizBaseActivity {
         choicesView.removeAllViews();
         boolean wasAnswered = question.wasAnswered();
         for (String choice : question.getChoices()) {
-            Button button = new Button(this);
+            final LayoutInflater inflater = LayoutInflater.from(this);
+            Button button = (Button) inflater.inflate(R.layout.answer_button, choicesView, false);
             button.setText(choice);
-            button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP,
-                    BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
+
             if (!wasAnswered) {
                 button.setOnClickListener(new ChoiceClickListener(choice));
             }
@@ -213,14 +209,22 @@ public class QuizActivity extends QuizBaseActivity {
         String correctAnswer = currentQuestion.getCorrectAnswer();
         for (int i = 0; i < choicesView.getChildCount(); ++i) {
             Button button = (Button) choicesView.getChildAt(i);
+
+            // weird. but, need to save the paddings and reapply them after
+            // changing the background resource, otherwise the padding disappears
+            int paddingTop = button.getPaddingTop();
+            int paddingBottom = button.getPaddingBottom();
+            int paddingLeft = button.getPaddingLeft();
+            int paddingRight = button.getPaddingRight();
+
             if (button.getText().equals(correctAnswer)) {
                 button.setBackgroundResource(R.drawable.btn_correct);
+                button.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
             } else if (button.getText().equals(answer)) {
                 button.setBackgroundResource(R.drawable.btn_incorrect);
+                button.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
             }
 
-            button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP,
-                    BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
             button.setEnabled(false);
         }
     }
