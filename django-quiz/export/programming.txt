@@ -169,6 +169,51 @@ The concept of an index is like a lookup table: it allows looking up a specific 
 1
 data-structures
 END
+What kind of data structure is a FIFO?
+queue
+array
+list
+stack
+FIFO stands for First In, First Out. Like in a queue where you line up to get movie tickets.
+1
+data-structures
+END
+What kind of data structure is a LIFO?
+stack
+queue
+array
+list
+LIFO stands for Last In, First Out. A LIFO structure can be illustrated with the example of a stack of trays. The last tray to be placed on top is also the first to be taken off the top.
+1
+data-structures
+END
+Which data structure is equivalent to an associative array?
+map
+array
+set
+stack
+An associative array is composed of a collection of (key, value) pairs, such that each possible key appears at most once in the collection. An array, set or stack is a collection of values, not pairs.
+1
+data-structures
+END
+Which data structure is not like the others?
+list
+dictionary
+associative array
+symbol table
+An associative array, symbol table, or dictionary is an abstract data type composed of a collection of (key, value) pairs. A list is a collection of values, not pairs.
+1
+data-structures
+END
+Which data structure is used to implement caches?
+hash table
+set
+list
+tuple
+A hash table is a structure that can map keys to values. They can access values directly by their keys and retrieve them quickly.
+1
+data-structures
+END
 What is the difference between a binary tree and a B-tree?
 A B-tree is a generalization of the binary tree.
 No difference, they are synonyms.
