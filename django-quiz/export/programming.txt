@@ -2113,6 +2113,42 @@ Ctrl + Shift + Escape opens the task manager, useful to view memory usage and ki
 1
 windows
 END
+What is the command to edit the registry in Windows systems?
+regedit
+regeditor
+registry-edit
+system
+It's regedit.exe
+1
+windows
+END
+What is the default filesystem when formatting a disk in Windows NT systems?
+NTFS
+FAT16
+FAT32
+DOS
+NTFS supersedes the FAT file system as the preferred file system for Microsoft Windows operating systems.
+1
+windows
+END
+How to check the IP address of a computer in Windows?
+ipconfig
+ifconfig
+/sbin/ifconfig
+netstat
+The ipconfig command shows the configuration of network interfaces in Windows, including the IP address, network mask, and others.
+1
+windows
+END
+In which version of Windows was PowerShell introduced?
+Windows 7
+Windows 8
+Windows XP
+Windows NT
+Windows PowerShell is Microsoft's task automation framework, consisting of a command-line shell and associated scripting language built on .NET Framework. PowerShell was introduced in Windows 7 as an integral part of the system.
+1
+windows
+END
 How to delete a directory recursively in Windows?
 rmdir /s/q
 rm -fr
