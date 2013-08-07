@@ -1915,6 +1915,42 @@ When the requested URL doesn't exist, the web server responds with 404 status co
 1
 web-programming
 END
+Which file is used to prevent web crawlers from accessing parts of a website?
+robots.txt
+robots.config
+deny.conf
+hosts.allow
+Most search engines check if a robots.txt file exists in a website's root directory and respect the exclusion rules defined within.
+1
+web-programming
+END
+What is the standard port number used by web servers?
+80
+8080
+8000
+8888
+The standard port number of the HTTP protocol is 80.
+1
+web-programming
+END
+What is the standard port number used by secure web servers (HTTPS)?
+443
+80
+8888
+22
+The standard port number of the HTTPS protocol is 443.
+1
+web-programming
+END
+Which file is used as a web site's bookmark icon in browsers?
+favicon.ico
+icon.png
+favicon.bmp
+bookmark.png
+In the past browsers used the favicon.ico file in the webserver root as the website's icon in bookmarks. In modern browsers the name and location of the file can be customized using a <link> tag.
+1
+web-programming
+END
 In web programming, what is the QUERY_STRING?
 The part of the URL after the "?" mark
 The part of the URL after the "#" mark
