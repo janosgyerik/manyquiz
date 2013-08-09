@@ -11,8 +11,6 @@ public interface IQuizControl extends Serializable {
 
     int getScore();
 
-    int getScoreAsPercentage();
-
     boolean isGameOver();
 
     boolean hasNextQuestion();

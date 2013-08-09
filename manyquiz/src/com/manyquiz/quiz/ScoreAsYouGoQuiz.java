@@ -43,11 +43,6 @@ public class ScoreAsYouGoQuiz implements IQuizControl {
     }
 
     @Override
-    public int getScoreAsPercentage() {
-        return 0;
-    }
-
-    @Override
     public boolean isGameOver() {
         for (IQuestionControl question : questions) {
             if (question.isPending()) {
