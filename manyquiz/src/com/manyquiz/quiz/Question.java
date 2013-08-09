@@ -6,40 +6,37 @@ import java.util.List;
 
 public class Question implements IQuestion {
 
-    private final String category;
-    private final String text;
+    private final String question;
     private final String explanation;
 
-    private final List<String> choices;
-    private final String correctAnswer;
+    private final List<IAnswer> correctAnswers;
+    private final List<IAnswer> decoyAnswers;
+    private final List<IAnswer> shuffledAnswers;
 
-    private String selectedAnswer;
-    private boolean answered;
-    private boolean correctlyAnswered;
-
-    public Question(String category, String text, String explanation,
-                    String answer, List<String> decoyChoices) {
-        this.category = category;
-        this.text = text;
+    public Question(String question, List<IAnswer> answers, String explanation) {
+        this.question = question;
         this.explanation = explanation;
-        this.correctAnswer = answer;
 
-        this.answered = false;
-        this.correctlyAnswered = false;
+        correctAnswers = new ArrayList<IAnswer>();
+        decoyAnswers = new ArrayList<IAnswer>();
+        shuffledAnswers = new ArrayList<IAnswer>();
 
-        this.choices = new ArrayList<String>(decoyChoices);
-        this.choices.add(answer);
-        Collections.shuffle(choices);
-    }
+        for (IAnswer answer : answers) {
+            shuffledAnswers.add(answer);
+            if (answer.isCorrect()) {
+                correctAnswers.add(answer);
+            }
+            else {
+                decoyAnswers.add(answer);
+            }
+        }
 
-    @Override
-    public String getCategory() {
-        return category;
+        Collections.shuffle(shuffledAnswers);
     }
 
     @Override
     public String getText() {
-        return text;
+        return question;
     }
 
     @Override
@@ -48,34 +45,7 @@ public class Question implements IQuestion {
     }
 
     @Override
-    public List<String> getChoices() {
-        return choices;
-    }
-
-    @Override
-    public String getCorrectAnswer() {
-        return correctAnswer;
-    }
-
-    @Override
-    public String getSelectedAnswer() {
-        return selectedAnswer;
-    }
-
-    @Override
-    public void setSelectedAnswer(String answer) {
-        selectedAnswer = answer;
-        answered = true;
-        correctlyAnswered = answer.equals(correctAnswer);
-    }
-
-    @Override
-    public boolean wasCorrectlyAnswered() {
-        return correctlyAnswered;
-    }
-
-    @Override
-    public boolean wasAnswered() {
-        return answered;
+    public List<IAnswer> getShuffledAnswers() {
+        return shuffledAnswers;
     }
 }

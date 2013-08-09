@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 import android.util.Log;
 
+import com.manyquiz.quiz.Answer;
+import com.manyquiz.quiz.IAnswer;
 import com.manyquiz.quiz.IQuestion;
 import com.manyquiz.quiz.Level;
 import com.manyquiz.quiz.Question;
@@ -82,13 +84,14 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
      * Very primitive for now: recreate all tables
      * (drop all existing tables and then call onCreate)
      *
-     * @param db
-     * @param oldVersion
-     * @param newVersion
+     * @param db SQLiteDatabase object
+     * @param oldVersion version to migrate FROM
+     * @param newVersion version to migrate TO
      */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         List<String> tables = new ArrayList<String>();
+        // TODO: select column explicitly
         Cursor cursor = db.rawQuery("SELECT * FROM sqlite_master WHERE type='table';", null);
         while (cursor.moveToNext()) {
             String tableName = cursor.getString(1);
@@ -162,25 +165,34 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    static class AnswerRecord {
+        String text;
+        boolean correct;
+    }
+
+    static class QuestionRecord {
+        String id;
+        String text;
+        String explanation;
+        List<IAnswer> answers = new ArrayList<IAnswer>();
+    }
+
     public List<IQuestion> getQuestions(int level) {
         List<IQuestion> questions = new ArrayList<IQuestion>();
 
-        Map<String, QuestionData> questionDataMap = new HashMap<String, QuestionData>();
+        Map<String, QuestionRecord> questionRecordMap = new HashMap<String, QuestionRecord>();
 
         {
             Cursor cursor = getQuestionListCursor(level);
             final int idIndex = cursor.getColumnIndex(BaseColumns._ID);
             final int textIndex = cursor.getColumnIndex("text");
-            final int categoryIndex = cursor.getColumnIndex("category");
             final int explanationIndex = cursor.getColumnIndex("explanation");
             while (cursor.moveToNext()) {
-                QuestionData data = new QuestionData();
-                String id = cursor.getString(idIndex);
-                data.setId(id);
-                data.setText(cursor.getString(textIndex));
-                data.setCategory(cursor.getString(categoryIndex));
-                data.setExplanation(cursor.getString(explanationIndex));
-                questionDataMap.put(id, data);
+                QuestionRecord record = new QuestionRecord();
+                record.id = cursor.getString(idIndex);
+                record.text = cursor.getString(textIndex);
+                record.explanation = cursor.getString(explanationIndex);
+                questionRecordMap.put(record.id, record);
             }
             cursor.close();
         }
@@ -191,18 +203,18 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
             final int textIndex = cursor.getColumnIndex("text");
             final int isCorrectIndex = cursor.getColumnIndex("is_correct");
             while (cursor.moveToNext()) {
+                AnswerRecord record = new AnswerRecord();
                 String questionId = cursor.getString(questionIdIndex);
-                String answer = cursor.getString(textIndex);
-                int isCorrect = cursor.getInt(isCorrectIndex);
-                QuestionData data = questionDataMap.get(questionId);
-                data.addAnswer(answer, isCorrect > 0);
+                record.text = cursor.getString(textIndex);
+                record.correct = cursor.getInt(isCorrectIndex) > 0;
+                QuestionRecord question = questionRecordMap.get(questionId);
+                question.answers.add(new Answer(record.text, record.correct));
             }
             cursor.close();
         }
 
-        for (QuestionData data : questionDataMap.values()) {
-            IQuestion question = new Question(data.category, data.text,
-                    data.explanation, data.correctAnswer, data.choices);
+        for (QuestionRecord data : questionRecordMap.values()) {
+            IQuestion question = new Question(data.text, data.answers, data.explanation);
             questions.add(question);
         }
 

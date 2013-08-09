@@ -15,12 +15,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.manyquiz.db.DatabaseBackedQuiz;
+import com.manyquiz.quiz.IAnswerControl;
 import com.manyquiz.quiz.IQuestion;
+import com.manyquiz.quiz.IQuestionControl;
 import com.manyquiz.quiz.IQuiz;
+import com.manyquiz.quiz.IQuizControl;
 import com.manyquiz.quiz.Level;
 import com.manyquiz.db.QuizSQLiteOpenHelper;
 import com.manyquiz.R;
+import com.manyquiz.quiz.ScoreAsYouGoQuiz;
+import com.manyquiz.quiz.SuddenDeathQuiz;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class QuizActivity extends QuizBaseActivity {
@@ -31,24 +37,17 @@ public class QuizActivity extends QuizBaseActivity {
     public static final String PARAM_SUDDENDEATH_MODE = "SUDDENDEATH_MODE";
 
     private QuizSQLiteOpenHelper helper;
-    private List<IQuestion> questions;
-    private IQuestion currentQuestion;
-    private int currentQuestionIndex = 0;
-    private int score = 0;
 
-    private Level level;
-    private boolean suddenDeathMode;
-
-    private int answeredQuestionsNum = 0;
     private TextView questionView;
     private TextView explanationView;
     private LinearLayout choicesView;
     private ImageButton prevButton;
     private ImageButton nextButton;
     private ImageButton finishButton;
-    private TextView questions_i;
+    private TextView questionsCounterView;
 
-    private boolean gameOver;
+    private IQuizControl quizControl;
+    private List<Button> answerButtons = new ArrayList<Button>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,52 +57,64 @@ public class QuizActivity extends QuizBaseActivity {
 
         checkAndSetupForLiteVersion();
 
+        Level level;
+        boolean suddenDeathMode;
         Bundle bundle = getIntent().getExtras();
-        level = (Level) bundle.getSerializable(PARAM_LEVEL);
-        suddenDeathMode = bundle.getBoolean(PARAM_SUDDENDEATH_MODE);
+        if (bundle != null) {
+            level = (Level) bundle.getSerializable(PARAM_LEVEL);
+            suddenDeathMode = bundle.getBoolean(PARAM_SUDDENDEATH_MODE);
+        }
+        else {
+            level = new Level("1", null, 1);
+            suddenDeathMode = false;
+        }
 
-        Log.d(TAG, "use level = " + level);
-        int preferredQuestionsNum = getPreferredQuestionsNum();
+        int preferredQuestionsNum = getPreferredQuestionsNum(suddenDeathMode);
 
         helper = new QuizSQLiteOpenHelper(this);
 
         IQuiz quiz = new DatabaseBackedQuiz(getHelper());
-        questions = quiz.pickRandomQuestions(preferredQuestionsNum,
+        List<IQuestion> questions = quiz.pickRandomQuestions(preferredQuestionsNum,
                 level.getLevel());
+
         questionView = (TextView) findViewById(R.id.question);
         explanationView = (TextView) findViewById(R.id.explanation);
         choicesView = (LinearLayout) findViewById(R.id.choices);
+        questionsCounterView = (TextView) findViewById(R.id.questions_i);
+
+        TextView questionsNumView = (TextView) findViewById(R.id.questions_n);
+        questionsNumView.setText(Integer.toString(questions.size()));
 
         prevButton = (ImageButton) findViewById(R.id.btn_prev);
-        prevButton.setOnClickListener(new PrevNextClickListener(-1));
+        prevButton.setOnClickListener(new PrevClickListener());
         nextButton = (ImageButton) findViewById(R.id.btn_next);
-        nextButton.setOnClickListener(new PrevNextClickListener(1));
+        nextButton.setOnClickListener(new NextClickListener());
         finishButton = (ImageButton) findViewById(R.id.btn_finish);
         finishButton.setOnClickListener(new FinishClickListener());
         finishButton.setEnabled(false);
-        questions_i = (TextView) findViewById(R.id.questions_i);
-
-        TextView questions_n = (TextView) findViewById(R.id.questions_n);
-        questions_n.setText(Integer.toString(questions.size()));
 
         if (suddenDeathMode) {
-            prevButton.setVisibility(View.GONE);
-            prevButton.setEnabled(false);
+            quizControl = new SuddenDeathQuiz(questions);
         }
-        int index = 0;
-        navigateToQuestion(index);
+        else {
+            quizControl = new ScoreAsYouGoQuiz(questions);
+        }
+        replaceCurrentQuestion();
     }
 
-    class PrevNextClickListener implements OnClickListener {
-        private int offset;
-
-        PrevNextClickListener(int offset) {
-            this.offset = offset;
-        }
-
+    class NextClickListener implements OnClickListener {
         @Override
         public void onClick(View arg0) {
-            navigateToQuestion(currentQuestionIndex + offset);
+            quizControl.gotoNextQuestion();
+            replaceCurrentQuestion();
+        }
+    }
+
+    class PrevClickListener implements OnClickListener {
+        @Override
+        public void onClick(View arg0) {
+            quizControl.gotoPrevQuestion();
+            replaceCurrentQuestion();
         }
     }
 
@@ -114,102 +125,57 @@ public class QuizActivity extends QuizBaseActivity {
         }
     }
 
-    class ChoiceClickListener implements OnClickListener {
-        private String answer;
+    class AnswerClickListener implements OnClickListener {
+        private IAnswerControl answer;
 
-        ChoiceClickListener(String answer) {
+        AnswerClickListener(IAnswerControl answer) {
             this.answer = answer;
         }
 
         @Override
         public void onClick(View arg0) {
-            if (!currentQuestion.wasAnswered()) {
-                setSelectedAnswer(answer);
-                explanationView.setVisibility(View.VISIBLE);
-                updateScore();
-            }
+            answer.select();
+            updateCurrentQuestion();
         }
     }
 
-    private void updateCurrentQuestion(int index) {
-        if (index < 0) {
-            currentQuestionIndex = 0;
-        } else if (index >= questions.size()) {
-            currentQuestionIndex = questions.size() - 1;
-        } else {
-            currentQuestionIndex = index;
-        }
-        currentQuestion = questions.get(currentQuestionIndex);
-    }
+    void replaceCurrentQuestion() {
+        IQuestionControl question = quizControl.getCurrentQuestion();
 
-    private void updateScoreDisplay(int index) {
-        questions_i.setText(Integer.toString(index + 1));
-    }
-
-    private void updatePrevNext() {
-        if (! suddenDeathMode) {
-            if (currentQuestionIndex == 0) {
-                prevButton.setVisibility(View.INVISIBLE);
-                nextButton.setVisibility(View.VISIBLE);
-                prevButton.setEnabled(false);
-                nextButton.setEnabled(true);
-            } else if (currentQuestionIndex == questions.size() - 1) {
-                prevButton.setVisibility(View.VISIBLE);
-                nextButton.setVisibility(View.INVISIBLE);
-                prevButton.setEnabled(true);
-                nextButton.setEnabled(false);
-            } else {
-                prevButton.setVisibility(View.VISIBLE);
-                nextButton.setVisibility(View.VISIBLE);
-                prevButton.setEnabled(true);
-                nextButton.setEnabled(true);
-            }
-        } else {
-            if (currentQuestionIndex == questions.size() - 1) {
-                nextButton.setVisibility(View.GONE);
-                finishButton.setVisibility(View.VISIBLE);
-                finishButton.setEnabled(true);
-                gameOver = true;
-            }
-            else {
-                nextButton.setVisibility(View.GONE);
-            }
-        }
-    }
-
-    private void updateQuestion() {
-        IQuestion question = questions.get(currentQuestionIndex);
-
-        questionView.setText(question.getText());
-        explanationView.setText(question.getExplanation());
+        questionView.setText(question.getQuestion().getText());
 
         choicesView.removeAllViews();
-        boolean wasAnswered = question.wasAnswered();
-        for (String choice : question.getChoices()) {
+
+        explanationView.setVisibility(View.GONE);
+        explanationView.setText(question.getQuestion().getExplanation());
+
+        answerButtons.clear();
+
+        for (IAnswerControl answer : question.getAnswerControls()) {
             final LayoutInflater inflater = LayoutInflater.from(this);
             Button button = (Button) inflater.inflate(R.layout.answer_button, choicesView, false);
-            button.setText(choice);
-
-            if (!wasAnswered) {
-                button.setOnClickListener(new ChoiceClickListener(choice));
+            if (button != null) {
+                button.setText(answer.getAnswer().getText());
+                button.setTag(answer);
+                choicesView.addView(button);
+                answerButtons.add(button);
             }
-            choicesView.addView(button);
         }
-        if (wasAnswered) {
-            setSelectedAnswer(question.getSelectedAnswer());
-            explanationView.setVisibility(View.VISIBLE);
+
+        if (question.isPending()) {
+            for (Button button : answerButtons) {
+                IAnswerControl answer = (IAnswerControl)button.getTag();
+                button.setOnClickListener(new AnswerClickListener(answer));
+            }
         } else {
-            explanationView.setVisibility(View.GONE);
+            explanationView.setVisibility(View.VISIBLE);
         }
+
+        updateCurrentQuestion();
     }
 
-    private void setSelectedAnswer(String answer) {
-        currentQuestion.setSelectedAnswer(answer);
-
-        String correctAnswer = currentQuestion.getCorrectAnswer();
-        for (int i = 0; i < choicesView.getChildCount(); ++i) {
-            Button button = (Button) choicesView.getChildAt(i);
-
+    void updateCurrentQuestion() {
+        for (Button button : answerButtons) {
             // weird. but, need to save the paddings and reapply them after
             // changing the background resource, otherwise the padding disappears
             int paddingTop = button.getPaddingTop();
@@ -217,55 +183,70 @@ public class QuizActivity extends QuizBaseActivity {
             int paddingLeft = button.getPaddingLeft();
             int paddingRight = button.getPaddingRight();
 
-            if (button.getText().equals(correctAnswer)) {
-                button.setBackgroundResource(R.drawable.btn_correct);
-                button.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
-            } else if (button.getText().equals(answer)) {
-                button.setBackgroundResource(R.drawable.btn_incorrect);
-                button.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
+            IAnswerControl answer = (IAnswerControl) button.getTag();
+            if (! quizControl.getCurrentQuestion().isPending()) {
+                if (answer.getAnswer().isCorrect()) {
+                    button.setBackgroundResource(R.drawable.btn_correct);
+                    button.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
+                } else if (answer.isSelected()) {
+                    button.setBackgroundResource(R.drawable.btn_incorrect);
+                    button.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
+                }
+                button.setEnabled(false);
             }
-
-            button.setEnabled(false);
         }
+        updateQuestionCounter();
+        updateNavigationButtons();
     }
 
-    private void updateScore() {
-        if (currentQuestion.wasCorrectlyAnswered()) {
-            ++score;
+    private void updateQuestionCounter() {
+        questionsCounterView.setText(Integer.toString(quizControl.getCurrentQuestionIndex() + 1));
+    }
+
+    private void updateNavigationButtons() {
+        IQuestionControl question = quizControl.getCurrentQuestion();
+
+        if (quizControl.hasNextQuestion() && question.canGotoNext()) {
+            nextButton.setVisibility(View.VISIBLE);
+            nextButton.setEnabled(true);
+        } else if (question.canGotoNext()) {
+            nextButton.setVisibility(View.INVISIBLE);
+            nextButton.setEnabled(false);
         } else {
-            if (suddenDeathMode) {
-                gameOver = true;
-                nextButton.setVisibility(View.GONE);
-            }
+            nextButton.setVisibility(View.GONE);
+            nextButton.setEnabled(false);
         }
 
-        ++answeredQuestionsNum;
-        if (questions.size() == answeredQuestionsNum) {
-            gameOver = true;
+        if (quizControl.hasPrevQuestion() && question.canGotoPrev()) {
+            prevButton.setVisibility(View.VISIBLE);
+            prevButton.setEnabled(true);
+        } else if (question.canGotoPrev()) {
+            prevButton.setVisibility(View.INVISIBLE);
+            prevButton.setEnabled(false);
+        } else {
+            prevButton.setVisibility(View.GONE);
+            prevButton.setEnabled(false);
         }
 
-        if (gameOver) {
+        if (quizControl.isGameOver()) {
             finishButton.setVisibility(View.VISIBLE);
             finishButton.setEnabled(true);
-            if (suddenDeathMode) {
-                nextButton.setVisibility(View.GONE);
-            }
-        }
-        else if (suddenDeathMode) {
-            nextButton.setVisibility(View.VISIBLE);
+        } else {
+            finishButton.setVisibility(View.GONE);
+            finishButton.setEnabled(false);
         }
     }
 
     private void finishGame() {
         Bundle bundle = new Bundle();
-        bundle.putInt(ResultsActivity.PARAM_TOTAL_QUESTIONS_NUM, questions.size());
-        bundle.putInt(ResultsActivity.PARAM_CORRECT_ANSWERS_NUM, score);
+        bundle.putInt(ResultsActivity.PARAM_TOTAL_QUESTIONS_NUM, quizControl.getQuestionControls().size());
+        bundle.putInt(ResultsActivity.PARAM_CORRECT_ANSWERS_NUM, quizControl.getScore());
         Intent intent = new Intent(QuizActivity.this, ResultsActivity.class);
         intent.putExtras(bundle);
         startActivity(intent);
     }
 
-    public int getPreferredQuestionsNum() {
+    public int getPreferredQuestionsNum(boolean suddenDeathMode) {
         SharedPreferences settings = PreferenceManager
                 .getDefaultSharedPreferences(this);
 
@@ -278,13 +259,7 @@ public class QuizActivity extends QuizBaseActivity {
         }
     }
 
-    private void navigateToQuestion(int index) {
-        updateCurrentQuestion(index);
-        updatePrevNext();
-        updateQuestion();
-        updateScoreDisplay(index);
-    }
-
+    // TODO move to parent?
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main, menu);
@@ -302,4 +277,12 @@ public class QuizActivity extends QuizBaseActivity {
         helper.close();
     }
 
+    /*
+     * TODO
+     */
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d(TAG, "++onSaveInstanceState");
+    }
 }
