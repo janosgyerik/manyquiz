@@ -1,6 +1,8 @@
 package com.manyquiz.quiz;
 
-public interface IAnswerControl {
+import java.io.Serializable;
+
+public interface IAnswerControl extends Serializable {
 
     IAnswer getAnswer();
 

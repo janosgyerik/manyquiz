@@ -1,8 +1,9 @@
 package com.manyquiz.quiz;
 
+import java.io.Serializable;
 import java.util.List;
 
-public interface IQuestionControl {
+public interface IQuestionControl extends Serializable {
 
     IQuestion getQuestion();
 

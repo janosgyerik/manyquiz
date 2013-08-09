@@ -36,6 +36,8 @@ public class QuizActivity extends QuizBaseActivity {
     public static final String PARAM_LEVEL = "LEVEL";
     public static final String PARAM_SUDDENDEATH_MODE = "SUDDENDEATH_MODE";
 
+    private static final String QUIZ_CONTROL = "QUIZ_CONTROL";
+
     private QuizSQLiteOpenHelper helper;
 
     private TextView questionView;
@@ -57,25 +59,37 @@ public class QuizActivity extends QuizBaseActivity {
 
         checkAndSetupForLiteVersion();
 
-        Level level;
-        boolean suddenDeathMode;
-        Bundle bundle = getIntent().getExtras();
-        if (bundle != null) {
-            level = (Level) bundle.getSerializable(PARAM_LEVEL);
-            suddenDeathMode = bundle.getBoolean(PARAM_SUDDENDEATH_MODE);
+        if (savedInstanceState == null) {
+            Level level;
+            boolean suddenDeathMode;
+            Bundle bundle = getIntent().getExtras();
+            if (bundle != null) {
+                level = (Level) bundle.getSerializable(PARAM_LEVEL);
+                suddenDeathMode = bundle.getBoolean(PARAM_SUDDENDEATH_MODE);
+            }
+            else {
+                level = new Level("1", null, 1);
+                suddenDeathMode = false;
+            }
+            int preferredQuestionsNum = getPreferredQuestionsNum(suddenDeathMode);
+
+            helper = new QuizSQLiteOpenHelper(this);
+
+            IQuiz quiz = new DatabaseBackedQuiz(getHelper());
+            List<IQuestion> questions = quiz.pickRandomQuestions(preferredQuestionsNum,
+                    level.getLevel());
+
+            if (suddenDeathMode) {
+                quizControl = new SuddenDeathQuiz(questions);
+            }
+            else {
+                quizControl = new ScoreAsYouGoQuiz(questions);
+            }
         }
         else {
-            level = new Level("1", null, 1);
-            suddenDeathMode = false;
+            Log.d(TAG, "restoring from savedInstanceState");
+            quizControl = (IQuizControl) savedInstanceState.getSerializable(QUIZ_CONTROL);
         }
-
-        int preferredQuestionsNum = getPreferredQuestionsNum(suddenDeathMode);
-
-        helper = new QuizSQLiteOpenHelper(this);
-
-        IQuiz quiz = new DatabaseBackedQuiz(getHelper());
-        List<IQuestion> questions = quiz.pickRandomQuestions(preferredQuestionsNum,
-                level.getLevel());
 
         questionView = (TextView) findViewById(R.id.question);
         explanationView = (TextView) findViewById(R.id.explanation);
@@ -83,7 +97,7 @@ public class QuizActivity extends QuizBaseActivity {
         questionsCounterView = (TextView) findViewById(R.id.questions_i);
 
         TextView questionsNumView = (TextView) findViewById(R.id.questions_n);
-        questionsNumView.setText(Integer.toString(questions.size()));
+        questionsNumView.setText(Integer.toString(quizControl.getQuestionControls().size()));
 
         prevButton = (ImageButton) findViewById(R.id.btn_prev);
         prevButton.setOnClickListener(new PrevClickListener());
@@ -93,12 +107,6 @@ public class QuizActivity extends QuizBaseActivity {
         finishButton.setOnClickListener(new FinishClickListener());
         finishButton.setEnabled(false);
 
-        if (suddenDeathMode) {
-            quizControl = new SuddenDeathQuiz(questions);
-        }
-        else {
-            quizControl = new ScoreAsYouGoQuiz(questions);
-        }
         replaceCurrentQuestion();
     }
 
@@ -272,17 +280,17 @@ public class QuizActivity extends QuizBaseActivity {
 
     @Override
     protected void onDestroy() {
-        Log.d(TAG, "++onDestroy");
+        Log.d(TAG, "--onDestroy");
         super.onDestroy();
-        helper.close();
+        if (helper != null) {
+            helper.close();
+        }
     }
 
-    /*
-     * TODO
-     */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        Log.d(TAG, "++onSaveInstanceState");
+        Log.d(TAG, "--onSaveInstanceState");
+        outState.putSerializable(QUIZ_CONTROL, quizControl);
     }
 }
