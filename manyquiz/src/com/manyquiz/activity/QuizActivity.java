@@ -13,11 +13,11 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.manyquiz.db.DatabaseBackedQuiz;
+import com.manyquiz.db.DatabaseBackedQuizFactory;
 import com.manyquiz.quiz.model.IAnswerControl;
 import com.manyquiz.quiz.model.IQuestion;
 import com.manyquiz.quiz.model.IQuestionControl;
-import com.manyquiz.quiz.model.IQuiz;
+import com.manyquiz.quiz.model.IQuizFactory;
 import com.manyquiz.quiz.model.IQuizControl;
 import com.manyquiz.quiz.impl.Level;
 import com.manyquiz.db.QuizSQLiteOpenHelper;
@@ -74,7 +74,7 @@ public class QuizActivity extends QuizBaseActivity {
 
             helper = new QuizSQLiteOpenHelper(this);
 
-            IQuiz quiz = new DatabaseBackedQuiz(getHelper());
+            IQuizFactory quiz = new DatabaseBackedQuizFactory(getHelper());
             List<IQuestion> questions = quiz.pickRandomQuestions(preferredQuestionsNum,
                     level.getLevel());
 

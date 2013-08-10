@@ -2,7 +2,7 @@ package com.manyquiz.quiz.model;
 
 import java.util.List;
 
-public interface IQuiz {
+public interface IQuizFactory {
 
     /**
      * Return at most N random questions, if possible, from the entire collection.

@@ -1,16 +1,16 @@
 package com.manyquiz.db;
 
 import com.manyquiz.quiz.model.IQuestion;
-import com.manyquiz.quiz.model.IQuiz;
+import com.manyquiz.quiz.model.IQuizFactory;
 
 import java.util.Collections;
 import java.util.List;
 
-public class DatabaseBackedQuiz implements IQuiz {
+public class DatabaseBackedQuizFactory implements IQuizFactory {
 
     private final QuizSQLiteOpenHelper helper;
 
-    public DatabaseBackedQuiz(QuizSQLiteOpenHelper helper) {
+    public DatabaseBackedQuizFactory(QuizSQLiteOpenHelper helper) {
         this.helper = helper;
     }
 
