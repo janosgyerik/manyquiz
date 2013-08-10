@@ -211,6 +211,7 @@ public class QuizActivity extends QuizBaseActivity {
                     button.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
                 }
                 button.setEnabled(false);
+                explanationView.setVisibility(View.VISIBLE);
             }
         }
         updateQuestionCounter();
