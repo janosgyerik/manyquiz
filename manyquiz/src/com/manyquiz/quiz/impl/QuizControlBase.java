@@ -56,6 +56,15 @@ public abstract class QuizControlBase implements IQuizControl {
     }
 
     @Override
+    public boolean readyToEndGame() {
+        return isGameOver();
+    }
+
+    @Override
+    public void endGame() {
+    }
+
+    @Override
     public boolean hasNextQuestion() {
         return currentQuestionIndex < questionControls.size() - 1;
     }

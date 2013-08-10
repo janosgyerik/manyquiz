@@ -13,6 +13,10 @@ public interface IQuizControl extends Serializable {
 
     boolean isGameOver();
 
+    boolean readyToEndGame();
+
+    void endGame();
+
     boolean hasNextQuestion();
 
     boolean hasPrevQuestion();

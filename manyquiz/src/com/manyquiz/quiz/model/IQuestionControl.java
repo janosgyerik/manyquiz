@@ -11,10 +11,11 @@ public interface IQuestionControl extends Serializable {
 
     boolean isPending();
 
+    void close();
+
     boolean canGotoNext();
 
     boolean canGotoPrev();
 
     int getScore();
-
 }

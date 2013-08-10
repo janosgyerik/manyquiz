@@ -8,5 +8,7 @@ public interface IAnswerControl extends Serializable {
 
     void select();
 
+    void unselect();
+
     boolean isSelected();
 }

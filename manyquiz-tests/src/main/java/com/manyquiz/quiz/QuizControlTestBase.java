@@ -2,7 +2,6 @@ package com.manyquiz.quiz;
 
 import com.manyquiz.quiz.impl.Answer;
 import com.manyquiz.quiz.impl.Question;
-import com.manyquiz.quiz.impl.ScoreAsYouGoQuiz;
 import com.manyquiz.quiz.model.IAnswer;
 import com.manyquiz.quiz.model.IAnswerControl;
 import com.manyquiz.quiz.model.IQuestion;

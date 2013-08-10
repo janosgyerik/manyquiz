@@ -24,6 +24,11 @@ public class AnswerControl implements IAnswerControl {
     }
 
     @Override
+    public void unselect() {
+        this.selected = false;
+    }
+
+    @Override
     public boolean isSelected() {
         return selected;
     }

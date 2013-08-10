@@ -14,6 +14,8 @@ public abstract class QuestionControlBase implements IQuestionControl {
 
     protected final List<IAnswerControl> answerControls;
 
+    protected boolean closed;
+
     QuestionControlBase(IQuestion question) {
         this.question = question;
 
@@ -41,6 +43,11 @@ public abstract class QuestionControlBase implements IQuestionControl {
             }
         }
         return true;
+    }
+
+    @Override
+    public void close() {
+        closed = true;
     }
 
     @Override

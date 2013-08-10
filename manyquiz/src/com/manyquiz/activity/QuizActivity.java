@@ -128,6 +128,10 @@ public class QuizActivity extends QuizBaseActivity {
     class FinishClickListener implements OnClickListener {
         @Override
         public void onClick(View arg0) {
+            if (! quizControl.isGameOver()) {
+                quizControl.endGame();
+                updateCurrentQuestion();
+            }
             finishGame();
         }
     }
@@ -191,7 +195,14 @@ public class QuizActivity extends QuizBaseActivity {
             int paddingRight = button.getPaddingRight();
 
             IAnswerControl answer = (IAnswerControl) button.getTag();
-            if (! quizControl.getCurrentQuestion().isPending()) {
+            if (quizControl.getCurrentQuestion().isPending()) {
+                if (answer.isSelected()) {
+                    button.setBackgroundResource(R.drawable.btn_default_pressed);
+                } else {
+                    button.setBackgroundResource(R.drawable.btn_default);
+                }
+                button.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
+            } else {
                 if (answer.getAnswer().isCorrect()) {
                     button.setBackgroundResource(R.drawable.btn_correct);
                     button.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
@@ -235,7 +246,7 @@ public class QuizActivity extends QuizBaseActivity {
             prevButton.setEnabled(false);
         }
 
-        if (quizControl.isGameOver()) {
+        if (quizControl.readyToEndGame()) {
             finishButton.setVisibility(View.VISIBLE);
             finishButton.setEnabled(true);
         } else {
