@@ -1,4 +1,4 @@
-package com.manyquiz.quiz;
+package com.manyquiz.quiz.model;
 
 import java.io.Serializable;
 

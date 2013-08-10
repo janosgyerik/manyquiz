@@ -1,4 +1,6 @@
-package com.manyquiz.quiz;
+package com.manyquiz.quiz.impl;
+
+import com.manyquiz.quiz.model.IAnswer;
 
 public class Answer implements IAnswer {
     private final String text;

@@ -1,5 +1,14 @@
 package com.manyquiz.quiz;
 
+import com.manyquiz.quiz.impl.Answer;
+import com.manyquiz.quiz.impl.Question;
+import com.manyquiz.quiz.impl.SuddenDeathQuiz;
+import com.manyquiz.quiz.model.IAnswer;
+import com.manyquiz.quiz.model.IAnswerControl;
+import com.manyquiz.quiz.model.IQuestion;
+import com.manyquiz.quiz.model.IQuestionControl;
+import com.manyquiz.quiz.model.IQuizControl;
+
 import junit.framework.Assert;
 
 import org.junit.Before;

@@ -7,11 +7,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 import android.util.Log;
 
-import com.manyquiz.quiz.Answer;
-import com.manyquiz.quiz.IAnswer;
-import com.manyquiz.quiz.IQuestion;
-import com.manyquiz.quiz.Level;
-import com.manyquiz.quiz.Question;
+import com.manyquiz.quiz.impl.Answer;
+import com.manyquiz.quiz.model.IAnswer;
+import com.manyquiz.quiz.model.IQuestion;
+import com.manyquiz.quiz.impl.Level;
+import com.manyquiz.quiz.impl.Question;
 
 import java.io.BufferedReader;
 import java.io.IOException;

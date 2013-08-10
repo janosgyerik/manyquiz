@@ -1,4 +1,7 @@
-package com.manyquiz.quiz;
+package com.manyquiz.quiz.impl;
+
+import com.manyquiz.quiz.model.IAnswer;
+import com.manyquiz.quiz.model.IAnswerControl;
 
 public class AnswerControl implements IAnswerControl {
 

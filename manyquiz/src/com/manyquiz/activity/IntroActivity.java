@@ -1,8 +1,5 @@
 package com.manyquiz.activity;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,7 +13,7 @@ import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.manyquiz.quiz.Level;
+import com.manyquiz.quiz.impl.Level;
 import com.manyquiz.db.QuizSQLiteOpenHelper;
 import com.manyquiz.R;
 

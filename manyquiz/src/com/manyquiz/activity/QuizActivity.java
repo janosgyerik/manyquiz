@@ -14,16 +14,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.manyquiz.db.DatabaseBackedQuiz;
-import com.manyquiz.quiz.IAnswerControl;
-import com.manyquiz.quiz.IQuestion;
-import com.manyquiz.quiz.IQuestionControl;
-import com.manyquiz.quiz.IQuiz;
-import com.manyquiz.quiz.IQuizControl;
-import com.manyquiz.quiz.Level;
+import com.manyquiz.quiz.model.IAnswerControl;
+import com.manyquiz.quiz.model.IQuestion;
+import com.manyquiz.quiz.model.IQuestionControl;
+import com.manyquiz.quiz.model.IQuiz;
+import com.manyquiz.quiz.model.IQuizControl;
+import com.manyquiz.quiz.impl.Level;
 import com.manyquiz.db.QuizSQLiteOpenHelper;
 import com.manyquiz.R;
-import com.manyquiz.quiz.ScoreAsYouGoQuiz;
-import com.manyquiz.quiz.SuddenDeathQuiz;
+import com.manyquiz.quiz.impl.ScoreAsYouGoQuiz;
+import com.manyquiz.quiz.impl.SuddenDeathQuiz;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,16 +1,20 @@
-package com.manyquiz.quiz;
+package com.manyquiz.quiz.impl;
+
+import com.manyquiz.quiz.model.IQuestion;
+import com.manyquiz.quiz.model.IQuestionControl;
+import com.manyquiz.quiz.model.IQuizControl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScoreAsYouGoQuiz implements IQuizControl {
+public class SuddenDeathQuiz implements IQuizControl {
 
     List<IQuestionControl> questions;
     List<IQuestion> originalQuestions;
 
     int currentQuestionIndex;
 
-    public ScoreAsYouGoQuiz(List<IQuestion> questions) {
+    public SuddenDeathQuiz(List<IQuestion> questions) {
         originalQuestions = new ArrayList<IQuestion>();
         originalQuestions.addAll(questions);
 
@@ -19,7 +23,7 @@ public class ScoreAsYouGoQuiz implements IQuizControl {
         currentQuestionIndex = 0;
 
         for (IQuestion question : originalQuestions) {
-            this.questions.add(new ScoreAsYouGoQuestion(question));
+            this.questions.add(new SuddenDeathQuestion(this, question));
         }
     }
 
@@ -47,6 +51,10 @@ public class ScoreAsYouGoQuiz implements IQuizControl {
         for (IQuestionControl question : questions) {
             if (question.isPending()) {
                 return false;
+            }
+            // TODO: score = 0 means wrong answer. This works, but it's not great
+            if (question.getScore() == 0) {
+                return true;
             }
         }
         return true;
