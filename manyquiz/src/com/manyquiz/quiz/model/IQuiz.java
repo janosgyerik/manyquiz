@@ -7,17 +7,17 @@ public interface IQuiz {
     /**
      * Return at most N random questions, if possible, from the entire collection.
      *
-     * @param N = max number of questions to return
-     * @return
+     * @param length = max number of questions to return
+     * @return list of questions
      */
     List<IQuestion> pickRandomQuestions(int length);
 
     /**
      * Return at most N random questions, if possible, of given difficulty level.
      *
-     * @param N     = max number of questions to return
-     * @param level = difficulty level
-     * @return
+     * @param length = max number of questions to return
+     * @param level  = difficulty level
+     * @return list of questions
      */
     List<IQuestion> pickRandomQuestions(int length, int level);
 }
