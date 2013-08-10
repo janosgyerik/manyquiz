@@ -32,6 +32,16 @@ public abstract class QuizControlBase implements IQuizControl {
     }
 
     @Override
+    public int getQuestionsNum() {
+        return getQuestionControls().size();
+    }
+
+    @Override
+    public IQuestionControl getCurrentQuestion() {
+        return questionControls.get(currentQuestionIndex);
+    }
+
+    @Override
     public int getCurrentQuestionIndex() {
         return currentQuestionIndex;
     }
@@ -56,12 +66,17 @@ public abstract class QuizControlBase implements IQuizControl {
     }
 
     @Override
-    public boolean readyToEndGame() {
+    public boolean readyToEnd() {
         return isGameOver();
     }
 
     @Override
-    public void endGame() {
+    public void end() {
+    }
+
+    @Override
+    public boolean canNavigateBack() {
+        return true;
     }
 
     @Override
@@ -75,21 +90,12 @@ public abstract class QuizControlBase implements IQuizControl {
     }
 
     @Override
-    public IQuestionControl getCurrentQuestion() {
-        return questionControls.get(currentQuestionIndex);
-    }
-
-    @Override
     public void gotoNextQuestion() {
-        if (hasNextQuestion()) {
-            ++currentQuestionIndex;
-        }
+        ++currentQuestionIndex;
     }
 
     @Override
     public void gotoPrevQuestion() {
-        if (hasPrevQuestion()) {
-            --currentQuestionIndex;
-        }
+        --currentQuestionIndex;
     }
 }

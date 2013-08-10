@@ -17,7 +17,7 @@ public class ScoreInTheEndQuiz extends QuizControlBase {
     }
 
     @Override
-    public boolean readyToEndGame() {
+    public boolean readyToEnd() {
         for (IQuestionControl question : questionControls) {
             if (! question.canGotoNext()) {
                 return false;
@@ -27,7 +27,7 @@ public class ScoreInTheEndQuiz extends QuizControlBase {
     }
 
     @Override
-    public void endGame() {
+    public void end() {
         for (IQuestionControl question : questionControls) {
             question.close();
         }

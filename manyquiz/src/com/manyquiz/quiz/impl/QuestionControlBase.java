@@ -46,6 +46,18 @@ public abstract class QuestionControlBase implements IQuestionControl {
     }
 
     @Override
+    public boolean isIncorrectlyAnswered() {
+        if (! isPending()) {
+            for (IAnswerControl answerControl : answerControls) {
+                if (answerControl.isSelected() && !answerControl.getAnswer().isCorrect()) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override
     public void close() {
         closed = true;
     }

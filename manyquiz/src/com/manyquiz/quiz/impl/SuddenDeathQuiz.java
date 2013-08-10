@@ -22,11 +22,15 @@ public class SuddenDeathQuiz extends QuizControlBase {
             if (question.isPending()) {
                 return false;
             }
-            // TODO: score = 0 means wrong answer. This works, but it's not great
-            if (question.getScore() == 0) {
+            if (question.isIncorrectlyAnswered()) {
                 return true;
             }
         }
         return true;
+    }
+
+    @Override
+    public boolean canNavigateBack() {
+        return false;
     }
 }

@@ -11,6 +11,8 @@ public interface IQuestionControl extends Serializable {
 
     boolean isPending();
 
+    boolean isIncorrectlyAnswered();
+
     void close();
 
     boolean canGotoNext();

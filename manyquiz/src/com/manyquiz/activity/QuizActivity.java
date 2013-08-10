@@ -72,6 +72,7 @@ public class QuizActivity extends QuizBaseActivity {
                 mode = getString(R.string.const_score_in_the_end);
             }
             int preferredQuestionsNum = getPreferredQuestionsNum(mode);
+            preferredQuestionsNum = 3;
 
             helper = new QuizSQLiteOpenHelper(this);
 
@@ -133,7 +134,7 @@ public class QuizActivity extends QuizBaseActivity {
         @Override
         public void onClick(View arg0) {
             if (! quizControl.isGameOver()) {
-                quizControl.endGame();
+                quizControl.end();
                 updateCurrentQuestion();
             }
             finishGame();
@@ -232,7 +233,7 @@ public class QuizActivity extends QuizBaseActivity {
         if (quizControl.hasNextQuestion() && question.canGotoNext()) {
             nextButton.setVisibility(View.VISIBLE);
             nextButton.setEnabled(true);
-        } else if (question.canGotoNext()) {
+        } else if (quizControl.canNavigateBack()) {
             nextButton.setVisibility(View.INVISIBLE);
             nextButton.setEnabled(false);
         } else {
@@ -243,7 +244,7 @@ public class QuizActivity extends QuizBaseActivity {
         if (quizControl.hasPrevQuestion() && question.canGotoPrev()) {
             prevButton.setVisibility(View.VISIBLE);
             prevButton.setEnabled(true);
-        } else if (question.canGotoPrev()) {
+        } else if (quizControl.canNavigateBack()) {
             prevButton.setVisibility(View.INVISIBLE);
             prevButton.setEnabled(false);
         } else {
@@ -251,7 +252,7 @@ public class QuizActivity extends QuizBaseActivity {
             prevButton.setEnabled(false);
         }
 
-        if (quizControl.readyToEndGame()) {
+        if (quizControl.readyToEnd()) {
             finishButton.setVisibility(View.VISIBLE);
             finishButton.setEnabled(true);
         } else {

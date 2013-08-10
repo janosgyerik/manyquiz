@@ -7,21 +7,25 @@ public interface IQuizControl extends Serializable {
 
     List<IQuestionControl> getQuestionControls();
 
+    int getQuestionsNum();
+
+    IQuestionControl getCurrentQuestion();
+
     int getCurrentQuestionIndex();
 
     int getScore();
 
     boolean isGameOver();
 
-    boolean readyToEndGame();
+    boolean readyToEnd();
 
-    void endGame();
+    void end();
+
+    boolean canNavigateBack();
 
     boolean hasNextQuestion();
 
     boolean hasPrevQuestion();
-
-    IQuestionControl getCurrentQuestion();
 
     void gotoNextQuestion();
 
