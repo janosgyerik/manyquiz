@@ -17,82 +17,16 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SuddenDeathTest {
+public class SuddenDeathTest extends QuizControlTestBase {
 
-    IQuizControl quiz;
-
-    @Before
-    public void setUp() {
-        List<IQuestion> questions = new ArrayList<IQuestion>();
-        for (int i = 1; i < 5; ++i) {
-            String text = "What is..." + i;
-            String explanation = "Because..." + i;
-            List<IAnswer> answers = new ArrayList<IAnswer>();
-            answers.add(new Answer("This is correct" + i, true));
-            answers.add(new Answer("This is decoy1-" + i, false));
-            answers.add(new Answer("This is decoy2-" + i, false));
-            answers.add(new Answer("This is decoy3-" + i, false));
-            IQuestion question = new Question(text, answers, explanation);
-            questions.add(question);
-        }
-        quiz = new SuddenDeathQuiz(questions);
-    }
-
-    @Test
-    public void testBasicSanity() {
-        Assert.assertFalse(quiz.isGameOver());
-
-        IQuestionControl question = quiz.getCurrentQuestion();
-        Assert.assertTrue(question.isPending());
-
-        Assert.assertEquals(0, quiz.getCurrentQuestionIndex());
-        Assert.assertFalse(quiz.hasPrevQuestion());
-
-        Assert.assertTrue(quiz.getQuestionControls().size() > 1);
-        Assert.assertTrue(quiz.hasNextQuestion());
-        Assert.assertFalse(question.canGotoNext());
-    }
-
-    private IAnswerControl getCorrectAnswer(IQuestionControl question) {
-        for (IAnswerControl answer : question.getAnswerControls()) {
-            if (answer.getAnswer().isCorrect()) {
-                return answer;
-            }
-        }
-        return null;
-    }
-
-    private IAnswerControl getWrongAnswer(IQuestionControl question) {
-        for (IAnswerControl answer : question.getAnswerControls()) {
-            if (! answer.getAnswer().isCorrect()) {
-                return answer;
-            }
-        }
-        return null;
-    }
-
-    @Test
-    public void testQuestionCorrectlyAnswered() {
-        int score = quiz.getScore();
-
-        IQuestionControl question = quiz.getCurrentQuestion();
-        IAnswerControl answer = getCorrectAnswer(question);
-        answer.select();
-        Assert.assertFalse(question.isPending());
-
-        Assert.assertEquals(score + 1, quiz.getScore());
+    @Override
+    IQuizControl createQuizControl(List<IQuestion> questions) {
+        return new SuddenDeathQuiz(questions);
     }
 
     @Test
     public void testQuestionIncorrectlyAnswered() {
-        int score = quiz.getScore();
-
-        IQuestionControl question = quiz.getCurrentQuestion();
-        IAnswerControl answer = getWrongAnswer(question);
-        answer.select();
-        Assert.assertFalse(question.isPending());
-
-        Assert.assertEquals(score, quiz.getScore());
+        super.testQuestionIncorrectlyAnswered();
         Assert.assertTrue(quiz.isGameOver());
     }
 
