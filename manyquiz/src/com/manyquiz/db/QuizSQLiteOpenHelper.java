@@ -91,10 +91,9 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         List<String> tables = new ArrayList<String>();
-        // TODO: select column explicitly
-        Cursor cursor = db.rawQuery("SELECT * FROM sqlite_master WHERE type='table';", null);
+        Cursor cursor = db.rawQuery("SELECT tbl_name FROM sqlite_master WHERE type = 'table';", null);
         while (cursor.moveToNext()) {
-            String tableName = cursor.getString(1);
+            String tableName = cursor.getString(0);
             if (!tableName.equals("android_metadata") &&
                     !tableName.equals("sqlite_sequence"))
                 tables.add(tableName);
