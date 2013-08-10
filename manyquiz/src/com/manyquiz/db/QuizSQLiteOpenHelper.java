@@ -94,8 +94,9 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("SELECT tbl_name FROM sqlite_master WHERE type = 'table';", null);
         while (cursor.moveToNext()) {
             String tableName = cursor.getString(0);
-            if (!tableName.equals("android_metadata") &&
-                    !tableName.equals("sqlite_sequence"))
+            if (tableName != null
+                    && !tableName.equals("android_metadata")
+                    && !tableName.equals("sqlite_sequence"))
                 tables.add(tableName);
         }
         cursor.close();
@@ -108,26 +109,28 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
 
     public Cursor getLevelListCursor() {
         Log.d(TAG, "get all levels (that have any questions)");
-        Cursor cursor = getReadableDatabase().rawQuery(
+        //noinspection ConstantConditions
+        return getReadableDatabase().rawQuery(
                 String.format(
                         "SELECT DISTINCT l.%s %s, l.name name, l.level level FROM %s l JOIN %s q ON l.%s = q.level_id ORDER BY l.level",
                         BaseColumns._ID, BaseColumns._ID, LEVELS_TABLE_NAME, QUESTIONS_TABLE_NAME, BaseColumns._ID
                 ),
                 null
         );
-        return cursor;
     }
 
     public Cursor getQuestionListCursor(int level) {
         Log.d(TAG, "get all questions at level = " + level);
         Cursor cursor;
         if (level == Level.ANY) {
+            //noinspection ConstantConditions
             cursor = getReadableDatabase().query(
                     QUESTIONS_TABLE_NAME,
                     new String[]{BaseColumns._ID, "text", "category", "hint",
                             "explanation",}, "is_active = 1", null, null, null,
                     null);
         } else {
+            //noinspection ConstantConditions
             cursor = getReadableDatabase().rawQuery(
                     String.format(
                             "SELECT q.%s %s, q.text text, category, hint, explanation FROM %s q JOIN %s l ON q.level_id = l.%s WHERE l.level = ?",
@@ -143,12 +146,14 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
         Log.d(TAG, "get all answers");
         Cursor cursor;
         if (level == Level.ANY) {
+            //noinspection ConstantConditions
             cursor = getReadableDatabase().query(
                     ANSWERS_TABLE_NAME,
                     new String[]{BaseColumns._ID, "question_id", "text",
                             "is_correct",}, "is_active = 1", null, null, null,
                     null);
         } else {
+            //noinspection ConstantConditions
             cursor = getReadableDatabase().rawQuery(
                     String.format(
                             "SELECT a.%s %s, question_id, a.text text, is_correct " +
@@ -174,6 +179,12 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
         String text;
         String explanation;
         List<IAnswer> answers = new ArrayList<IAnswer>();
+    }
+
+    static class LevelRecord {
+        public String id;
+        public String name;
+        public int level;
     }
 
     public List<IQuestion> getQuestions(int level) {
@@ -232,12 +243,11 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
         final int nameIndex = cursor.getColumnIndex("name");
         final int levelIndex = cursor.getColumnIndex("level");
         while (cursor.moveToNext()) {
-            LevelData data = new LevelData();
-            String id = cursor.getString(idIndex);
-            data.setId(id);
-            data.setName(cursor.getString(nameIndex));
-            data.setLevel(cursor.getInt(levelIndex));
-            levels.add(new Level(data.id, data.name, data.level));
+            LevelRecord record = new LevelRecord();
+            record.id = cursor.getString(idIndex);
+            record.name = cursor.getString(nameIndex);
+            record.level = cursor.getInt(levelIndex);
+            levels.add(new Level(record.id, record.name, record.level));
         }
         cursor.close();
 
