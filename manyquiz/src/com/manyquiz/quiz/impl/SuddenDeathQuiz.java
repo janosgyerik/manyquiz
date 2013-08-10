@@ -9,27 +9,24 @@ import java.util.List;
 
 public class SuddenDeathQuiz implements IQuizControl {
 
-    List<IQuestionControl> questions;
-    List<IQuestion> originalQuestions;
+    List<IQuestionControl> questionControls;
 
     int currentQuestionIndex;
 
     public SuddenDeathQuiz(List<IQuestion> questions) {
-        originalQuestions = new ArrayList<IQuestion>();
-        originalQuestions.addAll(questions);
 
-        this.questions = new ArrayList<IQuestionControl>();
+        this.questionControls = new ArrayList<IQuestionControl>();
 
         currentQuestionIndex = 0;
 
-        for (IQuestion question : originalQuestions) {
-            this.questions.add(new SuddenDeathQuestion(this, question));
+        for (IQuestion question : questions) {
+            this.questionControls.add(new SuddenDeathQuestion(this, question));
         }
     }
 
     @Override
     public List<IQuestionControl> getQuestionControls() {
-        return questions;
+        return questionControls;
     }
 
     @Override
@@ -40,7 +37,7 @@ public class SuddenDeathQuiz implements IQuizControl {
     @Override
     public int getScore() {
         int score = 0;
-        for (IQuestionControl question : questions) {
+        for (IQuestionControl question : questionControls) {
             score += question.getScore();
         }
         return score;
@@ -48,7 +45,7 @@ public class SuddenDeathQuiz implements IQuizControl {
 
     @Override
     public boolean isGameOver() {
-        for (IQuestionControl question : questions) {
+        for (IQuestionControl question : questionControls) {
             if (question.isPending()) {
                 return false;
             }
@@ -62,7 +59,7 @@ public class SuddenDeathQuiz implements IQuizControl {
 
     @Override
     public boolean hasNextQuestion() {
-        return currentQuestionIndex < questions.size() - 1;
+        return currentQuestionIndex < questionControls.size() - 1;
     }
 
     @Override
@@ -72,7 +69,7 @@ public class SuddenDeathQuiz implements IQuizControl {
 
     @Override
     public IQuestionControl getCurrentQuestion() {
-        return questions.get(currentQuestionIndex);
+        return questionControls.get(currentQuestionIndex);
     }
 
     @Override
