@@ -40,22 +40,6 @@ public abstract class QuizBaseActivity extends Activity {
             startActivity(intent);
             return true;
         }
-        if (itemId == R.id.menu_quit) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage(R.string.msg_quit)
-                    .setCancelable(true)
-                    .setPositiveButton(R.string.btn_yes, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            finish();
-                        }
-                    })
-                    .setNegativeButton(R.string.btn_cancel, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.cancel();
-                        }
-                    }).show();
-            return true;
-        }
         return false;
     }
 

@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.manyquiz.db.DatabaseBackedQuizFactory;
+import com.manyquiz.quiz.impl.ScoreInTheEndQuiz;
 import com.manyquiz.quiz.model.IAnswerControl;
 import com.manyquiz.quiz.model.IQuestion;
 import com.manyquiz.quiz.model.IQuestionControl;
@@ -33,7 +34,7 @@ public class QuizActivity extends QuizBaseActivity {
     private static final String TAG = QuizActivity.class.getSimpleName();
 
     public static final String PARAM_LEVEL = "LEVEL";
-    public static final String PARAM_SUDDENDEATH_MODE = "SUDDENDEATH_MODE";
+    public static final String PARAM_MODE = "MODE";
 
     private static final String QUIZ_CONTROL = "QUIZ_CONTROL";
 
@@ -60,17 +61,17 @@ public class QuizActivity extends QuizBaseActivity {
 
         if (savedInstanceState == null) {
             Level level;
-            boolean suddenDeathMode;
+            String mode;
             Bundle bundle = getIntent().getExtras();
             if (bundle != null) {
                 level = (Level) bundle.getSerializable(PARAM_LEVEL);
-                suddenDeathMode = bundle.getBoolean(PARAM_SUDDENDEATH_MODE);
+                mode = bundle.getString(PARAM_MODE);
             }
             else {
                 level = new Level("1", null, 1);
-                suddenDeathMode = false;
+                mode = getString(R.string.const_score_in_the_end);
             }
-            int preferredQuestionsNum = getPreferredQuestionsNum(suddenDeathMode);
+            int preferredQuestionsNum = getPreferredQuestionsNum(mode);
 
             helper = new QuizSQLiteOpenHelper(this);
 
@@ -78,11 +79,14 @@ public class QuizActivity extends QuizBaseActivity {
             List<IQuestion> questions = quiz.pickRandomQuestions(preferredQuestionsNum,
                     level.getLevel());
 
-            if (suddenDeathMode) {
+            if (mode.equals(getString(R.string.const_score_as_you_go))) {
+                quizControl = new ScoreAsYouGoQuiz(questions);
+            }
+            else if (mode.equals(getString(R.string.const_suddendeath))) {
                 quizControl = new SuddenDeathQuiz(questions);
             }
             else {
-                quizControl = new ScoreAsYouGoQuiz(questions);
+                quizControl = new ScoreInTheEndQuiz(questions);
             }
         }
         else {
@@ -265,11 +269,11 @@ public class QuizActivity extends QuizBaseActivity {
         startActivity(intent);
     }
 
-    public int getPreferredQuestionsNum(boolean suddenDeathMode) {
+    public int getPreferredQuestionsNum(String mode) {
         SharedPreferences settings = PreferenceManager
                 .getDefaultSharedPreferences(this);
 
-        if (suddenDeathMode) {
+        if (mode.equals(getString(R.string.const_suddendeath))) {
             String key = getString(R.string.key_max_questions_suddendeath);
             return Integer.parseInt(settings.getString(key, null));
         } else {

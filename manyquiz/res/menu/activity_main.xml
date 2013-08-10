@@ -14,10 +14,5 @@
         android:icon="@drawable/ic_menu_start_conversation"
         android:title="@string/menu_contact"
         android:visible="true"/>
-    <item
-        android:id="@+id/menu_quit"
-        android:icon="@drawable/ic_menu_close_clear_cancel"
-        android:title="@string/menu_quit"
-        android:visible="false"/>
 
 </menu>

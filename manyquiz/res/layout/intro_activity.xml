@@ -31,9 +31,13 @@
                 android:orientation="vertical">
 
             <TextView
-                    android:id="@+id/introduction"
                     style="@style/summary"
-                    android:text="@string/introduction"/>
+                    android:text="@string/msg_welcome_to_the_quiz"/>
+
+            <TextView
+                    android:id="@+id/msg_select_level"
+                    style="@style/summary"
+                    android:text="@string/msg_select_level"/>
 
             <RadioGroup
                     android:id="@+id/level_choices"
@@ -42,11 +46,38 @@
                     android:orientation="vertical">
             </RadioGroup>
 
-            <CheckBox
-                    android:id="@+id/suddendeath_mode"
+            <TextView
+                    style="@style/summary"
+                    android:text="@string/msg_select_mode"/>
+
+            <RadioGroup
+                    android:id="@+id/mode_choices"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    />
+                    android:checkedButton="@+id/mode_score_as_you_go"
+                    android:orientation="vertical">
+
+                <RadioButton
+                        android:id="@id/mode_score_as_you_go"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mode_score_as_you_go"
+                        android:tag="@string/const_score_as_you_go"
+                        />
+                <RadioButton
+                        android:id="@+id/mode_sudden_death"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mode_suddendeath"
+                        android:tag="@string/const_suddendeath"
+                        />
+                <RadioButton
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mode_score_in_the_end"
+                        android:tag="@string/const_score_in_the_end"
+                        />
+            </RadioGroup>
         </LinearLayout>
     </ScrollView>
 
@@ -56,9 +87,9 @@
             android:orientation="vertical">
 
         <Button
-                android:id="@+id/btn_startQuiz"
+                android:id="@+id/btn_start_quiz"
                 style="@style/wideButton"
-                android:text="@string/startQuiz"/>
+                android:text="@string/btn_start_quiz"/>
 
     </LinearLayout>
 
