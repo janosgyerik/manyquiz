@@ -8,10 +8,10 @@ import android.provider.BaseColumns;
 import android.util.Log;
 
 import com.manyquiz.quiz.impl.Answer;
-import com.manyquiz.quiz.model.IAnswer;
-import com.manyquiz.quiz.model.IQuestion;
 import com.manyquiz.quiz.impl.Level;
 import com.manyquiz.quiz.impl.Question;
+import com.manyquiz.quiz.model.IAnswer;
+import com.manyquiz.quiz.model.IQuestion;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -84,7 +84,7 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
      * Very primitive for now: recreate all tables
      * (drop all existing tables and then call onCreate)
      *
-     * @param db SQLiteDatabase object
+     * @param db         SQLiteDatabase object
      * @param oldVersion version to migrate FROM
      * @param newVersion version to migrate TO
      */

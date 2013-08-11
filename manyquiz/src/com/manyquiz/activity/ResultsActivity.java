@@ -2,8 +2,6 @@ package com.manyquiz.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 import com.manyquiz.R;
@@ -38,8 +36,7 @@ public class ResultsActivity extends Activity {
             case 0:
                 if (correctAnswers == 0) {
                     message = getString(R.string.result_0);
-                }
-                else {
+                } else {
                     message = getString(R.string.result_less_than_10);
                 }
                 break;

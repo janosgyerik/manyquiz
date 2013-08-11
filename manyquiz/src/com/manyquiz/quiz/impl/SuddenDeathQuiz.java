@@ -22,7 +22,7 @@ public class SuddenDeathQuiz extends QuizControlBase {
             if (question.canChangeAnswer()) {
                 return false;
             }
-            if (! question.isCorrectlyAnswered()) {
+            if (!question.isCorrectlyAnswered()) {
                 return true;
             }
         }

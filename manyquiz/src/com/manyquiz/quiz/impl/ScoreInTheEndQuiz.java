@@ -19,7 +19,7 @@ public class ScoreInTheEndQuiz extends QuizControlBase {
     @Override
     public boolean readyToEnd() {
         for (IQuestionControl question : questionControls) {
-            if (! question.canNavigateForward()) {
+            if (!question.canNavigateForward()) {
                 return false;
             }
         }

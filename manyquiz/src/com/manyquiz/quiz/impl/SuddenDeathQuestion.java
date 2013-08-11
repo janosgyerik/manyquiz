@@ -1,6 +1,5 @@
 package com.manyquiz.quiz.impl;
 
-import com.manyquiz.quiz.model.IAnswerControl;
 import com.manyquiz.quiz.model.IQuestion;
 import com.manyquiz.quiz.model.IQuizControl;
 

@@ -17,7 +17,7 @@ public class ScoreInTheEndQuestion extends QuestionControlBase {
 
     @Override
     public boolean canChangeAnswer() {
-        return ! closed;
+        return !closed;
     }
 
     @Override

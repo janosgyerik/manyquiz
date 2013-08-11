@@ -13,18 +13,18 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.manyquiz.R;
 import com.manyquiz.db.DatabaseBackedQuizFactory;
+import com.manyquiz.db.QuizSQLiteOpenHelper;
+import com.manyquiz.quiz.impl.Level;
+import com.manyquiz.quiz.impl.ScoreAsYouGoQuiz;
 import com.manyquiz.quiz.impl.ScoreInTheEndQuiz;
+import com.manyquiz.quiz.impl.SuddenDeathQuiz;
 import com.manyquiz.quiz.model.IAnswerControl;
 import com.manyquiz.quiz.model.IQuestion;
 import com.manyquiz.quiz.model.IQuestionControl;
-import com.manyquiz.quiz.model.IQuizFactory;
 import com.manyquiz.quiz.model.IQuizControl;
-import com.manyquiz.quiz.impl.Level;
-import com.manyquiz.db.QuizSQLiteOpenHelper;
-import com.manyquiz.R;
-import com.manyquiz.quiz.impl.ScoreAsYouGoQuiz;
-import com.manyquiz.quiz.impl.SuddenDeathQuiz;
+import com.manyquiz.quiz.model.IQuizFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,8 +68,7 @@ public class QuizActivity extends QuizBaseActivity {
             if (bundle != null) {
                 level = (Level) bundle.getSerializable(PARAM_LEVEL);
                 mode = bundle.getString(PARAM_MODE);
-            }
-            else {
+            } else {
                 level = new Level("1", null, 1);
                 mode = getString(R.string.const_score_in_the_end);
             }
@@ -84,15 +83,12 @@ public class QuizActivity extends QuizBaseActivity {
 
             if (mode.equals(getString(R.string.const_score_as_you_go))) {
                 quizControl = new ScoreAsYouGoQuiz(questions);
-            }
-            else if (mode.equals(getString(R.string.const_suddendeath))) {
+            } else if (mode.equals(getString(R.string.const_suddendeath))) {
                 quizControl = new SuddenDeathQuiz(questions);
-            }
-            else {
+            } else {
                 quizControl = new ScoreInTheEndQuiz(questions);
             }
-        }
-        else {
+        } else {
             Log.d(TAG, "restoring from savedInstanceState");
             quizControl = (IQuizControl) savedInstanceState.getSerializable(QUIZ_CONTROL);
         }
@@ -134,7 +130,7 @@ public class QuizActivity extends QuizBaseActivity {
     class FinishClickListener implements OnClickListener {
         @Override
         public void onClick(View arg0) {
-            if (! quizControl.isGameOver()) {
+            if (!quizControl.isGameOver()) {
                 quizControl.end();
                 updateCurrentQuestion();
             }
@@ -180,7 +176,7 @@ public class QuizActivity extends QuizBaseActivity {
 
         if (question.canChangeAnswer()) {
             for (Button button : answerButtons) {
-                IAnswerControl answer = (IAnswerControl)button.getTag();
+                IAnswerControl answer = (IAnswerControl) button.getTag();
                 button.setOnClickListener(new AnswerClickListener(answer));
             }
         } else {

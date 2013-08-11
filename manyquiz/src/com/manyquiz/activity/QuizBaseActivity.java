@@ -1,15 +1,13 @@
 package com.manyquiz.activity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.manyquiz.application.QuizApplication;
 import com.manyquiz.R;
+import com.manyquiz.application.QuizApplication;
 
 public abstract class QuizBaseActivity extends Activity {
 
