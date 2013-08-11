@@ -70,7 +70,7 @@ public class QuizActivity extends QuizBaseActivity {
                 mode = bundle.getString(PARAM_MODE);
             } else {
                 level = new Level("1", null, 1);
-                mode = getString(R.string.const_score_in_the_end);
+                mode = getString(R.string.const_score_as_you_go);
             }
             int preferredQuestionsNum = getPreferredQuestionsNum(mode);
 
@@ -84,8 +84,10 @@ public class QuizActivity extends QuizBaseActivity {
                 quizControl = new ScoreAsYouGoQuiz(questions);
             } else if (mode.equals(getString(R.string.const_suddendeath))) {
                 quizControl = new SuddenDeathQuiz(questions);
-            } else {
+            } else if (mode.equals(getString(R.string.const_score_in_the_end))) {
                 quizControl = new ScoreInTheEndQuiz(questions);
+            } else {
+                quizControl = new ScoreAsYouGoQuiz(questions);
             }
         } else {
             Log.d(TAG, "restoring from savedInstanceState");
