@@ -1,8 +1,5 @@
 package com.manyquiz.activity;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,21 +9,20 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.manyquiz.quiz.Level;
-import com.manyquiz.db.QuizSQLiteOpenHelper;
 import com.manyquiz.R;
+import com.manyquiz.db.QuizSQLiteOpenHelper;
+import com.manyquiz.quiz.impl.Level;
 
 public class IntroActivity extends QuizBaseActivity {
 
     private static final String TAG = IntroActivity.class.getSimpleName();
 
     private RadioGroup levelChoices;
-    private CheckBox suddenDeathMode;
-    private Button btnStartQuiz;
+    private RadioGroup modeChoices;
+    private RadioButton suddenDeathMode;
 
     private QuizSQLiteOpenHelper helper;
 
@@ -54,20 +50,17 @@ public class IntroActivity extends QuizBaseActivity {
             }
             levelChoices.addView(levelOption);
         }
-        levelChoices.check(first.getId());
+        if (first != null) {
+            levelChoices.check(first.getId());
+        }
 
-        suddenDeathMode = (CheckBox) findViewById(R.id.suddendeath_mode);
+        modeChoices = (RadioGroup) findViewById(R.id.mode_choices);
+
+        suddenDeathMode = (RadioButton) findViewById(R.id.mode_sudden_death);
         updateSuddenDeathModeLabel();
 
-        btnStartQuiz = (Button) findViewById(R.id.btn_startQuiz);
+        Button btnStartQuiz = (Button) findViewById(R.id.btn_start_quiz);
         btnStartQuiz.setOnClickListener(new StartQuizClickListener());
-    }
-
-    class ExitClickListener implements OnClickListener {
-        @Override
-        public void onClick(View v) {
-            finish();
-        }
     }
 
     class StartQuizClickListener implements OnClickListener {
@@ -75,11 +68,15 @@ public class IntroActivity extends QuizBaseActivity {
         public void onClick(View arg0) {
             View selectedOption = findViewById(levelChoices.getCheckedRadioButtonId());
             Level level = (Level) selectedOption.getTag();
-            Log.d(TAG, "selected level = " + level);
+            Log.i(TAG, "selected level = " + level);
+
+            View selectedMode = findViewById(modeChoices.getCheckedRadioButtonId());
+            String mode = (String) selectedMode.getTag();
+            Log.i(TAG, "selected mode = " + mode);
 
             Bundle bundle = new Bundle();
             bundle.putSerializable(QuizActivity.PARAM_LEVEL, level);
-            bundle.putBoolean(QuizActivity.PARAM_SUDDENDEATH_MODE, suddenDeathMode.isChecked());
+            bundle.putString(QuizActivity.PARAM_MODE, mode);
 
             Intent intent = new Intent(IntroActivity.this, QuizActivity.class);
             intent.putExtras(bundle);

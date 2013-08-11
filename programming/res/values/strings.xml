@@ -5,6 +5,6 @@
     <string name="app_name_lite">Programming Quiz (LITE)</string>
 
     <string name="title_activity_main">Programming Quiz</string>
-    <string name="introduction">Welcome to the Programming Quiz!\nSelect a difficulty level:</string>
+    <string name="msg_welcome_to_the_quiz">Welcome to the Programming Quiz!</string>
 
 </resources>

@@ -8,7 +8,7 @@ Building and running the Computer Quiz
 --------------------------------------
 1. Import the following projects in Eclipse:
 
-        * library/ -- common quiz logic and layouts
+        * manyquiz/ -- common quiz logic and layouts
 
         * computers/ -- logic and layouts for Computer Quiz
 
@@ -19,7 +19,7 @@ Building and running the Computer Quiz
 
 Project layout
 --------------
-+ library/
++ manyquiz/
 
     An Android Library project that contains most of the
     functionality and layout elements of the quiz.
@@ -34,7 +34,7 @@ Project layout
 
     An Android Application project that corresponds to the
     Computer Quiz LITE application on Google Play.
-    It depends on the "library" and "computers" projects.
+    It depends on the "manyquiz" and "computers" projects.
     Pretty much empty for now.
 
 + django-quiz/

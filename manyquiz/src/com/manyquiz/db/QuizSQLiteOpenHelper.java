@@ -7,9 +7,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 import android.util.Log;
 
-import com.manyquiz.quiz.IQuestion;
-import com.manyquiz.quiz.Level;
-import com.manyquiz.quiz.Question;
+import com.manyquiz.quiz.impl.Answer;
+import com.manyquiz.quiz.impl.Level;
+import com.manyquiz.quiz.impl.Question;
+import com.manyquiz.quiz.model.IAnswer;
+import com.manyquiz.quiz.model.IQuestion;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -82,18 +84,19 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
      * Very primitive for now: recreate all tables
      * (drop all existing tables and then call onCreate)
      *
-     * @param db
-     * @param oldVersion
-     * @param newVersion
+     * @param db         SQLiteDatabase object
+     * @param oldVersion version to migrate FROM
+     * @param newVersion version to migrate TO
      */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         List<String> tables = new ArrayList<String>();
-        Cursor cursor = db.rawQuery("SELECT * FROM sqlite_master WHERE type='table';", null);
+        Cursor cursor = db.rawQuery("SELECT tbl_name FROM sqlite_master WHERE type = 'table';", null);
         while (cursor.moveToNext()) {
-            String tableName = cursor.getString(1);
-            if (!tableName.equals("android_metadata") &&
-                    !tableName.equals("sqlite_sequence"))
+            String tableName = cursor.getString(0);
+            if (tableName != null
+                    && !tableName.equals("android_metadata")
+                    && !tableName.equals("sqlite_sequence"))
                 tables.add(tableName);
         }
         cursor.close();
@@ -106,26 +109,28 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
 
     public Cursor getLevelListCursor() {
         Log.d(TAG, "get all levels (that have any questions)");
-        Cursor cursor = getReadableDatabase().rawQuery(
+        //noinspection ConstantConditions
+        return getReadableDatabase().rawQuery(
                 String.format(
                         "SELECT DISTINCT l.%s %s, l.name name, l.level level FROM %s l JOIN %s q ON l.%s = q.level_id ORDER BY l.level",
                         BaseColumns._ID, BaseColumns._ID, LEVELS_TABLE_NAME, QUESTIONS_TABLE_NAME, BaseColumns._ID
                 ),
                 null
         );
-        return cursor;
     }
 
     public Cursor getQuestionListCursor(int level) {
         Log.d(TAG, "get all questions at level = " + level);
         Cursor cursor;
         if (level == Level.ANY) {
+            //noinspection ConstantConditions
             cursor = getReadableDatabase().query(
                     QUESTIONS_TABLE_NAME,
                     new String[]{BaseColumns._ID, "text", "category", "hint",
                             "explanation",}, "is_active = 1", null, null, null,
                     null);
         } else {
+            //noinspection ConstantConditions
             cursor = getReadableDatabase().rawQuery(
                     String.format(
                             "SELECT q.%s %s, q.text text, category, hint, explanation FROM %s q JOIN %s l ON q.level_id = l.%s WHERE l.level = ?",
@@ -141,12 +146,14 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
         Log.d(TAG, "get all answers");
         Cursor cursor;
         if (level == Level.ANY) {
+            //noinspection ConstantConditions
             cursor = getReadableDatabase().query(
                     ANSWERS_TABLE_NAME,
                     new String[]{BaseColumns._ID, "question_id", "text",
                             "is_correct",}, "is_active = 1", null, null, null,
                     null);
         } else {
+            //noinspection ConstantConditions
             cursor = getReadableDatabase().rawQuery(
                     String.format(
                             "SELECT a.%s %s, question_id, a.text text, is_correct " +
@@ -162,25 +169,40 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    static class AnswerRecord {
+        String text;
+        boolean correct;
+    }
+
+    static class QuestionRecord {
+        String id;
+        String text;
+        String explanation;
+        List<IAnswer> answers = new ArrayList<IAnswer>();
+    }
+
+    static class LevelRecord {
+        public String id;
+        public String name;
+        public int level;
+    }
+
     public List<IQuestion> getQuestions(int level) {
         List<IQuestion> questions = new ArrayList<IQuestion>();
 
-        Map<String, QuestionData> questionDataMap = new HashMap<String, QuestionData>();
+        Map<String, QuestionRecord> questionRecordMap = new HashMap<String, QuestionRecord>();
 
         {
             Cursor cursor = getQuestionListCursor(level);
             final int idIndex = cursor.getColumnIndex(BaseColumns._ID);
             final int textIndex = cursor.getColumnIndex("text");
-            final int categoryIndex = cursor.getColumnIndex("category");
             final int explanationIndex = cursor.getColumnIndex("explanation");
             while (cursor.moveToNext()) {
-                QuestionData data = new QuestionData();
-                String id = cursor.getString(idIndex);
-                data.setId(id);
-                data.setText(cursor.getString(textIndex));
-                data.setCategory(cursor.getString(categoryIndex));
-                data.setExplanation(cursor.getString(explanationIndex));
-                questionDataMap.put(id, data);
+                QuestionRecord record = new QuestionRecord();
+                record.id = cursor.getString(idIndex);
+                record.text = cursor.getString(textIndex);
+                record.explanation = cursor.getString(explanationIndex);
+                questionRecordMap.put(record.id, record);
             }
             cursor.close();
         }
@@ -191,18 +213,18 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
             final int textIndex = cursor.getColumnIndex("text");
             final int isCorrectIndex = cursor.getColumnIndex("is_correct");
             while (cursor.moveToNext()) {
+                AnswerRecord record = new AnswerRecord();
                 String questionId = cursor.getString(questionIdIndex);
-                String answer = cursor.getString(textIndex);
-                int isCorrect = cursor.getInt(isCorrectIndex);
-                QuestionData data = questionDataMap.get(questionId);
-                data.addAnswer(answer, isCorrect > 0);
+                record.text = cursor.getString(textIndex);
+                record.correct = cursor.getInt(isCorrectIndex) > 0;
+                QuestionRecord question = questionRecordMap.get(questionId);
+                question.answers.add(new Answer(record.text, record.correct));
             }
             cursor.close();
         }
 
-        for (QuestionData data : questionDataMap.values()) {
-            IQuestion question = new Question(data.category, data.text,
-                    data.explanation, data.correctAnswer, data.choices);
+        for (QuestionRecord data : questionRecordMap.values()) {
+            IQuestion question = new Question(data.text, data.answers, data.explanation);
             questions.add(question);
         }
 
@@ -221,12 +243,11 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
         final int nameIndex = cursor.getColumnIndex("name");
         final int levelIndex = cursor.getColumnIndex("level");
         while (cursor.moveToNext()) {
-            LevelData data = new LevelData();
-            String id = cursor.getString(idIndex);
-            data.setId(id);
-            data.setName(cursor.getString(nameIndex));
-            data.setLevel(cursor.getInt(levelIndex));
-            levels.add(new Level(data.id, data.name, data.level));
+            LevelRecord record = new LevelRecord();
+            record.id = cursor.getString(idIndex);
+            record.name = cursor.getString(nameIndex);
+            record.level = cursor.getInt(levelIndex);
+            levels.add(new Level(record.id, record.name, record.level));
         }
         cursor.close();
 
