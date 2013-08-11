@@ -43,14 +43,4 @@ public class ScoreInTheEndTest extends QuizControlTestBase {
         answer.select();
         Assert.assertTrue(question.isReadyForNext());
     }
-
-    @Override
-    public void testQuestionCorrectlyAnswered() {
-        // skip this test
-    }
-
-    @Override
-    public void testQuestionIncorrectlyAnswered() {
-        // skip this test
-    }
 }

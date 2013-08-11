@@ -13,6 +13,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public abstract class QuizControlTestBase {
@@ -44,48 +45,115 @@ public abstract class QuizControlTestBase {
     }
 
     /**
-     * Sanity checks on first question:
+     * Basic sanity checks on the quiz right after the start:
      * - the game is not over
-     * - can change the answer
+     * - can change the answer on all questions
      * - the current index is 0
-     * - there is no previous question
-     * - there is a next question
+     * - the last index is N-1
      */
     @Test
     public void testBasicSanity() {
         Assert.assertFalse(quiz.isGameOver());
 
-        IQuestionControl question = quiz.getCurrentQuestion();
-        Assert.assertTrue(question.canChangeAnswer());
+        for (IQuestionControl question : quiz.getQuestionControls()) {
+            question.canChangeAnswer();
+        }
+
+        Assert.assertEquals(0, quiz.getCurrentQuestionIndex());
+        while (quiz.hasNextQuestion()) {
+            quiz.gotoNextQuestion();
+        }
+        Assert.assertEquals(quiz.getQuestionsNum() - 1, quiz.getCurrentQuestionIndex());
+    }
+
+    /**
+     * Sanity checks on first question:
+     * - there are more than 1 questions
+     * - the current index is 0
+     * - there is no previous question
+     * - there is a next question
+     */
+    @Test
+    public void testFirstQuestionSanity() {
+        Assert.assertTrue(quiz.getQuestionsNum() > 1);
 
         Assert.assertEquals(0, quiz.getCurrentQuestionIndex());
         Assert.assertFalse(quiz.hasPrevQuestion());
-
-        Assert.assertTrue(quiz.getQuestionControls().size() > 1);
         Assert.assertTrue(quiz.hasNextQuestion());
     }
 
+    /**
+     * Sanity checks on last question:
+     * - there are more than 1 questions
+     * - the current index is N-1
+     * - there is a previous question
+     * - there is no next question
+     */
+    @Test
+    public void testLastQuestionSanity() {
+        Assert.assertTrue(quiz.getQuestionControls().size() > 1);
+
+        while (quiz.hasNextQuestion()) {
+            quiz.gotoNextQuestion();
+        }
+
+        Assert.assertEquals(quiz.getQuestionsNum() - 1, quiz.getCurrentQuestionIndex());
+        Assert.assertTrue(quiz.hasPrevQuestion());
+        Assert.assertFalse(quiz.hasNextQuestion());
+    }
+
+    /**
+     * Test the behavior of correctly answered questions:
+     * - score of a correctly answered question is greater than 0
+     * - total quiz score gets incremented by the score of the question
+     */
     @Test
     public void testQuestionCorrectlyAnswered() {
-        int score = quiz.getScore();
+        int quizScore = quiz.getScore();
 
         IQuestionControl question = quiz.getCurrentQuestion();
         IAnswerControl answer = question.getAnyCorrectAnswer();
         answer.select();
-        Assert.assertFalse(question.canChangeAnswer());
+        question.close();
 
-        Assert.assertEquals(score + 1, quiz.getScore());
+        int questionScore = question.getScore();
+        Assert.assertTrue(questionScore > 0);
+        Assert.assertEquals(quizScore + questionScore, quiz.getScore());
     }
 
+    /**
+     * Test the behavior of incorrectly answered questions:
+     * - score of an incorrectly answered question is 0
+     * - total quiz score does not increase after answering incorrectly
+     */
     @Test
     public void testQuestionIncorrectlyAnswered() {
-        int score = quiz.getScore();
+        int quizScore = quiz.getScore();
 
         IQuestionControl question = quiz.getCurrentQuestion();
         IAnswerControl answer = question.getAnyWrongAnswer();
         answer.select();
-        Assert.assertFalse(question.canChangeAnswer());
+        question.close();
 
-        Assert.assertEquals(score, quiz.getScore());
+        Assert.assertTrue(question.getScore() <= quizScore);
+        Assert.assertEquals(quizScore, quiz.getScore());
+    }
+
+    /**
+     * Test the sanity of a quiz with only one question:
+     * - passes the basic sanity
+     * - there is only one question
+     * - there is no next question
+     * - there is no previous question
+     */
+    @Test
+    public void testSingleQuestionQuizSanity() {
+        List<IQuestion> questions = Collections.singletonList(createDummyQuestions().get(0));
+        quiz = createQuizControl(questions);
+        testBasicSanity();
+
+        Assert.assertEquals(1, quiz.getQuestionsNum());
+        Assert.assertFalse(quiz.hasPrevQuestion());
+        Assert.assertFalse(quiz.hasNextQuestion());
     }
 }
