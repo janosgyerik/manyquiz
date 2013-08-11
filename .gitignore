@@ -1,6 +1,7 @@
+.DS_Store
 bin
 gen
-.DS_Store
+target
 tmp
 *.pyc
 /django-quiz/databases/*.db*
