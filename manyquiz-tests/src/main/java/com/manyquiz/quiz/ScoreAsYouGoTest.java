@@ -48,9 +48,9 @@ public class ScoreAsYouGoTest extends QuizControlTestBase {
     public void testGameOver() {
         for (IQuestionControl question : quiz.getQuestionControls()) {
             Assert.assertFalse(quiz.isGameOver());
-            Assert.assertTrue(question.isOpen());
+            Assert.assertTrue(question.canChangeAnswer());
             question.getAnswerControls().get(0).select();
-            Assert.assertFalse(question.isOpen());
+            Assert.assertFalse(question.canChangeAnswer());
         }
 
         Assert.assertTrue(quiz.isGameOver());

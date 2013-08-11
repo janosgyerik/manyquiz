@@ -30,10 +30,10 @@ public class ScoreInTheEndTest extends QuizControlTestBase {
     @Test
     public void testCanChangeAnswer() {
         IQuestionControl question = quiz.getCurrentQuestion();
-        Assert.assertTrue(question.isOpen());
+        Assert.assertTrue(question.canChangeAnswer());
         IAnswerControl answer = question.getAnswerControls().get(0);
         answer.select();
-        Assert.assertTrue(question.isOpen());
+        Assert.assertTrue(question.canChangeAnswer());
     }
 
     @Test

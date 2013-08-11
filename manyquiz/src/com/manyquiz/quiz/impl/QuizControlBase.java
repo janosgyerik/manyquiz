@@ -58,7 +58,7 @@ public abstract class QuizControlBase implements IQuizControl {
     @Override
     public boolean isGameOver() {
         for (IQuestionControl question : questionControls) {
-            if (question.isOpen()) {
+            if (question.canChangeAnswer()) {
                 return false;
             }
         }

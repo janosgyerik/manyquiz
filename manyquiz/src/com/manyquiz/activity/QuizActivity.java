@@ -161,11 +161,10 @@ public class QuizActivity extends QuizBaseActivity {
 
         questionView.setText(question.getQuestion().getText());
 
-        choicesView.removeAllViews();
-
         explanationView.setVisibility(View.GONE);
         explanationView.setText(question.getQuestion().getExplanation());
 
+        choicesView.removeAllViews();
         answerButtons.clear();
 
         for (IAnswerControl answer : question.getAnswerControls()) {
@@ -179,7 +178,7 @@ public class QuizActivity extends QuizBaseActivity {
             }
         }
 
-        if (question.isOpen()) {
+        if (question.canChangeAnswer()) {
             for (Button button : answerButtons) {
                 IAnswerControl answer = (IAnswerControl)button.getTag();
                 button.setOnClickListener(new AnswerClickListener(answer));
@@ -191,7 +190,9 @@ public class QuizActivity extends QuizBaseActivity {
         updateCurrentQuestion();
     }
 
-    void updateCurrentQuestion() {
+    private void updateCurrentQuestion() {
+        boolean canChangeAnswer = quizControl.getCurrentQuestion().canChangeAnswer();
+
         for (Button button : answerButtons) {
             // weird. but, need to save the paddings and reapply them after
             // changing the background resource, otherwise the padding disappears
@@ -201,7 +202,7 @@ public class QuizActivity extends QuizBaseActivity {
             int paddingRight = button.getPaddingRight();
 
             IAnswerControl answer = (IAnswerControl) button.getTag();
-            if (quizControl.getCurrentQuestion().isOpen()) {
+            if (canChangeAnswer) {
                 if (answer.isSelected()) {
                     button.setBackgroundResource(R.drawable.btn_default_pressed);
                 } else {
@@ -209,6 +210,8 @@ public class QuizActivity extends QuizBaseActivity {
                 }
                 button.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
             } else {
+                button.setEnabled(false);
+                explanationView.setVisibility(View.VISIBLE);
                 if (answer.getAnswer().isCorrect()) {
                     button.setBackgroundResource(R.drawable.btn_correct);
                     button.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
@@ -216,8 +219,6 @@ public class QuizActivity extends QuizBaseActivity {
                     button.setBackgroundResource(R.drawable.btn_incorrect);
                     button.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
                 }
-                button.setEnabled(false);
-                explanationView.setVisibility(View.VISIBLE);
             }
         }
         updateQuestionCounter();

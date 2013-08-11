@@ -26,7 +26,7 @@ public interface IQuestionControl extends Serializable {
      * changing answers.
      * @return is open for changes
      */
-    boolean isOpen();
+    boolean canChangeAnswer();
 
     /**
      * Close the question, prohibit selecting or changing answers.

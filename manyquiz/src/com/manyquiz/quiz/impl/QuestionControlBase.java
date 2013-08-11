@@ -36,7 +36,7 @@ public abstract class QuestionControlBase implements IQuestionControl {
     }
 
     @Override
-    public boolean isOpen() {
+    public boolean canChangeAnswer() {
         for (IAnswerControl answerControl : answerControls) {
             if (answerControl.isSelected()) {
                 return false;
@@ -47,7 +47,7 @@ public abstract class QuestionControlBase implements IQuestionControl {
 
     @Override
     public boolean isCorrectlyAnswered() {
-        if (! isOpen()) {
+        if (! canChangeAnswer()) {
             for (IAnswerControl answerControl : answerControls) {
                 if (answerControl.isSelected() && !answerControl.getAnswer().isCorrect()) {
                     return false;
@@ -75,7 +75,7 @@ public abstract class QuestionControlBase implements IQuestionControl {
 
     @Override
     public int getScore() {
-        if (! isOpen()) {
+        if (! canChangeAnswer()) {
             for (IAnswerControl answerControl : answerControls) {
                 if (answerControl.isSelected() && answerControl.getAnswer().isCorrect()) {
                     return 1;
