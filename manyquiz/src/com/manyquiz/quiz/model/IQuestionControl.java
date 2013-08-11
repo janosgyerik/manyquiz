@@ -44,14 +44,14 @@ public interface IQuestionControl extends Serializable {
      * given the current state of the question.
      * @return is the user allowed to navigate to the next question or not
      */
-    boolean isReadyForNext();
+    boolean canNavigateForward();
 
     /**
      * Check if the user is allowed to navigate to the previous question,
      * given the current state of the question.
      * @return is the user allowed to navigate to the previous question or not
      */
-    boolean isReadyForPrevious();
+    boolean canNavigateBackward();
 
     /**
      * If the question is closed, return the score gained from this question.

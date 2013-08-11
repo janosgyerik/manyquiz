@@ -1,6 +1,7 @@
 package com.manyquiz.quiz;
 
 import com.manyquiz.quiz.impl.ScoreAsYouGoQuiz;
+import com.manyquiz.quiz.model.IAnswerControl;
 import com.manyquiz.quiz.model.IQuestion;
 import com.manyquiz.quiz.model.IQuestionControl;
 import com.manyquiz.quiz.model.IQuizControl;
@@ -10,6 +11,11 @@ import org.junit.Test;
 
 import java.util.List;
 
+/**
+ * - Can navigate freely back and forth in the questions
+ * - Selecting an answer closes the question
+ * - The game ends automatically when all questions are answered
+ */
 public class ScoreAsYouGoTest extends QuizControlTestBase {
 
     @Override
@@ -17,34 +23,57 @@ public class ScoreAsYouGoTest extends QuizControlTestBase {
         return new ScoreAsYouGoQuiz(questions);
     }
 
+    /**
+     * - can navigate forward and backward always
+     * - can navigate forward without answering
+     * - can navigate forward after correct answer
+     * - can navigate forward after wrong answer
+     */
     @Test
-    public void testSecondQuestionNavigation() {
+    public void testCanNavigateFreelyBackAndForth() {
         Assert.assertTrue(quiz.getQuestionControls().size() > 2);
 
+        Assert.assertEquals(0, quiz.getCurrentQuestionIndex());
+        Assert.assertTrue(quiz.getCurrentQuestion().canNavigateForward());
+        Assert.assertTrue(quiz.getCurrentQuestion().canNavigateBackward());
+
         Assert.assertTrue(quiz.hasNextQuestion());
-        Assert.assertTrue(quiz.getCurrentQuestion().isReadyForNext());
         quiz.gotoNextQuestion();
+
         Assert.assertEquals(1, quiz.getCurrentQuestionIndex());
+        quiz.getCurrentQuestion().getAnyCorrectAnswer().select();
+        Assert.assertTrue(quiz.getCurrentQuestion().canNavigateForward());
+        Assert.assertTrue(quiz.getCurrentQuestion().canNavigateBackward());
 
+        Assert.assertTrue(quiz.hasNextQuestion());
+        quiz.gotoNextQuestion();
+
+        Assert.assertEquals(2, quiz.getCurrentQuestionIndex());
+        quiz.getCurrentQuestion().getAnyWrongAnswer().select();
+        Assert.assertTrue(quiz.getCurrentQuestion().canNavigateForward());
+        Assert.assertTrue(quiz.getCurrentQuestion().canNavigateBackward());
+    }
+
+    @Test
+    public void testCannotChangeCorrectAnswer() {
         IQuestionControl question = quiz.getCurrentQuestion();
-        Assert.assertTrue(question.isReadyForNext());
-        Assert.assertTrue(question.isReadyForPrevious());
+        Assert.assertTrue(question.canChangeAnswer());
+        IAnswerControl answer = question.getAnyCorrectAnswer();
+        answer.select();
+        Assert.assertFalse(question.canChangeAnswer());
     }
 
     @Test
-    public void testLastQuestion() {
-        while (quiz.hasNextQuestion() && quiz.getCurrentQuestion().isReadyForNext()) {
-            quiz.gotoNextQuestion();
-        }
-
-        Assert.assertEquals(quiz.getQuestionControls().size() - 1, quiz.getCurrentQuestionIndex());
-
-        Assert.assertFalse(quiz.hasNextQuestion());
-        Assert.assertTrue(quiz.hasPrevQuestion());
+    public void testCannotChangeWrongAnswer() {
+        IQuestionControl question = quiz.getCurrentQuestion();
+        Assert.assertTrue(question.canChangeAnswer());
+        IAnswerControl answer = question.getAnyWrongAnswer();
+        answer.select();
+        Assert.assertFalse(question.canChangeAnswer());
     }
 
     @Test
-    public void testGameOver() {
+    public void testGameEndsWhenAllAnswered() {
         for (IQuestionControl question : quiz.getQuestionControls()) {
             Assert.assertFalse(quiz.isGameOver());
             Assert.assertTrue(question.canChangeAnswer());
@@ -53,6 +82,14 @@ public class ScoreAsYouGoTest extends QuizControlTestBase {
         }
 
         Assert.assertTrue(quiz.isGameOver());
+    }
+
+    @Test
+    public void testCanSkipQuestions() {
+        for (IQuestionControl question : quiz.getQuestionControls()) {
+            Assert.assertTrue(question.canNavigateForward());
+            Assert.assertTrue(question.canNavigateBackward());
+        }
     }
 
     @Test
@@ -73,14 +110,30 @@ public class ScoreAsYouGoTest extends QuizControlTestBase {
 
     @Test
     public void testWorstScore() {
-
         for (IQuestionControl question : quiz.getQuestionControls()) {
             Assert.assertFalse(quiz.isGameOver());
             question.getAnyWrongAnswer().select();
-            Assert.assertEquals(0, question.getScore());
+            Assert.assertTrue(question.getScore() <= 0);
         }
 
-        Assert.assertEquals(0, quiz.getScore());
+        Assert.assertTrue(quiz.getScore() <= 0);
         Assert.assertTrue(quiz.isGameOver());
+    }
+
+    @Override
+    public void testNavigationAtGameStart() {
+        for (IQuestionControl question : quiz.getQuestionControls()) {
+            Assert.assertTrue(question.canNavigateForward());
+            Assert.assertTrue(question.canNavigateBackward());
+        }
+    }
+
+    @Override
+    public void testNavigationAfterGameEnd() {
+        quiz.end();
+        for (IQuestionControl question : quiz.getQuestionControls()) {
+            Assert.assertTrue(question.canNavigateForward());
+            Assert.assertTrue(question.canNavigateBackward());
+        }
     }
 }

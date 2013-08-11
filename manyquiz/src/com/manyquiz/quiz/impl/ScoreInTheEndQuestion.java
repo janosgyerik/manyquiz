@@ -21,8 +21,8 @@ public class ScoreInTheEndQuestion extends QuestionControlBase {
     }
 
     @Override
-    public boolean isReadyForNext() {
-        return hasSelectedAnswer();
+    public boolean canNavigateForward() {
+        return closed || hasSelectedAnswer();
     }
 
     private boolean hasSelectedAnswer() {

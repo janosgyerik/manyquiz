@@ -14,20 +14,13 @@ public class SuddenDeathQuestion extends QuestionControlBase {
     }
 
     @Override
-    public boolean isReadyForNext() {
+    public boolean canNavigateForward() {
         if (quiz.isGameOver()) return false;
-        for (IAnswerControl answerControl : answerControls) {
-            if (answerControl.isSelected()) {
-                if (answerControl.getAnswer().isCorrect()) {
-                    return true;
-                }
-            }
-        }
-        return false;
+        return isCorrectlyAnswered();
     }
 
     @Override
-    public boolean isReadyForPrevious() {
+    public boolean canNavigateBackward() {
         return false;
     }
 }

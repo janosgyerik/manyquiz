@@ -156,4 +156,10 @@ public abstract class QuizControlTestBase {
         Assert.assertFalse(quiz.hasPrevQuestion());
         Assert.assertFalse(quiz.hasNextQuestion());
     }
+
+    @Test
+    public abstract void testNavigationAtGameStart();
+
+    @Test
+    public abstract void testNavigationAfterGameEnd();
 }

@@ -75,7 +75,7 @@ public abstract class QuizControlBase implements IQuizControl {
     }
 
     @Override
-    public boolean canNavigateBack() {
+    public boolean canNavigateBackward() {
         return true;
     }
 

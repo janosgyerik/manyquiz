@@ -232,10 +232,10 @@ public class QuizActivity extends QuizBaseActivity {
     private void updateNavigationButtons() {
         IQuestionControl question = quizControl.getCurrentQuestion();
 
-        if (quizControl.hasNextQuestion() && question.isReadyForNext()) {
+        if (quizControl.hasNextQuestion() && question.canNavigateForward()) {
             nextButton.setVisibility(View.VISIBLE);
             nextButton.setEnabled(true);
-        } else if (quizControl.canNavigateBack()) {
+        } else if (quizControl.canNavigateBackward()) {
             nextButton.setVisibility(View.INVISIBLE);
             nextButton.setEnabled(false);
         } else {
@@ -243,10 +243,10 @@ public class QuizActivity extends QuizBaseActivity {
             nextButton.setEnabled(false);
         }
 
-        if (quizControl.hasPrevQuestion() && question.isReadyForPrevious()) {
+        if (quizControl.hasPrevQuestion() && question.canNavigateBackward()) {
             prevButton.setVisibility(View.VISIBLE);
             prevButton.setEnabled(true);
-        } else if (quizControl.canNavigateBack()) {
+        } else if (quizControl.canNavigateBackward()) {
             prevButton.setVisibility(View.INVISIBLE);
             prevButton.setEnabled(false);
         } else {

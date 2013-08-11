@@ -69,7 +69,7 @@ public interface IQuizControl extends Serializable {
      * This may affect the layout of navigation buttons in the UI.
      * @return does the quiz support navigating backward or not
      */
-    boolean canNavigateBack();
+    boolean canNavigateBackward();
 
     /**
      * Check if there is a "next" question.

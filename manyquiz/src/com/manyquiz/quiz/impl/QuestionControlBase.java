@@ -64,12 +64,12 @@ public abstract class QuestionControlBase implements IQuestionControl {
     }
 
     @Override
-    public boolean isReadyForNext() {
+    public boolean canNavigateForward() {
         return true;
     }
 
     @Override
-    public boolean isReadyForPrevious() {
+    public boolean canNavigateBackward() {
         return true;
     }
 

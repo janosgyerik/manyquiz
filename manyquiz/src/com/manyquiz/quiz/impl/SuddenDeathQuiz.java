@@ -30,7 +30,7 @@ public class SuddenDeathQuiz extends QuizControlBase {
     }
 
     @Override
-    public boolean canNavigateBack() {
+    public boolean canNavigateBackward() {
         return false;
     }
 }
