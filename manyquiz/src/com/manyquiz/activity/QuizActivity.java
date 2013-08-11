@@ -40,13 +40,15 @@ public class QuizActivity extends QuizBaseActivity {
 
     private QuizSQLiteOpenHelper helper;
 
+    private TextView questionIndexView;
+
     private TextView questionView;
     private TextView explanationView;
     private LinearLayout choicesView;
+
     private ImageButton prevButton;
     private ImageButton nextButton;
     private ImageButton finishButton;
-    private TextView questionsCounterView;
 
     private IQuizControl quizControl;
     private List<Button> answerButtons = new ArrayList<Button>();
@@ -98,10 +100,10 @@ public class QuizActivity extends QuizBaseActivity {
         questionView = (TextView) findViewById(R.id.question);
         explanationView = (TextView) findViewById(R.id.explanation);
         choicesView = (LinearLayout) findViewById(R.id.choices);
-        questionsCounterView = (TextView) findViewById(R.id.questions_i);
+        questionIndexView = (TextView) findViewById(R.id.question_i);
 
-        TextView questionsNumView = (TextView) findViewById(R.id.questions_n);
-        questionsNumView.setText(Integer.toString(quizControl.getQuestionControls().size()));
+        TextView questionsNumView = (TextView) findViewById(R.id.questions_num);
+        questionsNumView.setText(Integer.toString(quizControl.getQuestionsNum()));
 
         prevButton = (ImageButton) findViewById(R.id.btn_prev);
         prevButton.setOnClickListener(new PrevClickListener());
@@ -109,7 +111,6 @@ public class QuizActivity extends QuizBaseActivity {
         nextButton.setOnClickListener(new NextClickListener());
         finishButton = (ImageButton) findViewById(R.id.btn_finish);
         finishButton.setOnClickListener(new FinishClickListener());
-        finishButton.setEnabled(false);
 
         replaceCurrentQuestion();
     }
@@ -224,7 +225,7 @@ public class QuizActivity extends QuizBaseActivity {
     }
 
     private void updateQuestionCounter() {
-        questionsCounterView.setText(Integer.toString(quizControl.getCurrentQuestionIndex() + 1));
+        questionIndexView.setText(Integer.toString(quizControl.getCurrentQuestionIndex() + 1));
     }
 
     private void updateNavigationButtons() {
@@ -263,7 +264,7 @@ public class QuizActivity extends QuizBaseActivity {
 
     private void finishGame() {
         Bundle bundle = new Bundle();
-        bundle.putInt(ResultsActivity.PARAM_TOTAL_QUESTIONS_NUM, quizControl.getQuestionControls().size());
+        bundle.putInt(ResultsActivity.PARAM_TOTAL_QUESTIONS_NUM, quizControl.getQuestionsNum());
         bundle.putInt(ResultsActivity.PARAM_CORRECT_ANSWERS_NUM, quizControl.getScore());
         Intent intent = new Intent(QuizActivity.this, ResultsActivity.class);
         intent.putExtras(bundle);

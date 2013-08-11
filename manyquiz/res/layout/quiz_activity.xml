@@ -24,7 +24,7 @@
             android:visibility="gone" />
 
         <TextView
-            android:id="@+id/questions_i"
+            android:id="@+id/question_i"
             style="@style/mainHeaderElement"
             android:layout_toLeftOf="@+id/separator"
             android:text="0" />
@@ -32,11 +32,11 @@
         <TextView
             android:id="@id/separator"
             style="@style/mainHeaderElement"
-            android:layout_toLeftOf="@+id/questions_n"
+            android:layout_toLeftOf="@+id/questions_num"
             android:text="/" />
 
         <TextView
-            android:id="@id/questions_n"
+            android:id="@id/questions_num"
             style="@style/mainHeaderLastElement"
             android:layout_alignParentRight="true"
             android:text="0" />
