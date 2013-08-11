@@ -16,7 +16,7 @@ public class ScoreInTheEndAnswer extends AnswerControl {
     @Override
     public void select() {
         for (IAnswerControl answer : question.getAnswerControls()) {
-            answer.unselect();
+            answer.deselect();
         }
         super.select();
     }

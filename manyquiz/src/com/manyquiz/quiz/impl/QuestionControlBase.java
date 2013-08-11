@@ -36,7 +36,7 @@ public abstract class QuestionControlBase implements IQuestionControl {
     }
 
     @Override
-    public boolean isPending() {
+    public boolean isOpen() {
         for (IAnswerControl answerControl : answerControls) {
             if (answerControl.isSelected()) {
                 return false;
@@ -46,13 +46,14 @@ public abstract class QuestionControlBase implements IQuestionControl {
     }
 
     @Override
-    public boolean isIncorrectlyAnswered() {
-        if (! isPending()) {
+    public boolean isCorrectlyAnswered() {
+        if (! isOpen()) {
             for (IAnswerControl answerControl : answerControls) {
                 if (answerControl.isSelected() && !answerControl.getAnswer().isCorrect()) {
-                    return true;
+                    return false;
                 }
             }
+            return true;
         }
         return false;
     }
@@ -63,18 +64,18 @@ public abstract class QuestionControlBase implements IQuestionControl {
     }
 
     @Override
-    public boolean canGotoNext() {
+    public boolean isReadyForNext() {
         return true;
     }
 
     @Override
-    public boolean canGotoPrev() {
+    public boolean isReadyForPrevious() {
         return true;
     }
 
     @Override
     public int getScore() {
-        if (! isPending()) {
+        if (! isOpen()) {
             for (IAnswerControl answerControl : answerControls) {
                 if (answerControl.isSelected() && answerControl.getAnswer().isCorrect()) {
                     return 1;

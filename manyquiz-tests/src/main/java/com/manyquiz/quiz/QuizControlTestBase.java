@@ -44,7 +44,7 @@ public abstract class QuizControlTestBase {
         Assert.assertFalse(quiz.isGameOver());
 
         IQuestionControl question = quiz.getCurrentQuestion();
-        Assert.assertTrue(question.isPending());
+        Assert.assertTrue(question.isOpen());
 
         Assert.assertEquals(0, quiz.getCurrentQuestionIndex());
         Assert.assertFalse(quiz.hasPrevQuestion());
@@ -78,7 +78,7 @@ public abstract class QuizControlTestBase {
         IQuestionControl question = quiz.getCurrentQuestion();
         IAnswerControl answer = getCorrectAnswer(question);
         answer.select();
-        Assert.assertFalse(question.isPending());
+        Assert.assertFalse(question.isOpen());
 
         Assert.assertEquals(score + 1, quiz.getScore());
     }
@@ -90,7 +90,7 @@ public abstract class QuizControlTestBase {
         IQuestionControl question = quiz.getCurrentQuestion();
         IAnswerControl answer = getWrongAnswer(question);
         answer.select();
-        Assert.assertFalse(question.isPending());
+        Assert.assertFalse(question.isOpen());
 
         Assert.assertEquals(score, quiz.getScore());
     }

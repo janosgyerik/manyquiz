@@ -14,7 +14,7 @@ public class SuddenDeathQuestion extends QuestionControlBase {
     }
 
     @Override
-    public boolean canGotoNext() {
+    public boolean isReadyForNext() {
         if (quiz.isGameOver()) return false;
         for (IAnswerControl answerControl : answerControls) {
             if (answerControl.isSelected()) {
@@ -27,7 +27,7 @@ public class SuddenDeathQuestion extends QuestionControlBase {
     }
 
     @Override
-    public boolean canGotoPrev() {
+    public boolean isReadyForPrevious() {
         return false;
     }
 }

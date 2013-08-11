@@ -19,10 +19,10 @@ public class SuddenDeathQuiz extends QuizControlBase {
     @Override
     public boolean isGameOver() {
         for (IQuestionControl question : questionControls) {
-            if (question.isPending()) {
+            if (question.isOpen()) {
                 return false;
             }
-            if (question.isIncorrectlyAnswered()) {
+            if (! question.isCorrectlyAnswered()) {
                 return true;
             }
         }

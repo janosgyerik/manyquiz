@@ -178,7 +178,7 @@ public class QuizActivity extends QuizBaseActivity {
             }
         }
 
-        if (question.isPending()) {
+        if (question.isOpen()) {
             for (Button button : answerButtons) {
                 IAnswerControl answer = (IAnswerControl)button.getTag();
                 button.setOnClickListener(new AnswerClickListener(answer));
@@ -200,7 +200,7 @@ public class QuizActivity extends QuizBaseActivity {
             int paddingRight = button.getPaddingRight();
 
             IAnswerControl answer = (IAnswerControl) button.getTag();
-            if (quizControl.getCurrentQuestion().isPending()) {
+            if (quizControl.getCurrentQuestion().isOpen()) {
                 if (answer.isSelected()) {
                     button.setBackgroundResource(R.drawable.btn_default_pressed);
                 } else {
@@ -230,7 +230,7 @@ public class QuizActivity extends QuizBaseActivity {
     private void updateNavigationButtons() {
         IQuestionControl question = quizControl.getCurrentQuestion();
 
-        if (quizControl.hasNextQuestion() && question.canGotoNext()) {
+        if (quizControl.hasNextQuestion() && question.isReadyForNext()) {
             nextButton.setVisibility(View.VISIBLE);
             nextButton.setEnabled(true);
         } else if (quizControl.canNavigateBack()) {
@@ -241,7 +241,7 @@ public class QuizActivity extends QuizBaseActivity {
             nextButton.setEnabled(false);
         }
 
-        if (quizControl.hasPrevQuestion() && question.canGotoPrev()) {
+        if (quizControl.hasPrevQuestion() && question.isReadyForPrevious()) {
             prevButton.setVisibility(View.VISIBLE);
             prevButton.setEnabled(true);
         } else if (quizControl.canNavigateBack()) {

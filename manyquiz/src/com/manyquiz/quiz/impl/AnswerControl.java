@@ -24,7 +24,7 @@ public class AnswerControl implements IAnswerControl {
     }
 
     @Override
-    public void unselect() {
+    public void deselect() {
         this.selected = false;
     }
 

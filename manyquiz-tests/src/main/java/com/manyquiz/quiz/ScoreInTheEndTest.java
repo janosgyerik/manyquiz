@@ -30,19 +30,19 @@ public class ScoreInTheEndTest extends QuizControlTestBase {
     @Test
     public void testCanChangeAnswer() {
         IQuestionControl question = quiz.getCurrentQuestion();
-        Assert.assertTrue(question.isPending());
+        Assert.assertTrue(question.isOpen());
         IAnswerControl answer = question.getAnswerControls().get(0);
         answer.select();
-        Assert.assertTrue(question.isPending());
+        Assert.assertTrue(question.isOpen());
     }
 
     @Test
     public void testCannotSkipQuestions() {
         IQuestionControl question = quiz.getCurrentQuestion();
-        Assert.assertFalse(question.canGotoNext());
+        Assert.assertFalse(question.isReadyForNext());
         IAnswerControl answer = question.getAnswerControls().get(0);
         answer.select();
-        Assert.assertTrue(question.canGotoNext());
+        Assert.assertTrue(question.isReadyForNext());
     }
 
     @Override

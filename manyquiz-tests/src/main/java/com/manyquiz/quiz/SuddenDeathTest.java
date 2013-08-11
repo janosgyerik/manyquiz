@@ -1,9 +1,6 @@
 package com.manyquiz.quiz;
 
-import com.manyquiz.quiz.impl.Answer;
-import com.manyquiz.quiz.impl.Question;
 import com.manyquiz.quiz.impl.SuddenDeathQuiz;
-import com.manyquiz.quiz.model.IAnswer;
 import com.manyquiz.quiz.model.IAnswerControl;
 import com.manyquiz.quiz.model.IQuestion;
 import com.manyquiz.quiz.model.IQuestionControl;
@@ -11,10 +8,8 @@ import com.manyquiz.quiz.model.IQuizControl;
 
 import junit.framework.Assert;
 
-import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SuddenDeathTest extends QuizControlTestBase {
@@ -36,26 +31,26 @@ public class SuddenDeathTest extends QuizControlTestBase {
 
         Assert.assertTrue(quiz.hasNextQuestion());
         IQuestionControl question = quiz.getCurrentQuestion();
-        Assert.assertFalse(question.canGotoNext());
+        Assert.assertFalse(question.isReadyForNext());
         IAnswerControl answer = getCorrectAnswer(question);
         answer.select();
-        Assert.assertTrue(question.canGotoNext());
+        Assert.assertTrue(question.isReadyForNext());
 
         quiz.gotoNextQuestion();
         Assert.assertEquals(1, quiz.getCurrentQuestionIndex());
 
         question = quiz.getCurrentQuestion();
-        Assert.assertFalse(question.canGotoNext());
-        Assert.assertFalse(question.canGotoPrev());
+        Assert.assertFalse(question.isReadyForNext());
+        Assert.assertFalse(question.isReadyForPrevious());
     }
 
     @Test
     public void testGameOver() {
         for (IQuestionControl question : quiz.getQuestionControls()) {
             Assert.assertFalse(quiz.isGameOver());
-            Assert.assertTrue(question.isPending());
+            Assert.assertTrue(question.isOpen());
             question.getAnswerControls().get(0).select();
-            Assert.assertFalse(question.isPending());
+            Assert.assertFalse(question.isOpen());
             if (question.getScore() == 0) break;
         }
 

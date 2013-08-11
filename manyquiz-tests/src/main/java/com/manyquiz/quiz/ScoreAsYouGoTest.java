@@ -1,20 +1,14 @@
 package com.manyquiz.quiz;
 
-import com.manyquiz.quiz.impl.Answer;
-import com.manyquiz.quiz.impl.Question;
 import com.manyquiz.quiz.impl.ScoreAsYouGoQuiz;
-import com.manyquiz.quiz.model.IAnswer;
-import com.manyquiz.quiz.model.IAnswerControl;
 import com.manyquiz.quiz.model.IQuestion;
 import com.manyquiz.quiz.model.IQuestionControl;
 import com.manyquiz.quiz.model.IQuizControl;
 
 import junit.framework.Assert;
 
-import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ScoreAsYouGoTest extends QuizControlTestBase {
@@ -29,18 +23,18 @@ public class ScoreAsYouGoTest extends QuizControlTestBase {
         Assert.assertTrue(quiz.getQuestionControls().size() > 2);
 
         Assert.assertTrue(quiz.hasNextQuestion());
-        Assert.assertTrue(quiz.getCurrentQuestion().canGotoNext());
+        Assert.assertTrue(quiz.getCurrentQuestion().isReadyForNext());
         quiz.gotoNextQuestion();
         Assert.assertEquals(1, quiz.getCurrentQuestionIndex());
 
         IQuestionControl question = quiz.getCurrentQuestion();
-        Assert.assertTrue(question.canGotoNext());
-        Assert.assertTrue(question.canGotoPrev());
+        Assert.assertTrue(question.isReadyForNext());
+        Assert.assertTrue(question.isReadyForPrevious());
     }
 
     @Test
     public void testLastQuestion() {
-        while (quiz.hasNextQuestion() && quiz.getCurrentQuestion().canGotoNext()) {
+        while (quiz.hasNextQuestion() && quiz.getCurrentQuestion().isReadyForNext()) {
             quiz.gotoNextQuestion();
         }
 
@@ -54,9 +48,9 @@ public class ScoreAsYouGoTest extends QuizControlTestBase {
     public void testGameOver() {
         for (IQuestionControl question : quiz.getQuestionControls()) {
             Assert.assertFalse(quiz.isGameOver());
-            Assert.assertTrue(question.isPending());
+            Assert.assertTrue(question.isOpen());
             question.getAnswerControls().get(0).select();
-            Assert.assertFalse(question.isPending());
+            Assert.assertFalse(question.isOpen());
         }
 
         Assert.assertTrue(quiz.isGameOver());

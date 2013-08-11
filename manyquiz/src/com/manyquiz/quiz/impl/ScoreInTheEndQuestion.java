@@ -16,12 +16,12 @@ public class ScoreInTheEndQuestion extends QuestionControlBase {
     }
 
     @Override
-    public boolean isPending() {
+    public boolean isOpen() {
         return ! closed;
     }
 
     @Override
-    public boolean canGotoNext() {
+    public boolean isReadyForNext() {
         return hasSelectedAnswer();
     }
 
