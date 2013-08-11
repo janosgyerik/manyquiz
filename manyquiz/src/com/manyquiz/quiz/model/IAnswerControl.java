@@ -9,6 +9,7 @@ public interface IAnswerControl extends Serializable {
 
     /**
      * Get the answer object tracked by this controller.
+     *
      * @return answer associated with this control
      */
     IAnswer getAnswer();
@@ -27,6 +28,7 @@ public interface IAnswerControl extends Serializable {
 
     /**
      * Check if answer is selected.
+     *
      * @return is answer selected or not
      */
     boolean isSelected();

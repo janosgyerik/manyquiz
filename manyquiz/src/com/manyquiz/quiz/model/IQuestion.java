@@ -7,6 +7,7 @@ public interface IQuestion extends Serializable {
 
     /**
      * Get the question text itself.
+     *
      * @return the question text itself
      */
     String getText();
@@ -14,6 +15,7 @@ public interface IQuestion extends Serializable {
     /**
      * Get the explanation of the correct answer,
      * with the aim to teach the user something.
+     *
      * @return the explanation of the correct answer
      */
     String getExplanation();
@@ -23,6 +25,7 @@ public interface IQuestion extends Serializable {
      * already shuffled. Always return the shuffled answers in
      * the same order, do not reshuffle between calls,
      * for a consistent, non-confusing user interface.
+     *
      * @return shuffled answers
      */
     List<IAnswer> getShuffledAnswers();
