@@ -53,6 +53,11 @@ public class QuizActivity extends QuizBaseActivity {
     private IQuizControl quizControl;
     private List<Button> answerButtons = new ArrayList<Button>();
 
+    private int BTN_PADDING_TOP;
+    private int BTN_PADDING_BOTTOM;
+    private int BTN_PADDING_LEFT;
+    private int BTN_PADDING_RIGHT;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,6 +113,17 @@ public class QuizActivity extends QuizBaseActivity {
         nextButton.setOnClickListener(new NextClickListener());
         finishButton = (ImageButton) findViewById(R.id.btn_finish);
         finishButton.setOnClickListener(new FinishClickListener());
+
+        // saving button paddings.
+        // it's weird, but we need this.
+        // after changing the background resource of a button,
+        // the padding is reset, so we must add back manually
+        final LayoutInflater inflater = LayoutInflater.from(this);
+        Button button = (Button) inflater.inflate(R.layout.answer_button, choicesView, false);
+        BTN_PADDING_TOP = button.getPaddingTop();
+        BTN_PADDING_BOTTOM = button.getPaddingBottom();
+        BTN_PADDING_LEFT = button.getPaddingLeft();
+        BTN_PADDING_RIGHT = button.getPaddingRight();
 
         replaceCurrentQuestion();
     }
@@ -191,13 +207,6 @@ public class QuizActivity extends QuizBaseActivity {
         boolean canChangeAnswer = quizControl.getCurrentQuestion().canChangeAnswer();
 
         for (Button button : answerButtons) {
-            // weird. but, need to save the paddings and reapply them after
-            // changing the background resource, otherwise the padding disappears
-            int paddingTop = button.getPaddingTop();
-            int paddingBottom = button.getPaddingBottom();
-            int paddingLeft = button.getPaddingLeft();
-            int paddingRight = button.getPaddingRight();
-
             IAnswerControl answer = (IAnswerControl) button.getTag();
             if (canChangeAnswer) {
                 if (answer.isSelected()) {
@@ -205,16 +214,16 @@ public class QuizActivity extends QuizBaseActivity {
                 } else {
                     button.setBackgroundResource(R.drawable.btn_default);
                 }
-                button.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
+                button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP, BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
             } else {
                 button.setEnabled(false);
                 explanationView.setVisibility(View.VISIBLE);
                 if (answer.getAnswer().isCorrect()) {
                     button.setBackgroundResource(R.drawable.btn_correct);
-                    button.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
+                    button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP, BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
                 } else if (answer.isSelected()) {
                     button.setBackgroundResource(R.drawable.btn_incorrect);
-                    button.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
+                    button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP, BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
                 }
             }
         }
