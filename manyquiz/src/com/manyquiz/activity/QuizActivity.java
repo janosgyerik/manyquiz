@@ -73,7 +73,6 @@ public class QuizActivity extends QuizBaseActivity {
                 mode = getString(R.string.const_score_in_the_end);
             }
             int preferredQuestionsNum = getPreferredQuestionsNum(mode);
-            preferredQuestionsNum = 3;
 
             helper = new QuizSQLiteOpenHelper(this);
 
