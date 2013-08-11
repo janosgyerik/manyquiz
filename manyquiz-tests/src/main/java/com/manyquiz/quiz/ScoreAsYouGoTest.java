@@ -5,8 +5,7 @@ import com.manyquiz.quiz.model.IQuestion;
 import com.manyquiz.quiz.model.IQuestionControl;
 import com.manyquiz.quiz.model.IQuizControl;
 
-import junit.framework.Assert;
-
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
@@ -62,7 +61,7 @@ public class ScoreAsYouGoTest extends QuizControlTestBase {
 
         for (IQuestionControl question : quiz.getQuestionControls()) {
             Assert.assertFalse(quiz.isGameOver());
-            getCorrectAnswer(question).select();
+            question.getAnyCorrectAnswer().select();
             int score = question.getScore();
             Assert.assertTrue(score > 0);
             totalScore += score;
@@ -77,7 +76,7 @@ public class ScoreAsYouGoTest extends QuizControlTestBase {
 
         for (IQuestionControl question : quiz.getQuestionControls()) {
             Assert.assertFalse(quiz.isGameOver());
-            getWrongAnswer(question).select();
+            question.getAnyWrongAnswer().select();
             Assert.assertEquals(0, question.getScore());
         }
 

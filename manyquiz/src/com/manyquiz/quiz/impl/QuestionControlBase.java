@@ -85,4 +85,23 @@ public abstract class QuestionControlBase implements IQuestionControl {
         return 0;
     }
 
+    @Override
+    public IAnswerControl getAnyCorrectAnswer() {
+        for (IAnswerControl answer : answerControls) {
+            if (answer.getAnswer().isCorrect()) {
+                return answer;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public IAnswerControl getAnyWrongAnswer() {
+        for (IAnswerControl answer : answerControls) {
+            if (! answer.getAnswer().isCorrect()) {
+                return answer;
+            }
+        }
+        return null;
+    }
 }

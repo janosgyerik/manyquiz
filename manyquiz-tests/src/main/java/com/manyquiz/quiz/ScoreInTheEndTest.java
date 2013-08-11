@@ -6,8 +6,7 @@ import com.manyquiz.quiz.model.IQuestion;
 import com.manyquiz.quiz.model.IQuestionControl;
 import com.manyquiz.quiz.model.IQuizControl;
 
-import junit.framework.Assert;
-
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;

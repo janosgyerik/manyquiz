@@ -8,8 +8,7 @@ import com.manyquiz.quiz.model.IQuestion;
 import com.manyquiz.quiz.model.IQuestionControl;
 import com.manyquiz.quiz.model.IQuizControl;
 
-import junit.framework.Assert;
-
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,6 +21,13 @@ public abstract class QuizControlTestBase {
 
     @Before
     public void setUp() {
+        List<IQuestion> questions = createDummyQuestions();
+        quiz = createQuizControl(questions);
+    }
+
+    abstract IQuizControl createQuizControl(List<IQuestion> questions);
+
+    private List<IQuestion> createDummyQuestions() {
         List<IQuestion> questions = new ArrayList<IQuestion>();
         for (int i = 1; i < 5; ++i) {
             String text = "What is..." + i;
@@ -34,11 +40,17 @@ public abstract class QuizControlTestBase {
             IQuestion question = new Question(text, answers, explanation);
             questions.add(question);
         }
-        quiz = createQuizControl(questions);
+        return questions;
     }
 
-    abstract IQuizControl createQuizControl(List<IQuestion> questions);
-
+    /**
+     * Sanity checks on first question:
+     * - the game is not over
+     * - can change the answer
+     * - the current index is 0
+     * - there is no previous question
+     * - there is a next question
+     */
     @Test
     public void testBasicSanity() {
         Assert.assertFalse(quiz.isGameOver());
@@ -53,30 +65,12 @@ public abstract class QuizControlTestBase {
         Assert.assertTrue(quiz.hasNextQuestion());
     }
 
-    protected IAnswerControl getCorrectAnswer(IQuestionControl question) {
-        for (IAnswerControl answer : question.getAnswerControls()) {
-            if (answer.getAnswer().isCorrect()) {
-                return answer;
-            }
-        }
-        return null;
-    }
-
-    protected IAnswerControl getWrongAnswer(IQuestionControl question) {
-        for (IAnswerControl answer : question.getAnswerControls()) {
-            if (! answer.getAnswer().isCorrect()) {
-                return answer;
-            }
-        }
-        return null;
-    }
-
     @Test
     public void testQuestionCorrectlyAnswered() {
         int score = quiz.getScore();
 
         IQuestionControl question = quiz.getCurrentQuestion();
-        IAnswerControl answer = getCorrectAnswer(question);
+        IAnswerControl answer = question.getAnyCorrectAnswer();
         answer.select();
         Assert.assertFalse(question.canChangeAnswer());
 
@@ -88,7 +82,7 @@ public abstract class QuizControlTestBase {
         int score = quiz.getScore();
 
         IQuestionControl question = quiz.getCurrentQuestion();
-        IAnswerControl answer = getWrongAnswer(question);
+        IAnswerControl answer = question.getAnyWrongAnswer();
         answer.select();
         Assert.assertFalse(question.canChangeAnswer());
 

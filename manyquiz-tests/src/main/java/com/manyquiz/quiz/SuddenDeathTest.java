@@ -6,8 +6,7 @@ import com.manyquiz.quiz.model.IQuestion;
 import com.manyquiz.quiz.model.IQuestionControl;
 import com.manyquiz.quiz.model.IQuizControl;
 
-import junit.framework.Assert;
-
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
@@ -32,7 +31,7 @@ public class SuddenDeathTest extends QuizControlTestBase {
         Assert.assertTrue(quiz.hasNextQuestion());
         IQuestionControl question = quiz.getCurrentQuestion();
         Assert.assertFalse(question.isReadyForNext());
-        IAnswerControl answer = getCorrectAnswer(question);
+        IAnswerControl answer = question.getAnyCorrectAnswer();
         answer.select();
         Assert.assertTrue(question.isReadyForNext());
 
@@ -63,7 +62,7 @@ public class SuddenDeathTest extends QuizControlTestBase {
 
         for (IQuestionControl question : quiz.getQuestionControls()) {
             Assert.assertFalse(quiz.isGameOver());
-            getCorrectAnswer(question).select();
+            question.getAnyCorrectAnswer().select();
             int score = question.getScore();
             Assert.assertTrue(score > 0);
             totalScore += score;
@@ -75,14 +74,7 @@ public class SuddenDeathTest extends QuizControlTestBase {
 
     @Test
     public void testWorstScore() {
-
-        for (IQuestionControl question : quiz.getQuestionControls()) {
-            Assert.assertFalse(quiz.isGameOver());
-            getWrongAnswer(question).select();
-            Assert.assertEquals(0, question.getScore());
-            break;
-        }
-
+        quiz.getCurrentQuestion().getAnyWrongAnswer().select();
         Assert.assertEquals(0, quiz.getScore());
         Assert.assertTrue(quiz.isGameOver());
     }

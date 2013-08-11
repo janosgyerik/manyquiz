@@ -59,4 +59,16 @@ public interface IQuestionControl extends Serializable {
      * @return score gained from the question if closed, or 0 if not closed.
      */
     int getScore();
+
+    /**
+     * Convenience method to get any correct answer.
+     * @return any correct answer
+     */
+    IAnswerControl getAnyCorrectAnswer();
+
+    /**
+     * Convenience method to get any wrong answer.
+     * @return any wrong answer
+     */
+    IAnswerControl getAnyWrongAnswer();
 }
