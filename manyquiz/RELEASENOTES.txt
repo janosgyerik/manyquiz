@@ -1,22 +1,30 @@
-Version 86 (3.0)
-----------------
-* This is a complete rewrite, eliminating several previous bugs
+Version 7 (1.1)
+---------------
+* Added new game mode: "score in the end"
 
-* Now you can navigate questions left and right freely,
-  except in sudden death mode of course!
+* Fixed the bug with rotating the screen
 
-* Now you can customize the maximum number of questions in
-  normal mode and sudden death mode
 
-* Answer choices now appear in random order
+Version 6 (1.0.2)
+-----------------
+* Fixed the padding of answer buttons on devices with larger screens
 
-* Confirmation on Quit
+* More questions on Hobbyist level
 
-* Added menu icons
 
-* Various minor layout improvements
+Version 5 (1.0.1)
+-----------------
+* Forced portrait orientation, because rotating the screen does not work well
 
-* More questions: 359 -> 407, most of the new questions
-  on Nightmare! level, in neglected categories (linux,
-  network, security, web-programming)
+* More questions on Hobbyist level
 
+* Corrections and minor improvements in questions
+
+
+Version 4 (1.0)
+---------------
+* First release
+
+* More than 50 questions on all levels
+
+* More than 100 questions on Professional level
