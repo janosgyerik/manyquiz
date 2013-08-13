@@ -79,6 +79,15 @@ The default configuration file used by Maven is pom.xml
 1
 build-automation
 END
+Which is not a build automation tool?
+g++
+make
+ant
+maven
+make, ant and maven are build automation tools, g++ is a C/C++ compiler.
+1
+build-automation
+END
 Which data structure is most suitable to implement an index?
 Map
 Set
@@ -358,6 +367,15 @@ The X stands for the roman letter, meaning 10. Its predecessor was Mac OS 9.
 1
 mac
 END
+In Mac OS X, what is to command that opens any file as if double-clicked in Finder?
+open
+view
+run
+launch
+The "open" command can open any file or directory, it works the same way as when double-clicking in Finder.
+1
+mac
+END
 Which one looks like a MAC address?
 58:b0:35:80:36:9f
 192.168.2.103
@@ -421,6 +439,15 @@ The total data storage space of a PC HDD can be divided into at most four primar
 1
 os
 END
+What is PXE for?
+Boot an operating system using a network interface.
+Boot an operating system using a floppy disk.
+Boot an operating system using a CD-ROM.
+Boot an operating system using a USB disk.
+The Preboot eXecution Environment (PXE, also known as Pre-Execution Environment; sometimes pronounced "pixie") is an environment to boot computers using a network interface independently of data storage devices (like hard disks) or installed operating systems.
+1
+os
+END
 How to declare a pointer to an integer in C?
 int * p;
 int & p;
@@ -445,6 +472,15 @@ What will be the value of int i = 3 % 5?
 5
 0
 The modulo (sometimes called modulus) operation finds the remainder of division of one number by another. 3 divided by 5 is 0, and the remainder is 3.
+1
+programming
+END
+What is the value of this expression: 3 > 4 ? 5 : 6
+6
+3
+4
+5
+If 3 is greater than 4, the value will be 5, otherwise 6. So it is 6. The ?: is called the ternary operator, it exists in many languages.
 1
 programming
 END
@@ -529,6 +565,15 @@ File transfers via FTP are not encrypted, therefore they can be captured by anyo
 1
 security
 END
+Why should you disable images embedded in emails?
+Images are often rendered by scripts that actually track you.
+Images may take a long time to load.
+Images may take control of your computer.
+Images may steal your credit card information.
+It is very common and use to use a server-side script to log your IP address and other browser parameters and output an image. The result looks like an image, covering up the nasty full truth.
+1
+security
+END
 What is the decimal value of 0x15?
 21
 15
@@ -573,6 +618,33 @@ brainfuck
 Assembly is a low level language, designed for writing system software as distinct from application software.
 1
 system-programming
+END
+What is unit testing for?
+Verify a specific section of code.
+Verify the functionality of a piece of software.
+Verify the interfaces between software components.
+Verify that an integrated system meets its requirements.
+Unit testing, also known as component testing, refers to tests that verify the functionality of a specific section of code, usually at the function level.
+1
+testing
+END
+Which is the lowest level software testing method?
+unit testing
+integration testing
+system testing
+acceptance testing
+Unit testing is at the lowest level, testing a specific section of code.
+1
+testing
+END
+Which methodology is known for its red-green-refactor mantra?
+Test-Driven Development (TDD)
+Behavior-Driven Development (BDD)
+Feature-Driven Development (FDD)
+Agile software development
+In Test-Driven Development, you write the tests first that confirm the desired functionality. As you implement the functionality, the tests pass, turning from red to green. Then when there is a new feature, you adjust the tests, and the cycle starts again.
+1
+testing
 END
 How to check the owner of a domain name?
 whois example.com
