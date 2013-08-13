@@ -16,6 +16,42 @@ O(n^2) indicates quadratic time complexity, for example an algorithm that requir
 1
 algorithms
 END
+What is Ant?
+A build tool based on Java
+Social insect of the family Formicidae
+An IDE for the Java language
+A debugger for the Java language
+Ant is a build tool like make, but it is based on Java. Unlike make, it can run on any platform that has a Java Virtual Machine.
+1
+build-automation
+END
+What is the name of the main configuration file used by make?
+Makefile
+make.config
+config.ini
+build.xml
+The default configuration file used by make is called Makefile.
+1
+build-automation
+END
+What is the name of the main configuration file used by Ant?
+build.xml
+Makefile
+ant.config
+config.ini
+The default configuration file used by Ant is build.xml
+1
+build-automation
+END
+What is the name of the main configuration file used by Maven?
+pom.xml
+build.xml
+pom-pom.pom
+config.ini
+The default configuration file used by Maven is pom.xml
+1
+build-automation
+END
 Which data structure is most suitable to implement an index?
 Map
 Set
@@ -151,6 +187,33 @@ MAC addresses are used as a network address for most IEEE 802 network technologi
 1
 hardware
 END
+Which computer part is not necessary to boot an operating system?
+Harddisk
+Memory
+Motherboard
+PSU
+Harddisk is not essential. An operating system can be loaded from CD or USB storage, for example. Everything else is essential (PSU is the Power Supply Unit).
+1
+hardware
+END
+What is the maximum amount of RAM directly addressable in a 32-bit system?
+4GB
+8GB
+2GB
+3GB
+A 32-bit register can store 2^32 different values. Hence, a processor with 32-bit memory addresses can directly access 4 GiB of byte-addressable memory.
+1
+hardware
+END
+Which storage type has the highest theoretical transfer rate?
+SSD
+SATA
+SCSI
+iSCSI
+SSD has the highest theoretical and practical transfer rate among these choices.
+1
+hardware
+END
 Who said that the number of transistors in a chip will double every 18 months?
 Moore
 Von Neuman
@@ -232,6 +295,51 @@ Ctrl-z pauses execution of the current job, and the bg program puts the paused j
 1
 linux
 END
+Which command uses input redirection?
+sort < data.txt
+cat data.txt | sort
+sort data.txt
+sort data.txt &
+"<" is the input redirection operator in common shells, even in DOS.
+1
+linux
+END
+Which command will assign permissions rwxr-x--- to a file?
+chmod 750 some_script.sh
+chmod u+rwx,g-w some_script.sh
+chmod 4750 some_script.sh
+chmod 022 some_script.sh
+chmod 750 gives all permissions to the owner (4 + 2 + 1), read and execute permission to the group (4 + 1), and no permissions for others (0).
+1
+linux
+END
+Which was the earliest GNU/Linux distribution?
+Debian
+Mint
+Ubuntu
+Knoppix
+Knoppix, Ubuntu, Mint are all derivatives of Debian.
+1
+linux
+END
+Which is not a version of Mac OS X?
+10.1 Kitten
+10.4 Tiger
+10.5 Leopard
+10.7 Lion
+There was no Mac OS X version with codename Kitten, the codename of version 10.1 was Puma.
+1
+mac
+END
+What does the "X" stand for in Mac OS X?
+The roman letter X
+Extreme Power
+X Windows
+Experimental
+The X stands for the roman letter, meaning 10. Its predecessor was Mac OS 9.
+1
+mac
+END
 What is the purpose of a DHCP server?
 Dynamically assign IP addresses to PCs
 Dynamically assign MAC addresses to PCs
@@ -256,6 +364,15 @@ Which one looks like a netmask?
 192.168.2.255
 192.168.2.1
 The subnet mask is used to separate the network address part and the host identifier part of an IP address. For example if the IP address is 192.168.2.103 and the subnet mask is 255.255.255.0, then the network address is 192.168.2.0 and the host identifier is 103.
+1
+network
+END
+What is the common port number of an FTP server?
+21
+20
+25
+8080
+The common port of an FTP server is 21.
 1
 network
 END
@@ -367,6 +484,15 @@ WEP has been demonstrated to have numerous flaws and has been deprecated in favo
 1
 security
 END
+Which service should be removed to harden the security of a system?
+FTP
+SFTP
+SSH
+Windows
+File transfers via FTP are not encrypted, therefore they can be captured by anyone on the same network using a packet sniffer, easily revealing login usernames and passwords. Windows is not a "service", it's an operating system.
+1
+security
+END
 What is the decimal value of 0x15?
 21
 15
@@ -454,6 +580,24 @@ ogg-vorbis
 mp3
 aac
 FLAC (Free Lossless Audio Codec) is a codec (compressor-decompressor or coder-decoder) which allows digital audio to be losslessly compressed such that file size is reduced without any information being lost.
+1
+tools
+END
+How to view the configuration of a network interface in GNU/Linux?
+ifconfig
+ipconfig
+netstat
+route
+The ifconfig command shows the configuration of network interfaces, including such details as IP address, netmask, broadcast address and MAC address.
+1
+tools
+END
+How to list the currently mounted file systems?
+mount
+df -h
+cat /etc/fstab
+ls /media
+The mount command with no parameters shows the currently mounted file systems.
 1
 tools
 END
@@ -736,42 +880,6 @@ make universe
 2
 build-automation
 END
-What is Ant?
-A build tool based on Java
-Social insect of the family Formicidae
-An IDE for the Java language
-A debugger for the Java language
-Ant is a build tool like make, but it is based on Java. Unlike make, it can run on any platform that has a Java Virtual Machine.
-2
-build-automation
-END
-What is the name of the main configuration file used by make?
-Makefile
-make.config
-config.ini
-build.xml
-The default configuration file used by make is called Makefile.
-2
-build-automation
-END
-What is the name of the main configuration file used by Ant?
-build.xml
-Makefile
-ant.config
-config.ini
-The default configuration file used by Ant is build.xml
-2
-build-automation
-END
-What is the name of the main configuration file used by Maven?
-pom.xml
-build.xml
-pom-pom.pom
-config.ini
-The default configuration file used by Maven is pom.xml
-2
-build-automation
-END
 How to specify that taskA depends on taskB in a Makefile?
 taskA: taskB
 taskB: taskA
@@ -853,7 +961,7 @@ Since this is a RIGHT JOIN, there will be at least one record for each departmen
 2
 database
 END
-In SQL, which form of the count() clause might be invalid?
+In SQL, which form of count() might be invalid?
 count(DepartmentID)
 count(*)
 count(1)
@@ -880,7 +988,7 @@ The correct syntax to test if something is NULL is using IS NULL.
 2
 database
 END
-What is the difference between UNION and UNION ALL in SQL?
+In SQL, what is the difference between UNION and UNION ALL?
 UNION ALL may return duplicate records
 They are the same, ALL is optional
 UNION ALL is incorrect syntax
@@ -889,34 +997,16 @@ Duplicate records are removed from the result of UNION, while UNION ALL returns 
 2
 database
 END
-What is the advantage of using a database instead of a CSV file?
+What is the advantage of storing data in a database instead of a CSV file?
 Columns can be indexed.
-Records always take less disk space in a database.
-Finding a record is always faster using a database.
+CSV file uses less disk storage.
+Finding records is always faster in a database.
 Using databases is more professional.
 In a database columns can be indexed, which can help finding data much faster. The other statements are not necessarily true.
 2
 database
 END
-Which is optional to boot an operating system?
-Harddisk
-Memory
-Motherboard
-PSU
-Harddisk is not essential. An operating system can be loaded from CD or USB storage, for example. Everything else is essential (PSU is the Power Supply Unit).
-2
-hardware
-END
-What is the maximum amount of RAM directly addressable in a 32-bit system?
-4GB
-8GB
-2GB
-3GB
-A 32-bit register can store 2^32 different values. Hence, a processor with 32-bit memory addresses can directly access 4 GiB of byte-addressable memory.
-2
-hardware
-END
-Which statement is false?
+Which is false about 32-bit and 64-bit architectures?
 A 64-bit processor is not compatible with 32-bit software.
 A 64-bit processor performs best with 64-bit software.
 A 32-bit processor is not compatible with 64-bit software.
@@ -925,21 +1015,12 @@ A 64-bit processor has backward compatibility and will handle most 32-bit softwa
 2
 hardware
 END
-What is the difference between GPU and CPU?
-GPU emphasizes executing many concurrent threads slowly
+Which is true about GPU and CPU?
+GPU executes many concurrent threads slowly
 GPU is faster than CPU
 CPU is faster than GPU
-GPU emphasizes executing a single thread very quickly
+GPU executes a single thread very quickly
 GPUs have a parallel throughput architecture that emphasizes executing many concurrent threads slowly, rather than executing a single thread very quickly.
-2
-hardware
-END
-Which storage type has the highest theoretical transfer rate?
-SSD
-SATA
-SCSI
-iSCSI
-SSD has the highest theoretical and practical transfer rate among these choices.
 2
 hardware
 END
@@ -952,16 +1033,7 @@ Edsger W. Dijkstra, to whom we owe much (banker's algorithm, philosopher's dinne
 2
 history
 END
-Which is an example of input redirection?
-sort < data.txt
-cat data.txt | sort
-sort data.txt
-sort data.txt &
-"<" is the input redirection operator in common shells, even in DOS.
-2
-linux
-END
-If you have a guest account on a GNU/Linux system, which port can you use to setup your personal echo server?
+If you have a guest account on a GNU/Linux system, which port can you use to open a listening socket?
 1234
 1000
 888
@@ -984,7 +1056,7 @@ $(cmd)
 eval cmd
 . cmd
 ./cmd
-$(command) and `command` are the two forms of command substitution.
+$(command) and `command` are the two forms of command substitution. The $(...) syntax is recommended because it is cleaner, especially when nesting sub-commands.
 2
 linux
 END
@@ -1006,7 +1078,7 @@ The /etc/hosts.allow file can contain a list of hosts that are allowed to access
 2
 linux
 END
-Which file contains well known port numbers?
+Which file contains a list of common services and their port numbers?
 /etc/services
 /etc/ports
 /etc/hosts
@@ -1015,25 +1087,7 @@ The /etc/services file contains well known port numbers of common services, as a
 2
 linux
 END
-Which command will assign permissions rwxr-x--- to a file?
-chmod 750 script.sh
-chmod u+rwx,g-w script.sh
-chmod 4750 script.sh
-chmod 022 script.sh
-chmod 750 gives all permissions to the owner (4 + 2 + 1), read and execute permission to the group (4 + 1), and no permissions for others (0).
-2
-linux
-END
-Which was the earliest GNU/Linux distribution?
-Debian
-Mint
-Ubuntu
-Knoppix
-Knoppix, Ubuntu, Mint are all derivatives of Debian.
-2
-linux
-END
-What is usually not stored in /etc/passwd?
+What is usually not stored in /etc/passwd about a user account?
 Password
 Username
 Shell
@@ -1060,15 +1114,6 @@ Mach is an operating system kernel developed at Carnegie Mellon University to su
 2
 mac
 END
-Which is not a version of Mac OS X?
-10.1 Kitten
-10.4 Tiger
-10.5 Leopard
-10.7 Lion
-There was no Mac OS X version with codename Kitten, the codename of version 10.1 was Puma.
-2
-mac
-END
 Which utility is not installed by default on a Mac OS X?
 gawk
 awk
@@ -1077,24 +1122,6 @@ tar
 Mac OS X uses mostly BSD implementation of common UNIX tools, as opposed to GNU implementation. Gawk is the GNU implementation of the AWK programming language.
 2
 mac
-END
-What does the "X" stand for in Mac OS X?
-The roman letter X
-Extreme Power
-X Windows
-Experimental
-The X stands for the roman letter, meaning 10. Its predecessor was Mac OS 9.
-2
-mac
-END
-What is the common port number of an FTP server?
-21
-20
-25
-8080
-The common port of an FTP server is 21.
-2
-network
 END
 Which is not one of the default chains of an iptables firewall?
 ACCEPT
@@ -1123,7 +1150,7 @@ It is not possible to connect to another computer without configuring a network 
 2
 network
 END
-How to find the default gateway?
+How to find the default gateway in a UNIX system?
 route
 ifconfig
 iptables
@@ -1141,7 +1168,7 @@ telnet is useful to check if a port is open. Another easy way is using netstat, 
 2
 network
 END
-Which does not necessarily cause the failure of: ping google.com
+Which is not necessarily the cause when you cannot ping google.com?
 The local PC is on a NAT
 The nameserver has crashed
 The firewall is blocking all ICMP packets
@@ -1169,11 +1196,11 @@ The file descriptor number of standard error is 2.
 os
 END
 When would you use a LinkedList instead of an ArrayList?
-When you only need to traverse elements from the beginning
-LinkedList is more efficient than ArrayList in most practical cases
-LinkedList uses a hashmap internally
-I can access any element in a LinkedList very fast
-In a linked list, elements are chained together: each element has a pointer to the next. Insert and remove operations are more memory-efficient compared to an ArrayList, at the cost that random access of elements is less efficient.
+When you only traverse elements from the beginning
+Always, LinkedList is usually more efficient than ArrayList
+When you want to store an array of URLs
+When you need fast access to any element
+In a linked list, elements are arranged in a chain: each element has a pointer to the next. Insert and remove operations are faster compared to an ArrayList, but random access of elements is slower.
 2
 programming
 END
@@ -1204,7 +1231,7 @@ A cyclic redundancy check (CRC) is an error-detecting code commonly used in digi
 2
 programming
 END
-How to declare the main method of a C program?
+What is the standard way to declare the main method of a C program?
 int main(int argc, char **argv)
 void main(int argc, char **argv)
 void main(int argc)
@@ -1294,7 +1321,7 @@ uint16_t = unsigned int over 16 bits = 2^16-1 = 65535
 2
 programming
 END
-Which kind of protocol would be the most efficient to implement low-latency communication between remote processes?
+Which kind of protocol can achieve the fastest communication between remote processes?
 Binary protocol
 SOAP-based protocol
 XML-based protocol
@@ -1366,7 +1393,7 @@ The grep will not match anything, which is a failure, therefore echo two will be
 2
 scripting
 END
-Which is the least unsafe?
+Which C library function is the most safe?
 strncpy
 strcpy
 gets
@@ -1378,8 +1405,8 @@ END
 Which is the most secure method to protect access to a website?
 Public key authentication
 HTTP+HTML form-based authentication
-Basic access authentication
-Digest access authentication
+HTTP basic authentication
+HTTP digest authentication
 Public key authentication is usually implemented with HTTPS / SSL client certificates, and it is much safer than the other methods, where the password can be either sniffed or the authentication token replayed.
 2
 security
@@ -1399,15 +1426,6 @@ What is the recommended permission setting on a user's ~/.ssh/authorized_keys fi
 777
 0640
 Only the owner of the file should have any kind of access.
-2
-security
-END
-Which service should be removed to harden the security of a system?
-FTP
-SFTP
-SSH
-Windows
-File transfers via FTP are not encrypted, therefore they can be captured by anyone on the same network using a packet sniffer, easily revealing login usernames and passwords. Windows is not a "service", it's an operating system.
 2
 security
 END
@@ -1434,7 +1452,7 @@ printf
 open
 close
 execve
-printf calls the write system call to print text on standard output.
+A system call is how a program requests a service from an operating system's kernel. printf calls the write system call to print text on standard output. printf is too high level, it is not a system call.
 2
 system-programming
 END
@@ -1453,15 +1471,6 @@ What is 0x15 & 0x17?
 32
 28
 0x15 is 10101 and 0x17 is 10111, so 10101 & 10111 = 10101 = 21
-2
-system-programming
-END
-How to represent -15 using 8-bit two's complement?
-0b11110001
-0b10001111
-0b10001110
-0b11110000
-The 8-bit two's complement of a number can be calculated by subtracting the unsigned number from 256, in this case 256 - 15 = 241 = 0b11110001
 2
 system-programming
 END
@@ -1528,21 +1537,12 @@ One way to check if a web server is running is to send a GET request to it using
 2
 tools
 END
-Which filesystem does not use journaling?
+Which is not a journaling filesystem?
 ext2
 reiserfs
 JFS
 NTFS
 ext2 is an old filesystem introduced in 1993, it did not use a journal. It has been supplanted by ext3, which is almost completely compatible with ext2 and is a journaling file system.
-2
-tools
-END
-How to check if the network interface is correctly configured in GNU/Linux?
-ifconfig
-ipconfig
-netstat
-remove and insert
-The ifconfig command shows the configuration of network interfaces, including such details as IP address, netmask, broadcast address and MAC address.
 2
 tools
 END
@@ -1555,16 +1555,7 @@ iptables -i eth0 -A INPUT -p tcp --dport 80
 2
 tools
 END
-How to list the currently mounted file systems?
-mount
-df -h
-cat /etc/fstab
-ls /media
-The mount command with no parameters shows the currently mounted file systems.
-2
-tools
-END
-Which tool is most useful for load testing a web server?
+Which tool is the most useful for load testing a web server?
 ab
 nmap
 curl
@@ -1663,7 +1654,7 @@ rmdir /s/q deletes the specified directory and all subdirectories. It is the equ
 2
 windows
 END
-In Windows, how can you know what time the machine was started?
+In Windows, how can you know what time your PC was started?
 net statistics server
 uptime
 services.msc
@@ -2076,6 +2067,15 @@ NullPointerException
 A buffer overflow can potentially lead to privilege escalation, which could be used to produce all the others and much worse.
 3
 security
+END
+How to represent -15 using 8-bit two's complement?
+0b11110001
+0b10001111
+0b10001110
+0b11110000
+The 8-bit two's complement of a number can be calculated by subtracting the unsigned number from 256, in this case 256 - 15 = 241 = 0b11110001
+3
+system-programming
 END
 Which is not a programming language?
 CGI
