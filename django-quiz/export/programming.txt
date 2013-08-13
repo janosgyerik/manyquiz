@@ -178,15 +178,6 @@ You can try to remove and reinsert the battery on the motherboard. If that doesn
 1
 hardware
 END
-Which one looks like a MAC address?
-58:b0:35:80:36:9f
-192.168.2.103
-fe80::5ab0:35ff:fe80:369f
-0xffffff00
-MAC addresses are used as a network address for most IEEE 802 network technologies, including Ethernet.
-1
-hardware
-END
 Which computer part is not necessary to boot an operating system?
 Harddisk
 Memory
@@ -339,6 +330,15 @@ Experimental
 The X stands for the roman letter, meaning 10. Its predecessor was Mac OS 9.
 1
 mac
+END
+Which one looks like a MAC address?
+58:b0:35:80:36:9f
+192.168.2.103
+fe80::5ab0:35ff:fe80:369f
+0xffffff00
+MAC addresses are used as a network address for most IEEE 802 network technologies, including Ethernet.
+1
+network
 END
 What is the purpose of a DHCP server?
 Dynamically assign IP addresses to PCs
@@ -1024,12 +1024,48 @@ GPUs have a parallel throughput architecture that emphasizes executing many conc
 2
 hardware
 END
+Which RAID level provides the highest fault tolerance, given an array of 3 disks?
+RAID 1
+RAID 0
+RAID 3
+RAID 5
+With RAID 1, n-1 disks can fail without losing data. With RAID 3 and RAID 5 only one disk can fail. RAID 0 provides no fault tolerance at all.
+2
+hardware
+END
 Who invented semaphores in concurrent programs?
 Dijkstra
 Traffic Man
 Kierkegaard
 Descartes
 Edsger W. Dijkstra, to whom we owe much (banker's algorithm, philosopher's dinner, Dijkstra algorithm, ...)
+2
+history
+END
+Which operating system was not derived from a version of UNIX?
+MINIX
+Mac OS X
+FreeBSD
+Solaris
+MINIX is a UNIX-like system but it was not derived from UNIX. The others can all be traced back to some version of UNIX.
+2
+history
+END
+Which operating system was the inspiration of Linux?
+MINIX
+FreeBSD
+UNIX
+Linus
+MINIX inspired Linus Torvalds to create the Linux kernel.
+2
+history
+END
+In what language was UNIX originally written?
+Assembly
+English
+C
+Pascal
+UNIX was originally written in assembly language, and later rewritten in C.
 2
 history
 END
@@ -1761,42 +1797,6 @@ How many disks can fail in a RAID 5 array without risk of data loss?
 RAID 5 distributes parity along with the data and requires that all drives but one be present to operate. The array is not destroyed by a single drive failure. On drive failure, any subsequent reads can be calculated from the distributed parity such that the drive failure is masked from the end user.
 3
 hardware
-END
-Which RAID level provides the highest fault tolerance, given an array of 3 disks?
-RAID 1
-RAID 0
-RAID 3
-RAID 5
-With RAID 1, n-1 disks can fail without losing data. With RAID 3 and RAID 5 only one disk can fail. RAID 0 provides no fault tolerance at all.
-3
-hardware
-END
-Which operating system was not derived from a version of UNIX?
-MINIX
-Mac OS X
-FreeBSD
-Solaris
-MINIX is a UNIX-like system but it was not derived from UNIX. The others can all be traced back to some version of UNIX.
-3
-history
-END
-Which operating system was the inspiration of Linux?
-MINIX
-FreeBSD
-UNIX
-Linus
-MINIX inspired Linus Torvalds to create the Linux kernel.
-3
-history
-END
-In what language was UNIX originally written?
-Assembly
-English
-C
-Pascal
-UNIX was originally written in assembly language, and later rewritten in C.
-3
-history
 END
 In which column of /etc/fstab might you see /proc?
 2nd
