@@ -16,6 +16,654 @@ O(n^2) indicates quadratic time complexity, for example an algorithm that requir
 1
 algorithms
 END
+Which data structure is most suitable to implement an index?
+Map
+Set
+List
+Array
+The concept of an index is like a lookup table: it allows looking up a specific value directly by its known index, without inspecting elements one by one.
+1
+data-structures
+END
+What kind of data structure is a FIFO?
+queue
+array
+list
+stack
+FIFO stands for First In, First Out. Like in a queue where you line up to get movie tickets.
+1
+data-structures
+END
+What kind of data structure is a LIFO?
+stack
+queue
+array
+list
+LIFO stands for Last In, First Out. A LIFO structure can be illustrated with the example of a stack of trays. The last tray to be placed on top is also the first to be taken off the top.
+1
+data-structures
+END
+Which data structure is equivalent to an associative array?
+map
+array
+set
+stack
+An associative array is composed of a collection of (key, value) pairs, such that each possible key appears at most once in the collection. An array, set or stack is a collection of values, not pairs.
+1
+data-structures
+END
+Which data structure is not like the others?
+list
+dictionary
+associative array
+symbol table
+An associative array, symbol table, or dictionary is an abstract data type composed of a collection of (key, value) pairs. A list is a collection of values, not pairs.
+1
+data-structures
+END
+Which data structure is used to implement caches?
+hash table
+set
+list
+tuple
+A hash table is a structure that can map keys to values. They can access values directly by their keys and retrieve them quickly.
+1
+data-structures
+END
+How to count the number of sheep in the farm table?
+SELECT count(*) FROM farm;
+SELECT count sheep FROM farm;
+SELECT count(sheep) FROM farm;
+SELECT sheep FROM farm;
+The SQL syntax for counting records in some table is SELECT count(*) FROM table_name;
+1
+database
+END
+What does SQL stand for?
+Structured Query Language
+Standard Query Language
+Simple Query Language
+Signal Query Language
+SQL, Structured Query Language, is a special-purpose programming language designed for managing data held in a relational database management system (RDBMS).
+1
+database
+END
+Which is not a common SQL command?
+FIND
+SELECT
+UPDATE
+INSERT
+SELECT, UPDATE and INSERT are common SQL commands, FIND is not.
+1
+database
+END
+How to find all employees whose name is "Smith"?
+SELECT * FROM Employees WHERE Name = 'Smith';
+SELECT * FROM Employees WHERE Name IS 'Sales';
+SELECT * FROM Employees WHERE Name = "Sales";
+SELECT * FROM Employees WHERE Name == 'Sales';
+Strings must be enclosed within single quotes, and the operator to check for equality is "==".
+1
+database
+END
+How to find all employees with NULL as email address?
+SELECT * FROM Employees WHERE Email IS NULL;
+SELECT * FROM Employees WHERE Email = 'NULL';
+SELECT * FROM Employees WHERE Email == 'NULL';
+SELECT * FROM Employees WHERE Email = NULL;
+NULL is a special keyword in SQL, it should not be quoted. The syntax to check whether something is NULL or not is "IS NULL" and "IS NOT NULL".
+1
+database
+END
+In a relational database, what is the term for minimizing redundancy and dependency?
+normalization
+optimization
+denormalization
+truncation
+Normalization usually involves dividing large tables into smaller, less redundant tables and defining relationships between them.
+1
+database
+END
+A computer uses the least power in which mode?
+hibernate
+sleep
+stand-by
+lock
+When hibernated, the computer is completely off. It can restore itself by reloading the previously saved content of the memory.
+1
+hardware
+END
+How to reset the BIOS password if you forgot it?
+Remove the motherboard battery for a few seconds
+Reboot the computer
+Reboot the computer using a system rescue CD
+Replace hard disk
+You can try to remove and reinsert the battery on the motherboard. If that doesn't work, the solution might be changing a jumper setting. Look for the manual of your computer.
+1
+hardware
+END
+Which one looks like a MAC address?
+58:b0:35:80:36:9f
+192.168.2.103
+fe80::5ab0:35ff:fe80:369f
+0xffffff00
+MAC addresses are used as a network address for most IEEE 802 network technologies, including Ethernet.
+1
+hardware
+END
+Who said that the number of transistors in a chip will double every 18 months?
+Moore
+Von Neuman
+Turing
+MacGyver
+The co-founder of Intel, Gordon E. Moore.
+1
+history
+END
+What is SMTP for?
+Mail server
+SMS server
+FTP server
+SPAM server
+SMTP stands for Simple Message Transfer Protocol, it is used by mail servers to send and receive mail messages.
+1
+history
+END
+When will the world run out of the free pool of IPv4 addresses?
+31 January 2011
+12 December 2012
+Not in the foreseeable future
+29 February 2015
+On 31 January 2011, IANA (Internet Assigned Numbers Authority) announced it had exhausted its free pool of IPv4 addresses.
+1
+history
+END
+Which browser was the ancestor of Firefox?
+Mozilla
+Godzilla
+Netscape
+Colossus
+The Firefox project began as an experimental branch of the Mozilla project.
+1
+history
+END
+Which command will give read permission on a file for everyone?
+chmod a+r core
+chmod 777 core
+chmod go+r core
+chmod 444 core
+"a" means everyone, "+r" means give read permission. 444 is not correct, because it does more than just give read permission, at the same time it removes write and execute permissions.
+1
+linux
+END
+How to shutdown safely a GNU/Linux machine?
+Press Ctrl-Alt-F1 first, and then Ctrl-Alt-Del
+Press Ctrl-Alt-SysRq-b
+Hold the power button until lights go bye bye
+Pull the plug out
+Ctrl-Alt-F1 will switch from graphical mode to the first virtual terminal in GNU/Linux. When on a virtual terminal, most GNU/Linux systems are configured to shut down safely.
+1
+linux
+END
+Which command will print the current working directory in UNIX?
+pwd
+cwd
+dir
+cd
+The pwd command prints the absolute path of the current working directory. Usually the same value is also stored in the environment variable $PWD.
+1
+linux
+END
+How to check the available disk space in GNU/Linux?
+df -h
+du -sm /*
+diskusage
+free
+The letters of the command stand for "disk free", and the "-h" makes the output more "human-friendly".
+1
+linux
+END
+In UNIX, how to put the current command in the background?
+Press Ctrl-z and run the command: bg
+Press Ctrl-c and run the command: bg
+Press Ctrl-z and run the command: bg &
+Press Ctrl-Alt-Del and run the command: bg
+Ctrl-z pauses execution of the current job, and the bg program puts the paused job in the background.
+1
+linux
+END
+What is the purpose of a DHCP server?
+Dynamically assign IP addresses to PCs
+Dynamically assign MAC addresses to PCs
+Proxy connections from a local network to internet
+Increase the security of a network
+The Dynamic Host Configuration Protocol (DHCP) is a network protocol used to configure devices that are connected to a network so they can communicate on that network using the Internet Protocol (IP).
+1
+network
+END
+What is IPsec?
+A security scheme
+Secure IP address
+Secondary IP address
+Proxy server
+IPsec is an end-to-end security scheme operating in the Internet Layer of the Internet Protocol Suite.
+1
+network
+END
+Which one looks like a netmask?
+255.255.255.0
+192.168.2.103
+192.168.2.255
+192.168.2.1
+The subnet mask is used to separate the network address part and the host identifier part of an IP address. For example if the IP address is 192.168.2.103 and the subnet mask is 255.255.255.0, then the network address is 192.168.2.0 and the host identifier is 103.
+1
+network
+END
+What is the purpose of mounting a disk?
+Make a filesystem accessible
+Format a disk to store data
+Crush a disk by sitting on it
+Prepare an installation disk
+Mounting a disk is the process of making a file system accessible.
+1
+os
+END
+How many primary partitions are allowed on a PC hard disk?
+4
+3
+5
+unlimited
+The total data storage space of a PC HDD can be divided into at most four primary partitions, or alternatively three primary partitions and an extended partition.
+1
+os
+END
+How to declare a pointer to an integer in C?
+int * p;
+int & p;
+int ** p;
+int p;
+In the C language you declare pointers using *, which is called the value-at-address operator or indirection operator.
+1
+programming
+END
+What will be the value of i when executing int i = 10 / 3
+3
+3.333333
+3.4
+4
+Since i is integer, the decimal part of the computation will be simply ignored.
+1
+programming
+END
+What will be the value of int i = 3 % 5?
+3
+2
+5
+0
+The modulo (sometimes called modulus) operation finds the remainder of division of one number by another. 3 divided by 5 is 0, and the remainder is 3.
+1
+programming
+END
+Which command will change to your home directory in UNIX?
+cd
+cd -
+cd .
+cd ..
+The cd command without arguments changes to the home directory in UNIX and GNU/Linux systems.
+1
+scripting
+END
+In UNIX, which shell variable stores the exit code of the last executed command?
+$?
+$$
+$@
+$1
+$? stores the exit code of the last executed command. $$ is the PID of the current process, $@ is the list of command line arguments and $1 is the first command line argument.
+1
+scripting
+END
+How to save the output of a command to a file and see it at the same time?
+somecmd | tee somefile.txt
+somecmd >> somefile.txt
+somecmd | ttt somefile.txt
+somecmd >> tee somefile.txt
+The tee command takes standard input, save it to the specified file and at the same time prints it back to standard output.
+1
+scripting
+END
+How to redirect the output of a script to /dev/null in Windows?
+script.bat >nul
+script.bat >null
+script.bat >/dev/null
+script.bat >0
+The Null Device Driver component provides the functional equivalent of \dev\null in the Unix environment by accepting I/O request packets and returning them to the caller.
+1
+scripting
+END
+How to give read permission on a file to other users in GNU/Linux?
+chmod o+r file.txt
+chmod 777
+chmod o+rwx file.txt
+chmod u+r file.txt
+"o" means other users (not you and not users in the same group), and "+r" means "add read permission". Every time you do chmod 777, somewhere in the world a puppy gets killed.
+1
+security
+END
+What is a disadvantage of a closed-source operating system?
+A closed-source system may spy on you without your knowledge
+A closed-source system has inherently more viruses
+A closed-source system is inherently insecure
+A closed-source system attracts game developers
+You cannot verify how the system works, so you put yourself at the mercy of the vendor of the closed-source operating system.
+1
+security
+END
+Which wireless security algorithm is the least secure?
+WEP
+WPA
+WPA2
+RSN
+WEP has been demonstrated to have numerous flaws and has been deprecated in favour of newer standards such as WPA2.
+1
+security
+END
+What is the decimal value of 0x15?
+21
+15
+13
+0
+0x15 is a hexadecimal notation, its decimal value is calculated like this: 1 * 16^1 + 5 * 16^0 = 1 * 16 + 5 * 1 = 16 + 5 = 21
+1
+system-programming
+END
+What is the decimal value of 015 (octal)?
+13
+15
+21
+0
+015 is an octal notation, its decimal value is calculated like this: 1 * 8^1 + 5 * 8^0 = 1 * 8 + 5 * 1 = 8 + 5 = 13
+1
+system-programming
+END
+What is the decimal value of 0b1101?
+13
+14
+15
+11
+0b1101 is a binary notation, its decimal value is calculated like this: 1 * 2^3 + 1 * 2^2 + 0 * 2^1 + 1 * 2^0 = 8 + 4 + 1 = 13
+1
+system-programming
+END
+How to write the number 11 in binary notation?
+0b1011
+0b11
+0x0b
+0b11111111111
+The value of the binary expression 0b1011 = 2^3 + 2^1 + 2^0 = 8 + 2 + 1 = 11
+1
+system-programming
+END
+Which is a low-level system programming language?
+Assembly
+C
+C++
+brainfuck
+Assembly is a low level language, designed for writing system software as distinct from application software.
+1
+system-programming
+END
+How to check the owner of a domain name?
+whois example.com
+ping example.com
+checkdomain example.com
+knock-knock example.com
+The whois command looks up records in the database maintained by several Network Information Centers (NICs).
+1
+tools
+END
+What is the purpose of an .md5 file?
+Verify the integrity of a file downloaded from server
+Store encrypted data
+Store cryptographic signature
+Completely pointless
+md5 is a so-called digest function. You can use it to calculate the digest of a downloaded file, and if doesn't match with the .md5 file provided by the server, that means the downloaded file is corrupt, not identical to the original file on the server.
+1
+tools
+END
+How to cycle between tabs in most tabbed browsers?
+Ctrl-Tab
+Alt-Tab
+ESC-Tab
+Ctrl-Alt-Tab
+Usually, Ctrl-Tab switches to the next tab and Ctrl-Shift-Tab switches to the previous tab in a tabbed browser.
+1
+tools
+END
+How many characters wide is a TAB?
+It depends
+4
+8
+2
+The visual length of the TAB character depends on the viewing application and your personal settings.
+1
+tools
+END
+Which audio format is lossless?
+flac
+ogg-vorbis
+mp3
+aac
+FLAC (Free Lossless Audio Codec) is a codec (compressor-decompressor or coder-decoder) which allows digital audio to be losslessly compressed such that file size is reduced without any information being lost.
+1
+tools
+END
+Which is a common version control operation?
+merge
+slice
+dice
+truncate
+The merge operation is used to combine multiple branches of code under version control into one.
+1
+version-control
+END
+How to get the source code from a Version Control System?
+checkout
+checkin
+get
+download
+The command to get the source code is usually either "checkout" or "clone".
+1
+version-control
+END
+How to save changes in a Version Control System?
+commit
+log
+save
+upload
+The command to save changes is usually either "commit" or "checkin".
+1
+version-control
+END
+What is the command to view pending changes in a Version Control System?
+status
+check
+summary
+view
+The command to view pending changes is usually "status". Very often the shortcut "st" works too.
+1
+version-control
+END
+What does VCS stand for in source code management?
+Version Control System
+Version Change System
+Version Control Software
+Version Change Software
+A version control system is used to manage changes to source code. Such system is for example Git, Mercurial, Subversion, Bazaar.
+1
+version-control
+END
+Which is not a Version Control System?
+CSV
+Bazaar
+Subversion
+CVS
+CSV stands for Comma Separated Values, it is a common file format, not a Version Control System.
+1
+version-control
+END
+Which is not a valid character in HTML as tag content?
+&
+$
+%
+!
+In HTML content "&" should be written as &amp;
+1
+web-programming
+END
+In web programming, which variable stores the input data of a GET request?
+QUERY_STRING
+INPUT
+QUERY_INPUT
+GET_READY
+The QUERY_STRING is the part of a URL after the question mark, not including the question mark itself, for example "search=hello&page=2".
+1
+web-programming
+END
+Which website offers free validation of your HTML code?
+validator.w3.org
+twitter.com
+facebook.com
+github.com
+The website http://validator.w3.org/ can validate all kinds of web documents and show the list of errors with explanations.
+1
+web-programming
+END
+When might you see this: 404 - File not found
+When visiting a URL that does not exist
+When copying a file that does not exist
+When running a command that does not exist
+When opening an email attachment
+404 is an HTTP status code, returned by the web server when the requested URL is unknown to the server.
+1
+web-programming
+END
+Where exactly is the HTTP 404 File not found error generated?
+The web server
+The client browser
+The client operating system
+The router between client and server
+When the requested URL doesn't exist, the web server responds with 404 status code to the client.
+1
+web-programming
+END
+Which file is used to prevent web crawlers from accessing parts of a website?
+robots.txt
+robots.config
+deny.conf
+hosts.allow
+Most search engines check if a robots.txt file exists in a website's root directory and respect the exclusion rules defined within.
+1
+web-programming
+END
+What is the standard port number used by web servers?
+80
+8080
+8000
+8888
+The standard port number of the HTTP protocol is 80.
+1
+web-programming
+END
+What is the standard port number used by secure web servers (HTTPS)?
+443
+80
+8888
+22
+The standard port number of the HTTPS protocol is 443.
+1
+web-programming
+END
+Which file is used as a web site's bookmark icon in browsers?
+favicon.ico
+icon.png
+favicon.bmp
+bookmark.png
+In the past browsers used the favicon.ico file in the webserver root as the website's icon in bookmarks. In modern browsers the name and location of the file can be customized using a <link> tag.
+1
+web-programming
+END
+What is the command to open a remote desktop connection in Windows?
+mstsc
+remote-desktop
+msdesktop
+msterm
+It's mstsc.exe
+1
+windows
+END
+What is the keyboard shortcut to lock your PC on Windows?
+Windows + l
+Ctrl-Alt-Del
+Ctrl-Escape
+Windows + d
+It's Windows-l, for "lock"
+1
+windows
+END
+What is the keyboard shortcut to open the system properties in Windows?
+Windows + Pause/Break
+Windows + Home
+Windows + l
+Windows + m
+The Windows-Pause/Break combo opens the system properties window, useful to check basic system properties, edit environment variable, among others.
+1
+windows
+END
+What is the keyboard shortcut to open the task manager in Windows?
+Ctrl + Shift + Escape
+Ctrl + Escape
+Windows + l
+Windows + m
+Ctrl + Shift + Escape opens the task manager, useful to view memory usage and kill processes.
+1
+windows
+END
+What is the command to edit the registry in Windows systems?
+regedit
+regeditor
+registry-edit
+system
+It's regedit.exe
+1
+windows
+END
+What is the default filesystem when formatting a disk in Windows NT systems?
+NTFS
+FAT16
+FAT32
+DOS
+NTFS supersedes the FAT file system as the preferred file system for Microsoft Windows operating systems.
+1
+windows
+END
+How to check the IP address of a computer in Windows?
+ipconfig
+ifconfig
+/sbin/ifconfig
+netstat
+The ipconfig command shows the configuration of network interfaces in Windows, including the IP address, network mask, and others.
+1
+windows
+END
+In which version of Windows was PowerShell introduced?
+Windows 7
+Windows 8
+Windows XP
+Windows NT
+Windows PowerShell is Microsoft's task automation framework, consisting of a command-line shell and associated scripting language built on .NET Framework. PowerShell was introduced in Windows 7 as an integral part of the system.
+1
+windows
+END
 What is the average performance of the bubble sort algorithm?
 O(n^2)
 O(n)
@@ -133,87 +781,6 @@ The correct syntax is taskA: taskB, meaning taskB will be executed first (if nee
 2
 build-automation
 END
-In an automated build system, which is the most logical step after running unit tests?
-package
-compile
-coffee break
-install
-The software must already be compiled to run unit tests. Without a package, what is there to install or deploy?
-3
-build-automation
-END
-What is the purpose of the "clean" step in an automated build system?
-Remove generated files
-Detect and report bugs in the software
-Remove careless bugs and useless features
-Remove unknown files that don't belong to the project
-The "clean" step typically removes build products, with the intention to start over as if the "compile" or other build steps were never executed.
-3
-build-automation
-END
-Can you parse an HTML document using regular expressions?
-No, because HTML is not a regular language
-Yes, you can parse anything using regular expressions
-No, because HTML has too many angle brackets
-Yes, because HTML is a context-free language
-Regular expressions can only match regular languages but HTML is a context-free language. It is always possible to present a HTML file that will be matched wrongly by any regular expression.
-3
-computer-science
-END
-Which data structure is most suitable to implement an index?
-Map
-Set
-List
-Array
-The concept of an index is like a lookup table: it allows looking up a specific value directly by its known index, without inspecting elements one by one.
-1
-data-structures
-END
-What kind of data structure is a FIFO?
-queue
-array
-list
-stack
-FIFO stands for First In, First Out. Like in a queue where you line up to get movie tickets.
-1
-data-structures
-END
-What kind of data structure is a LIFO?
-stack
-queue
-array
-list
-LIFO stands for Last In, First Out. A LIFO structure can be illustrated with the example of a stack of trays. The last tray to be placed on top is also the first to be taken off the top.
-1
-data-structures
-END
-Which data structure is equivalent to an associative array?
-map
-array
-set
-stack
-An associative array is composed of a collection of (key, value) pairs, such that each possible key appears at most once in the collection. An array, set or stack is a collection of values, not pairs.
-1
-data-structures
-END
-Which data structure is not like the others?
-list
-dictionary
-associative array
-symbol table
-An associative array, symbol table, or dictionary is an abstract data type composed of a collection of (key, value) pairs. A list is a collection of values, not pairs.
-1
-data-structures
-END
-Which data structure is used to implement caches?
-hash table
-set
-list
-tuple
-A hash table is a structure that can map keys to values. They can access values directly by their keys and retrieve them quickly.
-1
-data-structures
-END
 What is the difference between a binary tree and a B-tree?
 A B-tree is a generalization of the binary tree.
 No difference, they are synonyms.
@@ -258,60 +825,6 @@ Hash set
 A doubly linked list has O(1) insertion and deletion at both ends, so is a natural choice for queues.
 2
 data-structures
-END
-How to count the number of sheep in the farm table?
-SELECT count(*) FROM farm;
-SELECT count sheep FROM farm;
-SELECT count(sheep) FROM farm;
-SELECT sheep FROM farm;
-The SQL syntax for counting records in some table is SELECT count(*) FROM table_name;
-1
-database
-END
-What does SQL stand for?
-Structured Query Language
-Standard Query Language
-Simple Query Language
-Signal Query Language
-SQL, Structured Query Language, is a special-purpose programming language designed for managing data held in a relational database management system (RDBMS).
-1
-database
-END
-Which is not a common SQL command?
-FIND
-SELECT
-UPDATE
-INSERT
-SELECT, UPDATE and INSERT are common SQL commands, FIND is not.
-1
-database
-END
-How to find all employees whose name is "Smith"?
-SELECT * FROM Employees WHERE Name = 'Smith';
-SELECT * FROM Employees WHERE Name IS 'Sales';
-SELECT * FROM Employees WHERE Name = "Sales";
-SELECT * FROM Employees WHERE Name == 'Sales';
-Strings must be enclosed within single quotes, and the operator to check for equality is "==".
-1
-database
-END
-How to find all employees with NULL as email address?
-SELECT * FROM Employees WHERE Email IS NULL;
-SELECT * FROM Employees WHERE Email = 'NULL';
-SELECT * FROM Employees WHERE Email == 'NULL';
-SELECT * FROM Employees WHERE Email = NULL;
-NULL is a special keyword in SQL, it should not be quoted. The syntax to check whether something is NULL or not is "IS NULL" and "IS NOT NULL".
-1
-database
-END
-In a relational database, what is the term for minimizing redundancy and dependency?
-normalization
-optimization
-denormalization
-truncation
-Normalization usually involves dividing large tables into smaller, less redundant tables and defining relationships between them.
-1
-database
 END
 What type of JOIN is this: SELECT * FROM t1 JOIN t2 ON t1.id = t2.id
 INNER JOIN
@@ -385,69 +898,6 @@ In a database columns can be indexed, which can help finding data much faster. T
 2
 database
 END
-Which database system uses the commands: lsnrctl, isqlplusctl, emctl?
-Oracle
-Sybase
-MySQL
-PostgreSQL
-These commands are used by Oracle to provide various services.
-3
-database
-END
-Which SQL statement might select the department with the largest number of employees?
-SELECT d.DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID ORDER BY c DESC LIMIT 1;
-SELECT d.DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY DepartmentID ORDER BY c DESC LIMIT 1;
-SELECT DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID ORDER BY c DESC LIMIT 1;
-SELECT d.DepartmentID, count(null) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID HAVING c = MAX(c);
-The other statements either have SQL errors or incorrect.
-3
-database
-END
-How to get the current date in Oracle?
-SELECT SYSDATE FROM DUAL
-SELECT SYSDATE() FROM DUAL
-SELECT GETDATE
-SELECT GETDATE()
-The function to get the current date in Oracle is SYSDATE without parentheses.
-3
-database
-END
-How to get the current date in Sybase?
-SELECT GETDATE()
-SELECT SYSDATE FROM DUAL
-SELECT SYSDATE() FROM DUAL
-SELECT GETDATE
-The function to get the current date in Sybase is GETDATE().
-3
-database
-END
-A computer uses the least power in which mode?
-hibernate
-sleep
-stand-by
-lock
-When hibernated, the computer is completely off. It can restore itself by reloading the previously saved content of the memory.
-1
-hardware
-END
-How to reset the BIOS password if you forgot it?
-Remove the motherboard battery for a few seconds
-Reboot the computer
-Reboot the computer using a system rescue CD
-Replace hard disk
-You can try to remove and reinsert the battery on the motherboard. If that doesn't work, the solution might be changing a jumper setting. Look for the manual of your computer.
-1
-hardware
-END
-Which one looks like a MAC address?
-58:b0:35:80:36:9f
-192.168.2.103
-fe80::5ab0:35ff:fe80:369f
-0xffffff00
-MAC addresses are used as a network address for most IEEE 802 network technologies, including Ethernet.
-1
-hardware
-END
 Which is optional to boot an operating system?
 Harddisk
 Memory
@@ -493,60 +943,6 @@ SSD has the highest theoretical and practical transfer rate among these choices.
 2
 hardware
 END
-How many disks can fail in a RAID 5 array without risk of data loss?
-1
-0
-2
-3
-RAID 5 distributes parity along with the data and requires that all drives but one be present to operate. The array is not destroyed by a single drive failure. On drive failure, any subsequent reads can be calculated from the distributed parity such that the drive failure is masked from the end user.
-3
-hardware
-END
-Which RAID level provides the highest fault tolerance, given an array of 3 disks?
-RAID 1
-RAID 0
-RAID 3
-RAID 5
-With RAID 1, n-1 disks can fail without losing data. With RAID 3 and RAID 5 only one disk can fail. RAID 0 provides no fault tolerance at all.
-3
-hardware
-END
-Who said that the number of transistors in a chip will double every 18 months?
-Moore
-Von Neuman
-Turing
-MacGyver
-The co-founder of Intel, Gordon E. Moore.
-1
-history
-END
-What is SMTP for?
-Mail server
-SMS server
-FTP server
-SPAM server
-SMTP stands for Simple Message Transfer Protocol, it is used by mail servers to send and receive mail messages.
-1
-history
-END
-When will the world run out of the free pool of IPv4 addresses?
-31 January 2011
-12 December 2012
-Not in the foreseeable future
-29 February 2015
-On 31 January 2011, IANA (Internet Assigned Numbers Authority) announced it had exhausted its free pool of IPv4 addresses.
-1
-history
-END
-Which browser was the ancestor of Firefox?
-Mozilla
-Godzilla
-Netscape
-Colossus
-The Firefox project began as an experimental branch of the Mozilla project.
-1
-history
-END
 Who invented semaphores in concurrent programs?
 Dijkstra
 Traffic Man
@@ -555,78 +951,6 @@ Descartes
 Edsger W. Dijkstra, to whom we owe much (banker's algorithm, philosopher's dinner, Dijkstra algorithm, ...)
 2
 history
-END
-Which operating system was not derived from a version of UNIX?
-MINIX
-Mac OS X
-FreeBSD
-Solaris
-MINIX is a UNIX-like system but it was not derived from UNIX. The others can all be traced back to some version of UNIX.
-3
-history
-END
-Which operating system was the inspiration of Linux?
-MINIX
-FreeBSD
-UNIX
-Linus
-MINIX inspired Linus Torvalds to create the Linux kernel.
-3
-history
-END
-In what language was UNIX originally written?
-Assembly
-English
-C
-Pascal
-UNIX was originally written in assembly language, and later rewritten in C.
-3
-history
-END
-Which command will give read permission on a file for everyone?
-chmod a+r core
-chmod 777 core
-chmod go+r core
-chmod 444 core
-"a" means everyone, "+r" means give read permission. 444 is not correct, because it does more than just give read permission, at the same time it removes write and execute permissions.
-1
-linux
-END
-How to shutdown safely a GNU/Linux machine?
-Press Ctrl-Alt-F1 first, and then Ctrl-Alt-Del
-Press Ctrl-Alt-SysRq-b
-Hold the power button until lights go bye bye
-Pull the plug out
-Ctrl-Alt-F1 will switch from graphical mode to the first virtual terminal in GNU/Linux. When on a virtual terminal, most GNU/Linux systems are configured to shut down safely.
-1
-linux
-END
-Which command will print the current working directory in UNIX?
-pwd
-cwd
-dir
-cd
-The pwd command prints the absolute path of the current working directory. Usually the same value is also stored in the environment variable $PWD.
-1
-linux
-END
-How to check the available disk space in GNU/Linux?
-df -h
-du -sm /*
-diskusage
-free
-The letters of the command stand for "disk free", and the "-h" makes the output more "human-friendly".
-1
-linux
-END
-In UNIX, how to put the current command in the background?
-Press Ctrl-z and run the command: bg
-Press Ctrl-c and run the command: bg
-Press Ctrl-z and run the command: bg &
-Press Ctrl-Alt-Del and run the command: bg
-Ctrl-z pauses execution of the current job, and the bg program puts the paused job in the background.
-1
-linux
 END
 Which is an example of input redirection?
 sort < data.txt
@@ -718,123 +1042,6 @@ The password is usually stored in /etc/shadow, with more strict access permissio
 2
 linux
 END
-In which column of /etc/fstab might you see /proc?
-2nd
-1st
-3rd
-4th
-/proc looks like a mount point, so it is most likely the second column.
-3
-linux
-END
-Which command will produce different output?
-ls | perl -e 'm/tmp/ && print;'
-ls | sed -n /tmp/p
-ls | grep tmp
-ls | awk '/tmp/ {print}'
-The perl command does not read standard input, therefore it cannot match the string "tmp" like the other commands.
-3
-linux
-END
-Which command will create a backup of /opt/apache/ directory?
-tar cf /tmp/apache.tar -C /opt apache
-tar cf /tmp/apache.tar -C /opt/apache
-time-machine /opt/apache /tmp/apache.tar
-tar c /opt/apache/* | gzip -d > /tmp/apache.tar
-The "c" specifies that we want to create an archive, the "f" followed by a filename is the destination, the -C followed by a directory to change to, the "apache" in the end is the name of the file/directory to backup. The other choices are incorrect.
-3
-linux
-END
-Which command is used to configure a firewall?
-iptables
-ipconfig
-ifconfig
-netstat
-iptables is an administration tool for IPv4 packet filtering and NAT, a common firewall software in GNU/Linux.
-3
-linux
-END
-Which environment variable is usually not a path?
-LOGNAME
-PWD
-HOME
-SHELL
-LOGNAME is usually the username of the current user, not a path.
-3
-linux
-END
-Which file controls the number of available virtual terminals in GNU/Linux?
-/etc/inittab
-/etc/virsli
-/etc/fstab
-/etc/mtab
-The virtual terminals are configured in the /etc/inittab file.
-3
-linux
-END
-In GNU/Linux, which runlevel is a multi-user runlevel?
-2
-S
-1
-6
-Runlevels 2 to 5 are multi-user runlevels.
-3
-linux
-END
-In GNU/Linux, what is the name of the process with PID 1?
-init
-kernel
-root
-launchd
-In GNU/Linux the "init" process is the parent of all processes, it gets the first PID which is 1.
-3
-linux
-END
-Which signal cannot be trapped?
-9 (KILL)
-3 (QUIT)
-6 (ABRT)
-15 (TERM)
-The KILL signal is non-catchable, non-ignorable, immediately kills a process without possibility of cleaning up.
-3
-linux
-END
-What is the purpose of the PAGER variable in UNIX?
-Path to a program to view man pages
-Path to a program to generate beeps
-Path to the default document viewer
-Enable or disable the system beep
-The PAGER variable can be used to override the default program used to view man pages.
-3
-linux
-END
-Which command cannot list the files in a directory?
-dirs
-ls
-tree
-echo
-The dirs command shows the list of remembered directories (stored by the pushd command), it cannot be used to list the files in a directory.
-3
-linux
-END
-Which command cannot send an email in GNU/Linux?
-groff
-telnet
-mailx
-mutt
-groff is a document formatting system (for example rendering man pages) and cannot be used to send emails. Yes you can send an email with telnet, though it won't be pretty.
-3
-linux
-END
-Which command can check if any given PID is running or not?
-kill
-netstat
-top
-lsof
-The top command shows only a subset of all processes, it might not include the PID you're looking for. You can use kill -0 PID to check any PID, but of course ps -p is the ideal choice.
-3
-linux
-END
 Mac OS X is based on which operating system?
 NeXTSTEP
 FreeBSD
@@ -879,33 +1086,6 @@ Experimental
 The X stands for the roman letter, meaning 10. Its predecessor was Mac OS 9.
 2
 mac
-END
-What is the purpose of a DHCP server?
-Dynamically assign IP addresses to PCs
-Dynamically assign MAC addresses to PCs
-Proxy connections from a local network to internet
-Increase the security of a network
-The Dynamic Host Configuration Protocol (DHCP) is a network protocol used to configure devices that are connected to a network so they can communicate on that network using the Internet Protocol (IP).
-1
-network
-END
-What is IPsec?
-A security scheme
-Secure IP address
-Secondary IP address
-Proxy server
-IPsec is an end-to-end security scheme operating in the Internet Layer of the Internet Protocol Suite.
-1
-network
-END
-Which one looks like a netmask?
-255.255.255.0
-192.168.2.103
-192.168.2.255
-192.168.2.1
-The subnet mask is used to separate the network address part and the host identifier part of an IP address. For example if the IP address is 192.168.2.103 and the subnet mask is 255.255.255.0, then the network address is 192.168.2.0 and the host identifier is 103.
-1
-network
 END
 What is the common port number of an FTP server?
 21
@@ -970,24 +1150,6 @@ Being on a NAT does not necessarily prevent access to the outside. The other fac
 2
 network
 END
-What is the purpose of mounting a disk?
-Make a filesystem accessible
-Format a disk to store data
-Crush a disk by sitting on it
-Prepare an installation disk
-Mounting a disk is the process of making a file system accessible.
-1
-os
-END
-How many primary partitions are allowed on a PC hard disk?
-4
-3
-5
-unlimited
-The total data storage space of a PC HDD can be divided into at most four primary partitions, or alternatively three primary partitions and an extended partition.
-1
-os
-END
 Which is not an operating system?
 Linux
 FreeBSD
@@ -1005,33 +1167,6 @@ What is the file descriptor number of stderr?
 The file descriptor number of standard error is 2.
 2
 os
-END
-How to declare a pointer to an integer in C?
-int * p;
-int & p;
-int ** p;
-int p;
-In the C language you declare pointers using *, which is called the value-at-address operator or indirection operator.
-1
-programming
-END
-What will be the value of i when executing int i = 10 / 3
-3
-3.333333
-3.4
-4
-Since i is integer, the decimal part of the computation will be simply ignored.
-1
-programming
-END
-What will be the value of int i = 3 % 5?
-3
-2
-5
-0
-The modulo (sometimes called modulus) operation finds the remainder of division of one number by another. 3 divided by 5 is 0, and the remainder is 3.
-1
-programming
 END
 When would you use a LinkedList instead of an ArrayList?
 When you only need to traverse elements from the beginning
@@ -1168,114 +1303,6 @@ A binary protocol yields the smallest possible footprint in the communication, w
 2
 programming
 END
-In C, given char **argv, what is equivalent to printf("%s\n", argv[0])
-printf("%s\n", *(argv + 0));
-printf("%s\n", &argv[0]);
-printf("%s\n", &argv);
-printf("%s\n", argv);
-argv + n is the address of the n-th element in the array. The * operator dereferences the pointer, obtaining the value stored at the pointed location.
-3
-programming
-END
-Which regular expression is a zero-width positive look-behind assertion?
-(?<=pattern)
-(?=pattern)
-(?!pattern)
-(?<!pattern)
-The symbol "<" usually indicates a look-behind assertion, and its absence a look-ahead assertion. The symbol "=" usually indicates a positive assertion, and the symbol "!" a negative assertion.
-3
-programming
-END
-Which language is not in the same group as LISP?
-C++
-R
-Scheme
-Scala
-LISP, R, Scheme, and Scala are all functional languages. C++ is an imperative language.
-3
-programming
-END
-Which language is not in the same group as C++?
-Haskell
-C
-Java
-MATLAB
-C++, C, Java, and MATLAB, are all imperative languages. Haskell is a functional language.
-3
-programming
-END
-What is the most likely to cause a stack overflow?
-Too deep recursion when using a recursive function
-Trying to access an array element by an index beyond the end of the array
-Trying to access an array element by a negative index
-The stack size limit is not set to unlimited in your system
-A common cause of a stack overflow is very deep or infinite recursion, exhausting the address space of the call stack. A common solution is to improve the algorithm to reduce the depth of recursions.
-3
-programming
-END
-What is wrong with static methods?
-Hard to test code that is calling static methods
-Hard to test static methods
-Static methods don't require an instance of the class
-Static methods scare the bejesus outta me
-Code calling static methods is hard to test because you cannot mock the static calls. Static methods in themselves are not hard to test. The other statements are true of static methods but don't constitute a "problem".
-3
-programming
-END
-What kind of regular expression is this: (?=pattern)
-Positive look-ahead assertion
-Negative look-ahead assertion
-Positive look-behind assertion
-Negative look-behind assertion
-This is a zero-width positive look-ahead assertion. For example /\w+(?=\t)/ matches a word followed by a TAB, without including the TAB in the matched string.
-3
-programming
-END
-In C/C++ what is the effect of the volatile keyword ?
-Tell the compiler to not optimize access to this variable
-Tell the compiler to load the variable in the low-memory zone for fast access
-Tell the compiler to reserve a register to store this variable all along
-Tell the compiler to make the variable access threadsafe with a lock
-The variable may change "on its own" (means an interrupt or another thread might change it) so don't optimize code and always read the value of this variable.
-3
-programming
-END
-Which command will change to your home directory in UNIX?
-cd
-cd -
-cd .
-cd ..
-The cd command without arguments changes to the home directory in UNIX and GNU/Linux systems.
-1
-scripting
-END
-In UNIX, which shell variable stores the exit code of the last executed command?
-$?
-$$
-$@
-$1
-$? stores the exit code of the last executed command. $$ is the PID of the current process, $@ is the list of command line arguments and $1 is the first command line argument.
-1
-scripting
-END
-How to save the output of a command to a file and see it at the same time?
-somecmd | tee somefile.txt
-somecmd >> somefile.txt
-somecmd | ttt somefile.txt
-somecmd >> tee somefile.txt
-The tee command takes standard input, save it to the specified file and at the same time prints it back to standard output.
-1
-scripting
-END
-How to redirect the output of a script to /dev/null in Windows?
-script.bat >nul
-script.bat >null
-script.bat >/dev/null
-script.bat >0
-The Null Device Driver component provides the functional equivalent of \dev\null in the Unix environment by accepting I/O request packets and returning them to the caller.
-1
-scripting
-END
 How to convert all characters in a file to lowercase?
 tr A-Z a-z < input.txt > output.txt
 tr A-Z a-z input.txt output.txt
@@ -1339,42 +1366,6 @@ The grep will not match anything, which is a failure, therefore echo two will be
 2
 scripting
 END
-How to redirect both stdout and stderr of a command to the same file?
-somecmd >file.out 2>&1
-somecmd >file.out 2>>&1
-somecmd 2>&1 >file.out
-somecmd 2>&1 >>file.out
-One way to achive this is to first redirect stdout and then redirect stderr to whatever stdout is pointing to.
-3
-scripting
-END
-How to give read permission on a file to other users in GNU/Linux?
-chmod o+r file.txt
-chmod 777
-chmod o+rwx file.txt
-chmod u+r file.txt
-"o" means other users (not you and not users in the same group), and "+r" means "add read permission". Every time you do chmod 777, somewhere in the world a puppy gets killed.
-1
-security
-END
-What is a disadvantage of a closed-source operating system?
-A closed-source system may spy on you without your knowledge
-A closed-source system has inherently more viruses
-A closed-source system is inherently insecure
-A closed-source system attracts game developers
-You cannot verify how the system works, so you put yourself at the mercy of the vendor of the closed-source operating system.
-1
-security
-END
-Which wireless security algorithm is the least secure?
-WEP
-WPA
-WPA2
-RSN
-WEP has been demonstrated to have numerous flaws and has been deprecated in favour of newer standards such as WPA2.
-1
-security
-END
 Which is the least unsafe?
 strncpy
 strcpy
@@ -1428,123 +1419,6 @@ Which open port signals a potential security risk in a UNIX-like system?
 Port 23 is the default port of Telnet, an obsolete, insecure login service. The other ports correspond to more secure services protected by encryption.
 2
 security
-END
-What is the weakest point in the computer security of a typical large firm?
-The employees
-The firewall software
-The antivirus software
-The intranet software
-The typical weakest point is the employees, as social engineering and human gallibility can often circumvent otherwise state of the art computer security system.
-3
-security
-END
-Which is the most dangerous security probing tool?
-nmap
-ping
-ifconfig
-telnet
-nmap is a sophisticated port scanner, and can reveal much more about a network than all the other tools combined.
-3
-security
-END
-Which is the worst method for encrypting data?
-sha1
-des3
-aes-128-cbc
-crypt
-sha1 is not an encryption method but a message digest method.
-3
-security
-END
-Which tool is not suitable to encrypt files?
-nmap
-encfs
-openssl
-TrueCrypt
-encfs and TrueCrypt can be used to create encrypted directories, and openssl can be used to encrypt a stream of data. nmap is a network scanning tool, not for encryption.
-3
-security
-END
-Which tool is not suitable to find open ports on the local system?
-ping
-nmap
-telnet
-netstat
-ping can only send ICMP ECHO requests to hosts, it cannot be used to find open ports.
-3
-security
-END
-Which tool is not suitable to find open ports on a remote system?
-netstat
-nmap
-telnet
-curl
-Unlike the others, netstat cannot be used to scan arbitrary remote ports.
-3
-security
-END
-What's the worst thing that can happen if you configure nmap with suid root?
-It could be used for privilege escalation
-It could be used to completely jam a network with DOS attacks
-It could be used to delete all files in the system
-It could be used to unleash the kraken
-Privilege escalation could be used to create all the other damages. Except maybe releasing the kraken. Not sure.
-3
-security
-END
-What's the scariest defect that can happen in a web application?
-Buffer overflow
-Blue screen of death
-Denial of service
-NullPointerException
-A buffer overflow can potentially lead to privilege escalation, which could be used to produce all the others and much worse.
-3
-security
-END
-What is the decimal value of 0x15?
-21
-15
-13
-0
-0x15 is a hexadecimal notation, its decimal value is calculated like this: 1 * 16^1 + 5 * 16^0 = 1 * 16 + 5 * 1 = 16 + 5 = 21
-1
-system-programming
-END
-What is the decimal value of 015 (octal)?
-13
-15
-21
-0
-015 is an octal notation, its decimal value is calculated like this: 1 * 8^1 + 5 * 8^0 = 1 * 8 + 5 * 1 = 8 + 5 = 13
-1
-system-programming
-END
-What is the decimal value of 0b1101?
-13
-14
-15
-11
-0b1101 is a binary notation, its decimal value is calculated like this: 1 * 2^3 + 1 * 2^2 + 0 * 2^1 + 1 * 2^0 = 8 + 4 + 1 = 13
-1
-system-programming
-END
-How to write the number 11 in binary notation?
-0b1011
-0b11
-0x0b
-0b11111111111
-The value of the binary expression 0b1011 = 2^3 + 2^1 + 2^0 = 8 + 2 + 1 = 11
-1
-system-programming
-END
-Which is a low-level system programming language?
-Assembly
-C
-C++
-brainfuck
-Assembly is a low level language, designed for writing system software as distinct from application software.
-1
-system-programming
 END
 What is endianness about?
 Ordering of bytes
@@ -1627,60 +1501,6 @@ Z = Z & ~0100 = Z & 1011 = effectively setting the 3rd bit to zero.
 2
 system-programming
 END
-Which is not a programming language?
-CGI
-Bash
-R
-Python
-CGI stands for Common Gateway Interface, a standard for dynamic generation of web pages by a web server. It is not a programming language.
-3
-system-programming
-END
-How to check the owner of a domain name?
-whois example.com
-ping example.com
-checkdomain example.com
-knock-knock example.com
-The whois command looks up records in the database maintained by several Network Information Centers (NICs).
-1
-tools
-END
-What is the purpose of an .md5 file?
-Verify the integrity of a file downloaded from server
-Store encrypted data
-Store cryptographic signature
-Completely pointless
-md5 is a so-called digest function. You can use it to calculate the digest of a downloaded file, and if doesn't match with the .md5 file provided by the server, that means the downloaded file is corrupt, not identical to the original file on the server.
-1
-tools
-END
-How to cycle between tabs in most tabbed browsers?
-Ctrl-Tab
-Alt-Tab
-ESC-Tab
-Ctrl-Alt-Tab
-Usually, Ctrl-Tab switches to the next tab and Ctrl-Shift-Tab switches to the previous tab in a tabbed browser.
-1
-tools
-END
-How many characters wide is a TAB?
-It depends
-4
-8
-2
-The visual length of the TAB character depends on the viewing application and your personal settings.
-1
-tools
-END
-Which audio format is lossless?
-flac
-ogg-vorbis
-mp3
-aac
-FLAC (Free Lossless Audio Codec) is a codec (compressor-decompressor or coder-decoder) which allows digital audio to be losslessly compressed such that file size is reduced without any information being lost.
-1
-tools
-END
 Which compression tool cannot work as a filter?
 7zip
 zip
@@ -1753,96 +1573,6 @@ ab is the Apache HTTP server benchmarking tool, but it is useful to perform load
 2
 tools
 END
-Which is not a web server software?
-X server
-nginx
-Apache
-Lighttpd
-X server is the server counterpart of the X Window System in UNIX, and has nothing to do with web servers.
-3
-tools
-END
-Which is not a network analysis tool?
-screen
-nmap
-tcpdump
-wireshark
-tcpdump dumps traffic on a network; wireshark is a network traffic analyzer; nmap is a network security auditing tool; that leaves us with screen, which is a terminal multiplexer tool.
-3
-tools
-END
-What is the purpose of the -h flag of the ls command in UNIX?
-Print file sizes in human readable format
-Print short help message
-Print long help message
-Print hidden files
-When used together with the -l flag for long format, the -h makes the ls command print file sizes in human readable format like 1K, 234M, 2G.
-3
-tools
-END
-How to print the 2nd and 1st columns of a csv file, in that order?
-awk -v FS=, -v OFS=, '{print $2, $1}' file.csv
-cut -f2,1 -d, file.csv
-fmt -f2,1 -s, file.csv
-while read a b; do echo $b,$a; done < file.csv
-The awk solution works, by setting the input and output field separators to a comma, and printing the selected columns in the desired order.
-3
-tools
-END
-Which is a common version control operation?
-merge
-slice
-dice
-truncate
-The merge operation is used to combine multiple branches of code under version control into one.
-1
-version-control
-END
-How to get the source code from a Version Control System?
-checkout
-checkin
-get
-download
-The command to get the source code is usually either "checkout" or "clone".
-1
-version-control
-END
-How to save changes in a Version Control System?
-commit
-log
-save
-upload
-The command to save changes is usually either "commit" or "checkin".
-1
-version-control
-END
-What is the command to view pending changes in a Version Control System?
-status
-check
-summary
-view
-The command to view pending changes is usually "status". Very often the shortcut "st" works too.
-1
-version-control
-END
-What does VCS stand for in source code management?
-Version Control System
-Version Change System
-Version Control Software
-Version Change Software
-A version control system is used to manage changes to source code. Such system is for example Git, Mercurial, Subversion, Bazaar.
-1
-version-control
-END
-Which is not a Version Control System?
-CSV
-Bazaar
-Subversion
-CVS
-CSV stands for Comma Separated Values, it is a common file format, not a Version Control System.
-1
-version-control
-END
 Which version control operation will never result in a conflict?
 add
 update
@@ -1869,132 +1599,6 @@ mv
 In a centralized VCS all operations that involve the history need to access the repository on the central server. The status, add, and mv commands can be performed without access to the server.
 2
 version-control
-END
-In version control, what is the term for merging another branch that is not diverged but some versions ahead of the current branch?
-fast-forward
-branching
-rebasing
-rock on!
-In this situation the current branch HEAD can be simply fast-forwarded to the same position as the other branch HEAD, hence the name.
-3
-version-control
-END
-In version control, which is the least scalable workflow?
-centralized workflow
-gatekeeper workflow
-automated gatekeeper workflow
-commander-lieutenant workflow
-The central server can become a bottleneck. The other workflows can be scaled by replicating them on multiple layers.
-3
-version-control
-END
-Which is a Distributed Version Control System?
-Mercurial
-Subversion
-ClearCase
-Visual SourceSafe
-These are all version control systems, but only Mercurial has a distributed model, the others use a client-server model.
-3
-version-control
-END
-What can be a disadvantage of a distributed VCS compared to a centralized VCS?
-The initial cloning is slower
-Users cannot commit revisions without a server
-Most operations are slower without a server
-Users cannot create forks without a server
-In a distributed VCS, initial cloning is typically slower, as the tool must download the entire project history. The other choices are disadvantages of centralized VCS.
-3
-version-control
-END
-In a version control system, which type of conflict can have an automatic resolution when merging branchA into branchB?
-The same file was edited in both BranchA and BranchB
-The same file was edited in BranchA but deleted in BranchB
-The same file was edited in BranchA but renamed in BranchB
-A file with the same name was added in both BranchA and BranchB
-If branchA and branchB edited completely different parts of the file, that should be possible to resolve automatically. The other types of conflict require an explicit decision and action by a human.
-3
-version-control
-END
-Which is not a valid character in HTML as tag content?
-&
-$
-%
-!
-In HTML content "&" should be written as &amp;
-1
-web-programming
-END
-In web programming, which variable stores the input data of a GET request?
-QUERY_STRING
-INPUT
-QUERY_INPUT
-GET_READY
-The QUERY_STRING is the part of a URL after the question mark, not including the question mark itself, for example "search=hello&page=2".
-1
-web-programming
-END
-Which website offers free validation of your HTML code?
-validator.w3.org
-twitter.com
-facebook.com
-github.com
-The website http://validator.w3.org/ can validate all kinds of web documents and show the list of errors with explanations.
-1
-web-programming
-END
-When might you see this: 404 - File not found
-When visiting a URL that does not exist
-When copying a file that does not exist
-When running a command that does not exist
-When opening an email attachment
-404 is an HTTP status code, returned by the web server when the requested URL is unknown to the server.
-1
-web-programming
-END
-Where exactly is the HTTP 404 File not found error generated?
-The web server
-The client browser
-The client operating system
-The router between client and server
-When the requested URL doesn't exist, the web server responds with 404 status code to the client.
-1
-web-programming
-END
-Which file is used to prevent web crawlers from accessing parts of a website?
-robots.txt
-robots.config
-deny.conf
-hosts.allow
-Most search engines check if a robots.txt file exists in a website's root directory and respect the exclusion rules defined within.
-1
-web-programming
-END
-What is the standard port number used by web servers?
-80
-8080
-8000
-8888
-The standard port number of the HTTP protocol is 80.
-1
-web-programming
-END
-What is the standard port number used by secure web servers (HTTPS)?
-443
-80
-8888
-22
-The standard port number of the HTTPS protocol is 443.
-1
-web-programming
-END
-Which file is used as a web site's bookmark icon in browsers?
-favicon.ico
-icon.png
-favicon.bmp
-bookmark.png
-In the past browsers used the favicon.ico file in the webserver root as the website's icon in bookmarks. In modern browsers the name and location of the file can be customized using a <link> tag.
-1
-web-programming
 END
 In web programming, what is the QUERY_STRING?
 The part of the URL after the "?" mark
@@ -2049,6 +1653,519 @@ Content-type: text/html
 The end of the header fields is indicated by an empty field, resulting in the transmission of two consecutive CR-LF pairs.
 2
 web-programming
+END
+How to delete a directory recursively in Windows?
+rmdir /s/q
+rm -fr
+del /r
+format
+rmdir /s/q deletes the specified directory and all subdirectories. It is the equivalent of rm -fr in UNIX.
+2
+windows
+END
+In Windows, how can you know what time the machine was started?
+net statistics server
+uptime
+services.msc
+bsod.exe
+The net statistics server command prints various interesting statistics about the running system, including the time it was started, similar to the uptime utility in UNIX.
+2
+windows
+END
+How to map a network share to a drive letter in Windows?
+net use z: \\server\folder
+map z: \\server\folder
+xcopy \\server\folder z:
+map \\server\folder z:
+You can map a network share to a drive letter with net use. The first parameter is the drive letter followed by a colon, the second parameter is the path to the network share.
+2
+windows
+END
+Which is not a standard environment variable in Windows?
+%pwd%
+%cd%
+%date%
+%time%
+%cd% is the current working directory, %date% is the current date, %time% is the current time. %pwd% is not a standard environment variable in Windows.
+2
+windows
+END
+What is the main function of the Domain Controller on a Microsoft Server?
+handle authentication requests
+domain name server
+host user home directories
+host Microsoft Exchange
+The main function of the Domain Controller is to handle user authentication requests.
+2
+windows
+END
+In an automated build system, which is the most logical step after running unit tests?
+package
+compile
+coffee break
+install
+The software must already be compiled to run unit tests. Without a package, what is there to install or deploy?
+3
+build-automation
+END
+What is the purpose of the "clean" step in an automated build system?
+Remove generated files
+Detect and report bugs in the software
+Remove careless bugs and useless features
+Remove unknown files that don't belong to the project
+The "clean" step typically removes build products, with the intention to start over as if the "compile" or other build steps were never executed.
+3
+build-automation
+END
+Can you parse an HTML document using regular expressions?
+No, because HTML is not a regular language
+Yes, you can parse anything using regular expressions
+No, because HTML has too many angle brackets
+Yes, because HTML is a context-free language
+Regular expressions can only match regular languages but HTML is a context-free language. It is always possible to present a HTML file that will be matched wrongly by any regular expression.
+3
+computer-science
+END
+Which database system uses the commands: lsnrctl, isqlplusctl, emctl?
+Oracle
+Sybase
+MySQL
+PostgreSQL
+These commands are used by Oracle to provide various services.
+3
+database
+END
+Which SQL statement might select the department with the largest number of employees?
+SELECT d.DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID ORDER BY c DESC LIMIT 1;
+SELECT d.DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY DepartmentID ORDER BY c DESC LIMIT 1;
+SELECT DepartmentID, count(*) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID ORDER BY c DESC LIMIT 1;
+SELECT d.DepartmentID, count(null) c FROM Department d JOIN Employee e ON d.DepartmentID = e.DepartmentID GROUP BY d.DepartmentID HAVING c = MAX(c);
+The other statements either have SQL errors or incorrect.
+3
+database
+END
+How to get the current date in Oracle?
+SELECT SYSDATE FROM DUAL
+SELECT SYSDATE() FROM DUAL
+SELECT GETDATE
+SELECT GETDATE()
+The function to get the current date in Oracle is SYSDATE without parentheses.
+3
+database
+END
+How to get the current date in Sybase?
+SELECT GETDATE()
+SELECT SYSDATE FROM DUAL
+SELECT SYSDATE() FROM DUAL
+SELECT GETDATE
+The function to get the current date in Sybase is GETDATE().
+3
+database
+END
+How many disks can fail in a RAID 5 array without risk of data loss?
+1
+0
+2
+3
+RAID 5 distributes parity along with the data and requires that all drives but one be present to operate. The array is not destroyed by a single drive failure. On drive failure, any subsequent reads can be calculated from the distributed parity such that the drive failure is masked from the end user.
+3
+hardware
+END
+Which RAID level provides the highest fault tolerance, given an array of 3 disks?
+RAID 1
+RAID 0
+RAID 3
+RAID 5
+With RAID 1, n-1 disks can fail without losing data. With RAID 3 and RAID 5 only one disk can fail. RAID 0 provides no fault tolerance at all.
+3
+hardware
+END
+Which operating system was not derived from a version of UNIX?
+MINIX
+Mac OS X
+FreeBSD
+Solaris
+MINIX is a UNIX-like system but it was not derived from UNIX. The others can all be traced back to some version of UNIX.
+3
+history
+END
+Which operating system was the inspiration of Linux?
+MINIX
+FreeBSD
+UNIX
+Linus
+MINIX inspired Linus Torvalds to create the Linux kernel.
+3
+history
+END
+In what language was UNIX originally written?
+Assembly
+English
+C
+Pascal
+UNIX was originally written in assembly language, and later rewritten in C.
+3
+history
+END
+In which column of /etc/fstab might you see /proc?
+2nd
+1st
+3rd
+4th
+/proc looks like a mount point, so it is most likely the second column.
+3
+linux
+END
+Which command will produce different output?
+ls | perl -e 'm/tmp/ && print;'
+ls | sed -n /tmp/p
+ls | grep tmp
+ls | awk '/tmp/ {print}'
+The perl command does not read standard input, therefore it cannot match the string "tmp" like the other commands.
+3
+linux
+END
+Which command will create a backup of /opt/apache/ directory?
+tar cf /tmp/apache.tar -C /opt apache
+tar cf /tmp/apache.tar -C /opt/apache
+time-machine /opt/apache /tmp/apache.tar
+tar c /opt/apache/* | gzip -d > /tmp/apache.tar
+The "c" specifies that we want to create an archive, the "f" followed by a filename is the destination, the -C followed by a directory to change to, the "apache" in the end is the name of the file/directory to backup. The other choices are incorrect.
+3
+linux
+END
+Which command is used to configure a firewall?
+iptables
+ipconfig
+ifconfig
+netstat
+iptables is an administration tool for IPv4 packet filtering and NAT, a common firewall software in GNU/Linux.
+3
+linux
+END
+Which environment variable is usually not a path?
+LOGNAME
+PWD
+HOME
+SHELL
+LOGNAME is usually the username of the current user, not a path.
+3
+linux
+END
+Which file controls the number of available virtual terminals in GNU/Linux?
+/etc/inittab
+/etc/virsli
+/etc/fstab
+/etc/mtab
+The virtual terminals are configured in the /etc/inittab file.
+3
+linux
+END
+In GNU/Linux, which runlevel is a multi-user runlevel?
+2
+S
+1
+6
+Runlevels 2 to 5 are multi-user runlevels.
+3
+linux
+END
+In GNU/Linux, what is the name of the process with PID 1?
+init
+kernel
+root
+launchd
+In GNU/Linux the "init" process is the parent of all processes, it gets the first PID which is 1.
+3
+linux
+END
+Which signal cannot be trapped?
+9 (KILL)
+3 (QUIT)
+6 (ABRT)
+15 (TERM)
+The KILL signal is non-catchable, non-ignorable, immediately kills a process without possibility of cleaning up.
+3
+linux
+END
+What is the purpose of the PAGER variable in UNIX?
+Path to a program to view man pages
+Path to a program to generate beeps
+Path to the default document viewer
+Enable or disable the system beep
+The PAGER variable can be used to override the default program used to view man pages.
+3
+linux
+END
+Which command cannot list the files in a directory?
+dirs
+ls
+tree
+echo
+The dirs command shows the list of remembered directories (stored by the pushd command), it cannot be used to list the files in a directory.
+3
+linux
+END
+Which command cannot send an email in GNU/Linux?
+groff
+telnet
+mailx
+mutt
+groff is a document formatting system (for example rendering man pages) and cannot be used to send emails. Yes you can send an email with telnet, though it won't be pretty.
+3
+linux
+END
+Which command can check if any given PID is running or not?
+kill
+netstat
+top
+lsof
+The top command shows only a subset of all processes, it might not include the PID you're looking for. You can use kill -0 PID to check any PID, but of course ps -p is the ideal choice.
+3
+linux
+END
+In C, given char **argv, what is equivalent to printf("%s\n", argv[0])
+printf("%s\n", *(argv + 0));
+printf("%s\n", &argv[0]);
+printf("%s\n", &argv);
+printf("%s\n", argv);
+argv + n is the address of the n-th element in the array. The * operator dereferences the pointer, obtaining the value stored at the pointed location.
+3
+programming
+END
+Which regular expression is a zero-width positive look-behind assertion?
+(?<=pattern)
+(?=pattern)
+(?!pattern)
+(?<!pattern)
+The symbol "<" usually indicates a look-behind assertion, and its absence a look-ahead assertion. The symbol "=" usually indicates a positive assertion, and the symbol "!" a negative assertion.
+3
+programming
+END
+Which language is not in the same group as LISP?
+C++
+R
+Scheme
+Scala
+LISP, R, Scheme, and Scala are all functional languages. C++ is an imperative language.
+3
+programming
+END
+Which language is not in the same group as C++?
+Haskell
+C
+Java
+MATLAB
+C++, C, Java, and MATLAB, are all imperative languages. Haskell is a functional language.
+3
+programming
+END
+What is the most likely to cause a stack overflow?
+Too deep recursion when using a recursive function
+Trying to access an array element by an index beyond the end of the array
+Trying to access an array element by a negative index
+The stack size limit is not set to unlimited in your system
+A common cause of a stack overflow is very deep or infinite recursion, exhausting the address space of the call stack. A common solution is to improve the algorithm to reduce the depth of recursions.
+3
+programming
+END
+What is wrong with static methods?
+Hard to test code that is calling static methods
+Hard to test static methods
+Static methods don't require an instance of the class
+Static methods scare the bejesus outta me
+Code calling static methods is hard to test because you cannot mock the static calls. Static methods in themselves are not hard to test. The other statements are true of static methods but don't constitute a "problem".
+3
+programming
+END
+What kind of regular expression is this: (?=pattern)
+Positive look-ahead assertion
+Negative look-ahead assertion
+Positive look-behind assertion
+Negative look-behind assertion
+This is a zero-width positive look-ahead assertion. For example /\w+(?=\t)/ matches a word followed by a TAB, without including the TAB in the matched string.
+3
+programming
+END
+In C/C++ what is the effect of the volatile keyword ?
+Tell the compiler to not optimize access to this variable
+Tell the compiler to load the variable in the low-memory zone for fast access
+Tell the compiler to reserve a register to store this variable all along
+Tell the compiler to make the variable access threadsafe with a lock
+The variable may change "on its own" (means an interrupt or another thread might change it) so don't optimize code and always read the value of this variable.
+3
+programming
+END
+How to redirect both stdout and stderr of a command to the same file?
+somecmd >file.out 2>&1
+somecmd >file.out 2>>&1
+somecmd 2>&1 >file.out
+somecmd 2>&1 >>file.out
+One way to achive this is to first redirect stdout and then redirect stderr to whatever stdout is pointing to.
+3
+scripting
+END
+What is the weakest point in the computer security of a typical large firm?
+The employees
+The firewall software
+The antivirus software
+The intranet software
+The typical weakest point is the employees, as social engineering and human gallibility can often circumvent otherwise state of the art computer security system.
+3
+security
+END
+Which is the most dangerous security probing tool?
+nmap
+ping
+ifconfig
+telnet
+nmap is a sophisticated port scanner, and can reveal much more about a network than all the other tools combined.
+3
+security
+END
+Which is the worst method for encrypting data?
+sha1
+des3
+aes-128-cbc
+crypt
+sha1 is not an encryption method but a message digest method.
+3
+security
+END
+Which tool is not suitable to encrypt files?
+nmap
+encfs
+openssl
+TrueCrypt
+encfs and TrueCrypt can be used to create encrypted directories, and openssl can be used to encrypt a stream of data. nmap is a network scanning tool, not for encryption.
+3
+security
+END
+Which tool is not suitable to find open ports on the local system?
+ping
+nmap
+telnet
+netstat
+ping can only send ICMP ECHO requests to hosts, it cannot be used to find open ports.
+3
+security
+END
+Which tool is not suitable to find open ports on a remote system?
+netstat
+nmap
+telnet
+curl
+Unlike the others, netstat cannot be used to scan arbitrary remote ports.
+3
+security
+END
+What's the worst thing that can happen if you configure nmap with suid root?
+It could be used for privilege escalation
+It could be used to completely jam a network with DOS attacks
+It could be used to delete all files in the system
+It could be used to unleash the kraken
+Privilege escalation could be used to create all the other damages. Except maybe releasing the kraken. Not sure.
+3
+security
+END
+What's the scariest defect that can happen in a web application?
+Buffer overflow
+Blue screen of death
+Denial of service
+NullPointerException
+A buffer overflow can potentially lead to privilege escalation, which could be used to produce all the others and much worse.
+3
+security
+END
+Which is not a programming language?
+CGI
+Bash
+R
+Python
+CGI stands for Common Gateway Interface, a standard for dynamic generation of web pages by a web server. It is not a programming language.
+3
+system-programming
+END
+Which is not a web server software?
+X server
+nginx
+Apache
+Lighttpd
+X server is the server counterpart of the X Window System in UNIX, and has nothing to do with web servers.
+3
+tools
+END
+Which is not a network analysis tool?
+screen
+nmap
+tcpdump
+wireshark
+tcpdump dumps traffic on a network; wireshark is a network traffic analyzer; nmap is a network security auditing tool; that leaves us with screen, which is a terminal multiplexer tool.
+3
+tools
+END
+What is the purpose of the -h flag of the ls command in UNIX?
+Print file sizes in human readable format
+Print short help message
+Print long help message
+Print hidden files
+When used together with the -l flag for long format, the -h makes the ls command print file sizes in human readable format like 1K, 234M, 2G.
+3
+tools
+END
+How to print the 2nd and 1st columns of a csv file, in that order?
+awk -v FS=, -v OFS=, '{print $2, $1}' file.csv
+cut -f2,1 -d, file.csv
+fmt -f2,1 -s, file.csv
+while read a b; do echo $b,$a; done < file.csv
+The awk solution works, by setting the input and output field separators to a comma, and printing the selected columns in the desired order.
+3
+tools
+END
+In version control, what is the term for merging another branch that is not diverged but some versions ahead of the current branch?
+fast-forward
+branching
+rebasing
+rock on!
+In this situation the current branch HEAD can be simply fast-forwarded to the same position as the other branch HEAD, hence the name.
+3
+version-control
+END
+In version control, which is the least scalable workflow?
+centralized workflow
+gatekeeper workflow
+automated gatekeeper workflow
+commander-lieutenant workflow
+The central server can become a bottleneck. The other workflows can be scaled by replicating them on multiple layers.
+3
+version-control
+END
+Which is a Distributed Version Control System?
+Mercurial
+Subversion
+ClearCase
+Visual SourceSafe
+These are all version control systems, but only Mercurial has a distributed model, the others use a client-server model.
+3
+version-control
+END
+What can be a disadvantage of a distributed VCS compared to a centralized VCS?
+The initial cloning is slower
+Users cannot commit revisions without a server
+Most operations are slower without a server
+Users cannot create forks without a server
+In a distributed VCS, initial cloning is typically slower, as the tool must download the entire project history. The other choices are disadvantages of centralized VCS.
+3
+version-control
+END
+In a version control system, which type of conflict can have an automatic resolution when merging branchA into branchB?
+The same file was edited in both BranchA and BranchB
+The same file was edited in BranchA but deleted in BranchB
+The same file was edited in BranchA but renamed in BranchB
+A file with the same name was added in both BranchA and BranchB
+If branchA and branchB edited completely different parts of the file, that should be possible to resolve automatically. The other types of conflict require an explicit decision and action by a human.
+3
+version-control
 END
 Which is not a common CGI environment variable?
 IOS_VERSION
@@ -2121,123 +2238,6 @@ Unspecified (no limit)
 The standard itself does not set a limit on the header size, but most implementations impose some limits for practical and security reasons.
 3
 web-programming
-END
-What is the command to open a remote desktop connection in Windows?
-mstsc
-remote-desktop
-msdesktop
-msterm
-It's mstsc.exe
-1
-windows
-END
-What is the keyboard shortcut to lock your PC on Windows?
-Windows + l
-Ctrl-Alt-Del
-Ctrl-Escape
-Windows + d
-It's Windows-l, for "lock"
-1
-windows
-END
-What is the keyboard shortcut to open the system properties in Windows?
-Windows + Pause/Break
-Windows + Home
-Windows + l
-Windows + m
-The Windows-Pause/Break combo opens the system properties window, useful to check basic system properties, edit environment variable, among others.
-1
-windows
-END
-What is the keyboard shortcut to open the task manager in Windows?
-Ctrl + Shift + Escape
-Ctrl + Escape
-Windows + l
-Windows + m
-Ctrl + Shift + Escape opens the task manager, useful to view memory usage and kill processes.
-1
-windows
-END
-What is the command to edit the registry in Windows systems?
-regedit
-regeditor
-registry-edit
-system
-It's regedit.exe
-1
-windows
-END
-What is the default filesystem when formatting a disk in Windows NT systems?
-NTFS
-FAT16
-FAT32
-DOS
-NTFS supersedes the FAT file system as the preferred file system for Microsoft Windows operating systems.
-1
-windows
-END
-How to check the IP address of a computer in Windows?
-ipconfig
-ifconfig
-/sbin/ifconfig
-netstat
-The ipconfig command shows the configuration of network interfaces in Windows, including the IP address, network mask, and others.
-1
-windows
-END
-In which version of Windows was PowerShell introduced?
-Windows 7
-Windows 8
-Windows XP
-Windows NT
-Windows PowerShell is Microsoft's task automation framework, consisting of a command-line shell and associated scripting language built on .NET Framework. PowerShell was introduced in Windows 7 as an integral part of the system.
-1
-windows
-END
-How to delete a directory recursively in Windows?
-rmdir /s/q
-rm -fr
-del /r
-format
-rmdir /s/q deletes the specified directory and all subdirectories. It is the equivalent of rm -fr in UNIX.
-2
-windows
-END
-In Windows, how can you know what time the machine was started?
-net statistics server
-uptime
-services.msc
-bsod.exe
-The net statistics server command prints various interesting statistics about the running system, including the time it was started, similar to the uptime utility in UNIX.
-2
-windows
-END
-How to map a network share to a drive letter in Windows?
-net use z: \\server\folder
-map z: \\server\folder
-xcopy \\server\folder z:
-map \\server\folder z:
-You can map a network share to a drive letter with net use. The first parameter is the drive letter followed by a colon, the second parameter is the path to the network share.
-2
-windows
-END
-Which is not a standard environment variable in Windows?
-%pwd%
-%cd%
-%date%
-%time%
-%cd% is the current working directory, %date% is the current date, %time% is the current time. %pwd% is not a standard environment variable in Windows.
-2
-windows
-END
-What is the main function of the Domain Controller on a Microsoft Server?
-handle authentication requests
-domain name server
-host user home directories
-host Microsoft Exchange
-The main function of the Domain Controller is to handle user authentication requests.
-2
-windows
 END
 Which was the first version of Microsoft Windows that enforced preemptive multitasking?
 Windows NT
