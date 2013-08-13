@@ -1,3 +1,12 @@
+What is the slowest sort algorithm?
+bubble sort
+quicksort
+heap sort
+merge sort
+The worst-case and average complexity of bubble sort is О(n^2), in contrast with O(n log n) of the other methods.
+1
+algorithms
+END
 Which denotes the fastest time complexity?
 O(1)
 O(n)
@@ -13,6 +22,24 @@ O(1)
 O(n)
 O(n log n)
 O(n^2) indicates quadratic time complexity, for example an algorithm that requires all input elements to be compared to all other input elements.
+1
+algorithms
+END
+What is the term for source code that has a complex and tangled control structure?
+spaghetti code
+ravioli code
+lasagna code
+peperoncino code
+It is named such because program flow is conceptually like a bowl of spaghetti, i.e. twisted and tangled.
+1
+algorithms
+END
+Which control flow operations might you use to process each line of a file?
+repeat; until
+if; then; else
+begin; end
+case; end
+You probably want to repeatedly read a line until the end of the file is reached.
 1
 algorithms
 END
@@ -439,21 +466,30 @@ $? stores the exit code of the last executed command. $$ is the PID of the curre
 1
 scripting
 END
-How to save the output of a command to a file and see it at the same time?
-somecmd | tee somefile.txt
-somecmd >> somefile.txt
-somecmd | ttt somefile.txt
-somecmd >> tee somefile.txt
-The tee command takes standard input, save it to the specified file and at the same time prints it back to standard output.
-1
-scripting
-END
 How to redirect the output of a script to /dev/null in Windows?
 script.bat >nul
 script.bat >null
 script.bat >/dev/null
 script.bat >0
 The Null Device Driver component provides the functional equivalent of \dev\null in the Unix environment by accepting I/O request packets and returning them to the caller.
+1
+scripting
+END
+How to run script2.sh only if script1.sh is successful?
+script1.sh && script2.sh
+script1.sh || script2.sh
+script1.sh & script2.sh
+script1.sh | script2.sh
+The effect of the && operator is that the second command will only run if the first command is successful.
+1
+scripting
+END
+How to count the log files in a directory?
+ls *.log | wc -l
+ls log > wc -l
+ls *.log | wc -c
+ls log | sort | uniq | wc -c
+The wc command can count lines, bytes and characters. In this case we are interested in lines, the -l flag is for that.
 1
 scripting
 END
@@ -1366,6 +1402,15 @@ A binary protocol yields the smallest possible footprint in the communication, w
 2
 programming
 END
+How to save the output of a command to a file and see it at the same time?
+somecmd | tee somefile.txt
+somecmd >> somefile.txt
+somecmd | ttt somefile.txt
+somecmd >> tee somefile.txt
+The tee command takes standard input, save it to the specified file and at the same time prints it back to standard output.
+2
+scripting
+END
 How to convert all characters in a file to lowercase?
 tr A-Z a-z < input.txt > output.txt
 tr A-Z a-z input.txt output.txt
@@ -1426,6 +1471,15 @@ one
 3 lines: hello, one, two
 hello
 The grep will not match anything, which is a failure, therefore echo two will be executed.
+2
+scripting
+END
+How to redirect both stdout and stderr of a command to the same file?
+somecmd >file.out 2>&1
+somecmd >file.out 2>>&1
+somecmd 2>&1 >file.out
+somecmd 2>&1 >>file.out
+One way to achive this is to first redirect stdout and then redirect stderr to whatever stdout is pointing to.
 2
 scripting
 END
@@ -1987,15 +2041,6 @@ The variable may change "on its own" (means an interrupt or another thread might
 3
 programming
 END
-How to redirect both stdout and stderr of a command to the same file?
-somecmd >file.out 2>&1
-somecmd >file.out 2>>&1
-somecmd 2>&1 >file.out
-somecmd 2>&1 >>file.out
-One way to achive this is to first redirect stdout and then redirect stderr to whatever stdout is pointing to.
-3
-scripting
-END
 What is the weakest point in the computer security of a typical large firm?
 The employees
 The firewall software
@@ -2158,12 +2203,12 @@ In a distributed VCS, initial cloning is typically slower, as the tool must down
 3
 version-control
 END
-In a version control system, which type of conflict can have an automatic resolution when merging branchA into branchB?
+When merging branchA into branchB, which conflict may have an automatic resolution?
 The same file was edited in both BranchA and BranchB
 The same file was edited in BranchA but deleted in BranchB
 The same file was edited in BranchA but renamed in BranchB
 A file with the same name was added in both BranchA and BranchB
-If branchA and branchB edited completely different parts of the file, that should be possible to resolve automatically. The other types of conflict require an explicit decision and action by a human.
+An automatic resolution may be possible if the two branches edited different parts of the file. The other types of conflicts can only be resolved manually by a human.
 3
 version-control
 END
