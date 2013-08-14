@@ -1,0 +1,17 @@
+hardware
+history
+network
+programming (easy)
+scripting (easy)
+security
+permissions
+os
+windows
+linux
+distros: ubuntu centos
+mac
+database: mysql
+backup
+virtualization
+server-software: apache2 nginx ssh active directory dns php
+unix-tools: perl, awk, sed, cut, uniq, sort, count
