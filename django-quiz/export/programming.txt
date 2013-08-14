@@ -826,15 +826,6 @@ When opening an email attachment
 1
 web-programming
 END
-Where exactly is the HTTP 404 File not found error generated?
-The web server
-The client browser
-The client operating system
-The router between client and server
-When the requested URL doesn't exist, the web server responds with 404 status code to the client.
-2
-web-programming
-END
 Which file is used to prevent web crawlers from accessing parts of a website?
 robots.txt
 robots.config
@@ -1327,6 +1318,15 @@ Which signal cannot be trapped?
 6 (ABRT)
 15 (TERM)
 The KILL signal is non-catchable, non-ignorable, immediately kills a process without possibility of cleaning up.
+2
+linux
+END
+How to run a command every 4th hour on weekdays using cron?
+0 */4 * * 1-5 date
+* */4 * * 1-5 date
+0 */4 * * * date
+*/4 0 * * 1-5 date
+The 2nd field is minutes, it should be a concrete number to make the job hourly. The 2nd field is the hour, */n means every n-th hour. The 5th field the day of the week, 0 or 7 is Sunday.
 2
 linux
 END
@@ -1851,6 +1851,15 @@ Visual SourceSafe
 These are all version control systems, but only Mercurial has a distributed model, the others use a client-server model.
 2
 version-control
+END
+Where exactly is the HTTP 404 File not found error generated?
+The web server
+The client browser
+The client operating system
+The router between client and server
+When the requested URL doesn't exist, the web server responds with 404 status code to the client.
+2
+web-programming
 END
 In web programming, what is the QUERY_STRING?
 The part of the URL after the "?" mark
@@ -2400,13 +2409,4 @@ Windows 98
 Windows NT was the first version of Microsoft Windows which enforced preemptive multitasking. Earlier versions used cooperative multitasking.
 3
 windows
-END
-How to run a command every 4th hour on weekdays using cron?
-0 */4 * * 1-5 date
-* */4 * * 1-5 date
-0 */4 * * * date
-*/4 0 * * 1-5 date
-The 2nd field is minutes, it should be a concrete number to make the job hourly. The 2nd field is the hour, */n means every n-th hour. The 5th field the day of the week, 0 or 7 is Sunday.
-2
-linux
 END
