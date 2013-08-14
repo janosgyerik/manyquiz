@@ -1042,6 +1042,42 @@ The "^" indicates the beginning of the line, and the "$" indicates the end of th
 2
 regex
 END
+How to view lines of a file that don't contain the text "DEBUG"?
+grep -v DEBUG file.log | less
+grep ^DEBUG file.log | less
+grep -x DEBUG file.log | less
+grep -e DEBUG file.log | less
+The basic function of the grep command is to show matching lines. The -v flag inverts this behavior to show lines that don't match.
+2
+regex
+END
+Which regular expression will convert a text to all uppercase letters?
+s/./\U$&/g
+s/./\U$&/
+/./\U$&/
+s/./\U$&/i
+"." matches any character; \U indicates conversion to uppercase; $& is the pattern that was matched; the "g" flag at the end makes this a global pattern, executing for all characters in the input.
+2
+regex
+END
+Which regular expression will match User@example.com?
+/[a-z]+@[a-z]+\.[a-z]+/i
+/[A-Za-z]@[a-z]+\.[a-z]+/
+/[a-z]+@[a-z]+\\.[a-z]+/i
+/[a-z]+@[a-z]{4,}\.[a-z]{4,}/i
+Sequence of alphabetic letters followed by @, followed by sequence of alphabetic letters, followed by a dot, followed by sequence of alphabetic letters, with case insensitive matching.
+2
+regex
+END
+How to list the .sh files included in a tar archive?
+tar tf archive.tar | grep '\.sh$'
+tar tf archive.tar | grep '*.sh$'
+tar tf archive.tar | grep '\.sh'
+tar tf archive.tar | grep \.sh$
+"$" marks the end of a line, "." must be escaped using "\", otherwise it would match any character. The expression must be eclosed within quotes or the "\" must be escaped with another "\".
+2
+regex
+END
 How to save the output of a command to a file and see it at the same time?
 somecmd | tee somefile.txt
 somecmd >> somefile.txt
@@ -1284,4 +1320,40 @@ host Microsoft Exchange
 The main function of the Domain Controller is to handle user authentication requests.
 2
 windows
+END
+How to create an archive with only the .sh files?
+find . -name '*.sh' | tar cvf archive.tar -T-
+find . -name '*.sh' | tar cxf archive.tar -T-
+find . -name '*.sh' | tar cvf -T- archive.tar
+find . -name '*.sh' | tar cvf archive.tar
+"c" is to create an archive, "f" followed by a filename is the target file, "-T" is to specify a file that contains the list of filenames, "-" indicates standard input.
+2
+backup
+END
+Which filtering compression tool is the most efficient?
+lzma
+lzop
+gzip
+bzip2
+The tools in increasing order of efficiency: lzop gzip bzip2 lzma.
+2
+backup
+END
+How to check if a zipped tar archive contains a specific script?
+tar ztf archive.tgz | grep 'script\.sh$'
+tar zxf archive.tgz | grep 'script\.sh$'
+tar jtf archive.tgz | grep 'script\.sh$'
+gzip -cd archive.tgz | grep 'script\.sh$'
+The "t" flag is to list the contents, "z" indicates the archive is compressed with gzip, "f" followed by a filename is to specify the archive.
+2
+backup
+END
+How to backup a directory to a remote server without saving a temporary file locally?
+tar zc -C /source . | ssh user@server cat > archive.tar.gz
+tar zc -C /source | ssh user@server cat > archive.tar.gz
+tar zc -C /source . | ssh user@server > archive.tar.gz
+tar zc -C /source . | ssh user@server sh > archive.tar.gz
+The tar command creates a zipped archive on standard output from the contents of /source, without including the /source prefix. The output of tar is sent over to the server and redirected to a file.
+2
+backup
 END
