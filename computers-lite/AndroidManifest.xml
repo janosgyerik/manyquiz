@@ -12,21 +12,16 @@
             android:name="com.manyquiz.application.LiteQuizApplication"
             android:allowBackup="false"
             android:icon="@drawable/launcher_main"
-            android:label="@string/app_name"
+            android:label="@string/app_name_lite"
             android:theme="@style/Theme.Light.NoTitleBar">
-        <activity
-                android:name="com.manyquiz.activity.IntroActivity"
-                android:label="@string/app_name_lite">
+        <activity android:name="com.manyquiz.activity.IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-                android:name="com.manyquiz.activity.QuizActivity"
-                android:label="@string/label_quiz_activity">
-        </activity>
+        <activity android:name="com.manyquiz.activity.QuizActivity" />
         <activity
                 android:name="com.manyquiz.activity.ContactActivity"
                 android:label="@string/label_contact_activity"

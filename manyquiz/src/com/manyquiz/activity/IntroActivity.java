@@ -16,6 +16,8 @@ import com.manyquiz.R;
 import com.manyquiz.db.QuizSQLiteOpenHelper;
 import com.manyquiz.quiz.impl.Level;
 
+import java.util.List;
+
 public class IntroActivity extends QuizBaseActivity {
 
     private static final String TAG = IntroActivity.class.getSimpleName();
@@ -41,7 +43,8 @@ public class IntroActivity extends QuizBaseActivity {
 
         levelChoices = (RadioGroup) findViewById(R.id.level_choices);
         RadioButton first = null;
-        for (Level level : helper.getLevels()) {
+        List<Level> levels = helper.getLevels();
+        for (Level level : levels) {
             RadioButton levelOption = new RadioButton(this);
             levelOption.setText(level.getName());
             levelOption.setTag(level);
@@ -51,7 +54,13 @@ public class IntroActivity extends QuizBaseActivity {
             levelChoices.addView(levelOption);
         }
         if (first != null) {
+            // this may seem strange,
+            // but we have to check the choice after adding all choices
             levelChoices.check(first.getId());
+        }
+        if (levels.size() < 2) {
+            levelChoices.setVisibility(View.GONE);
+            findViewById(R.id.msg_select_level).setVisibility(View.GONE);
         }
 
         modeChoices = (RadioGroup) findViewById(R.id.mode_choices);
