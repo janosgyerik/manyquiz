@@ -241,6 +241,33 @@ SSD has the highest theoretical and practical transfer rate among these choices.
 1
 hardware
 END
+Which RAID level is called mirroring?
+RAID 1
+RAID 0
+RAID 5
+RAID 6
+In RAID 1 (mirroring without parity or striping), data is written identically to two drives, thereby producing a "mirrored set".
+1
+hardware
+END
+Which RAID level is called striping?
+RAID 0
+RAID 1
+RAID 5
+RAID 6
+RAID 0 provides improved performance by using multiple disks in parallel, called block-level striping. It has no fault tolerance, any drive failure destroys the array.
+1
+hardware
+END
+How many disks would you put in a RAID 0 if you want to minimize the likelihood of failure?
+2
+3
+4
+5
+Any drive failure destroys the array, and the likelihood of failure increases with more drives in the array.
+1
+hardware
+END
 Who said that the number of transistors in a chip will double every 18 months?
 Moore
 Von Neuman
@@ -1138,6 +1165,15 @@ RAID 0
 RAID 3
 RAID 5
 With RAID 1, n-1 disks can fail without losing data. With RAID 3 and RAID 5 only one disk can fail. RAID 0 provides no fault tolerance at all.
+2
+hardware
+END
+What is RAID 5?
+Block-level striping with distributed parity
+Block-level striping with dedicated parity
+Byte-level striping with dedicated parity
+Bit-level striping with dedicated Hamming-code parity
+RAID 5 distributes parity along with the data and requires that all drives but one be present to operate. The array is not destroyed by a single drive failure.
 2
 hardware
 END
