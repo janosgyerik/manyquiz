@@ -1,20 +1,17 @@
 backup
 database
-database-mysql
 hardware
 history
 linux
-linux-centos
-linux-ubuntu
 mac
 network
 os
+regex
 permissions
 programming
 scripting
 security
 software: apache2 nginx ssh active directory dns php
-system-programming
 tools: perl, awk, sed, cut, uniq, sort, count
 virtualization
 windows
