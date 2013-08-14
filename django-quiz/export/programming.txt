@@ -394,7 +394,7 @@ The X stands for the roman letter, meaning 10. Its predecessor was Mac OS 9.
 1
 mac
 END
-In Mac OS X, what is to command that opens any file as if double-clicked in Finder?
+In Mac OS X, what is to command to open any file as if double-clicked in Finder?
 open
 view
 run
@@ -832,7 +832,7 @@ The client browser
 The client operating system
 The router between client and server
 When the requested URL doesn't exist, the web server responds with 404 status code to the client.
-1
+2
 web-programming
 END
 Which file is used to prevent web crawlers from accessing parts of a website?
@@ -907,7 +907,7 @@ Ctrl + Shift + Escape opens the task manager, useful to view memory usage and ki
 1
 windows
 END
-What is the command to edit the registry in Windows systems?
+What is the command to edit the registry in Windows?
 regedit
 regeditor
 registry-edit
@@ -1681,7 +1681,7 @@ Only the owner of the file should have any kind of access.
 2
 security
 END
-Which open port signals a potential security risk in a UNIX-like system?
+Which open port is a potential security risk in a UNIX-like system?
 23
 22
 443
@@ -2400,4 +2400,13 @@ Windows 98
 Windows NT was the first version of Microsoft Windows which enforced preemptive multitasking. Earlier versions used cooperative multitasking.
 3
 windows
+END
+How to run a command every 4th hour on weekdays using cron?
+0 */4 * * 1-5 date
+* */4 * * 1-5 date
+0 */4 * * * date
+*/4 0 * * 1-5 date
+The 2nd field is minutes, it should be a concrete number to make the job hourly. The 2nd field is the hour, */n means every n-th hour. The 5th field the day of the week, 0 or 7 is Sunday.
+2
+linux
 END
