@@ -1,17 +1,20 @@
+backup
+database
+database-mysql
 hardware
 history
-network
-programming (easy)
-scripting (easy)
-security
-permissions
-os
-windows
 linux
-distros: ubuntu centos
+linux-centos
+linux-ubuntu
 mac
-database: mysql
-backup
+network
+os
+permissions
+programming
+scripting
+security
+software: apache2 nginx ssh active directory dns php
+system-programming
+tools: perl, awk, sed, cut, uniq, sort, count
 virtualization
-server-software: apache2 nginx ssh active directory dns php
-unix-tools: perl, awk, sed, cut, uniq, sort, count
+windows

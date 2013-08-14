@@ -5,7 +5,7 @@ config.ini
 build.xml
 The default configuration file used by make is called Makefile.
 1
-x-build-automation
+build-automation
 END
 Which is not a build automation tool?
 g++
@@ -14,7 +14,7 @@ ant
 maven
 make, ant and maven are build automation tools, g++ is a C/C++ compiler.
 1
-x-build-automation
+build-automation
 END
 What kind of data structure is a FIFO?
 queue
@@ -23,7 +23,7 @@ list
 stack
 FIFO stands for First In, First Out. Like in a queue where you line up to get movie tickets.
 1
-x-data-structures
+data-structures
 END
 What kind of data structure is a LIFO?
 stack
@@ -32,7 +32,7 @@ array
 list
 LIFO stands for Last In, First Out. A LIFO structure can be illustrated with the example of a stack of trays. The last tray to be placed on top is also the first to be taken off the top.
 1
-x-data-structures
+data-structures
 END
 Which data structure is suitable to implement a cache?
 map
@@ -41,7 +41,7 @@ list
 tuple
 A hash table is a structure that can map keys to values. They can access values directly by their keys and retrieve them quickly.
 1
-x-data-structures
+data-structures
 END
 How to count the number of sheep in the farm table?
 SELECT count(*) FROM farm;
@@ -518,7 +518,7 @@ get
 download
 The command to get the source code is usually either "checkout" or "clone".
 1
-x-version-control
+version-control
 END
 How to save changes in a Version Control System?
 commit
@@ -527,7 +527,7 @@ save
 upload
 The command to save changes is usually either "commit" or "checkin".
 1
-x-version-control
+version-control
 END
 What is the command to view pending changes in a Version Control System?
 status
@@ -536,7 +536,7 @@ summary
 view
 The command to view pending changes is usually "status". Very often the shortcut "st" works too.
 1
-x-version-control
+version-control
 END
 When might you see this: 404 - File not found
 When visiting a URL that does not exist
@@ -545,16 +545,7 @@ When running a command that does not exist
 When opening an email attachment
 404 is an HTTP status code, returned by the web server when the requested URL is unknown to the server.
 1
-x-web-programming
-END
-Where exactly is the HTTP 404 File not found error generated?
-The web server
-The client browser
-The client operating system
-The router between client and server
-When the requested URL doesn't exist, the web server responds with 404 status code to the client.
-2
-x-web-programming
+web-programming
 END
 Which file is used to prevent web crawlers from accessing parts of a website?
 robots.txt
@@ -563,7 +554,7 @@ deny.conf
 hosts.allow
 Most search engines check if a robots.txt file exists in a website's root directory and respect the exclusion rules defined within.
 1
-x-web-programming
+web-programming
 END
 What is the standard port number used by web servers?
 80
@@ -572,7 +563,7 @@ What is the standard port number used by web servers?
 8888
 The standard port number of the HTTP protocol is 80.
 1
-x-web-programming
+web-programming
 END
 What is the standard port number used by secure web servers (HTTPS)?
 443
@@ -581,7 +572,7 @@ What is the standard port number used by secure web servers (HTTPS)?
 22
 The standard port number of the HTTPS protocol is 443.
 1
-x-web-programming
+web-programming
 END
 Which file is used as a web site's bookmark icon in browsers?
 favicon.ico
@@ -590,7 +581,7 @@ favicon.bmp
 bookmark.png
 In the past browsers used the favicon.ico file in the webserver root as the website's icon in bookmarks. In modern browsers the name and location of the file can be customized using a <link> tag.
 1
-x-web-programming
+web-programming
 END
 What is the command to open a remote desktop connection in Windows?
 mstsc
@@ -671,7 +662,7 @@ make clean
 make universe
 "make" without any arguments runs the default build task, which is typically building the entire software. This step is usually after the configuration step. After this the software can be installed with "make install".
 2
-x-build-automation
+build-automation
 END
 How to specify that taskA depends on taskB in a Makefile?
 taskA: taskB
@@ -680,7 +671,7 @@ taskA -> taskB
 taskB <- taskA
 The correct syntax is taskA: taskB, meaning taskB will be executed first (if needed) before performing taskA.
 2
-x-build-automation
+build-automation
 END
 How to find employees with DepartmentID set to NULL?
 SELECT * FROM Employee WHERE DepartmentID IS NULL;
@@ -1130,7 +1121,7 @@ Network file transfer
 Native folklore
 Endian and endianness in the most common cases refers to how bytes are ordered.
 2
-x-system-programming
+system-programming
 END
 What is 0x15 + 0x17?
 44
@@ -1139,7 +1130,7 @@ What is 0x15 + 0x17?
 30
 0x15 is 16 + 5 = 21 and 0x17 is 16 + 7 = 23, so 21 + 23 = 44
 2
-x-system-programming
+system-programming
 END
 What is 0x15 & 0x17?
 21
@@ -1148,7 +1139,7 @@ What is 0x15 & 0x17?
 28
 0x15 is 10101 and 0x17 is 10111, so 10101 & 10111 = 10101 = 21
 2
-x-system-programming
+system-programming
 END
 Which compression tool cannot work as a filter?
 7zip
@@ -1204,6 +1195,15 @@ ab is the Apache HTTP server benchmarking tool, but it is useful to perform load
 2
 tools
 END
+Where exactly is the HTTP 404 File not found error generated?
+The web server
+The client browser
+The client operating system
+The router between client and server
+When the requested URL doesn't exist, the web server responds with 404 status code to the client.
+2
+web-programming
+END
 What is the status code of a successful HTTP request?
 200
 100
@@ -1211,7 +1211,7 @@ What is the status code of a successful HTTP request?
 1
 "200 OK" is the standard response for successful HTTP requests.
 2
-x-web-programming
+web-programming
 END
 In web programming, where are cookies stored?
 On the client
@@ -1220,7 +1220,7 @@ On the top shelf
 On a cookie server
 Cookies are stored on the client side and sent to the server until expired
 2
-x-web-programming
+web-programming
 END
 What marks the end of an HTTP header?
 empty line
@@ -1229,7 +1229,7 @@ Content-type: text/html
 </head>
 The end of the header fields is indicated by an empty field, resulting in the transmission of two consecutive CR-LF pairs.
 2
-x-web-programming
+web-programming
 END
 What is the difference between the GET and HEAD methods of the HTTP protocol?
 HEAD doesn't include a response body
@@ -1238,7 +1238,7 @@ GET returns a response without a header
 GET can support SSL
 The response of a HEAD requests is a header identical to that of a GET request, but without a response body.
 2
-x-web-programming
+web-programming
 END
 How to delete a directory recursively in Windows?
 rmdir /s/q
