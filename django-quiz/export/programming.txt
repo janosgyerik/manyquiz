@@ -1177,6 +1177,15 @@ RAID 5 distributes parity along with the data and requires that all drives but o
 2
 hardware
 END
+How many disks can fail in a RAID 5 array without risk of data loss?
+1
+0
+2
+3
+RAID 5 distributes parity along with the data and requires that all drives but one be present to operate. The array is not destroyed by a single drive failure. On drive failure, any subsequent reads can be calculated from the distributed parity such that the drive failure is masked from the end user.
+2
+hardware
+END
 Who invented semaphores in concurrent programs?
 Dijkstra
 Traffic Man
@@ -1273,6 +1282,51 @@ Username
 Shell
 Home directory
 The password is usually stored in /etc/shadow, with more strict access permissions.
+2
+linux
+END
+Which command is used to configure a firewall in GNU/Linux?
+iptables
+ipconfig
+ifconfig
+netstat
+iptables is an administration tool for IPv4 packet filtering and NAT, a common firewall software in GNU/Linux.
+2
+linux
+END
+Which environment variable is usually not a path?
+LOGNAME
+PWD
+HOME
+SHELL
+LOGNAME is usually the username of the current user, not a path.
+2
+linux
+END
+In GNU/Linux, which runlevel is a multi-user runlevel?
+2
+S
+1
+6
+Runlevels 2 to 5 are multi-user runlevels.
+2
+linux
+END
+In GNU/Linux, what is the name of the process with PID 1?
+init
+kernel
+root
+launchd
+In GNU/Linux the "init" process is the parent of all processes, it gets the first PID which is 1.
+2
+linux
+END
+Which signal cannot be trapped?
+9 (KILL)
+3 (QUIT)
+6 (ABRT)
+15 (TERM)
+The KILL signal is non-catchable, non-ignorable, immediately kills a process without possibility of cleaning up.
 2
 linux
 END
@@ -1789,6 +1843,15 @@ In a centralized VCS all operations that involve the history need to access the 
 2
 version-control
 END
+Which is a Distributed Version Control System?
+Mercurial
+Subversion
+ClearCase
+Visual SourceSafe
+These are all version control systems, but only Mercurial has a distributed model, the others use a client-server model.
+2
+version-control
+END
 In web programming, what is the QUERY_STRING?
 The part of the URL after the "?" mark
 The part of the URL after the "#" mark
@@ -1840,6 +1903,33 @@ empty line
 Content-type: text/html
 </head>
 The end of the header fields is indicated by an empty field, resulting in the transmission of two consecutive CR-LF pairs.
+2
+web-programming
+END
+Which is not a common CGI environment variable?
+IOS_VERSION
+HTTP_REFERER
+HTTP_USER_AGENT
+DOCUMENT_ROOT
+HTTP_USER_AGENT is the browser type of the visitor, HTTP_REFERER is the URL of the page that called the current one, and DOCUMENT_ROOT is the root directory of the server.
+2
+web-programming
+END
+Which is a common CGI environment variable?
+REMOTE_ADDR
+IS_MOBILE_PHONE
+ORANGE_WHO
+ANDROID_VERSION
+REMOTE_ADDR is the IP address of the visitor.
+2
+web-programming
+END
+What is the difference between the GET and HEAD methods of the HTTP protocol?
+HEAD doesn't include a response body
+HEAD returns only the <head> tag of HTML
+GET returns a response without a header
+GET can support SSL
+The response of a HEAD requests is a header identical to that of a GET request, but without a response body.
 2
 web-programming
 END
@@ -1951,15 +2041,6 @@ The function to get the current date in Sybase is GETDATE().
 3
 database
 END
-How many disks can fail in a RAID 5 array without risk of data loss?
-1
-0
-2
-3
-RAID 5 distributes parity along with the data and requires that all drives but one be present to operate. The array is not destroyed by a single drive failure. On drive failure, any subsequent reads can be calculated from the distributed parity such that the drive failure is masked from the end user.
-3
-hardware
-END
 In which column of /etc/fstab might you see /proc?
 2nd
 1st
@@ -1987,57 +2068,12 @@ The "c" specifies that we want to create an archive, the "f" followed by a filen
 3
 linux
 END
-Which command is used to configure a firewall?
-iptables
-ipconfig
-ifconfig
-netstat
-iptables is an administration tool for IPv4 packet filtering and NAT, a common firewall software in GNU/Linux.
-3
-linux
-END
-Which environment variable is usually not a path?
-LOGNAME
-PWD
-HOME
-SHELL
-LOGNAME is usually the username of the current user, not a path.
-3
-linux
-END
 Which file controls the number of available virtual terminals in GNU/Linux?
 /etc/inittab
 /etc/virsli
 /etc/fstab
 /etc/mtab
 The virtual terminals are configured in the /etc/inittab file.
-3
-linux
-END
-In GNU/Linux, which runlevel is a multi-user runlevel?
-2
-S
-1
-6
-Runlevels 2 to 5 are multi-user runlevels.
-3
-linux
-END
-In GNU/Linux, what is the name of the process with PID 1?
-init
-kernel
-root
-launchd
-In GNU/Linux the "init" process is the parent of all processes, it gets the first PID which is 1.
-3
-linux
-END
-Which signal cannot be trapped?
-9 (KILL)
-3 (QUIT)
-6 (ABRT)
-15 (TERM)
-The KILL signal is non-catchable, non-ignorable, immediately kills a process without possibility of cleaning up.
 3
 linux
 END
@@ -2059,7 +2095,7 @@ The dirs command shows the list of remembered directories (stored by the pushd c
 3
 linux
 END
-Which command cannot send an email in GNU/Linux?
+Which command cannot send emails in GNU/Linux?
 groff
 telnet
 mailx
@@ -2073,7 +2109,7 @@ kill
 netstat
 top
 lsof
-The top command shows only a subset of all processes, it might not include the PID you're looking for. You can use kill -0 PID to check any PID, but of course ps -p is the ideal choice.
+You can use kill -0 PID to check if a PID is running. The top command shows only a subset of all processes and it might not include the PID you're looking for. But of course ps -p is the ideal choice, better than kill -0.
 3
 linux
 END
@@ -2126,7 +2162,7 @@ What is wrong with static methods?
 Hard to test code that is calling static methods
 Hard to test static methods
 Static methods don't require an instance of the class
-Static methods scare the bejesus outta me
+Everything
 Code calling static methods is hard to test because you cannot mock the static calls. Static methods in themselves are not hard to test. The other statements are true of static methods but don't constitute a "problem".
 3
 programming
@@ -2167,12 +2203,12 @@ nmap is a sophisticated port scanner, and can reveal much more about a network t
 3
 security
 END
-Which is the worst method for encrypting data?
+Which cryptographic method is fundamentally different from the others?
 sha1
 des3
 aes-128-cbc
 crypt
-sha1 is not an encryption method but a message digest method.
+sha1 is a digest method, the others are encryption methods.
 3
 security
 END
@@ -2293,15 +2329,6 @@ The central server can become a bottleneck. The other workflows can be scaled by
 3
 version-control
 END
-Which is a Distributed Version Control System?
-Mercurial
-Subversion
-ClearCase
-Visual SourceSafe
-These are all version control systems, but only Mercurial has a distributed model, the others use a client-server model.
-3
-version-control
-END
 What can be a disadvantage of a distributed VCS compared to a centralized VCS?
 The initial cloning is slower
 Users cannot commit revisions without a server
@@ -2320,39 +2347,12 @@ An automatic resolution may be possible if the two branches edited different par
 3
 version-control
 END
-Which is not a common CGI environment variable?
-IOS_VERSION
-HTTP_REFERER
-HTTP_USER_AGENT
-DOCUMENT_ROOT
-HTTP_USER_AGENT is the browser type of the visitor, HTTP_REFERER is the URL of the page that called the current one, and DOCUMENT_ROOT is the root directory of the server.
-3
-web-programming
-END
-Which is a common CGI environment variable?
-REMOTE_ADDR
-IS_MOBILE_PHONE
-ORANGE_WHO
-ANDROID_VERSION
-REMOTE_ADDR is the IP address of the visitor.
-3
-web-programming
-END
 Which HTTP method was not part of the HTTP/1.0 specification?
 OPTIONS
 GET
 POST
 HEAD
 The OPTIONS method was added in the HTTP/1.1 specification.
-3
-web-programming
-END
-What is the difference between the GET and HEAD methods of the HTTP protocol?
-HEAD doesn't include a response body
-HEAD returns only the <head> tag of HTML
-GET returns a response without a header
-GET can support SSL
-The response of a HEAD requests is a header identical to that of a GET request, but without a response body.
 3
 web-programming
 END
