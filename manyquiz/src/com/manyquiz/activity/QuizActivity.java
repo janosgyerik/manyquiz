@@ -29,7 +29,7 @@ import com.manyquiz.quiz.model.IQuizFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuizActivity extends QuizBaseActivity {
+public class QuizActivity extends QuizActivityBase {
 
     private static final String TAG = QuizActivity.class.getSimpleName();
 

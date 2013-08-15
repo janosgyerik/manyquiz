@@ -18,7 +18,7 @@ import com.manyquiz.quiz.impl.Level;
 
 import java.util.List;
 
-public class IntroActivity extends QuizBaseActivity {
+public class IntroActivity extends QuizActivityBase {
 
     private static final String TAG = IntroActivity.class.getSimpleName();
 
