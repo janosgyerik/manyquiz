@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -289,6 +290,13 @@ public class QuizActivity extends QuizActivityBase {
             String key = getString(R.string.key_max_questions_normal);
             return Integer.parseInt(settings.getString(key, null));
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.quiz, menu);
+        return true;
     }
 
     protected QuizSQLiteOpenHelper getHelper() {
