@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_about"
+        android:icon="@drawable/ic_menu_info_details"
+        android:title="@string/menu_about"
+        android:visible="false"/>
+    <item
+        android:id="@+id/menu_contact"
+        android:icon="@drawable/ic_menu_start_conversation"
+        android:title="@string/menu_contact"
+        android:visible="true"/>
+
+</menu>

@@ -122,7 +122,8 @@ public class IntroActivity extends QuizActivityBase {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.common, menu);
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.intro, menu);
         return true;
     }
 
