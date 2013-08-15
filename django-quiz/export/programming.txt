@@ -144,10 +144,10 @@ data-structures
 END
 How to count the number of sheep in the farm table?
 SELECT count(*) FROM farm;
-SELECT count sheep FROM farm;
-SELECT count(sheep) FROM farm;
+SELECT count FROM farm;
 SELECT sheep FROM farm;
-The SQL syntax for counting records in some table is SELECT count(*) FROM table_name;
+SELECT * FROM farm;
+The SQL syntax for counting records in a table is SELECT count(*) FROM table_name;
 1
 database
 END
@@ -171,9 +171,9 @@ database
 END
 How to find all employees whose name is "Smith"?
 SELECT * FROM Employees WHERE Name = 'Smith';
-SELECT * FROM Employees WHERE Name IS 'Sales';
-SELECT * FROM Employees WHERE Name = "Sales";
-SELECT * FROM Employees WHERE Name == 'Sales';
+SELECT * FROM Employees WHERE Name IS 'Smith';
+SELECT * FROM Employees WHO IS "Smith";
+SELECT * FROM Employees WHERE Name == 'Smith';
 Strings must be enclosed within single quotes, and the operator to check for equality is "==".
 1
 database
@@ -333,7 +333,7 @@ linux
 END
 How to check the available disk space in GNU/Linux?
 df -h
-du -sm /*
+du -sm
 diskusage
 free
 The letters of the command stand for "disk free", and the "-h" makes the output more "human-friendly".
@@ -349,7 +349,7 @@ Ctrl-z pauses execution of the current job, and the bg program puts the paused j
 1
 linux
 END
-Which command uses input redirection?
+Which is an example of input redirection?
 sort < data.txt
 cat data.txt | sort
 sort data.txt
@@ -451,7 +451,7 @@ END
 What is the purpose of mounting a disk?
 Make a filesystem accessible
 Format a disk to store data
-Crush a disk by sitting on it
+Make a disk unusable
 Prepare an installation disk
 Mounting a disk is the process of making a file system accessible.
 1
@@ -520,15 +520,6 @@ The cd command without arguments changes to the home directory in UNIX and GNU/L
 1
 scripting
 END
-In UNIX, which shell variable stores the exit code of the last executed command?
-$?
-$$
-$@
-$1
-$? stores the exit code of the last executed command. $$ is the PID of the current process, $@ is the list of command line arguments and $1 is the first command line argument.
-1
-scripting
-END
 How to redirect the output of a script to /dev/null in Windows?
 script.bat >nul
 script.bat >null
@@ -566,7 +557,7 @@ chmod u+r file.txt
 security
 END
 What is a disadvantage of a closed-source operating system?
-A closed-source system may spy on you without your knowledge
+A closed-source system may do nasty things without your knowledge
 A closed-source system has inherently more viruses
 A closed-source system is inherently insecure
 A closed-source system attracts game developers
@@ -683,7 +674,7 @@ The whois command looks up records in the database maintained by several Network
 tools
 END
 What is the purpose of an .md5 file?
-Verify the integrity of a file downloaded from server
+Verify the integrity of a file downloaded from a server
 Store encrypted data
 Store cryptographic signature
 Completely pointless
@@ -763,7 +754,7 @@ The command to save changes is usually either "commit" or "checkin".
 1
 version-control
 END
-What is the command to view pending changes in a Version Control System?
+What is the command to view uncommitted changes in a Version Control System?
 status
 check
 summary
@@ -872,19 +863,19 @@ It's mstsc.exe
 windows
 END
 What is the keyboard shortcut to lock your PC on Windows?
-Windows + l
+Windows + L
 Ctrl-Alt-Del
 Ctrl-Escape
-Windows + d
-It's Windows-l, for "lock"
+Windows + D
+It's Windows + L, as in "L" for "lock"
 1
 windows
 END
 What is the keyboard shortcut to open the system properties in Windows?
 Windows + Pause/Break
 Windows + Home
-Windows + l
-Windows + m
+Windows + L
+Windows + M
 The Windows-Pause/Break combo opens the system properties window, useful to check basic system properties, edit environment variable, among others.
 1
 windows
@@ -1564,6 +1555,15 @@ A binary protocol yields the smallest possible footprint in the communication, w
 2
 programming
 END
+In UNIX, which shell variable stores the exit code of the last executed command?
+$?
+$$
+$@
+$1
+$? stores the exit code of the last executed command. $$ is the PID of the current process, $@ is the list of command line arguments and $1 is the first command line argument.
+2
+scripting
+END
 How to save the output of a command to a file and see it at the same time?
 somecmd | tee somefile.txt
 somecmd >> somefile.txt
@@ -1888,7 +1888,7 @@ Common Gateway Interface, a standard for dynamic generation of web pages by a we
 2
 web-programming
 END
-In web programming, where are cookies stored?
+Where are HTTP cookies stored?
 On the client
 On the web server
 On the top shelf
