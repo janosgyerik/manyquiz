@@ -79,5 +79,6 @@
 	<string name="result_less_than_100">Wow - Almost perfect! Keep going, make it all the way!</string>
 	<string name="result_100">Perfect. 100% Congratulations, you\'re a friggin\' MACHINE!</string>
     <string name="result_bug">Ouch. You found a bug. Please tell us about it!</string>
+    <string name="msg_question_marked">Marked question.</string>
 
 </resources>
