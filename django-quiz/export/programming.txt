@@ -52,7 +52,7 @@ Ant is a build tool like make, but it is based on Java. Unlike make, it can run 
 1
 build-automation
 END
-What is the name of the main configuration file used by make?
+What is the name of the main configuration file used by "make"?
 Makefile
 make.config
 config.ini
@@ -133,8 +133,8 @@ An associative array, symbol table, or dictionary is an abstract data type compo
 1
 data-structures
 END
-Which data structure is used to implement caches?
-hash table
+Which data structure is suitable to implement a cache?
+map
 set
 list
 tuple
@@ -144,10 +144,10 @@ data-structures
 END
 How to count the number of sheep in the farm table?
 SELECT count(*) FROM farm;
-SELECT count sheep FROM farm;
-SELECT count(sheep) FROM farm;
+SELECT count FROM farm;
 SELECT sheep FROM farm;
-The SQL syntax for counting records in some table is SELECT count(*) FROM table_name;
+SELECT * FROM farm;
+The SQL syntax for counting records in a table is SELECT count(*) FROM table_name;
 1
 database
 END
@@ -171,9 +171,9 @@ database
 END
 How to find all employees whose name is "Smith"?
 SELECT * FROM Employees WHERE Name = 'Smith';
-SELECT * FROM Employees WHERE Name IS 'Sales';
-SELECT * FROM Employees WHERE Name = "Sales";
-SELECT * FROM Employees WHERE Name == 'Sales';
+SELECT * FROM Employees WHERE Name IS 'Smith';
+SELECT * FROM Employees WHO IS "Smith";
+SELECT * FROM Employees WHERE Name == 'Smith';
 Strings must be enclosed within single quotes, and the operator to check for equality is "==".
 1
 database
@@ -183,7 +183,7 @@ SELECT * FROM Employees WHERE Email IS NULL;
 SELECT * FROM Employees WHERE Email = 'NULL';
 SELECT * FROM Employees WHERE Email == 'NULL';
 SELECT * FROM Employees WHERE Email = NULL;
-NULL is a special keyword in SQL, it should not be quoted. The syntax to check whether something is NULL or not is "IS NULL" and "IS NOT NULL".
+NULL is a keyword in SQL, it should not be quoted. The syntax to check whether something is NULL or not is "IS NULL" and "IS NOT NULL".
 1
 database
 END
@@ -333,7 +333,7 @@ linux
 END
 How to check the available disk space in GNU/Linux?
 df -h
-du -sm /*
+du -sm
 diskusage
 free
 The letters of the command stand for "disk free", and the "-h" makes the output more "human-friendly".
@@ -349,7 +349,7 @@ Ctrl-z pauses execution of the current job, and the bg program puts the paused j
 1
 linux
 END
-Which command uses input redirection?
+Which is an example of input redirection?
 sort < data.txt
 cat data.txt | sort
 sort data.txt
@@ -394,7 +394,7 @@ The X stands for the roman letter, meaning 10. Its predecessor was Mac OS 9.
 1
 mac
 END
-In Mac OS X, what is to command that opens any file as if double-clicked in Finder?
+In Mac OS X, what is to command to open any file as if double-clicked in Finder?
 open
 view
 run
@@ -421,15 +421,6 @@ The Dynamic Host Configuration Protocol (DHCP) is a network protocol used to con
 1
 network
 END
-What is IPsec?
-A security scheme
-Secure IP address
-Secondary IP address
-Proxy server
-IPsec is an end-to-end security scheme operating in the Internet Layer of the Internet Protocol Suite.
-1
-network
-END
 Which one looks like a netmask?
 255.255.255.0
 192.168.2.103
@@ -451,7 +442,7 @@ END
 What is the purpose of mounting a disk?
 Make a filesystem accessible
 Format a disk to store data
-Crush a disk by sitting on it
+Make a disk unusable
 Prepare an installation disk
 Mounting a disk is the process of making a file system accessible.
 1
@@ -463,15 +454,6 @@ How many primary partitions are allowed on a PC hard disk?
 5
 unlimited
 The total data storage space of a PC HDD can be divided into at most four primary partitions, or alternatively three primary partitions and an extended partition.
-1
-os
-END
-What is PXE for?
-Boot an operating system using a network interface.
-Boot an operating system using a floppy disk.
-Boot an operating system using a CD-ROM.
-Boot an operating system using a USB disk.
-The Preboot eXecution Environment (PXE, also known as Pre-Execution Environment; sometimes pronounced "pixie") is an environment to boot computers using a network interface independently of data storage devices (like hard disks) or installed operating systems.
 1
 os
 END
@@ -520,15 +502,6 @@ The cd command without arguments changes to the home directory in UNIX and GNU/L
 1
 scripting
 END
-In UNIX, which shell variable stores the exit code of the last executed command?
-$?
-$$
-$@
-$1
-$? stores the exit code of the last executed command. $$ is the PID of the current process, $@ is the list of command line arguments and $1 is the first command line argument.
-1
-scripting
-END
 How to redirect the output of a script to /dev/null in Windows?
 script.bat >nul
 script.bat >null
@@ -565,8 +538,8 @@ chmod u+r file.txt
 1
 security
 END
-What is a disadvantage of a closed-source operating system?
-A closed-source system may spy on you without your knowledge
+What is the disadvantage of a closed-source operating system?
+A closed-source system may do nasty things without your knowledge
 A closed-source system has inherently more viruses
 A closed-source system is inherently insecure
 A closed-source system attracts game developers
@@ -574,7 +547,7 @@ You cannot verify how the system works, so you put yourself at the mercy of the 
 1
 security
 END
-Which wireless security algorithm is the least secure?
+Which wireless security algorithm is the worst?
 WEP
 WPA
 WPA2
@@ -683,7 +656,7 @@ The whois command looks up records in the database maintained by several Network
 tools
 END
 What is the purpose of an .md5 file?
-Verify the integrity of a file downloaded from server
+Verify the integrity of a file downloaded from a server
 Store encrypted data
 Store cryptographic signature
 Completely pointless
@@ -763,7 +736,7 @@ The command to save changes is usually either "commit" or "checkin".
 1
 version-control
 END
-What is the command to view pending changes in a Version Control System?
+What is the command to view uncommitted changes in a Version Control System?
 status
 check
 summary
@@ -826,15 +799,6 @@ When opening an email attachment
 1
 web-programming
 END
-Where exactly is the HTTP 404 File not found error generated?
-The web server
-The client browser
-The client operating system
-The router between client and server
-When the requested URL doesn't exist, the web server responds with 404 status code to the client.
-1
-web-programming
-END
 Which file is used to prevent web crawlers from accessing parts of a website?
 robots.txt
 robots.config
@@ -881,19 +845,19 @@ It's mstsc.exe
 windows
 END
 What is the keyboard shortcut to lock your PC on Windows?
-Windows + l
+Windows + L
 Ctrl-Alt-Del
 Ctrl-Escape
-Windows + d
-It's Windows-l, for "lock"
+Windows + D
+It's Windows + L, as in "L" for "lock"
 1
 windows
 END
 What is the keyboard shortcut to open the system properties in Windows?
 Windows + Pause/Break
 Windows + Home
-Windows + l
-Windows + m
+Windows + L
+Windows + M
 The Windows-Pause/Break combo opens the system properties window, useful to check basic system properties, edit environment variable, among others.
 1
 windows
@@ -907,7 +871,7 @@ Ctrl + Shift + Escape opens the task manager, useful to view memory usage and ki
 1
 windows
 END
-What is the command to edit the registry in Windows systems?
+What is the command to edit the registry in Windows?
 regedit
 regeditor
 registry-edit
@@ -925,21 +889,12 @@ NTFS supersedes the FAT file system as the preferred file system for Microsoft W
 1
 windows
 END
-How to check the IP address of a computer in Windows?
+How to check the IP address of your computer in Windows?
 ipconfig
 ifconfig
 /sbin/ifconfig
 netstat
 The ipconfig command shows the configuration of network interfaces in Windows, including the IP address, network mask, and others.
-1
-windows
-END
-In which version of Windows was PowerShell introduced?
-Windows 7
-Windows 8
-Windows XP
-Windows NT
-Windows PowerShell is Microsoft's task automation framework, consisting of a command-line shell and associated scripting language built on .NET Framework. PowerShell was introduced in Windows 7 as an integral part of the system.
 1
 windows
 END
@@ -1177,6 +1132,15 @@ RAID 5 distributes parity along with the data and requires that all drives but o
 2
 hardware
 END
+How many disks can fail in a RAID 5 array without risk of data loss?
+1
+0
+2
+3
+RAID 5 distributes parity along with the data and requires that all drives but one be present to operate. The array is not destroyed by a single drive failure. On drive failure, any subsequent reads can be calculated from the distributed parity such that the drive failure is masked from the end user.
+2
+hardware
+END
 Who invented semaphores in concurrent programs?
 Dijkstra
 Traffic Man
@@ -1276,6 +1240,60 @@ The password is usually stored in /etc/shadow, with more strict access permissio
 2
 linux
 END
+Which command is used to configure a firewall in GNU/Linux?
+iptables
+ipconfig
+ifconfig
+netstat
+iptables is an administration tool for IPv4 packet filtering and NAT, a common firewall software in GNU/Linux.
+2
+linux
+END
+Which environment variable is usually not a path?
+LOGNAME
+PWD
+HOME
+SHELL
+LOGNAME is usually the username of the current user, not a path.
+2
+linux
+END
+In GNU/Linux, which runlevel is a multi-user runlevel?
+2
+S
+1
+6
+Runlevels 2 to 5 are multi-user runlevels.
+2
+linux
+END
+In GNU/Linux, what is the name of the process with PID 1?
+init
+kernel
+root
+launchd
+In GNU/Linux the "init" process is the parent of all processes, it gets the first PID which is 1.
+2
+linux
+END
+Which signal cannot be trapped?
+9 (KILL)
+3 (QUIT)
+6 (ABRT)
+15 (TERM)
+The KILL signal is non-catchable, non-ignorable, immediately kills a process without possibility of cleaning up.
+2
+linux
+END
+How to run a command every 4th hour on weekdays using cron?
+0 */4 * * 1-5 date
+* */4 * * 1-5 date
+0 */4 * * * date
+*/4 0 * * 1-5 date
+The 2nd field is minutes, it should be a concrete number to make the job hourly. The 2nd field is the hour, */n means every n-th hour. The 5th field the day of the week, 0 or 7 is Sunday.
+2
+linux
+END
 Mac OS X is based on which operating system?
 NeXTSTEP
 FreeBSD
@@ -1302,6 +1320,15 @@ tar
 Mac OS X uses mostly BSD implementation of common UNIX tools, as opposed to GNU implementation. Gawk is the GNU implementation of the AWK programming language.
 2
 mac
+END
+What is IPsec?
+A security scheme
+Secure IP address
+Secondary IP address
+Proxy server
+IPsec is an end-to-end security scheme operating in the Internet Layer of the Internet Protocol Suite.
+2
+network
 END
 Which is not one of the default chains of an iptables firewall?
 ACCEPT
@@ -1356,6 +1383,15 @@ There is no route from the local PC to google.com
 Being on a NAT does not necessarily prevent access to the outside. The other factors would necessarily prevent pinging google.com
 2
 network
+END
+What is PXE for?
+Boot an operating system using a network interface.
+Boot an operating system using a floppy disk.
+Boot an operating system using a CD-ROM.
+Boot an operating system using a USB disk.
+The Preboot eXecution Environment (PXE, also known as Pre-Execution Environment; sometimes pronounced "pixie") is an environment to boot computers using a network interface independently of data storage devices (like hard disks) or installed operating systems.
+2
+os
 END
 Which is not an operating system?
 Linux
@@ -1510,6 +1546,15 @@ A binary protocol yields the smallest possible footprint in the communication, w
 2
 programming
 END
+In UNIX, which shell variable stores the exit code of the last executed command?
+$?
+$$
+$@
+$1
+$? stores the exit code of the last executed command. $$ is the PID of the current process, $@ is the list of command line arguments and $1 is the first command line argument.
+2
+scripting
+END
 How to save the output of a command to a file and see it at the same time?
 somecmd | tee somefile.txt
 somecmd >> somefile.txt
@@ -1627,7 +1672,7 @@ Only the owner of the file should have any kind of access.
 2
 security
 END
-Which open port signals a potential security risk in a UNIX-like system?
+Which open port is a potential security risk in a UNIX-like system?
 23
 22
 443
@@ -1789,6 +1834,24 @@ In a centralized VCS all operations that involve the history need to access the 
 2
 version-control
 END
+Which is a Distributed Version Control System?
+Mercurial
+Subversion
+ClearCase
+Visual SourceSafe
+These are all version control systems, but only Mercurial has a distributed model, the others use a client-server model.
+2
+version-control
+END
+Where exactly is the HTTP 404 File not found error generated?
+The web server
+The client browser
+The client operating system
+The router between client and server
+When the requested URL doesn't exist, the web server responds with 404 status code to the client.
+2
+web-programming
+END
 In web programming, what is the QUERY_STRING?
 The part of the URL after the "?" mark
 The part of the URL after the "#" mark
@@ -1816,7 +1879,7 @@ Common Gateway Interface, a standard for dynamic generation of web pages by a we
 2
 web-programming
 END
-In web programming, where are cookies stored?
+Where are HTTP cookies stored?
 On the client
 On the web server
 On the top shelf
@@ -1842,6 +1905,42 @@ Content-type: text/html
 The end of the header fields is indicated by an empty field, resulting in the transmission of two consecutive CR-LF pairs.
 2
 web-programming
+END
+Which is not a common CGI environment variable?
+IOS_VERSION
+HTTP_REFERER
+HTTP_USER_AGENT
+DOCUMENT_ROOT
+HTTP_USER_AGENT is the browser type of the visitor, HTTP_REFERER is the URL of the page that called the current one, and DOCUMENT_ROOT is the root directory of the server.
+2
+web-programming
+END
+Which is a common CGI environment variable?
+REMOTE_ADDR
+IS_MOBILE_PHONE
+ORANGE_WHO
+ANDROID_VERSION
+REMOTE_ADDR is the IP address of the visitor.
+2
+web-programming
+END
+What is the difference between the GET and HEAD methods of the HTTP protocol?
+HEAD doesn't include a response body
+HEAD returns only the <head> tag of HTML
+GET returns a response without a header
+GET can support SSL
+The response of a HEAD requests is a header identical to that of a GET request, but without a response body.
+2
+web-programming
+END
+In which version of Windows was PowerShell introduced?
+Windows 7
+Windows 8
+Windows XP
+Windows NT
+Windows PowerShell is Microsoft's task automation framework, consisting of a command-line shell and associated scripting language built on .NET Framework. PowerShell was introduced in Windows 7 as an integral part of the system.
+2
+windows
 END
 How to delete a directory recursively in Windows?
 rmdir /s/q
@@ -1951,15 +2050,6 @@ The function to get the current date in Sybase is GETDATE().
 3
 database
 END
-How many disks can fail in a RAID 5 array without risk of data loss?
-1
-0
-2
-3
-RAID 5 distributes parity along with the data and requires that all drives but one be present to operate. The array is not destroyed by a single drive failure. On drive failure, any subsequent reads can be calculated from the distributed parity such that the drive failure is masked from the end user.
-3
-hardware
-END
 In which column of /etc/fstab might you see /proc?
 2nd
 1st
@@ -1987,57 +2077,12 @@ The "c" specifies that we want to create an archive, the "f" followed by a filen
 3
 linux
 END
-Which command is used to configure a firewall?
-iptables
-ipconfig
-ifconfig
-netstat
-iptables is an administration tool for IPv4 packet filtering and NAT, a common firewall software in GNU/Linux.
-3
-linux
-END
-Which environment variable is usually not a path?
-LOGNAME
-PWD
-HOME
-SHELL
-LOGNAME is usually the username of the current user, not a path.
-3
-linux
-END
 Which file controls the number of available virtual terminals in GNU/Linux?
 /etc/inittab
 /etc/virsli
 /etc/fstab
 /etc/mtab
 The virtual terminals are configured in the /etc/inittab file.
-3
-linux
-END
-In GNU/Linux, which runlevel is a multi-user runlevel?
-2
-S
-1
-6
-Runlevels 2 to 5 are multi-user runlevels.
-3
-linux
-END
-In GNU/Linux, what is the name of the process with PID 1?
-init
-kernel
-root
-launchd
-In GNU/Linux the "init" process is the parent of all processes, it gets the first PID which is 1.
-3
-linux
-END
-Which signal cannot be trapped?
-9 (KILL)
-3 (QUIT)
-6 (ABRT)
-15 (TERM)
-The KILL signal is non-catchable, non-ignorable, immediately kills a process without possibility of cleaning up.
 3
 linux
 END
@@ -2059,7 +2104,7 @@ The dirs command shows the list of remembered directories (stored by the pushd c
 3
 linux
 END
-Which command cannot send an email in GNU/Linux?
+Which command cannot send emails in GNU/Linux?
 groff
 telnet
 mailx
@@ -2073,7 +2118,7 @@ kill
 netstat
 top
 lsof
-The top command shows only a subset of all processes, it might not include the PID you're looking for. You can use kill -0 PID to check any PID, but of course ps -p is the ideal choice.
+You can use kill -0 PID to check if a PID is running. The top command shows only a subset of all processes and it might not include the PID you're looking for. But of course ps -p is the ideal choice, better than kill -0.
 3
 linux
 END
@@ -2126,7 +2171,7 @@ What is wrong with static methods?
 Hard to test code that is calling static methods
 Hard to test static methods
 Static methods don't require an instance of the class
-Static methods scare the bejesus outta me
+Everything
 Code calling static methods is hard to test because you cannot mock the static calls. Static methods in themselves are not hard to test. The other statements are true of static methods but don't constitute a "problem".
 3
 programming
@@ -2167,12 +2212,12 @@ nmap is a sophisticated port scanner, and can reveal much more about a network t
 3
 security
 END
-Which is the worst method for encrypting data?
+Which cryptographic method is fundamentally different from the others?
 sha1
 des3
 aes-128-cbc
 crypt
-sha1 is not an encryption method but a message digest method.
+sha1 is a digest method, the others are encryption methods.
 3
 security
 END
@@ -2293,15 +2338,6 @@ The central server can become a bottleneck. The other workflows can be scaled by
 3
 version-control
 END
-Which is a Distributed Version Control System?
-Mercurial
-Subversion
-ClearCase
-Visual SourceSafe
-These are all version control systems, but only Mercurial has a distributed model, the others use a client-server model.
-3
-version-control
-END
 What can be a disadvantage of a distributed VCS compared to a centralized VCS?
 The initial cloning is slower
 Users cannot commit revisions without a server
@@ -2320,39 +2356,12 @@ An automatic resolution may be possible if the two branches edited different par
 3
 version-control
 END
-Which is not a common CGI environment variable?
-IOS_VERSION
-HTTP_REFERER
-HTTP_USER_AGENT
-DOCUMENT_ROOT
-HTTP_USER_AGENT is the browser type of the visitor, HTTP_REFERER is the URL of the page that called the current one, and DOCUMENT_ROOT is the root directory of the server.
-3
-web-programming
-END
-Which is a common CGI environment variable?
-REMOTE_ADDR
-IS_MOBILE_PHONE
-ORANGE_WHO
-ANDROID_VERSION
-REMOTE_ADDR is the IP address of the visitor.
-3
-web-programming
-END
 Which HTTP method was not part of the HTTP/1.0 specification?
 OPTIONS
 GET
 POST
 HEAD
 The OPTIONS method was added in the HTTP/1.1 specification.
-3
-web-programming
-END
-What is the difference between the GET and HEAD methods of the HTTP protocol?
-HEAD doesn't include a response body
-HEAD returns only the <head> tag of HTML
-GET returns a response without a header
-GET can support SSL
-The response of a HEAD requests is a header identical to that of a GET request, but without a response body.
 3
 web-programming
 END

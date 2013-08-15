@@ -1,0 +1,17 @@
+backup
+database
+hardware
+history
+linux
+mac
+network
+os
+regex
+permissions
+programming
+scripting
+security
+software: apache2 nginx ssh active directory dns php
+tools: perl, awk, sed, cut, uniq, sort, count
+virtualization
+windows
