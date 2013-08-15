@@ -131,7 +131,7 @@ chmod go+r core
 chmod 444 core
 "a" means everyone, "+r" means give read permission. 444 is not correct, because it does more than just give read permission, at the same time it removes write and execute permissions.
 1
-linux
+permissions
 END
 How to shutdown safely a GNU/Linux machine?
 Press Ctrl-Alt-F1 first, and then Ctrl-Alt-Del
@@ -176,7 +176,7 @@ chmod 4750 some_script.sh
 chmod 022 some_script.sh
 chmod 750 gives all permissions to the owner (4 + 2 + 1), read and execute permission to the group (4 + 1), and no permissions for others (0).
 1
-linux
+permissions
 END
 Which was the earliest GNU/Linux distribution?
 Debian
@@ -446,7 +446,7 @@ chmod o+rwx file.txt
 chmod u+r file.txt
 "o" means other users (not you and not users in the same group), and "+r" means "add read permission". Every time you do chmod 777, somewhere in the world a puppy gets killed.
 1
-security
+permissions
 END
 What is a disadvantage of a closed-source operating system?
 A closed-source system may spy on you without your knowledge
@@ -652,6 +652,24 @@ SELECT * FROM Employee WHERE DepartmentID = NULL;
 SELECT * FROM Employee WHERE DepartmentID EXISTS;
 SELECT * FROM Employee WHERE DepartmentID = 0;
 The correct syntax to test if something is NULL is using IS NULL.
+2
+database
+END
+How to view the schema of a table in MySQL?
+desc tablename;
+view tablename;
+show tablename;
+select tablename;
+DESCRIBE or it's shorthand desc can be used to view the schema of tables and columns in MySQL.
+2
+database
+END
+How to create a new table with identical data as the source table?
+CREATE TABLE new_copy AS SELECT * FROM source_table;
+DUPLICATE source_table AS new_copy;
+INSERT INTO new_copy SELECT * FROM source_table;
+SELECT * INTO new_copy FROM source_table;
+The command creates a new table with a schema identical to the original, but without copying anything else such as constraints and indexes.
 2
 database
 END
@@ -1356,4 +1374,31 @@ tar zc -C /source . | ssh user@server sh > archive.tar.gz
 The tar command creates a zipped archive on standard output from the contents of /source, without including the /source prefix. The output of tar is sent over to the server and redirected to a file.
 2
 backup
+END
+Which command is best suited for copying a disk image?
+dd
+rsync
+cp
+copy
+dd can copy the content of special device files such as disk images, even when they are not mounted.
+2
+backup
+END
+How to ensure that newly created files are not accessible by anybody else?
+umask 0077
+umask 0044
+umask 0600
+chmod 0600
+The specified permission bits will be removed when creating new files. In this example all permissions for the group and other users will be removed, as if running chmod go-rwx.
+2
+permissions
+END
+How to find directories that are accessible by other users?
+find target/dir -type d -perm +0007 -exec chmod o-rwx {} \;
+find target/dir -type d -perm 0007 -exec chmod o-rwx {} \;
+find target/dir -type d -perm -0007 -exec chmod o-rwx {}
+find target/dir -type d -perm +0007 | xargs chmod o-rwx
+The command finds the directories where any of the permission bits for others are set and removes them. The answer using xargs is not as accurate as using "-exec".
+2
+permissions
 END
