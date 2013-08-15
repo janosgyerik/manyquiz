@@ -1402,3 +1402,192 @@ The main function of the Domain Controller is to handle user authentication requ
 2
 windows
 END
+How to find the most recently modified files?
+ls -lt | head
+ls -ltr | head
+ls -lr | head
+ls -laF | head
+The -t flag is to order by time, from most recent to oldest, -l is for long output to make the modification times visible.
+1
+scripting
+END
+Which regular expression matches lines starting with "Error"?
+^Error
+Error
+Error*
+Error?
+The ^ matches the beginning of a line. The other patterns will have many false positives.
+1
+regex
+END
+Which regular expression matches lines where the 5th letter is "A"?
+^....A
+....A
+^????A
+^*A
+^ matches the start of a line, and "." matches any character, giving exactly what we're looking for.
+1
+regex
+END
+How to find lines that contain "Error" or "ERROR" followed by "auth"?
+grep -i error.*auth
+grep -i error*auth
+grep -i error auth
+grep error.*auth
+The -i flag will make the pattern case insensitive, so we don't need to worry about upper and lower cases. The pattern is a regular expression, where "." means any character, and "*" means 0 or more of it.
+1
+regex
+END
+Which regular expression matches lines that contain a number with 2 or more digits?
+[0-9][0-9][0-9]*
+[0-9][0-9][0-9]?
+[0-9][0-9]*
+[0-9]+
+[0-9] matches any digit. "*" means 0 or more of the expression in front of it. That gives a minimum of 2 digits, plus 0 or more additional digits.
+1
+regex
+END
+How to get the 4th column from the output of ls -l?
+ls -l | awk '{print $4}'
+ls -l | cut -f4 -d' '
+ls -l | cut -f4 -d'\t'
+ls -l | awk "{print $4}"
+The columns in the output of ls -l have variable number of spaces, so we cannot simply use cut. awk is perfect for this, but the expression must be quoted to prevent the shell from interpolating the value of $4.
+2
+scripting
+END
+What does it mean when the permission of a program is "-r-sr-xr-x"?
+The program will run as the owner of the file (setuid)
+The program will run as the group of the file (setgid)
+The program has special SELinux attributes set
+The program will run as root
+The "s" in file permissions can mean setuid or setuid, depending on the segment it appears in. Programs with the setuid bit set run as the owner of the file, as opposed to the current user.
+2
+permissions
+END
+Which command will truncate a file?
+> file.txt
+>> file.txt
+file.txt < /dev/null
+shred file.txt
+The redirection operator ">" truncates its output. Redirecting nothing results in an empty file.
+1
+scripting
+END
+How to run a program in the background?
+firefox &
+bg firefox
+firefox /&
+firefox &&
+The operator to start a process in the background is the &.
+1
+linux
+END
+How to clear the command line in the middle of typing?
+Ctrl-C
+Ctrl-Z
+Alt-C
+Alt-Z
+Basically the keyboard shortcut to interrupt anything is usually Ctrl-C. Pressing it while typing a command interrupts the current command line, effectively clearning the line.
+1
+scripting
+END
+How to get out of the vi editor without saving changes?
+:q!
+:Q
+:wq
+ZZ
+Press : to enter command mode, q means quit, and ! is to force quitting even if there are unsaved changes.
+1
+scripting
+END
+How to append the output of a command to a log file?
+ifconfig >> net.log
+ifconfig > net.log
+ifconfig | net.log
+ifconfig >>> net.log
+The ">" and ">>" are operators to redirect output. ">" truncates the destination, ">>" appends to it.
+1
+scripting
+END
+How to find duplicate lines in a text file?
+sort file.txt | uniq -d
+sort -u file.txt
+sort file.txt | uniq
+sort -u file.txt | uniq -d
+The uniq command requires input that is already sorted. Normally it prints the unique lines, the -d flag changes to behavior to print the duplicated lines.
+1
+scripting
+END
+How to find the 5 most common lines in a data file?
+sort data.txt | uniq -c | sort -nr | head -n 5
+sort data.txt | uniq -c | sort -r | head -n 5
+sort data.txt | uniq | sort -nr | head -n 5
+sort data.txt | uniq -c | sort -n | head -n 5
+uniq requires sorted input, -c is to count the duplicate lines, then we sort again numerically and in reverse order, to print from high numbers to low.
+2
+scripting
+END
+How to encrypt some text by shifting the alphabet by 3 letters?
+tr a-z d-za-c
+tr a-z d-wx-z
+tr a-z a-cd-z
+tr a-z x-zd-w
+tr is a tool to translate from one set of characters to another. In this example 'a' becomes 'd', 'b' becomes 'c', and so on, until 'y' becomes 'b', 'z' becomes 'c'.
+2
+scripting
+END
+What is the best way to check the permission settings of the current directory in UNIX?
+ls -ld
+ls -ld .
+ls -la .
+ls -a
+The -l prints information in long format, we need that to see the permissions, and -d is to prevent descending into the directory.
+1
+permissions
+END
+Which regular expression matches a word that starts with a capital letter and has 2 or more letters?
+\<[A-Z][a-z][a-z]*
+[A-Z][a-z][a-z]*
+\<[A-Z][a-z]*
+\<[A-Za-z]+
+The '\<' means beginning of a word, [A-Z] means any capital letter, [a-z] means any lowercase letter, and '*' means 0 or more expression like the one right in front of it.
+1
+regex
+END
+How to prevent other users from accessing your files?
+chmod o-rwx ~
+chmod o-rw ~
+chmod 0000 ~
+chmod a-rwx ~
+"o" means other users (not the owner and not the group), "-" means revoking permissions, "rwx" correspond to read write execute permissions, respectively, and "~" is the home directory.
+1
+permissions
+END
+Which file transfer method is unsafe?
+FTP
+SFTP
+rsync
+ssh
+FTP is not encrypted, therefore others can see the transferred content, including user names and passwords. rsync is by itself secure, but in modern systems it runs over ssh by default.
+1
+security
+END
+What is the IP address of localhost?
+127.0.0.1
+127.0.0.0
+192.168.0.1
+0.0.0.0
+The IPv4 address of localhost is 127.0.0.1 in UNIX and Windows alike.
+1
+network
+END
+What is the exit code of programs that executed successfully?
+0
+1
+-1
+255
+The exit code 0 usually means success, and non-zero values are used to indicate the type of error that occurred. Not all programs respect this norm, but the general majority does.
+2
+programming
+END
