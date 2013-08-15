@@ -52,7 +52,7 @@ Ant is a build tool like make, but it is based on Java. Unlike make, it can run 
 1
 build-automation
 END
-What is the name of the main configuration file used by make?
+What is the name of the main configuration file used by "make"?
 Makefile
 make.config
 config.ini
@@ -133,8 +133,8 @@ An associative array, symbol table, or dictionary is an abstract data type compo
 1
 data-structures
 END
-Which data structure is used to implement caches?
-hash table
+Which data structure is suitable to implement a cache?
+map
 set
 list
 tuple
@@ -183,7 +183,7 @@ SELECT * FROM Employees WHERE Email IS NULL;
 SELECT * FROM Employees WHERE Email = 'NULL';
 SELECT * FROM Employees WHERE Email == 'NULL';
 SELECT * FROM Employees WHERE Email = NULL;
-NULL is a special keyword in SQL, it should not be quoted. The syntax to check whether something is NULL or not is "IS NULL" and "IS NOT NULL".
+NULL is a keyword in SQL, it should not be quoted. The syntax to check whether something is NULL or not is "IS NULL" and "IS NOT NULL".
 1
 database
 END
@@ -421,15 +421,6 @@ The Dynamic Host Configuration Protocol (DHCP) is a network protocol used to con
 1
 network
 END
-What is IPsec?
-A security scheme
-Secure IP address
-Secondary IP address
-Proxy server
-IPsec is an end-to-end security scheme operating in the Internet Layer of the Internet Protocol Suite.
-1
-network
-END
 Which one looks like a netmask?
 255.255.255.0
 192.168.2.103
@@ -463,15 +454,6 @@ How many primary partitions are allowed on a PC hard disk?
 5
 unlimited
 The total data storage space of a PC HDD can be divided into at most four primary partitions, or alternatively three primary partitions and an extended partition.
-1
-os
-END
-What is PXE for?
-Boot an operating system using a network interface.
-Boot an operating system using a floppy disk.
-Boot an operating system using a CD-ROM.
-Boot an operating system using a USB disk.
-The Preboot eXecution Environment (PXE, also known as Pre-Execution Environment; sometimes pronounced "pixie") is an environment to boot computers using a network interface independently of data storage devices (like hard disks) or installed operating systems.
 1
 os
 END
@@ -556,7 +538,7 @@ chmod u+r file.txt
 1
 security
 END
-What is a disadvantage of a closed-source operating system?
+What is the disadvantage of a closed-source operating system?
 A closed-source system may do nasty things without your knowledge
 A closed-source system has inherently more viruses
 A closed-source system is inherently insecure
@@ -565,7 +547,7 @@ You cannot verify how the system works, so you put yourself at the mercy of the 
 1
 security
 END
-Which wireless security algorithm is the least secure?
+Which wireless security algorithm is the worst?
 WEP
 WPA
 WPA2
@@ -907,21 +889,12 @@ NTFS supersedes the FAT file system as the preferred file system for Microsoft W
 1
 windows
 END
-How to check the IP address of a computer in Windows?
+How to check the IP address of your computer in Windows?
 ipconfig
 ifconfig
 /sbin/ifconfig
 netstat
 The ipconfig command shows the configuration of network interfaces in Windows, including the IP address, network mask, and others.
-1
-windows
-END
-In which version of Windows was PowerShell introduced?
-Windows 7
-Windows 8
-Windows XP
-Windows NT
-Windows PowerShell is Microsoft's task automation framework, consisting of a command-line shell and associated scripting language built on .NET Framework. PowerShell was introduced in Windows 7 as an integral part of the system.
 1
 windows
 END
@@ -1348,6 +1321,15 @@ Mac OS X uses mostly BSD implementation of common UNIX tools, as opposed to GNU 
 2
 mac
 END
+What is IPsec?
+A security scheme
+Secure IP address
+Secondary IP address
+Proxy server
+IPsec is an end-to-end security scheme operating in the Internet Layer of the Internet Protocol Suite.
+2
+network
+END
 Which is not one of the default chains of an iptables firewall?
 ACCEPT
 INPUT
@@ -1401,6 +1383,15 @@ There is no route from the local PC to google.com
 Being on a NAT does not necessarily prevent access to the outside. The other factors would necessarily prevent pinging google.com
 2
 network
+END
+What is PXE for?
+Boot an operating system using a network interface.
+Boot an operating system using a floppy disk.
+Boot an operating system using a CD-ROM.
+Boot an operating system using a USB disk.
+The Preboot eXecution Environment (PXE, also known as Pre-Execution Environment; sometimes pronounced "pixie") is an environment to boot computers using a network interface independently of data storage devices (like hard disks) or installed operating systems.
+2
+os
 END
 Which is not an operating system?
 Linux
@@ -1941,6 +1932,15 @@ GET can support SSL
 The response of a HEAD requests is a header identical to that of a GET request, but without a response body.
 2
 web-programming
+END
+In which version of Windows was PowerShell introduced?
+Windows 7
+Windows 8
+Windows XP
+Windows NT
+Windows PowerShell is Microsoft's task automation framework, consisting of a command-line shell and associated scripting language built on .NET Framework. PowerShell was introduced in Windows 7 as an integral part of the system.
+2
+windows
 END
 How to delete a directory recursively in Windows?
 rmdir /s/q
