@@ -15,6 +15,7 @@ public abstract class QuestionControlBase implements IQuestionControl {
     protected final List<IAnswerControl> answerControls;
 
     protected boolean closed;
+    private boolean marked;
 
     QuestionControlBase(IQuestion question) {
         this.question = question;
@@ -103,5 +104,10 @@ public abstract class QuestionControlBase implements IQuestionControl {
             }
         }
         return null;
+    }
+
+    @Override
+    public void mark() {
+        marked = true;
     }
 }
