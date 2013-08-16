@@ -85,4 +85,11 @@ public interface IQuestionControl extends Serializable {
      * Mark the current question.
      */
     void mark();
+
+    /**
+     * Check if the question is marked.
+     *
+     * @return is marked or not
+     */
+    boolean isMarked();
 }

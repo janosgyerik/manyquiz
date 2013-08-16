@@ -110,4 +110,9 @@ public abstract class QuestionControlBase implements IQuestionControl {
     public void mark() {
         marked = true;
     }
+
+    @Override
+    public boolean isMarked() {
+        return marked;
+    }
 }
