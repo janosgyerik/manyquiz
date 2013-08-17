@@ -63,7 +63,7 @@
 
     <string name="menu_mark">Mark</string>
     <string name="btn_send_marked">Email marked questions</string>
-    <string name="subject_mark">[manyquiz-app] marked questions</string>
+    <string name="subject_marked_questions">[manyquiz-app] marked questions</string>
 
     <string name="message_type_bug">Bug</string>
     <string name="message_type_comment">Comment</string>

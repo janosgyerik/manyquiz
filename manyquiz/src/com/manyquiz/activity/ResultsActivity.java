@@ -1,15 +1,21 @@
 package com.manyquiz.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.manyquiz.R;
+import com.manyquiz.quiz.model.IQuestion;
+import com.manyquiz.quiz.model.IQuestionControl;
+import com.manyquiz.quiz.model.IQuizControl;
 
 public class ResultsActivity extends Activity {
 
-    protected static final String PARAM_TOTAL_QUESTIONS_NUM = "TOTAL_QUESTIONS_NUM";
-    protected static final String PARAM_CORRECT_ANSWERS_NUM = "CORRECT_ANSWERS_NUM";
+    protected static final String PARAM_QUIZ_CONTROL = "QUIZ_CONTROL";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -19,9 +25,25 @@ public class ResultsActivity extends Activity {
         Bundle bundle = getIntent().getExtras();
         int correctAnswers = 0;
         int totalQuestions = 1;
+        String markedQuestionsText = null;
         if (bundle != null) {
-            totalQuestions = bundle.getInt(PARAM_TOTAL_QUESTIONS_NUM);
-            correctAnswers = bundle.getInt(PARAM_CORRECT_ANSWERS_NUM);
+            IQuizControl quizControl = (IQuizControl) bundle.getSerializable(PARAM_QUIZ_CONTROL);
+            if (quizControl != null) {
+                totalQuestions = quizControl.getQuestionsNum();
+                correctAnswers = quizControl.getScore();
+                StringBuilder builder = new StringBuilder();
+                for (IQuestionControl questionControl : quizControl.getQuestionControls()) {
+                    if (questionControl.isMarked()) {
+                        IQuestion question = questionControl.getQuestion();
+                        builder.append("Q: ");
+                        builder.append(question.getText());
+                        builder.append("\n\n");
+                    }
+                }
+                if (builder.length() > 0) {
+                    markedQuestionsText = builder.toString();
+                }
+            }
         }
         int correctPercent = 100 * correctAnswers / totalQuestions;
 
@@ -67,6 +89,37 @@ public class ResultsActivity extends Activity {
 
         TextView messageView = (TextView) findViewById(R.id.message);
         messageView.setText(message);
+
+        if (markedQuestionsText != null) {
+            Button sendMarkedQuestionsButton = (Button) findViewById(R.id.btn_send_marked);
+            sendMarkedQuestionsButton.setOnClickListener(new SendMarkedQuestionsClickListener(markedQuestionsText));
+            sendMarkedQuestionsButton.setVisibility(View.VISIBLE);
+        }
+    }
+
+    class SendMarkedQuestionsClickListener implements View.OnClickListener {
+        private final String message;
+
+        SendMarkedQuestionsClickListener(String message) {
+            this.message = message;
+        }
+
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("message/rfc822");
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{ getString(R.string.email_address) });
+            intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.subject_marked_questions));
+            intent.putExtra(Intent.EXTRA_TEXT, message);
+
+            try {
+                startActivity(Intent.createChooser(intent, getString(R.string.email_client_chooser)));
+            } catch (android.content.ActivityNotFoundException ex) {
+                Toast.makeText(ResultsActivity.this,
+                        getString(R.string.no_email_client), Toast.LENGTH_SHORT)
+                        .show();
+            }
+        }
     }
 
 }

@@ -274,8 +274,7 @@ public class QuizActivity extends QuizActivityBase {
 
     private void finishGame() {
         Bundle bundle = new Bundle();
-        bundle.putInt(ResultsActivity.PARAM_TOTAL_QUESTIONS_NUM, quizControl.getQuestionsNum());
-        bundle.putInt(ResultsActivity.PARAM_CORRECT_ANSWERS_NUM, quizControl.getScore());
+        bundle.putSerializable(ResultsActivity.PARAM_QUIZ_CONTROL, quizControl);
         Intent intent = new Intent(QuizActivity.this, ResultsActivity.class);
         intent.putExtras(bundle);
         startActivity(intent);
