@@ -6,12 +6,15 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.manyquiz.R;
 import com.manyquiz.db.DatabaseBackedQuizFactory;
@@ -29,7 +32,7 @@ import com.manyquiz.quiz.model.IQuizFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuizActivity extends QuizBaseActivity {
+public class QuizActivity extends QuizActivityBase {
 
     private static final String TAG = QuizActivity.class.getSimpleName();
 
@@ -271,8 +274,7 @@ public class QuizActivity extends QuizBaseActivity {
 
     private void finishGame() {
         Bundle bundle = new Bundle();
-        bundle.putInt(ResultsActivity.PARAM_TOTAL_QUESTIONS_NUM, quizControl.getQuestionsNum());
-        bundle.putInt(ResultsActivity.PARAM_CORRECT_ANSWERS_NUM, quizControl.getScore());
+        bundle.putSerializable(ResultsActivity.PARAM_QUIZ_CONTROL, quizControl);
         Intent intent = new Intent(QuizActivity.this, ResultsActivity.class);
         intent.putExtras(bundle);
         startActivity(intent);
@@ -289,6 +291,26 @@ public class QuizActivity extends QuizBaseActivity {
             String key = getString(R.string.key_max_questions_normal);
             return Integer.parseInt(settings.getString(key, null));
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.quiz, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (! super.onOptionsItemSelected(item)) {
+            int itemId = item.getItemId();
+            if (itemId == R.id.menu_mark) {
+                quizControl.getCurrentQuestion().mark();
+                Toast.makeText(this, R.string.msg_question_marked, Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        }
+        return false;
     }
 
     protected QuizSQLiteOpenHelper getHelper() {

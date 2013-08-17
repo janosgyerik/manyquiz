@@ -6,10 +6,6 @@
         android:title="@string/menu_about"
         android:visible="false"/>
     <item
-        android:id="@+id/menu_settings"
-        android:icon="@drawable/ic_menu_preferences"
-        android:title="@string/menu_settings"/>
-    <item
         android:id="@+id/menu_contact"
         android:icon="@drawable/ic_menu_start_conversation"
         android:title="@string/menu_contact"

@@ -18,7 +18,7 @@ import com.manyquiz.quiz.impl.Level;
 
 import java.util.List;
 
-public class IntroActivity extends QuizBaseActivity {
+public class IntroActivity extends QuizActivityBase {
 
     private static final String TAG = IntroActivity.class.getSimpleName();
 
@@ -122,7 +122,8 @@ public class IntroActivity extends QuizBaseActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.intro, menu);
         return true;
     }
 

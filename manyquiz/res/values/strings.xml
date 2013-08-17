@@ -31,7 +31,7 @@
     <string name="msg_beta_notice">Hey thanks for trying the BETA! Everything should be working, but there are not enough questions yet. Enjoy anyway, the first release is coming really soon!</string>
 
     <string name="btn_start_quiz">Start Quiz!</string>
-    <string name="btn_ok">Ok</string>
+    <string name="btn_ok">OK</string>
     <string name="btn_yes">Yes</string>
     <string name="btn_cancel">Cancel</string>
     <string name="btn_finish">Finish</string>
@@ -49,17 +49,21 @@
     <string name="summary_max_questions_suddendeath">Number of questions in sudden death mode</string>
     <string name="summary_max_questions_suddendeath_format">Maximum # of questions = %s</string>
     
-    <string name="email_address">janos.gyerik@gmail.com</string>
+    <string name="email_address">info@manyquiz.com</string>
     <string name="no_email_client">Choose an email client</string>
-    <string name="email_client_chooser">Send e-mail...</string>
+    <string name="email_client_chooser">Choose an app…</string>
     
-    <string name="btn_sendmessage">Send message >></string>
+    <string name="btn_send">Send</string>
     <string name="title_contact">Contact Us</string>
     <string name="menu_contact">Contact Us</string>
-    <string name="subject_contact_prefix" formatted="false">[manyquiz-app-%s] </string>
+    <string name="subject_contact">[manyquiz-app] </string>
     
     <string name="description_contact">Let us know about bugs, or your comments and question ideas!</string>
-    <string name="hint_contact">Enter your message...</string>
+    <string name="hint_contact">Enter your message…</string>
+
+    <string name="menu_mark">Mark</string>
+    <string name="btn_send_marked">Email marked questions</string>
+    <string name="subject_marked_questions">[manyquiz-app] marked questions</string>
 
     <string name="message_type_bug">Bug</string>
     <string name="message_type_comment">Comment</string>
@@ -69,11 +73,12 @@
 
     <string name="result_0">Dude, you got them all wrong!</string>
 	<string name="result_less_than_10">Not looking great. You need more practice!</string>
-	<string name="result_less_than_40">Good try. Good, but not great.</string>
-	<string name="result_less_than_70">Pretty good try. Keep practicing!</string>
-	<string name="result_less_than_90">Very good - You\'ve been studying!</string>
-	<string name="result_less_than_100">Wow - Almost perfect! Keep going, make it all the way!</string>
+	<string name="result_less_than_40">Could have been worse. Try harder!</string>
+	<string name="result_less_than_70">Nice going. Keep practicing!</string>
+	<string name="result_less_than_90">Looking good. Keep going!</string>
+	<string name="result_less_than_100">Damn you\'re good. Can you make it all the way?</string>
 	<string name="result_100">Perfect. 100% Congratulations, you\'re a friggin\' MACHINE!</string>
     <string name="result_bug">Ouch. You found a bug. Please tell us about it!</string>
+    <string name="msg_question_marked">Marked question.</string>
 
 </resources>

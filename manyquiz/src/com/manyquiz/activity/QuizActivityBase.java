@@ -9,7 +9,7 @@ import android.view.View;
 import com.manyquiz.R;
 import com.manyquiz.application.QuizApplication;
 
-public abstract class QuizBaseActivity extends Activity {
+public abstract class QuizActivityBase extends Activity {
 
     protected static final int RETURN_FROM_SETTINGS = 1;
 
@@ -21,7 +21,7 @@ public abstract class QuizBaseActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
+        getMenuInflater().inflate(R.menu.common, menu);
         return true;
     }
 

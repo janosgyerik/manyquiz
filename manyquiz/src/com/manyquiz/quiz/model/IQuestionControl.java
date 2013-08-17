@@ -80,4 +80,16 @@ public interface IQuestionControl extends Serializable {
      * @return any wrong answer
      */
     IAnswerControl getAnyWrongAnswer();
+
+    /**
+     * Mark the current question.
+     */
+    void mark();
+
+    /**
+     * Check if the question is marked.
+     *
+     * @return is marked or not
+     */
+    boolean isMarked();
 }

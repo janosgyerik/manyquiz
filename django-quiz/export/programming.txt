@@ -403,7 +403,7 @@ The "open" command can open any file or directory, it works the same way as when
 1
 mac
 END
-Which one looks like a MAC address?
+Which one is a MAC address?
 58:b0:35:80:36:9f
 192.168.2.103
 fe80::5ab0:35ff:fe80:369f

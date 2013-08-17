@@ -55,6 +55,6 @@
     <Button
             android:id="@+id/btn_sendmessage"
             style="@style/linkButton"
-            android:text="@string/btn_sendmessage"/>
+            android:text="@string/btn_send"/>
 
 </LinearLayout>
