@@ -31,7 +31,7 @@
     <string name="msg_beta_notice">Hey thanks for trying the BETA! Everything should be working, but there are not enough questions yet. Enjoy anyway, the first release is coming really soon!</string>
 
     <string name="btn_start_quiz">Start Quiz!</string>
-    <string name="btn_ok">Ok</string>
+    <string name="btn_ok">OK</string>
     <string name="btn_yes">Yes</string>
     <string name="btn_cancel">Cancel</string>
     <string name="btn_finish">Finish</string>
@@ -51,7 +51,7 @@
     
     <string name="email_address">info@manyquiz.com</string>
     <string name="no_email_client">Choose an email client</string>
-    <string name="email_client_chooser">Send e-mail...</string>
+    <string name="email_client_chooser">Choose an app…</string>
     
     <string name="btn_sendmessage">Send message >></string>
     <string name="title_contact">Contact Us</string>
@@ -59,7 +59,7 @@
     <string name="subject_contact_prefix" formatted="false">[manyquiz-app-%s] </string>
     
     <string name="description_contact">Let us know about bugs, or your comments and question ideas!</string>
-    <string name="hint_contact">Enter your message...</string>
+    <string name="hint_contact">Enter your message…</string>
 
     <string name="menu_mark">Mark</string>
     <string name="btn_send_marked">Email marked questions</string>
