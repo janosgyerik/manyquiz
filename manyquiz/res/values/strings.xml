@@ -53,7 +53,7 @@
     <string name="no_email_client">Choose an email client</string>
     <string name="email_client_chooser">Choose an app…</string>
     
-    <string name="btn_send">Send>></string>
+    <string name="btn_send">Send</string>
     <string name="title_contact">Contact Us</string>
     <string name="menu_contact">Contact Us</string>
     <string name="subject_contact">[manyquiz-app] </string>
