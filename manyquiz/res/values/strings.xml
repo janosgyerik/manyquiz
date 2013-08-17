@@ -56,7 +56,7 @@
     <string name="btn_send">Send>></string>
     <string name="title_contact">Contact Us</string>
     <string name="menu_contact">Contact Us</string>
-    <string name="subject_contact_prefix" formatted="false">[manyquiz-app-%s] </string>
+    <string name="subject_contact">[manyquiz-app] </string>
     
     <string name="description_contact">Let us know about bugs, or your comments and question ideas!</string>
     <string name="hint_contact">Enter your message…</string>

@@ -38,18 +38,9 @@ public class ContactActivity extends Activity {
         EditText message = (EditText) findViewById(R.id.message);
         String emailBody = message.getText().toString();
 
-        String pkg = getApplicationContext().getPackageName();
-        PackageManager manager = getApplicationContext().getPackageManager();
-        try {
-            PackageInfo info = manager.getPackageInfo(pkg, 0);
-            emailBody += String.format("  [Version: %d/%s]", info.versionCode, info.versionName);
-        } catch (NameNotFoundException e) {
-            Log.e(TAG, "Could not get package info", e);
-        }
-
         RadioGroup messageTypeChoices = (RadioGroup) findViewById(R.id.message_type_choices);
-        String tag = (String) findViewById(messageTypeChoices.getCheckedRadioButtonId()).getTag();
-        String subject = String.format(getString(R.string.subject_contact_prefix), tag);
+        String messageType = (String) findViewById(messageTypeChoices.getCheckedRadioButtonId()).getTag();
+        String subject = getString(R.string.subject_contact) + " " + messageType;
 
         EmailTools.send(this, subject, emailBody);
         finish();
