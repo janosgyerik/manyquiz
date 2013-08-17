@@ -60,7 +60,7 @@ public class ContactActivity extends Activity {
         intent.putExtra(Intent.EXTRA_TEXT, emailBody);
 
         try {
-            startActivity(Intent.createChooser(intent, getResources().getString(R.string.no_email_client)));
+            startActivity(Intent.createChooser(intent, getResources().getString(R.string.email_client_chooser)));
         } catch (android.content.ActivityNotFoundException ex) {
             Toast.makeText(ContactActivity.this,
                     getResources().getString(R.string.no_email_client), Toast.LENGTH_SHORT)
