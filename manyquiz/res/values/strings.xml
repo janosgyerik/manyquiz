@@ -73,10 +73,10 @@
 
     <string name="result_0">Dude, you got them all wrong!</string>
 	<string name="result_less_than_10">Not looking great. You need more practice!</string>
-	<string name="result_less_than_40">Good try. Good, but not great.</string>
-	<string name="result_less_than_70">Pretty good try. Keep practicing!</string>
-	<string name="result_less_than_90">Very good - You\'ve been studying!</string>
-	<string name="result_less_than_100">Wow - Almost perfect! Keep going, make it all the way!</string>
+	<string name="result_less_than_40">Could have been worse. Try harder!</string>
+	<string name="result_less_than_70">Nice going. Keep practicing!</string>
+	<string name="result_less_than_90">Looking good. Keep going!</string>
+	<string name="result_less_than_100">Damn you\'re good. Can you make it all the way?</string>
 	<string name="result_100">Perfect. 100% Congratulations, you\'re a friggin\' MACHINE!</string>
     <string name="result_bug">Ouch. You found a bug. Please tell us about it!</string>
     <string name="msg_question_marked">Marked question.</string>
