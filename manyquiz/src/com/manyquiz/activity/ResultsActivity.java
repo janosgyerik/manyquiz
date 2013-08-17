@@ -12,6 +12,7 @@ import com.manyquiz.R;
 import com.manyquiz.quiz.model.IQuestion;
 import com.manyquiz.quiz.model.IQuestionControl;
 import com.manyquiz.quiz.model.IQuizControl;
+import com.manyquiz.tools.EmailTools;
 
 public class ResultsActivity extends Activity {
 
@@ -106,20 +107,12 @@ public class ResultsActivity extends Activity {
 
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(Intent.ACTION_SEND);
-            intent.setType("message/rfc822");
-            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{ getString(R.string.email_address) });
-            intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.subject_marked_questions));
-            intent.putExtra(Intent.EXTRA_TEXT, message);
-
-            try {
-                startActivity(Intent.createChooser(intent, getString(R.string.email_client_chooser)));
-            } catch (android.content.ActivityNotFoundException ex) {
-                Toast.makeText(ResultsActivity.this,
-                        getString(R.string.no_email_client), Toast.LENGTH_SHORT)
-                        .show();
-            }
+            sendMarkedQuestions(message);
         }
+    }
+
+    private void sendMarkedQuestions(String message) {
+        EmailTools.send(this, R.string.subject_marked_questions, message);
     }
 
 }

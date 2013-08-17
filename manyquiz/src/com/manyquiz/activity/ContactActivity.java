@@ -14,6 +14,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.manyquiz.R;
+import com.manyquiz.tools.EmailTools;
 
 public class ContactActivity extends Activity {
 
@@ -52,19 +53,7 @@ public class ContactActivity extends Activity {
         String tag = (String) findViewById(messageTypeChoices.getCheckedRadioButtonId()).getTag();
         String subject = String.format(getString(R.string.subject_contact_prefix), tag);
 
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("message/rfc822");
-        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{
-                getResources().getString(R.string.email_address)});
-        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
-        intent.putExtra(Intent.EXTRA_TEXT, emailBody);
-
-        try {
-            startActivity(Intent.createChooser(intent, getResources().getString(R.string.email_client_chooser)));
-        } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(ContactActivity.this,
-                    getResources().getString(R.string.no_email_client), Toast.LENGTH_SHORT)
-                    .show();
-        }
+        EmailTools.send(this, subject, emailBody);
+        finish();
     }
 }
