@@ -29,7 +29,7 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
             .getSimpleName();
 
     private static final String DATABASE_NAME = "sqlite3.db";
-    private static final int DATABASE_VERSION = 6;
+    private static final int DATABASE_VERSION = 7;
 
     private static final String LEVELS_TABLE_NAME = "quiz_level";
     private static final String QUESTIONS_TABLE_NAME = "quiz_question";

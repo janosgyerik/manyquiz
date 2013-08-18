@@ -133,7 +133,7 @@ An associative array, symbol table, or dictionary is an abstract data type compo
 1
 data-structures
 END
-Which data structure is suitable to implement a cache?
+Which data structure is the most suitable to implement a cache?
 map
 set
 list
@@ -169,20 +169,20 @@ SELECT, UPDATE and INSERT are common SQL commands, FIND is not.
 1
 database
 END
-How to find all employees whose name is "Smith"?
-SELECT * FROM Employees WHERE Name = 'Smith';
-SELECT * FROM Employees WHERE Name IS 'Smith';
-SELECT * FROM Employees WHO IS "Smith";
-SELECT * FROM Employees WHERE Name == 'Smith';
-Strings must be enclosed within single quotes, and the operator to check for equality is "==".
+How to find all employees whose name is Smith?
+SELECT * FROM Employee WHERE Name = 'Smith';
+SELECT * FROM Employee WHERE Name IS 'Smith';
+SELECT * FROM Employee WHERE Name == 'Smith';
+SELECT * FROM Employee WHERE Name = "Smith";
+Strings must be enclosed within single quotes, and the operator to check for equality is a single equal sign.
 1
 database
 END
 How to find all employees with NULL as email address?
-SELECT * FROM Employees WHERE Email IS NULL;
-SELECT * FROM Employees WHERE Email = 'NULL';
-SELECT * FROM Employees WHERE Email == 'NULL';
-SELECT * FROM Employees WHERE Email = NULL;
+SELECT * FROM Employee WHERE Email IS NULL;
+SELECT * FROM Employee WHERE Email = 'NULL';
+SELECT * FROM Employee WHERE Email == 'NULL';
+SELECT * FROM Employee WHERE Email = NULL;
 NULL is a keyword in SQL, it should not be quoted. The syntax to check whether something is NULL or not is "IS NULL" and "IS NOT NULL".
 1
 database
@@ -199,7 +199,7 @@ END
 A computer uses the least power in which mode?
 hibernate
 sleep
-stand-by
+standby
 lock
 When hibernated, the computer is completely off. It can restore itself by reloading the previously saved content of the memory.
 1
@@ -304,6 +304,15 @@ The Firefox project began as an experimental branch of the Mozilla project.
 1
 history
 END
+Which operating system was the inspiration of Linux?
+MINIX
+FreeBSD
+UNIX
+Linus
+MINIX inspired Linus Torvalds to create the Linux kernel.
+1
+history
+END
 Which command will give read permission on a file for everyone?
 chmod a+r core
 chmod 777 core
@@ -394,7 +403,7 @@ The X stands for the roman letter, meaning 10. Its predecessor was Mac OS 9.
 1
 mac
 END
-In Mac OS X, what is to command to open any file as if double-clicked in Finder?
+In Mac OS X, which command opens any file as if double-clicked in Finder?
 open
 view
 run
@@ -421,7 +430,7 @@ The Dynamic Host Configuration Protocol (DHCP) is a network protocol used to con
 1
 network
 END
-Which one looks like a netmask?
+Which one is a netmask?
 255.255.255.0
 192.168.2.103
 192.168.2.255
@@ -502,7 +511,7 @@ The cd command without arguments changes to the home directory in UNIX and GNU/L
 1
 scripting
 END
-How to redirect the output of a script to /dev/null in Windows?
+How to hide the output of a script in Windows?
 script.bat >nul
 script.bat >null
 script.bat >/dev/null
@@ -511,7 +520,7 @@ The Null Device Driver component provides the functional equivalent of \dev\null
 1
 scripting
 END
-How to run script2.sh only if script1.sh is successful?
+How to run script2.sh only after script1.sh is successful?
 script1.sh && script2.sh
 script1.sh || script2.sh
 script1.sh & script2.sh
@@ -574,7 +583,7 @@ It is very common and use to use a server-side script to log your IP address and
 1
 security
 END
-What is the decimal value of 0x15?
+What is the decimal value of 0x15 (hexadecimal)?
 21
 15
 13
@@ -592,7 +601,7 @@ What is the decimal value of 015 (octal)?
 1
 system-programming
 END
-What is the decimal value of 0b1101?
+What is the decimal value of 0b1101 (binary)?
 13
 14
 15
@@ -1074,7 +1083,7 @@ SELECT * FROM Employee WHERE DepartmentID IS NULL;
 SELECT * FROM Employee WHERE DepartmentID = NULL;
 SELECT * FROM Employee WHERE DepartmentID EXISTS;
 SELECT * FROM Employee WHERE DepartmentID = 0;
-The correct syntax to test if something is NULL is using IS NULL.
+The IS NULL operator is the right way to find NULL values.
 2
 database
 END
@@ -1137,7 +1146,7 @@ How many disks can fail in a RAID 5 array without risk of data loss?
 0
 2
 3
-RAID 5 distributes parity along with the data and requires that all drives but one be present to operate. The array is not destroyed by a single drive failure. On drive failure, any subsequent reads can be calculated from the distributed parity such that the drive failure is masked from the end user.
+RAID 5 distributes parity along with the data and requires that all drives but one be present to operate. The array is not destroyed by a single drive failure. On drive failure, any subsequent reads can be calculated from the distributed parity.
 2
 hardware
 END
@@ -1156,15 +1165,6 @@ Mac OS X
 FreeBSD
 Solaris
 MINIX is a UNIX-like system but it was not derived from UNIX. The others can all be traced back to some version of UNIX.
-2
-history
-END
-Which operating system was the inspiration of Linux?
-MINIX
-FreeBSD
-UNIX
-Linus
-MINIX inspired Linus Torvalds to create the Linux kernel.
 2
 history
 END
@@ -1573,7 +1573,7 @@ tr reads text from standard input and writes to standard output. It does not tak
 2
 scripting
 END
-How to append .bak extension to all files in a directory and all its sub-directories?
+How to append .bak extension to all files in a directory and all sub-directories?
 find dir -type f -exec mv "{}" "{}".bak \;
 find dir -type f -exec mv "{}" "{}".bak ;
 find dir -type f -exec mv "{}" "{}".bak
@@ -1843,7 +1843,7 @@ These are all version control systems, but only Mercurial has a distributed mode
 2
 version-control
 END
-Where exactly is the HTTP 404 File not found error generated?
+Who generates the HTTP 404 File not found error?
 The web server
 The client browser
 The client operating system
