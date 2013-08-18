@@ -979,6 +979,24 @@ The command creates a new table with a schema identical to the original, but wit
 2
 database
 END
+Which database system uses the commands: lsnrctl, isqlplusctl, emctl?
+Oracle
+Sybase
+MySQL
+PostgreSQL
+These commands are used by Oracle to provide various services.
+2
+database
+END
+How to get the current date in Oracle?
+SELECT SYSDATE FROM DUAL
+SELECT SYSDATE() FROM DUAL
+SELECT GETDATE
+SELECT GETDATE()
+The function to get the current date in Oracle is SYSDATE without parentheses.
+2
+database
+END
 Which is false about 32-bit and 64-bit architectures?
 A 64-bit processor is not compatible with 32-bit software.
 A 64-bit processor performs best with 64-bit software.
@@ -1303,6 +1321,24 @@ The response of a HEAD requests is a header identical to that of a GET request, 
 2
 network
 END
+Which HTTP method was not part of the HTTP/1.0 specification?
+OPTIONS
+GET
+POST
+HEAD
+The OPTIONS method was added in the HTTP/1.1 specification.
+2
+network
+END
+Which server response is not part of the HTTP standard?
+404 Internal Server Error
+418 I'm a teapot
+400 Bad Request
+401 Unauthorized
+404 is part of the standard but it means something else: "Not Found"
+2
+network
+END
 What is PXE for?
 Boot an operating system using a network interface.
 Boot an operating system using a floppy disk.
@@ -1609,6 +1645,42 @@ Port 23 is the default port of Telnet, an obsolete, insecure login service. The 
 2
 security
 END
+What is the weakest point in the computer security of a typical large firm?
+The employees
+The firewall software
+The antivirus software
+The intranet software
+The typical weakest point is the employees, as social engineering and human gallibility can often circumvent otherwise state of the art computer security system.
+2
+security
+END
+Which is the most dangerous security probing tool?
+nmap
+ping
+ifconfig
+telnet
+nmap is a sophisticated port scanner, and can reveal much more about a network than all the other tools combined.
+2
+security
+END
+Which cryptographic method is fundamentally different from the others?
+sha1
+des3
+aes-128-cbc
+crypt
+sha1 is a digest method, the others are encryption methods.
+2
+security
+END
+Which tool is not suitable to encrypt files?
+nmap
+encfs
+openssl
+TrueCrypt
+encfs and TrueCrypt can be used to create encrypted directories, and openssl can be used to encrypt a stream of data. nmap is a network scanning tool, not for encryption.
+2
+security
+END
 Which is not a build automation tool?
 g++
 make
@@ -1690,6 +1762,33 @@ ab is the Apache HTTP server benchmarking tool, but it is useful to perform load
 2
 tools
 END
+Which is not a web server software?
+X server
+nginx
+Apache
+Lighttpd
+X server is the server counterpart of the X Window System in UNIX, and has nothing to do with web servers.
+2
+tools
+END
+Which is not a network analysis tool?
+screen
+nmap
+tcpdump
+wireshark
+tcpdump dumps traffic on a network; wireshark is a network traffic analyzer; nmap is a network security auditing tool; that leaves us with screen, which is a terminal multiplexer tool.
+2
+tools
+END
+What is the purpose of the -h flag of the ls command in UNIX?
+Print file sizes in human readable format
+Print short help message
+Print long help message
+Print hidden files
+When used together with the -l flag for long format, the -h makes the ls command print file sizes in human readable format like 1K, 234M, 2G.
+2
+tools
+END
 In which version of Windows was PowerShell introduced?
 Windows 7
 Windows 8
@@ -1741,6 +1840,15 @@ domain name server
 host user home directories
 host Microsoft Exchange
 The main function of the Domain Controller is to handle user authentication requests.
+2
+windows
+END
+Which was the first version of Microsoft Windows that enforced preemptive multitasking?
+Windows NT
+Windows XP
+Windows 3.1
+Windows 98
+Windows NT was the first version of Microsoft Windows which enforced preemptive multitasking. Earlier versions used cooperative multitasking.
 2
 windows
 END
