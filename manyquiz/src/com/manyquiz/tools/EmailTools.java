@@ -21,7 +21,8 @@ public abstract class EmailTools {
             if (manager != null) {
                 info = manager.getPackageInfo(packageName, 0);
                 if (info != null) {
-                    message += String.format("\n\n--\n[Version: %d/%s]", info.versionCode, info.versionName);
+                    message += String.format("\n\n--\n[App: %s Version: %d/%s]",
+                            packageName, info.versionCode, info.versionName);
                 }
             }
         } catch (PackageManager.NameNotFoundException e) {
