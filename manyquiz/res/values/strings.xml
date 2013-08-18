@@ -50,8 +50,8 @@
     <string name="summary_max_questions_suddendeath_format">Maximum # of questions = %s</string>
     
     <string name="email_address">info@manyquiz.com</string>
-    <string name="no_email_client">Choose an email client</string>
-    <string name="email_client_chooser">Choose an app…</string>
+    <string name="no_email_client">Could not find an email client, cannot send message :(</string>
+    <string name="email_client_chooser">Choose an email app…</string>
     
     <string name="btn_send">Send</string>
     <string name="title_contact">Contact Us</string>
