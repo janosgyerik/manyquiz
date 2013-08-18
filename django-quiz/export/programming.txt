@@ -304,6 +304,15 @@ The Firefox project began as an experimental branch of the Mozilla project.
 1
 history
 END
+Which operating system was the inspiration of Linux?
+MINIX
+FreeBSD
+UNIX
+Linus
+MINIX inspired Linus Torvalds to create the Linux kernel.
+1
+history
+END
 Which command will give read permission on a file for everyone?
 chmod a+r core
 chmod 777 core
@@ -1157,15 +1166,6 @@ FreeBSD
 Solaris
 MINIX is a UNIX-like system but it was not derived from UNIX. The others can all be traced back to some version of UNIX.
 2
-history
-END
-Which operating system was the inspiration of Linux?
-MINIX
-FreeBSD
-UNIX
-Linus
-MINIX inspired Linus Torvalds to create the Linux kernel.
-1
 history
 END
 In what language was UNIX originally written?
