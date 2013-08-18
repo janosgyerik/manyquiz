@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.manyquiz.R;
 import com.manyquiz.application.QuizApplication;
+import com.manyquiz.tools.EmailTools;
 
 public abstract class QuizActivityBase extends Activity {
 
@@ -34,8 +35,7 @@ public abstract class QuizActivityBase extends Activity {
             return true;
         }
         if (itemId == R.id.menu_contact) {
-            Intent intent = new Intent(getApplicationContext(), ContactActivity.class);
-            startActivity(intent);
+            EmailTools.send(this, R.string.subject_contact, "");
             return true;
         }
         return false;

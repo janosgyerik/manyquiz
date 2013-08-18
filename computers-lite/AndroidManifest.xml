@@ -23,11 +23,6 @@
         </activity>
         <activity android:name="com.manyquiz.activity.QuizActivity" />
         <activity
-                android:name="com.manyquiz.activity.ContactActivity"
-                android:label="@string/label_contact_activity"
-                android:theme="@style/Theme.Dialog">
-        </activity>
-        <activity
                 android:name="com.manyquiz.activity.SettingsActivity"
                 android:label="@string/label_settings_activity"
                 android:theme="@style/Theme.Dialog">
