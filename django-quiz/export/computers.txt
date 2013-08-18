@@ -1,3 +1,30 @@
+Which compression tool is the most efficient?
+7z
+bzip2
+gzip
+arj
+The tools in increasing order of efficiency: arj gzip bzip2 7z.
+1
+backup
+END
+How to create a zipped tar archive?
+tar czf archive.tar.gz somedir
+tar archive.tar.gz somedir
+tar tf archive.tar.gz somedir
+tar -cd archive.tar.gz somedir
+The "c" flag stands for "create", "z" stands for zipped, "f" followed by a filename is to specify the target file to create, and the remaining arguments are file or directory names to add to the archive.
+1
+backup
+END
+How to view the list of files in a zipped tar archive?
+tar tzf archive.tar.gz
+tar xzf archive.tar.gz
+tar czf archive.tar.gz
+tar tf archive.tar.gz
+The "t" flag is to list the content, "z" stands for zipped, "f" followed by a filename is to specify the archive file.
+1
+backup
+END
 How to count the number of sheep in the farm table?
 SELECT count(*) FROM farm;
 SELECT count FROM farm;
@@ -17,19 +44,19 @@ SQL, Structured Query Language, is a special-purpose programming language design
 database
 END
 How to find all employees whose name is "Smith"?
-SELECT * FROM Employees WHERE Name = 'Smith';
-SELECT * FROM Employees WHERE Name IS 'Smith';
-SELECT * FROM Employees WHO IS "Smith";
-SELECT * FROM Employees WHERE Name == 'Smith';
-Strings must be enclosed within single quotes, and the operator to check for equality is "==".
+SELECT * FROM Employee WHERE Name = 'Smith';
+SELECT * FROM Employee WHERE Name IS 'Smith';
+SELECT * FROM Employee WHERE Name == 'Smith';
+SELECT * FROM Employee WHERE Name = "Smith";
+Strings must be enclosed within single quotes, and the operator to check for equality is a single equal sign.
 1
 database
 END
 How to find all employees with NULL as email address?
-SELECT * FROM Employees WHERE Email IS NULL;
-SELECT * FROM Employees WHERE Email = 'NULL';
-SELECT * FROM Employees WHERE Email == 'NULL';
-SELECT * FROM Employees WHERE Email = NULL;
+SELECT * FROM Employee WHERE Email IS NULL;
+SELECT * FROM Employee WHERE Email = 'NULL';
+SELECT * FROM Employee WHERE Email == 'NULL';
+SELECT * FROM Employee WHERE Email = NULL;
 NULL is a keyword in SQL, it should not be quoted. The syntax to check whether something is NULL or not is "IS NULL" and "IS NOT NULL".
 1
 database
@@ -37,7 +64,7 @@ END
 A computer uses the least power in which mode?
 hibernate
 sleep
-stand-by
+standby
 lock
 When hibernated, the computer is completely off. It can restore itself by reloading the previously saved content of the memory.
 1
@@ -124,6 +151,33 @@ The Firefox project began as an experimental branch of the Mozilla project.
 1
 history
 END
+Which operating system was the inspiration of Linux?
+MINIX
+FreeBSD
+UNIX
+Linus
+MINIX inspired Linus Torvalds to create the Linux kernel.
+1
+history
+END
+How many characters are there in ASCII?
+128
+256
+240
+64
+ASCII includes definitions for 128 characters: 33 are non-printing control characters that affect how text and space are processed and 95 printable characters, including the space.
+1
+history
+END
+Who created the GNU operating system?
+Richard Stallman
+Linux Torvalds
+Bill Gates
+Alan Cox
+Development of GNU was initiated by Richard Stallman in 1983 and was the original focus of the Free Software Foundation (FSF).
+1
+history
+END
 How to shutdown safely a GNU/Linux machine?
 Press Ctrl-Alt-F1 first, and then Ctrl-Alt-Del
 Press Ctrl-Alt-SysRq-b
@@ -178,6 +232,33 @@ The operator to start a process in the background is the &.
 1
 linux
 END
+Which command shows the recently logged in users in UNIX?
+last
+users
+who
+w
+The last command shows the recent logins of users. You can specify a user to filter the complete list.
+1
+linux
+END
+Which command shows the currently logged in users in UNIX?
+w
+whois
+last
+users
+The "w" command shows who is logged in what process they are running.
+1
+linux
+END
+Which operating system is not based on Debian?
+Fedora
+Mint
+KNOPPIX
+Ubuntu
+Fedora is based on RedHat.
+1
+linux
+END
 Which is not a version of Mac OS X?
 10.1 Kitten
 10.4 Tiger
@@ -196,7 +277,7 @@ The X stands for the roman letter, meaning 10. Its predecessor was Mac OS 9.
 1
 mac
 END
-In Mac OS X, what is to command to open any file as if double-clicked in Finder?
+In Mac OS X, which command opens any file as if double-clicked in Finder?
 open
 view
 run
@@ -223,7 +304,7 @@ The Dynamic Host Configuration Protocol (DHCP) is a network protocol used to con
 1
 network
 END
-Which one looks like a netmask?
+Which one is a netmask?
 255.255.255.0
 192.168.2.103
 192.168.2.255
@@ -295,6 +376,15 @@ The IPv4 address of localhost is 127.0.0.1 in UNIX and Windows alike.
 1
 network
 END
+Which IPv4 address is on a private network?
+192.168.2.78
+173.194.40.162
+17.178.96.59
+15.192.124.145
+The address range 192.168.0.0 - 192.168.255.255 is reserved for private networks by the Internet Engineering Task Force (IETF).
+1
+network
+END
 What is the purpose of mounting a disk?
 Make a filesystem accessible
 Format a disk to store data
@@ -310,6 +400,24 @@ How many primary partitions are allowed on a PC hard disk?
 5
 unlimited
 The total data storage space of a PC HDD can be divided into at most four primary partitions, or alternatively three primary partitions and an extended partition.
+1
+os
+END
+What is the master boot record?
+Stores the partition table
+Stores the kernel
+Stores the operating system
+Stores the system recovery image
+The master boot record (MBR) stores the partition table, among other things.
+1
+os
+END
+What is the recommended swap size on a system with 512 MB RAM?
+1024 MB
+512 MB
+256 MB
+1000 MB
+The recommended swap size is usually twice the RAM.
 1
 os
 END
@@ -358,6 +466,15 @@ chmod a-rwx ~
 1
 permissions
 END
+What does it mean when the permission of a directory is "drwxrwxrwx"?
+Any user in the system can create and delete files
+Users in the same group can create and delete files
+Any user in the system can create but not delete files
+Users in the same group can create but not delete files
+A huge security hole, since all the user-group-other permission bits are enabled, thus any user in the system can create and delete files in this directory.
+1
+permissions
+END
 What kind of data structure is a FIFO?
 queue
 array
@@ -376,7 +493,7 @@ LIFO stands for Last In, First Out. A LIFO structure can be illustrated with the
 1
 programming
 END
-Which data structure is suitable to implement a cache?
+Which data structure is the most suitable to implement a cache?
 map
 set
 list
@@ -385,7 +502,7 @@ A hash table is a structure that can map keys to values. They can access values 
 1
 programming
 END
-What is the decimal value of 0x15?
+What is the decimal value of 0x15 (hexadecimal)?
 21
 15
 13
@@ -403,7 +520,7 @@ What is the decimal value of 015 (octal)?
 1
 programming
 END
-What is the decimal value of 0b1101?
+What is the decimal value of 0b1101 (binary)?
 13
 14
 15
@@ -418,6 +535,15 @@ How to write the number 11 in binary notation?
 0x0b
 0b11111111111
 The value of the binary expression 0b1011 = 2^3 + 2^1 + 2^0 = 8 + 2 + 1 = 11
+1
+programming
+END
+How many bits are in a byte?
+8
+2
+16
+7
+One byte consists of 8 bits.
 1
 programming
 END
@@ -475,7 +601,16 @@ The cd command without arguments changes to the home directory in UNIX and GNU/L
 1
 scripting
 END
-How to redirect the output of a script to /dev/null in Windows?
+Which command will change to the previous directory in UNIX?
+cd -
+cd
+cd .
+cd ..
+"cd -" is practically the same as "cd $OLDPWD" in UNIX and GNU/Linux systems.
+1
+scripting
+END
+How to hide the output of a script in Windows?
 script.bat >nul
 script.bat >null
 script.bat >/dev/null
@@ -484,7 +619,7 @@ The Null Device Driver component provides the functional equivalent of \dev\null
 1
 scripting
 END
-How to run script2.sh only if script1.sh is successful?
+How to run script2.sh only after script1.sh is successful?
 script1.sh && script2.sh
 script1.sh || script2.sh
 script1.sh & script2.sh
@@ -520,7 +655,7 @@ The redirection operator ">" truncates its output. Redirecting nothing results i
 1
 scripting
 END
-How to clear the command line in the middle of typing?
+How to cancel and clear the command line in the middle of typing?
 Ctrl-C
 Ctrl-Z
 Alt-C
@@ -592,7 +727,7 @@ It is very common and use to use a server-side script to log your IP address and
 1
 security
 END
-Which file transfer method is unsafe?
+Which file transfer method is the least safe?
 FTP
 SFTP
 rsync
@@ -688,6 +823,15 @@ check
 summary
 view
 The command to view pending changes is usually "status". Very often the shortcut "st" works too.
+1
+tools
+END
+How search for an exact phrase on a website with Google?
+site:example.com "git push"
+insite:example.com "git push"
+site:example.com (git push)
+site:example.com git push
+The prefix to limit search within a specific website is "site:", and exact phrases must be enclosed within double quotes.
 1
 tools
 END
@@ -790,7 +934,7 @@ The tar command creates a zipped archive on standard output from the contents of
 2
 backup
 END
-Which command is best suited for copying a disk image?
+Which command is the best for copying a disk image?
 dd
 rsync
 cp
@@ -799,12 +943,21 @@ dd can copy the content of special device files such as disk images, even when t
 2
 backup
 END
+How to backup the partition table?
+dd if=/dev/sdX of=/tmp/sda-mbr.bin bs=512 count=1
+dd if=/dev/sdX of=/tmp/sda-mbr.bin bs=256 count=1
+dd if=/dev/sdX of=/tmp/sda-mbr.bin bs=512
+dd if=/dev/sdX of=/tmp/sda-mbr.bin bs=1024
+The partition table is stored in the master boot record of a disk, in the first 512 bytes.
+2
+backup
+END
 How to find employees with DepartmentID set to NULL?
 SELECT * FROM Employee WHERE DepartmentID IS NULL;
 SELECT * FROM Employee WHERE DepartmentID = NULL;
 SELECT * FROM Employee WHERE DepartmentID EXISTS;
 SELECT * FROM Employee WHERE DepartmentID = 0;
-The correct syntax to test if something is NULL is using IS NULL.
+The IS NULL operator is the right way to find NULL values.
 2
 database
 END
@@ -867,7 +1020,7 @@ How many disks can fail in a RAID 5 array without risk of data loss?
 0
 2
 3
-RAID 5 distributes parity along with the data and requires that all drives but one be present to operate. The array is not destroyed by a single drive failure. On drive failure, any subsequent reads can be calculated from the distributed parity such that the drive failure is masked from the end user.
+RAID 5 distributes parity along with the data and requires that all drives but one be present to operate. The array is not destroyed by a single drive failure. On drive failure, any subsequent reads can be calculated from the distributed parity.
 2
 hardware
 END
@@ -877,15 +1030,6 @@ Mac OS X
 FreeBSD
 Solaris
 MINIX is a UNIX-like system but it was not derived from UNIX. The others can all be traced back to some version of UNIX.
-2
-history
-END
-Which operating system was the inspiration of Linux?
-MINIX
-FreeBSD
-UNIX
-Linus
-MINIX inspired Linus Torvalds to create the Linux kernel.
 2
 history
 END
@@ -1114,7 +1258,7 @@ Endian and endianness in the most common cases refers to how bytes are ordered.
 2
 network
 END
-Where exactly is the HTTP 404 File not found error generated?
+Who generates the HTTP 404 File not found error?
 The web server
 The client browser
 The client operating system
@@ -1183,6 +1327,15 @@ What is the file descriptor number of stderr?
 0
 911
 The file descriptor number of standard error is 2.
+2
+os
+END
+What is the maximum disk size usable by standard MBR?
+2 TB
+1 TB
+4 TB
+8 TB
+The standard Master Boot Record is limited to 32 bits to define partition endpoints, limiting the maximum disk size to 2 TB.
 2
 os
 END
@@ -1330,7 +1483,7 @@ tr reads text from standard input and writes to standard output. It does not tak
 2
 scripting
 END
-How to append .bak extension to all files in a directory and all its sub-directories?
+How to append .bak extension to all files in a directory and all sub-directories?
 find dir -type f -exec mv "{}" "{}".bak \;
 find dir -type f -exec mv "{}" "{}".bak ;
 find dir -type f -exec mv "{}" "{}".bak
