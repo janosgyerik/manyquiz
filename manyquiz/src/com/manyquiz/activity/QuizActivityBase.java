@@ -35,7 +35,7 @@ public abstract class QuizActivityBase extends Activity {
             return true;
         }
         if (itemId == R.id.menu_contact) {
-            EmailTools.send(this, R.string.subject_contact, "");
+            EmailTools.send(this, R.string.subject_contact);
             return true;
         }
         return false;

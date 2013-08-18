@@ -46,4 +46,8 @@ public abstract class EmailTools {
     public static void send(Context context, int subjectID, String message) {
         send(context, context.getString(subjectID), message);
     }
+
+    public static void send(Context context, int subjectID) {
+        send(context, context.getString(subjectID), "");
+    }
 }
