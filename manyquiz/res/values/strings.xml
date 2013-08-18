@@ -49,7 +49,7 @@
     <string name="summary_max_questions_suddendeath">Number of questions in sudden death mode</string>
     <string name="summary_max_questions_suddendeath_format">Maximum # of questions = %s</string>
     
-    <string name="email_address">info@manyquiz.com</string>
+    <string name="email_address">ManyQuiz Info &lt;info@manyquiz.com&gt;</string>
     <string name="no_email_client">Could not find an email client, cannot send message :(</string>
     <string name="email_client_chooser">Choose an email app…</string>
     
