@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -209,7 +210,11 @@ public class QuizActivity extends QuizActivityBase {
     private void updateCurrentQuestion() {
         boolean canChangeAnswer = quizControl.getCurrentQuestion().canChangeAnswer();
 
-        for (Button button : answerButtons) {
+        if (!canChangeAnswer) {
+            explanationView.setVisibility(View.VISIBLE);
+        }
+
+        for (final Button button : answerButtons) {
             IAnswerControl answer = (IAnswerControl) button.getTag();
             if (canChangeAnswer) {
                 if (answer.isSelected()) {
@@ -220,16 +225,34 @@ public class QuizActivity extends QuizActivityBase {
                 button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP, BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
             } else {
                 button.setEnabled(false);
-                explanationView.setVisibility(View.VISIBLE);
                 if (answer.getAnswer().isCorrect()) {
                     button.setBackgroundResource(R.drawable.btn_correct);
                     button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP, BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
                 } else if (answer.isSelected()) {
                     button.setBackgroundResource(R.drawable.btn_incorrect);
                     button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP, BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
+                } else {
+
+                    // TODO Fade out button if user is currently answering the question. Otherwise just hide it without animation.
+
+                    // Already answered : Just hide button
+                    //button.setVisibility(View.GONE);
+
+                    // User is answering : Fade out button
+                    button.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fadeout));
+
+                    // Maybe a little bit dirty but seems to be the easiest way to remove button after the animation's end.
+                    // Use listener on button (AnimationListener) instead and handle onAnimationEnd()
+                    button.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            button.setVisibility(View.GONE);
+                        }
+                    }, 200);
                 }
             }
         }
+
         updateQuestionCounter();
         updateNavigationButtons();
     }
