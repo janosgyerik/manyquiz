@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -169,7 +170,7 @@ public class QuizActivity extends QuizActivityBase {
         @Override
         public void onClick(View arg0) {
             answer.select();
-            updateCurrentQuestion();
+            updateCurrentQuestion(true);
         }
     }
 
@@ -208,6 +209,10 @@ public class QuizActivity extends QuizActivityBase {
     }
 
     private void updateCurrentQuestion() {
+        updateCurrentQuestion(false);
+    }
+
+    private void updateCurrentQuestion(boolean useEffects) {
         boolean canChangeAnswer = quizControl.getCurrentQuestion().canChangeAnswer();
 
         if (!canChangeAnswer) {
@@ -231,24 +236,29 @@ public class QuizActivity extends QuizActivityBase {
                 } else if (answer.isSelected()) {
                     button.setBackgroundResource(R.drawable.btn_incorrect);
                     button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP, BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
+                } else if (useEffects) {
+                    Animation animation = AnimationUtils.loadAnimation(this, R.anim.fadeout);
+                    if (animation != null) {
+                        animation.setAnimationListener(new Animation.AnimationListener() {
+                            @Override
+                            public void onAnimationStart(Animation animation) {
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animation animation) {
+                                button.setVisibility(View.GONE);
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animation animation) {
+                            }
+                        });
+                        button.startAnimation(animation);
+                    } else {
+                        button.setVisibility(View.GONE);
+                    }
                 } else {
-
-                    // TODO Fade out button if user is currently answering the question. Otherwise just hide it without animation.
-
-                    // Already answered : Just hide button
-                    //button.setVisibility(View.GONE);
-
-                    // User is answering : Fade out button
-                    button.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fadeout));
-
-                    // Maybe a little bit dirty but seems to be the easiest way to remove button after the animation's end.
-                    // Use listener on button (AnimationListener) instead and handle onAnimationEnd()
-                    button.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            button.setVisibility(View.GONE);
-                        }
-                    }, 200);
+                    button.setVisibility(View.GONE);
                 }
             }
         }
