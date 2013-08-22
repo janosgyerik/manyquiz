@@ -2410,3 +2410,12 @@ Windows NT was the first version of Microsoft Windows which enforced preemptive 
 3
 windows
 END
+How to match a 8 digit number with or without a hyphen in the middle?
+^(?:\d{8}|(?=\d+-\d+$)[\d\-]{9})$
+^(?:\d{8}|(?=\d+-\d+)[\d\-]{9})$
+^(?:\d{8}|(?=\d+-\d+$)[\d\-]{8})$
+^(?:\d{8}|[\d\-]{9})$
+Either it's \d{8} from start to end, 8 digits. Or it is 9 characters of [\d\-] (digits or hyphen) AND it matched \d+-\d+ - meaning it has exactly one hyphen in the middle.
+3
+regex
+END
