@@ -3,7 +3,7 @@ Installing environnement from 0 and running an App in 5 mins
 
 On GNU/Linux (Debian/Ubuntu)
 -----------------------------
-I assume you started from a fresh system, with default packages, and root rights.
+I assume you start from a fresh system, with default packages, and root rights.
 
 ### Install Dependencies
 
@@ -19,7 +19,7 @@ You have to install git, oracle-jdk and android-sdk:
 
     tar xvf android-sdk_r22.2.1-linux.tgz
 
-You can move the folder `android-sdk-linux` to any place you feel more appropriate, for the rest of the steps, I will assume it is placed on your home folder.
+You can move the folder `android-sdk-linux` to any place you feel more appropriate, for the rest of the steps, I will assume it is placed in your home folder.
 
 ### Setup the tools
 
@@ -63,7 +63,7 @@ Return to "Help" > "Install New Software", choose this time "--All Available Sit
 
 Relaunch Eclipse.
 
-Go to "Windows" > "Preferences", and on Android entry, check the path of the SDK to aim to your previous android-sdk-folder.
+Go to "Windows" > "Preferences", and on Android entry, check the path of the SDK to see if it targets your previous android-sdk-folder.
 
 ### Get the project and launch it
 
@@ -89,6 +89,6 @@ On Windows
 -----------
 
 TODO.
-Basically, go to Git official website, Oracle Website, And Android developpers website to download the binary and installed the required tools by yourself.
-The Eclipse Steps should be the same.
+Basically, you just have to go to Git official website, Oracle Website, and Android developers website to download the same binaries as in previous step for Windows platform and install them by yourself.
+The Eclipse steps should be the same.
 
