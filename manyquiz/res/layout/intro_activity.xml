@@ -99,16 +99,9 @@
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/btn_start_quiz"
-            style="@style/wideButton"
-            android:text="@string/btn_start_quiz" />
-
-    </LinearLayout>
+    <Button
+        android:id="@+id/btn_start_quiz"
+        style="@style/wideButton"
+        android:text="@string/btn_start_quiz" />
 
 </LinearLayout>
