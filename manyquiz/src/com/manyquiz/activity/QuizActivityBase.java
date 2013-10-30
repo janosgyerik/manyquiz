@@ -1,7 +1,7 @@
 package com.manyquiz.activity;
 
-import android.app.Activity;
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,7 +10,7 @@ import com.manyquiz.R;
 import com.manyquiz.application.QuizApplication;
 import com.manyquiz.tools.EmailTools;
 
-public abstract class QuizActivityBase extends Activity {
+public abstract class QuizActivityBase extends FragmentActivity {
 
     protected static final int RETURN_FROM_SETTINGS = 1;
 
