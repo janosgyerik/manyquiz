@@ -13,8 +13,10 @@
     <string name="menu_about">Info</string>
     <string name="menu_settings">Settings</string>
 
+    <string name="th_categories">Categories:</string>
+
     <string name="title_select_categories">Select categories</string>
-    <string name="btn_select_categories">Categories&#8230;</string>
+    <string name="btn_select_ellipsis">Select&#8230;</string>
 
     <string name="title_activity_main">Computer Quiz</string>
     <string name="msg_welcome_to_the_quiz">Welcome to the Computer Quiz!</string>

@@ -4,17 +4,21 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.DialogFragment;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.manyquiz.R;
 import com.manyquiz.db.QuizSQLiteOpenHelper;
+import com.manyquiz.fragments.SelectCategoriesDialogFragment;
+import com.manyquiz.quiz.impl.Category;
 import com.manyquiz.quiz.impl.Level;
+import com.manyquiz.tools.IPreferenceEditor;
+import com.manyquiz.tools.SimpleSharedPreferenceEditor;
 
 import java.util.List;
 
@@ -68,8 +72,9 @@ public class IntroActivity extends QuizActivityBase {
         suddenDeathMode = (RadioButton) findViewById(R.id.mode_sudden_death);
         updateSuddenDeathModeLabel();
 
-        Button btnStartQuiz = (Button) findViewById(R.id.btn_start_quiz);
-        btnStartQuiz.setOnClickListener(new StartQuizClickListener());
+        findViewById(R.id.btn_select_categories).setOnClickListener(new SelectCategoriesClickListener());
+
+        findViewById(R.id.btn_start_quiz).setOnClickListener(new StartQuizClickListener());
     }
 
     class StartQuizClickListener implements OnClickListener {
@@ -90,6 +95,22 @@ public class IntroActivity extends QuizActivityBase {
             Intent intent = new Intent(IntroActivity.this, QuizActivity.class);
             intent.putExtras(bundle);
             startActivity(intent);
+        }
+    }
+
+    class SelectCategoriesClickListener implements OnClickListener {
+        @Override
+        public void onClick(View view) {
+            SharedPreferences sharedPreferences = PreferenceManager
+                    .getDefaultSharedPreferences(IntroActivity.this);
+
+            String key = getString(R.string.key_selected_categories);
+
+            List<Category> categories = helper.getCategories();
+
+            IPreferenceEditor preferenceEditor = new SimpleSharedPreferenceEditor(sharedPreferences, key);
+            DialogFragment newFragment = new SelectCategoriesDialogFragment(preferenceEditor, categories);
+            newFragment.show(getSupportFragmentManager(), "select-categories");
         }
     }
 
@@ -133,5 +154,4 @@ public class IntroActivity extends QuizActivityBase {
         super.onDestroy();
         helper.close();
     }
-
 }
