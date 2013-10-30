@@ -8,6 +8,7 @@ import android.provider.BaseColumns;
 import android.util.Log;
 
 import com.manyquiz.quiz.impl.Answer;
+import com.manyquiz.quiz.impl.Category;
 import com.manyquiz.quiz.impl.Level;
 import com.manyquiz.quiz.impl.Question;
 import com.manyquiz.quiz.model.IAnswer;
@@ -112,11 +113,70 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
         //noinspection ConstantConditions
         return getReadableDatabase().rawQuery(
                 String.format(
-                        "SELECT DISTINCT l.%s %s, l.name name, l.level level FROM %s l JOIN %s q ON l.%s = q.level_id ORDER BY l.level",
+                        "SELECT DISTINCT l.%s %s, l.name name, l.level level " +
+                                "FROM %s l JOIN %s q ON l.%s = q.level_id ORDER BY l.level",
                         BaseColumns._ID, BaseColumns._ID, LEVELS_TABLE_NAME, QUESTIONS_TABLE_NAME, BaseColumns._ID
                 ),
                 null
         );
+    }
+
+    /**
+     * @param level to summarize categories
+     * @return Cursor with columns: name, count
+     */
+    public Cursor getCategoriesCursor(Level level) {
+        Log.d(TAG, "get categories of given level");
+        //noinspection ConstantConditions
+        return getReadableDatabase().rawQuery(
+                String.format(
+                        "SELECT category, COUNT(*) count " +
+                                "FROM %s " +
+                                "WHERE level_id = %s GROUP BY category",
+                        QUESTIONS_TABLE_NAME, level.getId()
+                ),
+                null
+        );
+    }
+
+    /**
+     * @return Cursor with columns: name, count
+     */
+    public Cursor getCategoriesCursor() {
+        Log.d(TAG, "get categories");
+        //noinspection ConstantConditions
+        return getReadableDatabase().rawQuery(
+                String.format(
+                        "SELECT category, COUNT(*) count " +
+                                "FROM %s " +
+                                "GROUP BY category",
+                        QUESTIONS_TABLE_NAME
+                ),
+                null
+        );
+    }
+
+    static class CategoryRecord {
+        public String name;
+        public int count;
+    }
+
+    public List<Category> getCategoriesFromCursor(Cursor cursor) {
+        List<Category> categories = new ArrayList<Category>();
+
+        while (cursor.moveToNext()) {
+            CategoryRecord record = new CategoryRecord();
+            record.name = cursor.getString(0);
+            record.count = cursor.getInt(1);
+            categories.add(new Category(record.name, record.count));
+        }
+        cursor.close();
+
+        return categories;
+    }
+
+    public List<Category> getCategories() {
+        return getCategoriesFromCursor(getCategoriesCursor());
     }
 
     public Cursor getQuestionListCursor(int level) {
