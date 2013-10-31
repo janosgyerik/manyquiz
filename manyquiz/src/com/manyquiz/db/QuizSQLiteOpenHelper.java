@@ -22,8 +22,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
 
@@ -163,8 +165,7 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
     }
 
     public Cursor getQuestionListCursor(int level, Collection<String> categories) {
-        Log.d(TAG, "get all questions at level = " + level);
-        Cursor cursor;
+        Log.d(TAG, "get questions at level = " + level);
         StringBuilder builder = new StringBuilder();
         builder.append('(');
         boolean first = true;
@@ -184,34 +185,30 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
                 BaseColumns._ID, categoryInClause
         );
         //noinspection ConstantConditions
-        cursor = getReadableDatabase().rawQuery(sql, new String[]{Integer.toString(level)});
-        return cursor;
+        return getReadableDatabase().rawQuery(sql, new String[]{Integer.toString(level)});
     }
 
-    public Cursor getAnswerListCursor(int level, Collection<String> categories) {
-        Log.d(TAG, "get all answers");
+    private Cursor getAnswerListCursor(Collection<String> questionIds) {
+        Log.d(TAG, "get answers for questions");
         Cursor cursor;
         StringBuilder builder = new StringBuilder();
         builder.append('(');
         boolean first = true;
-        for (String category : categories) {
+        for (String qid : questionIds) {
             if (!first) builder.append(", ");
             first = false;
-            builder.append('\'').append(category).append('\'');
+            builder.append(qid);
         }
         builder.append(')');
-        String categoryInClause = builder.toString();
+        String qidInClause = builder.toString();
         String sql = String.format(
-                "SELECT a.%s %s, question_id, a.text text, is_correct " +
-                        "FROM %s a JOIN %s q ON a.question_id = q.%s " +
-                        "JOIN %s l ON q.level_id = l.%s " +
-                        "WHERE l.level = ? AND q.is_active = 1 AND q.category in %s",
-                BaseColumns._ID, BaseColumns._ID,
-                ANSWERS_TABLE_NAME, QUESTIONS_TABLE_NAME, BaseColumns._ID,
-                LEVELS_TABLE_NAME, BaseColumns._ID, categoryInClause
+                "SELECT %s, question_id, text, is_correct " +
+                        "FROM %s " +
+                        "WHERE question_id in %s",
+                BaseColumns._ID, ANSWERS_TABLE_NAME, qidInClause
         );
         //noinspection ConstantConditions
-        cursor = getReadableDatabase().rawQuery(sql, new String[]{Integer.toString(level)});
+        cursor = getReadableDatabase().rawQuery(sql, null);
         return cursor;
     }
 
@@ -238,6 +235,7 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
 
         Map<String, QuestionRecord> questionRecordMap = new HashMap<String, QuestionRecord>();
 
+        Set<String> questionIds = new HashSet<String>();
         {
             Cursor cursor = getQuestionListCursor(level, categories);
             final int idIndex = cursor.getColumnIndex(BaseColumns._ID);
@@ -249,12 +247,13 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
                 record.text = cursor.getString(textIndex);
                 record.explanation = cursor.getString(explanationIndex);
                 questionRecordMap.put(record.id, record);
+                questionIds.add(record.id);
             }
             cursor.close();
         }
 
         {
-            Cursor cursor = getAnswerListCursor(level, categories);
+            Cursor cursor = getAnswerListCursor(questionIds);
             final int questionIdIndex = cursor.getColumnIndex("question_id");
             final int textIndex = cursor.getColumnIndex("text");
             final int isCorrectIndex = cursor.getColumnIndex("is_correct");
