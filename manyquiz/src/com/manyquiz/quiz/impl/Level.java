@@ -6,8 +6,6 @@ public class Level implements Serializable {
 
     private static final long serialVersionUID = -2650243060379640957L;
 
-    public static final int ANY = 0;
-
     private final String id;
     private final String name;
     private final int level;

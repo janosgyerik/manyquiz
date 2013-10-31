@@ -3,6 +3,7 @@ package com.manyquiz.db;
 import com.manyquiz.quiz.model.IQuestion;
 import com.manyquiz.quiz.model.IQuizFactory;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -15,15 +16,8 @@ public class DatabaseBackedQuizFactory implements IQuizFactory {
     }
 
     @Override
-    public List<IQuestion> pickRandomQuestions(int length) {
-        List<IQuestion> questions = helper.getQuestions();
-        Collections.shuffle(questions);
-        return length > questions.size() ? questions : questions.subList(0, length);
-    }
-
-    @Override
-    public List<IQuestion> pickRandomQuestions(int length, int level) {
-        List<IQuestion> questions = helper.getQuestions(level);
+    public List<IQuestion> pickRandomQuestions(int length, int level, Collection<String> categories) {
+        List<IQuestion> questions = helper.getQuestions(level, categories);
         Collections.shuffle(questions);
         return length > questions.size() ? questions : questions.subList(0, length);
     }

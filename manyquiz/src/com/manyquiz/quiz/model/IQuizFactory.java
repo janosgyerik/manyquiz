@@ -1,23 +1,17 @@
 package com.manyquiz.quiz.model;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface IQuizFactory {
 
     /**
-     * Return at most N random questions, if possible, from the entire collection.
-     *
-     * @param length = max number of questions to return
-     * @return list of questions
-     */
-    List<IQuestion> pickRandomQuestions(int length);
-
-    /**
-     * Return at most N random questions, if possible, of given difficulty level.
+     * Return at most N random questions, of given difficulty level, of listed categories.
      *
      * @param length = max number of questions to return
      * @param level  = difficulty level
+     * @param categories = categories to include
      * @return list of questions
      */
-    List<IQuestion> pickRandomQuestions(int length, int level);
+    List<IQuestion> pickRandomQuestions(int length, int level, Collection<String> categories);
 }
