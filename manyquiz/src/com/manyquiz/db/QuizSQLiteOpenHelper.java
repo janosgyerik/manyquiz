@@ -123,24 +123,6 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * @param level to summarize categories
-     * @return Cursor with columns: name, count
-     */
-    public Cursor getCategoriesCursor(Level level) {
-        Log.d(TAG, "get categories of given level");
-        //noinspection ConstantConditions
-        return getReadableDatabase().rawQuery(
-                String.format(
-                        "SELECT category, COUNT(*) count " +
-                                "FROM %s " +
-                                "WHERE level_id = %s GROUP BY category",
-                        QUESTIONS_TABLE_NAME, level.getId()
-                ),
-                null
-        );
-    }
-
-    /**
      * @return Cursor with columns: name, count
      */
     public Cursor getCategoriesCursor() {
