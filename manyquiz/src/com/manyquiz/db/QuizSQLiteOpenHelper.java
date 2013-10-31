@@ -165,71 +165,53 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
     public Cursor getQuestionListCursor(int level, Collection<String> categories) {
         Log.d(TAG, "get all questions at level = " + level);
         Cursor cursor;
-        if (level == Level.ANY) {
-            //noinspection ConstantConditions
-            cursor = getReadableDatabase().query(
-                    QUESTIONS_TABLE_NAME,
-                    new String[]{BaseColumns._ID, "text", "category", "hint",
-                            "explanation",}, "is_active = 1", null, null, null,
-                    null);
-        } else {
-            StringBuilder builder = new StringBuilder();
-            builder.append('(');
-            boolean first = true;
-            for (String category : categories) {
-                if (!first) builder.append(", ");
-                first = false;
-                builder.append('\'').append(category).append('\'');
-            }
-            builder.append(')');
-            String categoryInClause = builder.toString();
-            String sql = String.format(
-                    "SELECT q.%s %s, q.text text, category, hint, explanation " +
-                            "FROM %s q JOIN %s l ON q.level_id = l.%s " +
-                            "WHERE l.level = ? AND category in %s",
-                    BaseColumns._ID, BaseColumns._ID,
-                    QUESTIONS_TABLE_NAME, LEVELS_TABLE_NAME,
-                    BaseColumns._ID, categoryInClause
-            );
-            //noinspection ConstantConditions
-            cursor = getReadableDatabase().rawQuery(sql, new String[]{Integer.toString(level)});
+        StringBuilder builder = new StringBuilder();
+        builder.append('(');
+        boolean first = true;
+        for (String category : categories) {
+            if (!first) builder.append(", ");
+            first = false;
+            builder.append('\'').append(category).append('\'');
         }
+        builder.append(')');
+        String categoryInClause = builder.toString();
+        String sql = String.format(
+                "SELECT q.%s %s, q.text text, category, hint, explanation " +
+                        "FROM %s q JOIN %s l ON q.level_id = l.%s " +
+                        "WHERE l.level = ? AND category in %s",
+                BaseColumns._ID, BaseColumns._ID,
+                QUESTIONS_TABLE_NAME, LEVELS_TABLE_NAME,
+                BaseColumns._ID, categoryInClause
+        );
+        //noinspection ConstantConditions
+        cursor = getReadableDatabase().rawQuery(sql, new String[]{Integer.toString(level)});
         return cursor;
     }
 
     public Cursor getAnswerListCursor(int level, Collection<String> categories) {
         Log.d(TAG, "get all answers");
         Cursor cursor;
-        if (level == Level.ANY) {
-            //noinspection ConstantConditions
-            cursor = getReadableDatabase().query(
-                    ANSWERS_TABLE_NAME,
-                    new String[]{BaseColumns._ID, "question_id", "text",
-                            "is_correct",}, "is_active = 1", null, null, null,
-                    null);
-        } else {
-            StringBuilder builder = new StringBuilder();
-            builder.append('(');
-            boolean first = true;
-            for (String category : categories) {
-                if (!first) builder.append(", ");
-                first = false;
-                builder.append('\'').append(category).append('\'');
-            }
-            builder.append(')');
-            String categoryInClause = builder.toString();
-            String sql = String.format(
-                    "SELECT a.%s %s, question_id, a.text text, is_correct " +
-                            "FROM %s a JOIN %s q ON a.question_id = q.%s " +
-                            "JOIN %s l ON q.level_id = l.%s " +
-                            "WHERE l.level = ? AND q.is_active = 1 AND q.category in %s",
-                    BaseColumns._ID, BaseColumns._ID,
-                    ANSWERS_TABLE_NAME, QUESTIONS_TABLE_NAME, BaseColumns._ID,
-                    LEVELS_TABLE_NAME, BaseColumns._ID, categoryInClause
-            );
-            //noinspection ConstantConditions
-            cursor = getReadableDatabase().rawQuery(sql, new String[]{Integer.toString(level)});
+        StringBuilder builder = new StringBuilder();
+        builder.append('(');
+        boolean first = true;
+        for (String category : categories) {
+            if (!first) builder.append(", ");
+            first = false;
+            builder.append('\'').append(category).append('\'');
         }
+        builder.append(')');
+        String categoryInClause = builder.toString();
+        String sql = String.format(
+                "SELECT a.%s %s, question_id, a.text text, is_correct " +
+                        "FROM %s a JOIN %s q ON a.question_id = q.%s " +
+                        "JOIN %s l ON q.level_id = l.%s " +
+                        "WHERE l.level = ? AND q.is_active = 1 AND q.category in %s",
+                BaseColumns._ID, BaseColumns._ID,
+                ANSWERS_TABLE_NAME, QUESTIONS_TABLE_NAME, BaseColumns._ID,
+                LEVELS_TABLE_NAME, BaseColumns._ID, categoryInClause
+        );
+        //noinspection ConstantConditions
+        cursor = getReadableDatabase().rawQuery(sql, new String[]{Integer.toString(level)});
         return cursor;
     }
 
