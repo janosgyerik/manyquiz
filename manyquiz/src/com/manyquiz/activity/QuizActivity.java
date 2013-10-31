@@ -1,10 +1,13 @@
 package com.manyquiz.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -90,6 +93,22 @@ public class QuizActivity extends QuizActivityBase {
             IQuizFactory quiz = new DatabaseBackedQuizFactory(getHelper());
             List<IQuestion> questions = quiz.pickRandomQuestions(preferredQuestionsNum,
                     level.getLevel(), getCategoryFilterControl().getSelectedItems());
+
+            if (questions.isEmpty()) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, android.R.style.Theme_Holo_Light));
+                builder.setTitle(R.string.title_no_matching_questions)
+                        .setMessage(R.string.msg_no_matching_questions)
+                        .setIcon(R.drawable.launcher_main)
+                        .setCancelable(false)
+                        .setPositiveButton(R.string.btn_ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                finish();
+                            }
+                        })
+                        .show();
+                return;
+            }
 
             if (mode.equals(getString(R.string.const_score_as_you_go))) {
                 quizControl = new ScoreAsYouGoQuiz(questions);
