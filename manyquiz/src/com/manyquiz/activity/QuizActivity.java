@@ -98,7 +98,7 @@ public class QuizActivity extends QuizActivityBase {
                 AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, android.R.style.Theme_Holo_Light));
                 builder.setTitle(R.string.title_no_matching_questions)
                         .setMessage(R.string.msg_no_matching_questions)
-                        .setIcon(R.drawable.launcher_main)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
                         .setCancelable(false)
                         .setPositiveButton(R.string.btn_ok, new DialogInterface.OnClickListener() {
                             @Override

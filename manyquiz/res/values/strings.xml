@@ -18,7 +18,7 @@
     <string name="title_select_categories">Select categories</string>
     <string name="btn_select_ellipsis">Select&#8230;</string>
 
-    <string name="title_no_matching_questions">Sorry&#8230;</string>
+    <string name="title_no_matching_questions">No matching questions&#8230;</string>
     <string name="msg_no_matching_questions">Sorry, there are no questions matching the active filters. Please try again with different category filters and/or difficulty level.</string>
 
     <string name="title_activity_main">Computer Quiz</string>
