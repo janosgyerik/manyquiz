@@ -26,8 +26,8 @@ public class CategoryFilterControlTest {
         mockCategories.add(new Category("linux"));
         mockCategories.add(new Category("database"));
         ICategoryFilterControl categoryControl = new CategoryFilterControl(mockPreferenceEditor, mockCategories);
-        Assert.assertArrayEquals(new String[]{"linux", "database"}, categoryControl.getItems());
-        assertArrayEquals(new boolean[]{true, true}, categoryControl.getCheckedItems());
+        Assert.assertArrayEquals(new String[]{"linux", "database"}, categoryControl.getCategoryNames());
+        assertArrayEquals(new boolean[]{true, true}, categoryControl.getCategoryStates());
     }
 
     @Test
@@ -39,8 +39,8 @@ public class CategoryFilterControlTest {
         mockCategories.add(new Category("linux"));
         mockCategories.add(new Category("database"));
         ICategoryFilterControl categoryControl = new CategoryFilterControl(mockPreferenceEditor, mockCategories);
-        Assert.assertArrayEquals(new String[]{"linux", "database"}, categoryControl.getItems());
-        assertArrayEquals(new boolean[]{false, true}, categoryControl.getCheckedItems());
+        Assert.assertArrayEquals(new String[]{"linux", "database"}, categoryControl.getCategoryNames());
+        assertArrayEquals(new boolean[]{false, true}, categoryControl.getCategoryStates());
     }
 
     @Test
@@ -52,8 +52,8 @@ public class CategoryFilterControlTest {
         mockCategories.add(new Category("linux"));
         mockCategories.add(new Category("database"));
         ICategoryFilterControl categoryControl = new CategoryFilterControl(mockPreferenceEditor, mockCategories);
-        categoryControl.setFilter(0, false);
-        assertArrayEquals(new boolean[]{false, true}, categoryControl.getCheckedItems());
+        categoryControl.setCategoryState(0, false);
+        assertArrayEquals(new boolean[]{false, true}, categoryControl.getCategoryStates());
     }
 
     @Test
@@ -65,7 +65,7 @@ public class CategoryFilterControlTest {
         mockCategories.add(new Category("linux"));
         mockCategories.add(new Category("database"));
         ICategoryFilterControl categoryControl = new CategoryFilterControl(mockPreferenceEditor, mockCategories);
-        categoryControl.setFilter(0, false);
+        categoryControl.setCategoryState(0, false);
 
         categoryControl.saveFilters();
         verify(mockPreferenceEditor).savePreferenceValue("linux=,database=1");
@@ -80,7 +80,7 @@ public class CategoryFilterControlTest {
         mockCategories.add(new Category("linux"));
         mockCategories.add(new Category("database"));
         ICategoryFilterControl categoryControl = new CategoryFilterControl(mockPreferenceEditor, mockCategories);
-        Assert.assertArrayEquals(new String[]{"linux", "database"}, categoryControl.getItems());
+        Assert.assertArrayEquals(new String[]{"linux", "database"}, categoryControl.getCategoryNames());
     }
 
     private void assertArrayEquals(boolean[] expected, boolean[] actual) {

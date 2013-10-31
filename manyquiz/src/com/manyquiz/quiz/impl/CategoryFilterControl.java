@@ -17,15 +17,15 @@ public class CategoryFilterControl implements ICategoryFilterControl {
     private static final String FALSE_VAL = "";
 
     private final List<Category> categories;
-    private final String[] items;
-    private final boolean[] checkedItems;
+    private final String[] categoryNames;
+    private final boolean[] categoryStates;
     private final IPreferenceEditor preferenceEditor;
 
     public CategoryFilterControl(IPreferenceEditor preferenceEditor, List<Category> categories) {
         this.preferenceEditor = preferenceEditor;
         this.categories = categories;
-        this.items = new String[categories.size()];
-        this.checkedItems = new boolean[categories.size()];
+        this.categoryNames = new String[categories.size()];
+        this.categoryStates = new boolean[categories.size()];
 
         deserializeFromPrefs();
     }
@@ -53,8 +53,8 @@ public class CategoryFilterControl implements ICategoryFilterControl {
         }
         int i = 0;
         for (Category category : categories) {
-            items[i] = category.name;
-            checkedItems[i] = categoryFilterMap.get(category.name);
+            categoryNames[i] = category.name;
+            categoryStates[i] = categoryFilterMap.get(category.name);
             ++i;
         }
     }
@@ -62,7 +62,7 @@ public class CategoryFilterControl implements ICategoryFilterControl {
     private String serialized() {
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < categories.size(); ++i) {
-            builder.append(items[i]).append("=").append(checkedItems[i] ? TRUE_VAL : FALSE_VAL);
+            builder.append(categoryNames[i]).append("=").append(categoryStates[i] ? TRUE_VAL : FALSE_VAL);
             if (i < categories.size() - 1) builder.append(PAIR_SEP);
         }
         return builder.toString();
@@ -74,25 +74,25 @@ public class CategoryFilterControl implements ICategoryFilterControl {
     }
 
     @Override
-    public String[] getItems() {
-        return items;
+    public String[] getCategoryNames() {
+        return categoryNames;
     }
 
     @Override
-    public boolean[] getCheckedItems() {
-        return checkedItems;
+    public boolean[] getCategoryStates() {
+        return categoryStates;
     }
 
     @Override
-    public void setFilter(int which, boolean enabled) {
-        checkedItems[which] = enabled;
+    public void setCategoryState(int which, boolean enabled) {
+        categoryStates[which] = enabled;
     }
 
     @Override
     public Collection<String> getSelectedItems() {
         Set<String> selectedItems = new HashSet<String>();
-        for (int i = 0; i < items.length; ++i) {
-            if (checkedItems[i]) selectedItems.add(items[i]);
+        for (int i = 0; i < categoryNames.length; ++i) {
+            if (categoryStates[i]) selectedItems.add(categoryNames[i]);
         }
         return selectedItems;
     }

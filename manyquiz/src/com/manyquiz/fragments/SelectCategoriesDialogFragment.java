@@ -27,12 +27,12 @@ public class SelectCategoriesDialogFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(getActivity(), android.R.style.Theme_Holo_Light));
         builder.setTitle(R.string.title_select_categories)
-                .setMultiChoiceItems(categoryControl.getItems(), categoryControl.getCheckedItems(),
+                .setMultiChoiceItems(categoryControl.getCategoryNames(), categoryControl.getCategoryStates(),
                         new DialogInterface.OnMultiChoiceClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which,
                                                 boolean isChecked) {
-                                categoryControl.setFilter(which, isChecked);
+                                categoryControl.setCategoryState(which, isChecked);
                             }
                         })
                 .setPositiveButton(R.string.btn_ok, new DialogInterface.OnClickListener() {

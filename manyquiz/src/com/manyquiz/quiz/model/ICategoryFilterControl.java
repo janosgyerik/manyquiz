@@ -6,11 +6,11 @@ public interface ICategoryFilterControl {
 
     void saveFilters();
 
-    String[] getItems();
+    String[] getCategoryNames();
 
-    boolean[] getCheckedItems();
+    boolean[] getCategoryStates();
 
-    void setFilter(int which, boolean enabled);
+    void setCategoryState(int which, boolean enabled);
 
     Collection<String> getSelectedItems();
 }
