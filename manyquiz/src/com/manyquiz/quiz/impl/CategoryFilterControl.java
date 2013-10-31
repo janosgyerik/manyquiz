@@ -3,9 +3,12 @@ package com.manyquiz.quiz.impl;
 import com.manyquiz.quiz.model.ICategoryFilterControl;
 import com.manyquiz.tools.IPreferenceEditor;
 
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class CategoryFilterControl implements ICategoryFilterControl {
     private static final String PAIR_SEP = ",";
@@ -83,5 +86,14 @@ public class CategoryFilterControl implements ICategoryFilterControl {
     @Override
     public void setFilter(int which, boolean enabled) {
         checkedItems[which] = enabled;
+    }
+
+    @Override
+    public Collection<String> getSelectedItems() {
+        Set<String> selectedItems = new HashSet<String>();
+        for (int i = 0; i < items.length; ++i) {
+            if (checkedItems[i]) selectedItems.add(items[i]);
+        }
+        return selectedItems;
     }
 }

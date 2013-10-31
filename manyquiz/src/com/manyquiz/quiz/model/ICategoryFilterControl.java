@@ -1,5 +1,7 @@
 package com.manyquiz.quiz.model;
 
+import java.util.Collection;
+
 public interface ICategoryFilterControl {
 
     void saveFilters();
@@ -10,4 +12,5 @@ public interface ICategoryFilterControl {
 
     void setFilter(int which, boolean enabled);
 
+    Collection<String> getSelectedItems();
 }

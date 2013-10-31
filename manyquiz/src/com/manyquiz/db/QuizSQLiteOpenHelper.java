@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -179,7 +180,7 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
         return getCategoriesFromCursor(getCategoriesCursor());
     }
 
-    public Cursor getQuestionListCursor(int level) {
+    public Cursor getQuestionListCursor(int level, Collection<String> categories) {
         Log.d(TAG, "get all questions at level = " + level);
         Cursor cursor;
         if (level == Level.ANY) {
@@ -190,19 +191,31 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
                             "explanation",}, "is_active = 1", null, null, null,
                     null);
         } else {
-            //noinspection ConstantConditions
-            cursor = getReadableDatabase().rawQuery(
-                    String.format(
-                            "SELECT q.%s %s, q.text text, category, hint, explanation FROM %s q JOIN %s l ON q.level_id = l.%s WHERE l.level = ?",
-                            BaseColumns._ID, BaseColumns._ID, QUESTIONS_TABLE_NAME, LEVELS_TABLE_NAME, BaseColumns._ID
-                    ),
-                    new String[]{Integer.toString(level)}
+            StringBuilder builder = new StringBuilder();
+            builder.append('(');
+            boolean first = true;
+            for (String category : categories) {
+                if (!first) builder.append(", ");
+                first = false;
+                builder.append('\'').append(category).append('\'');
+            }
+            builder.append(')');
+            String categoryInClause = builder.toString();
+            String sql = String.format(
+                    "SELECT q.%s %s, q.text text, category, hint, explanation " +
+                            "FROM %s q JOIN %s l ON q.level_id = l.%s " +
+                            "WHERE l.level = ? AND category in %s",
+                    BaseColumns._ID, BaseColumns._ID,
+                    QUESTIONS_TABLE_NAME, LEVELS_TABLE_NAME,
+                    BaseColumns._ID, categoryInClause
             );
+            //noinspection ConstantConditions
+            cursor = getReadableDatabase().rawQuery(sql, new String[]{Integer.toString(level)});
         }
         return cursor;
     }
 
-    public Cursor getAnswerListCursor(int level) {
+    public Cursor getAnswerListCursor(int level, Collection<String> categories) {
         Log.d(TAG, "get all answers");
         Cursor cursor;
         if (level == Level.ANY) {
@@ -213,18 +226,27 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
                             "is_correct",}, "is_active = 1", null, null, null,
                     null);
         } else {
-            //noinspection ConstantConditions
-            cursor = getReadableDatabase().rawQuery(
-                    String.format(
-                            "SELECT a.%s %s, question_id, a.text text, is_correct " +
-                                    "FROM %s a JOIN %s q ON a.question_id = q.%s " +
-                                    "JOIN %s l ON q.level_id = l.%s WHERE l.level = ? AND q.is_active = 1",
-                            BaseColumns._ID, BaseColumns._ID,
-                            ANSWERS_TABLE_NAME, QUESTIONS_TABLE_NAME, BaseColumns._ID,
-                            LEVELS_TABLE_NAME, BaseColumns._ID
-                    ),
-                    new String[]{Integer.toString(level)}
+            StringBuilder builder = new StringBuilder();
+            builder.append('(');
+            boolean first = true;
+            for (String category : categories) {
+                if (!first) builder.append(", ");
+                first = false;
+                builder.append('\'').append(category).append('\'');
+            }
+            builder.append(')');
+            String categoryInClause = builder.toString();
+            String sql = String.format(
+                    "SELECT a.%s %s, question_id, a.text text, is_correct " +
+                            "FROM %s a JOIN %s q ON a.question_id = q.%s " +
+                            "JOIN %s l ON q.level_id = l.%s " +
+                            "WHERE l.level = ? AND q.is_active = 1 AND q.category in %s",
+                    BaseColumns._ID, BaseColumns._ID,
+                    ANSWERS_TABLE_NAME, QUESTIONS_TABLE_NAME, BaseColumns._ID,
+                    LEVELS_TABLE_NAME, BaseColumns._ID, categoryInClause
             );
+            //noinspection ConstantConditions
+            cursor = getReadableDatabase().rawQuery(sql, new String[]{Integer.toString(level)});
         }
         return cursor;
     }
@@ -247,13 +269,13 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
         public int level;
     }
 
-    public List<IQuestion> getQuestions(int level) {
+    public List<IQuestion> getQuestions(int level, Collection<String> categories) {
         List<IQuestion> questions = new ArrayList<IQuestion>();
 
         Map<String, QuestionRecord> questionRecordMap = new HashMap<String, QuestionRecord>();
 
         {
-            Cursor cursor = getQuestionListCursor(level);
+            Cursor cursor = getQuestionListCursor(level, categories);
             final int idIndex = cursor.getColumnIndex(BaseColumns._ID);
             final int textIndex = cursor.getColumnIndex("text");
             final int explanationIndex = cursor.getColumnIndex("explanation");
@@ -268,7 +290,7 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
         }
 
         {
-            Cursor cursor = getAnswerListCursor(level);
+            Cursor cursor = getAnswerListCursor(level, categories);
             final int questionIdIndex = cursor.getColumnIndex("question_id");
             final int textIndex = cursor.getColumnIndex("text");
             final int isCorrectIndex = cursor.getColumnIndex("is_correct");
@@ -289,10 +311,6 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
         }
 
         return questions;
-    }
-
-    public List<IQuestion> getQuestions() {
-        return getQuestions(Level.ANY);
     }
 
     public List<Level> getLevels() {

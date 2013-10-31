@@ -19,15 +19,20 @@ import android.widget.Toast;
 import com.manyquiz.R;
 import com.manyquiz.db.DatabaseBackedQuizFactory;
 import com.manyquiz.db.QuizSQLiteOpenHelper;
+import com.manyquiz.quiz.impl.Category;
+import com.manyquiz.quiz.impl.CategoryFilterControl;
 import com.manyquiz.quiz.impl.Level;
 import com.manyquiz.quiz.impl.ScoreAsYouGoQuiz;
 import com.manyquiz.quiz.impl.ScoreInTheEndQuiz;
 import com.manyquiz.quiz.impl.SuddenDeathQuiz;
 import com.manyquiz.quiz.model.IAnswerControl;
+import com.manyquiz.quiz.model.ICategoryFilterControl;
 import com.manyquiz.quiz.model.IQuestion;
 import com.manyquiz.quiz.model.IQuestionControl;
 import com.manyquiz.quiz.model.IQuizControl;
 import com.manyquiz.quiz.model.IQuizFactory;
+import com.manyquiz.tools.IPreferenceEditor;
+import com.manyquiz.tools.SimpleSharedPreferenceEditor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,8 +45,6 @@ public class QuizActivity extends QuizActivityBase {
     public static final String PARAM_MODE = "MODE";
 
     private static final String QUIZ_CONTROL = "QUIZ_CONTROL";
-
-    private QuizSQLiteOpenHelper helper;
 
     private TextView questionIndexView;
 
@@ -82,11 +85,11 @@ public class QuizActivity extends QuizActivityBase {
             }
             int preferredQuestionsNum = getPreferredQuestionsNum(mode);
 
-            helper = new QuizSQLiteOpenHelper(this);
+            setHelper(new QuizSQLiteOpenHelper(this));
 
             IQuizFactory quiz = new DatabaseBackedQuizFactory(getHelper());
             List<IQuestion> questions = quiz.pickRandomQuestions(preferredQuestionsNum,
-                    level.getLevel());
+                    level.getLevel(), getCategoryFilterControl().getSelectedItems());
 
             if (mode.equals(getString(R.string.const_score_as_you_go))) {
                 quizControl = new ScoreAsYouGoQuiz(questions);
@@ -311,19 +314,6 @@ public class QuizActivity extends QuizActivityBase {
             }
         }
         return false;
-    }
-
-    protected QuizSQLiteOpenHelper getHelper() {
-        return helper;
-    }
-
-    @Override
-    protected void onDestroy() {
-        Log.d(TAG, "--onDestroy");
-        super.onDestroy();
-        if (helper != null) {
-            helper.close();
-        }
     }
 
     @Override

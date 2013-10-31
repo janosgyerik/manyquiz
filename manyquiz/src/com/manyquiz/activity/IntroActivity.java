@@ -30,9 +30,6 @@ public class IntroActivity extends QuizActivityBase {
     private RadioGroup modeChoices;
     private RadioButton suddenDeathMode;
 
-    private QuizSQLiteOpenHelper helper;
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,11 +40,11 @@ public class IntroActivity extends QuizActivityBase {
 
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
 
-        helper = new QuizSQLiteOpenHelper(this);
+        setHelper(new QuizSQLiteOpenHelper(this));
 
         levelChoices = (RadioGroup) findViewById(R.id.level_choices);
         RadioButton first = null;
-        List<Level> levels = helper.getLevels();
+        List<Level> levels = getHelper().getLevels();
         for (Level level : levels) {
             RadioButton levelOption = new RadioButton(this);
             levelOption.setText(level.getName());
@@ -106,7 +103,7 @@ public class IntroActivity extends QuizActivityBase {
 
             String key = getString(R.string.key_selected_categories);
 
-            List<Category> categories = helper.getCategories();
+            List<Category> categories = getHelper().getCategories();
 
             IPreferenceEditor preferenceEditor = new SimpleSharedPreferenceEditor(sharedPreferences, key);
             DialogFragment newFragment = new SelectCategoriesDialogFragment(preferenceEditor, categories);
@@ -146,12 +143,5 @@ public class IntroActivity extends QuizActivityBase {
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.intro, menu);
         return true;
-    }
-
-    @Override
-    protected void onDestroy() {
-        Log.d(TAG, "++onDestroy");
-        super.onDestroy();
-        helper.close();
     }
 }
