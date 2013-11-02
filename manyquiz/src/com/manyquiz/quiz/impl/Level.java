@@ -1,8 +1,10 @@
 package com.manyquiz.quiz.impl;
 
+import com.manyquiz.tools.IChoice;
+
 import java.io.Serializable;
 
-public class Level implements Serializable {
+public class Level implements Serializable, IChoice {
 
     private static final long serialVersionUID = -2650243060379640957L;
 
@@ -33,4 +35,8 @@ public class Level implements Serializable {
         return String.format("%s (level %d)", name, level);
     }
 
+    @Override
+    public String getChoiceName() {
+        return getName();
+    }
 }

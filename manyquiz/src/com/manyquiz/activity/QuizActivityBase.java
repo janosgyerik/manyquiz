@@ -74,7 +74,7 @@ public abstract class QuizActivityBase extends FragmentActivity {
         String key = getString(R.string.key_selected_categories);
         SharedPreferences sharedPreferences = PreferenceManager
                 .getDefaultSharedPreferences(this);
-        IPreferenceEditor preferenceEditor = new SimpleSharedPreferenceEditor(sharedPreferences, key);
+        IPreferenceEditor preferenceEditor = new SimpleSharedPreferenceEditor(sharedPreferences, key, "");
         return new CategoryFilterControl(preferenceEditor, categories);
     }
 

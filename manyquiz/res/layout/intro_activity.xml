@@ -35,17 +35,6 @@
                 android:text="@string/msg_welcome_to_the_quiz" />
 
             <TextView
-                android:id="@+id/msg_select_level"
-                style="@style/summary"
-                android:text="@string/msg_select_level" />
-
-            <RadioGroup
-                android:id="@+id/level_choices"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"/>
-
-            <TextView
                 style="@style/summary"
                 android:text="@string/msg_select_mode" />
 
@@ -80,6 +69,21 @@
             <TableLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content">
+
+                <TableRow
+                    android:id="@+id/wrapper_select_level"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/summary"
+                        android:text="@string/th_level" />
+
+                    <Button
+                        android:id="@+id/btn_select_level"
+                        style="@style/button"
+                        android:text="@string/btn_select_ellipsis" />
+                </TableRow>
 
                 <TableRow
                     android:layout_width="fill_parent"

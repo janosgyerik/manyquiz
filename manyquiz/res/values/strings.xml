@@ -13,8 +13,10 @@
     <string name="menu_about">Info</string>
     <string name="menu_settings">Settings</string>
 
+    <string name="th_level">Level:</string>
     <string name="th_categories">Categories:</string>
 
+    <string name="title_select_level">Select difficulty level</string>
     <string name="title_select_categories">Select categories</string>
     <string name="btn_select_ellipsis">Select&#8230;</string>
 
@@ -57,6 +59,7 @@
     <string name="summary_max_questions_suddendeath">Number of questions in sudden death mode</string>
     <string name="summary_max_questions_suddendeath_format">Maximum # of questions = %s</string>
 
+    <string name="key_level">level</string>
     <string name="key_selected_categories">selected_categories</string>
 
     <string name="email_address">ManyQuiz Info &lt;info@manyquiz.com&gt;</string>
