@@ -13,8 +13,8 @@
     <string name="menu_about">Info</string>
     <string name="menu_settings">Settings</string>
 
-    <string name="th_level">Level:</string>
-    <string name="th_categories">Categories:</string>
+    <string name="th_level">Level</string>
+    <string name="th_categories">Categories</string>
 
     <string name="title_select_level">Select difficulty level</string>
     <string name="title_select_categories">Select categories</string>

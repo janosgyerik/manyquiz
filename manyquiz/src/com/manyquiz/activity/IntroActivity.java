@@ -26,7 +26,7 @@ import com.manyquiz.util.SimpleSharedPreferenceEditor;
 
 import java.util.List;
 
-public class IntroActivity extends QuizActivityBase {
+public class IntroActivity extends QuizActivityBase implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final String TAG = IntroActivity.class.getSimpleName();
 
@@ -34,6 +34,8 @@ public class IntroActivity extends QuizActivityBase {
     private RadioButton suddenDeathMode;
 
     ISingleChoiceControl levelChoiceControl;
+
+    private Button levelSelectorButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,7 +58,7 @@ public class IntroActivity extends QuizActivityBase {
         levelChoiceControl = new SingleChoiceControl(levelPreferenceEditor, levels);
 
         if (levels.size() > 1) {
-            Button levelSelectorButton = (Button) findViewById(R.id.btn_select_level);
+            levelSelectorButton = (Button) findViewById(R.id.btn_select_level);
             if (levelSelectorButton != null) {
                 Level level = (Level) levelChoiceControl.getSelectedItem();
                 levelSelectorButton.setText(level.getName());
@@ -74,6 +76,13 @@ public class IntroActivity extends QuizActivityBase {
         findViewById(R.id.btn_select_categories).setOnClickListener(new SelectCategoriesClickListener());
 
         findViewById(R.id.btn_start_quiz).setOnClickListener(new StartQuizClickListener());
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String prefName) {
+        if (prefName.equals(getString(R.string.key_level))) {
+            levelSelectorButton.setText(levelChoiceControl.getSelectedItem().getChoiceName());
+        }
     }
 
     class StartQuizClickListener implements OnClickListener {
@@ -142,15 +151,21 @@ public class IntroActivity extends QuizActivityBase {
     }
 
     @Override
-    protected void onResume() {
-        updateSuddenDeathModeLabel();
-        super.onResume();
-    }
-
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.intro, menu);
         return true;
+    }
+
+    @Override
+    protected void onResume() {
+        getPreferences().registerOnSharedPreferenceChangeListener(this);
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        getPreferences().unregisterOnSharedPreferenceChangeListener(this);
+        super.onPause();
     }
 }

@@ -77,12 +77,14 @@
 
                     <TextView
                         style="@style/summary"
-                        android:text="@string/th_level" />
+                        android:text="@string/th_level"
+                        android:layout_weight="1" />
 
                     <Button
                         android:id="@+id/btn_select_level"
                         style="@style/button"
-                        android:text="@string/btn_select_ellipsis" />
+                        android:text="@string/btn_select_ellipsis"
+                        android:layout_weight="1" />
                 </TableRow>
 
                 <TableRow
@@ -91,12 +93,14 @@
 
                     <TextView
                         style="@style/summary"
-                        android:text="@string/th_categories" />
+                        android:text="@string/th_categories"
+                        android:layout_weight="1" />
 
                     <Button
                         android:id="@+id/btn_select_categories"
                         style="@style/button"
-                        android:text="@string/btn_select_ellipsis" />
+                        android:text="@string/btn_select_ellipsis"
+                        android:layout_weight="1" />
                 </TableRow>
             </TableLayout>
 
