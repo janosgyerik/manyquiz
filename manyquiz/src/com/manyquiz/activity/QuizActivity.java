@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.manyquiz.R;
 import com.manyquiz.db.DatabaseBackedQuizFactory;
 import com.manyquiz.db.QuizSQLiteOpenHelper;
+import com.manyquiz.quiz.impl.GameMode;
 import com.manyquiz.quiz.impl.Level;
 import com.manyquiz.quiz.impl.ScoreAsYouGoQuiz;
 import com.manyquiz.quiz.impl.ScoreInTheEndQuiz;
@@ -38,9 +39,6 @@ import java.util.List;
 public class QuizActivity extends QuizActivityBase {
 
     private static final String TAG = QuizActivity.class.getSimpleName();
-
-    public static final String PARAM_LEVEL = "LEVEL";
-    public static final String PARAM_MODE = "MODE";
 
     private static final String QUIZ_CONTROL = "QUIZ_CONTROL";
 
@@ -71,19 +69,11 @@ public class QuizActivity extends QuizActivityBase {
         checkAndSetupForLiteVersion();
 
         if (savedInstanceState == null) {
-            Level level;
-            String mode;
-            Bundle bundle = getIntent().getExtras();
-            if (bundle != null) {
-                level = (Level) bundle.getSerializable(PARAM_LEVEL);
-                mode = bundle.getString(PARAM_MODE);
-            } else {
-                level = new Level("1", null, 1);
-                mode = getString(R.string.const_score_as_you_go);
-            }
-            int preferredQuestionsNum = getPreferredQuestionsNum(mode);
-
             setHelper(new QuizSQLiteOpenHelper(this));
+
+            Level level = (Level) createLevelChoiceControl().getSelectedItem();
+            GameMode mode = (GameMode) createModeChoiceControl().getSelectedItem();
+            int preferredQuestionsNum = getPreferredQuestionsNum(mode.id);
 
             IQuizFactory quiz = new DatabaseBackedQuizFactory(getHelper());
             List<IQuestion> questions = quiz.pickRandomQuestions(preferredQuestionsNum,
@@ -105,11 +95,11 @@ public class QuizActivity extends QuizActivityBase {
                 return;
             }
 
-            if (mode.equals(getString(R.string.const_score_as_you_go))) {
+            if (mode.id.equals(getString(R.string.const_score_as_you_go))) {
                 quizControl = new ScoreAsYouGoQuiz(questions);
-            } else if (mode.equals(getString(R.string.const_suddendeath))) {
+            } else if (mode.id.equals(getString(R.string.const_suddendeath))) {
                 quizControl = new SuddenDeathQuiz(questions);
-            } else if (mode.equals(getString(R.string.const_score_in_the_end))) {
+            } else if (mode.id.equals(getString(R.string.const_score_in_the_end))) {
                 quizControl = new ScoreInTheEndQuiz(questions);
             } else {
                 quizControl = new ScoreAsYouGoQuiz(questions);

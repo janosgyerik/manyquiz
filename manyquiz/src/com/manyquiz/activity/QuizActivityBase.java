@@ -13,11 +13,16 @@ import com.manyquiz.application.QuizApplication;
 import com.manyquiz.db.QuizSQLiteOpenHelper;
 import com.manyquiz.quiz.impl.Category;
 import com.manyquiz.quiz.impl.CategoryFilterControl;
+import com.manyquiz.quiz.impl.GameMode;
+import com.manyquiz.quiz.impl.Level;
 import com.manyquiz.quiz.model.ICategoryFilterControl;
 import com.manyquiz.util.EmailTools;
 import com.manyquiz.util.IPreferenceEditor;
+import com.manyquiz.util.ISingleChoiceControl;
 import com.manyquiz.util.SimpleSharedPreferenceEditor;
+import com.manyquiz.util.SingleChoiceControl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class QuizActivityBase extends FragmentActivity {
@@ -67,6 +72,27 @@ public abstract class QuizActivityBase extends FragmentActivity {
         }
     }
 
+    protected SharedPreferences getSharedPreferences() {
+        return PreferenceManager.getDefaultSharedPreferences(this);
+    }
+
+    protected ISingleChoiceControl createLevelChoiceControl() {
+        String levelKey = getString(R.string.key_level);
+        IPreferenceEditor levelPreferenceEditor = new SimpleSharedPreferenceEditor(getSharedPreferences(), levelKey, "0");
+        List<Level> levels = getHelper().getLevels();
+        return new SingleChoiceControl(levelPreferenceEditor, levels);
+    }
+
+    protected ISingleChoiceControl createModeChoiceControl() {
+        String modeKey = getString(R.string.key_mode);
+        IPreferenceEditor modePreferenceEditor = new SimpleSharedPreferenceEditor(getSharedPreferences(), modeKey, getString(R.string.const_score_as_you_go));
+        List<GameMode> modes = new ArrayList<GameMode>();
+        modes.add(new GameMode(getString(R.string.const_score_as_you_go), getString(R.string.mode_score_as_you_go)));
+        modes.add(new GameMode(getString(R.string.const_score_in_the_end), getString(R.string.mode_score_in_the_end)));
+        modes.add(new GameMode(getString(R.string.const_suddendeath), getString(R.string.mode_suddendeath)));
+        return new SingleChoiceControl(modePreferenceEditor, modes);
+    }
+
     protected ICategoryFilterControl getCategoryFilterControl() {
         List<Category> categories = helper.getCategories();
         String key = getString(R.string.key_selected_categories);
@@ -74,9 +100,5 @@ public abstract class QuizActivityBase extends FragmentActivity {
                 .getDefaultSharedPreferences(this);
         IPreferenceEditor preferenceEditor = new SimpleSharedPreferenceEditor(sharedPreferences, key, "");
         return new CategoryFilterControl(preferenceEditor, categories);
-    }
-
-    protected SharedPreferences getSharedPreferences() {
-        return PreferenceManager.getDefaultSharedPreferences(this);
     }
 }

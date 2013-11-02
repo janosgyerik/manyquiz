@@ -21,9 +21,7 @@ import com.manyquiz.quiz.impl.Level;
 import com.manyquiz.util.IPreferenceEditor;
 import com.manyquiz.util.ISingleChoiceControl;
 import com.manyquiz.util.SimpleSharedPreferenceEditor;
-import com.manyquiz.util.SingleChoiceControl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class IntroActivity extends QuizActivityBase implements SharedPreferences.OnSharedPreferenceChangeListener {
@@ -48,14 +46,9 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
 
         setHelper(new QuizSQLiteOpenHelper(this));
 
-        SharedPreferences sharedPreferences = getSharedPreferences();
+        levelChoiceControl = createLevelChoiceControl();
 
-        String levelKey = getString(R.string.key_level);
-        IPreferenceEditor levelPreferenceEditor = new SimpleSharedPreferenceEditor(sharedPreferences, levelKey, "0");
-        List<Level> levels = getHelper().getLevels();
-        levelChoiceControl = new SingleChoiceControl(levelPreferenceEditor, levels);
-
-        if (levels.size() > 1) {
+        if (levelChoiceControl.getNames().length > 1) {
             Level level = (Level) levelChoiceControl.getSelectedItem();
             levelSelectorButton = (Button) findViewById(R.id.btn_select_level);
             levelSelectorButton.setText(level.getName());
@@ -64,14 +57,7 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
             findViewById(R.id.wrapper_select_level).setVisibility(View.GONE);
         }
 
-        String modeKey = getString(R.string.key_mode);
-        IPreferenceEditor modePreferenceEditor = new SimpleSharedPreferenceEditor(sharedPreferences, modeKey, getString(R.string.const_score_as_you_go));
-        List<GameMode> modes = new ArrayList<GameMode>();
-        modes.add(new GameMode(getString(R.string.const_score_as_you_go), getString(R.string.mode_score_as_you_go)));
-        modes.add(new GameMode(getString(R.string.const_score_in_the_end), getString(R.string.mode_score_in_the_end)));
-        modes.add(new GameMode(getString(R.string.const_suddendeath), getString(R.string.mode_suddendeath)));
-        modeChoiceControl = new SingleChoiceControl(modePreferenceEditor, modes);
-
+        modeChoiceControl = createModeChoiceControl();
         GameMode mode = (GameMode) modeChoiceControl.getSelectedItem();
         modeSelectorButton = (Button) findViewById(R.id.btn_select_mode);
         modeSelectorButton.setText(mode.getChoiceName());
@@ -85,18 +71,7 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
     class StartQuizClickListener implements OnClickListener {
         @Override
         public void onClick(View arg0) {
-            Level level = (Level) levelChoiceControl.getSelectedItem();
-            Log.i(TAG, "selected level = " + level);
-
-            GameMode mode = (GameMode) modeChoiceControl.getSelectedItem();
-            Log.i(TAG, "selected mode = " + mode);
-
-            Bundle bundle = new Bundle();
-            bundle.putSerializable(QuizActivity.PARAM_LEVEL, level);
-            bundle.putString(QuizActivity.PARAM_MODE, mode.id);
-
             Intent intent = new Intent(IntroActivity.this, QuizActivity.class);
-            intent.putExtras(bundle);
             startActivity(intent);
         }
     }
