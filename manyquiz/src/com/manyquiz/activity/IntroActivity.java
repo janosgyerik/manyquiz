@@ -49,8 +49,7 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
 
         setHelper(new QuizSQLiteOpenHelper(this));
 
-        SharedPreferences sharedPreferences = PreferenceManager
-                .getDefaultSharedPreferences(IntroActivity.this);
+        SharedPreferences sharedPreferences = getSharedPreferences();
 
         String levelKey = getString(R.string.key_level);
         IPreferenceEditor levelPreferenceEditor = new SimpleSharedPreferenceEditor(sharedPreferences, levelKey, "0");
@@ -58,12 +57,10 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
         levelChoiceControl = new SingleChoiceControl(levelPreferenceEditor, levels);
 
         if (levels.size() > 1) {
+            Level level = (Level) levelChoiceControl.getSelectedItem();
             levelSelectorButton = (Button) findViewById(R.id.btn_select_level);
-            if (levelSelectorButton != null) {
-                Level level = (Level) levelChoiceControl.getSelectedItem();
-                levelSelectorButton.setText(level.getName());
-                levelSelectorButton.setOnClickListener(new SelectLevelClickListener());
-            }
+            levelSelectorButton.setText(level.getName());
+            levelSelectorButton.setOnClickListener(new SelectLevelClickListener());
         } else {
             findViewById(R.id.wrapper_select_level).setVisibility(View.GONE);
         }
@@ -76,13 +73,6 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
         findViewById(R.id.btn_select_categories).setOnClickListener(new SelectCategoriesClickListener());
 
         findViewById(R.id.btn_start_quiz).setOnClickListener(new StartQuizClickListener());
-    }
-
-    @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String prefName) {
-        if (prefName.equals(getString(R.string.key_level))) {
-            levelSelectorButton.setText(levelChoiceControl.getSelectedItem().getChoiceName());
-        }
     }
 
     class StartQuizClickListener implements OnClickListener {
@@ -116,9 +106,7 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
     class SelectCategoriesClickListener implements OnClickListener {
         @Override
         public void onClick(View view) {
-            SharedPreferences sharedPreferences = PreferenceManager
-                    .getDefaultSharedPreferences(IntroActivity.this);
-
+            SharedPreferences sharedPreferences = getSharedPreferences();
             String key = getString(R.string.key_selected_categories);
 
             List<Category> categories = getHelper().getCategories();
@@ -130,8 +118,7 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
     }
 
     private void updateSuddenDeathModeLabel() {
-        SharedPreferences settings = PreferenceManager
-                .getDefaultSharedPreferences(this);
+        SharedPreferences settings = getSharedPreferences();
         String key = getString(R.string.key_max_questions_suddendeath);
         int maxQuestionsSuddenDeath = Integer.parseInt(settings.getString(key, null));
 
@@ -158,14 +145,21 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
     }
 
     @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String prefName) {
+        if (prefName.equals(getString(R.string.key_level))) {
+            levelSelectorButton.setText(levelChoiceControl.getSelectedItem().getChoiceName());
+        }
+    }
+
+    @Override
     protected void onResume() {
-        getPreferences().registerOnSharedPreferenceChangeListener(this);
+        getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
         super.onResume();
     }
 
     @Override
     protected void onPause() {
-        getPreferences().unregisterOnSharedPreferenceChangeListener(this);
+        getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
         super.onPause();
     }
 }

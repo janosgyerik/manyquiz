@@ -78,7 +78,7 @@ public abstract class QuizActivityBase extends FragmentActivity {
         return new CategoryFilterControl(preferenceEditor, categories);
     }
 
-    protected SharedPreferences getPreferences() {
+    protected SharedPreferences getSharedPreferences() {
         return PreferenceManager.getDefaultSharedPreferences(this);
     }
 }
