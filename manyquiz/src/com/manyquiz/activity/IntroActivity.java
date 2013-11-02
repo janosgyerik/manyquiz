@@ -51,7 +51,7 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
         if (levelChoiceControl.getNames().length > 1) {
             Level level = (Level) levelChoiceControl.getSelectedItem();
             levelSelectorButton = (Button) findViewById(R.id.btn_select_level);
-            levelSelectorButton.setText(level.getName());
+            levelSelectorButton.setText(level.name);
             levelSelectorButton.setOnClickListener(new SelectLevelClickListener());
         } else {
             findViewById(R.id.wrapper_select_level).setVisibility(View.GONE);

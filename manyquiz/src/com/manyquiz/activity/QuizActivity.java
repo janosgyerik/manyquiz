@@ -77,7 +77,7 @@ public class QuizActivity extends QuizActivityBase {
 
             IQuizFactory quiz = new DatabaseBackedQuizFactory(getHelper());
             List<IQuestion> questions = quiz.pickRandomQuestions(preferredQuestionsNum,
-                    level.getLevel(), getCategoryFilterControl().getSelectedItems());
+                    level.difficulty, getCategoryFilterControl().getSelectedItems());
 
             if (questions.isEmpty()) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, android.R.style.Theme_Holo_Light));

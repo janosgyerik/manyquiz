@@ -288,7 +288,7 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
             record.id = cursor.getString(idIndex);
             record.name = cursor.getString(nameIndex);
             record.level = cursor.getInt(levelIndex);
-            levels.add(new Level(record.id, record.name, record.level));
+            levels.add(new Level(record.name, record.level));
         }
         cursor.close();
 
