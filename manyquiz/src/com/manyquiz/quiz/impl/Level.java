@@ -2,11 +2,7 @@ package com.manyquiz.quiz.impl;
 
 import com.manyquiz.util.IChoice;
 
-import java.io.Serializable;
-
-public class Level implements Serializable, IChoice {
-
-    private static final long serialVersionUID = -2650243060379640957L;
+public class Level implements IChoice {
 
     private final String id;
     private final String name;
