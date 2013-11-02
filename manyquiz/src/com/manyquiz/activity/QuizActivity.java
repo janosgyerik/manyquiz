@@ -130,10 +130,12 @@ public class QuizActivity extends QuizActivityBase {
         // the padding is reset, so we must add back manually
         final LayoutInflater inflater = LayoutInflater.from(this);
         Button button = (Button) inflater.inflate(R.layout.answer_button, choicesView, false);
-        BTN_PADDING_TOP = button.getPaddingTop();
-        BTN_PADDING_BOTTOM = button.getPaddingBottom();
-        BTN_PADDING_LEFT = button.getPaddingLeft();
-        BTN_PADDING_RIGHT = button.getPaddingRight();
+        if (button != null) {
+            BTN_PADDING_TOP = button.getPaddingTop();
+            BTN_PADDING_BOTTOM = button.getPaddingBottom();
+            BTN_PADDING_LEFT = button.getPaddingLeft();
+            BTN_PADDING_RIGHT = button.getPaddingRight();
+        }
 
         replaceCurrentQuestion();
     }
