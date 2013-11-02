@@ -1,4 +1,4 @@
-package com.manyquiz.tools;
+package com.manyquiz.util;
 
 public class Pair<F, S> {
     public final F first;

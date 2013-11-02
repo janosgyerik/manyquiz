@@ -1,9 +1,4 @@
-package com.manyquiz.tools;
-
-import com.manyquiz.tools.IChoice;
-import com.manyquiz.tools.IMultiChoiceControl;
-import com.manyquiz.tools.IPreferenceEditor;
-import com.manyquiz.tools.Pair;
+package com.manyquiz.util;
 
 import java.util.Collection;
 import java.util.HashSet;

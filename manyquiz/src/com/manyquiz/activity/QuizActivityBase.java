@@ -14,9 +14,9 @@ import com.manyquiz.db.QuizSQLiteOpenHelper;
 import com.manyquiz.quiz.impl.Category;
 import com.manyquiz.quiz.impl.CategoryFilterControl;
 import com.manyquiz.quiz.model.ICategoryFilterControl;
-import com.manyquiz.tools.EmailTools;
-import com.manyquiz.tools.IPreferenceEditor;
-import com.manyquiz.tools.SimpleSharedPreferenceEditor;
+import com.manyquiz.util.EmailTools;
+import com.manyquiz.util.IPreferenceEditor;
+import com.manyquiz.util.SimpleSharedPreferenceEditor;
 
 import java.util.List;
 

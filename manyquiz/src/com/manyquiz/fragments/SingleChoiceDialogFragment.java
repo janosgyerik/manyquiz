@@ -8,7 +8,7 @@ import android.support.v4.app.DialogFragment;
 import android.view.ContextThemeWrapper;
 
 import com.manyquiz.R;
-import com.manyquiz.tools.ISingleChoiceControl;
+import com.manyquiz.util.ISingleChoiceControl;
 
 public class SingleChoiceDialogFragment extends DialogFragment {
 

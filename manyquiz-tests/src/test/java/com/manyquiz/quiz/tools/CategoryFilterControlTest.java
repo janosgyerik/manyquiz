@@ -3,7 +3,7 @@ package com.manyquiz.quiz.tools;
 import com.manyquiz.quiz.impl.Category;
 import com.manyquiz.quiz.impl.CategoryFilterControl;
 import com.manyquiz.quiz.model.ICategoryFilterControl;
-import com.manyquiz.tools.IPreferenceEditor;
+import com.manyquiz.util.IPreferenceEditor;
 
 import org.junit.Assert;
 import org.junit.Test;

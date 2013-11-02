@@ -11,7 +11,7 @@ import com.manyquiz.R;
 import com.manyquiz.quiz.impl.Category;
 import com.manyquiz.quiz.impl.CategoryFilterControl;
 import com.manyquiz.quiz.model.ICategoryFilterControl;
-import com.manyquiz.tools.IPreferenceEditor;
+import com.manyquiz.util.IPreferenceEditor;
 
 import java.util.List;
 

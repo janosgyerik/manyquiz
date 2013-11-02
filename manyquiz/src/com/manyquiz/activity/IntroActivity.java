@@ -19,10 +19,10 @@ import com.manyquiz.fragments.SelectCategoriesDialogFragment;
 import com.manyquiz.fragments.SingleChoiceDialogFragment;
 import com.manyquiz.quiz.impl.Category;
 import com.manyquiz.quiz.impl.Level;
-import com.manyquiz.tools.SingleChoiceControl;
-import com.manyquiz.tools.ISingleChoiceControl;
-import com.manyquiz.tools.IPreferenceEditor;
-import com.manyquiz.tools.SimpleSharedPreferenceEditor;
+import com.manyquiz.util.SingleChoiceControl;
+import com.manyquiz.util.ISingleChoiceControl;
+import com.manyquiz.util.IPreferenceEditor;
+import com.manyquiz.util.SimpleSharedPreferenceEditor;
 
 import java.util.List;
 

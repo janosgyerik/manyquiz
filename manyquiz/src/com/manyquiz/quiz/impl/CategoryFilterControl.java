@@ -1,7 +1,7 @@
 package com.manyquiz.quiz.impl;
 
 import com.manyquiz.quiz.model.ICategoryFilterControl;
-import com.manyquiz.tools.IPreferenceEditor;
+import com.manyquiz.util.IPreferenceEditor;
 
 import java.util.Collection;
 import java.util.HashMap;

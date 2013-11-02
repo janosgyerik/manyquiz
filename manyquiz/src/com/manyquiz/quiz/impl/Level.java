@@ -1,6 +1,6 @@
 package com.manyquiz.quiz.impl;
 
-import com.manyquiz.tools.IChoice;
+import com.manyquiz.util.IChoice;
 
 import java.io.Serializable;
 
