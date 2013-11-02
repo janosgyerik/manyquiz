@@ -77,14 +77,14 @@ public abstract class QuizActivityBase extends FragmentActivity {
     }
 
     protected ISingleChoiceControl createLevelChoiceControl() {
-        String levelKey = getString(R.string.key_level);
+        String levelKey = getString(R.string.pref_level);
         IPreferenceEditor levelPreferenceEditor = new SimpleSharedPreferenceEditor(getSharedPreferences(), levelKey, "0");
         List<Level> levels = getHelper().getLevels();
         return new SingleChoiceControl(levelPreferenceEditor, levels);
     }
 
     protected ISingleChoiceControl createModeChoiceControl() {
-        String modeKey = getString(R.string.key_mode);
+        String modeKey = getString(R.string.pref_mode);
         IPreferenceEditor modePreferenceEditor = new SimpleSharedPreferenceEditor(getSharedPreferences(), modeKey, getString(R.string.const_score_as_you_go));
         List<GameMode> modes = new ArrayList<GameMode>();
         modes.add(new GameMode(getString(R.string.const_score_as_you_go), getString(R.string.mode_score_as_you_go)));
@@ -95,7 +95,7 @@ public abstract class QuizActivityBase extends FragmentActivity {
 
     protected ICategoryFilterControl getCategoryFilterControl() {
         List<Category> categories = helper.getCategories();
-        String key = getString(R.string.key_selected_categories);
+        String key = getString(R.string.pref_selected_categories);
         SharedPreferences sharedPreferences = PreferenceManager
                 .getDefaultSharedPreferences(this);
         IPreferenceEditor preferenceEditor = new SimpleSharedPreferenceEditor(sharedPreferences, key, "");
