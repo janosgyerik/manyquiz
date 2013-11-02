@@ -22,8 +22,6 @@ import java.util.List;
 
 public abstract class QuizActivityBase extends FragmentActivity {
 
-    protected static final int RETURN_FROM_SETTINGS = 1;
-
     private QuizSQLiteOpenHelper helper;
 
     protected QuizSQLiteOpenHelper getHelper() {
@@ -51,7 +49,7 @@ public abstract class QuizActivityBase extends FragmentActivity {
         int itemId = item.getItemId();
         if (itemId == R.id.menu_settings) {
             Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
-            startActivityForResult(intent, RETURN_FROM_SETTINGS);
+            //startActivity(intent);  // TODO restore after the screen is needed again
             return true;
         }
         if (itemId == R.id.menu_contact) {

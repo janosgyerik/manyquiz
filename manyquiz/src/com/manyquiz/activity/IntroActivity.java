@@ -10,32 +10,31 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
 import com.manyquiz.R;
 import com.manyquiz.db.QuizSQLiteOpenHelper;
 import com.manyquiz.fragments.SelectCategoriesDialogFragment;
 import com.manyquiz.fragments.SingleChoiceDialogFragment;
 import com.manyquiz.quiz.impl.Category;
+import com.manyquiz.quiz.impl.GameMode;
 import com.manyquiz.quiz.impl.Level;
-import com.manyquiz.util.SingleChoiceControl;
-import com.manyquiz.util.ISingleChoiceControl;
 import com.manyquiz.util.IPreferenceEditor;
+import com.manyquiz.util.ISingleChoiceControl;
 import com.manyquiz.util.SimpleSharedPreferenceEditor;
+import com.manyquiz.util.SingleChoiceControl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class IntroActivity extends QuizActivityBase implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final String TAG = IntroActivity.class.getSimpleName();
 
-    private RadioGroup modeChoices;
-    private RadioButton suddenDeathMode;
-
-    ISingleChoiceControl levelChoiceControl;
-
+    private ISingleChoiceControl levelChoiceControl;
     private Button levelSelectorButton;
+
+    private ISingleChoiceControl modeChoiceControl;
+    private Button modeSelectorButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,10 +64,18 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
             findViewById(R.id.wrapper_select_level).setVisibility(View.GONE);
         }
 
-        modeChoices = (RadioGroup) findViewById(R.id.mode_choices);
+        String modeKey = getString(R.string.key_mode);
+        IPreferenceEditor modePreferenceEditor = new SimpleSharedPreferenceEditor(sharedPreferences, modeKey, getString(R.string.const_score_as_you_go));
+        List<GameMode> modes = new ArrayList<GameMode>();
+        modes.add(new GameMode(getString(R.string.const_score_as_you_go), getString(R.string.mode_score_as_you_go)));
+        modes.add(new GameMode(getString(R.string.const_score_in_the_end), getString(R.string.mode_score_in_the_end)));
+        modes.add(new GameMode(getString(R.string.const_suddendeath), getString(R.string.mode_suddendeath)));
+        modeChoiceControl = new SingleChoiceControl(modePreferenceEditor, modes);
 
-        suddenDeathMode = (RadioButton) findViewById(R.id.mode_sudden_death);
-        updateSuddenDeathModeLabel();
+        GameMode mode = (GameMode) modeChoiceControl.getSelectedItem();
+        modeSelectorButton = (Button) findViewById(R.id.btn_select_mode);
+        modeSelectorButton.setText(mode.getChoiceName());
+        modeSelectorButton.setOnClickListener(new SelectModeClickListener());
 
         findViewById(R.id.btn_select_categories).setOnClickListener(new SelectCategoriesClickListener());
 
@@ -81,13 +88,12 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
             Level level = (Level) levelChoiceControl.getSelectedItem();
             Log.i(TAG, "selected level = " + level);
 
-            View selectedMode = findViewById(modeChoices.getCheckedRadioButtonId());
-            String mode = (String) selectedMode.getTag();
+            GameMode mode = (GameMode) modeChoiceControl.getSelectedItem();
             Log.i(TAG, "selected mode = " + mode);
 
             Bundle bundle = new Bundle();
             bundle.putSerializable(QuizActivity.PARAM_LEVEL, level);
-            bundle.putString(QuizActivity.PARAM_MODE, mode);
+            bundle.putString(QuizActivity.PARAM_MODE, mode.id);
 
             Intent intent = new Intent(IntroActivity.this, QuizActivity.class);
             intent.putExtras(bundle);
@@ -100,6 +106,14 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
         public void onClick(View view) {
             DialogFragment newFragment = new SingleChoiceDialogFragment(getString(R.string.title_select_level), levelChoiceControl);
             newFragment.show(getSupportFragmentManager(), "select-level");
+        }
+    }
+
+    class SelectModeClickListener implements OnClickListener {
+        @Override
+        public void onClick(View view) {
+            DialogFragment newFragment = new SingleChoiceDialogFragment(getString(R.string.title_select_mode), modeChoiceControl);
+            newFragment.show(getSupportFragmentManager(), "select-mode");
         }
     }
 
@@ -117,26 +131,6 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
         }
     }
 
-    private void updateSuddenDeathModeLabel() {
-        SharedPreferences settings = getSharedPreferences();
-        String key = getString(R.string.key_max_questions_suddendeath);
-        int maxQuestionsSuddenDeath = Integer.parseInt(settings.getString(key, null));
-
-        suddenDeathMode.setText(String.format(getString(R.string.suddendeath_mode_format),
-                maxQuestionsSuddenDeath
-        ));
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (requestCode) {
-            case RETURN_FROM_SETTINGS:
-                updateSuddenDeathModeLabel();
-                break;
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
@@ -148,6 +142,8 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String prefName) {
         if (prefName.equals(getString(R.string.key_level))) {
             levelSelectorButton.setText(levelChoiceControl.getSelectedItem().getChoiceName());
+        } else if (prefName.equals(getString(R.string.key_mode))) {
+            modeSelectorButton.setText(modeChoiceControl.getSelectedItem().getChoiceName());
         }
     }
 
