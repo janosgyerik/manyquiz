@@ -71,10 +71,10 @@ public abstract class QuizActivityBase extends FragmentActivity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         if (helper != null) {
             helper.close();
         }
+        super.onDestroy();
     }
 
     protected SharedPreferences getSharedPreferences() {
