@@ -13,12 +13,12 @@ public class Level implements IChoice {
     }
 
     @Override
-    public String toString() {
-        return String.format("%s (difficulty %d)", name, difficulty);
+    public String getChoiceName() {
+        return name;
     }
 
     @Override
-    public String getChoiceName() {
-        return name;
+    public String toString() {
+        return String.format("%s (difficulty %d)", name, difficulty);
     }
 }

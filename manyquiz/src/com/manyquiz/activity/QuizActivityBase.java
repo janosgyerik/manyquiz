@@ -15,6 +15,7 @@ import com.manyquiz.quiz.impl.Category;
 import com.manyquiz.quiz.impl.CategoryFilterControl;
 import com.manyquiz.quiz.impl.GameMode;
 import com.manyquiz.quiz.impl.Level;
+import com.manyquiz.quiz.impl.QuestionsNumChoice;
 import com.manyquiz.quiz.model.ICategoryFilterControl;
 import com.manyquiz.util.EmailTools;
 import com.manyquiz.util.IPreferenceEditor;
@@ -93,6 +94,20 @@ public abstract class QuizActivityBase extends FragmentActivity {
         modes.add(new GameMode.ScoreInTheEnd(getString(R.string.mode_score_in_the_end)));
         modes.add(new GameMode.SuddenDeath(getString(R.string.mode_suddendeath)));
         return new SingleChoiceControl(modePreferenceEditor, modes);
+    }
+
+    protected ISingleChoiceControl createQuestionsNumChoiceControl() {
+        String numPrefKey = getString(R.string.pref_questions_num);
+        IPreferenceEditor modePreferenceEditor =
+                new SimpleSharedPreferenceEditor(getSharedPreferences(), numPrefKey, "15");
+        List<QuestionsNumChoice> questionsNumChoices = new ArrayList<QuestionsNumChoice>();
+        questionsNumChoices.add(new QuestionsNumChoice(100));
+        questionsNumChoices.add(new QuestionsNumChoice(50));
+        questionsNumChoices.add(new QuestionsNumChoice(15));
+        questionsNumChoices.add(new QuestionsNumChoice(10));
+        questionsNumChoices.add(new QuestionsNumChoice(5));
+        questionsNumChoices.add(new QuestionsNumChoice(3));
+        return new SingleChoiceControl(modePreferenceEditor, questionsNumChoices);
     }
 
     protected ICategoryFilterControl getCategoryFilterControl() {

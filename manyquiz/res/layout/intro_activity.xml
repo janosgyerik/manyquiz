@@ -77,6 +77,22 @@
 
                     <TextView
                         style="@style/summary"
+                        android:text="@string/th_questions_num"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/btn_select_questions_num"
+                        style="@style/button"
+                        android:text="@string/btn_select_ellipsis"
+                        android:layout_weight="1" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/summary"
                         android:text="@string/th_categories"
                         android:layout_weight="1" />
 

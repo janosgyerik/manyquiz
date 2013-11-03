@@ -15,10 +15,12 @@
 
     <string name="th_level">Level</string>
     <string name="th_mode">Mode</string>
+    <string name="th_questions_num">Questions</string>
     <string name="th_categories">Categories</string>
 
     <string name="title_select_level">Select difficulty level</string>
-    <string name="title_select_mode">Select play mode</string>
+    <string name="title_select_mode">Select game mode</string>
+    <string name="title_select_questions_num">Select number of questions</string>
     <string name="title_select_categories">Select categories</string>
     <string name="btn_select_ellipsis">Select&#8230;</string>
 
@@ -59,6 +61,7 @@
 
     <string name="pref_level">level</string>
     <string name="pref_mode">mode</string>
+    <string name="pref_questions_num">questions_num</string>
     <string name="pref_selected_categories">selected_categories</string>
 
     <string name="email_address">ManyQuiz Info &lt;info@manyquiz.com&gt;</string>

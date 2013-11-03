@@ -24,6 +24,7 @@ import com.manyquiz.db.DatabaseBackedQuizFactory;
 import com.manyquiz.db.QuizSQLiteOpenHelper;
 import com.manyquiz.quiz.impl.GameMode;
 import com.manyquiz.quiz.impl.Level;
+import com.manyquiz.quiz.impl.QuestionsNumChoice;
 import com.manyquiz.quiz.impl.ScoreAsYouGoQuiz;
 import com.manyquiz.quiz.impl.ScoreInTheEndQuiz;
 import com.manyquiz.quiz.impl.SuddenDeathQuiz;
@@ -73,7 +74,7 @@ public class QuizActivity extends QuizActivityBase {
 
             Level level = (Level) createLevelChoiceControl().getSelectedItem();
             GameMode mode = (GameMode) createModeChoiceControl().getSelectedItem();
-            int preferredQuestionsNum = getPreferredQuestionsNum(mode.id);
+            int preferredQuestionsNum = ((QuestionsNumChoice) createQuestionsNumChoiceControl().getSelectedItem()).num;
 
             IQuizFactory quiz = new DatabaseBackedQuizFactory(getHelper());
             List<IQuestion> questions = quiz.pickRandomQuestions(preferredQuestionsNum,
@@ -289,19 +290,6 @@ public class QuizActivity extends QuizActivityBase {
         startActivity(intent);
     }
 
-    public int getPreferredQuestionsNum(String mode) {
-        SharedPreferences settings = PreferenceManager
-                .getDefaultSharedPreferences(this);
-
-        if (mode.equals(new GameMode.SuddenDeath("").id)) {
-            String key = getString(R.string.key_max_questions_suddendeath);
-            return Integer.parseInt(settings.getString(key, null));
-        } else {
-            String key = getString(R.string.key_max_questions_normal);
-            return Integer.parseInt(settings.getString(key, null));
-        }
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
@@ -325,7 +313,6 @@ public class QuizActivity extends QuizActivityBase {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        Log.d(TAG, "--onSaveInstanceState");
         outState.putSerializable(QUIZ_CONTROL, quizControl);
     }
 }

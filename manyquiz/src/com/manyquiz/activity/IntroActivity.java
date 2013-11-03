@@ -18,6 +18,7 @@ import com.manyquiz.fragments.SingleChoiceDialogFragment;
 import com.manyquiz.quiz.impl.Category;
 import com.manyquiz.quiz.impl.GameMode;
 import com.manyquiz.quiz.impl.Level;
+import com.manyquiz.quiz.impl.QuestionsNumChoice;
 import com.manyquiz.util.IPreferenceEditor;
 import com.manyquiz.util.ISingleChoiceControl;
 import com.manyquiz.util.SimpleSharedPreferenceEditor;
@@ -33,6 +34,9 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
 
     private ISingleChoiceControl modeChoiceControl;
     private Button modeSelectorButton;
+
+    private ISingleChoiceControl questionsNumChoiceControl;
+    private Button questionsNumSelectorButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,6 +67,12 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
         modeSelectorButton.setText(mode.getChoiceName());
         modeSelectorButton.setOnClickListener(new SelectModeClickListener());
 
+        questionsNumChoiceControl = createQuestionsNumChoiceControl();
+        QuestionsNumChoice questionsNumChoice = (QuestionsNumChoice) questionsNumChoiceControl.getSelectedItem();
+        questionsNumSelectorButton = (Button) findViewById(R.id.btn_select_questions_num);
+        questionsNumSelectorButton.setText(questionsNumChoice.getChoiceName());
+        questionsNumSelectorButton.setOnClickListener(new SelectQuestionsNumClickListener());
+
         findViewById(R.id.btn_select_categories).setOnClickListener(new SelectCategoriesClickListener());
 
         findViewById(R.id.btn_start_quiz).setOnClickListener(new StartQuizClickListener());
@@ -89,6 +99,14 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
         public void onClick(View view) {
             DialogFragment newFragment = new SingleChoiceDialogFragment(getString(R.string.title_select_mode), modeChoiceControl);
             newFragment.show(getSupportFragmentManager(), "select-mode");
+        }
+    }
+
+    class SelectQuestionsNumClickListener implements OnClickListener {
+        @Override
+        public void onClick(View view) {
+            DialogFragment newFragment = new SingleChoiceDialogFragment(getString(R.string.title_select_questions_num), questionsNumChoiceControl);
+            newFragment.show(getSupportFragmentManager(), "questions-num");
         }
     }
 
@@ -119,6 +137,8 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
             levelSelectorButton.setText(levelChoiceControl.getSelectedItem().getChoiceName());
         } else if (prefName.equals(getString(R.string.pref_mode))) {
             modeSelectorButton.setText(modeChoiceControl.getSelectedItem().getChoiceName());
+        } else if (prefName.equals(getString(R.string.pref_questions_num))) {
+            questionsNumSelectorButton.setText(questionsNumChoiceControl.getSelectedItem().getChoiceName());
         }
     }
 
