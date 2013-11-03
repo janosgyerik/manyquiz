@@ -226,8 +226,8 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
 
     static class LevelRecord {
         public String id;
-        public String name;
-        public int level;
+        public String label;
+        public int difficulty;
     }
 
     public List<IQuestion> getQuestions(int level, Collection<String> categories) {
@@ -286,9 +286,9 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
         while (cursor.moveToNext()) {
             LevelRecord record = new LevelRecord();
             record.id = cursor.getString(idIndex);
-            record.name = cursor.getString(nameIndex);
-            record.level = cursor.getInt(levelIndex);
-            levels.add(new Level(record.name, record.level));
+            record.label = cursor.getString(nameIndex);
+            record.difficulty = cursor.getInt(levelIndex);
+            levels.add(new Level(record.difficulty, record.label));
         }
         cursor.close();
 

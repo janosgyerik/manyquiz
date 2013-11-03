@@ -4,21 +4,26 @@ import com.manyquiz.util.IChoice;
 
 public class Level implements IChoice {
 
-    public final String name;
     public final int difficulty;
+    public final String label;
 
-    public Level(String name, int difficulty) {
-        this.name = name;
+    public Level(int difficulty, String label) {
         this.difficulty = difficulty;
+        this.label = label;
     }
 
     @Override
-    public String getChoiceName() {
-        return name;
+    public String getChoiceValue() {
+        return Integer.toString(difficulty);
+    }
+
+    @Override
+    public String getChoiceLabel() {
+        return label;
     }
 
     @Override
     public String toString() {
-        return String.format("%s (difficulty %d)", name, difficulty);
+        return String.format("%s (difficulty %d)", label, difficulty);
     }
 }

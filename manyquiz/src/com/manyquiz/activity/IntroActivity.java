@@ -55,7 +55,7 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
         if (levelChoiceControl.getNames().length > 1) {
             Level level = (Level) levelChoiceControl.getSelectedItem();
             levelSelectorButton = (Button) findViewById(R.id.btn_select_level);
-            levelSelectorButton.setText(level.name);
+            levelSelectorButton.setText(level.label);
             levelSelectorButton.setOnClickListener(new SelectLevelClickListener());
         } else {
             findViewById(R.id.wrapper_select_level).setVisibility(View.GONE);
@@ -64,13 +64,13 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
         modeChoiceControl = createModeChoiceControl();
         GameMode mode = (GameMode) modeChoiceControl.getSelectedItem();
         modeSelectorButton = (Button) findViewById(R.id.btn_select_mode);
-        modeSelectorButton.setText(mode.getChoiceName());
+        modeSelectorButton.setText(mode.label);
         modeSelectorButton.setOnClickListener(new SelectModeClickListener());
 
         questionsNumChoiceControl = createQuestionsNumChoiceControl();
         QuestionsNumChoice questionsNumChoice = (QuestionsNumChoice) questionsNumChoiceControl.getSelectedItem();
         questionsNumSelectorButton = (Button) findViewById(R.id.btn_select_questions_num);
-        questionsNumSelectorButton.setText(questionsNumChoice.getChoiceName());
+        questionsNumSelectorButton.setText(questionsNumChoice.label);
         questionsNumSelectorButton.setOnClickListener(new SelectQuestionsNumClickListener());
 
         findViewById(R.id.btn_select_categories).setOnClickListener(new SelectCategoriesClickListener());
@@ -134,11 +134,11 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String prefName) {
         if (prefName.equals(getString(R.string.pref_level))) {
-            levelSelectorButton.setText(levelChoiceControl.getSelectedItem().getChoiceName());
+            levelSelectorButton.setText(levelChoiceControl.getSelectedItem().getChoiceLabel());
         } else if (prefName.equals(getString(R.string.pref_mode))) {
-            modeSelectorButton.setText(modeChoiceControl.getSelectedItem().getChoiceName());
+            modeSelectorButton.setText(modeChoiceControl.getSelectedItem().getChoiceLabel());
         } else if (prefName.equals(getString(R.string.pref_questions_num))) {
-            questionsNumSelectorButton.setText(questionsNumChoiceControl.getSelectedItem().getChoiceName());
+            questionsNumSelectorButton.setText(questionsNumChoiceControl.getSelectedItem().getChoiceLabel());
         }
     }
 

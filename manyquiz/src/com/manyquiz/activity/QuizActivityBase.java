@@ -92,7 +92,7 @@ public abstract class QuizActivityBase extends FragmentActivity {
         String modePrefKey = getString(R.string.pref_mode);
         GameMode defaultGameMode = new GameMode.ScoreAsYouGo(getString(R.string.mode_score_as_you_go));
         IPreferenceEditor modePreferenceEditor =
-                new SimpleSharedPreferenceEditor(getSharedPreferences(), modePrefKey, defaultGameMode.id);
+                new SimpleSharedPreferenceEditor(getSharedPreferences(), modePrefKey, defaultGameMode.value);
         List<GameMode> modes = new ArrayList<GameMode>();
         modes.add(defaultGameMode);
         modes.add(new GameMode.ScoreInTheEnd(getString(R.string.mode_score_in_the_end)));

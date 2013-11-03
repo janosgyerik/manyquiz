@@ -28,7 +28,7 @@ public class MultiChoiceControl implements IMultiChoiceControl {
         int i = 0;
         boolean anySelected = false;
         for (IChoice choice : choices) {
-            names[i] = choice.getChoiceName();
+            names[i] = choice.getChoiceLabel();
             states[i] = selected.equals(names[i]);
             anySelected |= states[i];
             ++i;

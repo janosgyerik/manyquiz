@@ -22,7 +22,7 @@ public class SingleChoiceControl implements ISingleChoiceControl {
         String value = preferenceEditor.getPreferenceValue();
         int i = 0;
         for (IChoice choice : choices) {
-            if (value.equals(choice.getChoiceName())) return i;
+            if (value.equals(choice.getChoiceValue())) return i;
             ++i;
         }
         return 0;
@@ -32,7 +32,7 @@ public class SingleChoiceControl implements ISingleChoiceControl {
     public String[] getNames() {
         List<String> names = new ArrayList<String>();
         for (IChoice choice : choices) {
-            names.add(choice.getChoiceName());
+            names.add(choice.getChoiceLabel());
         }
         return names.toArray(new String[names.size()]);
     }
@@ -54,6 +54,6 @@ public class SingleChoiceControl implements ISingleChoiceControl {
 
     @Override
     public void saveSelection() {
-        preferenceEditor.savePreferenceValue(choices.get(selectedIndex).getChoiceName());
+        preferenceEditor.savePreferenceValue(choices.get(selectedIndex).getChoiceValue());
     }
 }
