@@ -85,11 +85,13 @@ public abstract class QuizActivityBase extends FragmentActivity {
 
     protected ISingleChoiceControl createModeChoiceControl() {
         String modeKey = getString(R.string.pref_mode);
-        IPreferenceEditor modePreferenceEditor = new SimpleSharedPreferenceEditor(getSharedPreferences(), modeKey, getString(R.string.const_score_as_you_go));
+        GameMode defaultGameMode = new GameMode.ScoreAsYouGo(getString(R.string.mode_score_as_you_go));
+        IPreferenceEditor modePreferenceEditor =
+                new SimpleSharedPreferenceEditor(getSharedPreferences(), modeKey, defaultGameMode.id);
         List<GameMode> modes = new ArrayList<GameMode>();
-        modes.add(new GameMode(getString(R.string.const_score_as_you_go), getString(R.string.mode_score_as_you_go)));
-        modes.add(new GameMode(getString(R.string.const_score_in_the_end), getString(R.string.mode_score_in_the_end)));
-        modes.add(new GameMode(getString(R.string.const_suddendeath), getString(R.string.mode_suddendeath)));
+        modes.add(defaultGameMode);
+        modes.add(new GameMode.ScoreInTheEnd(getString(R.string.mode_score_in_the_end)));
+        modes.add(new GameMode.SuddenDeath(getString(R.string.mode_suddendeath)));
         return new SingleChoiceControl(modePreferenceEditor, modes);
     }
 

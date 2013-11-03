@@ -16,4 +16,22 @@ public class GameMode implements IChoice {
     public String getChoiceName() {
         return name;
     }
+
+    public static class ScoreAsYouGo extends GameMode {
+        public ScoreAsYouGo(String name) {
+            super("SCORE_AS_YOU_GO", name);
+        }
+    }
+
+    public static class ScoreInTheEnd extends GameMode {
+        public ScoreInTheEnd(String name) {
+            super("SCORE_IN_THE_END", name);
+        }
+    }
+
+    public static class SuddenDeath extends GameMode {
+        public SuddenDeath(String name) {
+            super("SUDDENDEATH", name);
+        }
+    }
 }

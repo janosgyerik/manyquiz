@@ -35,10 +35,6 @@
     <string name="mode_suddendeath">Sudden death!</string>
     <string name="mode_score_in_the_end">Score in the end</string>
 
-    <string name="const_score_as_you_go">SCORE_AS_YOU_GO</string>
-    <string name="const_suddendeath">SUDDENDEATH</string>
-    <string name="const_score_in_the_end">SCORE_IN_THE_END</string>
-
     <string name="title_beta_notice">BETA Notice</string>
     <string name="msg_beta_notice">Hey thanks for trying the BETA! Everything should be working, but there are not enough questions yet. Enjoy anyway, the first release is coming really soon!</string>
 

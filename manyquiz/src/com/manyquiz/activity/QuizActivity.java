@@ -95,12 +95,12 @@ public class QuizActivity extends QuizActivityBase {
                 return;
             }
 
-            if (mode.id.equals(getString(R.string.const_score_as_you_go))) {
+            if (mode instanceof GameMode.ScoreAsYouGo) {
                 quizControl = new ScoreAsYouGoQuiz(questions);
-            } else if (mode.id.equals(getString(R.string.const_suddendeath))) {
-                quizControl = new SuddenDeathQuiz(questions);
-            } else if (mode.id.equals(getString(R.string.const_score_in_the_end))) {
+            } else if (mode instanceof GameMode.ScoreInTheEnd) {
                 quizControl = new ScoreInTheEndQuiz(questions);
+            } else if (mode instanceof GameMode.SuddenDeath) {
+                quizControl = new SuddenDeathQuiz(questions);
             } else {
                 quizControl = new ScoreAsYouGoQuiz(questions);
             }
@@ -293,7 +293,7 @@ public class QuizActivity extends QuizActivityBase {
         SharedPreferences settings = PreferenceManager
                 .getDefaultSharedPreferences(this);
 
-        if (mode.equals(getString(R.string.const_suddendeath))) {
+        if (mode.equals(new GameMode.SuddenDeath("").id)) {
             String key = getString(R.string.key_max_questions_suddendeath);
             return Integer.parseInt(settings.getString(key, null));
         } else {
