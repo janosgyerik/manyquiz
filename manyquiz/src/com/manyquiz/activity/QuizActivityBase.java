@@ -102,7 +102,7 @@ public abstract class QuizActivityBase extends FragmentActivity {
 
     protected ISingleChoiceControl createQuestionsNumChoiceControl() {
         String numPrefKey = getString(R.string.pref_questions_num);
-        IPreferenceEditor modePreferenceEditor =
+        IPreferenceEditor questionsNumPreferenceEditor =
                 new SimpleSharedPreferenceEditor(getSharedPreferences(), numPrefKey, "15");
         List<QuestionsNumChoice> questionsNumChoices = new ArrayList<QuestionsNumChoice>();
         questionsNumChoices.add(new QuestionsNumChoice(100));
@@ -111,7 +111,7 @@ public abstract class QuizActivityBase extends FragmentActivity {
         questionsNumChoices.add(new QuestionsNumChoice(10));
         questionsNumChoices.add(new QuestionsNumChoice(5));
         questionsNumChoices.add(new QuestionsNumChoice(3));
-        return new SingleChoiceControl(modePreferenceEditor, questionsNumChoices);
+        return new SingleChoiceControl(questionsNumPreferenceEditor, questionsNumChoices);
     }
 
     protected ICategoryFilterControl getCategoryFilterControl() {
