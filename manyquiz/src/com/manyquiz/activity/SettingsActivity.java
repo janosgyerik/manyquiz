@@ -15,8 +15,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 
     private static final String TAG = SettingsActivity.class.getSimpleName();
 
-    private String maxQuestionsNormalKey;
-    private String maxQuestionsSuddenDeathKey;
+    //private String maxQuestionsNormalKey;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,8 +29,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 //		editor.clear();
 //		editor.commit();
 
-        maxQuestionsNormalKey = getString(R.string.key_max_questions_normal);
-        maxQuestionsSuddenDeathKey = getString(R.string.key_max_questions_suddendeath);
+        //maxQuestionsNormalKey = getString(R.string.key_max_questions_normal);
 
         updatePreferenceGroup(getPreferenceScreen());
     }
@@ -58,15 +56,13 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     private void updatePreferenceEditor(SharedPreferences sharedPreferences,
                                         Preference preference) {
         String key = preference.getKey();
+        /*
         if (key.equals(maxQuestionsNormalKey)) {
             String value = sharedPreferences.getString(key, null);
             String format = getString(R.string.summary_max_questions_normal_format);
             preference.setSummary(String.format(format, value));
-        } else if (key.equals(maxQuestionsSuddenDeathKey)) {
-            String value = sharedPreferences.getString(key, null);
-            String format = getString(R.string.summary_max_questions_suddendeath_format);
-            preference.setSummary(String.format(format, value));
         }
+        */
     }
 
     @Override
