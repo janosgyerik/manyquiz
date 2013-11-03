@@ -29,9 +29,6 @@
 
     <string name="title_activity_main">Computer Quiz</string>
     <string name="msg_welcome_to_the_quiz">Welcome to the Computer Quiz!</string>
-    <string name="msg_select_level">Select a difficulty level:</string>
-    <string name="msg_select_mode">Select a game mode:</string>
-    <string name="suddendeath_mode_format" formatted="false">Sudden Death! - %d Questions</string>
 
     <string name="mode_score_as_you_go">Score as you go</string>
     <string name="mode_suddendeath">Sudden death!</string>
