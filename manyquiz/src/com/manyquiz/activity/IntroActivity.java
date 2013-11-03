@@ -114,7 +114,7 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
         @Override
         public void onClick(View view) {
             SharedPreferences sharedPreferences = getSharedPreferences();
-            String key = getString(R.string.pref_selected_categories);
+            String key = getString(R.string.pref_categories);
 
             List<Category> categories = getHelper().getCategories();
 

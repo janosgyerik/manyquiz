@@ -58,7 +58,7 @@
     <string name="pref_level">level</string>
     <string name="pref_mode">mode</string>
     <string name="pref_questions_num">questions_num</string>
-    <string name="pref_selected_categories">selected_categories</string>
+    <string name="pref_categories">categories</string>
 
     <string name="email_address">ManyQuiz Info &lt;info@manyquiz.com&gt;</string>
     <string name="no_email_client">Could not find an email client, cannot send message :(</string>

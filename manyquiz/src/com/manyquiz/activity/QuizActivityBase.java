@@ -82,17 +82,17 @@ public abstract class QuizActivityBase extends FragmentActivity {
     }
 
     protected ISingleChoiceControl createLevelChoiceControl() {
-        String levelKey = getString(R.string.pref_level);
-        IPreferenceEditor levelPreferenceEditor = new SimpleSharedPreferenceEditor(getSharedPreferences(), levelKey, "0");
+        String levelPrefKey = getString(R.string.pref_level);
+        IPreferenceEditor levelPreferenceEditor = new SimpleSharedPreferenceEditor(getSharedPreferences(), levelPrefKey, "0");
         List<Level> levels = getHelper().getLevels();
         return new SingleChoiceControl(levelPreferenceEditor, levels);
     }
 
     protected ISingleChoiceControl createModeChoiceControl() {
-        String modeKey = getString(R.string.pref_mode);
+        String modePrefKey = getString(R.string.pref_mode);
         GameMode defaultGameMode = new GameMode.ScoreAsYouGo(getString(R.string.mode_score_as_you_go));
         IPreferenceEditor modePreferenceEditor =
-                new SimpleSharedPreferenceEditor(getSharedPreferences(), modeKey, defaultGameMode.id);
+                new SimpleSharedPreferenceEditor(getSharedPreferences(), modePrefKey, defaultGameMode.id);
         List<GameMode> modes = new ArrayList<GameMode>();
         modes.add(defaultGameMode);
         modes.add(new GameMode.ScoreInTheEnd(getString(R.string.mode_score_in_the_end)));
@@ -115,11 +115,10 @@ public abstract class QuizActivityBase extends FragmentActivity {
     }
 
     protected ICategoryFilterControl getCategoryFilterControl() {
+        String categoriesPrefKey = getString(R.string.pref_categories);
+        IPreferenceEditor preferenceEditor =
+                new SimpleSharedPreferenceEditor(getSharedPreferences(), categoriesPrefKey, "");
         List<Category> categories = helper.getCategories();
-        String key = getString(R.string.pref_selected_categories);
-        SharedPreferences sharedPreferences = PreferenceManager
-                .getDefaultSharedPreferences(this);
-        IPreferenceEditor preferenceEditor = new SimpleSharedPreferenceEditor(sharedPreferences, key, "");
         return new CategoryFilterControl(preferenceEditor, categories);
     }
 }
