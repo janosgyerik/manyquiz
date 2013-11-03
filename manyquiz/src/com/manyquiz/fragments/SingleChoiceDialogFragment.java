@@ -24,7 +24,20 @@ public class SingleChoiceDialogFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder =
                 new AlertDialog.Builder(new ContextThemeWrapper(getActivity(), android.R.style.Theme_Holo_Light));
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.activity_list_item);
+//        adapter.addAll(singleChoiceControl.getNames());
         builder.setTitle(title)
+//                .setAdapter(adapter, new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//
+//                    }
+//                })
+                // TODO: doesn't work:
+                // W/dalvikvm( 6061): threadid=3: thread exiting with uncaught exception (group=0x4001da28)
+                // E/AndroidRuntime( 6061): Uncaught handler: thread main exiting due to uncaught exception
+                // E/AndroidRuntime( 6061): java.lang.VerifyError: com.manyquiz.fragments.SingleChoiceDialogFragment
+                // E/AndroidRuntime( 6061):        at com.manyquiz.activity.IntroActivity$SelectLevelClickListener.onClick(IntroActivity.java:92)
                 .setMultiChoiceItems(singleChoiceControl.getNames(), new boolean[singleChoiceControl.getNames().length],
                         new DialogInterface.OnMultiChoiceClickListener() {
                             @Override
