@@ -38,8 +38,12 @@ public abstract class QuizActivityBase extends FragmentActivity {
         this.helper = helper;
     }
 
+    protected boolean isLiteVersion() {
+        return ((QuizApplication) this.getApplication()).isLiteVersion();
+    }
+
     protected void checkAndSetupForLiteVersion() {
-        if (((QuizApplication) this.getApplication()).isLiteVersion()) {
+        if (isLiteVersion()) {
             findViewById(R.id.lite_watermark).setVisibility(View.VISIBLE);
         }
     }
