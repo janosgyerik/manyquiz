@@ -10,5 +10,9 @@
         android:icon="@drawable/ic_menu_start_conversation"
         android:title="@string/menu_contact"
         android:visible="true"/>
+    <item
+        android:id="@+id/menu_reset"
+        android:icon="@drawable/ic_menu_revert"
+        android:title="@string/menu_reset"/>
 
 </menu>

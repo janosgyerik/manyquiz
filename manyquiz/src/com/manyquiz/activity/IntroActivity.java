@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.DialogFragment;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -126,13 +127,52 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (!super.onOptionsItemSelected(item)) {
+            int itemId = item.getItemId();
+            if (itemId == R.id.menu_reset) {
+                SharedPreferences.Editor editor = getSharedPreferences().edit();
+                editor.clear();
+                editor.commit();
+
+                levelChoiceControl.reloadSelection();
+                updateLevelSelectorButton();
+
+                modeChoiceControl.reloadSelection();
+                updateModeSelectorButton();
+
+                questionsNumChoiceControl.reloadSelection();
+                updateQuestionsNumSelectorButton();
+
+                categoryFilterControl.reloadSelection();
+
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void updateLevelSelectorButton() {
+        levelSelectorButton.setText(levelChoiceControl.getSelectedItem().getChoiceLabel());
+    }
+
+    private void updateModeSelectorButton() {
+        modeSelectorButton.setText(modeChoiceControl.getSelectedItem().getChoiceLabel());
+    }
+
+    private void updateQuestionsNumSelectorButton() {
+        questionsNumSelectorButton.setText(questionsNumChoiceControl.getSelectedItem().getChoiceLabel());
+    }
+
+    @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String prefName) {
+        Log.d(TAG, "onSharedPreferenceChanged");
         if (prefName.equals(getString(R.string.pref_level))) {
-            levelSelectorButton.setText(levelChoiceControl.getSelectedItem().getChoiceLabel());
+            updateLevelSelectorButton();
         } else if (prefName.equals(getString(R.string.pref_mode))) {
-            modeSelectorButton.setText(modeChoiceControl.getSelectedItem().getChoiceLabel());
+            updateModeSelectorButton();
         } else if (prefName.equals(getString(R.string.pref_questions_num))) {
-            questionsNumSelectorButton.setText(questionsNumChoiceControl.getSelectedItem().getChoiceLabel());
+            updateQuestionsNumSelectorButton();
         }
     }
 

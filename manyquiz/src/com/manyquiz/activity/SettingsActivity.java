@@ -12,11 +12,5 @@ public class SettingsActivity extends PreferenceActivity {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.settings);
         setContentView(R.layout.settings_activity);
-
-        // memo: this is how to reset to defaults
-		//SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
-		//Editor editor = settings.edit();
-		//editor.clear();
-		//editor.commit();
     }
 }

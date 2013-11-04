@@ -11,4 +11,6 @@ public interface ISingleChoiceControl {
     void setSelectedIndex(int selectedIndex);
 
     void saveSelection();
+
+    void reloadSelection();
 }

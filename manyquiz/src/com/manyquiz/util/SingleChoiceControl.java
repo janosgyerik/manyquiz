@@ -56,4 +56,9 @@ public class SingleChoiceControl implements ISingleChoiceControl {
     public void saveSelection() {
         preferenceEditor.savePreferenceValue(choices.get(selectedIndex).getChoiceValue());
     }
+
+    @Override
+    public void reloadSelection() {
+        this.selectedIndex = findSelectedIndex(preferenceEditor, choices);
+    }
 }
