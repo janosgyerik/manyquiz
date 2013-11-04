@@ -3,9 +3,7 @@ package com.manyquiz.activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
@@ -22,20 +20,17 @@ import android.widget.Toast;
 import com.manyquiz.R;
 import com.manyquiz.db.DatabaseBackedQuizFactory;
 import com.manyquiz.db.QuizSQLiteOpenHelper;
-import com.manyquiz.quiz.impl.Category;
-import com.manyquiz.quiz.impl.CategoryFilterControl;
+import com.manyquiz.quiz.impl.GameMode;
 import com.manyquiz.quiz.impl.Level;
+import com.manyquiz.quiz.impl.QuestionsNumChoice;
 import com.manyquiz.quiz.impl.ScoreAsYouGoQuiz;
 import com.manyquiz.quiz.impl.ScoreInTheEndQuiz;
 import com.manyquiz.quiz.impl.SuddenDeathQuiz;
 import com.manyquiz.quiz.model.IAnswerControl;
-import com.manyquiz.quiz.model.ICategoryFilterControl;
 import com.manyquiz.quiz.model.IQuestion;
 import com.manyquiz.quiz.model.IQuestionControl;
 import com.manyquiz.quiz.model.IQuizControl;
 import com.manyquiz.quiz.model.IQuizFactory;
-import com.manyquiz.tools.IPreferenceEditor;
-import com.manyquiz.tools.SimpleSharedPreferenceEditor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,9 +38,6 @@ import java.util.List;
 public class QuizActivity extends QuizActivityBase {
 
     private static final String TAG = QuizActivity.class.getSimpleName();
-
-    public static final String PARAM_LEVEL = "LEVEL";
-    public static final String PARAM_MODE = "MODE";
 
     private static final String QUIZ_CONTROL = "QUIZ_CONTROL";
 
@@ -76,23 +68,15 @@ public class QuizActivity extends QuizActivityBase {
         checkAndSetupForLiteVersion();
 
         if (savedInstanceState == null) {
-            Level level;
-            String mode;
-            Bundle bundle = getIntent().getExtras();
-            if (bundle != null) {
-                level = (Level) bundle.getSerializable(PARAM_LEVEL);
-                mode = bundle.getString(PARAM_MODE);
-            } else {
-                level = new Level("1", null, 1);
-                mode = getString(R.string.const_score_as_you_go);
-            }
-            int preferredQuestionsNum = getPreferredQuestionsNum(mode);
-
             setHelper(new QuizSQLiteOpenHelper(this));
+
+            Level level = (Level) createLevelChoiceControl().getSelectedItem();
+            GameMode mode = (GameMode) createModeChoiceControl().getSelectedItem();
+            int preferredQuestionsNum = ((QuestionsNumChoice) createQuestionsNumChoiceControl().getSelectedItem()).num;
 
             IQuizFactory quiz = new DatabaseBackedQuizFactory(getHelper());
             List<IQuestion> questions = quiz.pickRandomQuestions(preferredQuestionsNum,
-                    level.getLevel(), getCategoryFilterControl().getSelectedItems());
+                    level.difficulty, createCategoryFilterControl().getSelectedNames());
 
             if (questions.isEmpty()) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, android.R.style.Theme_Holo_Light));
@@ -110,12 +94,12 @@ public class QuizActivity extends QuizActivityBase {
                 return;
             }
 
-            if (mode.equals(getString(R.string.const_score_as_you_go))) {
+            if (mode instanceof GameMode.ScoreAsYouGo) {
                 quizControl = new ScoreAsYouGoQuiz(questions);
-            } else if (mode.equals(getString(R.string.const_suddendeath))) {
-                quizControl = new SuddenDeathQuiz(questions);
-            } else if (mode.equals(getString(R.string.const_score_in_the_end))) {
+            } else if (mode instanceof GameMode.ScoreInTheEnd) {
                 quizControl = new ScoreInTheEndQuiz(questions);
+            } else if (mode instanceof GameMode.SuddenDeath) {
+                quizControl = new SuddenDeathQuiz(questions);
             } else {
                 quizControl = new ScoreAsYouGoQuiz(questions);
             }
@@ -145,10 +129,12 @@ public class QuizActivity extends QuizActivityBase {
         // the padding is reset, so we must add back manually
         final LayoutInflater inflater = LayoutInflater.from(this);
         Button button = (Button) inflater.inflate(R.layout.answer_button, choicesView, false);
-        BTN_PADDING_TOP = button.getPaddingTop();
-        BTN_PADDING_BOTTOM = button.getPaddingBottom();
-        BTN_PADDING_LEFT = button.getPaddingLeft();
-        BTN_PADDING_RIGHT = button.getPaddingRight();
+        if (button != null) {
+            BTN_PADDING_TOP = button.getPaddingTop();
+            BTN_PADDING_BOTTOM = button.getPaddingBottom();
+            BTN_PADDING_LEFT = button.getPaddingLeft();
+            BTN_PADDING_RIGHT = button.getPaddingRight();
+        }
 
         replaceCurrentQuestion();
     }
@@ -302,19 +288,6 @@ public class QuizActivity extends QuizActivityBase {
         startActivity(intent);
     }
 
-    public int getPreferredQuestionsNum(String mode) {
-        SharedPreferences settings = PreferenceManager
-                .getDefaultSharedPreferences(this);
-
-        if (mode.equals(getString(R.string.const_suddendeath))) {
-            String key = getString(R.string.key_max_questions_suddendeath);
-            return Integer.parseInt(settings.getString(key, null));
-        } else {
-            String key = getString(R.string.key_max_questions_normal);
-            return Integer.parseInt(settings.getString(key, null));
-        }
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
@@ -338,7 +311,6 @@ public class QuizActivity extends QuizActivityBase {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        Log.d(TAG, "--onSaveInstanceState");
         outState.putSerializable(QUIZ_CONTROL, quizControl);
     }
 }

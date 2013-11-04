@@ -10,7 +10,7 @@ import com.manyquiz.R;
 import com.manyquiz.quiz.model.IQuestion;
 import com.manyquiz.quiz.model.IQuestionControl;
 import com.manyquiz.quiz.model.IQuizControl;
-import com.manyquiz.tools.EmailTools;
+import com.manyquiz.util.EmailTools;
 
 public class ResultsActivity extends Activity {
 

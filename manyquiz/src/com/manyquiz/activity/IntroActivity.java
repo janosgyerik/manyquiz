@@ -9,26 +9,32 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.Button;
 
 import com.manyquiz.R;
 import com.manyquiz.db.QuizSQLiteOpenHelper;
-import com.manyquiz.fragments.SelectCategoriesDialogFragment;
-import com.manyquiz.quiz.impl.Category;
+import com.manyquiz.fragments.MultiChoiceDialogFragment;
+import com.manyquiz.fragments.SingleChoiceDialogFragment;
+import com.manyquiz.quiz.impl.GameMode;
 import com.manyquiz.quiz.impl.Level;
-import com.manyquiz.tools.IPreferenceEditor;
-import com.manyquiz.tools.SimpleSharedPreferenceEditor;
+import com.manyquiz.quiz.impl.QuestionsNumChoice;
+import com.manyquiz.util.IMultiChoiceControl;
+import com.manyquiz.util.ISingleChoiceControl;
 
-import java.util.List;
-
-public class IntroActivity extends QuizActivityBase {
+public class IntroActivity extends QuizActivityBase implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final String TAG = IntroActivity.class.getSimpleName();
 
-    private RadioGroup levelChoices;
-    private RadioGroup modeChoices;
-    private RadioButton suddenDeathMode;
+    private ISingleChoiceControl levelChoiceControl;
+    private Button levelSelectorButton;
+
+    private ISingleChoiceControl modeChoiceControl;
+    private Button modeSelectorButton;
+
+    private ISingleChoiceControl questionsNumChoiceControl;
+    private Button questionsNumSelectorButton;
+
+    private IMultiChoiceControl categoryFilterControl;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,32 +48,30 @@ public class IntroActivity extends QuizActivityBase {
 
         setHelper(new QuizSQLiteOpenHelper(this));
 
-        levelChoices = (RadioGroup) findViewById(R.id.level_choices);
-        RadioButton first = null;
-        List<Level> levels = getHelper().getLevels();
-        for (Level level : levels) {
-            RadioButton levelOption = new RadioButton(this);
-            levelOption.setText(level.getName());
-            levelOption.setTag(level);
-            if (first == null) {
-                first = levelOption;
-            }
-            levelChoices.addView(levelOption);
-        }
-        if (first != null) {
-            // this may seem strange,
-            // but we have to check the choice after adding all choices
-            levelChoices.check(first.getId());
-        }
-        if (levels.size() < 2) {
-            levelChoices.setVisibility(View.GONE);
-            findViewById(R.id.msg_select_level).setVisibility(View.GONE);
+        levelChoiceControl = createLevelChoiceControl();
+
+        if (levelChoiceControl.getNames().length > 1) {
+            Level level = (Level) levelChoiceControl.getSelectedItem();
+            levelSelectorButton = (Button) findViewById(R.id.btn_select_level);
+            levelSelectorButton.setText(level.label);
+            levelSelectorButton.setOnClickListener(new SelectLevelClickListener());
+        } else {
+            findViewById(R.id.wrapper_select_level).setVisibility(View.GONE);
         }
 
-        modeChoices = (RadioGroup) findViewById(R.id.mode_choices);
+        modeChoiceControl = createModeChoiceControl();
+        GameMode mode = (GameMode) modeChoiceControl.getSelectedItem();
+        modeSelectorButton = (Button) findViewById(R.id.btn_select_mode);
+        modeSelectorButton.setText(mode.label);
+        modeSelectorButton.setOnClickListener(new SelectModeClickListener());
 
-        suddenDeathMode = (RadioButton) findViewById(R.id.mode_sudden_death);
-        updateSuddenDeathModeLabel();
+        questionsNumChoiceControl = createQuestionsNumChoiceControl();
+        QuestionsNumChoice questionsNumChoice = (QuestionsNumChoice) questionsNumChoiceControl.getSelectedItem();
+        questionsNumSelectorButton = (Button) findViewById(R.id.btn_select_questions_num);
+        questionsNumSelectorButton.setText(questionsNumChoice.label);
+        questionsNumSelectorButton.setOnClickListener(new SelectQuestionsNumClickListener());
+
+        categoryFilterControl = createCategoryFilterControl();
 
         findViewById(R.id.btn_select_categories).setOnClickListener(new SelectCategoriesClickListener());
 
@@ -77,65 +81,41 @@ public class IntroActivity extends QuizActivityBase {
     class StartQuizClickListener implements OnClickListener {
         @Override
         public void onClick(View arg0) {
-            View selectedOption = findViewById(levelChoices.getCheckedRadioButtonId());
-            Level level = (Level) selectedOption.getTag();
-            Log.i(TAG, "selected level = " + level);
-
-            View selectedMode = findViewById(modeChoices.getCheckedRadioButtonId());
-            String mode = (String) selectedMode.getTag();
-            Log.i(TAG, "selected mode = " + mode);
-
-            Bundle bundle = new Bundle();
-            bundle.putSerializable(QuizActivity.PARAM_LEVEL, level);
-            bundle.putString(QuizActivity.PARAM_MODE, mode);
-
             Intent intent = new Intent(IntroActivity.this, QuizActivity.class);
-            intent.putExtras(bundle);
             startActivity(intent);
+        }
+    }
+
+    class SelectLevelClickListener implements OnClickListener {
+        @Override
+        public void onClick(View view) {
+            DialogFragment newFragment = new SingleChoiceDialogFragment(getString(R.string.title_select_level), levelChoiceControl);
+            newFragment.show(getSupportFragmentManager(), "select-level");
+        }
+    }
+
+    class SelectModeClickListener implements OnClickListener {
+        @Override
+        public void onClick(View view) {
+            DialogFragment newFragment = new SingleChoiceDialogFragment(getString(R.string.title_select_mode), modeChoiceControl);
+            newFragment.show(getSupportFragmentManager(), "select-mode");
+        }
+    }
+
+    class SelectQuestionsNumClickListener implements OnClickListener {
+        @Override
+        public void onClick(View view) {
+            DialogFragment newFragment = new SingleChoiceDialogFragment(getString(R.string.title_select_questions_num), questionsNumChoiceControl);
+            newFragment.show(getSupportFragmentManager(), "questions-num");
         }
     }
 
     class SelectCategoriesClickListener implements OnClickListener {
         @Override
         public void onClick(View view) {
-            SharedPreferences sharedPreferences = PreferenceManager
-                    .getDefaultSharedPreferences(IntroActivity.this);
-
-            String key = getString(R.string.key_selected_categories);
-
-            List<Category> categories = getHelper().getCategories();
-
-            IPreferenceEditor preferenceEditor = new SimpleSharedPreferenceEditor(sharedPreferences, key);
-            DialogFragment newFragment = new SelectCategoriesDialogFragment(preferenceEditor, categories);
+            DialogFragment newFragment = new MultiChoiceDialogFragment(getString(R.string.title_select_categories), categoryFilterControl);
             newFragment.show(getSupportFragmentManager(), "select-categories");
         }
-    }
-
-    private void updateSuddenDeathModeLabel() {
-        SharedPreferences settings = PreferenceManager
-                .getDefaultSharedPreferences(this);
-        String key = getString(R.string.key_max_questions_suddendeath);
-        int maxQuestionsSuddenDeath = Integer.parseInt(settings.getString(key, null));
-
-        suddenDeathMode.setText(String.format(getString(R.string.suddendeath_mode_format),
-                maxQuestionsSuddenDeath
-        ));
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (requestCode) {
-            case RETURN_FROM_SETTINGS:
-                updateSuddenDeathModeLabel();
-                break;
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    @Override
-    protected void onResume() {
-        updateSuddenDeathModeLabel();
-        super.onResume();
     }
 
     @Override
@@ -143,5 +123,28 @@ public class IntroActivity extends QuizActivityBase {
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.intro, menu);
         return true;
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String prefName) {
+        if (prefName.equals(getString(R.string.pref_level))) {
+            levelSelectorButton.setText(levelChoiceControl.getSelectedItem().getChoiceLabel());
+        } else if (prefName.equals(getString(R.string.pref_mode))) {
+            modeSelectorButton.setText(modeChoiceControl.getSelectedItem().getChoiceLabel());
+        } else if (prefName.equals(getString(R.string.pref_questions_num))) {
+            questionsNumSelectorButton.setText(questionsNumChoiceControl.getSelectedItem().getChoiceLabel());
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
+        super.onPause();
     }
 }

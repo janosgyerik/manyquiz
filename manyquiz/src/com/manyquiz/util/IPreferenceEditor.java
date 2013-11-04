@@ -1,4 +1,4 @@
-package com.manyquiz.tools;
+package com.manyquiz.util;
 
 public interface IPreferenceEditor {
 

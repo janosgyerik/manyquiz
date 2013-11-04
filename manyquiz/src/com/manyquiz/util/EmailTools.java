@@ -1,4 +1,4 @@
-package com.manyquiz.tools;
+package com.manyquiz.util;
 
 import android.content.Context;
 import android.content.Intent;

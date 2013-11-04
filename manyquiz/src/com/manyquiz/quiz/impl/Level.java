@@ -1,36 +1,29 @@
 package com.manyquiz.quiz.impl;
 
-import java.io.Serializable;
+import com.manyquiz.util.IChoice;
 
-public class Level implements Serializable {
+public class Level implements IChoice {
 
-    private static final long serialVersionUID = -2650243060379640957L;
+    public final int difficulty;
+    public final String label;
 
-    private final String id;
-    private final String name;
-    private final int level;
-
-    public Level(String id, String name, int level) {
-        this.id = id;
-        this.name = name;
-        this.level = level;
+    public Level(int difficulty, String label) {
+        this.difficulty = difficulty;
+        this.label = label;
     }
 
-    public String getId() {
-        return id;
+    @Override
+    public String getChoiceValue() {
+        return Integer.toString(difficulty);
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getLevel() {
-        return level;
+    @Override
+    public String getChoiceLabel() {
+        return label;
     }
 
     @Override
     public String toString() {
-        return String.format("%s (level %d)", name, level);
+        return String.format("%s (difficulty %d)", label, difficulty);
     }
-
 }

@@ -1,15 +1,22 @@
 package com.manyquiz.quiz.impl;
 
-public class Category {
-    public final String name;
-    private final int count;
+import com.manyquiz.util.IChoice;
 
-    public Category(String name, int count) {
-        this.name = name;
-        this.count = count;
-    }
+public class Category implements IChoice {
+
+    public final String name;
 
     public Category(String name) {
-        this(name, 0);
+        this.name = name;
+    }
+
+    @Override
+    public String getChoiceValue() {
+        return name;
+    }
+
+    @Override
+    public String getChoiceLabel() {
+        return name;
     }
 }

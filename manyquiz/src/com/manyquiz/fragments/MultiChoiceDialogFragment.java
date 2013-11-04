@@ -8,37 +8,34 @@ import android.support.v4.app.DialogFragment;
 import android.view.ContextThemeWrapper;
 
 import com.manyquiz.R;
-import com.manyquiz.quiz.impl.Category;
-import com.manyquiz.quiz.impl.CategoryFilterControl;
-import com.manyquiz.quiz.model.ICategoryFilterControl;
-import com.manyquiz.tools.IPreferenceEditor;
+import com.manyquiz.util.IMultiChoiceControl;
 
-import java.util.List;
+public class MultiChoiceDialogFragment extends DialogFragment {
 
-public class SelectCategoriesDialogFragment extends DialogFragment {
+    private final String title;
+    private final IMultiChoiceControl multiChoiceControl;
 
-    private final ICategoryFilterControl categoryControl;
-
-    public SelectCategoriesDialogFragment(IPreferenceEditor preferenceEditor, List<Category> categories) {
-        this.categoryControl = new CategoryFilterControl(preferenceEditor, categories);
+    public MultiChoiceDialogFragment(String title, IMultiChoiceControl multiChoiceControl) {
+        this.title = title;
+        this.multiChoiceControl = multiChoiceControl;
     }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(getActivity(), android.R.style.Theme_Holo_Light));
-        builder.setTitle(R.string.title_select_categories)
-                .setMultiChoiceItems(categoryControl.getCategoryNames(), categoryControl.getCategoryStates(),
+        builder.setTitle(title)
+                .setMultiChoiceItems(multiChoiceControl.getNames(), multiChoiceControl.getStates(),
                         new DialogInterface.OnMultiChoiceClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which,
                                                 boolean isChecked) {
-                                categoryControl.setCategoryState(which, isChecked);
+                                multiChoiceControl.setState(which, isChecked);
                             }
                         })
                 .setPositiveButton(R.string.btn_ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        categoryControl.saveFilters();
+                        multiChoiceControl.saveSelection();
                     }
                 })
                 .setNegativeButton(R.string.btn_cancel, new DialogInterface.OnClickListener() {
