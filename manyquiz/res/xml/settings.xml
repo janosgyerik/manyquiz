@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <!--
-    <ListPreference
-        android:defaultValue="10"
-        android:dialogTitle="@string/dialog_title_max_questions_normal"
-        android:entries="@array/max_questions_normal_entries"
-        android:entryValues="@array/max_questions_normal_values"
-        android:key="@string/key_max_questions_normal"
-        android:summary="@string/summary_max_questions_normal"
-        android:title="@string/title_max_questions_normal" />
-        -->
+    <CheckBoxPreference
+        android:checked="false"
+        android:key="@string/pref_fadeout"
+        android:summary="@string/summary_fadeout"
+        android:title="@string/title_fadeout" />
+        />
 
 </PreferenceScreen>
