@@ -61,6 +61,8 @@ public class QuizActivity extends QuizActivityBase {
     private int BTN_PADDING_LEFT;
     private int BTN_PADDING_RIGHT;
 
+    private boolean effectsEnbled = false;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -137,6 +139,8 @@ public class QuizActivity extends QuizActivityBase {
             BTN_PADDING_LEFT = button.getPaddingLeft();
             BTN_PADDING_RIGHT = button.getPaddingRight();
         }
+
+        effectsEnbled = getSharedPreferences().getBoolean(getString(R.string.pref_fadeout), false);
 
         replaceCurrentQuestion();
     }
@@ -244,29 +248,31 @@ public class QuizActivity extends QuizActivityBase {
                 } else if (answer.isSelected()) {
                     button.setBackgroundResource(R.drawable.btn_incorrect);
                     button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP, BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
-                } else if (useEffects) {
-                    Animation animation = AnimationUtils.loadAnimation(this, R.anim.fadeout);
-                    if (animation != null) {
-                        animation.setAnimationListener(new Animation.AnimationListener() {
-                            @Override
-                            public void onAnimationStart(Animation animation) {
-                            }
+                } else if (effectsEnbled) {
+                    if (useEffects) {
+                        Animation animation = AnimationUtils.loadAnimation(this, R.anim.fadeout);
+                        if (animation != null) {
+                            animation.setAnimationListener(new Animation.AnimationListener() {
+                                @Override
+                                public void onAnimationStart(Animation animation) {
+                                }
 
-                            @Override
-                            public void onAnimationEnd(Animation animation) {
-                                button.setVisibility(View.GONE);
-                            }
+                                @Override
+                                public void onAnimationEnd(Animation animation) {
+                                    button.setVisibility(View.GONE);
+                                }
 
-                            @Override
-                            public void onAnimationRepeat(Animation animation) {
-                            }
-                        });
-                        button.startAnimation(animation);
+                                @Override
+                                public void onAnimationRepeat(Animation animation) {
+                                }
+                            });
+                            button.startAnimation(animation);
+                        } else {
+                            button.setVisibility(View.GONE);
+                        }
                     } else {
                         button.setVisibility(View.GONE);
                     }
-                } else {
-                    button.setVisibility(View.GONE);
                 }
             }
         }
