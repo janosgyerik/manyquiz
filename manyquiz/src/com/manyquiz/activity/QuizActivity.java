@@ -140,9 +140,13 @@ public class QuizActivity extends QuizActivityBase {
             BTN_PADDING_RIGHT = button.getPaddingRight();
         }
 
-        effectsEnbled = getSharedPreferences().getBoolean(getString(R.string.pref_fadeout), false);
+        updateEffectsEnabledFromSettings();
 
         replaceCurrentQuestion();
+    }
+
+    private void updateEffectsEnabledFromSettings() {
+        effectsEnbled = getSharedPreferences().getBoolean(getString(R.string.pref_fadeout), false);
     }
 
     class NextClickListener implements OnClickListener {
@@ -351,5 +355,11 @@ public class QuizActivity extends QuizActivityBase {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putSerializable(QUIZ_CONTROL, quizControl);
+    }
+
+    @Override
+    protected void onResume() {
+        updateEffectsEnabledFromSettings();
+        super.onResume();
     }
 }
