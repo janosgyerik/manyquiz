@@ -3,9 +3,7 @@ package com.manyquiz.activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
@@ -78,7 +76,7 @@ public class QuizActivity extends QuizActivityBase {
 
             IQuizFactory quiz = new DatabaseBackedQuizFactory(getHelper());
             List<IQuestion> questions = quiz.pickRandomQuestions(preferredQuestionsNum,
-                    level.difficulty, getCategoryFilterControl().getSelectedItems());
+                    level.difficulty, createCategoryFilterControl().getSelectedNames());
 
             if (questions.isEmpty()) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, android.R.style.Theme_Holo_Light));

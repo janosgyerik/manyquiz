@@ -12,14 +12,14 @@ import com.manyquiz.R;
 import com.manyquiz.application.QuizApplication;
 import com.manyquiz.db.QuizSQLiteOpenHelper;
 import com.manyquiz.quiz.impl.Category;
-import com.manyquiz.quiz.impl.CategoryFilterControl;
 import com.manyquiz.quiz.impl.GameMode;
 import com.manyquiz.quiz.impl.Level;
 import com.manyquiz.quiz.impl.QuestionsNumChoice;
-import com.manyquiz.quiz.model.ICategoryFilterControl;
 import com.manyquiz.util.EmailTools;
+import com.manyquiz.util.IMultiChoiceControl;
 import com.manyquiz.util.IPreferenceEditor;
 import com.manyquiz.util.ISingleChoiceControl;
+import com.manyquiz.util.MultiChoiceControl;
 import com.manyquiz.util.SimpleSharedPreferenceEditor;
 import com.manyquiz.util.SingleChoiceControl;
 
@@ -114,11 +114,11 @@ public abstract class QuizActivityBase extends FragmentActivity {
         return new SingleChoiceControl(questionsNumPreferenceEditor, questionsNumChoices);
     }
 
-    protected ICategoryFilterControl getCategoryFilterControl() {
+    protected IMultiChoiceControl createCategoryFilterControl() {
         String categoriesPrefKey = getString(R.string.pref_categories);
         IPreferenceEditor preferenceEditor =
                 new SimpleSharedPreferenceEditor(getSharedPreferences(), categoriesPrefKey, "");
         List<Category> categories = helper.getCategories();
-        return new CategoryFilterControl(preferenceEditor, categories);
+        return new MultiChoiceControl(preferenceEditor, categories, true);
     }
 }

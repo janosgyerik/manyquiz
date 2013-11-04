@@ -153,7 +153,7 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper {
             CategoryRecord record = new CategoryRecord();
             record.name = cursor.getString(0);
             record.count = cursor.getInt(1);
-            categories.add(new Category(record.name, record.count));
+            categories.add(new Category(record.name));
         }
         cursor.close();
 

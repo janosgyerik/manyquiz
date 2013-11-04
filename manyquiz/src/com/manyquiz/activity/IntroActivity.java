@@ -13,17 +13,13 @@ import android.widget.Button;
 
 import com.manyquiz.R;
 import com.manyquiz.db.QuizSQLiteOpenHelper;
-import com.manyquiz.fragments.SelectCategoriesDialogFragment;
+import com.manyquiz.fragments.MultiChoiceDialogFragment;
 import com.manyquiz.fragments.SingleChoiceDialogFragment;
-import com.manyquiz.quiz.impl.Category;
 import com.manyquiz.quiz.impl.GameMode;
 import com.manyquiz.quiz.impl.Level;
 import com.manyquiz.quiz.impl.QuestionsNumChoice;
-import com.manyquiz.util.IPreferenceEditor;
+import com.manyquiz.util.IMultiChoiceControl;
 import com.manyquiz.util.ISingleChoiceControl;
-import com.manyquiz.util.SimpleSharedPreferenceEditor;
-
-import java.util.List;
 
 public class IntroActivity extends QuizActivityBase implements SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -37,6 +33,8 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
 
     private ISingleChoiceControl questionsNumChoiceControl;
     private Button questionsNumSelectorButton;
+
+    private IMultiChoiceControl categoryFilterControl;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,6 +70,8 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
         questionsNumSelectorButton = (Button) findViewById(R.id.btn_select_questions_num);
         questionsNumSelectorButton.setText(questionsNumChoice.label);
         questionsNumSelectorButton.setOnClickListener(new SelectQuestionsNumClickListener());
+
+        categoryFilterControl = createCategoryFilterControl();
 
         findViewById(R.id.btn_select_categories).setOnClickListener(new SelectCategoriesClickListener());
 
@@ -113,13 +113,7 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
     class SelectCategoriesClickListener implements OnClickListener {
         @Override
         public void onClick(View view) {
-            SharedPreferences sharedPreferences = getSharedPreferences();
-            String key = getString(R.string.pref_categories);
-
-            List<Category> categories = getHelper().getCategories();
-
-            IPreferenceEditor preferenceEditor = new SimpleSharedPreferenceEditor(sharedPreferences, key, "");
-            DialogFragment newFragment = new SelectCategoriesDialogFragment(preferenceEditor, categories);
+            DialogFragment newFragment = new MultiChoiceDialogFragment(getString(R.string.title_select_categories), categoryFilterControl);
             newFragment.show(getSupportFragmentManager(), "select-categories");
         }
     }

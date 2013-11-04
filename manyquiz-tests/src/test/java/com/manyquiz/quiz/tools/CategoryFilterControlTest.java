@@ -1,9 +1,9 @@
 package com.manyquiz.quiz.tools;
 
 import com.manyquiz.quiz.impl.Category;
-import com.manyquiz.quiz.impl.CategoryFilterControl;
-import com.manyquiz.quiz.model.ICategoryFilterControl;
+import com.manyquiz.util.IMultiChoiceControl;
 import com.manyquiz.util.IPreferenceEditor;
+import com.manyquiz.util.MultiChoiceControl;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -25,9 +25,9 @@ public class CategoryFilterControlTest {
         List<Category> mockCategories = new ArrayList<Category>();
         mockCategories.add(new Category("linux"));
         mockCategories.add(new Category("database"));
-        ICategoryFilterControl categoryControl = new CategoryFilterControl(mockPreferenceEditor, mockCategories);
-        Assert.assertArrayEquals(new String[]{"linux", "database"}, categoryControl.getCategoryNames());
-        assertArrayEquals(new boolean[]{true, true}, categoryControl.getCategoryStates());
+        IMultiChoiceControl categoryControl = new MultiChoiceControl(mockPreferenceEditor, mockCategories, true);
+        Assert.assertArrayEquals(new String[]{"linux", "database"}, categoryControl.getNames());
+        assertArrayEquals(new boolean[]{true, true}, categoryControl.getStates());
     }
 
     @Test
@@ -38,9 +38,9 @@ public class CategoryFilterControlTest {
         List<Category> mockCategories = new ArrayList<Category>();
         mockCategories.add(new Category("linux"));
         mockCategories.add(new Category("database"));
-        ICategoryFilterControl categoryControl = new CategoryFilterControl(mockPreferenceEditor, mockCategories);
-        Assert.assertArrayEquals(new String[]{"linux", "database"}, categoryControl.getCategoryNames());
-        assertArrayEquals(new boolean[]{false, true}, categoryControl.getCategoryStates());
+        IMultiChoiceControl categoryControl = new MultiChoiceControl(mockPreferenceEditor, mockCategories, true);
+        Assert.assertArrayEquals(new String[]{"linux", "database"}, categoryControl.getNames());
+        assertArrayEquals(new boolean[]{false, true}, categoryControl.getStates());
     }
 
     @Test
@@ -51,9 +51,9 @@ public class CategoryFilterControlTest {
         List<Category> mockCategories = new ArrayList<Category>();
         mockCategories.add(new Category("linux"));
         mockCategories.add(new Category("database"));
-        ICategoryFilterControl categoryControl = new CategoryFilterControl(mockPreferenceEditor, mockCategories);
-        categoryControl.setCategoryState(0, false);
-        assertArrayEquals(new boolean[]{false, true}, categoryControl.getCategoryStates());
+        IMultiChoiceControl categoryControl = new MultiChoiceControl(mockPreferenceEditor, mockCategories, true);
+        categoryControl.setState(0, false);
+        assertArrayEquals(new boolean[]{false, true}, categoryControl.getStates());
     }
 
     @Test
@@ -64,10 +64,10 @@ public class CategoryFilterControlTest {
         List<Category> mockCategories = new ArrayList<Category>();
         mockCategories.add(new Category("linux"));
         mockCategories.add(new Category("database"));
-        ICategoryFilterControl categoryControl = new CategoryFilterControl(mockPreferenceEditor, mockCategories);
-        categoryControl.setCategoryState(0, false);
+        IMultiChoiceControl categoryControl = new MultiChoiceControl(mockPreferenceEditor, mockCategories, true);
+        categoryControl.setState(0, false);
 
-        categoryControl.saveFilters();
+        categoryControl.saveSelection();
         verify(mockPreferenceEditor).savePreferenceValue("linux=,database=1");
     }
 
@@ -79,8 +79,8 @@ public class CategoryFilterControlTest {
         List<Category> mockCategories = new ArrayList<Category>();
         mockCategories.add(new Category("linux"));
         mockCategories.add(new Category("database"));
-        ICategoryFilterControl categoryControl = new CategoryFilterControl(mockPreferenceEditor, mockCategories);
-        Assert.assertArrayEquals(new String[]{"linux", "database"}, categoryControl.getCategoryNames());
+        IMultiChoiceControl categoryControl = new MultiChoiceControl(mockPreferenceEditor, mockCategories, true);
+        Assert.assertArrayEquals(new String[]{"linux", "database"}, categoryControl.getNames());
     }
 
     private void assertArrayEquals(boolean[] expected, boolean[] actual) {
