@@ -83,7 +83,7 @@ public class QuizActivity extends QuizActivityBase {
                     level.difficulty, createCategoryFilterControl().getSelectedNames());
 
             if (questions.isEmpty()) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, android.R.style.Theme_Holo_Light));
+                AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.Theme_Dialog));
                 builder.setTitle(R.string.title_no_matching_questions)
                         .setMessage(R.string.msg_no_matching_questions)
                         .setIcon(android.R.drawable.ic_dialog_alert)

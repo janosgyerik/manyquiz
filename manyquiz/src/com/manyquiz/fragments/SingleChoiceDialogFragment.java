@@ -24,7 +24,7 @@ public class SingleChoiceDialogFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder =
-                new AlertDialog.Builder(new ContextThemeWrapper(getActivity(), android.R.style.Theme_Holo_Light));
+                new AlertDialog.Builder(new ContextThemeWrapper(getActivity(), R.style.Theme_Dialog));
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), R.layout.choice);
         for (String name : singleChoiceControl.getNames()) {
             adapter.add(name);

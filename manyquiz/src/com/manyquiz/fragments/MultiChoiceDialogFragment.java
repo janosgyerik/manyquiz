@@ -22,7 +22,7 @@ public class MultiChoiceDialogFragment extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(getActivity(), android.R.style.Theme_Holo_Light));
+        AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(getActivity(), R.style.Theme_Dialog));
         builder.setTitle(title)
                 .setMultiChoiceItems(multiChoiceControl.getNames(), multiChoiceControl.getStates(),
                         new DialogInterface.OnMultiChoiceClickListener() {
