@@ -102,4 +102,11 @@ public class MultiChoiceControl implements IMultiChoiceControl {
     public void saveSelection() {
         preferenceEditor.savePreferenceValue(getSerializedValue());
     }
+
+    @Override
+    public void reloadSelection() {
+        for (int i = 0; i < states.length; ++i) {
+            states[i] = enabledByDefault;
+        }
+    }
 }

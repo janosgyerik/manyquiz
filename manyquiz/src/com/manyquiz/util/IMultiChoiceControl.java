@@ -13,4 +13,6 @@ public interface IMultiChoiceControl {
     Collection<String> getSelectedNames();
 
     void saveSelection();
+
+    void reloadSelection();
 }
