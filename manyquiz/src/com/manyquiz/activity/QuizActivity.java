@@ -11,6 +11,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -176,7 +178,7 @@ public class QuizActivity extends QuizActivityBase {
         @Override
         public void onClick(View arg0) {
             answer.select();
-            updateCurrentQuestion();
+            updateCurrentQuestion(true);
         }
     }
 
@@ -215,9 +217,17 @@ public class QuizActivity extends QuizActivityBase {
     }
 
     private void updateCurrentQuestion() {
+        updateCurrentQuestion(false);
+    }
+
+    private void updateCurrentQuestion(boolean useEffects) {
         boolean canChangeAnswer = quizControl.getCurrentQuestion().canChangeAnswer();
 
-        for (Button button : answerButtons) {
+        if (!canChangeAnswer) {
+            explanationView.setVisibility(View.VISIBLE);
+        }
+
+        for (final Button button : answerButtons) {
             IAnswerControl answer = (IAnswerControl) button.getTag();
             if (canChangeAnswer) {
                 if (answer.isSelected()) {
@@ -228,16 +238,39 @@ public class QuizActivity extends QuizActivityBase {
                 button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP, BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
             } else {
                 button.setEnabled(false);
-                explanationView.setVisibility(View.VISIBLE);
                 if (answer.getAnswer().isCorrect()) {
                     button.setBackgroundResource(R.drawable.btn_correct);
                     button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP, BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
                 } else if (answer.isSelected()) {
                     button.setBackgroundResource(R.drawable.btn_incorrect);
                     button.setPadding(BTN_PADDING_LEFT, BTN_PADDING_TOP, BTN_PADDING_RIGHT, BTN_PADDING_BOTTOM);
+                } else if (useEffects) {
+                    Animation animation = AnimationUtils.loadAnimation(this, R.anim.fadeout);
+                    if (animation != null) {
+                        animation.setAnimationListener(new Animation.AnimationListener() {
+                            @Override
+                            public void onAnimationStart(Animation animation) {
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animation animation) {
+                                button.setVisibility(View.GONE);
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animation animation) {
+                            }
+                        });
+                        button.startAnimation(animation);
+                    } else {
+                        button.setVisibility(View.GONE);
+                    }
+                } else {
+                    button.setVisibility(View.GONE);
                 }
             }
         }
+
         updateQuestionCounter();
         updateNavigationButtons();
     }
