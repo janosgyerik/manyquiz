@@ -59,7 +59,7 @@ public abstract class QuizActivityBase extends FragmentActivity {
         int itemId = item.getItemId();
         if (itemId == R.id.menu_settings) {
             Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
-            //startActivity(intent);  // TODO restore after the screen is needed again
+            startActivity(intent);
             return true;
         }
         if (itemId == R.id.menu_contact) {

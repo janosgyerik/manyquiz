@@ -44,18 +44,14 @@
     <string name="btn_finish">Finish</string>
     <string name="btn_done">Done</string>
 
-    <!--
-    <string name="key_max_questions_normal">max_questions_normal</string>
-    <string name="title_max_questions_normal">Normal mode</string>
-    <string name="dialog_title_max_questions_normal"># of questions</string>
-    <string name="summary_max_questions_normal">Number of questions in normal mode</string>
-    <string name="summary_max_questions_normal_format">Maximum # of questions = %s</string>
-    -->
-    
+    <string name="title_fadeout">Fade-out effect</string>
+    <string name="summary_fadeout">Hide wrong answers</string>
+
     <string name="pref_level">level</string>
     <string name="pref_mode">mode</string>
     <string name="pref_questions_num">questions_num</string>
     <string name="pref_categories">categories</string>
+    <string name="pref_fadeout">fadeout</string>
 
     <string name="email_address">ManyQuiz Info &lt;info@manyquiz.com&gt;</string>
     <string name="no_email_client">Could not find an email client, cannot send message :(</string>
