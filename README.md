@@ -4,6 +4,14 @@ A collection of modules to build many quiz applications
 with minimum duplication of code and layout elements.
 
 
+Setup in Android Studio
+-----------------------
+1. Download and install Android Studio:
+   http://developer.android.com/sdk/installing/studio.html
+
+2. Open the project with **File | Open...**
+
+
 Building and running the Computer Quiz
 --------------------------------------
 1. Import the following projects in Eclipse:

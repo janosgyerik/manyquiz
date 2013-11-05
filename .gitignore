@@ -12,7 +12,10 @@ programming-full/keys/
 programming-lite/keys/
 out/
 # Intellij project files
-*.iml
-*.ipr
-*.iws
-.idea/
+#*.iml
+#*.ipr
+#*.iws
+# some files are added though, on purpose
+.idea
+out
+backups
