@@ -1,1 +1,1 @@
-include ':manyquiz', ':programming', ':programming-lite'
+include ':manyquiz', ':programming-lite'
