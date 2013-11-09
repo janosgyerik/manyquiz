@@ -9,7 +9,6 @@ buildscript {
 apply plugin: 'android-library'
 
 dependencies {
-    compile project(':manyquiz')
 }
 
 android {
