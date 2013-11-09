@@ -9,6 +9,16 @@ Setup in Android Studio
 1. Download and install Android Studio:
    http://developer.android.com/sdk/installing/studio.html
 
+2. Install *Android SDK Build-tools* revision 19
+
+        a. Open **Tools | Android | SDK Manager**
+
+        b. Install or upgrade *Android SDK Tools* to at least revision 22
+
+        c. Quit and restart SDK Manager
+
+        d. Install *Android SDK Build-tools* revision 19
+
 2. Open the project with **File | Open...**
 
 

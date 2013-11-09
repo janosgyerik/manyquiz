@@ -11,6 +11,8 @@ computers-lite/keys/
 programming-full/keys/
 programming-lite/keys/
 out/
+build/
+.gradle
 # Intellij project files
 #*.iml
 #*.ipr
