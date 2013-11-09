@@ -1,5 +1,8 @@
-Installing environnement from 0 and running an App in 5 mins
-============================================================
+Setup the environment for development
+=====================================
+This document explains how to install the environment from a fresh OS
+installation.
+
 
 On GNU/Linux (Debian/Ubuntu) 
 ----------------------------- 
@@ -37,8 +40,8 @@ the manager with:
 
     ~/android-sdk-linux/tools/android
 
-And check (at least) "Android SDK Platform-tools" And clic "Install
-packages".  Once dowloaded and installed, you should edit your .bashrc
+And check (at least) "Android SDK Platform-tools" And clic **Install
+packages**.  Once dowloaded and installed, you should edit your .bashrc
 file to add the sdk binary folders to the path, and add the
 `ANDROID_SDK` variable:
 
@@ -58,23 +61,23 @@ Launch it:
 
     eclipse &
 
-Go to "Help" > "Install New Sofware", clic on "Add", and fill Name
+Go to **Help | Install New Sofware**, clic on **Add**, and fill Name
 with "ADT Plugins" and Location with
 "https://dl-ssl.google.com/android/eclipse/".
 
 Clic on OK.
 
-Select "ADT Plugins" on "Work with" combobox, and on Developer Tools,
+Select **ADT Plugins** on **Work with** combobox, and on Developer Tools,
 check Android Development Tools.
 
 Clic on Next, Accept the licence and Install.
 
-Return to "Help" > "Install New Software", choose this time "--All
-Available Sites--" And filter the search with "EGit".
+Return to **Help | Install New Software**, choose this time **--All
+Available Sites--** And filter the search with "EGit".
 
 Relaunch Eclipse.
 
-Go to "Windows" > "Preferences", and on Android entry, check the path
+Go to **Windows | Preferences**, and on Android entry, check the path
 of the SDK to see if it targets your previous android-sdk-folder.
 
 ### Get the project and launch it
@@ -96,8 +99,8 @@ You should see the app appears on your phone in your applications list.
 Tips: There is a script that does the update, clean and debug at the
 same on the project:
 
-    ~/manyquiz-private/programming-lite/scripts/build.sh -b -d (-b is for build, -d is
-for debug mode)
+    ~/manyquiz-private/programming-lite/scripts/build.sh -b -d 
+(-b is for build, -d is for debug mode)
 
 ### Troubleshooting
 
@@ -119,8 +122,8 @@ as in previous step for Windows platform and install them by yourself.
 The Eclipse steps should be the same.
 
 
-References and documentation:
-=============================
+References and documentation
+============================
 
  * [Android Developers
 Tutorial](http://developer.android.com/training/index.html)
