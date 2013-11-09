@@ -15,4 +15,5 @@ dependencies {
 
 android {
     compileSdkVersion 4
+    buildToolsVersion "19"
 }
