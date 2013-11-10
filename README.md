@@ -59,15 +59,21 @@ Setup in Android Studio
     progress indicator saying something like "3 processes running...".
     Click on it to see details. You will have to wait for this to complete.
 
+    When the import is finished, a warning may pop-up in the top-right
+    corner about *Unregistered Git root detected...*. Click on it to jump
+    to the settings to fix it. There, you'll see a box with red background,
+    at the right side a **Add root** link. Click on it and click OK.
+
 7. Connect an Android device via USB
    (See **Troubleshooting USB connections** below for help)
 
-8. Review the run configurations
+8. Edit the run configurations
 
         1. Go to **Run | Edit Configurations...**
-           There should be 4 run configurations already: programming-lite, ...
+           There should be 4 run configurations already: programming-lite,
+           programming-full, computers-lite, computers-full
 
-        2. Edit each configuration, and change **Target Device** to *USB device*
+        2. Edit each configuration, change **Target Device** to *USB device*
            Note: the emulator is useless anyway. Usually it's so slow it's
            prohibiting to development.
 
@@ -78,6 +84,10 @@ Setup in Android Studio
    An easy way to uninstall is with the command:
 
         adb uninstall com.manyquiz.programming.lite
+
+   Actually, modern versions of Android Studio should offer to uninstall.
+
+   A pop-up may also ask to enable ADB integration, it's good to say **Yes**
 
 
 Troubleshooting USB connections
