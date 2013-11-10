@@ -86,11 +86,18 @@ following these steps:
 
 4. Refresh the project in Eclipse or Android Studio
 
-5. Increment QuizSQLiteOpenHelper.DATABASE_VERSION
+5. Increment `QuizSQLiteOpenHelper.DATABASE_VERSION`
 
 6. Rebuild and run the project
 
-7. Revert the QuizSQLiteOpenHelper.DATABASE_VERSION change
+7. Revert the `QuizSQLiteOpenHelper.DATABASE_VERSION` change
+
+
+Gradle
+------
+- User guide: http://tools.android.com/tech-docs/new-build-system/user-guide
+
+- Overview video: http://tools.android.com/tech-docs/new-build-system
 
 
 Creating a new quiz clone
