@@ -25,6 +25,7 @@ programming-lite/keys/
 #*.ipr
 #*.iws
 .idea
+*.iml
 
 # gradle files
 .gradle

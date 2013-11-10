@@ -20,9 +20,35 @@ Setup in Android Studio
 
         - `PATH`: add `$ANDROID_HOME/tools`, `$ANDROID_HOME/plaform-tools`
 
-4. Start Android Studio
+4. Reconfigure Android Studio to use your custom SDK path
 
-5. Click **Import project...**
+        a. Start Android Studio
+
+        b. If you have a project open, close it with **File | Close Project**
+
+        c. Click on **Configure | Project Defaults | Project Structure**
+
+        d. Click on **SDKs** in the left column
+
+        e. Remove all existing Android SDKs
+
+        f. Add your custom Android SDK path
+
+5. Install *Android SDK Build-tools* revision 19
+
+        a. Open **Tools | Android | SDK Manager**
+           Note: to have this menu option, you will need a project open,
+           any project, it doesn't matter. If you have any existing project,
+           you can use it, or create a dummy one.
+
+        b. Install or upgrade *Android SDK Tools* to at least revision 22,
+           and *Android SDK Platform-tools* to at least revision 18.
+
+        c. Quit and restart SDK Manager
+
+        d. Install *Android SDK Build-tools* revision 19
+
+6. Click **Import project...**
 
         - Select `settings.gradle` in the project root
 
@@ -33,19 +59,35 @@ Setup in Android Studio
     progress indicator saying something like "3 processes running...".
     Click on it to see details. You will have to wait for this to complete.
 
-6. Connect an Android device via USB
+    When the import is finished, a warning may pop-up in the top-right
+    corner about *Unregistered Git root detected...*. Click on it to jump
+    to the settings to fix it. There, you'll see a box with red background,
+    at the right side a **Add root** link. Click on it and click OK.
+
+7. Connect an Android device via USB
    (See **Troubleshooting USB connections** below for help)
 
-7. Create a run configuration for Programming Quiz LITE
-   (See **Creating a run configuration** below for help)
+8. Edit the run configurations
 
-8. Launch the run configuration to install and start the app on your device.
+        1. Go to **Run | Edit Configurations...**
+           There should be 4 run configurations already: programming-lite,
+           programming-full, computers-lite, computers-full
+
+        2. Edit each configuration, change **Target Device** to *USB device*
+           Note: the emulator is useless anyway. Usually it's so slow it's
+           prohibiting to development.
+
+9. Launch the run configuration to install and start the app on your device.
    Note: if you have previously installed the app form Google Play,
    you will have to uninstall it first, because its signature won't match
    the signing key used by your Android Studio.
    An easy way to uninstall is with the command:
 
         adb uninstall com.manyquiz.programming.lite
+
+   Actually, modern versions of Android Studio should offer to uninstall.
+
+   A pop-up may also ask to enable ADB integration, it's good to say **Yes**
 
 
 Troubleshooting USB connections
@@ -94,18 +136,9 @@ Creating a run configuration in Android Studio
 Building on the command line
 ----------------------------
 To build the projects on the command line we use Gradle.
+A pre-requisite is that you already have a working Android Studio setup.
 
-1. Install *Android SDK Build-tools* revision 19 using Android Studio
-
-        a. Open **Tools | Android | SDK Manager**
-
-        b. Install or upgrade *Android SDK Tools* to at least revision 22
-
-        c. Quit and restart SDK Manager
-
-        d. Install *Android SDK Build-tools* revision 19
-
-2. Run in the project root:
+To build the debug apk, run in the project root:
 
         ./gradlew assembleDebug
 
