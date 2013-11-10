@@ -1,0 +1,7 @@
+include ':manyquiz'
+include ':programming'
+include ':programming-lite'
+include ':programming-full'
+include ':computers'
+include ':computers-lite'
+include ':computers-full'

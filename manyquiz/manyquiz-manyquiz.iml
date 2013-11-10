@@ -11,14 +11,14 @@
         <option name="ALLOW_USER_CONFIGURATION" value="false" />
         <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
         <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
-        <option name="RES_FOLDERS_RELATIVE_PATH" value="" />
+        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/src/main/res" />
         <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
         <option name="LIBRARY_PROJECT" value="true" />
       </configuration>
     </facet>
     <facet type="android-gradle" name="Android-Gradle">
       <configuration>
-        <option name="GRADLE_PROJECT_PATH" value=":computers" />
+        <option name="GRADLE_PROJECT_PATH" value=":manyquiz" />
       </configuration>
     </facet>
   </component>
@@ -70,6 +70,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Android 1.6 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="android-support-v4" level="project" />
   </component>
 </module>
 

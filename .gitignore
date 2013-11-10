@@ -1,21 +1,34 @@
+# other
 .DS_Store
+tmp
+
+# Eclipse, Ant, Maven
 bin
 gen
 target
-tmp
+
+# Django
 *.pyc
 /django-quiz/databases/*.db*
+
+# Android
 local.properties
+
+# release, signing
 computers-full/keys/
 computers-lite/keys/
 programming-full/keys/
 programming-lite/keys/
-out/
+
 # Intellij project files
 #*.iml
 #*.ipr
 #*.iws
-# some files are added though, on purpose
 .idea
-out
-backups
+
+# gradle files
+.gradle
+build
+/gradle
+/gradlew
+/gradlew.bat

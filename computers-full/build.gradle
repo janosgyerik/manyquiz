@@ -1,0 +1,11 @@
+apply plugin: 'android'
+
+dependencies {
+    compile project(':computers')
+    compile project(':manyquiz')
+}
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+}
