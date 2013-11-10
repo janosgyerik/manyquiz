@@ -9,7 +9,31 @@ Setup in Android Studio
 1. Download and install Android Studio:
    http://developer.android.com/sdk/installing/studio.html
 
-2. Install *Android SDK Build-tools* revision 19
+2. If you don't have the SDK yet, copy the SDK dir from Android Studio
+   to somewhere else. It's good to have a separate SDK dir, because
+   some upgrades of Android Studio need a clean reinstall. By using a
+   separate SDK dir outside of Android Studio you will save time.
+
+3. Set environment variables:
+
+        - `ANDROID_HOME`: the SDK dir
+
+        - `PATH`: add `$ANDROID_HOME/tools`, `$ANDROID_HOME/plaform-tools`
+
+4. Start Android Studio
+
+5. Import the project
+
+        - Select `settings.gradle`
+
+        - Select **Use customizable gradle wrapper**
+
+
+Building on the command line
+----------------------------
+To build the projects on the command line we use Gradle.
+
+1. Install *Android SDK Build-tools* revision 19 using Android Studio
 
         a. Open **Tools | Android | SDK Manager**
 
@@ -19,20 +43,22 @@ Setup in Android Studio
 
         d. Install *Android SDK Build-tools* revision 19
 
-2. Open the project with **File | Open...**
+2. Run in the project root:
+
+        ./gradlew assembleDebug
 
 
-Building and running the Computer Quiz
---------------------------------------
-1. Import the following projects in Eclipse:
+Building in Eclipse
+-------------------
+1. Import the following projects:
 
         * manyquiz/ -- common quiz logic and layouts
 
-        * computers/ -- logic and layouts for Computer Quiz
+        * programming/ -- logic and layouts for Programming Quiz
 
-        * computers-lite/ -- the Computer Quiz LITE application
+        * programming-lite/ -- the Programming Quiz LITE application
 
-2. Run the Computer Quiz LITE project as Android application
+2. Run the Programming Quiz LITE project as Android application
 
 
 Project layout
@@ -42,17 +68,17 @@ Project layout
     An Android Library project that contains most of the
     functionality and layout elements of the quiz.
 
-+ computers/
++ programming/
 
     An Android Library project that contains common
-    logic in the Computer Quiz.
+    logic in the Programming Quiz.
     Pretty much empty for now.
 
-+ computers-lite/
++ programming-lite/
 
     An Android Application project that corresponds to the
-    Computer Quiz LITE application on Google Play.
-    It depends on the "manyquiz" and "computers" projects.
+    Programming Quiz LITE application on Google Play.
+    It depends on the "manyquiz" and "programming" projects.
     Pretty much empty for now.
 
 + django-quiz/
@@ -73,16 +99,16 @@ following these steps:
 
 0. Follow the First-time setup steps in `django-quiz/README.txt`
 
-1. Edit the questions in the file `django-quiz/export/computers.txt`
+1. Edit the questions in the file `django-quiz/export/programming.txt`
 
 2. Import the questions into Django:
 
         cd django-quiz
-        ./manage-computers.sh importq export/computers.txt
+        ./manage-programming.sh importq export/programming.txt
 
-3. Generate the SQL statements for the `computers-lite` project:
+3. Generate the SQL statements for the `programming-lite` project:
 
-        ./computers-lite/scripts/gen-sql-create.sh
+        ./programming-lite/scripts/gen-sql-create.sh
 
 4. Refresh the project in Eclipse or Android Studio
 
@@ -98,6 +124,8 @@ Gradle
 - User guide: http://tools.android.com/tech-docs/new-build-system/user-guide
 
 - Overview video: http://tools.android.com/tech-docs/new-build-system
+
+- Tips for Android Studio: http://developer.android.com/sdk/installing/studio-tips.html
 
 
 Creating a new quiz clone
