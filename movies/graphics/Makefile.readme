@@ -1,8 +1,0 @@
-Usage: make TARGET
-
-all: 
-	Regenerate 
-		res/drawable-hdpi/*
-		res/drawable-ldpi/*
-		res/drawable-mdpi/*
-
