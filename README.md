@@ -28,6 +28,51 @@ Setup in Android Studio
 
         - Select **Use customizable gradle wrapper**
 
+    Note: the first time you do this it may take a long time.
+    At the bottom-right corner of Android Studio you should see a
+    progress indicator saying something like "3 processes running...".
+    Click on it to see details. You will have to wait for this to complete.
+
+6. Connect an Android device via USB
+   (See **Troubleshooting USB connections** below for help)
+
+7. Create a run configuration for Programming Quiz LITE
+   (See **Creating a run configuration** below for help)
+
+8. Launch the run configuration to install and start the app on your device.
+   Note: if you have previously installed the app form Google Play,
+   you will have to uninstall it first, because its signature won't match
+   the signing key used by your Android Studio.
+   An easy way to uninstall is with the command:
+
+        adb uninstall com.manyquiz.programming.lite
+
+
+Troubleshooting USB connections
+-------------------------------
+TODO
+
+
+Creating a run configuration in Android Studio
+----------------------------------------------
+1. Go to **Run | Edit Configurations...**
+
+2. Select **Android Application** from the list and click on the + icon
+
+3. Give it a name, for example "programming-lite"
+
+4. Adjust the settings:
+
+        + Package: **Deploy default APK**
+
+        + Activity: **Launch default Activity**
+
+        + Target Device: **USB device**
+
+5. Click OK to make this configuration the default, and it should
+   appear in a drop-down menu in the top toolbar.
+   Click on the play button next to the drop-down to launch the configuration.
+
 
 Building on the command line
 ----------------------------
