@@ -50,7 +50,24 @@ Setup in Android Studio
 
 Troubleshooting USB connections
 -------------------------------
-TODO
+1. Enable the **Developer options** menu on your Android device.
+   On modern phones this might be a bit hidden. For example on Nexus 4-5,
+   you have to go to **About phone**, and click on **Build number** 5 times
+   to activate.
+
+2. Switch on **Developer options**
+
+3. Switch on **USB debugging**
+
+4. Note: the **Stay awake** option is useful during active development
+
+5. Plug in USB: a message might pop up on the device to authorize access
+
+6. Run `adb devices`: the device should appear in the list.
+   In Linux you might have permission issues. In that case you may have
+   to create a new udev rules file to get permissions correctly assigned
+   to the plugged in Android device.
+   TODO
 
 
 Creating a run configuration in Android Studio
