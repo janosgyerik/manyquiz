@@ -1,0 +1,19 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.5.+'
+    }
+}
+apply plugin: 'android'
+
+dependencies {
+    compile project(':programming')
+    compile project(':manyquiz')
+}
+
+android {
+    compileSdkVersion 4
+    buildToolsVersion "19"
+}
