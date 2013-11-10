@@ -22,9 +22,9 @@ Setup in Android Studio
 
 4. Start Android Studio
 
-5. Import the project
+5. Click **Import project...**
 
-        - Select `settings.gradle`
+        - Select `settings.gradle` in the project root
 
         - Select **Use customizable gradle wrapper**
 
