@@ -1,6 +1,8 @@
 package com.manyquiz.util;
 
-public interface ISingleChoiceControl {
+import java.io.Serializable;
+
+public interface ISingleChoiceControl extends Serializable {
 
     String[] getNames();
 

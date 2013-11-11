@@ -90,7 +90,7 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
     class SelectLevelClickListener implements OnClickListener {
         @Override
         public void onClick(View view) {
-            DialogFragment newFragment = new SingleChoiceDialogFragment(getString(R.string.title_select_level), levelChoiceControl);
+            DialogFragment newFragment = SingleChoiceDialogFragment.newInstance(getString(R.string.title_select_level), levelChoiceControl);
             newFragment.show(getSupportFragmentManager(), "select-level");
         }
     }
@@ -98,7 +98,7 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
     class SelectModeClickListener implements OnClickListener {
         @Override
         public void onClick(View view) {
-            DialogFragment newFragment = new SingleChoiceDialogFragment(getString(R.string.title_select_mode), modeChoiceControl);
+            DialogFragment newFragment = SingleChoiceDialogFragment.newInstance(getString(R.string.title_select_mode), modeChoiceControl);
             newFragment.show(getSupportFragmentManager(), "select-mode");
         }
     }
@@ -106,7 +106,7 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
     class SelectQuestionsNumClickListener implements OnClickListener {
         @Override
         public void onClick(View view) {
-            DialogFragment newFragment = new SingleChoiceDialogFragment(getString(R.string.title_select_questions_num), questionsNumChoiceControl);
+            DialogFragment newFragment = SingleChoiceDialogFragment.newInstance(getString(R.string.title_select_questions_num), questionsNumChoiceControl);
             newFragment.show(getSupportFragmentManager(), "questions-num");
         }
     }
