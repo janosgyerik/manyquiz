@@ -101,11 +101,11 @@ EOF
 fi
 
 if test $debug = on; then
-    $gradle clean assembleDebug
+    $gradle clean test assembleDebug
 fi
 if test $release = on; then
     . $keys_config
-    $gradle clean assembleRelease
+    $gradle clean test assembleRelease
 fi
 
 # eof
