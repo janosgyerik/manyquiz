@@ -16,4 +16,9 @@
             android:visibility="gone"
             style="@style/wideButton" />
 
+    <Button
+        android:id="@+id/btn_validate_quiz"
+        android:text="@string/btn_validate_quiz"
+        style="@style/wideButton" />
+
 </LinearLayout>

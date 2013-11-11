@@ -1,6 +1,7 @@
 package com.manyquiz.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -89,10 +90,21 @@ public class ResultsActivity extends Activity {
         TextView messageView = (TextView) findViewById(R.id.message);
         messageView.setText(message);
 
+        findViewById(R.id.btn_validate_quiz).setOnClickListener(new ValidateQuizClickListener());
+
         if (markedQuestionsText != null) {
             Button sendMarkedQuestionsButton = (Button) findViewById(R.id.btn_send_marked);
             sendMarkedQuestionsButton.setOnClickListener(new SendMarkedQuestionsClickListener(markedQuestionsText));
             sendMarkedQuestionsButton.setVisibility(View.VISIBLE);
+        }
+    }
+
+    class ValidateQuizClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View arg0) {
+            Intent intent = new Intent(ResultsActivity.this, IntroActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
         }
     }
 
