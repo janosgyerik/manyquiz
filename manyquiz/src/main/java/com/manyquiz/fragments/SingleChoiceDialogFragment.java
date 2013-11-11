@@ -13,16 +13,28 @@ import com.manyquiz.util.ISingleChoiceControl;
 
 public class SingleChoiceDialogFragment extends DialogFragment {
 
-    private final String title;
-    private final ISingleChoiceControl singleChoiceControl;
+    private static final int NB_PARAMETERS = 2;
+    private static final String TITLE_KEY = "title";
+    private static final String SINGLE_CHOICE_CONTROL_KEY = "singleChoiceControl";
 
-    public SingleChoiceDialogFragment(String title, ISingleChoiceControl singleChoiceControl) {
-        this.title = title;
-        this.singleChoiceControl = singleChoiceControl;
+    private String title;
+    private ISingleChoiceControl singleChoiceControl;
+
+    public static SingleChoiceDialogFragment newInstance(String title, ISingleChoiceControl singleChoiceControl) {
+        SingleChoiceDialogFragment fragment = new SingleChoiceDialogFragment();
+        Bundle bundle = new Bundle(NB_PARAMETERS);
+        bundle.putString(TITLE_KEY, title);
+        bundle.putSerializable(SINGLE_CHOICE_CONTROL_KEY, singleChoiceControl);
+        fragment.setArguments(bundle);
+        return fragment;
     }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+
+        title = getArguments().getString(TITLE_KEY);
+        singleChoiceControl = (ISingleChoiceControl) getArguments().getSerializable(SINGLE_CHOICE_CONTROL_KEY);
+
         AlertDialog.Builder builder =
                 new AlertDialog.Builder(new ContextThemeWrapper(getActivity(), R.style.Theme_Dialog));
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), R.layout.choice);
