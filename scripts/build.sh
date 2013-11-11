@@ -26,7 +26,9 @@ usage() {
     echo "  -d, --debug          build for debug, default = $debug"
     echo "  -r, --release        build for release, default = $release"
     echo
-    echo "      --setup-keys     Setup key store, default = $setup_keys"
+    echo "  -b, --build          custom build, default = $build"
+    echo
+    echo "  -l, --list           list built apks, default = $list"
     echo
     echo "  -h, --help           Print this help"
     echo
@@ -39,14 +41,16 @@ args=
 #param=
 debug=off
 release=off
-setup_keys=off
+build=off
+list=off
 while [ $# != 0 ]; do
     case $1 in
     -h|--help) usage ;;
     -d|--debug) debug=on ;;
     -r|--release) release=on ;;
-    --setup-keys) setup_keys=on ;;
-#    --) shift; while [ $# != 0 ]; do args="$args \"$1\""; shift; done; break ;;
+    -b|--build) build=on ;;
+    -l|--list) list=on ;;
+    --) shift; while [ $# != 0 ]; do args="$args \"$1\""; shift; done; break ;;
     -) usage "Unknown option: $1" ;;
     -?*) usage "Unknown option: $1" ;;
     *) args="$args \"$1\"" ;;  # script that takes multiple arguments
@@ -73,14 +77,29 @@ randstring() {
     echo ${str:$POS:$LEN}
 }
 
+list() {
+    ls -ltr */build/apk/*-{release,debug*}.apk 2>/dev/null
+}
+
 cd $(dirname "$0")/..
 
 gradle=./gradlew
 
 projectname=$(ls *.iml | head -n 1 | sed -e s/.iml$//)
 
+test $build = on || tasks=clean
+test $# -gt 0 || tasks="$tasks test"
+
+if test $release = on; then
+    check_or_setup_keys=on
+    build=on
+    tasks="$tasks assembleRelease"
+else
+    check_or_setup_keys=off
+fi
+
 keys_config=./keys/config.sh
-if test $setup_keys = on; then
+if test $check_or_setup_keys = on; then
     test -f $keys_config || {
         mkdir -p keys
         cat<<EOF >$keys_config
@@ -98,14 +117,21 @@ EOF
         . $keys_config
         keytool -genkey -v -keystore keys/$projectname.keystore -storepass $storepass -keypass $keypass -validity 10000 -keyalg RSA
     }
+    . $keys_config
 fi
 
 if test $debug = on; then
-    $gradle clean test assembleDebug
+    build=on
+    tasks="$tasks assembleDebug"
 fi
-if test $release = on; then
-    . $keys_config
-    $gradle clean test assembleRelease
+
+if test $build = on; then
+    echo $gradle $tasks $*
+    $gradle $tasks $*
+    echo
+    list=on
 fi
+
+test $list = on && list
 
 # eof
