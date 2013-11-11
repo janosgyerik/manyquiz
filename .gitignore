@@ -15,10 +15,7 @@ target
 local.properties
 
 # release, signing
-computers-full/keys/
-computers-lite/keys/
-programming-full/keys/
-programming-lite/keys/
+/keys/
 
 # Intellij project files
 #*.iml

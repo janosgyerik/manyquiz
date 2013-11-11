@@ -9,26 +9,26 @@
             android:targetSdkVersion="4"/>
 
     <application
-            android:name="com.manyquiz.application.LiteQuizApplication"
+            android:name="com.manyquiz.android.application.LiteQuizApplication"
             android:allowBackup="false"
             android:icon="@drawable/launcher_main"
             android:label="@string/app_name_lite"
             android:theme="@style/Theme.Light.NoTitleBar">
-        <activity android:name="com.manyquiz.activity.IntroActivity">
+        <activity android:name="com.manyquiz.android.activity.IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.manyquiz.activity.QuizActivity" />
+        <activity android:name="com.manyquiz.android.activity.QuizActivity" />
         <activity
-                android:name="com.manyquiz.activity.SettingsActivity"
+                android:name="com.manyquiz.android.activity.SettingsActivity"
                 android:label="@string/label_settings_activity"
                 android:theme="@style/Theme.Dialog">
         </activity>
         <activity
-                android:name="com.manyquiz.activity.ResultsActivity"
+                android:name="com.manyquiz.android.activity.ResultsActivity"
                 android:label="@string/label_results_activity"
                 android:theme="@style/Theme.Dialog">
         </activity>

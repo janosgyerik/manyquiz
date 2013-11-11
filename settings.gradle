@@ -1,3 +1,4 @@
+include ':manyquiz-common'
 include ':manyquiz'
 include ':programming'
 include ':programming-lite'
