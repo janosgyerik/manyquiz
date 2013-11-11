@@ -9,13 +9,13 @@
         android:targetSdkVersion="13" />
 
     <application
-        android:name="com.manyquiz.application.FullQuizApplication"
+        android:name="com.manyquiz.android.application.FullQuizApplication"
         android:allowBackup="false"
         android:icon="@drawable/launcher_main"
         android:label="@string/app_name"
         android:theme="@style/Theme.Light.NoTitleBar" >
         <activity
-            android:name="com.manyquiz.activity.IntroActivity"
+            android:name="com.manyquiz.android.activity.IntroActivity"
             android:label="@string/title_activity_main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,11 +24,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.manyquiz.activity.QuizActivity"
+            android:name="com.manyquiz.android.activity.QuizActivity"
             android:label="@string/title_activity_main" >
         </activity>
         <activity
-            android:name="com.manyquiz.activity.QuestionSuggestionActivity"
+            android:name="com.manyquiz.android.activity.QuestionSuggestionActivity"
             android:label="@string/title_activity_main" >
         </activity>
         <activity
@@ -40,11 +40,11 @@
             android:label="@string/title_activity_main" >
         </activity>
         <activity
-            android:name="com.manyquiz.activity.SettingsActivity"
+            android:name="com.manyquiz.android.activity.SettingsActivity"
             android:label="@string/title_activity_main" >
         </activity>
         <activity
-            android:name="com.manyquiz.activity.ResultsActivity"
+            android:name="com.manyquiz.android.activity.ResultsActivity"
             android:label="@string/title_activity_main" >
         </activity>
     </application>
