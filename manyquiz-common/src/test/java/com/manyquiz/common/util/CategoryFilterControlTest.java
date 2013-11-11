@@ -1,4 +1,4 @@
-package com.manyquiz.common.quiz.tools;
+package com.manyquiz.common.util;
 
 import com.manyquiz.common.quiz.impl.Category;
 import com.manyquiz.common.util.IMultiChoiceControl;
