@@ -114,7 +114,7 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
     class SelectCategoriesClickListener implements OnClickListener {
         @Override
         public void onClick(View view) {
-            DialogFragment newFragment = new MultiChoiceDialogFragment(getString(R.string.title_select_categories), categoryFilterControl);
+            DialogFragment newFragment = MultiChoiceDialogFragment.newInstance(getString(R.string.title_select_categories), categoryFilterControl);
             newFragment.show(getSupportFragmentManager(), "select-categories");
         }
     }
