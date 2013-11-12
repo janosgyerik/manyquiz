@@ -12,16 +12,28 @@ import com.manyquiz.common.util.IMultiChoiceControl;
 
 public class MultiChoiceDialogFragment extends DialogFragment {
 
-    private final String title;
-    private final IMultiChoiceControl multiChoiceControl;
+    private static final int NB_PARAMETERS = 2;
+    private static final String TITLE_KEY = "title";
+    private static final String MULTIPLE_CHOICE_CONTROL_KEY = "multipleChoiceControl";
 
-    public MultiChoiceDialogFragment(String title, IMultiChoiceControl multiChoiceControl) {
-        this.title = title;
-        this.multiChoiceControl = multiChoiceControl;
+    private String title;
+    private IMultiChoiceControl multiChoiceControl;
+
+    public static MultiChoiceDialogFragment newInstance(String title, IMultiChoiceControl multiChoiceControl) {
+        MultiChoiceDialogFragment fragment = new MultiChoiceDialogFragment();
+        Bundle bundle = new Bundle(NB_PARAMETERS);
+        bundle.putString(TITLE_KEY, title);
+        bundle.putSerializable(MULTIPLE_CHOICE_CONTROL_KEY, multiChoiceControl);
+        fragment.setArguments(bundle);
+        return fragment;
     }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+
+        title = getArguments().getString(TITLE_KEY);
+        multiChoiceControl = (IMultiChoiceControl) getArguments().getSerializable(MULTIPLE_CHOICE_CONTROL_KEY);
+
         AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(getActivity(), R.style.Theme_Dialog));
         builder.setTitle(title)
                 .setMultiChoiceItems(multiChoiceControl.getNames(), multiChoiceControl.getStates(),
