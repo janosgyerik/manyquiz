@@ -27,6 +27,3 @@ local.properties
 # gradle files
 .gradle
 build
-/gradle
-/gradlew
-/gradlew.bat
