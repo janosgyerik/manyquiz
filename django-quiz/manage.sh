@@ -1,9 +1,7 @@
 #!/bin/sh
 
 cd $(dirname "$0")
-
-virtualenv=~/virtualenv/manyquiz/bin/activate
-. $virtualenv
+. ./virtualenv.sh
 
 proj=$1; shift
 
