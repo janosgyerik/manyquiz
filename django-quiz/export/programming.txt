@@ -1456,33 +1456,6 @@ The main method should return integer, and the arguments should give the number 
 2
 programming
 END
-Which regular expression will not match "foobar"?
-foo.bar
-foo?bar
-foo*bar
-foo+bar
-The "." matches any character, but since there is nothing between "foo" and "bar", this won't match.
-2
-regex
-END
-Which regular expression will match a word that starts with "foo" and has at least 4 letters?
-\<foo\w+
-\<fookit
-\<foo\w*
-foo\w*
-The "\<" indicates the start of a word, and "\w+" indicates one or more word characters. The other choices are not restrictive enough, and may match input that doesn't meet the criteria.
-2
-regex
-END
-How to match an empty line using regular expressions?
-^$
-\s*
-\S*
-^.*
-The "^" indicates the beginning of the line, and the "$" indicates the end of the line. Thus, if the beginning of the line is followed directly by the end of the line, that must be an empty line.
-2
-regex
-END
 If i=3 and j=i++, what is the value of j?
 3
 4
@@ -1545,6 +1518,33 @@ Text-based protocol
 A binary protocol yields the smallest possible footprint in the communication, which is often a significant boost compared to more verbose text-based protocols like SOAP or XML.
 2
 programming
+END
+Which regular expression will not match "foobar"?
+foo.bar
+foo?bar
+foo*bar
+foo+bar
+The "." matches any character, but since there is nothing between "foo" and "bar", this won't match.
+2
+regex
+END
+Which regular expression will match a word that starts with "foo" and has at least 4 letters?
+\<foo\w+
+\<fookit
+\<foo\w*
+foo\w*
+The "\<" indicates the start of a word, and "\w+" indicates one or more word characters. The other choices are not restrictive enough, and may match input that doesn't meet the criteria.
+2
+regex
+END
+How to match an empty line using regular expressions?
+^$
+\s*
+\S*
+^.*
+The "^" indicates the beginning of the line, and the "$" indicates the end of the line. Thus, if the beginning of the line is followed directly by the end of the line, that must be an empty line.
+2
+regex
 END
 In UNIX, which shell variable stores the exit code of the last executed command?
 $?
@@ -2131,15 +2131,6 @@ argv + n is the address of the n-th element in the array. The * operator derefer
 3
 programming
 END
-Which regular expression is a zero-width positive look-behind assertion?
-(?<=pattern)
-(?=pattern)
-(?!pattern)
-(?<!pattern)
-The symbol "<" usually indicates a look-behind assertion, and its absence a look-ahead assertion. The symbol "=" usually indicates a positive assertion, and the symbol "!" a negative assertion.
-3
-regex
-END
 Which language is not in the same group as LISP?
 C++
 R
@@ -2176,6 +2167,24 @@ Code calling static methods is hard to test because you cannot mock the static c
 3
 programming
 END
+In C/C++ what is the effect of the volatile keyword ?
+Tell the compiler to not optimize access to this variable
+Tell the compiler to load the variable in the low-memory zone for fast access
+Tell the compiler to reserve a register to store this variable all along
+Tell the compiler to make the variable access threadsafe with a lock
+The variable may change "on its own" (means an interrupt or another thread might change it) so don't optimize code and always read the value of this variable.
+3
+programming
+END
+Which regular expression is a zero-width positive look-behind assertion?
+(?<=pattern)
+(?=pattern)
+(?!pattern)
+(?<!pattern)
+The symbol "<" usually indicates a look-behind assertion, and its absence a look-ahead assertion. The symbol "=" usually indicates a positive assertion, and the symbol "!" a negative assertion.
+3
+regex
+END
 What kind of regular expression is this: (?=pattern)
 Positive look-ahead assertion
 Negative look-ahead assertion
@@ -2185,14 +2194,14 @@ This is a zero-width positive look-ahead assertion. For example /\w+(?=\t)/ matc
 3
 regex
 END
-In C/C++ what is the effect of the volatile keyword ?
-Tell the compiler to not optimize access to this variable
-Tell the compiler to load the variable in the low-memory zone for fast access
-Tell the compiler to reserve a register to store this variable all along
-Tell the compiler to make the variable access threadsafe with a lock
-The variable may change "on its own" (means an interrupt or another thread might change it) so don't optimize code and always read the value of this variable.
+How to match a 8 digit number with or without a hyphen in the middle?
+^(?:\d{8}|(?=\d+-\d+$)[\d\-]{9})$
+^(?:\d{8}|(?=\d+-\d+)[\d\-]{9})$
+^(?:\d{8}|(?=\d+-\d+$)[\d\-]{8})$
+^(?:\d{8}|[\d\-]{9})$
+Either it's \d{8} from start to end, 8 digits. Or it is 9 characters of [\d\-] (digits or hyphen) AND it matched \d+-\d+ - meaning it has exactly one hyphen in the middle.
 3
-programming
+regex
 END
 What is the weakest point in the computer security of a typical large firm?
 The employees
@@ -2409,13 +2418,4 @@ Windows 98
 Windows NT was the first version of Microsoft Windows which enforced preemptive multitasking. Earlier versions used cooperative multitasking.
 3
 windows
-END
-How to match a 8 digit number with or without a hyphen in the middle?
-^(?:\d{8}|(?=\d+-\d+$)[\d\-]{9})$
-^(?:\d{8}|(?=\d+-\d+)[\d\-]{9})$
-^(?:\d{8}|(?=\d+-\d+$)[\d\-]{8})$
-^(?:\d{8}|[\d\-]{9})$
-Either it's \d{8} from start to end, 8 digits. Or it is 9 characters of [\d\-] (digits or hyphen) AND it matched \d+-\d+ - meaning it has exactly one hyphen in the middle.
-3
-regex
 END
