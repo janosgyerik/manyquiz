@@ -1463,7 +1463,7 @@ foo*bar
 foo+bar
 The "." matches any character, but since there is nothing between "foo" and "bar", this won't match.
 2
-programming
+regex
 END
 Which regular expression will match a word that starts with "foo" and has at least 4 letters?
 \<foo\w+
@@ -1472,7 +1472,7 @@ Which regular expression will match a word that starts with "foo" and has at lea
 foo\w*
 The "\<" indicates the start of a word, and "\w+" indicates one or more word characters. The other choices are not restrictive enough, and may match input that doesn't meet the criteria.
 2
-programming
+regex
 END
 How to match an empty line using regular expressions?
 ^$
@@ -1481,7 +1481,7 @@ How to match an empty line using regular expressions?
 ^.*
 The "^" indicates the beginning of the line, and the "$" indicates the end of the line. Thus, if the beginning of the line is followed directly by the end of the line, that must be an empty line.
 2
-programming
+regex
 END
 If i=3 and j=i++, what is the value of j?
 3
@@ -2138,7 +2138,7 @@ Which regular expression is a zero-width positive look-behind assertion?
 (?<!pattern)
 The symbol "<" usually indicates a look-behind assertion, and its absence a look-ahead assertion. The symbol "=" usually indicates a positive assertion, and the symbol "!" a negative assertion.
 3
-programming
+regex
 END
 Which language is not in the same group as LISP?
 C++
@@ -2183,7 +2183,7 @@ Positive look-behind assertion
 Negative look-behind assertion
 This is a zero-width positive look-ahead assertion. For example /\w+(?=\t)/ matches a word followed by a TAB, without including the TAB in the matched string.
 3
-programming
+regex
 END
 In C/C++ what is the effect of the volatile keyword ?
 Tell the compiler to not optimize access to this variable
