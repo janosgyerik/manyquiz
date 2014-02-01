@@ -502,6 +502,42 @@ If 3 is greater than 4, the value will be 5, otherwise 6. So it is 6. The ?: is 
 1
 programming
 END
+Which loop will print the numbers 1 to 10?
+for (i = 0; i < 10; ++i) printf("%d\n", i + 1)
+for (i = 1; i <= 10; ++i) printf("%d\n", i + 1)
+for (i = 0; i < 10; ++i) printf("%d\n", i)
+for i == 0; i < 10; ++i printf("%d\n", i)
+The variable i will take on the values 0..9, and the printf statement will print i+1, so effectively 1..10.
+1
+programming
+END
+What's the number after F in hexadecimal?
+0x10
+0x16
+0x0g
+0x1f
+F is the highest hexadecimal digit, just like 9 is the highest decimal digit. And just like the number after decimal 9 is decimal 10, the number after hexadecimal F is hexadecimal 10.
+1
+programming
+END
+What is the purpose of this condition: i % 6 == 0 && i % 7 == 0
+Check if i is a multiple of 6 and 7
+Check if i is a multiple of 6 or 7
+Check if i contains the value 6 or 7
+Check if i is between 6% and 7%
+% is usually the modulo operator, which for i % n returns the remainder of dividing i by n. For example 30 % 7 is 2 because 30 - int(30 / 7) is 2.
+1
+programming
+END
+Which value of i will satisfy this condition: i % 3 == 0 && i % 5 == 0
+105
+96
+115
+8
+Only 105 is a multiple of both 3 and 5.
+1
+programming
+END
 Which command will change to your home directory in UNIX?
 cd
 cd -
@@ -652,6 +688,24 @@ Behavior-Driven Development (BDD)
 Feature-Driven Development (FDD)
 Agile software development
 In Test-Driven Development, you write the tests first that confirm the desired functionality. As you implement the functionality, the tests pass, turning from red to green. Then when there is a new feature, you adjust the tests, and the cycle starts again.
+1
+testing
+END
+What percentage of execution paths do you need to cover to be sure your code works correctly in all situations?
+100%
+99%
+99.9%
+80%
+If not 100% of execution paths are covered by unit tests, then there's no guarantee the remaining x% works correctly.
+1
+testing
+END
+How would you name a unit test case checking the logic of a login form?
+test_invalid_username
+test_invalid_input
+test_invalid_case_1
+test_invalid_form
+Unit test case names should be specific and descriptive.
 1
 testing
 END
@@ -1519,6 +1573,24 @@ A binary protocol yields the smallest possible footprint in the communication, w
 2
 programming
 END
+What coding best practice might be violated by: a || b || c || d
+boolean expression complexity too high
+array stored directly
+ncss method count too high
+cyclomatic complexity too high
+Code quality checking tools like PMD or Sonar would warn that boolean expression complexity is higher than 3.
+2
+programming
+END
+When should you add more comments in your code?
+When the logic is too complex and you cannot refactor
+When the logic is complex and you don't want to refactor
+Always: the more comments the better
+Never: the code should speak for itself
+As much as possible, the code should speak for itself. In some cases when the logic is too complex and cannot be refactored, you should add a comment to explain what's happening.
+2
+programming
+END
 Which regular expression will not match "foobar"?
 foo.bar
 foo?bar
@@ -1752,6 +1824,33 @@ Z = Z | (1 << 2)
 Z = Z & ~0100 = Z & 1011 = effectively setting the 3rd bit to zero.
 2
 system-programming
+END
+How many unit tests will you need to cover this condition: a || b || c
+4
+3
+2
+0
+You would need to cover 4 cases: only `a` is true, only `b` is true, only `c` is true, none of them are true.
+2
+testing
+END
+Which unit test case is most likely to conform to best practices?
+Test that invalid usernames are rejected
+Test that invalid usernames and passwords are rejected
+Test that username, password and all other form parameters are correct
+Test that invalid usernames and null usernames are rejected
+A unit test case should test only one thing.
+2
+testing
+END
+At a glance, which unit test case is most likely to conform to best practices?
+a test case with 5 lines
+a test case with 25 lines
+a test case that runs between 1-3 minutes
+a test case with 5 lines of code and 5 lines of comments
+A good unit test case should be short, fast, and easy to read
+2
+testing
 END
 Which compression tool cannot work as a filter?
 7zip
@@ -2194,7 +2293,7 @@ This is a zero-width positive look-ahead assertion. For example /\w+(?=\t)/ matc
 3
 regex
 END
-How to match a 8 digit number with or without a hyphen in the middle?
+How to match an 8 digit number with or without a hyphen in the middle?
 ^(?:\d{8}|(?=\d+-\d+$)[\d\-]{9})$
 ^(?:\d{8}|(?=\d+-\d+)[\d\-]{9})$
 ^(?:\d{8}|(?=\d+-\d+$)[\d\-]{8})$
