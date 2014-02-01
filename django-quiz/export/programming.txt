@@ -538,6 +538,24 @@ Only 105 is a multiple of both 3 and 5.
 1
 programming
 END
+Which regular expression will not match "foobar"?
+foo.bar
+foo?bar
+foo*bar
+foo+bar
+The "." matches any character, but since there is nothing between "foo" and "bar", this won't match.
+1
+regex
+END
+How to match an empty line using regular expressions?
+^$
+\s*
+\S*
+^.*
+The "^" indicates the beginning of the line, and the "$" indicates the end of the line. Thus, if the beginning of the line is followed directly by the end of the line, that must be an empty line.
+1
+regex
+END
 Which command will change to your home directory in UNIX?
 cd
 cd -
@@ -1591,30 +1609,12 @@ As much as possible, the code should speak for itself. In some cases when the lo
 2
 programming
 END
-Which regular expression will not match "foobar"?
-foo.bar
-foo?bar
-foo*bar
-foo+bar
-The "." matches any character, but since there is nothing between "foo" and "bar", this won't match.
-2
-regex
-END
 Which regular expression will match a word that starts with "foo" and has at least 4 letters?
 \<foo\w+
 \<fookit
 \<foo\w*
 foo\w*
 The "\<" indicates the start of a word, and "\w+" indicates one or more word characters. The other choices are not restrictive enough, and may match input that doesn't meet the criteria.
-2
-regex
-END
-How to match an empty line using regular expressions?
-^$
-\s*
-\S*
-^.*
-The "^" indicates the beginning of the line, and the "$" indicates the end of the line. Thus, if the beginning of the line is followed directly by the end of the line, that must be an empty line.
 2
 regex
 END
