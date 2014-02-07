@@ -538,6 +538,15 @@ Only 105 is a multiple of both 3 and 5.
 1
 programming
 END
+What will be the result of sprintf("%-05s", 15)
+"15   "
+"00015"
+Error because 15 is not a string
+"15000"
+The string will be padding to length 5. 0 is to use zeros when padding on the left, but since minus means to justify to the left, the 0 is pointless and unused here.
+1
+programming
+END
 Which regular expression will not match "foobar"?
 foo.bar
 foo?bar
@@ -553,6 +562,42 @@ How to match an empty line using regular expressions?
 \S*
 ^.*
 The "^" indicates the beginning of the line, and the "$" indicates the end of the line. Thus, if the beginning of the line is followed directly by the end of the line, that must be an empty line.
+1
+regex
+END
+Which string will match the regular expression ^[yY]es
+yes
+yYes
+oh yes
+yeeessss
+The string must start with 'y' or 'Y', folled by 'es'.
+1
+regex
+END
+Which regex substitution will replace all dots with a space?
+s/\./ /g
+s/./ /g
+s/\./ /
+s/\./ /i
+If the dot is not escaped with a backslash, the expression will replace any character, not only a dot. The 'g' flag stands for "global", to replace all occurrences.
+1
+regex
+END
+Which regex substitution will expand S03 to Season 3
+s/S0([0-9])/Season \1/
+s/S0[0-9]/Season \1/
+s/S([0-9])/Season 3/
+s/S[0-9]/Season 3/
+Capture the pattern within (...) and use \1 as a back reference in the replacement.
+1
+regex
+END
+Which regex substitution will replace 8 characters with a dot?
+s/.{8}/./
+s/{8}/./
+s/\.{8}/./
+s/\.{8}/\./
+The dot in ".{8}" means any character, the {8} means repeated 8 times.
 1
 regex
 END
@@ -1609,12 +1654,39 @@ As much as possible, the code should speak for itself. In some cases when the lo
 2
 programming
 END
+What is the value of 2^16
+65536
+65535
+65256
+65532
+In other words that's all combinations of bits on two bytes. Kind of a notable number of programmers. 2^16 = 2^8 * 2^8 = 256 * 256 = 65536
+2
+programming
+END
+What will happen if you run this in a language with lazily evaluated function parameters: (function(x, n) 2^x)(8)
+The number 256 is returned
+The user is prompted to specify n
+An error is returned because n is missing
+A warning printed because n is missing
+If function parameters are lazily evaluated, then since n is never used, it will be ignored, and the function should return 2^8 = 256.
+2
+programming
+END
 Which regular expression will match a word that starts with "foo" and has at least 4 letters?
 \<foo\w+
 \<fookit
 \<foo\w*
 foo\w*
 The "\<" indicates the start of a word, and "\w+" indicates one or more word characters. The other choices are not restrictive enough, and may match input that doesn't meet the criteria.
+2
+regex
+END
+Which string will match the extended regular expression (.*) \1 .*e
+bye bye birdie
+hello 1
+hi there
+put 1 here
+\1 in extended regular expressions is a back reference to the first matched pattern within (...)
 2
 regex
 END
