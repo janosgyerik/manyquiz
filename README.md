@@ -43,7 +43,5 @@ Or you could run all tests:
 todo
 ----
 - make it work in both Eclipse and Android Studio
-- add week2
-- add rest of week3
 - add android studio cheat sheet
 - remove anything unnecessary from all `build.gradle` files
