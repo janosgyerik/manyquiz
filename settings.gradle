@@ -1,2 +1,6 @@
+include ':ActivityLab'
 include ':IntentsLab'
 include ':MyBrowser'
+include ':FragmentsLab'
+include ':PermissionsLab'
+include ':UILabs'
