@@ -44,4 +44,3 @@ todo
 ----
 - make it work in both Eclipse and Android Studio
 - add android studio cheat sheet
-- remove anything unnecessary from all `build.gradle` files
