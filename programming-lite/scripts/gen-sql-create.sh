@@ -3,7 +3,7 @@
 cd $(dirname "$0")
 
 db=../../django-quiz/databases/programming.db
-sql=../assets/sql_create.sql
+sql=../src/main/assets/sql_create.sql
 
 ../../django-quiz/gen-sql-create.sh > $sql
 
