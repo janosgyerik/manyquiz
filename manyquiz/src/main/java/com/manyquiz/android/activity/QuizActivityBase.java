@@ -2,6 +2,7 @@ package com.manyquiz.android.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
@@ -66,7 +67,15 @@ public abstract class QuizActivityBase extends FragmentActivity {
             EmailTools.send(this, R.string.subject_contact);
             return true;
         }
+        if (itemId == R.id.menu_rate) {
+            openURL(getString(R.string.url_rate));
+            return true;
+        }
         return false;
+    }
+
+    private void openURL(String url) {
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
     }
 
     @Override

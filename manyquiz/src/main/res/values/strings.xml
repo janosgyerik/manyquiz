@@ -13,6 +13,9 @@
     <string name="menu_about">Info</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_reset">Reset</string>
+    <string name="menu_rate">Rate this app</string>
+
+    <string name="url_rate">market://details?id=com.manyquiz.programming.lite</string>
 
     <string name="th_level">Level</string>
     <string name="th_mode">Mode</string>

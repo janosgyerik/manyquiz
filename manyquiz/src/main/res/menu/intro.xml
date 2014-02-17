@@ -14,5 +14,8 @@
         android:id="@+id/menu_reset"
         android:icon="@drawable/ic_menu_revert"
         android:title="@string/menu_reset"/>
+    <item
+        android:id="@+id/menu_rate"
+        android:title="@string/menu_rate" />
 
 </menu>
