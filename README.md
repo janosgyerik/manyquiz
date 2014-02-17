@@ -16,21 +16,31 @@ You can accept all defaults and simply click **OK** everywhere.
 
 Building on the command line
 ----------------------------
-Most often you probably want to build specific projects:
+Most of the time you probably want to build a specific project:
 
     ./gradlew -p IntentsLab/ assembleDebugTest
 
-Or you could build everything in one go:
+Or you can build everything in one go:
 
     ./gradlew assembleDebugTest
 
 
 Running tests on the command line
 ---------------------------------
-Most often you probably want to run tests in specific projects:
+Most of the time you probably want to run the Robotium tests in a specific project:
 
     ./gradlew -p IntentsLab/ connectedInstrumentTest
 
-Or you could run all tests:
+Or you can run all tests:
 
     ./gradlew connectedInstrumentTest
+
+
+Staying up to date
+------------------
+I will keep adding the new assignments as they get released,
+ideally on the same day or the next.
+You can upgrade your local clone from this repository with the commands:
+
+    git fetch origin
+    git merge origin/master
