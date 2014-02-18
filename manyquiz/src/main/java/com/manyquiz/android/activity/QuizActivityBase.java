@@ -1,9 +1,9 @@
 package com.manyquiz.android.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,7 +26,7 @@ import com.manyquiz.common.util.SingleChoiceControl;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class QuizActivityBase extends FragmentActivity {
+public abstract class QuizActivityBase extends Activity {
 
     private QuizSQLiteOpenHelper helper;
 

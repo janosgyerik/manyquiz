@@ -1,10 +1,10 @@
 package com.manyquiz.android.activity;
 
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.DialogFragment;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -91,7 +91,7 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
         @Override
         public void onClick(View view) {
             DialogFragment newFragment = SingleChoiceDialogFragment.newInstance(getString(R.string.title_select_level), levelChoiceControl);
-            newFragment.show(getSupportFragmentManager(), "select-level");
+            newFragment.show(getFragmentManager(), "select-level");
         }
     }
 
@@ -99,7 +99,7 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
         @Override
         public void onClick(View view) {
             DialogFragment newFragment = SingleChoiceDialogFragment.newInstance(getString(R.string.title_select_mode), modeChoiceControl);
-            newFragment.show(getSupportFragmentManager(), "select-mode");
+            newFragment.show(getFragmentManager(), "select-mode");
         }
     }
 
@@ -107,7 +107,7 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
         @Override
         public void onClick(View view) {
             DialogFragment newFragment = SingleChoiceDialogFragment.newInstance(getString(R.string.title_select_questions_num), questionsNumChoiceControl);
-            newFragment.show(getSupportFragmentManager(), "questions-num");
+            newFragment.show(getFragmentManager(), "questions-num");
         }
     }
 
@@ -115,7 +115,7 @@ public class IntroActivity extends QuizActivityBase implements SharedPreferences
         @Override
         public void onClick(View view) {
             DialogFragment newFragment = MultiChoiceDialogFragment.newInstance(getString(R.string.title_select_categories), categoryFilterControl);
-            newFragment.show(getSupportFragmentManager(), "select-categories");
+            newFragment.show(getFragmentManager(), "select-categories");
         }
     }
 
