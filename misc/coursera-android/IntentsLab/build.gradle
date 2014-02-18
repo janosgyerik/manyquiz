@@ -1,0 +1,13 @@
+apply plugin: 'android'
+
+android {
+    compileSdkVersion 18
+    buildToolsVersion "19.0.0"
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:+'
+    compile fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+
+    instrumentTestCompile files('../libs/robotium-solo-5.0.2-SNAPSHOT.jar')
+}
