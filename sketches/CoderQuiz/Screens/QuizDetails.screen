@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore" xmlns:o="http://wireframesketcher.com/1.0/model/overrides">
+  <widgets xsi:type="model:Master" id="3" x="55" y="164" measuredWidth="360" measuredHeight="50">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Navigation.screen#Action%20Bar%20Drawer"/>
+    <overrides>
+      <widgetChanges xsi:type="o:Delete" ref="43"/>
+      <widgets ref="42" text="Pierre-Jean"/>
+      <widgets ref="41">
+        <attributes key="icon" value="user (xlarge)"/>
+      </widgets>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Master" id="5" x="55" y="263" measuredWidth="360" measuredHeight="30">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Lists.screen#List%201%20Line"/>
+    <overrides>
+      <widgetChanges xsi:type="o:Delete" ref="6"/>
+      <widgets ref="5" text="Level 01"/>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:SVGImage" id="6" x="64" y="224" width="34" height="34" measuredWidth="34" measuredHeight="34" src="../assets/logo_android.svg"/>
+  <widgets xsi:type="model:Master" id="7" x="104" y="226" measuredWidth="141" measuredHeight="30">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Typography.screen#Header"/>
+    <overrides>
+      <widgets ref="15" text="ANDROID TOPIC"/>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="8" x="55" y="257" width="360" measuredWidth="360" measuredHeight="6" layoutParams="anchor-left,anchor-right|anchor-top"/>
+  <widgets xsi:type="model:Master" id="10" x="71" y="298" width="328" height="217" measuredWidth="328" measuredHeight="217">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Content.screen#Grid%20View"/>
+    <overrides>
+      <widgetChanges xsi:type="o:Delete" ref="305"/>
+      <widgetChanges xsi:type="o:Delete" ref="304"/>
+      <widgetChanges xsi:type="o:Delete" ref="303"/>
+      <widgetChanges xsi:type="o:Delete" ref="302"/>
+      <widgetChanges xsi:type="o:Delete" ref="301"/>
+      <widgetChanges xsi:type="o:Delete" ref="300"/>
+      <widgetChanges xsi:type="o:Delete" ref="298"/>
+      <widgets ref="293" width="104" height="105"/>
+      <widgets ref="294" x="111" width="104" height="105"/>
+      <widgets ref="295" x="223" width="104" height="105" link="QuizLauncher.screen"/>
+      <widgets ref="296" y="111" width="104" height="105">
+        <attributes key="background" value="#999999"/>
+      </widgets>
+      <widgets ref="297" x="111" y="111" width="104" height="105">
+        <attributes key="background" value="#999999"/>
+      </widgets>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:SVGImage" id="12" x="81" y="308" width="84" height="84" measuredWidth="84" measuredHeight="84" src="../assets/logo_android.svg"/>
+  <widgets xsi:type="model:SVGImage" id="13" x="192" y="309" width="84" height="84" measuredWidth="84" measuredHeight="84" src="../assets/logo_android.svg"/>
+  <widgets xsi:type="model:SVGImage" id="14" x="303" y="310" width="84" height="84" measuredWidth="84" measuredHeight="84" alpha="103" src="../assets/logo_android.svg"/>
+  <widgets xsi:type="model:SVGImage" id="15" x="81" y="420" width="84" height="84" measuredWidth="84" measuredHeight="84" src="../assets/logo_android.svg"/>
+  <widgets xsi:type="model:Icon" id="17" x="143" y="371" measuredWidth="32" measuredHeight="32" icon="check (large)"/>
+  <widgets xsi:type="model:Icon" id="18" x="254" y="371" measuredWidth="32" measuredHeight="32" icon="check (large)"/>
+  <widgets xsi:type="model:Master" id="19" x="55" y="531" measuredWidth="360" measuredHeight="30">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Lists.screen#List%201%20Line"/>
+    <overrides>
+      <widgetChanges xsi:type="o:Delete" ref="6"/>
+      <widgets ref="5" text="Level 02"/>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Master" id="20" x="71" y="566" width="328" height="217" measuredWidth="328" measuredHeight="217">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Content.screen#Grid%20View"/>
+    <overrides>
+      <widgetChanges xsi:type="o:Delete" ref="305"/>
+      <widgetChanges xsi:type="o:Delete" ref="304"/>
+      <widgetChanges xsi:type="o:Delete" ref="303"/>
+      <widgetChanges xsi:type="o:Delete" ref="302"/>
+      <widgetChanges xsi:type="o:Delete" ref="301"/>
+      <widgetChanges xsi:type="o:Delete" ref="300"/>
+      <widgetChanges xsi:type="o:Delete" ref="298"/>
+      <widgets ref="293" width="104" height="105">
+        <attributes key="background" value="#999999"/>
+      </widgets>
+      <widgets ref="294" x="111" width="104" height="105">
+        <attributes key="background" value="#999999"/>
+      </widgets>
+      <widgets ref="295" x="223" width="104" height="105">
+        <attributes key="background" value="#999999"/>
+      </widgets>
+      <widgets ref="296" y="111" width="104" height="105">
+        <attributes key="background" value="#999999"/>
+      </widgets>
+      <widgets ref="297" x="111" y="111" width="104" height="105">
+        <attributes key="background" value="#999999"/>
+      </widgets>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:SVGImage" id="21" x="81" y="576" width="84" height="84" measuredWidth="84" measuredHeight="84" src="../assets/logo_android.svg"/>
+  <widgets xsi:type="model:SVGImage" id="22" x="192" y="577" width="84" height="84" measuredWidth="84" measuredHeight="84" src="../assets/logo_android.svg"/>
+  <widgets xsi:type="model:SVGImage" id="23" x="303" y="578" width="84" height="84" measuredWidth="84" measuredHeight="84" alpha="103" src="../assets/logo_android.svg"/>
+  <widgets xsi:type="model:SVGImage" id="24" x="81" y="688" width="84" height="84" measuredWidth="84" measuredHeight="84" src="../assets/logo_android.svg"/>
+  <widgets xsi:type="model:SVGImage" id="27" x="194" y="422" width="82" height="80" measuredWidth="82" measuredHeight="80" src="../assets/logo_cup.svg"/>
+  <widgets xsi:type="model:SVGImage" id="28" x="192" y="690" width="82" height="80" measuredWidth="82" measuredHeight="80" src="../assets/logo_cup.svg"/>
+  <widgets xsi:type="model:Master" id="1" x="32" y="70" measuredWidth="406" measuredHeight="794">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Devices.screen#Phone"/>
+  </widgets>
+  <widgets xsi:type="model:Note" id="29" x="923" y="311" text="Available questions packages by level&#xA;&#xA;I think we should block access to higher level questions according to achievement.&#xA;Just like a game, you should unlock level 2 by finishing level 1 (with let's say a score of 80%)&#xA;&#xA;Here, every packages installed through the package managers should be available.&#xA;That is to say, JapiSoft (official) questions, but maybe community packages.&#xA;&#xA;- A package should list the dependency to unlock it (packageA and packageB with perfect score for instance)&#xA;&#xA;- The package with a cup should be to unlock next level (See Note below)&#xA;" measuredWidth="777" measuredHeight="185" annotation="true">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Note" id="30" x="923" y="556" text="Business model and Gamification&#xA;&#xA;There is to possible way to get money from the App.&#xA;&#xA;  * The first one would be to create paying packages.&#xA;This approach leads to 2 difficulties to my mind:&#xA;  > Which packages should be paying or free?&#xA;  > How induce people to buy packages?&#xA;     The game *should* be enjoyable without paying&#xA;     If people are stuck because they don't pay, they will quit the app.&#xA;     If people can go on progressing level by level wuthout paying, they wont buy new packages.&#xA;  > If we include community packages, having paying packages would seem unfair, and managing&#xA;     to retribute community for packages seems really complicated.&#xA;     &#xA;  * The second approach is to make all packages free. But having some stressful situation where &#xA;you could loose a lot of time. For instance, at each end of level, we could make a quit long quiz,&#xA;with a coutdown, involving all previous quiz + new questions. And you couldn't pass questions unless&#xA;using &quot;jokers&quot;. We could provide 2 or 3 free jokers at the beginning, and allow people to buy new one&#xA;(like 29 cents a joker, or 5 jokers for 0,99 cents).&#xA;If people get involved in the game and to want to lost their progress on difficult situation, they could be induce to buy&#xA;jokers. Like this, the game still could be enjoyable without jokers (but would require maybe more practice) and could&#xA;let people willing to pay progress a little bit more quicly. We could imagine limiting the number of jokers per quiz to&#xA;not make the system too unfair.&#xA;     &#xA;     " measuredWidth="853" measuredHeight="470" annotation="true" textAlignment="Left">
+    <font/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

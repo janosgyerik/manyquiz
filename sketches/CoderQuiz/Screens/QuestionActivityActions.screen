@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore" xmlns:o="http://wireframesketcher.com/1.0/model/overrides">
+  <widgets xsi:type="model:Master" id="3" x="55" y="164" measuredWidth="360" measuredHeight="50">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Navigation.screen#Action%20Bar%20Drawer"/>
+    <overrides>
+      <widgetChanges xsi:type="o:Delete" ref="43"/>
+      <widgetChanges xsi:type="o:Delete" ref="41"/>
+      <widgets ref="42" text="Android Culture"/>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="8" x="55" y="257" width="360" measuredWidth="360" measuredHeight="6" layoutParams="anchor-left,anchor-right|anchor-top"/>
+  <widgets xsi:type="model:Master" id="31" x="55" y="273" measuredWidth="360" measuredHeight="260">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Lists.screen#List%201%20Line"/>
+    <overrides>
+      <widgets ref="5" text="Which company distribute the Android\noperating system?"/>
+      <widgets ref="6" y="68" text="Microsoft&#xA;Oracle&#xA;Google&#xA;IBM">
+        <items ref="@items.0" text="Microsoft"/>
+        <itemChanges xsi:type="o:Insert" newIndex="3">
+          <object xsi:type="model:Item" text="IBM"/>
+        </itemChanges>
+        <itemChanges xsi:type="o:Insert" newIndex="3">
+          <object xsi:type="model:Item" text="Google"/>
+        </itemChanges>
+        <itemChanges xsi:type="o:Insert" newIndex="3">
+          <object xsi:type="model:Item" text="Oracle"/>
+        </itemChanges>
+        <itemChanges xsi:type="o:Delete" ref="@items.2"/>
+        <itemChanges xsi:type="o:Delete" ref="@items.1"/>
+      </widgets>
+      <widgets ref="7" y="63"/>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Master" id="42" x="55" y="680" height="46" measuredWidth="360" measuredHeight="46">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Controls.screen#Button"/>
+    <overrides>
+      <widgets ref="24" width="360" height="46" text="Next"/>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:SVGImage" id="43" x="71" y="174" width="34" height="36" measuredWidth="34" measuredHeight="36" src="../assets/logo_android.svg"/>
+  <widgets xsi:type="model:Master" id="1" x="32" y="70" measuredWidth="406" measuredHeight="794">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Devices.screen#Phone"/>
+  </widgets>
+  <widgets xsi:type="model:Master" id="7" x="71" y="226" measuredWidth="123" measuredHeight="30">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Typography.screen#Header"/>
+    <overrides>
+      <widgets ref="15" text="Question 1/12"/>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Popup" id="49" x="249" y="209" text="{heart}Bookmark Question&#xA;{comments}Comment&#xA;{email} Email Question&#xA;{warning}Report Error" measuredWidth="166" measuredHeight="116">
+    <items x="0" y="2" width="166" height="28" text="{heart}Bookmark Question"/>
+    <items x="0" y="30" width="166" height="28" text="{comments}Comment"/>
+    <items x="0" y="58" width="166" height="28" text="{email} Email Question"/>
+    <items x="0" y="86" width="166" height="28" text="{warning}Report Error"/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

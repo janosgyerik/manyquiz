@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Master" id="1" x="104" y="40" measuredWidth="406" measuredHeight="794">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Devices.screen#Phone"/>
+  </widgets>
+  <widgets xsi:type="model:Master" id="5" x="127" y="134" measuredWidth="360" measuredHeight="50">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Navigation.screen#Action%20Bar"/>
+    <overrides>
+      <widgets ref="9" text="CoderQuiz"/>
+      <widgets ref="11">
+        <attributes key="icon" value="circled-plus (medium)"/>
+      </widgets>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:SVGImage" id="8" x="142" y="224" width="329" height="425" measuredWidth="329" measuredHeight="425" src="../assets/coderlogo.svg"/>
+  <widgets xsi:type="model:Label" id="14" x="142" y="198" width="329" text="Select Player Account" measuredWidth="329" measuredHeight="27">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Combo" id="15" x="142" y="622" width="329" text="~pjbaraud@gmail.com~" measuredWidth="329" measuredHeight="27">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="16" x="142" y="664" width="329" text="Play" measuredWidth="329" measuredHeight="29" link="DashboardScreen.screen">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Popup" id="17" x="142" y="479" width="327" text="&lt; Add Account... >&#xA;---&#xA;Janos Gyerik - JapiSoft&#xA;---&#xA;* pjbaraud@gmail.com - Google&#xA;pierre-jean@baraud.fr - Google" measuredWidth="327" measuredHeight="144">
+    <items x="0" y="2" width="327" height="28" text="&lt; Add Account... >"/>
+    <items x="0" y="30" width="327" height="14" text="---"/>
+    <items x="0" y="44" width="327" height="28" text="Janos Gyerik - JapiSoft"/>
+    <items x="0" y="72" width="327" height="14" text="---"/>
+    <items x="0" y="86" width="327" height="28" text="* pjbaraud@gmail.com - Google"/>
+    <items x="0" y="114" width="327" height="28" text="pierre-jean@baraud.fr - Google"/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
