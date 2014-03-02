@@ -177,10 +177,11 @@ public class ActivityTwo extends Activity {
 	// Updates the displayed counters
 	public void displayCounts() {
 
-		mTvCreate.setText("onCreate() calls: " + mCreate);
-		mTvStart.setText("onStart() calls: " + mStart);
-		mTvResume.setText("onResume() calls: " + mResume);
-		mTvRestart.setText("onRestart() calls: " + mRestart);
+        // TODO uncomment after TODO items above are resolved, creating member variables
+//		mTvCreate.setText("onCreate() calls: " + mCreate);
+//		mTvStart.setText("onStart() calls: " + mStart);
+//		mTvResume.setText("onResume() calls: " + mResume);
+//		mTvRestart.setText("onRestart() calls: " + mRestart);
 	
 	}
 }
