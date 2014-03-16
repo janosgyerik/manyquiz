@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore" xmlns:o="http://wireframesketcher.com/1.0/model/overrides">
+  <widgets xsi:type="model:Master" id="1" x="48" y="56" measuredWidth="406" measuredHeight="794">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Devices.screen#Phone"/>
+  </widgets>
+  <widgets xsi:type="model:Master" id="4" x="71" y="150" measuredWidth="360" measuredHeight="50">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Navigation.screen#Action%20Bar%20Drawer"/>
+    <overrides>
+      <widgetChanges xsi:type="o:Delete" ref="43"/>
+      <widgets ref="42" text="Pierre-Jean"/>
+      <widgets ref="41">
+        <attributes key="icon" value="user (xlarge)"/>
+      </widgets>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Master" id="5" x="71" y="146" measuredWidth="360" measuredHeight="50">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Navigation.screen#Action%20Bar%20Drawer"/>
+    <overrides>
+      <widgetChanges xsi:type="o:Delete" ref="43"/>
+      <widgets ref="42" text="Pierre-Jean"/>
+      <widgets ref="41">
+        <attributes key="icon" value="user (xlarge)"/>
+      </widgets>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Master" id="9" x="81" y="249" measuredWidth="98" measuredHeight="25">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Typography.screen#Text%20Small"/>
+    <overrides>
+      <widgets ref="6" text="Programming"/>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Master" id="30" x="71" y="199" width="348" measuredWidth="348" measuredHeight="45">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Controls.screen#Tabs"/>
+    <overrides>
+      <widgets ref="76" width="348" text="All, Pending, Done">
+        <items ref="@items.1" text="All"/>
+        <items ref="@items.2" text="Pending"/>
+        <itemChanges xsi:type="o:Insert" newIndex="3">
+          <object xsi:type="model:Item" text="Done"/>
+        </itemChanges>
+        <itemChanges xsi:type="o:Delete" ref="@items.0"/>
+      </widgets>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Master" id="51" x="81" y="327" measuredWidth="81" measuredHeight="25">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Typography.screen#Text%20Small"/>
+    <overrides>
+      <widgets ref="6" text="Computers"/>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="57" x="81" y="272" width="348" measuredWidth="348" measuredHeight="6"/>
+  <widgets xsi:type="model:HLine" id="58" x="81" y="352" width="348" measuredWidth="348" measuredHeight="6"/>
+  <widgets xsi:type="model:Master" id="65" x="81" y="290" measuredWidth="34" measuredHeight="30">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Controls.screen#Button"/>
+    <overrides>
+      <widgets ref="24" text="P1">
+        <attributes key="shapeType" value="rectangle-rounded"/>
+        <attributes key="background" value="#ffff00"/>
+      </widgets>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Master" id="66" x="81" y="406" measuredWidth="67" measuredHeight="25">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Typography.screen#Text%20Small"/>
+    <overrides>
+      <widgets ref="6" text="Japanese"/>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="67" x="81" y="431" width="348" measuredWidth="348" measuredHeight="6"/>
+  <widgets xsi:type="model:Master" id="68" x="124" y="290" measuredWidth="34" measuredHeight="30">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Controls.screen#Button"/>
+    <overrides>
+      <widgets ref="24" text="P2">
+        <attributes key="shapeType" value="rectangle-rounded"/>
+        <attributes key="background" value="#cccccc"/>
+      </widgets>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Master" id="69" x="81" y="368" measuredWidth="36" measuredHeight="30">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Controls.screen#Button"/>
+    <overrides>
+      <widgets ref="24" text="C1">
+        <attributes key="shapeType" value="rectangle-rounded"/>
+        <attributes key="background" value="#e69138"/>
+      </widgets>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Master" id="70" x="81" y="448" measuredWidth="33" measuredHeight="30">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Controls.screen#Button"/>
+    <overrides>
+      <widgets ref="24" text="J1">
+        <attributes key="shapeType" value="rectangle-rounded"/>
+      </widgets>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Master" id="71" x="124" y="448" measuredWidth="33" measuredHeight="30">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Controls.screen#Button"/>
+    <overrides>
+      <widgets ref="24" text="J2">
+        <attributes key="shapeType" value="rectangle-rounded"/>
+      </widgets>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Master" id="72" x="168" y="448" measuredWidth="33" measuredHeight="30">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Controls.screen#Button"/>
+    <overrides>
+      <widgets ref="24" text="J3">
+        <attributes key="shapeType" value="rectangle-rounded"/>
+      </widgets>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Master" id="73" x="382" y="290" measuredWidth="35" measuredHeight="30">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Controls.screen#Button"/>
+    <overrides>
+      <widgets ref="24" text="All">
+        <attributes key="shapeType" value="rectangle-rounded"/>
+      </widgets>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Master" id="74" x="382" y="448" measuredWidth="33" measuredHeight="30">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Controls.screen#Button"/>
+    <overrides>
+      <widgets ref="24" text="...">
+        <attributes key="shapeType" value="rectangle-rounded"/>
+      </widgets>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Master" id="75" x="339" y="448" measuredWidth="35" measuredHeight="30">
+    <screen xsi:type="model:WidgetGroup" href="../assets/Android44/Controls.screen#Button"/>
+    <overrides>
+      <widgets ref="24" text="All">
+        <attributes key="shapeType" value="rectangle-rounded"/>
+      </widgets>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Note" id="76" x="488" y="202" text="- Instead of P1, P2, C1, J1, ... it should be some icon of the Pack&#xA;&#xA;- The color indicates your progress: gold / silver / bronze / default&#xA;&#xA;- Click on a pack to play&#xA;&#xA;- Click on the button at the right to play a combination&#xA;within the same category&#xA;&#xA;- The Pending tab will exclude the Gold packs&#xA;&#xA;- The Done tab will show only the Gold packs" measuredWidth="428" measuredHeight="119" annotation="true" textAlignment="Left">
+    <font/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
