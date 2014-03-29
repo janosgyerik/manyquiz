@@ -7,10 +7,6 @@ bin
 gen
 target
 
-# Django
-*.pyc
-/django-quiz/databases/*.db*
-
 # Android
 local.properties
 
