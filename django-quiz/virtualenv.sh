@@ -1,8 +1,7 @@
 #!/bin/sh
 
 projectname=$(basename "$PWD")
-projectname=manyquiz
-virtualenv=~/virtualenv/$projectname
+virtualenv=$(dirname "$BASH_SOURCE")/virtualenv
 if test -d $virtualenv; then
     . $virtualenv/bin/activate
 else
