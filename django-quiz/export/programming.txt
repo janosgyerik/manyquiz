@@ -2590,3 +2590,12 @@ Windows NT was the first version of Microsoft Windows which enforced preemptive 
 3
 windows
 END
+What is machine learning about?
+Giving computers the ability to learn without being explicitly programmed
+Making robots act intelligently
+The science of programming computers
+The science of data mining without human interaction
+This is roughly the definition given by Arthur Samuel (who had written the famous checkers playing, learning program).
+2
+computer-science
+END
