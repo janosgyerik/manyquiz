@@ -1,13 +1,16 @@
 src_dir:=src
-hdpi_dir:=../res/drawable-hdpi
-ldpi_dir:=../res/drawable-ldpi
-mdpi_dir:=../res/drawable-mdpi
+hdpi_dir:=../src/main/res/drawable-hdpi
+ldpi_dir:=../src/main/res/drawable-ldpi
+mdpi_dir:=../src/main/res/drawable-mdpi
 
 names:=$(patsubst $(src_dir)/%,%,$(wildcard $(src_dir)/*.png $(src_dir)/*.jpg))
 hdpi_target:=$(patsubst %,$(hdpi_dir)/%,$(names))
 ldpi_target:=$(patsubst %,$(ldpi_dir)/%,$(names))
 mdpi_target:=$(patsubst %,$(mdpi_dir)/%,$(names))
 market_target:=market/android.png
+feature_target:=market/feature.png
+canvas:=market/canvas.png
+work:=market/work.png
 
 default: all
 
@@ -22,10 +25,12 @@ mdpi: $(mdpi_target)
 
 market: $(market_target)
 
-all: hdpi ldpi mdpi market
+feature: $(feature_target)
+
+all: hdpi ldpi mdpi market feature
 
 clean: 
-	rm $(hdpi_target) $(ldpi_target) $(mdpi_target) $(market_target)
+	rm $(hdpi_target) $(ldpi_target) $(mdpi_target) $(market_target) $(feature_target)
 
 $(hdpi_dir)/tab_%.png: $(src_dir)/tab_%.png
 	convert -geometry 48x $< $@
@@ -116,4 +121,9 @@ market/android.png: $(src_dir)/launcher_main.png
 	convert -geometry 512x $< $@
 	identify $@
 
-# eof
+market/feature.png: $(src_dir)/launcher_main.png
+	@mkdir -p $(@D)
+	convert -size 1024x500 xc:transparent $(canvas)
+	convert -geometry 1024x500 $< $(work)
+	convert -composite $(canvas) $(work) -gravity west $@
+	identify $@
