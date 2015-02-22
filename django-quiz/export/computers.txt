@@ -171,7 +171,7 @@ history
 END
 Who created the GNU operating system?
 Richard Stallman
-Linux Torvalds
+Linus Torvalds
 Bill Gates
 Alan Cox
 Development of GNU was initiated by Richard Stallman in 1983 and was the original focus of the Free Software Foundation (FSF).
