@@ -1,7 +1,7 @@
 src_dir:=src
-hdpi_dir:=../res/drawable-hdpi
-ldpi_dir:=../res/drawable-ldpi
-mdpi_dir:=../res/drawable-mdpi
+hdpi_dir:=../src/main/res/drawable-hdpi
+ldpi_dir:=../src/main/res/drawable-ldpi
+mdpi_dir:=../src/main/res/drawable-mdpi
 
 names:=$(patsubst $(src_dir)/%,%,$(wildcard $(src_dir)/*.png $(src_dir)/*.jpg))
 hdpi_target:=$(patsubst %,$(hdpi_dir)/%,$(names))
