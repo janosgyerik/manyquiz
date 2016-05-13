@@ -9,7 +9,7 @@ re_answer = re.compile(r'.')
 re_level = re.compile(r'^\d$')
 re_explanation = re.compile(r'^[A-Z].*\.$')
 re_category = re.compile(r'^[\w-]+$')
-re_end = re.compile(r'^END$')
+re_end = re.compile(r'^$')
 
 
 class MalformedInput(Exception):

@@ -4,7 +4,7 @@ from django.core.management.base import BaseCommand
 
 from quiz.models import Question
 
-END_MARKER = 'END'
+END_MARKER = ''
 
 
 def export_questions(limit=10):
