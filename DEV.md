@@ -199,7 +199,7 @@ bit easier, but it's still quite complicated.
 You can edit the questions and update in the application by
 following these steps.
 
-Follow the First-time setup steps in `django-quiz/README.txt`.
+Follow the First-time setup steps in `django-quiz/README.md`.
 
 Edit the questions in the file `django-quiz/export/programming.txt`.
 
