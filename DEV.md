@@ -165,25 +165,25 @@ Building in Eclipse
 Project layout
 --------------
 
-- manyquiz/
+- `manyquiz/`
 
   An Android Library project that contains most of the
   functionality and layout elements of the quiz.
 
-- programming/
+- `programming/`
 
   An Android Library project that contains common
   logic in the Programming Quiz.
   Pretty much empty for now.
 
-- programming-lite/
+- `programming-lite/`
 
   An Android Application project that corresponds to the
   Programming Quiz LITE application on Google Play.
   It depends on the "manyquiz" and "programming" projects.
   Pretty much empty for now.
 
-- django-quiz/
+- `django-quiz/`
 
   A Django project to make it easier to edit the database
   of questions.
