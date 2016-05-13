@@ -160,6 +160,15 @@ SQL, Structured Query Language, is a special-purpose programming language design
 1
 database
 
+What does URI stand for?
+Uniform Resource Identifier
+Universal Resource Locator
+Unique Resource Identifier
+Ubiquitous Resource Identifier
+URI, Uniform Resource Identifier is a string of characters used to identify a resource.
+1
+web-programming
+
 Which is not a common SQL command?
 FIND
 SELECT
