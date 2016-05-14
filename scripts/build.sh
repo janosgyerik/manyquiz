@@ -78,7 +78,8 @@ randstring() {
 }
 
 list() {
-    ls -ltr */build/outputs/apk/*-{release,debug*}.apk 2>/dev/null
+    find . -name \*-release.apk
+    find . -name \*-debug.apk
 }
 
 cd $(dirname "$0")/..
