@@ -736,15 +736,6 @@ Assembly is a low level language, designed for writing system software as distin
 1
 system-programming
 
-What is unit testing for?
-Verify a specific section of code.
-Verify the functionality of a piece of software.
-Verify the interfaces between software components.
-Verify that an integrated system meets its requirements.
-Unit testing, also known as component testing, refers to tests that verify the functionality of a specific section of code, usually at the function level.
-1
-testing
-
 Which is the lowest level software testing method?
 unit testing
 integration testing
@@ -763,16 +754,7 @@ In Test-Driven Development, you write the tests first that confirm the desired f
 1
 testing
 
-What percentage of execution paths do you need to cover to be sure your code works correctly in all situations?
-100%
-99%
-99.9%
-80%
-If not 100% of execution paths are covered by unit tests, then there's no guarantee the remaining x% works correctly.
-1
-testing
-
-How would you name a unit test case checking the logic of a login form?
+Which is a fine name for a unit test case to verify the logic of a login form?
 test_invalid_username
 test_invalid_input
 test_invalid_case_1
@@ -1915,7 +1897,7 @@ You would need to cover 4 cases: only `a` is true, only `b` is true, only `c` is
 2
 testing
 
-Which unit test case is most likely to conform to best practices?
+Which test case follows good practices in unit testing?
 Test that invalid usernames are rejected
 Test that invalid usernames and passwords are rejected
 Test that username, password and all other form parameters are correct
@@ -1924,7 +1906,7 @@ A unit test case should test only one thing.
 2
 testing
 
-At a glance, which unit test case is most likely to conform to best practices?
+Which test case follows good practices in unit testing? (2)
 a test case with 5 lines
 a test case with 25 lines
 a test case that runs between 1-3 minutes
