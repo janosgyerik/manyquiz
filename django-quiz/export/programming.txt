@@ -1627,7 +1627,7 @@ A binary protocol yields the smallest possible footprint in the communication, w
 2
 programming
 
-What coding best practice might be violated by: a || b || c || d
+What coding recommendation might be violated by: a || b || c || d
 boolean expression complexity too high
 array stored directly
 ncss method count too high
@@ -2778,4 +2778,175 @@ Martin Fowler
 To be really accurate, it's actually Robert Cecil Martin.
 1
 history
+
+Which traversal method will produce a sorted list of elements from a binary search tree?
+in-order
+pre-order
+post-order
+level-order
+In-order traversal of a BST will visit the elements in sorting order.
+1
+computer-science
+
+Which programming language was created most recently?
+Go
+Java
+Scala
+Perl
+Go was created in 2007, Scala in 2001, Java in 1991, Perl in 1987.
+1
+history
+
+Which programming language was created first?
+C
+Cobol
+Pascal
+Objective C
+Cobol was created in 1957, Pascal in 1970, C in 1972, Objective C in 1983.
+1
+history
+
+Which programming language doesn't run on a JVM?
+Go
+Scala
+Clojure
+Groovy
+Scala, Clojure and Groovy all run on JVM, Go compiles to native binary.
+1
+programming
+
+Which is an efficient alrogithm to find a value in a sorted list?
+Binary search
+Depth first search
+Breadth first search
+Sieve of Eratosthenes
+Binary search compares the target value to the middle element, and continues until success on half-intervals.
+1
+algorithms
+
+What's the best case performance of binary search?
+O(1)
+O(n)
+O(n log n)
+O(n^2)
+If the target is the middle element, the search can terminate immediately.
+1
+algorithms
+
+How many elements are in a complete binary tree with 4 levels?
+15
+16
+4
+32
+1 + 2 + 4 + 8 = 15
+1
+data-structures
+
+How many elements are in a binary tree with 4 levels?
+Between 4 to 15
+Between 1 to 15
+Between 1 to 16
+Between 4 to 16
+There must be at least 4 nodes in a binary tree with 4 levels, and at most 15.
+1
+data-structures
+
+What is the time complexity of finding an element in an unbalanced binary search tree built by inserting values 1, 2, ..., 99, 100, in this order?
+O(n)
+O(1)
+O(n log n)
+O(n^2)
+Since the BST is unbalanced, inserting values in sorted order will degenerate the tree to a linked list.
+2
+data-structures
+
+Which data-structure is not a balanced binary search tree?
+Prefix tree
+AVL tree
+Splay tree
+Red-black tree
+A prefix tree, also known as a trie or radix tree, is an ordered tree data structure. The others are self-balancing binary search trees.
+3
+data-structures
+
+What is common in merge sort and insertion sort?
+stable
+adaptive
+average time
+in-place
+Both merge sort and insertion sort are stable, preserving the order of equal elements.
+3
+algorithms
+
+What is common in merge sort and quicksort?
+average time
+worst time
+stable
+adaptive
+Both merge sort and quicksort have the same average time performance, O(n log n).
+3
+algorithms
+
+What is common in heap sort and insertion sort?
+in-place
+average time
+worst time
+stable
+Both heap sort and insertion sort are typically implemented in-place.
+3
+algorithms
+
+What is the Sieve of Eratosthenes for?
+Find all prime numbers up to any given limit
+Efficiently check if a very large number is prime or not
+Find the greatest common divisor of two numbers
+Find all Fibonacci numbers up to any given limit
+Starting from 2, the sieve of Eratosthenes iteratively marks as composite the multiples of each prime.
+2
+algorithms
+
+What is the time complexity of calculating the sum of a list of numbers?
+O(n)
+O(1)
+O(n log n)
+O(n^2)
+To calculate the sum, all elements must be visited.
+1
+computer-science
+
+What is the time complexity of finding the n-th element in a list?
+It depends
+O(1)
+O(n)
+O(n log n)
+If the list supports random access of elements, then O(1), if it's a linked list, then O(n).
+1
+computer-science
+
+Which is not one of the F.I.R.S.T. principles in unit testing?
+reusable
+fast
+repeatable
+self-validating
+The R stands for "repeatable". The other two principles are "isolated" and "timely". Reusability is good, but not a top concern.
+2
+testing
+
+Which kind of testing coverage is the easiest to achieve?
+function coverage
+statement coverage
+branch coverage
+condition coverage
+100% function coverage is achieved when all functions in a program are called during tests.
+2
+testing
+
+Which practice is the best at detecting defects?
+formal code inspections
+unit tests
+integration tests
+non-regression tests
+Tests are not enough to prevent defects. Formal code inspections are more effective. But for best effect, use a combination of multiple methods.
+3
+testing
 
