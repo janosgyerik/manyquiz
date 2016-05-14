@@ -1,8 +1,0 @@
-include ':ActivityLab'
-include ':IntentsLab'
-include ':MyBrowser'
-include ':FragmentsLab'
-include ':PermissionsLab'
-include ':UILabs'
-include ':DangerousApp'
-include ':NotificationsLab'
