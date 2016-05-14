@@ -2608,3 +2608,192 @@ This is roughly the definition given by Arthur Samuel (who had written the famou
 2
 computer-science
 
+Which HTTP verb doesn't map well to a CRUD operation?
+HEAD
+GET
+POST
+DELETE
+POST can Create, GET can Read, DELETE can Delete. HEAD is like a GET but without a response body, only a header, so it doesn't map well to a CRUD operation.
+1
+web-programming
+
+Which of these is a famous NP-complete problem?
+The traveling salesperson problem
+Calculating the greatest common divisor
+Determining if a number is prime
+The prisoner's dilemma
+Many common variations of the traveling salesperson problem are NP-complete. 
+1
+computer-science
+
+Which of these is not a famous NP-complete problem?
+Linear programming
+Knapsack problem
+Traveling salesperson problem
+Graph coloring problem
+Linear programming is about maximizing a linear function subject to linear inequality constraints, which is known to be in P, not in NP.
+2
+computer-science
+
+A problem in which complexity class is the hardest to solve?
+NP
+P
+P-complete
+L
+The difficulty of solving these complexity classes: L < P < P-complete < NP.
+2
+computer-science
+
+Which is not one of the SOLID principles? (1)
+Singleton principle
+Open/closed principle
+Liskov substitution principle
+Interface segregation principle
+The S stands for single responsibility principle, there's no such thing as singleton principle
+1
+programming
+
+Which is not one of the SOLID principles? (2)
+Don't repeat yourself
+Liskov substitution principle
+Interface segregation principle
+Dependency inversion principle
+The S stands for single responsibility principle, there's no such thing as singleton principle
+2
+programming
+
+Which is the best kind of cohesion in a module?
+Functional
+Temporal
+Procedural
+Sequential
+Functional cohesion is when parts of a module are grouped because they all contribute to a single well-defined task of the module. It is the best kind of cohesion.
+3
+programming
+
+Which algorithm is typically used for level order traversal of a tree?
+Breadth first search
+Depth first search
+A*star
+Dijsktra
+Breadth first search explores neighbors first before moving to next level neighbors.
+2
+algorithms
+
+Which data structure is typically used in breadth first search algorithms?
+queue
+stack
+tree
+graph
+A breadth first search implementation typically goes like this: while the queue is not item, poll an item from the queue, add unvisited neighbors to the queue, repeat.
+2
+data-structures
+
+Which is a stable sorting algorithm?
+merge sort
+heapsort
+quicksort
+shellsort
+A correctly implemented merge sort preserves the relative order of equal items.
+2
+algorithms
+
+Which sorting algorithm doesn't compare the elements?
+radix sort
+merge sort
+selection sort
+timsort
+Radix sort is a non-comparative sort, grouping keys by individual digits which share the same significant position and value.
+2
+algorithms
+
+Which sorting algorithm has the best performance on an already sorted collection?
+insertion sort
+quicksort
+selection sort
+radix sort
+Insertion sort will simply traverse through the collection once and find nothing to insert, completing in O(n).
+2
+algorithms
+
+Which sorting algorithm is adaptive?
+insertion sort
+quicksort
+merge sort
+radix sort
+Insertion sort can take advantage of already sorted sequences.
+2
+algorithms
+
+Which sorting algorithm is typically not implemented in O(1) space?
+merge sort
+insertion sort
+heapsort
+bubble sort
+Merge sort is typically implemented not in-place, but using an auxiliary array to merge sorted sub-sequences in O(n) space.
+2
+algorithms
+
+Which sorting algorithm is the most popular basis in many languages?
+merge sort
+gnome sort
+bubble sort
+insertion sort
+Merge sort is an efficient general purpose sorting algorithm. Many mainstream languages use a variant of merge sort in their core library, such as Java, Python, Perl.
+2
+algorithms
+
+Which data structure is the most commonly used to implement a priority queue?
+heap
+stack
+queue
+map
+To improve performance, priority queues typically use a heap as their backbone, giving O(log n) performance for inserts and removals.
+2
+data-structures
+
+Which operation is the fastest on a heap?
+peek
+pop
+insert
+push
+Peek simply reads the top item without altering the structure, in O(1) time. Pop removes the top of the heap in O(log n) time, insert inserts in O(log n) time, push is a synonym of insert.
+1
+data-structures
+
+Which is not a feature of object oriented programming?
+recursion
+encapsulation
+polymorphism
+inheritance
+Recursion is an independent concept from object oriented programming.
+1
+computer-science
+
+Whose law is this: "each unit should have only limited knowledge about other units"?
+Law of Demeter
+Law of Occam
+Law of Atwood
+Law of Sturgeon
+The Law of Demeter (LoD) or principle of least knowledge is a design guideline for developing software, particularly object-oriented programs.
+2
+computer-science
+
+Which principle suggests that simple solutions are usually the best?
+Occam's razor
+Law of Demeter
+SOLID principles
+Sieve of Eratosthenes
+A common phrasing of Occam's razor: "among competing hypotheses, the one with the fewest assumptions should be selected".
+2
+computer-science
+
+What's the full name of Uncle Bob?
+Robert C. Martin
+Michael Feathers
+Kent Beck
+Martin Fowler
+To be really accurate, it's actually Robert Cecil Martin.
+1
+history
+
