@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.manyquiz.programming.full"
-          android:versionCode="1"
-          android:versionName="1.0">
+          android:versionCode="2"
+          android:versionName="1.4.2">
 
     <uses-sdk
             android:minSdkVersion="14"
@@ -29,10 +29,6 @@
         <activity
                 android:name="com.manyquiz.android.activity.QuizActivity"
                 android:label="@string/label_quiz_activity">
-        </activity>
-        <activity
-                android:name="com.manyquiz.android.activity.ContactActivity"
-                android:label="@string/label_contact_activity">
         </activity>
         <activity
                 android:name="com.manyquiz.android.activity.SettingsActivity"
