@@ -2716,7 +2716,7 @@ Merge sort is typically implemented not in-place, but using an auxiliary array t
 2
 algorithms
 
-Which sorting algorithm is the most popular basis in many languages?
+Which sorting algorithm is the most popular as the base in many languages?
 merge sort
 gnome sort
 bubble sort
